@@ -1,0 +1,60 @@
+End-user customization and debugging:
+
+* If a particular hook is causing problems on your system, you can disable it
+  using the HOOK_BLACKLIST environment variable by creating a file in 
+  /etc/pm/config.d and adding the line:
+  HOOK_BLACKLIST="hookname 99another-hook"
+
+* If a parameter (or lack thereof) passed to pm-suspend and friends is causing
+  problems, or you need to debug the suspend/resume process to work out what 
+  quirks are causing problems, you can use the ADD_PARAMETERS and 
+  DROP_PARAMETERS environment variables.  To do this, create a file in 
+  /etc/pm/config.d, and add the following lines to it:
+  ADD_PARAMETERS="--parameter-to-add --another-parameter"
+  DROP_PARAMETERS="--parameter-to-drop --another-parameter-to-drop"
+
+  If you want to drop all parameters (for testing purposes, or to work around 
+  bugs in HAL), you can use DROP_PARAMETERS="all"
+
+* If you suspect that a kernel module is preventing you from being
+  able to suspend and resume, you can use the SUSPEND_MODULES
+  environment variable to have that module removed when the system
+  suspends and reloaded when the system wakes up.
+
+* If your clock drifts across a sleep/wake cycle, you can use 
+  NEED_CLOCK_SYNC="true" to force pm-utils to synchronize clocks.
+  This is a change in the default behaviour of pm-utils -- 1.2.2.1 and earlier
+  always synchronized clocks, but doing so is slow and most hardware stays in
+  sync without assistance.
+
+* If you want to see (and log) tons of debugging output, you can use 
+  PM_DEBUG="true" to have the script log each action as it performs it.
+
+* If you want to see how long pm-utils takes to run hooks. you can use
+  PM_PROFILE="true" to log timing information on how long each hook takes
+  and how long running the hooks takes overall.
+
+* To find out what parameters can be passed to pm-suspend and friends, run them
+  with '--help' as the first parameter as root.  This will print out the 
+  options that it supports and which hooks or modules handle those options.
+
+* To override the usual quirk filtering (for kernel modesetting, binary drivers,
+  and exotic hardware), pass --quirk-test along with any other quirks you want
+  to try.  This make make your system crash in new and exciting ways by
+  conflicting with the kernel when suspending or resuming, but is very useful
+  for debugging.  You have been warned.
+
+Significant conceptual changes from pm-utils 0.99.x and earlier:
+
+* Do not rely on the internals of hooks when configuring or customizing
+  pm-utils.  Conceptually, hooks are black boxes from the point of view
+  of the pm-utils core code, and there is no guarantee that the implementation
+  of a given hook will not change from pm-utils revision to pm-utils revision.
+
+* The preferred method of modifying the behaviour of a hook is to modify the
+  ADD_PARAMETERS and DROP_PARAMETERS to change the global parameters available
+  to each hook.
+
+* All scripts created and maintained by the pm-utils are POSIX/SuS compliant.
+  Any modification or new script should be POSIX compliant and work as intended
+  using dash and posh before you submit a patch upstream.  

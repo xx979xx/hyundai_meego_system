@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/tracker/db/" id="org.freedesktop.Tracker.DB" gettext-domain="tracker">
+    <key type="i" name="journal-chunk-size">
+      <default>50</default>
+      <summary>Maximum size of journal</summary>
+      <description>Size of the journal at rotation in MB. Use -1 to disable rotating.</description>
+    </key>
+    <key type="s" name="journal-rotate-destination">
+      <default>''</default>
+      <summary>Location of journal pieces</summary>
+      <description>Where to store a journal chunk when it hits the max size.</description>
+    </key>
+  </schema>
+</schemalist>

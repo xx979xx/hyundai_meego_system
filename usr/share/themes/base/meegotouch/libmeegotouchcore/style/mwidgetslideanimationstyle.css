@@ -1,0 +1,91 @@
+/* MWidgetSlidedeAnimationStyle : MAbstractWidgetAnimationStyle */
+MWidgetSlideAnimationStyle {
+    delay: 0;
+    duration: 5000;
+    easing-curve: linear;
+    origin: "right";
+}
+
+MWidgetSlideAnimationStyle#In {
+    delay: 300;
+    duration: 300;
+    easing-curve: insine;
+    origin: "top";
+}
+
+MWidgetSlideAnimationStyle#Out {
+    delay: 0;
+    duration: 300;
+    easing-curve: outsine;
+    origin: "top";
+}
+
+MDialog MWidgetSlideAnimationStyle#In {
+    origin: "bottom";
+    easing-curve: outexpo;
+}
+
+MDialog MWidgetSlideAnimationStyle#Out {
+    origin: "bottom";
+    easing-curve: incubic;
+}
+
+MInfoBanner MWidgetSlideAnimationStyle#In {
+    origin: "left";
+}
+
+MInfoBanner MWidgetSlideAnimationStyle#Out {
+    origin: "left";
+}
+
+MStatusBar MWidgetSlideAnimationStyle#In {
+    delay: 0;
+    duration: 300;
+    easing-curve: linear;
+}
+
+MStatusBar MWidgetSlideAnimationStyle#Out {
+    delay: 0;
+    duration: 300;
+    easing-curve: linear;
+}
+
+MSheet MWidgetSlideAnimationStyle#In {
+    delay: 0;
+    duration: 350;
+    easing-curve: outexpo;
+    origin: "bottom";
+}
+
+MSheet MWidgetSlideAnimationStyle#Out {
+    delay: 0;
+    duration: 350;
+    easing-curve: inoutexpo;
+    origin: "bottom";
+}
+
+MSheetSlot MWidgetSlideAnimationStyle#In {
+    duration: 250;
+    origin: "top";
+    easing-curve: outexpo;
+}
+
+MSheetSlot MWidgetSlideAnimationStyle#Out {
+    duration: 250;
+    origin: "top";
+    easing-curve: outexpo;
+}
+
+MNavigationBar MWidgetSlideAnimationStyle#In {
+    duration: 250;
+    delay: 0;
+    origin: "top";
+    easing-curve: outexpo;
+}
+
+MNavigationBar MWidgetSlideAnimationStyle#Out {
+    duration: 250;
+    delay: 0;
+    origin: "top";
+    easing-curve: outexpo;
+}

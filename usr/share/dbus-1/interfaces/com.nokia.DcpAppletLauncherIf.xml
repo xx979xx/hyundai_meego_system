@@ -1,0 +1,14 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+        "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+    <interface name="com.nokia.DcpAppletLauncherIf">
+        <method name="appletPage" chainTask="true" asyncTask="true">
+            <arg name="appletPath" type="s" direction="in" />
+        </method>
+        <method name="prestart" chainTask="true" asyncTask="true">
+        </method>
+        <method name="close" asyncTask="false">
+        </method>
+    </interface>
+</node>
+

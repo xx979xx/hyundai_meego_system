@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0">
+<xsd:include schemaLocation="xmlformat-common.xsd"/>
+<xsd:include schemaLocation="xmlformat-calendar.xsd"/>
+
+  <xsd:element name="todo">
+    <xsd:complexType>
+      <xsd:sequence>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="Alarm" type="Alarm"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Attach" type="Attachment"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="Attendee" type="Attendee"/>
+
+	<!-- RFC 2445: 4.7.1 Calendar Scale
+	     TODO: Handle value of CalendarScale: GREGORIAN, iana-token(?)
+	-->
+	<xsd:element maxOccurs="1" minOccurs="0" name="CalendarScale" type="StringContent"/>
+
+        <xsd:element maxOccurs="1" minOccurs="0" name="Categories" type="Categories"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Class" type="Class"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Comment" type="MultiText"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Completed" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Contact" type="MultiText"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Created" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DateCalendarCreated" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DateStarted" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="MultiText"/>
+	<!-- RFC 2445: either due or duration may appear in a todoprob, but not both -->
+        <xsd:element maxOccurs="1" minOccurs="0" name="Due" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Duration" type="Duration"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExceptionDateTime" type="DateTimeContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExceptionRule" type="RecurrenceRule"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Geo" type="GeoValue" />
+	<xsd:element maxOccurs="1" minOccurs="0" name="LastModified" type="DateTimeContent"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Location" type="MultiText"/>
+
+	<!-- RFC 2445: 4.7.2 Method
+	     TODO: Handle value of Method: "REQUEST", iana-token(?)
+	-->
+	<xsd:element maxOccurs="1" minOccurs="0" name="Method" type="StringContent"/>
+
+        <xsd:element maxOccurs="1" minOccurs="0" name="Organizer" type="Organizer"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="PercentComplete" type="PercentComplete"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Priority" type="Priority"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="ProductID" type="StringContent"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="RecurrenceDateTime" type="RecurrenceDateTimeList"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="RecurrenceId" type="RecurrenceId"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Related" type="RelatedTo"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Resources" type="MultiText"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="RecurrenceRule" type="RecurrenceRule"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="RStatus" type="RequestStatus"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Sequence" type="IntegerContent"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Status" type="TodoStatus"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Summary" type="MultiText"/>
+	<!-- FIXME: Timezone as Root node... like trunk? TOO MANY subnodes...
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="Timezone" type="Timezone"/>
+	-->
+        <xsd:element maxOccurs="1" minOccurs="0" name="Uid" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Url" type="UrlContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Version" type="StringContent"/>
+      </xsd:sequence>
+      <xsd:attribute name="version" type="xsd:integer"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:simpleType name="PercentCompleteValue">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="PercentComplete">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="PercentCompleteValue"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- RFC2445: 4.8.1.11 Status - statvalue (for todo) -->
+  <xsd:simpleType name="TodoStatusValue">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NEEDS-ACTION"/>
+      <xsd:enumeration value="COMPLETED"/>
+      <xsd:enumeration value="IN-PROCESS"/>
+      <xsd:enumeration value="CANCELLED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RFC2445: 4.8.1.11 Status (for todo) -->
+  <xsd:complexType name="TodoStatus">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="TodoStatusValue"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

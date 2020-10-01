@@ -1,0 +1,585 @@
+0.56.13
+* Report error in lid if the specified name does not exist.
+* Don't default a home directory to a path that contains a "." or ".." component
+  derived from the user name (explicitly specified home directories that contain
+  such components are accepted).
+* Detect naming conflicts when renaming an entry in the "files" or "shadow"
+  module.
+* Add new arguments to luseradd and lusermod, to support creating and modifying
+  LDAP user entries with the inetOrgPerson objectClass.
+
+0.56.12
+* Update translations.
+
+0.56.11
+* Remove user's mail spool as well in (luserdel -r).
+* Refuse GID and UID values (id_t)-1.
+* Verify name validity when renaming an entity.
+* Fix flushing of nscd cache by luser* utilities.
+
+0.56.10
+* Prohibit entity values that contain ':' in the files and shadow module
+  (except for the last field on the line).
+* Don't corrupt LDAP passwords that use an unsupported password encryption
+  scheme.
+* When the user name is used as a default group name, don't interpret it as
+  a number.
+* Minor test suite and man page fixes.
+
+0.56.9
+* Warn in lusermod if changing a primary group ID to a group that does not
+  exist. (#1)
+* Fix pastos in man pages.
+
+0.56.8
+* New home page at https://fedorahosted.org/libuser/ .
+
+0.56.7
+* Fix a crash with disabled SELinux
+* Add support for SHA256 and SHA512 in password hashes.
+* Fix file locking on some architectures
+* Remove default.-c, moving the provided functions to libuser proper.
+
+0.56.6
+* Set SELinux file contexts when creating home directories and preserve them
+  when moving home directories
+
+0.56.5
+* Work around spurious error messages when run against the Fedora Directory
+  server
+* Fix error reporting when creating home directories and creating / removing
+  mail spool files
+
+0.56.4
+* Update the last password change date field when changing passwords.
+
+0.56.3
+* Allow specifying a SASL mechanism (#240904, original patch by Simo Sorce).
+
+0.56.2
+* Update translations
+
+0.56.1
+* When changing passwords, only silently ignore known shadow markers, not all
+  invalid hashes
+
+0.56
+* Document the correct types used for attribute values.  Use these types for
+  parsing, to avoid corrupting number-like strings, e.g. '07' -> 7; this
+  expands the API requirements
+* Miscellaneous bug fixes, optimizations and cleanups; module interface ABI
+  has changed
+
+0.55
+* Remove the quota library and Python module.  It doesn't even compile and
+  has no known users.
+* Add support for the 64-bit API of Python 2.5
+* Minor cleanups
+
+0.54.8
+* Add importing of HOME from default/useradd.
+
+0.54.7
+* Update translations
+
+0.54.6
+* Fix bugs in handling of invalid lines in the files and shadow modules.
+* Fix pattern matching in lu_*_enumerate_full in the files and shadow modules.
+* Add more error reporting, return non-zero exit status on error from utils.
+* Use the skeleton directory specified in libuser.conf by Python
+  admin.createHome and admin.addUser, add parameter skeleton= to admin.addUser.
+
+0.54.5
+* Don't reference @pkglibdir@ in libuser.conf.5 to avoid multilib file
+  conflicts.
+
+0.54.4
+* Fix compilation with pre-C99 compilers (#179385, patch by Dan Yefimov).
+* Allow building without Python (#179384, original patch by Dan Yefimov).
+
+0.54.3
+* Fix a crash when lpasswd is run without specifying an user name
+
+0.54.2
+* Avoid using deprecated openldap functions
+
+0.54.1
+* Support for importing of configuration from shadow (/etc/login.defs and
+  /etc/default/useradd)
+* New libuser.conf(5) man page
+* Minor cleanups and bug fixes all over the code
+
+0.54
+* Make sure attributes with no values can never appear
+* Fix crash in the "files" module when an attribute is missing
+* Use hidden visibility for internal functions, remove them from
+  libuser/user_private.h; this changes module interface ABI
+* Miscellaneous source code simplifications
+
+0.53.8
+* Permit "portable" user and group names as defined by SUSv3, plus trailing $
+* Disable building static libraries by default
+* Miscellaneous build machinery improvements
+
+0.53.7
+* Add missing translations
+* Update translations
+
+0.53.6
+* Allow empty configuration values.
+
+0.53.5
+* Ignore nss_compat lines in the "files" module.
+* Autodetect Python version.
+
+0.53.4
+* Fix adding of objectclasses to LDAP user accounts.
+
+0.53.3
+* Handle more I/O failures.
+
+0.53.2
+* Important bug fixes in lchage, lgroupmod, lnewusers and lusermod; minor bug
+  fixes in lpasswd and luseradd.
+* Add man pages for the utilities.
+
+0.53.1
+* Export UT_NAMESIZE from <utmp.h> to Python
+
+0.53
+* Support UID and GID values larger than LONG_MAX (#124967)
+* Fix updating of groups after user renaming in lusermod
+* Allow setting a shadow password even if the current shadow password is
+  invalid (#131180)
+* Add lu_{user,group}_unlock_nonempty (#86414); module interface ABI has
+  changed
+* Miscellaneous bug and memory leak fixes
+
+0.52.6
+* Mark more strings for translation
+* Make error reporting more consistent and more verbose, output error messages
+  on stderr.
+* Port sasldb backend to Cyrus SASL v2, make it at least minimally usable
+
+0.52.5
+* Fix home directory renaming in ADMIN.modifyUser (#135280)
+* Further Python reference counting fixes
+
+0.52.4
+* Memory leak fixes
+
+0.52.3
+* Fix compilation without libuser headers already installed (#134085)
+
+0.52.2
+* Allow LDAP connection using ldaps, custom ports or without TLS (original
+  patch from Pawel Salek).
+
+0.52.1
+* Fix freecon() of uninitialized value in files/shadow module
+
+0.52
+* Usable LDAP backend
+* Miscellaneous bug fixes
+
+0.51.12
+* Don't claim success and exception at the same time (#133479)
+* LDAP fixes, second round
+* Various other bug fixes
+
+0.51.11
+* Allow documented optional arguments in Python
+  ADMIN.{addUser,modifyUser,deleteUser} (#119812)
+* Add man pages for lchfn and lchsh
+* LDAP fixes, first round
+* Avoid file conflict on multilib systems
+* Call ldconfig correctly
+
+0.51.10
+* Don't attempt to lookup using original entity name after entity
+  modification (rename in particular) (#78376, #121252)
+* Fix copying of symlinks from /etc/skel (#87572, original patch from gLaNDix)
+* Make --enable-quota work, and fix the quota code to at least compile (#89114)
+* Fix several bugs (#120168, original patch from Steve Grubb)
+* Don't hardcode python version in spec file (#130952, from Robert Scheck)
+* Properly integrate the SELinux patch, it should actually be used now, even
+  though it was "enabled" since 0.51.7-6
+
+0.51.9
+* Fix various typos
+* Document library interfaces
+* Build all shared libraries with -fPIC (#72536)
+
+0.51.8
+* Update to build with latest autotools and gtk-doc
+* Update ALL_LINGUAS and POTFILES.in
+* Rebuild to depend on newer openldap
+
+0.51.7-7
+* fix is_selinux_enabled call
+
+0.51.7-3
+* Add SELinux support
+
+0.51.7
+* ldap: set error codes correctly when we encounter failures initializing
+* don't double-close modules which fail initialization
+* ldap: don't set an error in cases where one is already set
+
+0.51.6
+* use a crypt salt consistent with the defaults/crypt_style setting when
+  setting new passwords (#79337)
+
+0.51.5
+* expose lu_get_first_unused_id() as a package-private function
+* provide libuser.ADMIN.getFirstUnusedUid and libuser.ADMIN.getFirstUnusedGid
+  in python
+
+0.51.4
+* fix not freeing resources properly in files.c(generic_is_locked), spotted by
+  Zou Pengcheng
+
+0.51.2
+* degrade gracefully
+* build with --with-pic and -fPIC
+* remove unpackaged man page
+
+0.51.1-2
+* translation updates
+
+0.51.1-1
+* doc updates -- cvs tree moved
+* language updates
+* disallow weird characters in account names
+
+* automated rebuild
+
+0.51
+* files: ignore blank lines in files
+* libuser: disallow creation of accounts with names containing whitespace,
+  control characters, or non-ASCII characters
+
+0.50.2
+* refresh translations
+* fix a heap-corruption bug in the python bindings
+
+0.50
+* bump version
+* refresh translations
+
+0.49.102
+* ldap: cache an entity's dn in the entity structure to try to speed things up
+
+0.49.101-2
+* add missing buildreqs on cyrus-sasl-devel and openldap-devel (#59456)
+* translation refresh
+
+0.49.101-1
+* fix python bindings of enumerateFull functions
+* adjust prompter wrapping to not error out on successful returns
+
+0.49.100
+* be more careful about printing error messages
+* fix refreshing after adding of accounts
+* ldap: try to use a search to convert names to DNs, and only fall back to
+  guessing if it turns up nothing
+* files: fix an off-by-one in removal of entries
+
+0.49.99
+* refresh translations
+* fix admin() constructor comments in the python module
+
+0.49.98
+* automatically refresh entities after add, modify, setpass, removepass,
+  lock, and unlock operations
+* remove debug spewage when creating and removing mail spools
+* files: fix saving of multi-valued attributes
+* rename MEMBERUID attribute for groups to MEMBERNAME
+
+0.49.97
+* files: fix bug in removals
+* ldap: revert attempts at being smart at startup time, because it makes UIs
+  very messy (up the three whole dialogs just to start the ldap stuff!)
+
+0.49.96
+* fix thinko in dispatch routines
+
+0.49.95
+* lgroupmod: fix thinko
+
+0.49.93
+* move shadow initialization for groups to the proper callback
+* rework locking in the files module to not require that files be writable
+
+* expose lu_strerror()
+* add various typedefs for types used by the library
+
+0.49.92
+* add removepass() functions
+
+* lchfn,lchsh,lpasswd - reorder PAM authentication calls
+* include API docs in the package
+
+0.49.91
+* ldap: finish port to new API
+* sasl: finish port to new API (needs test)
+* libuser: don't commit object changes before passing data to service
+  functions which might need differing data sets to figure out what to
+  change (for example, ldap)
+
+0.49.90
+* bind the internal mail spool creation/removal functions for python
+
+* renamed the python module
+* revamped internals to use gobject's gvalues and gvaluearrays instead of
+  glists of cached strings
+* add enumeration-with-data functions to the C library
+
+* require linuxdoc-tools instead of sgml-tools for rawhide
+
+* fixup build files to allow building for arbitrary versions of python
+
+0.32
+* link the python module against libpam
+* attempt to import the python modules at build-time to verify dependencies
+
+0.31
+* fix a file-parsing bug that popped up in 0.29's mmap modifications
+
+0.30
+* quotaq: fix argument order when reading quota information
+* user_quota: set quota grace periods correctly
+* luseradd: never create home directories for system accounts
+
+* add da translation files
+* update translations
+
+0.29
+* add an explicit build dependency on jade (for the docs)
+
+* HUP nscd on modifications
+* userutil.c: mmap files we're reading for probable speed gain
+* userutil.c: be conservative with the amount of random data we read
+* docs fixes
+
+0.28
+* apps: print usage on errors
+* lnewusers.c: initialize groups as groups, not users
+* lnewusers.c: set passwords for new accounts
+* luseradd.c: accept group names in addition to IDs for the -g flag
+* luseradd.c: allow the primary GID to be a preexisting group
+
+0.27
+* add ko translation files
+* files.c: fix a heap corruption bug in lock/unlock (#51750)
+* files.c: close a memory leak in reading of files
+
+* files.c: remove implementation limits on lengths of lines
+
+0.26
+* lusermod: change user name in groups the user is a member of during renames
+* lgroupmod: change primary GID for users who are in the group during renumbers
+* ldap.c: handle new attributes more gracefully if possible
+* add ru translation files
+
+0.25.1
+* rename the quota source files to match the library, which clears up a
+  file conflict with older quota packages
+* add ja translation files
+
+* add lu_ent_clear_all() function
+
+0.25
+* close up some memory leaks
+* add the ability to include resident versions of modules in the library
+
+0.24-4
+* fix incorrect Py_BuildValue invocation in python module
+
+0.24-3
+* stop leaking descriptors in the files module
+* speed up user creation by reordering some checks for IDs being in use
+* update the shadowLastChanged attribute when we set a password
+* adjust usage of getXXXXX_r where needed
+* fix assorted bugs in python binding which break prompting
+
+0.23
+* install sv translation
+* make lpasswd prompt for passwords when none are given on the command line
+* make sure all user-visible strings are marked for translation
+* clean up some user-visible strings
+* require PAM authentication in lchsh, lchfn, and lpasswd for non-networked modules
+
+* print uids and gids of users and names in lid app
+* fix tree traversal in users_enumerate_by_group and groups_enumerate_by_users
+* implement enumerate_by_group and enumerate_by_user in ldap module
+* fix id-based lookups in the ldap module
+* implement islocked() method in ldap module
+* implement setpass() method in ldap module
+* add lchfn and lchsh apps
+* add %d substitution to libuser.conf
+
+0.21
+* finish adding a sasldb module which manipulates a sasldb file
+* add users_enumerate_by_group and groups_enumerate_by_users
+
+
+* luserdel: remove the user's primary group if it has the same name as
+  the user and has no members configured (-G disables)
+* fixup some configure stuff to make libuser.conf get generated correctly
+  even when execprefix isn't specified
+
+0.20
+* only call the auth module when setting passwords (oops)
+* use GTrees instead of GHashTables for most internal tables
+* files: complain properly about unset attributes
+* files: group passwords are single-valued, not multiple-valued
+* add lpasswd app, make sure all apps start up popt with the right names
+
+0.18
+* actually make the new optional arguments optional
+* fix lu_error_new() to actually report errors right
+* fix part of the python bindings
+* include tools in the binary package again
+* fixup modules so that password-changing works right again
+* add a "key" field to prompt structures for use by apps which like to
+  cache these things
+* add an optional "mvhomedir" argument to userModify (python)
+
+0.16.1
+* finish home directory population
+* implement home directory moving
+* change entity get semantics in the python bindings to allow default values for .get()
+* add lu_ent_has(), and a python has_key() method to Entity types
+* don't include tools in the binary package
+* add translated strings
+
+* lib/user.c: catch and ignore errors when running stacks
+* lusermod: fix slightly bogus help messages
+* luseradd: when adding a user and group, use the gid of the group
+  instead of the user's uid as the primary group
+* properly set the password field in user accounts created using
+  auth-only auth modules (shadow needs "x" instead of "!!")
+* implement home directory removal, start on population
+
+* fix group password setting in the files module
+* setpass affects both auth and info, so run both stacks
+
+* make the testbed apps noinst
+
+* fix errors due to uninitialized fields in the python bindings
+* add kwargs support to all python wrappers
+* add a mechanism for passing arguments to python callbacks
+
+* stub out the krb5 and ldap modules so that they'll at least compile again
+ 
+* don't bail when writing empty fields to colon-delimited files
+* use permissions of the original file when making backup files instead of 0600
+
+* finish implementing is_locked methods in files/shadow module
+* finish cleanup of the python bindings
+* allow conditional builds of modules so that we can build without
+  all of the prereqs for all of the modules
+
+* add error reporting facilities
+* split public header into pieces by function
+* backend cleanups
+
+* make %{name}-devel require %{name} and not %{name}-devel
+
+* clean up quota bindings some more
+* finish most of the ldap bindings
+* fix a subtle bug in the files module that would show up when renaming accounts
+* fix mapping methods for entity structures in python
+
+* get bindings for prompts to work correctly
+* clean up some of the add/remove semantics (set source on add)
+* ldap: implement enumeration
+* samples/enum: fix the argument order
+
+* clean up python bindings for quota
+
+0.11
+* finish up python bindings for quota support
+
+* finish up quota support libs
+
+* start quota support library to get some type safety
+
+* start looking at quota manipulation
+
+* add functions for enumerating users and groups, optionally per-module
+* lusermod.c: -s should specify the shell, not the home directory
+
+0.10
+* finish the python bindings and verify that the file backend works again
+
+* remove a redundant check which was breaking modifications
+
+* finish adding setpass methods
+
+0.9
+* get a start on some Python bindings
+
+0.8.2
+* make binary-incompatible change in headers
+
+0.8.1
+* add doxygen docs and a "doc" target for them
+
+0.8
+* add a "quiet" prompter
+* add --interactive flag to sample apps and default to using quiet prompter
+* ldap: attempt a "self" bind if other attempts fail
+* krb5: connect to the password-changing service if the user principal has
+  the NULL instance
+
+* the great adding-of-the-copyright-statements
+* take more care when creating backup files in the files module
+
+0.7
+* add openldap-devel as a buildprereq
+* krb5: use a continuous connection
+* krb5: add "realm" config directive
+* ldap: use a continuous connection
+* ldap: add "server", "basedn", "binddn", "user", "authuser" config directives
+* ldap: actually finish the account deletion function
+* ldap: don't send cleartext passwords to the directory
+* fix naming attribute for users (should be uid, not gid)
+* refine the search-by-id,convert-to-name,search-by-name logic
+* fix handling of defaults when the config file is read in but contains no value
+* implement an LDAP information store
+* try to clean up module naming with libtool
+* luseradd: pass plaintext passwords along
+* luseradd: use symbolic attribute names instead of hard-coded
+* lusermod: pass plaintext passwords along
+* lgroupadd: pass plaintext passwords along
+* lgroupmod: pass plaintext passwords along
+* add libuser as a dependency of libuser-devel
+
+0.6
+* See changelog in libuser.spec.in from here on.
+
+0.5
+* Implemented the krb5 back-end (user add, modify, delete only).
+* Lookups in the files module use O_RDONLY instead of O_RDWR.
+
+0.4
+* Modify lu_start prototype and add semantics for non-superuser use (we'll
+  need this later).
+
+0.3
+* Remove recursive account locking from the files/shadow module.
+* Fixup popt help text.
+* Remove dependency on krb5 profile sublibrary for reading config files.
+
+0.2
+* Implemented prompting.
+* Added macros for LU_USERNAME and LU_GROUPNAME, found a bug in the files module
+  while converting to use them.
+* Switched from getopt() to popt for argument parsing to get autohelp in the
+  various test/demo programs.
+
+0.1
+* Finished up most of the internals and the files back-end.
+* Simple shadow-like programs.

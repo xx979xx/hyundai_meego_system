@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Type=Application
+Name=Settings
+X-MeeGo-Logical-Id=qtn_sett_launcher
+X-MeeGo-Translation-Catalog=settings
+Icon=icon-l-settings
+Exec=/usr/bin/invoker --type=m /usr/bin/duicontrolpanel.launch 
+
+NotShowIn=X-DUI;X-MEEGO;X-MeeGoTouch;
+X-Desktop-File-Install-Version=0.16

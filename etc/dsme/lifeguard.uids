@@ -1,0 +1,5 @@
+# UIDs that are allowed to use Lifeguard with reset policy
+# Root (0) is always capable, no need to specify it here
+
+# the UID used for applications
+29999

@@ -1,0 +1,1052 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gconf-internals</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GConf Reference Manual">
+<link rel="up" href="ch01.html" title="Using the GConf library">
+<link rel="prev" href="gconf-gconf-error.html" title="GError">
+<link rel="next" href="gconf-gconf-listeners.html" title="gconf-listeners">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Using the GConf library">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gconf-gconf-error.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GConf Reference Manual</th>
+<td><a accesskey="n" href="gconf-gconf-listeners.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gconf-gconf-internals.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#gconf-gconf-internals.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="gconf-internals">
+<a name="gconf-gconf-internals"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gconf-gconf-internals.top_of_page"></a>gconf-internals</span></h2>
+<p>gconf-internals</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gconf-gconf-internals.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="gconf-gconf-internals.html#gconf-key-directory" title="gconf_key_directory ()">gconf_key_directory</a>                 (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a class="link" href="gconf-gconf-internals.html#gconf-key-key" title="gconf_key_key ()">gconf_key_key</a>                       (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);
+<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         <a class="link" href="gconf-gconf-internals.html#gconf-value-from-corba-value" title="gconf_value_from_corba_value ()">gconf_value_from_corba_value</a>        (const ConfigValue *value);
+<a class="link" href="gconf-gconf-schema.html#GConfSchema" title="GConfSchema">GConfSchema</a>*        <a class="link" href="gconf-gconf-internals.html#gconf-schema-from-corba-schema" title="gconf_schema_from_corba_schema ()">gconf_schema_from_corba_schema</a>      (const ConfigSchema *cs);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a class="link" href="gconf-gconf-internals.html#gconf-value-type-to-string" title="gconf_value_type_to_string ()">gconf_value_type_to_string</a>          (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> type);
+<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a>      <a class="link" href="gconf-gconf-internals.html#gconf-value-type-from-string" title="gconf_value_type_from_string ()">gconf_value_type_from_string</a>        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a class="link" href="gconf-gconf-internals.html#gconf-load-source-path" title="gconf_load_source_path ()">gconf_load_source_path</a>              (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *filename,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+void                <a class="link" href="gconf-gconf-internals.html#gconf-shutdown-daemon" title="gconf_shutdown_daemon ()">gconf_shutdown_daemon</a>               (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="gconf-gconf-internals.html#gconf-ping-daemon" title="gconf_ping_daemon ()">gconf_ping_daemon</a>                   (void);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="gconf-gconf-internals.html#gconf-spawn-daemon" title="gconf_spawn_daemon ()">gconf_spawn_daemon</a>                  (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"
+>gulong</a>              <a class="link" href="gconf-gconf-internals.html#gconf-string-to-gulong" title="gconf_string_to_gulong ()">gconf_string_to_gulong</a>              (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str);
+const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        <a class="link" href="gconf-gconf-internals.html#gconf-current-locale" title="gconf_current_locale ()">gconf_current_locale</a>                (void);
+enum                <a class="link" href="gconf-gconf-internals.html#GConfLogPriority" title="enum GConfLogPriority">GConfLogPriority</a>;
+void                <a class="link" href="gconf-gconf-internals.html#gconf-log" title="gconf_log ()">gconf_log</a>                           (<a class="link" href="gconf-gconf-internals.html#GConfLogPriority" title="enum GConfLogPriority">GConfLogPriority</a> pri,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         ...);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="gconf-gconf-internals.html#gconf-key-check" title="gconf_key_check ()">gconf_key_check</a>                     (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         <a class="link" href="gconf-gconf-internals.html#gconf-value-new-list-from-string" title="gconf_value_new_list_from_string ()">gconf_value_new_list_from_string</a>    (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> list_type,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         <a class="link" href="gconf-gconf-internals.html#gconf-value-new-pair-from-string" title="gconf_value_new_pair_from_string ()">gconf_value_new_pair_from_string</a>    (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> car_type,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> cdr_type,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="gconf-gconf-internals.html#gconf-quote-string" title="gconf_quote_string ()">gconf_quote_string</a>                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="gconf-gconf-internals.html#gconf-unquote-string" title="gconf_unquote_string ()">gconf_unquote_string</a>                (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **end,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+void                <a class="link" href="gconf-gconf-internals.html#gconf-unquote-string-inplace" title="gconf_unquote_string_inplace ()">gconf_unquote_string_inplace</a>        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **end,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         <a class="link" href="gconf-gconf-internals.html#gconf-value-decode" title="gconf_value_decode ()">gconf_value_decode</a>                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *encoded);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              <a class="link" href="gconf-gconf-internals.html#gconf-value-encode" title="gconf_value_encode ()">gconf_value_encode</a>                  (<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a> *val);
+<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         <a class="link" href="gconf-gconf-internals.html#gconf-value-list-from-primitive-list" title="gconf_value_list_from_primitive_list ()">gconf_value_list_from_primitive_list</a>
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> list_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         <a class="link" href="gconf-gconf-internals.html#gconf-value-pair-from-primitive-pair" title="gconf_value_pair_from_primitive_pair ()">gconf_value_pair_from_primitive_pair</a>
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> car_type,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> cdr_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> address_of_car,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> address_of_cdr,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             <a class="link" href="gconf-gconf-internals.html#gconf-value-list-to-primitive-list-destructive" title="gconf_value_list_to_primitive_list_destructive ()">gconf_value_list_to_primitive_list_destructive</a>
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a> *val,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> list_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="gconf-gconf-internals.html#gconf-value-pair-to-primitive-pair-destructive" title="gconf_value_pair_to_primitive_pair_destructive ()">gconf_value_pair_to_primitive_pair_destructive</a>
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a> *val,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> car_type,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> cdr_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> car_retloc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> cdr_retloc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+void                <a class="link" href="gconf-gconf-internals.html#gconf-set-daemon-mode" title="gconf_set_daemon_mode ()">gconf_set_daemon_mode</a>               (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            <a class="link" href="gconf-gconf-internals.html#gconf-handle-oaf-exception" title="gconf_handle_oaf_exception ()">gconf_handle_oaf_exception</a>          (CORBA_Environment *ev,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gconf-gconf-internals.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="gconf-gconf-internals.details"></a><h2>Details</h2>
+<div class="refsect2" title="gconf_key_directory ()">
+<a name="gconf-key-directory"></a><h3>gconf_key_directory ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              gconf_key_directory                 (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_key_key ()">
+<a name="gconf-key-key"></a><h3>gconf_key_key ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        gconf_key_key                       (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_from_corba_value ()">
+<a name="gconf-value-from-corba-value"></a><h3>gconf_value_from_corba_value ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         gconf_value_from_corba_value        (const ConfigValue *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_schema_from_corba_schema ()">
+<a name="gconf-schema-from-corba-schema"></a><h3>gconf_schema_from_corba_schema ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-schema.html#GConfSchema" title="GConfSchema">GConfSchema</a>*        gconf_schema_from_corba_schema      (const ConfigSchema *cs);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cs</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_type_to_string ()">
+<a name="gconf-value-type-to-string"></a><h3>gconf_value_type_to_string ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        gconf_value_type_to_string          (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> type);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_type_from_string ()">
+<a name="gconf-value-type-from-string"></a><h3>gconf_value_type_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a>      gconf_value_type_from_string        (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_load_source_path ()">
+<a name="gconf-load-source-path"></a><h3>gconf_load_source_path ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             gconf_load_source_path              (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *filename,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_shutdown_daemon ()">
+<a name="gconf-shutdown-daemon"></a><h3>gconf_shutdown_daemon ()</h3>
+<pre class="programlisting">void                gconf_shutdown_daemon               (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_ping_daemon ()">
+<a name="gconf-ping-daemon"></a><h3>gconf_ping_daemon ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gconf_ping_daemon                   (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_spawn_daemon ()">
+<a name="gconf-spawn-daemon"></a><h3>gconf_spawn_daemon ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gconf_spawn_daemon                  (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_string_to_gulong ()">
+<a name="gconf-string-to-gulong"></a><h3>gconf_string_to_gulong ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gulong"
+>gulong</a>              gconf_string_to_gulong              (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_current_locale ()">
+<a name="gconf-current-locale"></a><h3>gconf_current_locale ()</h3>
+<pre class="programlisting">const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*        gconf_current_locale                (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum GConfLogPriority">
+<a name="GConfLogPriority"></a><h3>enum GConfLogPriority</h3>
+<pre class="programlisting">typedef enum {
+  GCL_EMERG,
+  GCL_ALERT,
+  GCL_CRIT,
+  GCL_ERR,
+  GCL_WARNING,
+  GCL_NOTICE,
+  GCL_INFO,
+  GCL_DEBUG
+} GConfLogPriority;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="gconf_log ()">
+<a name="gconf-log"></a><h3>gconf_log ()</h3>
+<pre class="programlisting">void                gconf_log                           (<a class="link" href="gconf-gconf-internals.html#GConfLogPriority" title="enum GConfLogPriority">GConfLogPriority</a> pri,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *format,
+                                                         ...);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_key_check ()">
+<a name="gconf-key-check"></a><h3>gconf_key_check ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gconf_key_check                     (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *key,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_new_list_from_string ()">
+<a name="gconf-value-new-list-from-string"></a><h3>gconf_value_new_list_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         gconf_value_new_list_from_string    (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> list_type,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+This function does not work. Don't use it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_new_pair_from_string ()">
+<a name="gconf-value-new-pair-from-string"></a><h3>gconf_value_new_pair_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         gconf_value_new_pair_from_string    (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> car_type,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> cdr_type,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+This function does not work. Don't use it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>car_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cdr_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_quote_string ()">
+<a name="gconf-quote-string"></a><h3>gconf_quote_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              gconf_quote_string                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_unquote_string ()">
+<a name="gconf-unquote-string"></a><h3>gconf_unquote_string ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              gconf_unquote_string                (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **end,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_unquote_string_inplace ()">
+<a name="gconf-unquote-string-inplace"></a><h3>gconf_unquote_string_inplace ()</h3>
+<pre class="programlisting">void                gconf_unquote_string_inplace        (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *str,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> **end,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_decode ()">
+<a name="gconf-value-decode"></a><h3>gconf_value_decode ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         gconf_value_decode                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *encoded);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>encoded</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_encode ()">
+<a name="gconf-value-encode"></a><h3>gconf_value_encode ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>*              gconf_value_encode                  (<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a> *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_list_from_primitive_list ()">
+<a name="gconf-value-list-from-primitive-list"></a><h3>gconf_value_list_from_primitive_list ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         gconf_value_list_from_primitive_list
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> list_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a> *list,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_pair_from_primitive_pair ()">
+<a name="gconf-value-pair-from-primitive-pair"></a><h3>gconf_value_pair_from_primitive_pair ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a>*         gconf_value_pair_from_primitive_pair
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> car_type,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> cdr_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> address_of_car,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"
+>gconstpointer</a> address_of_cdr,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>car_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cdr_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>address_of_car</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>address_of_cdr</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_list_to_primitive_list_destructive ()">
+<a name="gconf-value-list-to-primitive-list-destructive"></a><h3>gconf_value_list_to_primitive_list_destructive ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Singly-Linked-Lists.html#GSList"
+>GSList</a>*             gconf_value_list_to_primitive_list_destructive
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a> *val,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> list_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_value_pair_to_primitive_pair_destructive ()">
+<a name="gconf-value-pair-to-primitive-pair-destructive"></a><h3>gconf_value_pair_to_primitive_pair_destructive ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gconf_value_pair_to_primitive_pair_destructive
+                                                        (<a class="link" href="gconf-gconf-value.html#GConfValue" title="GConfValue">GConfValue</a> *val,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> car_type,
+                                                         <a class="link" href="gconf-gconf-value.html#GConfValueType" title="enum GConfValueType">GConfValueType</a> cdr_type,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> car_retloc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"
+>gpointer</a> cdr_retloc,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>car_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cdr_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>car_retloc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cdr_retloc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_set_daemon_mode ()">
+<a name="gconf-set-daemon-mode"></a><h3>gconf_set_daemon_mode ()</h3>
+<pre class="programlisting">void                gconf_set_daemon_mode               (<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a> setting);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>setting</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_handle_oaf_exception ()">
+<a name="gconf-handle-oaf-exception"></a><h3>gconf_handle_oaf_exception ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"
+>gboolean</a>            gconf_handle_oaf_exception          (CORBA_Environment *ev,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"
+>GError</a> **err);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ev</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* BASE - this is the master file that includes everything else.. */
+/* "master style" that most things inherit from */
+@import "mwidgetstyle.css";
+
+/* past "best before"-date.. */
+@import "deprecated.css";
+
+/* default style attribute values for common components */
+/* widget styles are imported in alphabetical order */
+
+@import "mabstractlayoutpolicy.css";
+@import "mapplicationwindowstyle.css";
+@import "mbasiclayoutanimationstyle.css";
+@import "manimation.css";
+@import "mdevicestyle.css";
+@import "mabstractwidgetanimationstyle.css";
+@import "mwidgetfadeanimationstyle.css";
+@import "mwidgetmoveanimationstyle.css";
+@import "mwidgetslideanimationstyle.css";
+@import "mwidgetzoomanimationstyle.css";
+@import "mwidgetscalefadeanimationstyle.css";
+@import "mdialoganimationstyle.css";
+@import "mapplicationmenuanimationstyle.css";
+@import "mpageswitchanimation.css";
+@import "mbasicorientationanimationstyle.css";
+@import "mcrossfadedorientationanimationstyle.css";
+@import "mvideowidgetstyle.css";
+@import "mscenemanagerstyle.css";
+@import "mpanrecognizerstyle.css";
+@import "mswiperecognizerstyle.css";
+@import "mtapandholdrecognizerstyle.css";
+@import "mwidgetrectangularclipanimationstyle.css";
+@import "mwindowstyle.css";
+@import "mcontentfadeandslideanimationstyle.css";
+@import "mtapstatemachinestyle.css";
+
+/* preedit styling for input context */
+@import "mpreeditstyle.css";
+
+/* Style parameters for intelligent scrolling */
+@import "mrelocatorstyle.css";

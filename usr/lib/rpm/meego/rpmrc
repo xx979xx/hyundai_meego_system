@@ -1,0 +1,82 @@
+include: /usr/lib/rpm/rpmrc
+
+Optflags: i386 %{__global_cflags} -m32 -march=i386 -mtune=generic -fasynchronous-unwind-tables
+Optflags: i486 %{__global_cflags} -m32 -march=i486 -fasynchronous-unwind-tables
+Optflags: i586 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
+Optflags: i686 %{__global_cflags} -m32 -march=core2 -mssse3  -mtune=atom  -mfpmath=sse -fasynchronous-unwind-tables -fno-omit-frame-pointer
+optflags: athlon %{__global_cflags} -m32 -march=athlon -fasynchronous-unwind-tables
+optflags: ia64 %{__global_cflags}
+optflags: x86_64 %{__global_cflags} -m64 -mtune=generic
+
+optflags: alpha %{__global_cflags} -mieee
+optflags: alphaev5 %{__global_cflags} -mieee -mcpu=ev5
+optflags: alphaev56 %{__global_cflags} -mieee -mcpu=ev56
+optflags: alphapca56 %{__global_cflags} -mieee -mcpu=pca56
+optflags: alphaev6 %{__global_cflags} -mieee -mcpu=ev6
+optflags: alphaev67 %{__global_cflags} -mieee -mcpu=ev67
+
+optflags: sparc %{__global_cflags} -m32 -mcpu=v7 -mtune=ultrasparc
+optflags: sparcv8 %{__global_cflags} -m32 -mcpu=v8
+optflags: sparcv9 %{__global_cflags} -m32 -mcpu=ultrasparc
+optflags: sparc64 %{__global_cflags} -m64 -mcpu=ultrasparc
+
+optflags: m68k %{__global_cflags}
+
+optflags: ppc %{__global_cflags} -m32
+optflags: ppciseries %{__global_cflags} -m32
+optflags: ppcpseries %{__global_cflags} -m32
+optflags: ppc64 %{__global_cflags} -m64 -mminimal-toc
+optflags: ppc64iseries %{__global_cflags} -m64 -mminimal-toc
+optflags: ppc64pseries %{__global_cflags} -m64 -mminimal-toc
+optflags: ppc8260 %{__global_cflags} -m32
+optflags: ppc8560 %{__global_cflags} -m32
+
+optflags: parisc %{__global_cflags} -mpa-risc-1-0
+optflags: hppa1.0 %{__global_cflags} -mpa-risc-1-0
+optflags: hppa1.1 %{__global_cflags} -mpa-risc-1-0
+optflags: hppa1.2 %{__global_cflags} -mpa-risc-1-0
+optflags: hppa2.0 %{__global_cflags} -mpa-risc-1-0
+
+optflags: mips %{__global_cflags}
+optflags: mipsel %{__global_cflags}
+
+optflags: armv3l %{__global_cflags} -fsigned-char -march=armv3
+optflags: armv4b %{__global_cflags} -fsigned-char -march=armv4
+optflags: armv4l %{__global_cflags} -fsigned-char -march=armv4
+optflags: armv4tl %{__global_cflags} -march=armv4t
+optflags: armv5tejl %{__global_cflags} -march=armv5te
+Optflags: armv5tel %{__global_cflags}   -fmessage-length=0 -march=armv5te -mlittle-endian
+Optflags: armv6l %{__global_cflags}  -fmessage-length=0 -march=armv6 -mlittle-endian  -mfpu=vfp -mfloat-abi=softfp -D__SOFTFP__
+Optflags: armv7l %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mtune=cortex-a8 -mlittle-endian  -mfpu=vfpv3 -mfloat-abi=softfp -D__SOFTFP__
+optflags: armv7hl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mno-thumb
+optflags: armv7nhl %{__global_cflags} -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mno-thumb  
+optflags: armv7thl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=vfpv3-d16 -mthumb
+optflags: armv7tnhl %{__global_cflags}  -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb  
+
+
+optflags: atarist %{__global_cflags}
+optflags: atariste %{__global_cflags}
+optflags: ataritt %{__global_cflags}
+optflags: falcon %{__global_cflags}
+optflags: atariclone %{__global_cflags}
+optflags: milan %{__global_cflags}
+optflags: hades %{__global_cflags}
+
+optflags: s390 %{__global_cflags} -m31
+optflags: s390x %{__global_cflags} -m64
+
+
+# set build arch to fedora buildarches on hardware capable of running it
+# saves having to do rpmbuild --target=
+buildarchtranslate: athlon: i586
+buildarchtranslate: geode: i586
+buildarchtranslate: pentium4: i586
+buildarchtranslate: pentium3: i586
+buildarchtranslate: i686: i586
+buildarchtranslate: i586: i586
+
+buildarchtranslate: armv5tejl: armv5tel
+buildarchtranslate: armv6l: armv5tel
+
+
+macrofiles:     /usr/lib/rpm/macros:/usr/lib/rpm/%{_target}/macros:/usr/lib/rpm/meego/macros:/etc/rpm/macros.*:/etc/rpm/macros:/etc/rpm/%{_target}/macros:~/.rpmmacros

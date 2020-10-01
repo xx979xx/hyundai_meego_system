@@ -1,0 +1,12 @@
+@prefix dsc: <http://www.tracker-project.org/temp/dsc#> .
+
+<virtual-ontology-uri:94-ipod.ontology> a dsc:Ontology ;
+	dsc:title "Ipod Ontology (IPOD)" ;
+	dsc:description "ontology for Ipod related properties" ;
+
+	dsc:author "developers" ;
+
+	dsc:baseUrl "http://www.tracker-project.org/ontologies/ipod#" ;
+	dsc:localPrefix "ipod" ;
+	dsc:relativePath "./94-ipod.ontology" .
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0">
+<xsd:include schemaLocation="xmlformat-calendar.xsd"/>
+<xsd:include schemaLocation="xmlformat-common.xsd"/>
+
+  <!-- XMLFormat-event -->
+
+  <xsd:element name="event">
+    <xsd:complexType>
+      <xsd:sequence>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="Alarm" type="Alarm"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="AlarmAudio" type="Alarm"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="AlarmDisplay" type="Alarm"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="AlarmEmail" type="Alarm"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="AlarmProcedure" type="Alarm"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="AlarmRelatedEnd" type="AlarmRelatedEnd"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Attach" type="Attachment"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="Attendee" type="Attendee"/>
+
+	<!-- RFC 2445: 4.7.1 Calendar Scale
+	     TODO: Handle value of CalendarScale: GREGORIAN, iana-token(?)
+	-->
+	<xsd:element maxOccurs="1" minOccurs="0" name="CalendarScale" type="StringContent"/>
+
+        <xsd:element maxOccurs="1" minOccurs="0" name="Categories" type="Categories"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Class" type="Class"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Comment" type="MultiText"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Contact" type="MultiText"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Created" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DateCalendarCreated" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="DateEnd" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="DateStarted" type="DateTimeContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Description" type="MultiText"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Duration" type="Duration"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExceptionDateTime" type="DateTimeContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExceptionRule" type="RecurrenceRule"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="ExceptionRuleExtended" type="RecurrenceRuleExtended"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="FreeBusy" type="FreeBusy"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Geo" type="GeoValue" />
+	<xsd:element maxOccurs="1" minOccurs="0" name="LastModified" type="DateTimeContent"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Location" type="MultiText"/>
+
+	<!-- RFC 2445: 4.7.2 Method
+	     TODO: Handle value of Method: "REQUEST", iana-token(?)
+	-->
+	<xsd:element maxOccurs="1" minOccurs="0" name="Method" type="StringContent"/>
+
+	<xsd:element maxOccurs="1" minOccurs="0" name="NumberRecurrences" type="IntegerContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Organizer" type="Organizer"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Priority" type="Priority"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="ProductID" type="StringContent"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="RecurrenceDateTime" type="RecurrenceDateTimeList"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="RecurrenceId" type="RecurrenceId"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Related" type="RelatedTo"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Resources" type="MultiText"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="RecurrenceRule" type="RecurrenceRule"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="RecurrenceRuleExtended" type="RecurrenceRuleExtended"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="RStatus" type="RequestStatus"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Sequence" type="IntegerContent"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Status" type="Status"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="Summary" type="MultiText"/>
+	<xsd:element maxOccurs="1" minOccurs="0" name="TimeTransparency" type="TimeTransparency"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="Timezone" type="Timezone"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="TimezoneComponent" type="TimezoneComponent"/>
+	<xsd:element maxOccurs="unbounded" minOccurs="0" name="TimezoneRule" type="RecurrenceRule"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Uid" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Url" type="UrlContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Version" type="StringContent"/>
+      </xsd:sequence>
+      <xsd:attribute name="version" type="xsd:integer"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+</xsd:schema>

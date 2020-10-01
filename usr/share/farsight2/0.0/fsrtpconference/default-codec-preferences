@@ -1,0 +1,56 @@
+################
+# Audio codecs #
+################
+
+[audio/SPEEX:8000]
+clock-rate=8000
+
+[audio/SPEEX:16000]
+clock-rate=16000
+
+[audio/AMR]
+
+[audio/G729]
+
+[audio/ILBC]
+
+
+# Disabled audio codecs
+# These are unsuitable for calling
+
+[audio/DV]
+id=-1
+
+[audio/MPA]
+id=-1
+
+[audio/VORBIS]
+id=-1
+
+[audio/MP3]
+id=-1
+
+################
+# Video codecs #
+################
+
+[video/H264]
+
+[video/H263]
+
+[video/THEORA]
+
+[video/JPEG]
+
+# Disable the ones we don't want
+
+[video/DV]
+id=-1
+
+[video/MPV]
+id=-1
+
+# Payloader is broken, see gnome bug #577784
+[video/H263-2000]
+id=-1
+

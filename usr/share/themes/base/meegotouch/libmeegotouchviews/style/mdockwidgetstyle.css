@@ -1,0 +1,17 @@
+MDockWidgetStyle {
+    /* inherited from MWidgetStyle */
+    background-image: meegotouch-navigationbar-portrait-background $CORNER_MARGINS;
+    background-opacity: 1.0;
+    background-color: $COLOR_BACKGROUND;
+
+    /* inherited from MSceneWindowStyle */
+    horizontal-align: left;
+    vertical-align: bottom;
+
+    offset: 0 0;
+
+    minimum-size: 100% $HEIGHT_NAVIGATIONBAR;
+    preferred-size: 100% $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 100% $HEIGHT_NAVIGATIONBAR;
+}
+

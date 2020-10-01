@@ -1,0 +1,15 @@
+#!/usr/bin/pulseaudio -nF
+.fail
+
+### Automatically restore the volume of streams and devices
+load-module module-device-restore
+load-module module-stream-restore
+
+### Load analog device
+load-module module-alsa-sink device=hw:0,1 sink_name=alsasink
+set-default-sink alsasink
+
+load-module module-native-protocol-unix auth-anonymous=1
+
+### Automatically suspend sinks/sources that become idle for too long
+load-module module-suspend-on-idle

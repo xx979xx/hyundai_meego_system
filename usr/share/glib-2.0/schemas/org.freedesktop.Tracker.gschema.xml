@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/tracker/" id="org.freedesktop.Tracker">
+    <child schema="org.freedesktop.Tracker.DB" name="db"/>
+    <child schema="org.freedesktop.Tracker.FTS" name="fts"/>
+    <child schema="org.freedesktop.Tracker.Store" name="store"/>
+    <child schema="org.freedesktop.Tracker.Extract" name="extract"/>
+    <child schema="org.freedesktop.Tracker.Writeback" name="writeback"/>
+    <child schema="org.freedesktop.Tracker.Miner" name="miner"/>
+  </schema>
+
+  <schema path="/org/freedesktop/tracker/miner/" id="org.freedesktop.Tracker.Miner"/>
+</schemalist>

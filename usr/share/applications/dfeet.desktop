@@ -1,0 +1,13 @@
+
+[Desktop Entry]
+Version=1.0
+Name=D-Feet D-Bus Debugger
+GenericName=D-Bus Debugger
+Comment=Debug D-Bus applications
+Exec=d-feet
+Icon=dfeet-icon
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Development;
+GenericName[en_CA]=D-Feet D-Bus Debugger
+X-Desktop-File-Install-Version=0.16

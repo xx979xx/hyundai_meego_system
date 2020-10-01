@@ -1,0 +1,6 @@
+/* MToolbarStyle : MWidgetStyle */
+
+MTextEditStyle[toolbar] {
+    minimum-size: 19.2mm $HEIGHT_STATUSBAR; /* size of button = 19.2mm */
+    maximum-size: -1 $SIZE_ICON_LARGE;
+}

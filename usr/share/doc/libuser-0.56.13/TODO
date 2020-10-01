@@ -1,0 +1,33 @@
+Easy:
+* Make krb5 module return a suitable error when it's only passed crypted
+  passwords ("this password is already hashed -- it is of no use to me").
+* Workalikes for various apps on other OSs:
+  http://docs.sun.com/ab2/coll.40.6/REFMAN1/@Ab2PageView/169291
+  http://docs.sun.com/ab2/coll.40.6/REFMAN1/@Ab2PageView/64438
+  http://docs.sun.com/ab2/coll.40.6/REFMAN1/@Ab2PageView/64530
+  http://www.uwsg.iu.edu/usail/man/solaris/logins.1.html
+
+Medium:
+* Add the -o option to luseradd/lusermod/lgroupadd/lgroupmod (bad idea?)
+* Create variants of the apps that are hard-coded to use files only, for
+  use in batch environments like post-package-install, or maybe add a
+  --local flag, which will be interpreted as "shadow files"/"files"....
+* Add a shadowGroup schema file if RFC 2307bis doesn't include one, or ask
+  Luke about adding one, and document what we expect an LDAP directory to
+  have in order for the ldap module to not get confused (for now, that's
+  the RFC 2307 schema + inetOrgPerson + TLS).
+* Make the LDAP module check the server schema for allowed object classes
+  and attributes for new user additions and so on; right now it's kind of
+  a crap shoot to see if the server will reject an operation due to a schema
+  error.
+
+Hard:
+* Figure out how to reconcile lckpwdf() and fcntl() locking when the files
+  being locked may not even be the system's main files.
+* Write a RADIUS back-end.
+* Write an NIS or NIS+ back-end using yppasswd.x in glibc, or maybe using the
+  routines declared in /usr/include/rpcsvc/libnis.h
+* Write a libdbi or ODBC back-end.
+* Write a hesiod back-end.
+* Implement an lgpasswd command for local group administration by the group's
+  administrators.

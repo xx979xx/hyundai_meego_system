@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="icon-m-applet-settings-layer"
+   x="0px"
+   y="0px"
+   width="48px"
+   height="48px"
+   viewBox="0 0 48 48"
+   style="enable-background:new 0 0 48 48;"
+   xml:space="preserve"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="icon-m-applet-settings.svg"><metadata
+   id="metadata2844"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs2842"><inkscape:perspective
+   sodipodi:type="inkscape:persp3d"
+   inkscape:vp_x="0 : 24 : 1"
+   inkscape:vp_y="0 : 1000 : 0"
+   inkscape:vp_z="48 : 24 : 1"
+   inkscape:persp3d-origin="24 : 16 : 1"
+   id="perspective2846" />
+	
+	
+<inkscape:perspective
+   id="perspective2861"
+   inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+   inkscape:vp_z="1 : 0.5 : 1"
+   inkscape:vp_y="0 : 1000 : 0"
+   inkscape:vp_x="0 : 0.5 : 1"
+   sodipodi:type="inkscape:persp3d" /></defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="837"
+   inkscape:window-height="630"
+   id="namedview2840"
+   showgrid="false"
+   inkscape:zoom="5.1041667"
+   inkscape:cx="24"
+   inkscape:cy="24"
+   inkscape:window-x="518"
+   inkscape:window-y="105"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="icon-m-applet-settings-layer" />
+<g
+   id="g2875"><path
+     id="rect2848"
+     d="M 18.59375 11.5 C 17.392625 11.443375 16.68375 11.74675 17.28125 12.34375 L 22.03125 17.09375 C 21.28125 19.38275 19.6565 21.3515 17.0625 22.0625 L 12.28125 17.28125 C 11.64125 16.63325 11.5 17.52325 11.5 19.28125 C 11.5 21.41325 15.03175 29.27325 21.34375 25.78125 L 31.6875 36.15625 C 32.1725 36.63225 32.97675 36.63225 33.46875 36.15625 L 36.125 33.46875 C 36.616 32.96875 36.616 32.1805 36.125 31.6875 L 25.78125 21.375 C 26.28925 20.688 28.78875 16.187 22.84375 12.75 C 21.50375 11.9725 19.794875 11.556625 18.59375 11.5 z "
+     style="fill:#333333;fill-opacity:1;color:#000000;fill-rule:nonzero;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" /><rect
+     style="fill:none"
+     width="48"
+     height="48"
+     id="rect2836"
+     x="0"
+     y="0" /></g>
+</svg>

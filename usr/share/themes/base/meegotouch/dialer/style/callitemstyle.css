@@ -1,0 +1,308 @@
+/*
+ * dialer - MeeGo Voice Call Manager
+ * Copyright (c) 2009, 2010, Intel Corporation.
+ *
+ * This program is licensed under the terms and conditions of the
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+/* ***********************************************
+ * CallItem properties
+ * ***********************************************/
+CallItemStyle {
+    peopleItemObjectName: "callItemPeopleItem";
+    statusObjectName:     "callItemStatusName";
+    durationObjectName:   "callItemDurationName";
+    preferred-size: 98% 15mm;
+    minimum-size:   80% 15mm;
+    maximum-size:   98% 50%;
+    margin-top:     0;
+    margin-left:    -1mm;
+    margin-right:   -1mm;
+    margin-bottom:  0;
+    padding-top:    4px;
+    padding-left:   4px;
+    padding-right:  4px;
+    padding-bottom: 4px;
+    background-image: "dialer-gradient-background-01";
+    background-color: #A7D2DB;
+    background-opacity: 1.0;
+}
+
+CallItemStyle.Landscape {
+    preferred-size: 49% 15mm;
+    minimum-size:   40% 15mm;
+    maximum-size:   49% 50%;
+}
+
+#callItemPeopleItem {
+    background-color:       #74888C;
+    background-opacity:     1.0;
+    nameObjectName:         "callPeopleItemName";
+    phoneObjectName:        "callPeopleItemPhone";
+    photoObjectName:        "callPeopleItemPhoto";
+    lastCommObjectName:     "callPeopleItemLastComm";
+    lastCommIconObjectName: "callPeopleItemLastCommIcon";
+    presenceObjectName:     "callPeopleItemPresenceIcon";
+    favoriteIconObjectName: "callPeopleItemFavoriteIcon";
+
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    padding-top:    0;
+    padding-left:   0;
+    padding-right:  0;
+    padding-bottom: 0;
+
+    preferred-size: 98% 12mm;
+    minimum-size:   80% 12mm;
+    maximum-size:   98% 50%;
+}
+
+#callItemPeopleItem.Landscape {
+    preferred-size: 49% 12mm;
+    minimum-size:   40% 12mm;
+    maximum-size:   49% 50%;
+}
+
+#callItemCenterSpacer {
+    background-image: ;
+    background-color: ;
+    preferred-size: 98% 3mm;
+    minimum-size:   -1 -1;
+    maximum-size:   98% 3mm;
+}
+
+#callItemCenterSpacer.Landscape {
+    preferred-size: 49% 3mm%;
+    minimum-size:   -1% -1;
+    maximum-size:   49% 3mm%;
+}
+
+#callItemStatusName {
+    background-image: ;
+    background-color: ;
+    color:          white;
+    font:           "Droid Sans Mono" 1.6mm;
+
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    padding-top:    0;
+    padding-left:   $MARGIN_MEDIUM;
+    padding-right:  $MARGIN_MEDIUM;
+    padding-bottom: 0;
+
+    preferred-size: -1 3mm;
+    minimum-size:   -1 -1;
+    maximum-size:   25% 3mm;
+}
+
+CallItemStyle:active {
+    peopleItemObjectName: "Active-callItemPeopleItem";
+    background-image: "dialer-gradient-background-02";
+}
+CallItemStyle:dialing {
+    peopleItemObjectName: "Dialing-callItemPeopleItem";
+    background-image: "dialer-gradient-background-02";
+}
+CallItemStyle:alerting {
+    peopleItemObjectName: "Alerting-callItemPeopleItem";
+    background-image: "dialer-gradient-background-02";
+}
+CallItemStyle:incoming {
+    peopleItemObjectName: "Incoming-callItemPeopleItem";
+    background-image: "dialer-gradient-background-02";
+}
+CallItemStyle:held {
+    background-color:     #525252;
+    peopleItemObjectName: "Held-callItemPeopleItem";
+    background-image: "dialer-gradient-background-01";
+}
+CallItemStyle:waiting {
+    background-color:     #525252;
+    peopleItemObjectName: "Waiting-callItemPeopleItem";
+    background-image: "dialer-gradient-background-01";
+}
+CallItemStyle:disconnected {
+    background-color:     #525252;
+    peopleItemObjectName: "Disconnected-callItemPeopleItem";
+    background-image: "dialer-gradient-background-01";
+}
+
+#Active-callItemPeopleItem {
+    preferred-size: -1 12mm;
+}
+#Active-callItemPeopleItem:pressed {
+    background-color:       #74888C;
+    background-opacity:     1.0;
+}
+#Active-callItemPeopleItem:selected {
+    background-color:       #74888C;
+    background-opacity:     1.0;
+}
+#Dialing-callItemPeopleItem {
+    preferred-size: -1 12mm;
+}
+#Alerting-callItemPeopleItem {
+    preferred-size: -1 12mm;
+}
+#Incoming-callItemPeopleItem {
+    preferred-size: -1 12mm;
+}
+#Held-callItemPeopleItem {
+    background-color:     #878787;
+    preferred-size: -1 12mm;
+}
+#Held-callItemPeopleItem:pressed {
+    background-color:     #878787;
+    background-opacity:     1.0;
+}
+#Held-callItemPeopleItem:selected {
+    background-color:     #878787;
+    background-opacity:     1.0;
+}
+#Waiting-callItemPeopleItem {
+    background-color:     #878787;
+    preferred-size: -1 12mm;
+}
+#Disconnected-callItemPeopleItem {
+    background-color:     #878787;
+    preferred-size: -1 12mm;
+}
+
+#callItemDurationName {
+    background-image: ;
+    background-color: ;
+    color:          white;
+    font:           "Droid Sans Mono" 1.6mm;
+
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    padding-top:    0;
+    padding-left:   $MARGIN_MEDIUM;
+    padding-right:  $MARGIN_MEDIUM;
+    padding-bottom: 0;
+
+    preferred-size: -1 3mm;
+    minimum-size:   -1 -1;
+    maximum-size:   25% 3mm;
+}
+
+/* ***********************************************
+ * PeopleItem properties
+ * ***********************************************/
+#callItemPeopleItem:pressed {
+    background-image: ;
+    background-color: $COLOR_SELECT;
+    background-opacity:     0.75;
+}
+
+#callItemPeopleItem:selected {
+    background-image: ;
+    background-color: $COLOR_SELECT;
+    background-opacity:     0.75;
+}
+
+#callPeopleItemName {
+    font:           $FONT_DEFAULT;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-bottom:  0;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+#callPeopleItemPhone {
+    font:           $FONT_SMALL;
+    color:          gray;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+#callPeopleItemPhoto {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 64 64;
+    minimum-size:   24 24;
+    maximum-size:   96 96;
+}
+
+#callPeopleItemLastComm {
+    font:           $FONT_DEFAULT;
+    color:          gray;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+#callPeopleItemLastCommIcon {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 24 24;
+    minimum-size:   24 24;
+    maximum-size:   24 24;
+}
+
+#callPeopleItemPresenceIcon {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 24 24;
+    minimum-size:   24 24;
+    maximum-size:   24 24;
+}
+
+#callPeopleItemFavoriteIcon {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 24 24;
+    minimum-size:   24 24;
+    maximum-size:   24 24;
+}

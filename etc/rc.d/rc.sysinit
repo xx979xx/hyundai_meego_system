@@ -1,0 +1,233 @@
+#!/bin/dash
+#
+# /etc/rc.d/rc.sysinit - run once at boot time
+#
+# Taken in part from Miquel van Smoorenburg's bcheckrc.
+#
+
+/bin/mount -n -t proc /proc /proc
+/bin/mount -n -t sysfs /sys /sys >/dev/null 2>&1
+
+/bin/mount -t tmpfs tmpfs /run 
+/bin/cp -prf /etc/run/* /run
+
+# start readahead before anything else
+/sbin/sreadahead >/dev/null 2>&1
+
+HOSTNAME=localhost
+
+# enable job control
+set -m
+
+/bin/nice -n 20 /sbin/start_udev
+
+if /bin/grep -q usbfs /proc/filesystems ; then
+	/bin/mount -n -t usbfs /proc/bus/usb /proc/bus/usb
+fi
+ 
+# Fix console loglevel
+/bin/dmesg -n 3
+
+/sbin/boardname > /dev/null 2>&1
+
+/bin/touch /dev/.in_sysinit >/dev/null 2>&1
+
+/bin/mount -n /dev/pts >/dev/null 2>&1
+
+# Configure kernel parameters
+/sbin/sysctl -e -p /etc/sysctl.conf >/dev/null 2>&1
+
+# Set the hostname.
+/bin/hostname ${HOSTNAME}
+
+# remount root file system read/write when install mode
+# or remount root file system with read-only mode
+if [ ! -d /rw_data ]; then
+	/usr/bin/ionice -t -c 1 -n 0 /bin/mount -n -o remount,rw /
+else
+	/usr/bin/ionice -t -c 1 -n 0 /bin/mount -n -o remount,ro /
+fi
+
+
+# fsck for R/W partition. run force test, if last boot mode is CPU WDT.
+CPU_WDT_STATE=`cat /sys/class/misc/micom/device/last_boot_state`
+if [ $CPU_WDT_STATE -eq 1 ]; then
+    e2fsck -f -y /dev/sda7 >/dev/null 2>&1
+    e2fsck -f -y /dev/sda8 >/dev/null 2>&1
+    e2fsck -f -y /dev/sda10 >/dev/null 2>&1
+    echo "SSD CHECK FS - CPU WDT STATE - RECOVERY FINISH" > /dev/kmsg    
+else
+    e2fsck -y /dev/sda7 >/dev/null 2>&1
+    e2fsck -y /dev/sda8 >/dev/null 2>&1
+    e2fsck -y /dev/sda10 >/dev/null 2>&1
+    echo "SSD CHECK FS - NORMAL STATE - RECOVERY FINISH" > /dev/kmsg
+fi
+
+# Enter mounted filesystems into /etc/mtab
+/bin/mount -f /
+/bin/mount -f /proc >/dev/null 2>&1
+/bin/mount -f /sys >/dev/null 2>&1
+/bin/mount -f /dev/pts >/dev/null 2>&1
+/bin/mount -f /proc/bus/usb >/dev/null 2>&1
+
+# Mount all other filesystems (except for NFS and /proc, which is already
+# mounted). Contrary to standard usage,
+# filesystems are NOT unmounted in single user mode.
+/bin/mount -a -t nonfs,nfs4,smbfs,cifs -O no_netdev
+/bin/mount -t debugfs none /sys/kernel/debug/
+
+# /var/{lock,run}
+/bin/mount -t tmpfs tmpfs /var/lock -o size=4m
+/bin/mount -t tmpfs tmpfs /var/run -o size=4m
+/bin/mount -t tmpfs tmpfs /tmp -o size=20m
+/bin/mkdir /var/run/console
+/bin/mkdir -p /var/lock/subsys
+/bin/mkdir -p /var/run/PolicyKit
+/bin/chown root:polkituser /var/run/PolicyKit
+/bin/chmod 0770 /var/run/PolicyKit
+
+# Clean up /tmp
+/bin/rm -rf /tmp/*
+
+# Clean up /app/data/debug/
+/bin/rm -rf /app/data/debug/*
+
+# Remove all old directory in USB mount point
+/bin/rm -rf /var/lib/udisks/*
+/bin/rm -rf /media/front_usb/*
+/bin/rm -rf /media/rear_usb/*
+
+# Enable USB port by UcsDaemon
+/app/bin/DHAVN_UcsDaemon
+
+# Create navi directory, if it does not exist
+if [ ! -d /navi ]; then
+	/bin/mkdir /navi
+fi
+if [ ! -d /rw_data/data/AppNavi ]; then
+	/bin/mkdir -p /rw_data/data/AppNavi
+	/bin/chown meego:meego -R /rw_data/data/AppNavi
+fi
+
+# Create RPM DB symbolic link, if it does not exist
+if [ -d /rpm_db ]; then
+        if [ ! -L /rw_data/var/lib/rpm ]; then
+                /bin/rm -rf /rw_data/var/lib/rpm
+                /bin/ln -s /rpm_db /rw_data/var/lib/rpm
+        fi
+fi
+
+# Clean out /.
+/bin/rm -f /fastboot /fsckoptions /forcefsck /.autofsck /halt /poweroff
+
+# Clean up /var.
+/bin/rm -rf /var/lock/cvs/* /var/run/screen/*
+/bin/find -L /var/lock /var/run ! -type d -exec rm -f {} \;
+/bin/rm -f /var/lib/rpm/__db* &> /dev/null
+/bin/rm -f /var/gdm/.gdmfifo &> /dev/null
+
+# start dbus
+/bin/rm -f /var/run/messagebus.pid
+/bin/mkdir -p /var/run/dbus
+/bin/dbus-uuidgen --ensure
+/bin/dbus-daemon --system --fork
+
+# Make ICE directory
+/bin/mkdir -m 1777 -p /tmp/.ICE-unix >/dev/null 2>&1
+/bin/chown root:root /tmp/.ICE-unix
+
+# Make MLB node
+major=$(awk '{if($2=="ioh_mlb") printf $1}' /proc/devices)
+/bin/rm -f /dev/mlb*
+/bin/mknod /dev/mlb-sys c $major 0
+/bin/mknod /dev/mlb-ch0 c $major 1
+/bin/mknod /dev/mlb-ch1 c $major 2
+/bin/mknod /dev/mlb-ch2 c $major 3
+/bin/mknod /dev/mlb-ch3 c $major 4
+/bin/mknod /dev/mlb-ch5 c $major 5
+/bin/mknod /dev/mlb-ch6 c $major 6
+/bin/chmod 666 /dev/mlb*
+
+{
+	# Clean up utmp/wtmp
+	> /var/run/utmp
+	> /var/run/utmpx
+	/bin/touch /var/log/wtmp /var/log/wtmpx
+	/bin/chgrp utmp /var/run/utmp{,x} /var/log/wtmp{,x}
+	/bin/chmod 0664 /var/run/utmp{,x} /var/log/wtmp{,x}
+
+	export BOOTSTATE="USER"
+	# /usr/sbin/dsme -p /usr/lib/dsme/libstartup.so &>/dev/null &
+
+  	# TODO: remove connman; it is left here for test convenience
+  	/usr/sbin/connmand -W nl80211,wext
+
+	# up loopback interface
+	ifconfig lo up
+
+	# when we're gathering readahead data, we want the background
+	# startup to be later so that it ends up delayed in the
+	# readahead as well.
+	
+	if [ ! -e /etc/readahead.packed ] ; then
+		sleep 10
+	fi
+
+	# start logging
+ 	. /etc/sysconfig/sysklogd
+
+	umask $SYSLOG_UMASK
+	/bin/nice -n 20 /sbin/syslogd $SYSLOGD_OPTIONS
+	/bin/nice -n 20 /sbin/klogd $KLOGD_OPTIONS
+
+	/bin/rm -f /dev/.in_sysinit
+
+	# restore saved random seed
+	/bin/cat /var/lib/random-seed > /dev/urandom
+
+	# loggging sanity check state on current boot
+	if [ $CPU_WDT_STATE -eq 1 ]; then
+		logger "CPU_WDT are trrigerd on last boot, every rw partitions do sanity check."
+	fi
+
+	# Start up swapping for swap devices listed in /etc/fstab
+	/sbin/swapon -a -e
+ 
+	# create the crash indicator flag to warn on crashes, offer fsck with timeout
+	/bin/touch /.autofsck &> /dev/null
+
+	/sbin/console_init /dev/tty0
+	
+	# Disable SATA ALPM for removing unnecessary IO delay and behavior
+	#for lpm in /sys/class/scsi_host/host*/link_power_management_policy; do
+	#	if [ -e $lpm ]; then
+	#		/bin/echo "min_power" >$lpm
+	#	fi
+	#done
+	
+   # Multicast domain name system daemon for CarPlay
+   CAR_TYPE_NUM=`cat /sys/module/micom/parameters/car_type`
+   CAR_MODEL_NUM=`cat /sys/module/micom/parameters/dh_car_model`
+   if [ $CAR_TYPE_NUM -eq 0 ]; then
+           logger "CarType is support CarPlay."
+
+           # MDNSD launch on only DH PE. (KH/VI needs 16Y)
+           if [ $CAR_MODEL_NUM -eq 2 ]; then
+               logger "Multicast Domain Name System daemon run for CarPlay."
+               /usr/sbin/mdnsd &
+           fi
+    fi
+} &
+rm -rf /home/meego/.config/Nokia/QtServiceFramework_4.8_user.db
+
+# Create log & backup directory
+if [ ! -d /log_data/log ]; then
+	mkdir /log_data/log
+	chown meego.meego /log_data/log
+fi
+
+if [ ! -d /log_data/backup ]; then
+	mkdir /log_data/backup
+	chown meego.meego /log_data/backup
+fi
+

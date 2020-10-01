@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="iso-8859-1"?> <!-- -*-html-helper-*- -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>libasyncns 0.7</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<h1><a name="top">libasyncns 0.7</a></h1>
+
+<p><i>Copyright 2005-2008 Lennart Poettering &lt;mznflapaf (at) 0pointer (dot) de&gt;</i></p>
+
+<ul class="toc">
+    <li><a href="#license">License</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#status">Current Status</a></li>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#acks">Acknowledgements</a></li>
+    <li><a href="#download">Download</a></li>
+</ul>
+
+<h2><a name="license">License</a></h2>
+
+<p>This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation, either version 2.1 of the
+License, or (at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Lesser General Public License for more details.</p>
+
+<h2><a name="news">News</a></h2>
+
+<div class="news-date">Tue 28 Oct
+2008: </div> <p class="news-text"><a href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.7.tar.gz">Version
+0.7</a> released; changes include: rework thread shutdown logic.</p>
+
+<div class="news-date">Fri 24 Oct
+2008: </div> <p class="news-text"><a href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.6.tar.gz">Version
+0.6</a> released; changes include: save and restore <tt>h_errno</tt>
+in addition to <tt>errno</tt>; drop usage of pthread's cancelling
+since it is problematic on some platforms.</p>
+
+<div class="news-date">Sun 17 Aug
+2008: </div> <p class="news-text"><a href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.5.tar.gz">Version
+0.5</a> released; changes include: fix getaddrinfo() serialization.</p>
+
+<div class="news-date">Sun 27 Jul
+2008: </div> <p class="news-text"><a href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.4.tar.gz">Version
+0.4</a> released; changes include: rework error handling logic,
+add <tt>asyncns_freeanswer()</tt>, a lot of fixes</p>
+
+<div class="news-date">Wed 23 May 2007: </div> <p class="news-text"><a
+href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.3.tar.gz">Version 0.3</a> released;
+changes include: build fixes: properly detect <tt>res_query()</tt> on
+Linux/AMD64, support older autoconf versions</p>
+
+<div class="news-date">Fri 16 Feb 2007: </div> <p class="news-text"><a
+href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.2.tar.gz">Version 0.2</a> released;
+changes include: <tt>res_query()</tt> support; minor bug fixes; doc updates</p>
+
+<div class="news-date">Sat 8 Jan 2005: </div> <p class="news-text"><a
+href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.1.tar.gz">Version 0.1</a> released</p>
+
+<h2><a name="overview">Overview</a></h2>
+
+<p><tt>libasyncns</tt> is a C library for Linux/Unix for executing name
+service queries asynchronously. It is an asynchronous wrapper around
+<tt>getaddrinfo(3)</tt>, <tt>getnameinfo(3)</tt>, <tt>res_query(3)</tt> and
+<tt>res_search(3)</tt> from <tt>libc</tt> and <tt>libresolv</tt>.</p>
+
+<p>In contrast to GNU's asynchronous name resolving API
+<tt>getaddrinfo_a()</tt>, <tt>libasyncns</tt> does not make use of
+UNIX signals for reporting completion of name queries. Instead, the
+API exports a standard UNIX file descriptor which may be integerated
+cleanly into custom main loops.</p>
+
+<p>In contrast to asynchronous DNS resolving libraries like <tt><a
+href="http://libdenise.sourceforge.net/">libdenise</a></tt>, <tt><a
+href="http://www.skarnet.org/software/skadns/">skadns</a></tt>, <tt><a
+href="http://www.chiark.greenend.org.uk/~ian/adns/">adns</a></tt>,
+<tt>libasyncns</tt> is just an asynchronous wrapper around the libc's
+synchronous <tt>getaddrinfo()</tt> API, which has the advantage of
+allowing name resolution using techniques like <a
+href="http://0pointer.de/lennart/projects/nss-mdns/">Multicast
+DNS</a>, LDAP or NIS using standard <tt>libc</tt> NSS (Name Service
+Switch) modules. <tt>libasyncns</tt> is compatible with IPv6 if the
+underlying <tt>libc</tt> is.</p>
+
+<p><tt>libasyncns</tt> is very tiny, consisting of just one header and
+one source file. It has no dependencies besides <tt>libc</tt>.</p>
+
+<p>By default <tt>libasyncns</tt> spawns a number of worker threads
+(LWPs) to process name queries. Alternatively or when POSIX Threads
+are not supported, <tt>libasyncns</tt> can <tt>fork()</tt> off worker
+processes instead.</p>
+
+<h2><a name="status">Current Status</a></h2>
+
+<p>Version 0.7 is quite stable and feature complete.</p>
+
+<p>Damien Th&#233;bault has written a Python module <a href="https://launchpad.net/libasyncns-python">libasyncns-python</a> that wraps the libasyncns C API.</p>
+
+<h2><a name="documentation">Documentation</a></h2>
+
+<p>You may browse the <a href="http://www.doxygen.org/">Doxygen</a>
+generated <a
+href="http://0pointer.de/lennart/projects/libasyncns/doxygen/">programing
+documentation</a> the API. (Run <tt>make doxygen</tt> to generate this
+documentation from the source tree)</p>
+
+<h2><a name="requirements">Requirements</a></h2>
+
+<p>Currently, <tt>libasyncns</tt> is tested on Linux and Solaris (<tt>sparc-sun-solaris2.8</tt>) only.</p>
+
+<p><tt>libasyncns</tt> was developed and tested on Debian GNU/Linux
+"testing" from January 2005, it should work on most other Linux
+distributions (and maybe Unix versions) since it uses GNU autoconf and
+GNU libtool for source code configuration and shared library
+management.</p>
+
+<p><tt>libasyncns</tt> has no dependencies besides a <tt>libc</tt> that supports <tt>getaddrinfo()</tt> and <tt>res_query()</tt>.</p>
+
+<h2><a name="installation">Installation</a></h2>
+
+<p>As this package is made with the GNU autotools you should run
+<tt>./configure</tt> inside the distribution directory for configuring
+the source tree. After that you should run <tt>make</tt> for
+compilation and <tt>make install</tt> (as root) for installation of
+<tt>libasyncns</tt>.</p>
+
+<h2><a name="acks">Acknowledgements</a></h2>
+
+<p>Sjoerd Simons for the <tt>res_query()</tt> support.</p>
+
+<h2><a name="download">Download</a></h2>
+
+<p>The newest release is always available from <a href="http://0pointer.de/lennart/projects/libasyncns/">http://0pointer.de/lennart/projects/libasyncns/</a></p>
+
+<p>The current release is <a href="http://0pointer.de/lennart/projects/libasyncns/libasyncns-0.7.tar.gz">0.7</a></p>
+
+<p>Get <tt>libasyncns</tt>'s development sources from the <a href="http://git.or.cz/">GIT</a> <a href="git://git.0pointer.de/libasyncns">repository</a> (<a href="http://git.0pointer.de/?p=libasyncns.git">gitweb</a>): </p>
+
+<pre>git clone git://git.0pointer.de/libasyncns</pre>
+
+<p>You may find an up to date Debian package of <tt>libasyncns</tt> on the <a href="http://packages.debian.org/libasyncns0">Debian package repository</a>.</p>
+
+<p>If you want to be notified whenever I release a new version of this software use the subscription feature of <a href="http://freshmeat.net/projects/libasyncns/">Freshmeat</a>.</p>
+
+<hr/>
+<address class="grey">Lennart Poettering &lt;mznflapaf (at) 0pointer (dot) de&gt;, October 2008</address>
+
+</body>
+</html>

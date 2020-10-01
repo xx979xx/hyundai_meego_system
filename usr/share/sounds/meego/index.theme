@@ -1,0 +1,6 @@
+[Sound Theme]
+Name=MeeGo
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

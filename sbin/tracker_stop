@@ -1,0 +1,3 @@
+#!/bin/sh
+/usr/bin/tracker-control -k
+/usr/bin/tracker-control -r

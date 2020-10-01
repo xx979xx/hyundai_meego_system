@@ -1,0 +1,286 @@
+2009-10-30  Jim Meyering  <meyering@redhat.com>
+
+	version 1.3.14
+	* NEWS: Record release date.
+
+	build: accommodate new syntax-check test
+	* amiga/tailor.c (_expand_args): Change each of three uses of
+	"exit(20)" to "exit(EXIT_FAILURE)".
+	* sample/add.c: Include <stdlib.h>.
+	(main): Use EXIT_FAILURE and EXIT_SUCCESS, not 1 and 0.
+	* sample/sub.c (main): Likewise.
+	* sample/zread.c (main): Likewise.
+
+	build: update gnulib submodule to latest
+
+	build: link with $(LIB_CLOCK_GETTIME)
+	* Makefile.am (gzip_LDADD): Add $(LIB_CLOCK_GETTIME), now that
+	utimens pulls in gettime.
+	(FILES_TO_CHECK): Remove $(gzip_LDADD), now that it may contain -lrt.
+
+2009-10-28  Jim Meyering  <meyering@redhat.com>
+
+	msdos: fix syntax in Makefile.djg
+	* msdos/Makefile.djg (gzip): Change each of two leading 8-space
+	sequences to a TAB.  Reported by Allan Mui.
+
+2009-10-20  Jim Meyering  <meyering@redhat.com>
+
+	build: do not use AC_PREFIX_PROGRAM
+	* configure.ac: Do not use "AC_PREFIX_PROGRAM(gzip)".
+	It would induce behavior that is so surprising that it is probably
+	universally considered to be buggy, these days.  Reported by Zube
+	in http://thread.gmane.org/gmane.comp.gnu.gzip.bugs/273
+
+2009-10-10  Jim Meyering  <meyering@redhat.com>
+
+	gzip: add tests for today's bug fix
+	* tests/trailing-nul: New file.  Test for today's fix.
+	* Makefile.am (TESTS): Add new script.
+	* NEWS (Bug fixes): Mention it.
+
+2009-10-10  Daniel Barkalow  <barkalow@iabervon.org>
+
+	gzip: don't fail when there is exactly one trailing NUL byte
+	* gzip.c (get_method): Require the second byte of magic only if
+	the first byte was nonzero.
+
+2009-10-09  Jim Meyering  <meyering@redhat.com>
+
+	build: enable automake color- and parallel-test options
+	* configure.ac (AM_INIT_AUTOMAKE): Enable color-tests and parallel-tests.
+
+	zgrep: portability improvements; exercise "-f -"
+	* zgrep.in: Adjust loop not to use seq; it's not portable enough.
+	Fail if we don't find a free file descriptor.
+	(exists): New function; Use it in place of less portable "test -e".
+	Testing for existence of /dev/fd/$fd doesn't work on Solaris 10,
+	since all 256 always exist (as char devices), but testing for
+	/proc/$$/fd/$fd does work, so do that instead.
+	* Makefile.am (TESTS): Add tests/zgrep-f.
+	* tests/zgrep-f: New test; exercise this bug.
+	* NEWS (Bug fixes): Mention it.
+
+2009-10-09  Carl Worth  <cworth@cworth.org>
+
+	zgrep: handle "-f -" the same way that it works with grep
+	Before this change, echo needle|zgrep -f - haystack.gz would not work.
+	* zgrep.in: When the pattern comes from stdin, redirect it to a
+	different file descriptor, since we're about to use stdin.
+
+2009-10-09  Jim Meyering  <meyering@redhat.com>
+
+	zdiff would exit 2 (error) rather than 1 for differences
+	* zdiff.in: Save and restore cmp's exit status around a case
+	statement that would otherwise clobber its value.
+	* NEWS (Bug fixes): Mention it.
+	* tests/zdiff: New test; exercise both bugs.
+	* tests/test-lib.sh: New file.  From coreutils.
+	* Makefile.am (EXTRA_DIST): Add tests/test-lib.sh.
+	(TESTS): Add tests/zdiff.
+	(TESTS_ENVIRONMENT): Define.  From coreutils.
+	(EXTRA_DIST): Append all $(TESTS).
+
+	zdiff: fix malfunction when operating on two gzip'd inputs
+	zdiff would fail to print differences in two compressed inputs
+	* zdiff.in: Don't let cmp output mix with echo'd gzip exit
+	status values.  Report and fix from Jörg-Volker Peetz via
+	<http://bugs.debian.org/434275>
+	* NEWS (Bug fixes): Mention it.
+
+	build: update gnulib submodule to latest
+
+2009-10-07  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+2009-10-06  Jim Meyering  <meyering@redhat.com>
+
+	maint: clarify web-doc-update instructions
+	* README-release: sync a tiny change from coreutils.
+
+2009-10-03  Jim Meyering  <meyering@redhat.com>
+
+	build: update gnulib submodule to latest
+
+	doc: use gnu-web-doc-update module
+	* bootstrap.conf (gnulib_modules): Add it.
+
+2009-10-02  Jim Meyering  <meyering@redhat.com>
+
+	doc: describe release procedure
+	* README-release: New file.
+
+2009-10-01  Jim Meyering  <meyering@redhat.com>
+
+	maint: make cfg.mk slightly more generic
+	* cfg.mk (url_dir_list): Don't hard-code "coreutils".  Use $(PACKAGE).
+
+2009-09-30  Jim Meyering  <meyering@redhat.com>
+
+	post-release administrivia
+	* NEWS: Add header line for next release.
+	* .prev-version: Record previous version.
+	* cfg.mk (old_NEWS_hash): Auto-update.
+
+	version 1.3.13
+	* NEWS: Record release date.
+
+	build: update gnulib submodule to latest
+
+	maint: update bootstrap script
+	* bootstrap (with_gettext): Update from coreutils.
+
+	maint: pull in two release-related modules from gnulib
+	* bootstrap.conf (gnulib_modules): Add announce-gen and gnupload.
+
+	build: use more gnulib modules for better POSIX compliance
+	* bootstrap.conf (gnulib_modules): Add modules exposed via
+	make CFLAGS=-DGNULIB_POSIXCHECK 2>&1 \
+	|perl -lne '/.* use gnulib module (\S+).*/ and print $1' \
+	|sort |uniq -c|sort -nr
+	Add these: calloc close fclose fprintf-posix lstat malloc
+	perror printf-posix realloc
+
+2009-09-30  Karl Berry  <karl@freefriends.org>
+
+	doc: update to FDL 1.3, minor clean-up
+	* NEWS, README, TODO: Update FDL s/1.2/1.3/.
+
+2009-09-28  Karl Berry  <karl@freefriends.org>
+
+	doc: update gzip.texi
+	* doc/gzip.texi: FDL 1.3+
+	Consistently (de)capitalize section names.
+	"User's" is not correct; seems best to simplify the title.
+	Throw in some "GNU"'s.
+	Make direntries be what we actually want.
+	Detabify.
+
+2009-09-26  Jim Meyering  <meyering@redhat.com>
+
+	maint: temporarily exempt failing syntax-check tests
+	* cfg.mk (local-checks-to-skip): Add the list of currently-failing
+	tests, to exempt them from "make syntax-check".
+
+	gzip: don't use an uninitialized file descriptor
+	gzip interprets an argument of "-" as indicating stdin, but when
+	"-" is not the first name on the command line, it doesn't work.
+	* gzip.c (treat_stdin): Initialize "ifd".
+	Patch and fine description by Lasse Collin in
+	http://www.mail-archive.com/bug-gzip@gnu.org/msg00213.html
+	* Makefile.am (check-local): Exercise the fix.  Based on the above.
+	* NEWS (Bug fixes): Mention this.
+
+	maint: use a git submodule for gnulib
+	* .gitmodules: New file, to track gnulib.
+	* gnulib: New file, created by running this:
+	git submodule add git://git.sv.gnu.org/gnulib.git gnulib
+
+	maint: update existing copyright year lists to include 2009
+	* bootstrap.conf (gnulib_modules): Add update-copyright.
+
+	maint: include <config.h> first in many files
+
+	maint: avoid another "make syntax-check" failure
+	* lib/Makefile.am (match.$(OBJEXT)): Use $(ASCPPPOST), not @ASCPPPOST@.
+
+	maint: remove RCS $Id$ variables and comments
+
+	maint: change spelling in comments: s/filesystem/file system/
+
+	maint: don't use "the the"
+	* msdos/doturboc.bat: s/the the/the/.
+
+	maint: remove trailing blanks
+
+	maint: remove useless if-before-free tests
+	* gzip.c (do_exit): Remove useless if-before-free tests.
+
+	maint: remove useless casts to avoid "make syntax-check" failures
+	* gzip.c (do_exit): Remove anachronistic cast.
+	* inflate.c (huft_free): Likewise.
+	* util.c (add_envopt): Likewise.
+	* vms/vms.c (vms_expand_args): Likewise.
+
+	maint: new file: .prev-version
+	* .prev-version: New file, to record previous version number.
+
+2009-09-06  Jim Meyering  <meyering@redhat.com>
+
+	build: avoid spurious warnings from clang
+	* gzip.h (gzip_error): Declare with ATTRIBUTE_NORETURN.
+
+	maint: update build-from-scratch infrastructure
+	* bootstrap: Modernize.
+	* bootstrap.conf: Modernize.
+	* cfg.mk: New file.
+
+2009-08-18  Jim Meyering  <meyering@redhat.com>
+
+	inflate: avoid a leak on a error path
+	* inflate.c (inflate_dynamic): Don't leak
+
+	maint: ignore a few generated files
+	* lib/.gitignore: ignore more generated files.
+
+	tests: add a test for just-fixed bug
+	* tests/hufts-segv.gz: New file, from bug report.
+	* Makefile.am (EXTRA_DIST): Add tests/hufts-segv.gz.
+	(check-local): Exercise the bug.
+
+	tests: don't misinterpret a failing test as successful
+	* Makefile.am (check-local): Exit "1" upon failure, not 0.
+
+2009-08-18  Thiemo Nagel  <thiemo.nagel@ph.tum.de>
+
+	avoid creating an undersized buffer for the hufts table
+	A malformed input file can cause gzip to crash with a segmentation
+	violation or hang in an endless loop.
+	Reported in <http://bugs.debian.org/507263>.
+	* NEWS (Bug fixes): Mention it.
+
+2009-08-18  Jim Meyering  <meyering@redhat.com>
+
+	avoid silent data loss e.g., on NFS, due to unchecked close of stdout
+	* gzip.c: Include "closein.h".
+	(main): Use atexit (close_stdin);
+	* bootstrap.conf (gnulib_modules): Add closein.
+	Prompted by Mark Kidwell's report and patch in
+	http://bugs.debian.org/538187
+	* NEWS (Bug fixes): Mention it.
+	* */.gitignore: Update.
+
+	build: require automake-1.11 and produce xz-compressed tarballs, too
+	* configure.ac: Require automake-1.11.  Use the dist-xz option.
+
+	build: avoid non-srcdir build failure
+	* Makefile.am (gzip.doc.gz): Use $(srcdir)/gzip.doc, not gzip.doc.
+	Don't redirect directly to $@.  Use $(AM_V_GEN).
+	(gzip.doc, .in): Don't redirect directly to $@.  Use $(AM_V_GEN).
+	* NEWS: Add template header for upcoming release.
+
+	build: enable git-version-gen, automake silent rules, generate ChangeLog
+	* configure.ac (AC_INIT): Use git-version-gen.
+	Use AM_SILENT_RULES([yes]).
+	(AM_INIT_AUTOMAKE): Drop gnits; conflicts with git-version-gen versions.
+	* bootstrap.conf (gnulib_modules): Use getopt-gnu
+	Ensure ChangeLog exists, for automake.
+	rather than obsolete "getopt" module.
+	Add gitlog-to-changelog.
+	Add git-version-gen.
+	Add gnu-make, gnumakefile and maintainer-makefile.
+	* Makefile.am (dist-hook, gen-ChangeLog): New rules, to generate
+	ChangeLog and insert it into the distribution tarball.
+	(EXTRA_DIST): Add ChangeLog-2007.
+
+	maint: retire the last VC'd ChangeLog file
+	* ChangeLog-2007: Rename from ChangeLog.
+	From now on, the ChangeLog file will be generated automatically
+	from commit logs.
+
+	maint: rename .cvsignore files to .gitignore
+	* .gitignore: Renamed from .cvsignore.
+	* doc/.gitignore: Likewise.
+	* lib/.gitignore: Likewise.
+	* m4/.gitignore: Likewise.

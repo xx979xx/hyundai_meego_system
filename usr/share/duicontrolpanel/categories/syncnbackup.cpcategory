@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name="Sync & Backup"
+Name-logical-id=qtn_sett_main_syncbackup
+
+Value="Device synchronization, Backup"
+Value-logical-id=qtn_sett_main_syncbackup_label2
+
+Icon=icon-m-transfer-sync
+
+Aliases=qtn_sett_main_backup
+Translation-catalogs=
+
+Order=110
+

@@ -1,0 +1,25 @@
+#
+# This file will be overwritten on every mad-developer update...
+#
+
+LC_ALL=C LANG=C
+export LC_ALL LANG
+
+PATH=$HOME/bin:/sbin:/usr/sbin:$PATH
+export PATH
+
+case $- in *i*) # for interactive shells only
+
+	export PS1='\w \$ '
+	;;
+esac
+
+case $USER in root)
+        case $HISTFILE in *root*) ;;
+		# mainly for permissions...
+                *) HISTFILE=${HISTFILE}_root ;;
+        esac
+esac
+
+# ...uncomment next line for loading additions
+# . $HOME/.profile_continued

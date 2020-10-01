@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollKeeperContentsList>
+
+
+
+  <sect categorycode="Applications">
+    <title>Applications</title>
+    <sect categorycode="Applications|Amusement">
+      <title>Amusement</title>
+      </sect>
+    <sect categorycode="Applications|Education">
+      <title>Education</title>
+      <sect categorycode="Applications|Education|Arts">
+        <title>Arts</title>
+        </sect>
+      <sect categorycode="Applications|Education|Computer Science">
+        <title>Computer Science</title>
+        </sect>
+      <sect categorycode="Applications|Education|English">
+        <title>English</title>
+        </sect>
+      <sect categorycode="Applications|Education|Language">
+        <title>Language</title>
+        </sect>
+      <sect categorycode="Applications|Education|Maths">
+        <title>Maths</title>
+        </sect>
+      <sect categorycode="Applications|Education|Music">
+        <title>Music</title>
+        </sect>
+      <sect categorycode="Applications|Education|Science">
+        <title>Science</title>
+        </sect>
+      <sect categorycode="Applications|Education|Technology">
+        <title>Technology</title>
+        </sect>
+      <sect categorycode="Applications|Education|Testing">
+        <title>Testing</title>
+        </sect>
+      <sect categorycode="Applications|Education|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Games">
+      <title>Games</title>
+      <sect categorycode="Applications|Games|Arcade">
+        <title>Arcade</title>
+        </sect>
+      <sect categorycode="Applications|Games|Board">
+        <title>Board</title>
+        </sect>
+      <sect categorycode="Applications|Games|First Person Shooters">
+        <title>First Person Shooters</title>
+        </sect>
+      <sect categorycode="Applications|Games|Puzzles">
+        <title>Puzzles</title>
+        </sect>
+      <sect categorycode="Applications|Games|Fighting">
+        <title>Fighting</title>
+        </sect>
+      <sect categorycode="Applications|Games|Role-Playing">
+        <title>Role-Playing</title>
+        </sect>
+      <sect categorycode="Applications|Games|Simulation">
+        <title>Simulation</title>
+        </sect>
+      <sect categorycode="Applications|Games|Strategy">
+        <title>Strategy</title>
+        </sect>
+      <sect categorycode="Applications|Games|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Internet">
+      <title>Internet</title>
+      <sect categorycode="Applications|Internet|Chat">
+        <title>Chat</title>
+        </sect>
+      <sect categorycode="Applications|Internet|Email">
+        <title>Email</title>
+        </sect>
+      <sect categorycode="Applications|Internet|Fax">
+        <title>Fax</title>
+        </sect>
+      <sect categorycode="Applications|Internet|File Sharing">
+        <title>File Sharing</title>
+        </sect>
+      <sect categorycode="Applications|Internet|FTP">
+        <title>FTP</title>
+        </sect>
+      <sect categorycode="Applications|Internet|Internet Phone">
+        <title>Internet Phone</title>
+        </sect>
+      <sect categorycode="Applications|Internet|Messaging">
+        <title>Messaging</title>
+        </sect>
+      <sect categorycode="Applications|Internet|News">
+        <title>News</title>
+        </sect>
+      <sect categorycode="Applications|Internet|Video Conferencing">
+        <title>Video Conferencing</title>
+        </sect>
+      <sect categorycode="Applications|Internet|Web">
+        <title>Web</title>
+        </sect>
+      <sect categorycode="Applications|Internet|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Multimedia">
+      <title>Multimedia</title>
+      <sect categorycode="Applications|Multimedia|Graphics">
+        <title>Graphics</title>
+        <sect categorycode="Applications|Multimedia|Graphics|3D Modelling">
+          <title>3D Modelling</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|3D Rendering">
+          <title>3D Rendering</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|CAD">
+          <title>CAD</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|Capture">
+          <title>Capture</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|Conversion">
+          <title>Conversion</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|Drawing">
+          <title>Drawing</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|Editing">
+          <title>Editing</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|Viewing">
+          <title>Viewing</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Graphics|Other">
+          <title>Other</title>
+          </sect>
+      </sect>
+      <sect categorycode="Applications|Multimedia|Sound">
+        <title>Sound</title>
+        <sect categorycode="Applications|Multimedia|Sound|Analysis">
+          <title>Analysis</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|CD Mastering">
+          <title>CD Mastering</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|Conversion">
+          <title>Conversion</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|Editing">
+          <title>Editing</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|MIDI">
+          <title>MIDI</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|Mixers">
+          <title>Mixers</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|Players">
+          <title>Players</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|Recording">
+          <title>Recording</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|Speech">
+          <title>Speech</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Sound|Other">
+          <title>Other</title>
+          </sect>
+      </sect>
+      <sect categorycode="Applications|Multimedia|Video">
+        <title>Video</title>
+        <sect categorycode="Applications|Multimedia|Video|Capture">
+          <title>Capture</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Video|Conversion">
+          <title>Conversion</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Video|Display">
+          <title>Display</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Video|Editing">
+          <title>Editing</title>
+          </sect>
+        <sect categorycode="Applications|Multimedia|Video|Other">
+          <title>Other</title>
+          </sect>
+      </sect>
+      <sect categorycode="Applications|Multimedia|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Office">
+      <title>Office</title>
+      <sect categorycode="Applications|Office|Calendar">
+        <title>Calendar</title>
+        </sect>
+      <sect categorycode="Applications|Office|Data Processing">
+        <title>Data Processing</title>
+        </sect>
+      <sect categorycode="Applications|Office|Database">
+        <title>Database</title>
+        </sect>
+      <sect categorycode="Applications|Office|Email">
+        <title>Email</title>
+        </sect>
+      <sect categorycode="Applications|Office|Financial">
+        <title>Financial</title>
+        </sect>
+      <sect categorycode="Applications|Office|PIM">
+        <title>PIM</title>
+        </sect>
+      <sect categorycode="Applications|Office|Plotting">
+        <title>Plotting</title>
+        </sect>
+      <sect categorycode="Applications|Office|Presentation">
+        <title>Presentation</title>
+        </sect>
+      <sect categorycode="Applications|Office|Publishing">
+        <title>Publishing</title>
+        <sect categorycode="Applications|Office|Publishing|Web Publishing">
+          <title>Web Publishing</title>
+          </sect>
+      </sect>
+      <sect categorycode="Applications|Office|Word Processing">
+        <title>Word Processing</title>
+        </sect>
+      <sect categorycode="Applications|Office|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Scientific">
+      <title>Scientific</title>
+      <sect categorycode="Applications|Scientific|Astronomy">
+        <title>Astronomy</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Astrophysics">
+        <title>Astrophysics</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Biology">
+        <title>Biology</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Chemistry">
+        <title>Chemistry</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|EDA">
+        <title>EDA</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Genetics">
+        <title>Genetics</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Math">
+        <title>Math</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Physics">
+        <title>Physics</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Visualisation">
+        <title>Visualisation</title>
+        </sect>
+      <sect categorycode="Applications|Scientific|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Security">
+      <title>Security</title>
+      <sect categorycode="Applications|Security|Cryptography">
+        <title>Cryptography</title>
+        </sect>
+      <sect categorycode="Applications|Security|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Text Editors">
+      <title>Text Editors</title>
+      <sect categorycode="Applications|Text Editors|CLI">
+        <title>CLI</title>
+        </sect>
+      <sect categorycode="Applications|Text Editors|GUI">
+        <title>GUI</title>
+        </sect>
+      <sect categorycode="Applications|Text Editors|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|Utilities">
+      <title>Utilities</title>
+      <sect categorycode="Applications|Utilities|Archiving">
+        <title>Archiving</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Calculating">
+        <title>Calculating</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Clocks">
+        <title>Clocks</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Compression">
+        <title>Compression</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|File Utilities">
+        <title>File Utilities</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Monitors">
+        <title>Monitors</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Printing">
+        <title>Printing</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Terminals">
+        <title>Terminals</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Text Utilities">
+        <title>Text Utilities</title>
+        </sect>
+      <sect categorycode="Applications|Utilities|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Applications|X">
+      <title>X</title>
+      <sect categorycode="Applications|X|Configuration">
+        <title>Configuration</title>
+        </sect>
+      <sect categorycode="Applications|X|Fonts">
+        <title>Fonts</title>
+        </sect>
+      <sect categorycode="Applications|X|Login Managers">
+        <title>Login Managers</title>
+        </sect>
+      <sect categorycode="Applications|X|Screensavers">
+        <title>Screensavers</title>
+        </sect>
+      <sect categorycode="Applications|X|Window Managers">
+        <title>Window Managers</title>
+        </sect>
+      <sect categorycode="Applications|X|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+  </sect>
+
+  <sect categorycode="CDE">
+    <title>CDE</title>
+    </sect>
+
+  <sect categorycode="Development">
+    <title>Development</title>
+    <sect categorycode="Development|Databases">
+      <title>Databases</title>
+      </sect>
+    <sect categorycode="Development|Development Tools">
+      <title>Development Tools</title>
+      <sect categorycode="Development|Development Tools|Build Tools">
+        <title>Build Tools</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|Code Generators">
+        <title>Code Generators</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|Configuration">
+        <title>Configuration</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|Debuggers">
+        <title>Debuggers</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|IDEs">
+        <title>IDEs</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|Packaging">
+        <title>Packaging</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|Profiling">
+        <title>Profiling</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|RAD">
+        <title>RAD</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|Version Control">
+        <title>Version Control</title>
+        </sect>
+      <sect categorycode="Development|Development Tools|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Development|Environments">
+      <title>Environments</title>
+      <sect categorycode="Development|Environments|ADA">
+        <title>ADA</title>
+        </sect>
+      <sect categorycode="Development|Environments|C">
+        <title>C</title>
+        </sect>
+      <sect categorycode="Development|Environments|C++">
+        <title>C++</title>
+        </sect>
+      <sect categorycode="Development|Environments|GNOME">
+        <title>GNOME</title>
+        </sect>
+      <sect categorycode="Development|Environments|GTK+">
+        <title>GTK+</title>
+        </sect>
+      <sect categorycode="Development|Environments|gtk++">
+        <title>gtk++</title>
+        </sect>
+      <sect categorycode="Development|Environments|Java">
+        <title>Java</title>
+        </sect>
+      <sect categorycode="Development|Environments|KDE">
+        <title>KDE</title>
+        </sect>
+      <sect categorycode="Development|Environments|Perl">
+        <title>Perl</title>
+        </sect>
+      <sect categorycode="Development|Environments|Python">
+        <title>Python</title>
+        </sect>
+      <sect categorycode="Development|Environments|Qt">
+        <title>Qt</title>
+        </sect>
+      <sect categorycode="Development|Environments|Tcl/Tk">
+        <title>Tcl/Tk</title>
+        </sect>
+      <sect categorycode="Development|Environments|WebML">
+        <title>WebML</title>
+        </sect>
+      <sect categorycode="Development|Environments|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Development|Kernels">
+      <title>Kernels</title>
+      <sect categorycode="Development|Kernels|FreeBSD">
+        <title>FreeBSD</title>
+        </sect>
+      <sect categorycode="Development|Kernels|Linux">
+        <title>Linux</title>
+        </sect>
+      <sect categorycode="Development|Kernels|NetBSD">
+        <title>NetBSD</title>
+        </sect>
+      <sect categorycode="Development|Kernels|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="Development|Libraries">
+      <title>Libraries</title>
+      </sect>
+    <sect categorycode="Development|System Calls">
+      <title>System Calls</title>
+      </sect>
+    <sect categorycode="Development|Other">
+      <title>Other</title>
+      </sect>
+  </sect>
+  <sect categorycode="General">
+    <title>General</title>
+    <sect categorycode="General|Licenses">
+      <title>Licenses</title>
+      </sect>
+    <sect categorycode="General|Linux">
+      <title>Linux</title>
+      <sect categorycode="General|Linux|Distributions">
+        <title>Distributions</title>
+        <sect categorycode="General|Linux|Distributions|Caldera">
+          <title>Caldera</title>
+          </sect>
+        <sect categorycode="General|Linux|Distributions|Debian">
+          <title>Debian</title>
+          </sect>
+        <sect categorycode="General|Linux|Distributions|Mandrake">
+          <title>Mandrake</title>
+          </sect>
+        <sect categorycode="General|Linux|Distributions|Red Flag">
+          <title>Red Flag</title>
+          </sect>
+        <sect categorycode="General|Linux|Distributions|Red Hat">
+          <title>Red Hat</title>
+          </sect>
+        <sect categorycode="General|Linux|Distributions|Slackware">
+          <title>Slackware</title>
+          </sect>
+        <sect categorycode="General|Linux|Distributions|SuSE">
+          <title>SuSE</title>
+          </sect>
+        <sect categorycode="General|Linux|Distributions|Other">
+          <title>Other</title>
+          </sect>
+      </sect>
+      <sect categorycode="General|Linux|General">
+        <title>General</title>
+        </sect>
+      <sect categorycode="General|Linux|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="General|Other">
+      <title>Other</title>
+      </sect>
+  </sect>
+
+  <sect categorycode="GNOME">
+    <title>GNOME</title>
+    <sect categorycode="GNOME|Accessibility">
+      <title>Accessibility</title>
+      </sect>
+    <sect categorycode="GNOME|Core Desktop">
+      <title>Core Desktop</title>
+      </sect>
+    <sect categorycode="GNOME|Desktop">
+      <title>Desktop</title>
+      <sect categorycode="GNOME|Desktop|User Guides">
+        <title>User Guides</title>
+        </sect>
+    </sect>
+    <sect categorycode="GNOME|Applets">
+      <title>Applets</title>
+      <sect categorycode="GNOME|Applets|Accessories">
+        <title>Accessories</title>
+        </sect>
+      <sect categorycode="GNOME|Applets|Amusement">
+        <title>Amusement</title>
+        </sect>
+      <sect categorycode="GNOME|Applets|Clock">
+        <title>Clock</title>
+        </sect>
+      <sect categorycode="GNOME|Applets|Internet">
+        <title>Internet</title>
+        </sect>
+      <sect categorycode="GNOME|Applets|Monitors">
+        <title>Monitors</title>
+        </sect>
+      <sect categorycode="GNOME|Applets|Multimedia">
+        <title>Multimedia</title>
+        </sect>
+      <sect categorycode="GNOME|Applets|Network">
+        <title>Network</title>
+        </sect>
+      <sect categorycode="GNOME|Applets|Utility">
+        <title>Utility</title>
+        </sect>
+    </sect>
+    <sect categorycode="GNOME|Applications">
+      <title>Applications</title>
+      <sect categorycode="GNOME|Applications|Accessories">
+        <title>Accessories</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|Desktop Preferences">
+        <title>Desktop Preferences</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|Games">
+        <title>Games</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|Graphics">
+        <title>Graphics</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|Internet">
+        <title>Internet</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|Office">
+        <title>Office</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|Programming">
+        <title>Programming</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|Sound and Video">
+        <title>Sound and Video</title>
+        </sect>
+      <sect categorycode="GNOME|Applications|System Tools">
+        <title>System Tools</title>
+        </sect>
+    </sect>
+    <sect categorycode="GNOME|Preferences">
+      <title>Preferences</title>
+      </sect>
+    <sect categorycode="GNOME|System Administration">
+      <title>System Administration</title>
+      </sect>
+    <sect categorycode="GNOME|Utilities">
+      <title>Utilities</title>
+      </sect>
+    <sect categorycode="GNOME|Development">
+      <title>Development</title>
+      <sect categorycode="GNOME|Development|Applications">
+        <title>Applications</title>
+        </sect>
+      <sect categorycode="GNOME|Development|Introductory">
+        <title>Introductory</title>
+        </sect>
+      <sect categorycode="GNOME|Development|Tutorials">
+        <title>Tutorials</title>
+        </sect>
+      <sect categorycode="GNOME|Development|White Papers">
+        <title>White Papers</title>
+        </sect>
+    </sect>
+    <sect categorycode="GNOME|Games">
+      <title>Games</title>
+      </sect>
+    <sect categorycode="GNOME|Graphics">
+      <title>Graphics</title>
+      </sect>
+    <sect categorycode="GNOME|Internet">
+      <title>Internet</title>
+      </sect>
+    <sect categorycode="GNOME|Multimedia">
+      <title>Multimedia</title>
+      </sect>
+    <sect categorycode="GNOME|Settings">
+      <title>Settings</title>
+      </sect>
+    <sect categorycode="GNOME|System">
+      <title>System</title>
+      </sect>
+    <sect categorycode="GNOME|Other">
+      <title>Other</title>
+      </sect>
+  </sect>
+
+  <sect categorycode="KDE">
+    <title>KDE</title>
+    <sect categorycode="KDE|Utilities">
+      <title>Utilities</title>
+      </sect>
+    <sect categorycode="KDE|Applications">
+      <title>Applications</title>
+      </sect>
+    <sect categorycode="KDE|Games">
+      <title>Games</title>
+      </sect>
+    <sect categorycode="KDE|Graphics">
+      <title>Graphics</title>
+      </sect>
+    <sect categorycode="KDE|Internet">
+      <title>Internet</title>
+      </sect>
+    <sect categorycode="KDE|Multimedia">
+      <title>Multimedia</title>
+      </sect>
+    <sect categorycode="KDE|Settings">
+      <title>Settings</title>
+      </sect>
+    <sect categorycode="KDE|System">
+      <title>System</title>
+      </sect>
+    <sect categorycode="KDE|Programs">
+      <title>Programs</title>
+      </sect>
+    <sect categorycode="KDE|Development">
+      <title>Development</title>
+      </sect>
+    <sect categorycode="KDE|Other">
+      <title>Other</title>
+      </sect>
+  </sect>
+
+  <sect categorycode="System">
+    <title>System</title>
+    <sect categorycode="System|Administration">
+      <title>Administration</title>
+      <sect categorycode="System|Administration|Backups">
+        <title>Backups</title>
+        <sect categorycode="System|Administration|Backups|Local">
+          <title>Local</title>
+          </sect>
+        <sect categorycode="System|Administration|Backups|Remote">
+          <title>Remote</title>
+          </sect>
+      </sect>
+      <sect categorycode="System|Administration|Filesystems">
+        <title>Filesystems</title>
+        </sect>
+      <sect categorycode="System|Administration|Networking">
+        <title>Networking</title>
+        <sect categorycode="System|Administration|Networking|AppleTalk">
+          <title>AppleTalk</title>
+          </sect>
+        <sect categorycode="System|Administration|Networking|PPP">
+          <title>PPP</title>
+          </sect>
+        <sect categorycode="System|Administration|Networking|SMB">
+          <title>SMB</title>
+          </sect>
+        <sect categorycode="System|Administration|Networking|TCP/IP">
+          <title>TCP/IP</title>
+          </sect>
+        <sect categorycode="System|Administration|Networking|DNS">
+          <title>DNS</title>
+          </sect>
+        <sect categorycode="System|Administration|Networking|Other">
+          <title>Other</title>
+          </sect>
+      </sect>
+      <sect categorycode="System|Administration|Users">
+        <title>Users</title>
+        </sect>
+      <sect categorycode="System|Administration|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="System|Configuration">
+      <title>Configuration</title>
+      <sect categorycode="System|Configuration|Config Files">
+        <title>Config Files</title>
+        </sect>
+      <sect categorycode="System|Configuration|Configuration Tools">
+        <title>Configuration Tools</title>
+        </sect>
+      <sect categorycode="System|Configuration|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="System|Hardware">
+      <title>Hardware</title>
+      <sect categorycode="System|Hardware|Processor">
+        <title>Processor</title>
+        </sect>
+      <sect categorycode="System|Hardware|Storage">
+        <title>Storage</title>
+        </sect>
+      <sect categorycode="System|Hardware|Video">
+        <title>Video</title>
+        </sect>
+      <sect categorycode="System|Hardware|Input Devices">
+        <title>Input Devices</title>
+        </sect>
+      <sect categorycode="System|Hardware|Networking">
+        <title>Networking</title>
+        </sect>
+      <sect categorycode="System|Hardware|PCI/ISA/PCMCIA">
+        <title>PCI/ISA/PCMCIA</title>
+        </sect>
+      <sect categorycode="System|Hardware|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="System|Package Management">
+      <title>Package Management</title>
+      </sect>
+    <sect categorycode="System|Security">
+      <title>Security</title>
+      <sect categorycode="System|Security|Firewall">
+        <title>Firewall</title>
+        </sect>
+      <sect categorycode="System|Security|Intrusion Detection">
+        <title>Intrusion Detection</title>
+        </sect>
+      <sect categorycode="System|Security|Virus">
+        <title>Virus</title>
+        </sect>
+      <sect categorycode="System|Security|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="System|Services">
+      <title>Services</title>
+      <sect categorycode="System|Services|HTTP">
+        <title>HTTP</title>
+        </sect>
+      <sect categorycode="System|Services|FTP">
+        <title>FTP</title>
+        </sect>
+      <sect categorycode="System|Services|SMB">
+        <title>SMB</title>
+        </sect>
+      <sect categorycode="System|Services|SSH">
+        <title>SSH</title>
+        </sect>
+      <sect categorycode="System|Services|Telnet">
+        <title>Telnet</title>
+        </sect>
+      <sect categorycode="System|Services|Syslog">
+        <title>Syslog</title>
+        </sect>
+      <sect categorycode="System|Services|BIND">
+        <title>BIND</title>
+        </sect>
+      <sect categorycode="System|Services|Printing">
+        <title>Printing</title>
+        </sect>
+      <sect categorycode="System|Services|Other">
+        <title>Other</title>
+        </sect>
+    </sect>
+    <sect categorycode="System|Other">
+      <title>Other</title>
+      </sect>
+  </sect>
+</ScrollKeeperContentsList>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-common-drilldown-arrow-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-common-drilldown-arrow_1_">
+	<rect style="opacity:0.3;fill:none;" width="48" height="48"/>
+	<rect x="8" y="8" style="opacity:0.3;fill:none;" width="32" height="32"/>
+	<path style="fill:#D0D2D3;" d="M23,9.001c-8.285,0-15,6.716-15,15s6.715,15,15,15s15-6.716,15-15S31.284,9.001,23,9.001z
+		 M29.101,24.603l-7.961,7.96c-0.262,0.264-0.692,0.264-0.956,0l-1.126-1.125c-0.263-0.263-0.263-0.693,0-0.957l6.422-6.422
+		l-6.537-6.54c-0.264-0.262-0.264-0.691,0-0.955l1.126-1.126c0.263-0.264,0.693-0.264,0.956,0l7.962,7.961
+		c0.092,0.093,0.141,0.209,0.168,0.328C29.35,23.992,29.34,24.363,29.101,24.603z"/>
+</g>
+</svg>

@@ -1,0 +1,5 @@
+[D-BUS Service]
+Interface=com.nokia.DuiControlPanelIf
+Name=com.nokia.DuiControlPanel
+Exec=/usr/bin/invoker --type=m /usr/bin/duicontrolpanel.launch -servicefw 
+

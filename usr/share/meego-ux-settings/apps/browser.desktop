@@ -1,0 +1,30 @@
+[Desktop Entry]
+Type=ControlPanelApplet
+Name=Browser
+Name[zh_TW]=瀏覽器
+Name[zh_CN]=浏览器
+Name[tr]=Tarayıcı
+Name[sv]=Webbläsare
+Name[ru]=Браузер
+Name[pt_PT]=Navegador
+Name[pt_BR]=Navegador
+Name[pl]=Przeglądarka
+Name[no]=Nettleser
+Name[nl]=Browser
+Name[ko]=브라우저
+Name[ja]=ブラウザー
+Name[it]=Browser
+Name[hu]=Böngésző
+Name[fr]=Navigateur
+Name[fi]=Selain
+Name[es]=Navegador
+Name[en_US]=Browser
+Name[en_GB]=Browser
+Name[el]=Πρόγραμμα περιήγησης
+Name[de]=Browser
+Name[da]=Browser
+Name[cs]=Prohlížeč
+Icon=web
+
+[MTS]
+Part=/usr/share/meego-ux-settings/Browser/BrowserSettings.qml

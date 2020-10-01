@@ -1,0 +1,52 @@
+/* MToolbarStyle : MToolbarStyle */
+MToolbarTabStyle {
+    /* inherited from MWidgetStyle */
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    background-opacity: 0.0;
+
+    preferred-size: -1 $HEIGHT_NAVIGATIONBAR;
+    minimum-size: -1 $HEIGHT_NAVIGATIONBAR;
+    maximum-size: -1 $HEIGHT_NAVIGATIONBAR;
+}
+
+MToolbarTabStyle.Portrait {
+    background-opacity: 1.0;
+}
+
+MButtonStyle[toolbartab] {
+
+    background-image: meegotouch-button-navigationbar-tab-background 2px 2px 2px 2px;
+
+    minimum-size: 8mm $HEIGHT_NAVIGATIONBAR;
+    preferred-size: -1 $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 100% $HEIGHT_NAVIGATIONBAR;
+
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+MButtonStyle[toolbartab]:pressed {
+    background-opacity: 1.0;
+    background-image: meegotouch-button-navigationbar-tab-background-pressed 2px 2px 2px 2px;
+}
+
+MButtonStyle[toolbartab]:selected {
+    background-opacity: 1.0;
+    background-image: meegotouch-button-navigationbar-tab-background-selected 2px 2px 2px 2px;
+}

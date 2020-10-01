@@ -1,0 +1,311 @@
+2009-09-18  Alexander Larsson  <alexl@redhat.com>
+
+	* po/*:
+	Sync to latest versions from the translation project
+
+2009-09-18  Alexander Larsson  <alexl@redhat.com>
+
+	* autogen.sh:
+	* configure.ac:
+	Switch to automake 1.11
+
+2009-09-18  Alexander Larsson  <alexl@redhat.com>
+
+	* translate.c:
+	Add "Downloads" and "downloads"
+
+	* user-dirs.defaults:
+	Switch DOWNLOAD to "Downloads" by default to match
+	the other names being in plural. (#23796)
+
+2008-10-24  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dir:
+	Fix bashisms.
+	Patch from Lei Zhang <thestig@google.com>
+
+2008-02-12  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Post release version bump
+
+=== xdg-user-dirs 0.10 ===
+
+2008-02-12  Alexander Larsson  <alexl@redhat.com>
+
+	* NEWS:
+	Update for release
+
+2007-10-16  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dir-lookup.c:
+	Handle out of memory and compile with C++ compiler. (#12738)
+	Patch from Christian Persch 
+
+2007-08-21  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Post release version bump
+
+=== xdg-user-dirs 0.9 ===
+
+2007-08-21  Alexander Larsson  <alexl@redhat.com>
+
+	* NEWS: 
+	* configure.ac:
+	Bump version to 0.9
+
+2007-08-20  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c (get_config_files):
+	Don't free getenv data
+
+2007-07-26  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c:
+	Look for translations in XDG_DATA_DIRS if localedir doesn't exist.
+	This is useful for relocatable builds.
+	Patch from Lei Zhang <thestig@google.com>
+
+2007-06-11  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c: (save_user_dirs), (create_dirs):
+	More fixed for NULL dirs
+
+2007-06-11  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c: (find_dir):
+	Handle dir being NULL.
+	Reported by Daniel Macks
+
+2007-05-16  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c (load_user_dirs):
+	Remove debug spew
+	
+	* configure.ac: 
+	* NEWS:
+	Update for 0.8
+
+=== xdg-user-dirs 0.7 ===
+
+2007-05-16  Alexander Larsson  <alexl@redhat.com>
+
+	* NEWS: 
+	* configure.ac:
+	Update for 0.7
+
+2007-05-16  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c:
+	Handle keys set to $HOME without recreating the original dir.
+
+=== xdg-user-dirs 0.6 ===
+
+2007-04-11  Alexander Larsson  <alexl@redhat.com>
+
+	* NEWS:
+	Update for release
+
+	* configure.ac:
+	Bump version to 0.6
+
+2007-04-11  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dir-lookup.c:
+	Add xdg_user_dir_lookup_with_fallback
+	Add doc strings
+	
+2007-04-11  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.am (INCLUDES): 
+	* xdg-user-dir-lookup.c:
+	Allow xdg-user-dir-lookup.c to be included without modifications
+	Define STANDALONE_XDG_USER_DIR_LOOKUP to include main
+
+2007-04-11  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c (create_dirs):
+	Print out correct directory on --force
+
+=== xdg-user-dirs 0.5 ===
+
+2007-03-26  Alexander Larsson  <alexl@redhat.com>
+
+	* NEWS: 
+	* configure.ac:
+	Release 0.5 (new translations)	
+
+2007-03-08  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac: 
+	* xdg-user-dirs-update.c:
+	Get the right declaration of iconv to avoid warnings.
+
+=== xdg-user-dirs 0.4 ===
+
+2007-03-07  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Bump version to 0.4
+
+	* NEWS:
+	Update for release.
+
+2007-03-07  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.am (libraries):
+	Add LIBINTL to libraries (reported by Daniel Macks)
+
+=== xdg-user-dirs 0.3 ===
+
+2007-03-01  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Bump version to 0.3
+	
+	* NEWS:
+	Update for release
+
+	* xdg-user-dirs-update.c:
+	mkdir ~/.config if needed
+
+2007-03-01  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Add AM_PROG_MKDIR_P	
+
+2007-03-01  Alexander Larsson  <alexl@redhat.com>
+
+	* AUTHORS:
+	Add myself
+
+2007-03-01  Alexander Larsson  <alexl@redhat.com>
+
+	* autogen.sh:
+	Require automake 1.9
+
+=== xdg-user-dirs 0.2 ===
+
+2007-03-01  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.am:
+	Add xdg-user-dir to EXTRA_DIST
+
+	* configure.ac:
+	Bump to 0.2
+
+	* NEWS:
+	Update for release
+
+2007-03-01  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c (save_user_dirs):
+	Use atomic rename-over-target when saving
+	user-dirs.dirs.
+
+2007-02-28  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.am:
+	Handle xdg-user-dir as script, not program.
+	
+	* xdg-user-dirs-update.c:
+	Fix warnings
+
+=== xdg-user-dirs 0.1 ===
+
+2007-02-28  Alexander Larsson  <alexl@redhat.com>
+
+	* NEWS:
+	Update for release
+
+	* configure.ac:
+	Update version to 0.1	
+
+2007-02-28  Alexander Larsson  <alexl@redhat.com>
+
+	* README:
+	Add reference to web page
+
+2007-02-28  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c:
+	Add support for setting a directory (--set)
+	
+2007-02-28  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c:
+	Add support for --dummy-output.
+	Save used locale on initial write or forced write.
+
+	* Makefile.in:
+	Remove from cvs
+
+2007-02-27  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.am:
+	Remove ACLOCAL_AMFLAGS
+
+2007-02-26  Alexander Larsson  <alexl@redhat.com>
+
+	* translate.c:
+	Add Applications to translate.c
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Bump version to 0.0.4
+
+	* xdg-user-dirs-update.c:
+	* xdg-user-dir-lookup.c:
+	support absolute filenames as user dirs
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* translate.c (strings):
+	Add Projects
+	
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Bump version to 0.0.3
+
+	* xdg-user-dir-lookup.c:
+	Relicense as MIT
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Bump version to 0.0.2
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.am:
+	* xdg-user-dir
+	Added xdg-user-dir shellscript
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* translate.c:
+	Add more possible strings to use
+	Add non-capitalized version of strings
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* user-dirs.conf:
+	Add comments and filename_encoding
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* user-dirs.defaults:
+	Photos->Pictures
+	Add videos
+
+2007-02-23  Alexander Larsson  <alexl@redhat.com>
+
+	* xdg-user-dirs-update.c:
+	Add support for specifying filename encoding
+	
+	
+	
+

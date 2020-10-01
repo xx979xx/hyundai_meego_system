@@ -1,0 +1,46 @@
+#! /bin/sh
+
+if test $# != 1; then
+  echo usage: update-gtk-immodules host_triplet 1>&2
+  exit 1
+fi
+ 
+umask 022
+# Deriving /etc/gtk-2.0/$host location
+#
+# autoconf changes linux to linux-gnu
+case "$1" in
+  *linux) host="$1-gnu"
+  ;;
+  *) host=$1
+  ;;
+esac
+
+# autoconf uses powerpc not ppc
+host=`echo $host | sed "s/^ppc/powerpc/"`
+
+# We have had problems in the past with build systems
+# changing host from i386 to i686 and appending/dropping
+# the -gnu suffix, so try to match up the $host we got
+# with whats actually there.
+if [ ! -d /etc/gtk-2.0/$host ]; then
+   case "$host" in
+     i?86*)
+         for d in $(ls -d /etc/gtk-2.0/i?86*); do
+           host=$(basename $d)
+           break
+         done
+     ;;
+   esac
+fi
+
+FILE=/etc/gtk-2.0/$host/gtk.immodules
+
+case "$host" in
+  alpha*|ia64*|powerpc64*|s390x*|x86_64*)
+   /usr/bin/gtk-query-immodules-2.0-64 > $FILE
+   ;;
+  *)
+   /usr/bin/gtk-query-immodules-2.0-32 > $FILE
+   ;;
+esac

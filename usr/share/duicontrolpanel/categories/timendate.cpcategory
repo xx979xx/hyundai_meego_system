@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name="Time & Date"
+Name-logical-id=qtn_sett_main_timedate
+
+Value="Time, Date, Region"
+Value-logical-id=qtn_sett_main_clock_label2
+
+Icon=icon-m-settings-time-date
+
+Aliases=
+Translation-catalogs=
+
+Order=80
+

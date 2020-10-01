@@ -1,0 +1,35 @@
+res 72000
+hor 1
+vert 1
+lowerwchar 300
+wcharkern 400
+sizescale 1000
+unitwidth 1000
+sizes 1000-10000000 0
+styles R I B BI
+family T
+fonts 11 0 0 0 0 0 SS S ZD ZDR M G
+fontset B G 2E00..9FFF
+fontset AB G 2E00..9FFF
+fontset BMB G 2E00..9FFF
+fontset CB G 2E00..9FFF
+fontset HB G 2E00..9FFF
+fontset HNB G 2E00..9FFF
+fontset NB G 2E00..9FFF
+fontset PB G 2E00..9FFF
+fontset TB G 2E00..9FFF
+fontset - M 2E00..9FFF
+fontset B G FF00..FFEF
+fontset AB G FF00..FFEF
+fontset BMB G FF00..FFEF
+fontset CB G FF00..FFEF
+fontset HB G FF00..FFEF
+fontset HNB G FF00..FFEF
+fontset NB G FF00..FFEF
+fontset PB G FF00..FFEF
+fontset TB G FF00..FFEF
+fontset - M FF00..FFEF
+tcommand
+postpro grops
+broken 7
+papersize /etc/papersize a4

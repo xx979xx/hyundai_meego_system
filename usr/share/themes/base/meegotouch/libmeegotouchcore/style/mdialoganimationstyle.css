@@ -1,0 +1,112 @@
+MDialogAnimationStyle {
+    title-bar-object-name: "MDialogTitleBar";
+    contents-viewport-object-name: "MDialogContentsViewport";
+    button-box-object-name: "MDialogButtonBox";
+
+    title-bar-animation-delay: 250;
+    contents-viewport-animation-delay: 200;
+    button-box-animation-delay: 250;
+
+    title-bar-animation-duration: 400;
+    title-bar-animation-distance: 25;
+    title-bar-animation-easing-curve: overshotbezier;
+
+    contents-viewport-opacity-animation-duration: 550;
+    contents-viewport-opacity-animation-easing-curve: outexpo;
+
+    contents-viewport-scale-animation-duration: 550;
+    contents-viewport-scale-animation-easing-curve: outexpo;
+
+    button-box-animation-duration: 400;
+    button-box-animation-distance: 25;
+    button-box-animation-easing-curve: overshotbezier;
+
+    scale: 0.8;
+    opacity: 1;
+}
+
+MObjectMenu MDialogAnimationStyle {
+    title-bar-object-name: "ObjectMenuTitleArea";
+    contents-viewport-object-name: "ObjectMenuActionViewport";
+    button-box-object-name: "";
+}
+
+MDialogAnimationStyle#In {
+    title-bar-animation-delay: 250;
+    contents-viewport-animation-delay: 200;
+    button-box-animation-delay: 250;
+
+    title-bar-animation-duration: 400;
+    title-bar-animation-distance: 25;
+    title-bar-animation-easing-curve: overshotbezier;
+
+    contents-viewport-opacity-animation-duration: 550;
+    contents-viewport-opacity-animation-easing-curve: outexpo;
+
+    contents-viewport-scale-animation-duration: 550;
+    contents-viewport-scale-animation-easing-curve: outexpo;
+
+    button-box-animation-duration: 400;
+    button-box-animation-distance: 25;
+    button-box-animation-easing-curve: overshotbezier;
+}
+
+MDialogAnimationStyle#Out {
+    title-bar-animation-delay: 0;
+    contents-viewport-animation-delay: 0;
+    button-box-animation-delay: 0;
+
+    title-bar-animation-duration: 125;
+    title-bar-animation-distance: 30;
+    title-bar-animation-easing-curve: overshotbezier;
+
+    contents-viewport-opacity-animation-duration: 100;
+    contents-viewport-opacity-animation-easing-curve: inquint;
+
+    contents-viewport-scale-animation-duration: 100;
+    contents-viewport-scale-animation-easing-curve: inquint;
+
+    button-box-animation-duration: 125;
+    button-box-animation-distance: 30;
+    button-box-animation-easing-curve: overshotbezier;
+}
+
+MMessageBox MDialogAnimationStyle#In {
+    title-bar-animation-delay: 0;
+    contents-viewport-animation-delay: 200;
+    button-box-animation-delay: 250;
+
+    title-bar-animation-duration: 0;
+    title-bar-animation-distance: 0;
+    title-bar-animation-easing-curve: linear;
+
+    contents-viewport-opacity-animation-duration: 550;
+    contents-viewport-opacity-animation-easing-curve: overshotbezier;
+
+    contents-viewport-scale-animation-duration: 550;
+    contents-viewport-scale-animation-easing-curve: overshotbezier;
+
+    button-box-animation-duration: 400;
+    button-box-animation-distance: 25;
+    button-box-animation-easing-curve: overshotbezier;
+}
+
+MMessageBox MDialogAnimationStyle#Out {
+    title-bar-animation-delay: 0;
+    contents-viewport-animation-delay: 0;
+    button-box-animation-delay: 0;
+
+    title-bar-animation-duration: 0;
+    title-bar-animation-distance: 0;
+    title-bar-animation-easing-curve: linear;
+
+    contents-viewport-opacity-animation-duration: 100;
+    contents-viewport-opacity-animation-easing-curve: inquint;
+
+    contents-viewport-scale-animation-duration: 100;
+    contents-viewport-scale-animation-easing-curve: inquint;
+
+    button-box-animation-duration: 100;
+    button-box-animation-distance: 30;
+    button-box-animation-easing-curve: overshotbezier;
+}

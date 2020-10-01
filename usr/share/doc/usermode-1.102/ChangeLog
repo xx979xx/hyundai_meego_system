@@ -1,0 +1,676 @@
+2009-10-05  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.102.
+	* NEWS: Update.
+
+	* consolehelper-gtk.8: New file, based on a Debian man page by
+	Christopher Cramer.
+	* pam-panel-icon.1: New file.
+	* Makefile.am (dist_man_MANS): Add consolehelper-gtk.8 and
+	pam-panel-icon.1.
+	* usermount.1: Document userformat better.
+	* consolehelper.8.in (BUGS): Remove text referring to
+	developer.redhat.com.
+
+2009-09-15  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.101.
+	* NEWS: Update.
+	* po/LINGUAS: Update.
+
+2009-06-15  Miloslav Trmač  <mitr@redhat.com>
+
+	* userinfo.c (create_userinfo_window, on_ok_clicked, main): Port from
+	libglade to GtkBuilder.
+	* userinfo.ui: New file, replaces ...
+	* usermode.glade: ... this.
+	* Makefile.am (EXTRA_DIST): Remove usermode.glade.
+	(AM_CFLAGS): Use GTK_CFLAGS instead of LIBGLADE_CFLAGS.
+	(dist_pkgdata_DATA): Rename from pkgdata_DATA.  Ship usermode.ui instead
+	of usermode.glade
+	(userinfo_LDADD): Use with GTK_LIBS instead of LIBGLADE_LIBS.
+	* configure.ac: Remove check for libglade.  Update minimum gtk+ version
+	to 2.12.
+	* po/POTFILES.in: Replace usermode.glade with usermode.ui.
+
+	* Makefile.am (EXTRA_DIST): Remove files that are marked for
+	distribution using the dist_ prefix.
+	(dist_bin_SCRIPTS): Rename from bin_SCRIPTS.
+	(dist_man_MANS): Rename from man_MANS.
+	(man_MANS): Rename from dist_man_MANS.  Update CLEANFILES.
+	(dist_pixmap_DATA): Rename from pixmap_DATA.
+
+2009-06-14  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (userhelper_grab_keyboard)
+	(userhelper_handle_childout)
+	* usermount.c (format, create_usermount_window): Use accessor functions
+	instead or referencing the structure members directly (as detected using
+	-DGSEAL_ENABLE).
+
+2009-04-14  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.100.
+	* NEWS: Update.
+	* po/LINGUAS: Update.
+
+	* autogen.sh
+	* Makefile.am (EXTRA_DIST, DISTCLEANFILES): Update for newer intltool.
+
+2008-11-27  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper-wrap.c (userhelper_handle_childout)
+	* usermount.c (format, create_usermount_window): Don't use interfaces
+	deprecated in GTK+ 2.14.
+
+2008-11-11  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (send_request): Fix printf format mismatch.  Make sure
+	data is not too large.
+
+2008-11-11  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.99.
+	* NEWS: Update.
+
+	* userhelper.h: Document request and response formats.
+	(UH_REQUEST_SIZE_DIGITS): New macro.
+	(UH_SN_ID): Use a printable character value.
+	* userhelper.c (send_request, send_request_int): New functions.
+	(converse_pipe, prompt_pipe): Use send_request and send_request_int.
+	* userhelper-wrap.c (userhelper_handle_childout): Rename from
+	userhelper_parse_childout.  Receive an already parsed message as
+	parameters.
+	(userhelper_read_childout): Handle the updated request format.
+
+2008-10-28  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.98.1.
+	* NEWS: Update.
+	* po/LINGUAS: Update.
+
+2008-08-03  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Release 1.98.
+	* NEWS: Update.
+
+	* userhelper-wrap.c (struct response): Remove member user.  New memeber
+	user_label.
+	(userhelper_parse_childout): Create the "Authenticating as..." label
+	as soon as the user name is known, not only when creating the dialog
+	to ask questions.  (Also causes the label to be shown in non-modal
+	dialogs with no prompts.)
+
+	* userhelper-wrap.c (userhelper_parse_childout): Left-justify all
+	messages.
+
+	* userhelper-wrap.c (struct response): New member
+	dialog_response_handler.
+	(userhelper_dialog_response): New function.
+	(userhelper_parse_childout): Support non-modal dialogs with no prompts.
+	Keep resp->table alive across such dialogs.  Don't unnecessarily zero
+	members of resp before freeing it.
+
+	* userhelper-wrap.c (debug_msg)
+	* userhelper.c (debug_msg)
+	* userinfo.c (debug_msg): New macro.  Use it instead of surrounding
+	debug prints with #ifdef DEBUG_USERHELPER.
+
+2008-05-17  Miloslav Trmač  <mitr@redhat.com>
+
+	* userhelper.c (wrap): Remove /usr/X11R6/bin from the default path.
+	Original patch by Michel Samia <msamia@redhat.com>.
+
+2008-05-01  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.ac: Rename from configure.in.  Version 1.97.
+	* NEWS: Update.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Don't interpret '_'
+	in prompts as mnemonic character markup.
+
+2008-04-10  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Version 1.96.1.
+	* NEWS: Update.
+
+2008-03-23  Miloslav Trmač  <mitr@redhat.com>
+
+	* po/hu.po: Updated Hungarian translation by Lónyai Gergely
+	<aleph@mandriva.org>.
+
+2008-02-29  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Version 1.96.
+	* NEWS: Update.
+
+	* userhelper.c (selinux_enabled, get_init_context, setup_selinux_exec)
+	(setup_selinux_root_exec, setup_selinux_user_exec): Remove.
+	(wrap): Don't override SELinux contexts of created processes.
+	(main): Inline the is_selinux_enabled() call now that selinux_enabled
+	is not used anywhere else.
+
+2008-02-25  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Version 1.95.
+	* NEWS: Update.
+
+	* userhelper.c (wrap): Fix returning the exit code of the child process
+	if (session).
+
+	* README: Add some content.
+
+	* userinfo.desktop.in (Icon)
+	* usermount.desktop.in (Icon)
+	* userpasswd.desktop.in (Icon): Remove extension from the icon name
+	to allow non-PNG themes.
+
+	* userinfo.desktop.in (Encoding)
+	* usermount.desktop.in (Encoding)
+	* userpasswd.desktop.in (Encoding): Remove (the item is obsolete).
+
+2008-02-24  Miloslav Trmač  <mitr@redhat.com>
+
+	* userinfo.desktop.in (Categories): Add missing trailing semicolon.
+
+	* po/POTFILES.in: Add gsmclient.c.  Sort alphabetically.
+
+	* Makefile.am (HGTAG): Replace CVSTAG.
+	(tag, forcetag, archive): Update to use Mercurial.
+
+2008-01-10  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Release 1.94.
+	* NEWS: Update.
+
+	* po/sr@latin.po: Rename from po/sr@Latn.po.
+	* po/LINGUAS: Update.
+
+	* userhelper.8.in: Beautify.
+
+	* shvar.c (relative_to, svInclude): New functions.
+	(svOpenFile): Add support for including other files.
+	Original patch by Carlo de Wolf <cdewolf@redhat.com>.
+	* userhelper.8.in: Document wrapper configuration file format.
+
+2007-10-16  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Release 1.93.1.
+	* NEWS: Update.
+
+	* po/no.po: Remove (obsoleted by po/nb.po).
+	* po/LINGUAS: Remove "no".
+
+	* userhelper-wrap.c (trap_push, trap_pop): Avoid a warning.
+
+	* userhelper-wrap.c: Don't #include <libwnck/libwnck.h>.
+	* configure.in: Don't require libwnck.
+	* Makefile.am (AM_CFLAGS, userinfo_LDADD, userpasswd_LDADD)
+	(consolehelper_gtk_LDADD): Don't link with libwnck.
+
+2007-09-29  Miloslav Trmač  <mitr@redhat.com>
+
+	* po/LINGUAS: Update.
+
+2007-09-05  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Release 1.93.
+	* NEWS: Update.
+
+	* userhelper-wrap.c (struct response): Remove member ready.
+	(userhelper_parse_childout): Use prompt_type directly instead of
+	resp->ready.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Only respond with
+	UH_SYNC_POINT once to an UH_SYNC_POINT with no responses requested,
+	not after each new message.
+
+2007-06-11  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Release 1.92.
+	* NEWS: Update.
+
+	* userinfo.desktop.in
+	* usermount.desktop.in
+	* userpasswd.desktop.in: Add the categories that are added by
+	(make install) or the Fedora spec file.
+	* Makefile.am (install-data-local): Don't add categories to desktop
+	files.  Simplify.
+
+	* Makefile.am (EXTRA_DIST, man_MANS, dist_man_MANS, CLEANFILES): Fix
+	distcheck.
+
+	* configure.in: Add AM_PROG_CC_C_O.
+	(BINDIR, SBINDIR, DATADIR, LOCALEDIR, SYSCONFDIR): Remove.  These
+	definitions are expanded at the wrong time and tend to be expanded
+	incorrectly.
+	(AC_CONFIG_FILES): Remove consolehelper.8 and userhelper.8.
+	* Makefile.am (AM_CPPFLAGS, BINDIR_CPPFLAGS, PIXMAPDIR_CPPFLAGS)
+	(SBINDIR_CPPFLAGS, userhelper_CPPFLAGS, userinfo_CPPFLAGS)
+	(usermount_CPPFLAGS, userpasswd_CPPFLAGS, consolehelper_CPPFLAGS)
+	(consolehelper_gtk_CPPFLAGS, pam_panel_icon_CPPFLAGS): New variables.
+	(consolehelper.8, userhelper.8): New rules.
+	(AM_CFLAGS): Move -DGETTEXT_PACKAGE to pam_panel_icon_CPPFLAGS.
+	* userinfo.c (create_userinfo_window): Use PKGDATADIR.
+	* pam-panel-icon.c (refresh_tray_icon)
+	* userhelper-wrap.c (userhelper_parse_childout)
+	* userinfo.c (create_userinfo_window)
+	* usermount.c (create_usermount_window): Use PIXMAPDIR.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Fix a memory leak.
+
+	* userhelper.c (wrap, main): Use the locale's charset.
+	(converse_console): Don't re-set the charset to the locale's charset,
+	it is now the default.
+	* userhelper-wrap.c (write_childin_string): New function.
+	(userhelper_write_childin): Convert written data to the locale's
+	charset if possible.  Simplify and reformat.
+	(userhelper_runv): Convert data read from the child from the locale's
+	charset to UTF-8.
+
+	* userhelper-wrap.c: Remove unnecessary #includes.
+
+	* userinfo.c: Remove unnecessary #includes.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Modify to handle only
+	one line.  Exit if the commmand code is invalid.
+	(userhelper_read_childout): Always read a complete line, not what
+	partial line happens to be read.  Repeat while there are lines left.
+	(userhelper_runv): Don't assume the communication is in UTF-8.  Set the
+	only expected line terminator.  Don't make the channel non-blocking to
+	make sure a partial line is always read until it is finished.
+
+	* userhelper-wrap.c (struct message): Remove typedef.
+
+2007-06-09  Miloslav Trmač  <mitr@redhat.com>
+
+	* configure.in: Release 1.91.2.
+	* NEWS: Update.
+
+2007-06-09  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper.c (converse_console, converse_pipe): Don't replace
+	/.*password.*/i by "Password for %s".
+	(converse_console): Tell the user what user he should authenticate as.
+	* userhelper-wrap.c (userhelper_parse_childout): Don't initialize
+	resp->user from guessed data, always keep the UH_USER value.  Tell the
+	user what user he should authenticate as.
+
+2007-04-19  Miloslav Trmac  <mitr@redhat.com>
+
+	* configure.in: Release 1.91.1.
+	* NEWS: Update.
+
+	* po/LINGUAS: Note that empty translations are removed.
+
+2007-03-26  Miloslav Trmac  <mitr@redhat.com>
+
+	* consolehelper.c: Allow building consolehelper-nox.c without GTK+
+	headers.  Patch by Robert Scheck <redhat-bugzilla@linuxnetz.de>.
+
+2007-03-19  Miloslav Trmac  <mitr@redhat.com>
+
+	* configure.in: Release 1.91.
+	* NEWS: Update.
+
+2007-03-17  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper.c (wrap): Preserve values of all environment variables
+	configured in KEEP_ENV_VARS.  Fix one of the memory leaks.
+	* userhelper.8.in (KEEP_ENV_VARS): Document variable.
+
+	* userhelper.c (wrap): Use a single "val" variable instead of
+	apps_banner, apps_sn, apps_domain, retry, noxoption.
+
+	* pam-panel-icon.c (handle_drop_response): Use a static variable for
+	the constant argv.
+
+	* configure.in: Add more warning flags.  Fix all "unused parameter"
+	warnings.  Add casts to silence all warnings caused by using char **
+	for argument lists.
+	(gccwerror): Process only if using gcc.
+	* gsmclient.c (gsm_client_get_type): Add a missing initializer.
+	(replace_one_prop): Don't shadow link ().
+	* pam-panel-icon.c (child_io_func): Make "message" a const char *.
+
+	* userdialogs.c (crate_message_box, create_error_box): Use
+	const gchar * for input strings.
+	* userdialogs.h (create_message_box, create_error_box): Update
+	prototypes.
+	* userhelper-wrap.c (userhelper_parse_exitstatus).  Update codes.create
+	prototype.
+	(userhelper_runv, userhelper_run): Use const char * for "path".
+	* userhelper-wrap.h (userhelper_runv, userhelper_run): Update
+	prototypes.
+	* userhelper.c (prompt_pipe): Initialize "error" when returning FALSE.
+	Remove dead code after an infinite cycle.
+	(shell_valid): Fix a thinko, change the correct variable when handling
+	empty shell names.
+	(wrap): Use const char * for saved environment values.
+	* usermount.c (format): Rename variable "format" to "fdformat" to avoid
+	shadowing the function name.
+
+2007-03-14  Miloslav Trmac  <mitr@redhat.com>
+
+	* pam-panel-icon.c (drop_menu_response_cb): Workaround a warning about
+	pointer and integer size mismatch.
+
+	* configure.in: Release 1.90.
+	* NEWS: Update.
+
+	* Makefile.am (AM_CFLAGS): Remove redundant -DDATADIR.
+	* userhelper.c (converse_pipe): Remove a redundant if.
+
+	* Makefile.am (AM_CFLAGS, install-data-local, uninstall-local)
+	(userinfo_LDADD): Clean up.
+
+	* userinfo.c (environ): Remove unnecessary declaration.
+	(create_userinfo_window): Use DATADIR.
+	(set_new_userinfo): Remove duplicate conditionals.
+	(main): Use LOCALEDIR.  Remove unnecessary gtk_set_locale ().
+
+	* userhelper.c (converse_pipe): Handle startup notification data after
+	UH_FALLBACK.
+
+	* userhelper-wrap.c (childout): Make local.
+	(childout_tag): Initialize to 0.
+	(struct message, struct response): Move from userhelper-wrap.h.
+	(struct message): Remove member message, it is an invalid pointer used
+	only for debugging.
+	(userhelper_fatal_error): Use a single static function.
+	(userhelper_parse_exitstatus): Use N_(), make the message list
+	a constant.
+	(userhelper_grab_keyboard): Move the #ifndef inside to avoid an #ifndef
+	at the caller.
+	(fake_respond_ok): Use the correct prototype.
+	(userhelper_parse_childout): Use isspace () correctly.  Use DATADIR.
+	Fix a memory leak.  Beautify.
+	(userhelper_child_exited): Update for g_child_watch_add ().
+	(userhelper_read_chilout): Update for GIOChannel usage.
+	(userhelper_runv): Use g_io_add_watch () instead of deprecated
+	gdk_input_add ().  Use g_child_watch_add () instead of VteReaper.  Only
+	call sysconf(_SC_OPEN_MAX) once.  Add a comment about STDIN_FILENO
+	validity.
+	(userhelper_run): Avoid unnecessary string copies.
+	* userhelper-wrap.h: Remove unnecessary #includes.
+	(UH_ACTION_AREA): Remove unused macro.
+	(userhelper_fatal_error): Remove prototype.
+	* marshal.list
+	* reaper.c
+	* reaper.h: Remove.
+	* Makefile.am (BUILT_SOURCES): Remove.
+	(EXTRA_DIST): Remove marshal.list.
+	(userhelper_LDADD): Clean up.
+	(consolehelper_gtk_SOURCES, userinfo_SOURCES, userpasswd_SOURCES): Drop
+	reaper.c, reaper.h, marshal.c and marshal.h.
+	(marshal.c, marshal.h): Remove.
+	* configure.in (GLIB_GENMARSHAL): Remove.
+	* consolehelper.c (userhelper_fatal_error)
+	* userinfo.c (userhelper_fatal_error)
+	* userpasswd.c (userhelper_fatal_error): Remove.
+
+	* Makefile.am (usermount_SOURCES): Add userdialogs.h.
+
+	* configure.in (SELINUX_LIBS): Remove unnecessary -lattr.
+
+	* pam-panel-icon.c (child_io_func): Use the parameter instead of
+	a global variable.
+
+	* userhelper.c: Remove unnecessary #includes.
+	(get_init_context): Avoid duplicate strlen() call.
+	(setup_selinux_exec): Gather common code from
+	setup_selinux_root_exec () and setup_selinux_user_exec ().
+	(setup_selinux_root_exec, setup_selinux_user_exec): Transparently
+	handle !WITH_SELINUX to avoid #ifdefs in the callers.
+	(fail_exit): Avoid duplicated code.
+	(read_reply): Don't unnecessarily clean the buffer.  Simplify.
+	(get_pam_string_item): Fix an aliasing violation.
+	(free_reply): New function.
+	(converse_pipe): Don't use g_malloc0 () and g_strdup () for strings
+	that will be free ()'d.  Fix memory leaks.
+	(converse_console): Fix messages allocation.  Fix memory leaks.
+	(gecos_parse): Fix comment.  Simplify.
+	(gecos_size): Use size_t.
+	(gecos_assemble): Use size_t.
+	(gecos_free): New function.
+	(shell_valid): Simplify.
+	(get_invoking_user): Fix comment.
+	(get_user_for_auth): Don't use free () where g_free () should be used.
+	Fix a memory leak.
+	(chfn): Fix a debug message.  Fix memory leaks.
+	(construct_cmdline): Use g_strjoinv ().
+	(wrap): Don't allocate copies of data for setenv ().  Use intmax_t for
+	uid_t output.  Use g_strconcat () instead of g_strdup_printf (). Fix
+	some of the memory leaks.  Use LOCALEDIR.  Use waitpid () instead of
+	wait4 (), which is not specified by SUSv3.
+	(main): Use LOCALEDIR.  Fix a memory leak.
+
+	* usermount.c (build_mountinfo_list): Make dev a char *, it is passed
+	to free ().
+
+	* pam-panel-icon.c (main, refresh_tray_icon): Load the pixbuf when
+	initializing the status icon, not when starting the program.
+	(refresh_tray_icon): Only initialize the status icon when it needs to
+	be visible, saving 312 kB of DRS as reported by ps(1).
+
+	* userpasswd.c: Don't #include "userdialogs.h",  use <libintl.h>
+	instead.
+	(main): Use LOCALEDIR.  Remove unnecessary gtk_set_locale ().
+
+2007-03-13  Miloslav Trmac  <mitr@redhat.com>
+
+	* usermount.c (ACTION_FORMAT, ACTION_MOUNT): Use an enum.
+	(struct mountinfo): Remove members mount, format, mount_label.  All
+	users updated.
+	(is_mounted): Replace check_is_mounted (), remove unnecessary checks,
+	modify to be usable from build_mountinfo_list ().
+	(build_mountinfo_list): Use libblkid for LABEL= and UUID= resolution.
+	Add support for "user" and "users".  Simplify and clean up.
+	(format): Remove copy&pasted info->mounted changes.  FIx memory leaks.
+	(response_callback): Use the correct prototype.  Remove info->mounted
+	changes, rely on changed_callback () instead.  Fix a memory leak.
+	(create_usermount_window): Use DATADIR.  Remove local variables
+	duplicating static variables.
+	(main) Use LOCALEDIR.  Remove unnecessary gtk_set_locale ().
+
+	* Makefile.am (usermount_LDADD): Link with libblkid.
+
+	* usermount.1: Fix a typo.
+
+	* pam-panel-icon.c (RESPONSE_DO_NOTHING): Use a positive number to
+	avoid conflicts with GTK+.
+
+	* Makefile.am (usermount_LDADD, userpasswd_LDADD): Use GTK_LIBS instead
+	of LIBGLADE_LIBS.  Clean up.
+	* userdialogs.c: Remove unnecessary #include.
+	* usermount.c: Remove all libglade references.
+	* usermode.glade (query_box, message_box): Remove unused dialogs.
+	* usermode.glade1: Remove obsolete file.
+
+2007-03-11  Miloslav Trmac  <mitr@redhat.com>
+
+	* userdialogs.c (relay_value, create_query_box_i, create_query_box)
+	(create_invisible_query_box): Remove, the functions were used only in
+	test-userdialog.c.
+	* userdialogs.h: Remove unused includes.
+	(UD_OK_TEXT, UD_HELP_TEXT, UD_CANCEL_TEXT)
+	(UD_EXIT_TEXT): Remove unused macros.
+	(create_query_box, create_invisible_query_box): Remove declarations.
+	* userhelper-wrap.c
+	* userinfo.c: #include <glib/gi18n.h>.
+
+	* test-userdialog.c (hello_world): Make static.
+	(main): Remove create_query_box () and create_invisible_query_box ()
+	examples.
+	(hello_world2): Remove.
+
+	* test-userdialog.c (main): Use LOCALEDIR.  Don't unnecessarily call
+	gtk_set_locale ().  Remove all libglade references.
+
+	* Makefile.am (test_userdialog_LDADD): Use GTK_LIBS instead of
+	LIBGLADE_LIBS.  Clean up.
+
+	* shutdown.pamd.6x: Remove obsolete configuration.
+	* Makefile.am (EXTRA_DIST): Remove shutdown.pamd.6x.
+
+	* pam-panel-icon.c (main): Use LOCALEDIR.
+
+	* pam-panel-icon.c (child_io_source, child_watch_source): New variables.
+	(running_init_pid): Remove.
+	(handle_drop_response): Split from drop_menu_response_cb.  Don't
+	duplicate dialog creation code.
+	(drop_menu_response_cb): Use the correct prototype.  All users updated.
+	(drop_dialog_response_cb): Use the correct prototype.  Use
+	handle_drop_response ().
+	(drop_menu_items): Make local to handle_popup ().
+	(child_pid): Make local to launch_checker ().
+	(handle_button): Split and integrate into callers.
+	(handle_popup): Use gtk_status_icon_position_menu ().
+	(refresh_tray_icon): Replace ensure_tray_icon (),
+	show_unlocked_icon (), show_locked_icon ().  Use
+	gtk_status_icon_set_visible () instead of switching the pixbuf between
+	NULL and locked_pixbuf.
+	(child_io_func): Remove dead running_init_pid handling.  Don't create
+	copies of the status messages.  Don't poll for the exit status of the
+	checker.
+	(child_watch_func): New function.
+	(launch_checker): Clean up after the previous launch instead of
+	assuming the callers do it.  Watch the checker's exit.
+	(session_save_callback, session_die_callback): Use the correct
+	prototype.
+
+	* pam-panel-icon.c (tray_icon, drop_dialog): Make a void * to avoid
+	an aliasing violation in g_object_add_weak_pointer ().
+	(add_weak_widget_pointer, add_weak_status_icon_pointer): Integrate into
+	the callers.
+
+	* Makefile.am (EXTRA_DIST, INIT_APPS): Remove remaining traces of
+	pam_timestamp_init.
+
+	* pam_timestamp_init.console
+	* pam_timestamp_init.pamd: Remove.
+
+	* pam-panel-icon.c: Remove !HAVE_GTK20 code.
+	* configure.in (HAVE_GTK20): Assume GTK+ 2.10, remove the conditional.
+	* Makefile.am (EXTRA_DIST, EGGFILES, EGGDIR, regenerate-build-sources):
+	Remove eggtrayicon and related files.
+	(pam_panel_icon_SOURCES): Don't use eggtrayicon.
+	* egg-marshal.c
+	* eggmarshalers.list
+	* eggtrayicon.c
+	* eggtrayicon.h
+	* update-from-egg.sh: Remove.
+
+	* configure.in: Get pkg-config data of GTK+.
+	(SELINUX_LIBS): New variable, use separately from LIBS.
+	* Makefile.am (consolehelper_LDADD, consolehelper_gtk_LDADD)
+	(pam_panel_icon_LDADD): Use GTK_LIBS instead of LIBGLADE_LIBS.  Clean
+	up.
+	(pam_panel_icon_SOURCES): Remove unnecessary marshal.c.
+	(userhelper_LDADD): Use SELINUX_LIBS.
+
+2007-03-10  Miloslav Trmac  <mitr@redhat.com>
+
+	* pam-panel-icon.c
+	* userdialogs.h
+	* usermount.c: #include <glib/gi18n.h> instead of #defining _() and
+	N_() manually.
+	* userhelper.c: #include <glib/gi18n.h>
+	* userhelper.h: Don't #define _(), it is not used in the header.
+
+2007-03-10  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper.c (pipe_conv_exec_start): Don't run an empty transaction,
+	it apparently serves no purpose and it may reference PAM data after
+	freeing it.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Add a headline when
+	changing user password.  Simplify the code a bit.
+
+	* usermount.c (format): Use a GtkComboBox instead of obsolete
+	GtkOptionMenu.
+	* usermode.glade (userinfo.shellmenu): Use a GtkComboBox instead of
+	obsolete GtkOptionMenu.
+	* userinfo.c (USERINFO_DATA_NAME): Remove.
+	(struct UserInfo.shellmenu): Allow freeing the value.
+	(shell_changed): Replace shell_activate ().  Work with GtkComboBox.
+	Pass userinfo directly instead of using USERINFO_DATA_NAME.
+	(create_userinfo_window): Use GtkComboBox for shellmenu.  Pass userinfo
+	to shell_changed () and on_ok_clicked () directly instead of using
+	USERINFO_DATA_NAME.
+	(on_ok_clicked): Pass userinfo directly instead of using
+	USERINFO_DATA_NAME.
+
+2007-03-09  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper.c (wrap): Disable exit status interpretation by the parent
+	when the GUI mode is disabled.
+
+	* configure.in: Release 1.89.
+	* NEWS: Update.
+
+	* glade.strings.h: Remove, intltool handles glade files directly.
+	* po/POTFILES.in: Don't use glade.strings.h
+
+	* Makefile.am (EXTRA_DIST): Don't ship mkinstalldirs and usermode.spec.
+	Update intltool script location.
+
+	* usermode.spec: Remove to avoid divergence from Fedora CVS.
+
+	* configure.in: Replace obsolete macros.  Use AC_MSG_CHECKING instead
+	of custom AC_MSG_RESULT usage.  Quote all m4 macro invocations
+	and shell variable expansions where necessary.
+	(AC_INIT): Move the main version number here from usermode.spec.
+	(AM_INIT_AUTOMAKE): Use dist-bzip2, Wall.
+	(PAM_LIBS): Don't pull in -ldl unnecessarily.
+	(ALL_LINGUAS): Move ...
+	* po/LINGUAS: ... here, add missing languages.
+
+	* autogen.sh: Don't use rpm's opt flags by default.  Update for
+	AC_CONFIG_AUX_DIR.  Run autotools in the correct order, and with all
+	warnings enabled.  Don't run configure automatically, only suggest
+	its usage.
+
+	* Makefile.am (VERSION, RELEASE): Remove, rely on configure to set a
+	value.
+	(CVSTAG): Use only $(VERSION).  Use '_' instead of '-' for '.'.
+	(distdir): Remove duplicate definition.
+	(BUILT_SOURCES): New variable.
+	(reaper.c): Remove rule, it breaks compilation with separate build dir.
+	(tag, forcetag, archive): Handle compilation with separate build dir.
+	(archive): Update for new autogen.sh.
+
+	* userhelper-wrap.c (userhelper_run): Don't unnecessary clear the
+	memory before overwriting it.  Fix a memory leak.
+
+	* userhelper-wrap.c (userhelper_runv): Use "char **", to be consistent
+	with main () and execve ().  All callers updated.
+	* userhelper-wrap.h (userhelper_runv): Update prototype.
+
+	* reaper.c (vte_reaper_channel_destroyed):
+	* userhelper.c (fail_exit, passwd, chfn): Use G_GNUC_NORETURN.
+
+	* consolehelper.c (main): Use LOCALEDIR.  Remove unnecessary call to
+	gtk_set_locale ().  Beautify a bit.
+
+	* autogen.sh: Remove unnecessary libtoolize call.  Allow symbolic link
+	usage.  Simplify config.cache removal.
+
+	* userhelper.c (pipe_conv_wait_for_sync): New function.
+	(pipe_conv_exec_start, pipe_conv_exec_fail): Wait until the parent's
+	status changes.
+	(wrap): Handle pipe_conv_exec_start () failures.  Preserve exit status
+	of processes run in their own session.
+
+	* userhelper-wrap.c (userhelper_parse_childout): Acknowledge
+	a transaction containing UH_EXEC_START and UH_EXEC_FAILED with
+	UH_SYNC_POINT like any other transaction.
+
+2007-03-08  Miloslav Trmac  <mitr@redhat.com>
+
+	* userhelper-wrap.c (child_exit_status): New variable.
+	(userhelper_parse_exitstatus): Save the child's exit status.
+	(userhelper_runv): Return the child's exit status.
+	* userhelper-wrap.h (userhelper_runv): Update prototype.
+	* consolehelper.c (main): Pass the child's exit status to the parent
+	process.

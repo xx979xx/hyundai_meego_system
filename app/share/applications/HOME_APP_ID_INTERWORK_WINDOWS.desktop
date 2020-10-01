@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=STR_INTERWORK_WINDOWS
+Comment=STR_INTERWORK_WINDOWS
+GenericName=STR_INTERWORK_WINDOWS
+Exec=12
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=
+Categories=
+MimeType=
+X-Desktop-File-Install-Version=0.16

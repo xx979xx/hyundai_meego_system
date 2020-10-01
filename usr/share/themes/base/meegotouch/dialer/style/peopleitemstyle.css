@@ -1,0 +1,139 @@
+/*
+ * dialer - MeeGo Voice Call Manager
+ * Copyright (c) 2009, 2010, Intel Corporation.
+ *
+ * This program is licensed under the terms and conditions of the
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+/* ***********************************************
+ * PeopleItem properties
+ * ***********************************************/
+PeopleItemStyle {
+    background-color:       white;
+    nameObjectName:         "peopleItemName";
+    phoneObjectName:        "peopleItemPhone";
+    photoObjectName:        "peopleItemPhoto";
+    lastCommObjectName:     "peopleItemLastComm";
+    lastCommIconObjectName: "peopleItemLastCommIcon";
+    presenceObjectName:     "peopleItemPresenceIcon";
+    favoriteIconObjectName: "peopleItemFavoriteIcon";
+    margin-top:             0;
+    margin-bottom:          1;
+    preferred-size: 100% -1;
+    minimum-size:   50%  -1;
+    maximum-size:   100% -1;
+}
+
+PeopleItemStyle.Landscape {
+    preferred-size: 48% -1;
+    minimum-size:   48% -1;
+    maximum-size:   48% -1;
+}
+
+PeopleItemStyle:pressed {
+    background-color: $COLOR_SELECT;
+}
+
+PeopleItemStyle:selected {
+    background-color: $COLOR_SELECT;
+}
+
+#peopleItemName {
+    font:           $FONT_DEFAULT;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-bottom:  0;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+#peopleItemPhone {
+    font:           $FONT_SMALL;
+    color:          black;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+#peopleItemPhoto {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 64 64;
+    minimum-size:   24 24;
+    maximum-size:   96 96;
+}
+
+#peopleItemLastComm {
+    font:           $FONT_DEFAULT;
+    color:          gray;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+#peopleItemLastCommIcon {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 24 24;
+    minimum-size:   24 24;
+    maximum-size:   24 24;
+}
+
+#peopleItemPresenceIcon {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 24 24;
+    minimum-size:   24 24;
+    maximum-size:   24 24;
+}
+
+#peopleItemFavoriteIcon {
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+    preferred-size: 24 24;
+    minimum-size:   24 24;
+    maximum-size:   24 24;
+}

@@ -1,0 +1,41 @@
+NetworkItemStyle {
+    background-image: "device-settings-bodytext-bg" 0 0 0 2;
+    labelObjectName:         "networkItemLabel";
+    strengthObjectName: "networkItemStrength";
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    /* padding-top:    1mm; */
+    /* padding-bottom: 1mm; */
+    preferred-size: 100% 72;
+    maximum-size: 100% 72;
+    minimum-size: 100% 72;
+}
+
+#networkItemLabel {
+    color:          $COLOR_ACCENT6;
+    font:           $FONT_DEFAULT;
+    margin-left:    $MARGIN_MEDIUM;
+    margin-right:   $MARGIN_MEDIUM;
+    margin-top:     $MARGIN_MEDIUM;
+    margin-bottom:  $MARGIN_MEDIUM;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+#networkItemStrength {
+/*     margin-top: 10; */
+/*     magin-bottom: 10; */
+    preferred-size: 54 54;
+    minimum-size: 54 54;
+    maximum-size: 54 54;
+} 
+
+
+NetworkItemStyle:pressed {
+    background-image: "device-settings-bodytext-bg-dn";
+}
+

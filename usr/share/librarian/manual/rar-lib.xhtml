@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>LibRarian Reference</title>
+</head>
+<body>
+<p><a href="index.xhtml">return to index</a></p>
+
+<h1>LibRarian Reference</h1>
+
+<p>This section gives an overview of the Rarian Library.  It outlines
+how to harness the power of Rarian and gives an overview of the
+available functions.</p>
+
+<p><strong>Note</strong>: Rarian is currently API-unstable.   You are
+advised to explicitly check and use exact versions of Rarian</p>
+
+<h2>Including the library</h2>
+
+<p>You can include the library in your application by using
+pkg-config to set the correct include and lib flags.  The name to
+check for is "rarian".  You should check for exact versions at this
+stage as Rarian API is liable to change in future releases.</p>
+
+<p>Alternatively, you can set the cflags and libs yourself.  The
+correct include path is "&gt;prefix&lt;/include/rarian" and the
+library name is "rarian".</p>
+
+<h2>Overview of Rarian library makeup</h2>
+
+<p>Rarian is currently split into three parts:</p>
+<ul>
+<li>The main documents access functions</li>
+<li>The man page access functions</li>
+<li>The info page access functions</li>
+</ul>
+
+<p>which gives access to the three different forms of documentation
+available to Rarian.  Each of these is discussed in the relevant
+section here.</p>
+
+<h2>Commonalities</h2>
+
+<p>Each of the three "sections" of LibRarian share commonalities.  The
+primary one is initialisation.  In all three cases, initialisation
+happens implicitly on the first call requiring access to the internal
+list of documents.  This means the documents should always be
+available when calling into the functions.</p>
+
+<h2>Main Documents</h2>
+
+<p>Main documents are defined by anything with an equivalent "scroll"
+file.  This documentation can be of any form and Rarian can provide
+lists of the documentation.  The scroll files are picked up from
+$XDG_DATA_DIRS/help and form the basis for most of Rarian.</p>
+
+<p>The following documents can be accessed by including the
+"rarian.h" file.</p>
+
+<h3>Preamble</h3>
+
+<p>Functions returning meta-data do so in a struct, the RrnReg.  The
+definition for this struct looks like:</p>
+
+<pre>
+struct _RrnReg
+{
+  char *name;
+  char *uri;
+  char *comment;
+  char *identifier;
+  char *type;
+  char *icon;
+  char **categories;
+  int weight;
+  char *heritage;
+  char *omf_location;
+  char *ghelp_name;
+  char *lang;
+  RrnSect *children;
+};
+</pre>
+
+<p>Most of these fields are self-explanatory and match up with the
+fields in the scroll files.  The ones that do not are described
+below:</p>
+
+<dl>
+<dt>heritage</dt>
+<dd>The x-DocHeritage field of the meta-data file.  Should generally
+be ignored.</dd>
+<dt>omf_location</dt>
+<dd>The x-Scrollkeeper-omf-loc field of the meta-data file.  Should
+generally be ignored.</dd>
+<dt>ghelp_name</dt>
+<dd>The abbreviated name of the meta-data file.  Using the beanstalk
+example, this field would be filled with "beanstalk".  When a user
+requests a "ghelp" uri, this field should be compared to the requested
+URI (sans the ghelp prefix).  Otherwise, this field should be ignored.</dd>
+<dt>children</dt>
+<dd>When a document consists of sections, this will contain a pointer
+to the lists of sections.  <strong>TODO:</strong> Add information
+about sections.</dd>
+</dl>
+
+<p><strong>Note</strong>: The returned structure must never be freed.</p>
+
+<h3>For each functions</h3>
+
+<p><strong>rrn_for_each (RrnForeachFunc funct, void *
+user_data)</strong></p>
+<p>Iterates through each available document in turn and calls
+<em>funct</em> for each.  If <em>funct</em> returns <em>FALSE</em>,
+iteration is stopped immediately.</p>
+
+<p><strong>void rrn_for_each_in_category (RrnForeachFunc funct, char * category,
+				   void *user_data)</strong></p>
+<p>Iterates through each document in <em>category</em> and calls
+<em>funct</em> for each.  If <em>funct</em> returns <em>FALSE</em>,
+iteration is stopped immediately.</p>
+
+<p>The prototype of RrnForeachFunc looks like:</p>
+<pre>typedef int (* RrnForeachFunc) (void * reg, void *data);</pre>
+
+<p>The <em>void *reg</em> will be a pointer to the RrnReg for the
+entry as described above.  The <em>void *data</em> parameter is the
+<em> user_data</em> parameter passed into the for-each function.</p>
+
+<h3>Finding functions</h3>
+
+<p><strong>RrnReg * rrn_find_entry_from_uri (char *uri)</strong></p>
+
+<p>Finds the relevant entry from the <em>uri</em>.  This simply
+compares the <em>uri</em> to the <em>uri</em> field of the RrnReg and
+returns the <em>RrnReg</em> if they match.  This will find the first
+match and ignore further matches.  If no match is found, <em>NULL</em> is returned.</p>
+
+<p><strong>RrnReg * rrn_find_from_name (char *name)</strong></p>
+
+<p>Finds the relevant entry from the <em>name</em>.  This simply
+compares the <em>name</em> to the <em>name</em> field of the RrnReg and
+returns the <em>RrnReg</em> if they match.  This will find the first
+match and ignore further matches.  If no match is found <em>NULL</em>
+is returned.</p>
+
+<p><strong>RrnReg * rrn_find_from_ghelp (char *ghelp)</strong></p>
+
+<p>Finds the relevant entry from the <em>ghelp</em>.  This simply
+compares the <em>ghelp</em> to the <em>ghelp_name</em> field of the RrnReg and
+returns the <em>RrnReg</em> if they match.  This will find the first
+match and ignore further matches.  The passed in parameter
+<em>ghelp</em> must have the "ghelp:" removed from the front of the
+URI.  If no match is found, <em>NULL</em> is returned.</p>
+
+<h3>Misc. functions</h3>
+
+<p>Rarian provides several miscellaneous functions in this sections.
+These are described here.</p>
+
+<p><strong>void rrn_set_language (char *lang_code)</strong></p>
+
+<p>By default, Rarian will set itself up using the $LANGUAGE
+environment variable.  You can override this behaviour by calling this
+function with <em>lang_code</em> set to the desired language.
+Multiple language codes can be specified using colon-delimiting.  When
+called, this function will re-initialise the internal list of
+documents to the desired language.</p>
+
+<p><strong>void rrn_shutdown ()</strong></p>
+
+<p>This function shuts down Rarian, freeing any used memory.  This is
+generally not needed, though may be useful for low-memory situations
+when it is known that Rarian will not be necessary again.</p>
+
+<h2>Man pages</h2>
+
+<h3>Preamble</h3>
+
+<p>Rarian provides access to installed man pages on the system.  This
+functionality can be accessed by including the "rarian-man.h"
+file.</p>
+
+<p>As with the main documents, functions return structs containing
+meta-data, the <em>RrnManEntry</em> struct, as described below:</p>
+
+<pre>
+  typedef struct _RrnManEntry {
+    char *name;
+    char *path;
+    char *section;
+    char *comment;
+  } RrnManEntry;
+</pre>
+
+<p>Each of these fields are self-explanatory.</p>
+
+<h3>For each functions</h3>
+
+<p><strong>void rrn_man_for_each (RrnManForeachFunc funct, void *
+user_data)</strong></p>
+
+<p>This function iterates through all man pages and calls
+<em>funct</em> for each one.  If <em>funct</em> returns FALSE,
+iteration is stopped immediately.</p>
+
+
+<p><strong>void rrn_man_for_each_in_category (char *category,
+RrnManForeachFunc funct, void * user_data)</strong></p>
+
+<p>Iterates through each man page within <em>category</em> and calls
+<em>funct</em> for each one.  If <em>funct</em> returns FALSE,
+iteration is stopped immediately.  Category names can be found by
+calling <em>rrn_man_get_categories</em>, described below.</p>
+
+<p>The prototype for the RrnManForeachFunc is:</p>
+<p><strong>typedef int (* RrnManForeachFunc) (void * reg, void
+*data)</strong></p>
+<p>where <em>reg</em> is a pointer to the <em>RrnManEntry</em> and
+<em>data</em> is the <em>user_data</em> passed in to the for-each
+function.</p>
+
+<h3>Find functions</h3>
+
+<p><strong>RrnManEntry *rrn_man_find_name (char *name, char
+*sect)</strong></p>
+
+<p>Locates the man page entry with the name <em>name</em> and returns
+the relevant <em>RrnManEntry</em>.  If <em>sect</em> is non-NULL, only
+entries in <em>sect</em> will be considered.  If no entry is found,
+<em>NULL</em> is returned.</p>
+
+<h3>Misc. Functions</h3>
+
+<p><strong>char **rrn_man_get_categories (void)</strong></p>
+<p>Returns an a list of <em>char *</em>s which describe the categories
+available in Rarian.  The final entry in the list is <em>NULL</em></p>
+
+<p><strong>void rrn_man_shutdown ()</strong></p>
+
+<p>Shuts down and frees all memory used by the man page section of
+Rarian.</p>
+
+<h2>Info Pages</h2>
+
+<h3>Preamble</h3>
+
+<p>Rarian provides access to info pages available on the system by
+parsing the info "dir" file to gather the available documents.  All
+functions to handle info meta-data can be accessed by including the
+"rarian-info.h" file.  Functions returning meta-data return a <em>RrnInfoEntry</em> struct,
+which is declared as:</p>
+
+<pre>
+  typedef struct _RrnInfoEntry {
+    char *name;
+    char *shortcut_name;
+    char *base_filename;
+    char *base_path;
+    char *section;
+    char *doc_name;
+    char *comment;
+    RrnInfoCompression compression;
+    char *category;
+  } RrnInfoEntry;
+</pre>
+
+<p>The elements are described as:</p>
+
+<dl>
+<dt>name</dt>
+<dd>The base name of the actual file.  This should generally not be used.</dd>
+<dt>shortcut_name</dt>
+<dd>Currently unused</dd>
+<dt>base_filename</dt>
+<dd>The filename of the initial document.  This should be the file to parse.</dd>
+<dt>base_path</dt>
+<dd>The path where the document lives.</dd>
+<dt>section</dt>
+<dd>The section of the document the entry points to (like an anchor in
+html documents)</dd>
+<dt>doc_name</dt>
+<dd>The "title" of the entry.  This should be used for table of
+content generation.</dd>
+<dt>compression</dt>
+<dd>Described below.</dd>
+<dt>category</dt>
+<dd>The category the document belongs in.  A list of categories can be
+found using rrn_info_get_categories, described below.</dd>
+</dl>
+
+<h4>Compression</h4>
+
+<p>Rarian provides a guess at the compression used for the info
+files in the "compression" field of the RrnInfoEntry struct.  This can
+be one of the following enum (defined in rarian-info.h)</p>
+
+<pre>
+ typedef enum _RrnInfoCompression {
+    INFO_ENCODING_NONE = 0,
+    INFO_ENCODING_GZIP,
+    INFO_ENCODING_BZIP,
+    INFO_ENCODING_LZMA,
+    INFO_ENCODING_UNKNOWN,
+  } RrnInfoCompression;
+</pre>
+
+<h3>For each functions</h3>
+
+<p><strong>void rrn_info_for_each (RrnInfoForeachFunc funct, void *
+user_data)</strong></p>
+
+<p>Iterates over all info documents available and calls <em>funct</em>
+for each one.  If <em>func</em> returns <em>FALSE</em>, iteration is
+stopped immediately.</p>
+
+
+<p><strong>void rrn_info_for_each_in_category (char *category, RrnInfoForeachFunc funct, void * user_data)</strong></p>
+
+<p>Iterates over all info documents available in the category
+<em>category</em> and calls <em>funct</em>
+for each one.  If <em>func</em> returns <em>FALSE</em>, iteration is
+stopped immediately.  A list of available categories can be found
+using rrn_info_get_categories described below.</p>
+
+<p>The prototype for <em>RrnInfoForeachFunc</em> looks like:</p>
+
+<p><strong>typedef int (* RrnInfoForeachFunc) (void * reg, void
+*data)</strong></p>
+
+<p>where <em>reg</em> is the <em>RrnInfoEntry</em> associated with the
+document and <em>data</em> is the <em>user_data</em> element passed
+into the for-each function.</p>
+
+<h3>Finding functions</h3>
+
+<p><strong>RrnInfoEntry *rrn_info_find_from_uri (char *uri, char
+*section)</strong></p>
+
+<p>Iterates through each entry in <em>section</em> and searches for
+the document matching <em>uri</em>.  If <em>section</em> is
+<em>NULL</em>, all sections are searched.  If no match is found,
+<em>NULL</em> is returned.</p>
+
+<h3>Misc. Functions</h3>
+
+<p><strong>char **rrn_info_get_categories (void)</strong></p>
+
+<p>Returns a list of available categories.  The list is
+NULL-terminated and must not be freed.</p>
+
+<p><strong>void rrn_info_shutdown ()</strong></p>
+
+<p>Shuts down and frees all memory used by Rarian info stuff.</p>
+
+
+</body>
+</html>

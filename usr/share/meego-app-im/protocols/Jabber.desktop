@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=IMProtocol
+Name=Jabber
+
+[MTI]
+Id=im-jabber
+Content=JabberAccountContent
+ConnectionManager=gabble
+Protocol=jabber
+Icon=image://themedimage/icons/services/jabber

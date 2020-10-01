@@ -1,0 +1,22 @@
+callhistory - History of VoiceCalls
+
+Copyright (C) 2010  Intel Corporation. All rights reserved.
+
+Compilation and installation
+============================
+
+To compile CallHistory, you need following packages
+	- GCC compiler
+	- GLib library
+	- dbus-glib
+	- ofono headers
+
+To build :
+      ./autogen.sh --prefix=/usr --libdir= "path to ofono plugins folder" 
+       make
+       sudo make install
+
+
+ "path to ofono plugins folder" - if you installed ofono with in maintainer mode then it should be "path-to-ofono-source/plugins/.libs" 
+ otherwise it should be "/usr/lib/ofono/plugins"
+

@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=STR_AUTO_CARE
+Comment=STR_AUTO_CARE
+GenericName=STR_AUTO_CARE
+Exec=3
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=
+Categories=
+MimeType=
+X-Desktop-File-Install-Version=0.16

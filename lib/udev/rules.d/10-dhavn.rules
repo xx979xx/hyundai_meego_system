@@ -1,0 +1,14 @@
+KERNEL=="micom", GROUP="meego", MODE="0666"
+KERNEL=="ttyAM1", GROUP="dialout", OWNER="meego" MODE="0666"
+KERNEL=="ttyPCH*", GROUP="dialout", OWNER="meego", MODE="0660"
+KERNEL=="spidev*", GROUP="dialout", OWNER="meego" MODE="0660"
+KERNEL=="dhavn-dmb", GROUP="dialout", OWNER="meego" MODE="0660"
+KERNEL=="uinput", GROUP="meego", OWNER="meego" MODE="0660"
+KERNEL=="sda1", MODE="0664"
+SUBSYSTEM=="gpio", ACTION=="add", RUN="/bin/user_gpio /sys$devpath"
+
+# Apple CarPlay
+KERNEL=="ttyIAP*", GROUP="meego", OWNER="meego" MODE="0660"
+KERNEL=="urandom", GROUP="meego", OWNER="meego" MODE="0660"
+SUBSYSTEM=="net", ENV{INTERFACE}=="ncm*",  ACTION=="add", RUN="/sbin/ifconfig ncm0 up"
+SUBSYSTEM=="net", ENV{INTERFACE}=="ncm*",  ACTION=="remove", RUN="/sbin/ifconfig ncm0 down"

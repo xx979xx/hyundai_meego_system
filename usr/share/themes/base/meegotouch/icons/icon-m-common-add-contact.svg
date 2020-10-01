@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-common-add-contact-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-common-add-contact">
+	<rect style="fill:none;" width="48" height="48"/>
+	<path style="fill:#333333;" d="M11.145,17.422c4.325,0,7.829-3.396,7.829-7.573c0-4.192-3.504-7.599-7.829-7.599
+		c-4.331,0-7.835,3.406-7.835,7.599C3.31,14.026,6.813,17.422,11.145,17.422z"/>
+	<path style="fill:#333333;" d="M16.5,34.5c0-3.9,1.251-7.512,3.368-10.463c-2.011-2.301-5.215-3.797-8.839-3.797
+		C4.935,20.24,0,24.451,0,29.648V39.75h17.283C16.775,38.088,16.5,36.326,16.5,34.5z"/>
+	<path style="fill:#333333;" d="M34.5,21C27.045,21,21,27.043,21,34.5C21,41.955,27.045,48,34.5,48S48,41.955,48,34.5
+		C48,27.043,41.955,21,34.5,21z M42.6,36.65h-5.881v5.951h-4.403V36.65H26.4v-4.369h5.915V26.4h4.403v5.881H42.6V36.65z"/>
+</g>
+</svg>

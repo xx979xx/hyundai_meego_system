@@ -1,0 +1,13 @@
+ver 0.2:
+	Fix issue with use-after-free in CURL plugin.
+	Fix issue with recurring timeouts from CURL.
+	Fix issue with unhandled POLLHUP from CURL.
+	Fix issue with lifetime of proxy lookup result.
+	Fix issue with parallel invocation of Javascript engine.
+	Fix issue with initial proxy configuration during startup.
+	Fix issue with missing client delay during PAC download.
+	Fix issue with libproxy result and requested URL scheme.
+	Add support for V8 Javascript engine.
+
+ver 0.1:
+	Initial public release.

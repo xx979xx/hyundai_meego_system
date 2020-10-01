@@ -1,0 +1,30 @@
+[Desktop Entry]
+Type=ControlPanelApplet
+Name=IM
+Name[zh_TW]=IM
+Name[zh_CN]=即时通讯（IM）
+Name[tr]=Anlık İleti
+Name[sv]=Snabbmeddelande
+Name[ru]=IM
+Name[pt_PT]=Mensageiro
+Name[pt_BR]=IM
+Name[pl]=Komunikator
+Name[no]=IM
+Name[nl]=IM
+Name[ko]=IM
+Name[ja]=IM
+Name[it]=IM
+Name[hu]=Azonnali üzenet
+Name[fr]=IM
+Name[fi]=IM
+Name[es]=Mensajería instantánea
+Name[en_US]=IM
+Name[en_GB]=IM
+Name[el]=Άμεσα μηνύματα
+Name[de]=IM
+Name[da]=IM
+Name[cs]=Rychlé zprávy
+Icon=im
+
+[MTS]
+Part=/usr/share/meego-app-im/settings/ImSettings.qml

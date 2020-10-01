@@ -1,0 +1,6 @@
+/* set these to "none" instead of blank to quite errors */
+MWidgetStyle {
+    background-tiles: none;
+    background-image: none;
+    background-color: none;
+}

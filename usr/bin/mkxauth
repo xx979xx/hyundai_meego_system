@@ -1,0 +1,384 @@
+#!/bin/sh
+#
+# mkxauth: script to make per-user Xauthority database
+# formerly 'newcookie' script; modified 18-Jul-1996 jim knoble
+#
+########################################################################
+# $Log: mkxauth,v $
+# Revision 1.1  2004/03/10 20:21:41  mharris
+# automated commit of xorg-x11-0.0.6.6-0.0.2004_03_09.0
+#
+# Revision 1.8mh  2004/02/23 mharris
+# changed chown to use foo:bar instead of foo.bar as the latter has been
+# deprecated.  This entry is added by hand as mkxauth isn't in CVS
+#
+# Revision 1.7  1996/10/23 21:34:23  jmknoble
+# take path of least surprise if no command specified;
+# if hostnames specified with -c, don't assume local host.
+#
+# Revision 1.6  1996/10/02 20:34:12  jmknoble
+# updated help text again
+#
+# Revision 1.5  1996/10/02 20:10:03  jmknoble
+# updated help text
+#
+# Revision 1.4  1996/10/02 20:03:26  jmknoble
+# fixed quoting problem in key generation
+#
+# Revision 1.3  1996/08/20 16:31:30  jmknoble
+# refined random key generation (using mcookie if available)
+#
+# Revision 1.2  1996/08/20 15:49:33  jmknoble
+# replaced key generation using perl with method using md5sum
+#
+# Revision 1.1  1996/08/05 16:40:20  jmknoble
+# Initial revision
+#
+########################################################################
+
+#set -x
+
+## default values for some variables
+usr_umask=0077
+# eventual exit status
+sts=0
+# verbose operation if blank
+opt_vrbopr=''
+# eventual string of non-option arguments
+cmd_args=''
+# filename for per-user Xauthority database
+usrauth=.Xauthority
+# username for whom to make per-user database
+lclusr=`whoami`
+# mode for making database; 
+# valid values are 'create', 'merge-local', 
+# 'merge-ftp', 'merge-rsh', 'merge-rzip',
+# and 'none'
+xauth_mode='none'
+# actual path to target database
+dstauth=''
+# user to login as for rsh/rzip modes
+rmtusr=`whoami`
+# host to contact for remote Xauthority databases
+rmthst=''
+# local user to grab Xauthority from in merge mode
+srcusr=''
+
+########################################################################
+# help message
+function prthlp() {
+    echo ""
+    echo "  usage:  $0 [-q] [-u <login>] -m <login>"
+    echo "          $0 [-q] [-u <login>] -f <host>"
+    echo "          $0 [-q] [-u <login>] -r <host> [-l <login>]"
+    echo "          $0 [-q] [-u <login>] -z <host> [-l <login>]"
+    echo "          $0 [-q] [-u <login>] -c [<host> [<host> ... ]]"
+    echo ""
+    echo "  create or update an Xauthority database containing authentication"
+    echo "  keys for the current user or a specified user on the local host."
+    echo ""
+    echo "  commands:"
+    echo ""
+    echo "  -m <login>    merge the Xauthority database from local user <login>"
+    echo "                (if readable) with the target .Xauthority"
+    echo ""
+    echo "  -f <host>     merge a remote Xauthority database with the target"
+    echo "                .Xauthority, using ncftp"
+    echo ""
+    echo "  -r <host>     merge a remote Xauthority database with the target"
+    echo "                .Xauthority, using rsh"
+    echo ""
+    echo "  -z <host>     merge a remote Xauthority database with the target"
+    echo "                .Xauthority, using rsh and gzip"
+    echo ""
+    echo "  -c <host>...  create a local Xauthority database, or add keys to an"
+    echo "                existing one, for all hosts listed (uses md5sum).  if"
+    echo "                no hosts are listed, assume the local host."
+    echo ""
+    echo "  options:"
+    echo ""
+    echo "  -q            quiet operation"
+    echo ""
+    echo "  -u <login>    create/merge .Xauthority for user <login>"
+    echo ""
+    echo "  -l <login>    for '-f', '-r' and '-z' modes, use <login> for the"
+    echo "                remote login"
+    echo ""
+
+    exit 0
+}
+
+# check that current user is root
+function chkroot() {
+    if [ `whoami` != root ]; then
+        echo "sorry---you need to be root" "$*"
+        exit 1
+    fi
+}
+
+# write a message to stdout iff verbose mode on
+function msg() {
+    if [ -z "$opt_vrbopr" ]; then
+        echo "$@"
+    fi
+}
+
+# check that a command exists
+function chkcmdexs() {
+    for i in $*; do
+        if [ -z `type -p $i` ]; then
+            echo "`basename $0`: error: can't find command '$i'"
+            exit 1
+        fi
+    done
+}
+
+# check that a file exists, and create it if it doesn't
+# *and* if we have write permissions to its parent dir
+function chkfilexs() {
+    for i in $*; do
+        if [ ! -f "$i" ]; then
+            if [ -w `dirname $i` ]; then
+                msg -n "creating file $i ... "
+                touch $i
+                msg "done"
+            fi
+        fi
+    done
+}
+
+# check if a file is readable
+function redabl() {
+    local srcfil=$1
+    if [ -r "$srcfil" ]; then
+        sts=0
+    else
+        echo "`basename $0`: error: cannot read file $srcfil"
+        sts=1
+    fi
+    return $sts
+}
+
+# check if a file is writable
+function wrtabl() {
+    local dstfil=$1
+    if [ -w "$dstfil" ]; then
+        sts=0
+    else
+        echo "`basename $0`: error: cannot write to file $dstfil"
+        sts=1
+    fi
+    return $sts
+}
+
+# set the correct ownership for a file
+function givusr() {
+    local lststs=$1
+    local usrnam=$2
+    local dstfil=$3
+    if [ $lststs = 0 ]; then
+        chown $usrnam:$usrnam $dstfil
+        sts=0
+    else
+        msg ""
+        echo "`basename $0`: error writing to file $dstfil"
+        sts=1
+    fi
+    return $sts
+}
+
+########################################################################
+# set our umask so that no one else can read our files
+umask $usr_umask
+
+# test some command-line args
+while [ "$*" ]; do
+    case $1 in
+        -h | --help)
+            shift
+            prthlp
+            ;;
+        -q | --quiet)
+            shift
+            opt_vrbopr='-q'
+            ;;
+        -u | --user)
+            shift
+            lclusr="$1"
+            shift
+            ;;
+        -l | --login)
+            shift
+            rmtusr="$1"
+            shift
+            ;;
+        -c | --create)
+            shift
+            xauth_mode='create'
+            ;;
+        -m | --merge)
+            shift
+            xauth_mode='merge-local'
+            srcusr="$1"
+            shift
+            ;;
+        -f | --ftp)
+            shift
+            xauth_mode='merge-ftp'
+            rmthst="$1"
+            shift
+            ;;
+        -r | --rsh)
+            shift
+            xauth_mode='merge-rsh'
+            rmthst="$1"
+            shift
+            ;;
+        -z | --rzip)
+            shift
+            xauth_mode='merge-rzip'
+            rmthst="$1"
+            shift
+            ;;
+        -*)
+            echo "`basename $0`: invalid option '$1'"
+            shift
+            prthlp
+            ;;
+        *)
+            cmd_args="$cmd_args $1"
+            shift
+            ;;
+    esac
+done
+
+# if called without a valid command, follow path of least surprise
+if [ "$xauth_mode" = "none" ]; then
+    prthlp
+fi
+
+# figure out if we're allowed to do what we said we wanted to
+if [ `whoami` != $lclusr ]; then
+    chkroot "to change another user's .Xauthority."
+fi
+
+# make sure xauth is available
+chkcmdexs xauth
+
+# set name for target Xauthority database
+dstauth=`eval echo ~$lclusr/$usrauth`
+
+# figure out what action to take
+case $xauth_mode in
+    create)
+        # create an Xauthority database for user 'userid'.
+        # (requires md5sum, xauth)
+        chkcmdexs uptime dd md5sum cut
+        # create an empty database if one doesn't exist
+        chkfilexs $dstauth
+        # generate a random key -- depends on md5sum, among others
+        key=`(
+                whoami
+                uptime
+		[ \`type -p mcookie\` ] && mcookie
+		[ -f /proc/meminfo ] && cat /proc/meminfo
+                [ -f /dev/urandom ] && dd if=/dev/urandom bs=16 count=1
+            ) 2>&1 | md5sum | cut -f 1 -d ' '`
+        # add all hosts specified on command line;
+	# if none specified, assume local host.
+        authhosts=`hostname`
+        if [ "$cmd_args" ]; then
+            authhosts="$cmd_args"
+        fi
+        if wrtabl $dstauth; then
+            for i in $authhosts; do 
+                msg -n "adding key for $i to $dstauth ... "
+                xauth -f $dstauth add $i/unix:0 . $key
+                xauth -f $dstauth add $i:0      . $key
+                if [ $? != 0 ]; then
+                    break
+                fi
+                msg "done"
+            done
+            # make sure the user owns the file
+            givusr $? $lclusr $dstauth
+        fi
+        ;;
+    merge-local)
+        # merge a local Xauthority database (if readable) 
+        # from a specified user with the database for local user.
+        # (requires xauth)
+        srcauth=`eval echo ~$srcusr/$usrauth`
+        if redabl $srcauth; then
+            mrgcmd="xauth -f $dstauth merge $srcauth"
+            mrgmsg="merging $srcauth into $dstauth"
+        else
+            exit $sts
+        fi
+        ;;
+    merge-ftp)
+        # merge a remote Xauthority database with the local one
+        # for local user, using ncftp.
+        # (requires ncftp, xauth)
+        chkcmdexs ncftp
+        srcauth="$rmtusr@$rmthst:$usrauth"
+        if [ -z "$opt_vrbopr" ]; then
+            ftp_vrbopr="-V quiet"
+        else
+            ftp_vrbopr="-V quiet"
+        fi
+        mrgcmd='ncftp $ftp_vrbopr <<-ENDFTPCMD
+		open -ui $rmthst
+		$rmtusr
+		get $usrauth "|xauth -f $dstauth merge -"
+		quit
+		ENDFTPCMD'
+        mrgmsg="merging $srcauth into $dstauth"
+        ;;
+    merge-rsh)
+        # merge a remote Xauthority database with the local one
+        # for local user, using rsh
+        # (requires rsh, xauth)
+        chkcmdexs rsh
+        srcauth="$rmtusr@$rmthst:$usrauth"
+        mrgcmd="{ rsh -l $rmtusr $rmthst cat $usrauth } \
+            | { xauth -f $dstauth merge - }"
+        mrgmsg="merging $srcauth into $dstauth"
+        ;;
+    merge-rzip)
+        # merge a remote Xauthority database with the local one
+        # for local user, using rsh and gzip.
+        # (requires rsh, gzip, xauth)
+        chkcmdexs rsh gzip
+        srcauth="$rmtusr@$rmthst:$usrauth"
+        mrgcmd="{ rsh -l $rmtusr $rmthst gzip -c $usrauth } \
+            | { gzip -dc } \
+            | { xauth -f $dstauth merge - }"
+        mrgmsg="merging $srcauth into $dstauth"
+        ;;
+    *)
+        # something's hosed
+        echo "oops!  xauth_mode = '$xauth_mode' - this shouldn't happen."
+        sts=1
+        ;;
+esac
+
+# actually perform merge, if requested
+case $xauth_mode in
+    merge-*)
+        # create an empty database if one doesn't exist
+        chkfilexs $dstauth
+        # perform the requested merge, if the target database is writable
+        if wrtabl $dstauth; then
+            msg "$mrgmsg ... "
+            eval "$mrgcmd"
+            # if successful, make sure the user owns the file
+            if givusr $? $lclusr $dstauth; then
+                msg "done"
+            fi
+        fi
+        ;;
+esac
+
+exit $sts
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gconf-locale</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="GConf Reference Manual">
+<link rel="up" href="ch01.html" title="Using the GConf library">
+<link rel="prev" href="gconf-gconf.html" title="GConf Core Interfaces">
+<link rel="next" href="gconf-gconf-changeset.html" title="GConfChangeSet">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Using the GConf library">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="gconf-gconf.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">GConf Reference Manual</th>
+<td><a accesskey="n" href="gconf-gconf-changeset.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#gconf-gconf-locale.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#gconf-gconf-locale.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="gconf-locale">
+<a name="gconf-gconf-locale"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="gconf-gconf-locale.top_of_page"></a>gconf-locale</span></h2>
+<p>gconf-locale</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="gconf-gconf-locale.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+                    <a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a>;
+<a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a>*   <a class="link" href="gconf-gconf-locale.html#gconf-locale-cache-new" title="gconf_locale_cache_new ()">gconf_locale_cache_new</a>              (void);
+void                <a class="link" href="gconf-gconf-locale.html#gconf-locale-cache-free" title="gconf_locale_cache_free ()">gconf_locale_cache_free</a>             (<a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a> *cache);
+void                <a class="link" href="gconf-gconf-locale.html#gconf-locale-cache-expire" title="gconf_locale_cache_expire ()">gconf_locale_cache_expire</a>           (<a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a> *cache,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> max_age_exclusive_in_seconds);
+                    <a class="link" href="gconf-gconf-locale.html#GConfLocaleList" title="GConfLocaleList">GConfLocaleList</a>;
+void                <a class="link" href="gconf-gconf-locale.html#gconf-locale-list-ref" title="gconf_locale_list_ref ()">gconf_locale_list_ref</a>               (<a class="link" href="gconf-gconf-locale.html#GConfLocaleList" title="GConfLocaleList">GConfLocaleList</a> *list);
+void                <a class="link" href="gconf-gconf-locale.html#gconf-locale-list-unref" title="gconf_locale_list_unref ()">gconf_locale_list_unref</a>             (<a class="link" href="gconf-gconf-locale.html#GConfLocaleList" title="GConfLocaleList">GConfLocaleList</a> *list);
+<a class="link" href="gconf-gconf-locale.html#GConfLocaleList" title="GConfLocaleList">GConfLocaleList</a>*    <a class="link" href="gconf-gconf-locale.html#gconf-locale-cache-get-list" title="gconf_locale_cache_get_list ()">gconf_locale_cache_get_list</a>         (<a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a> *cache,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *locale);
+<a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             <a class="link" href="gconf-gconf-locale.html#gconf-split-locale" title="gconf_split_locale ()">gconf_split_locale</a>                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *locale);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="gconf-gconf-locale.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="gconf-gconf-locale.details"></a><h2>Details</h2>
+<div class="refsect2" title="GConfLocaleCache">
+<a name="GConfLocaleCache"></a><h3>GConfLocaleCache</h3>
+<pre class="programlisting">typedef struct _GConfLocaleCache GConfLocaleCache;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="gconf_locale_cache_new ()">
+<a name="gconf-locale-cache-new"></a><h3>gconf_locale_cache_new ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a>*   gconf_locale_cache_new              (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_locale_cache_free ()">
+<a name="gconf-locale-cache-free"></a><h3>gconf_locale_cache_free ()</h3>
+<pre class="programlisting">void                gconf_locale_cache_free             (<a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a> *cache);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_locale_cache_expire ()">
+<a name="gconf-locale-cache-expire"></a><h3>gconf_locale_cache_expire ()</h3>
+<pre class="programlisting">void                gconf_locale_cache_expire           (<a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a> *cache,
+                                                         <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"
+>guint</a> max_age_exclusive_in_seconds);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>max_age_exclusive_in_seconds</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="GConfLocaleList">
+<a name="GConfLocaleList"></a><h3>GConfLocaleList</h3>
+<pre class="programlisting">typedef struct {
+  const gchar** list;
+} GConfLocaleList;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="gconf_locale_list_ref ()">
+<a name="gconf-locale-list-ref"></a><h3>gconf_locale_list_ref ()</h3>
+<pre class="programlisting">void                gconf_locale_list_ref               (<a class="link" href="gconf-gconf-locale.html#GConfLocaleList" title="GConfLocaleList">GConfLocaleList</a> *list);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_locale_list_unref ()">
+<a name="gconf-locale-list-unref"></a><h3>gconf_locale_list_unref ()</h3>
+<pre class="programlisting">void                gconf_locale_list_unref             (<a class="link" href="gconf-gconf-locale.html#GConfLocaleList" title="GConfLocaleList">GConfLocaleList</a> *list);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_locale_cache_get_list ()">
+<a name="gconf-locale-cache-get-list"></a><h3>gconf_locale_cache_get_list ()</h3>
+<pre class="programlisting"><a class="link" href="gconf-gconf-locale.html#GConfLocaleList" title="GConfLocaleList">GConfLocaleList</a>*    gconf_locale_cache_get_list         (<a class="link" href="gconf-gconf-locale.html#GConfLocaleCache" title="GConfLocaleCache">GConfLocaleCache</a> *cache,
+                                                         const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *locale);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cache</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>locale</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="gconf_split_locale ()">
+<a name="gconf-split-locale"></a><h3>gconf_split_locale ()</h3>
+<pre class="programlisting"><a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a>**             gconf_split_locale                  (const <a
+href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"
+>gchar</a> *locale);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>locale</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

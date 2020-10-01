@@ -1,0 +1,11 @@
+/* MSceneWindowAnimatorStyle : MStyle */
+MSceneWindowAnimatorStyle {
+    transition-in-type: "move.left";
+    transition-in-duration: 300;
+    transition-in-fade: true;
+    transition-in-destination: 0 0;
+    transition-out-type: "move.right";
+    transition-out-duration: 300;
+    transition-out-fade: true;
+    transition-out-destination: 0 0;
+}

@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/system/osso/dsm/display/display_dim_timeout</key>
+      <applyto>/system/osso/dsm/display/display_dim_timeout</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <default>30</default>
+      <locale name="C">
+        <short>Timeout for display dimming</short>
+	<long>This key contains the timeout for display dimming in seconds.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/display_blank_timeout</key>
+      <applyto>/system/osso/dsm/display/display_blank_timeout</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <default>3</default>
+      <locale name="C">
+        <short>Timeout for display blanking</short>
+	<long>This key contains the timeout for display blanking in seconds.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/display_brightness</key>
+      <applyto>/system/osso/dsm/display/display_brightness</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <default>4</default>
+      <locale name="C">
+	<short>Display brightness level.</short>
+	<long></long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/display_brightness_level_step</key>
+      <applyto>/system/osso/dsm/display/display_brightness_level_step</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <default>1</default>
+      <locale name="C">
+        <short>Minimum step of brightness.</short>
+	<long></long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/max_display_brightness_levels</key>
+      <applyto>/system/osso/dsm/display/max_display_brightness_levels</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <default>5</default>
+      <locale name="C">
+        <short>Maximum brightness level.</short>
+	<long></long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/possible_display_dim_timeouts</key>
+      <applyto>/system/osso/dsm/display/possible_display_dim_timeouts</applyto>
+      <owner>mce</owner>
+      <type>list</type>
+      <list_type>int</list_type>
+      <default>[15, 30, 60, 120, 180]</default>
+      <locale name="C">
+        <short>Possible timeouts for display dimming</short>
+	<long>This key contains the allowed values for display dimming timeout.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/possible_display_blank_timeouts</key>
+      <applyto>/system/osso/dsm/display/possible_display_blank_timeouts</applyto>
+      <owner>mce</owner>
+      <type>list</type>
+      <list_type>int</list_type>
+      <default>[3, 10, 15]</default>
+      <locale name="C">
+        <short>Possible timeouts for display blanking</short>
+	<long>This key contains the allowed values for display blanking timeout.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/use_adaptive_display_dimming</key>
+      <applyto>/system/osso/dsm/display/use_adaptive_display_dimming</applyto>
+      <owner>mce</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Prolong display dim timeout if user taps to unblank.</short>
+	<long>If true, display dim timeouts will adapt to user unblank requests.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/adaptive_display_dim_threshold</key>
+      <applyto>/system/osso/dsm/display/adaptive_display_dim_threshold</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <default>3000</default>
+      <locale name="C">
+        <short>Timeout before adaptive display dimming is disabled.</short>
+	<long>This key contains the timeout until adaptive display dimming is disabled for a particular case, in milliseconds.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/locks/touchscreen_keypad_autolock_enabled</key>
+      <applyto>/system/osso/dsm/locks/touchscreen_keypad_autolock_enabled</applyto>
+      <owner>mce</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Should tklock be enabled when display is blanked.</short>
+	<long>If true, touch screen and keypad lock will be enabled, when display is blanked</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/display/inhibit_blank_mode</key>
+      <applyto>/system/osso/dsm/display/inhibit_blank_mode</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Inhibit display blanking mode</short>
+	<long>0 - Don't inhibit blanking; 1 - Inhibit dimming if charger is connected; 2 - Inhibit blanking if charger is connected; 3 - Inhibit dimming; 4 - Inhibit blanking</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

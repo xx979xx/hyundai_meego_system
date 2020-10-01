@@ -1,0 +1,5565 @@
+commit 0e0288e09ec8cb32838ecad9d23530a9e2651039
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Fri Jun 18 08:09:56 2010 +0200
+
+    Various small man page updates and fixes
+
+commit 50ec4604c303c0385c981d65d98efd4bb114cd3c
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Fri Jun 18 15:15:16 2010 +0200
+
+    Use flock for more robust lock file handling
+    
+    Debian-Bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=568565
+
+commit e9f516edfbd093c4b9b5721434440e67847f2dd8
+Author: Tomáš Chvátal <scarabeus@gentoo.org>
+Date:   Sun Jul 4 09:23:26 2010 -0500
+
+    Do not automagically rely on xmlto, include a configure option instead.
+    
+    Thanks, Tomáš!
+
+commit 809c64bf4a4ce8c653ca05da88c1214bd4ab0b2d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jul 4 09:20:22 2010 -0500
+
+    Remove import-fdi-quirkdb.
+    
+    It was only ever a one-shot tool for the transition period.
+
+commit bc57a0d7fc3266821531c77647b165035a368bbf
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jul 4 09:09:58 2010 -0500
+
+    Bump version to 1.3.1
+
+commit 11dec4564109ce85b346c2391caea49f633ed782
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jun 22 19:09:40 2010 -0500
+
+    Make on_ac_power check sysfs directly.
+    
+    This avoids us depending on power managers that depend on us.
+
+commit c3d7dfac7b8dba7c205170ce55428a35eb4d4ce7
+Merge: 2ec6109 0ed2f39
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 16 22:05:15 2010 -0500
+
+    Merge branch 'master' into pm-utils-1.3
+    
+    Conflicts:
+    	src/import-fdi-quirkdb.in
+
+commit 0ed2f3950e4797c592d89dcbe9d2bc194e560a2c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 14 23:11:39 2010 -0500
+
+    Fix import-fdi-quirkdb
+    
+    Magic foo_outof regex munging code was not working due to a deplorable lack of extglob.
+    Compaq biosen have some truly hideous identifiers.
+    Hmmm... lenovo fdi file seems to use slightly looser XML.
+
+commit 2ec6109275a7ff6b3aa859c9981299e85ff68173
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 14 23:11:39 2010 -0500
+
+    Fix import-fdi-quirkdb
+    
+    Magic foo_outof regex munging code was not working due to a deplorable lack of extglob.
+
+commit ff649497ad05fc7a7e7a2d33f7e91174f61da5ac
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 14 21:50:14 2010 -0500
+
+    Bump docbook revision for the manpage sources to 4.5
+
+commit 41313a747ab99b0c4cc1995c7e54cbeb185dbcbe
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 14 21:43:39 2010 -0500
+
+    Bump revision to 1.3.0
+
+commit 8716abfa75f0e7d227fdba1d31cd65a7b9b9348c
+Merge: 509f6ba 0fca81b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 14 21:41:53 2010 -0500
+
+    Merge branch 'master' into pm-utils-1.3
+
+commit 0fca81b9a39b31a8103f1380953948c722e2b331
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Feb 15 16:50:27 2010 +0100
+
+    Fix a small typo ('lits') in pm-action.8
+    
+    Reported as Debian bug:
+    http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=567084
+
+commit 916a6dc5008b51e63c1708b66eb1847c9f8dc72e
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Feb 15 00:38:44 2010 +0100
+
+    Small fix for 309fba58adaf8c57df6cb91411c81eae336e82dc
+
+commit 309fba58adaf8c57df6cb91411c81eae336e82dc
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Wed Feb 3 22:19:31 2010 +0100
+
+    Rename, for consistency's sake
+
+commit 8fb0119543fc186786ff5dd10cccab066ede1860
+Author: Rafał Miłecki <zajec5@gmail.com>
+Date:   Wed Feb 3 21:27:27 2010 +0100
+
+    Fix typo in regexp, replacing ; char
+    
+    Replace all occurences of ; not only the first one
+    
+    Signed-off-by: Rafał Miłecki <zajec5@gmail.com>
+
+commit d1cf11b9be14dd88bc1eeb9b7cd729fbcee632f7
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Date:   Wed Feb 3 11:34:58 2010 -0800
+
+    fix alternatives matching in native quirks DB
+    
+    The native quirks DB separates alternatives with ';'. For regexp matching, turn
+    those into '|', so that they will actually match.
+
+commit e5b0df69127b32f974cf9506460e7852cd25b8e4
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Date:   Wed Feb 3 11:06:17 2010 -0800
+
+    fix usage of find_native()
+    
+    98-video-quirk-db-handler expects find_native() to write the quirks to stdout,
+    so actually do write them there. This makes the native quirks work.
+
+commit 665bad4f548f19ab8706026c646e44cdab8c37f9
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Date:   Tue Feb 2 17:40:14 2010 -0800
+
+    fix DMI attribute matching
+    
+    canonicalize_dmivar() refused the valid property "system.firmware.release_date"
+    because of a missing '_' in the character filter.
+
+commit 509f6badd8ffcc40bd3393d8c222ee8adacfa6b6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Dec 25 10:45:24 2009 -0600
+
+    chvt again when using nvidia binary driver
+    
+    Certian newer nvidia binary drivers do not chvt in kernelspace, which
+    leads to reported lockups.  Go ahead and have them chvt in userspace again.
+
+commit e0b016fd42d3e2c279f730bd0f400933267d6fdb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 13 20:55:02 2009 -0600
+
+    Bump revision to rc3
+
+commit 8e4dc224482476b5f186375bedf1e4c809e4b727
+Merge: 455709e a253fe1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 13 20:54:03 2009 -0600
+
+    Merge branch 'pm-utils-1.3'
+
+commit a253fe1a2f1aa6b9a4cd3305c0c683efc289f824
+Merge: 8cb8fb3 3aba018
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 13 20:53:45 2009 -0600
+
+    Merge is_set fix from 1.2 branch
+
+commit 3aba018a220356f519f1066f6116642266559028
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 13 20:52:05 2009 -0600
+
+    Oops, the "simple" bugfix for is_set broke everything else.
+
+commit 8cb8fb33ce7450ea975a6e51a9516e31b9b18eb8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 23:04:23 2009 -0600
+
+    Fix silly typo in pm-action.xml
+
+commit acf18d73b52a8b0b3b37746ced5e699b0fe79577
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 23:02:25 2009 -0600
+
+    Bump to pm-utils-1.3.0-rc2
+
+commit 7897b32ab1a3878a053e800bf314911d8d56a803
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 23:01:31 2009 -0600
+
+    Bump to 1.2.7-rc1
+
+commit 455709ea9df7e64cc0d29e18d0cdf0735bb69613
+Merge: 8680e68 da03ab1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 22:59:25 2009 -0600
+
+    Merge branch 'pm-utils-1.3'
+
+commit da03ab146c022b685b096ed7fe118eb4bb29ee6e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 22:57:00 2009 -0600
+
+    Use --quirk-test to override the usual sanity checks.
+    
+    This can be useful for testing to see if your system requires an unusual set
+    of quirks, but can also make your system crash in new and exciting ways across
+    suspend/resume.  You have been warned.
+
+commit d92323cbcb3c35896cc2969ff2fa9cb1d8365361
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 22:40:58 2009 -0600
+
+    Update 98-video-quirk-db-handler to reflect recent bug fixes
+    
+    Some longstanding typos in the quirks were fixed in 98smart-kernel-video.
+    Update the new quirk handling machinery to take those fixes into account.
+
+commit 03b34a925efebf3cc98939cfbb8e58a4408b5f93
+Merge: d1ebbc4 2c79827
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 22:37:05 2009 -0600
+
+    Merge branch 'pm-utils-1.2' into pm-utils-1.3
+    
+    Conflicts:
+    	pm/sleep.d/98smart-kernel-video
+
+commit 8680e685ab091d74eb5063393806a3a3f1894f5d
+Merge: f3886ca 2c79827
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 22:36:18 2009 -0600
+
+    Merge branch 'pm-utils-1.2'
+
+commit 2c7982708aea4296cdd238b224fc9b0b99f117b8
+Author: Christian Krause <chkr@plauener.de>
+Date:   Thu Dec 10 22:34:14 2009 -0600
+
+    Fix pci-save vs save-pci related typos
+    
+    - fix wrong function calls to pci_restore and pci_save which did
+    not match the actual defined functions (restore_pci and save_pci)
+    - use the correct quirk parameter in "remove_paramters"
+    (use --quirk-save-pci instead of --quirk-pci-save)
+
+commit 7f1732c08db46d76692cb2860c38d5e6d3987cc8
+Author: Tormod Volden <debian.tormod@gmail.com>
+Date:   Thu Dec 10 21:58:38 2009 -0600
+
+    [PATCH] Fix vga-mode-3 typo in video hooks
+    
+    We have been using vga-mode3 while the standard says vga-mode-3.
+    This might fix (or even break) some resume issues on hardware which did
+    not have any video quirks, since the option is set in
+    fdi/information/10freedesktop/99-video-quirk-default.fdi from hal-info.
+    
+    http://bugs.freedesktop.org/show_bug.cgi?id=25334
+    
+    Signed-off-by: Tormod Volden <debian.tormod@gmail.com>
+    
+    Signed-off-by: Victor Lowther <victor.lowther@gmail.com>
+
+commit 74ddb985b306c83db3fcd70605b0901b2a8309d6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 10 21:39:01 2009 -0600
+
+    Fix bug# 25547, make pm-action options formatting correct.
+
+commit d1ebbc409abd43c1b8a96640516aff48f2492027
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Dec 7 19:10:55 2009 -0600
+
+    Updated pm-action documentation to describe the new return values.
+
+commit 09da44bedc97ddd75e77ed87b7a057dc21e01a38
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Dec 7 19:02:35 2009 -0600
+
+    Track suspend/hibernate failures and exit accordingly.
+    
+    It turns out that echo whatever >/sys/power/state will fail if
+    transitioning to that state fails.  If transitioning to the
+    reuested power state fails, pm-action will return an error code
+    greater or equal than 128.
+
+commit f7df23f2928f63c38ef4b307b4312787f1a715bc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 6 13:32:33 2009 -0600
+
+    Resolve bug# 25427
+
+commit 57ff1f997d6297557340057e9fdbb2f956b31aa0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Dec 5 21:50:19 2009 -0600
+
+    Update revision to reflect rc status, and make manpage actually build.
+
+commit ab89e5758bc07d1506050d97b4d9ff5a051b6681
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Dec 5 21:29:01 2009 -0600
+
+    Update import-fdi-quirkdb to make it a little more flexible.
+    
+    It now takes two optional arguments -- $1 is the location of the .fdi
+    quirks, and $2 is the place to put them.
+
+commit 946ba5c8fa6e1d46b0bb205a0b2a98cc4261a480
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Dec 5 12:02:18 2009 -0600
+
+    Add reference to README.debugging in the pm-action manpage.
+
+commit 00a867384055d98b6431ffca86ac664b2cacf614
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Dec 5 11:52:56 2009 -0600
+
+    Bump revision number to 1.3.0
+
+commit c016155ca72c86bfefe397de4310f53566a1c246
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Dec 5 11:51:33 2009 -0600
+
+    Updated pm-action manpage to reflect recent changes.
+    
+    We have --store-quirks-as-lkw instead of --store-quirks-as-fdi, and
+    the default kernel methods have a suspend-hybrid implementation that
+    has a 900 second delay between suspending and hibernating.
+
+commit cc971769598b08e8a29b5319048c59c41a0b2f2f
+Merge: 71c88ca 8cadf34
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Dec 5 11:11:01 2009 -0600
+
+    Merge branch 'profiling-support' into native-quirk-db
+
+commit 71c88ca37b0be0ad35555c53e4e059f014592eff
+Merge: c6b37b9 f3886ca
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Dec 5 11:10:50 2009 -0600
+
+    Merge branch 'master' into native-quirk-db
+
+commit c6b37b9a0d5f12b7067bf24627af19fed6bcde5a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Dec 1 20:39:03 2009 -0600
+
+    Oops, spell nouveau correctly.
+
+commit f3886cadd361f9f1659c2f555e5a0e74ed9422b6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Dec 1 12:35:04 2009 -0600
+
+    Add support for hibernate after suspend.
+    
+    Do this by adding a default suspend_hybrid sleep method. With the
+    default settings, we schedule an alarm for 15 minutes from now, suspend,
+    and hibernate if we wake up in 15 minutes.
+
+commit 51f39d7b0e2b4b639392dc64c17fece0f972c085
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Dec 1 10:52:47 2009 -0600
+
+    Oops, actually cache the dmi variables again if we need to update
+    the last known working quirk.
+
+commit 9b2e067bedd6d3f5351e6849b7d371fa1c9accda
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Dec 1 00:30:04 2009 -0600
+
+    Add some documentation on native quirk handling.
+    
+    Also add the functionality the documentation mentions.
+
+commit 6a47db417d37828389cdaaf68818478ca0a51ec8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Nov 30 22:50:39 2009 -0600
+
+    Clean up on_ac_power modifications.
+    
+    Ugh, backticks.
+
+commit 557b67691b14c580e57cdefbf9faf2852c1e6c77
+Merge: 8b08ffd f323e2c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Nov 30 22:42:39 2009 -0600
+
+    Merge branch 'master' into native-quirk-db
+    
+    Conflicts:
+    	pm/sleep.d/98smart-kernel-video
+    
+    98smart-kernel-video no longer exists, but we want the other fixups in the
+    master branch.
+
+commit 8b08ffdb3cf8ecce10309d7149474797832631d2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Nov 30 18:18:31 2009 -0600
+
+    Some final fixups to make the built-in video quirk database handling work.
+
+commit 591d9757685ae95795dbdc9fb3958325c2fab962
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Nov 30 17:46:26 2009 -0600
+
+    Oops, forgot up update Makefile.am
+
+commit f323e2cf2eddd683721be4eadbdc82f0454e7190
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Date:   Wed Nov 25 12:37:57 2009 +0100
+
+    some documentation updates for DeviceKit-power
+    
+    https://bugs.freedesktop.org/show_bug.cgi?id=25274
+
+commit c7df9ec51d914ff06007414651c89750dbdb3745
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Date:   Wed Nov 25 12:35:28 2009 +0100
+
+    pm-functions.in: Drop $CHASSIS_TYPE
+    
+    $CHASSIS_TYPE is not used anywhere in pm-utils itself, nor any third-party
+    pm-utils hook that I can see. It relies on a dmidecode map in hal which has
+    never really been robust, and it just seems generally obsolete nowadays.
+    
+    Let's not proliferate that any further and just remove it entirely.
+    
+    https://bugs.freedesktop.org/show_bug.cgi?id=25274
+
+commit 7cf2894a69cb5627fd9949bf065cb1c631b84bc5
+Author: Martin Pitt <martin.pitt@ubuntu.com>
+Date:   Wed Nov 25 12:31:34 2009 +0100
+
+    on_ac_power: DeviceKit-power support
+    
+    Try to contact DeviceKit-Power in on_ac_power, and if it succeeds, use that.
+    Otherwise fall back to hal.
+    
+    https://bugs.freedesktop.org/show_bug.cgi?id=25274
+
+commit 738bfc88110d0f0a7a64b754875358a1a870bded
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Nov 30 09:51:41 2009 +0100
+
+    Fix a typo in have_kms
+    
+    The nvidia driver is called "nouveau", not "noveau".
+    Thanks to Julien Cristau for spotting this.
+
+commit ea9c198040f9b70f474ef8297e227e70f56aa505
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Nov 16 11:07:39 2009 -0600
+
+    Actaully add the new .fdi importing script.
+
+commit c4f1ddf6b31dc24e0181dea1d0495fc359f4d2d9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Nov 16 11:07:08 2009 -0600
+
+    Extract out the bits that handle translating .fdi files into their own
+    script.
+    
+    Integrating video quirk db handling into pm-utils requires splitting out
+    database querying from database importing anyways.
+
+commit 281bcef4c81e4a9751923bb6ea64669d1f9aba5d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Nov 16 10:30:10 2009 -0600
+
+    Start merging native quirk handling functionality into pm-utils
+
+commit 018525d16a874dac627d780e8ac6928ace702d60
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 15 22:30:50 2009 -0600
+
+    Make pm-utils handle video quirks natively
+    
+    Add video-quirk-db-handler, which knows how to read the video .fdi files,
+    translate them into a native format, and use that native format to find the
+    appropriate quirks for a given system.
+    
+    This hook replaces 00auto-quirk and 98smart-kernel-video.
+
+commit dc0963283565bd67154ed8584f8c3f28b43b3807
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Nov 12 21:28:55 2009 -0600
+
+    Bump to 1.2.6.1
+    
+    Oops, broke smart non-KMS modesetting for Intel.
+
+commit 067ab317cee676d523d1954d1aeb04a6cc8df139
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Nov 12 21:26:22 2009 -0600
+
+    Add back have_smart_intel
+    
+    We still need to consider the case where i915 is used with modesetting
+    disabled. So revert the have_smart_intel removal in
+    504faf0a0c31cbdbc03a608cf633d58f12e49eb7.  Thanks, mbiebl!
+
+commit 898b46860ad7aa509098e3e454e30c2f3d7b4dea
+Merge: aa049b6 f66bfc9
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sun Nov 8 17:10:57 2009 +0100
+
+    Merge branch 'master' into pm-utils-1.2
+
+commit f66bfc9193862450c64deb55c063171ec3985522
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sun Nov 8 17:09:19 2009 +0100
+
+    Fix typo in pm-action.8
+    
+    Patch by Mario Lang.
+    
+    http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=540122
+
+commit 3dfbf269209ee4e1252d5de6cd2fe4ea78d91d68
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sun Nov 8 17:05:18 2009 +0100
+
+    Don't err out in maybe_deallocvt if there is no console state
+    
+    kpowersave pops up a window telling that an error "1" has occurred when
+    suspending to ram. The error "1" message is annoying and lacks meaning
+    to the user.
+    
+    It's caused by maybe_deallocvt returning the ret_val of state_exists
+    when the tested (here: console) file isn't found. This absence of this file
+    seems not to do any harm therefore the escalation of the ret_val 1 is
+    deprecated.
+    
+    Solution: just tell maybe_deallocvt to return 0 in the above case.
+    
+    http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=554959
+
+commit aa049b6e8d757579c2727a63fd09ee80c3a30ea4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Nov 7 23:52:33 2009 -0600
+
+    Bump version number to 1.2.6
+
+commit 51afe0cac4d540116c48949f65e16c141d6b0ade
+Merge: 054668a 6014e54
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Nov 7 23:51:04 2009 -0600
+
+    Merge branch 'master' into pm-utils-1.2
+
+commit 6014e54b7f007109616965ff601ff05ea6fc397a
+Merge: 504faf0 6691c51
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Nov 7 23:26:39 2009 -0600
+
+    Merge commit 'remotes/UPSTREAM/master'
+
+commit 504faf0a0c31cbdbc03a608cf633d58f12e49eb7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Nov 7 23:21:45 2009 -0600
+
+    Make kernel modesetting detection a little smarter.
+    
+    It turns out that the method we were using to detect kernel modesetting
+    support was not very accurate.  It turns out there is no bulletproof way
+    for us to tell if KMS is being used, but Michael Biebl found a way that
+    sucks less than out current method.  Hopefully the framebuffer drivers
+    will grow a flag in sysfs somewhere that tells us that KMS is in use.
+
+commit 6691c51d58951c328e08e50087b354ceb2c4f3db
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Jul 6 20:22:52 2009 +0200
+
+    Revert "Fix a bashism ('==')"
+    
+    This reverts commit f3821f3479a58a8453bf9219fb5933fd99b5c1a8.
+    
+    The fix was actually bogus and a false-positive of checkbashisms.
+
+commit f3821f3479a58a8453bf9219fb5933fd99b5c1a8
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Wed Jul 1 17:33:08 2009 +0200
+
+    Fix a bashism ('==')
+    
+    See Debian bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=530164
+
+commit d517615e97a4180854418369b54a65adfed6ddca
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Wed Jul 1 16:52:54 2009 +0200
+
+    Fix syntax for shell configuration variables.
+    
+    See Debian bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=528726
+
+commit 7c6748634774dc97049d9c6a38633b9983a10435
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Wed Jul 1 16:51:52 2009 +0200
+
+    Update comment to reflect current state
+
+commit b01d306fbba7dd8d7ab68a5a8c850472e9273277
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Jun 13 21:01:17 2009 -0500
+
+    Make is_set checking more explicit
+    
+    If is_set is not one of the usual boolean values, return 2.
+
+commit f66326636dd93afc115c64fc3320a6c2ef424a22
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed May 6 18:34:11 2009 -0500
+
+    Update places where we check for booleans to use is_set
+    
+    Suprisingly, there are not that many.
+
+commit 2daad8297459f68fc5ad0fd4b0a2aa8ba918621d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed May 6 18:14:07 2009 -0500
+
+    Add is_set function to make checking boolean variables easier.
+    
+    The definition of a boolean variable is one that is set to "true", "yes" "1",
+    or that is set to the null value.
+
+commit c66b32116b95a22beea22a9210241cf5244b3e47
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Thu Apr 23 17:15:33 2009 +0200
+
+    Fix a few typos in the documentation
+    
+    See http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=525253
+
+commit e5cdb5bb6a573a36b0c872c889c8b8f25009cc45
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Fri Apr 17 00:23:46 2009 +0200
+
+    Fix typo in have_kms()
+    
+    The function is correctly called add_parameters.
+    Debian bug http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=524243
+
+commit 054668a461347514034b88eef24f902b69d55d5b
+Merge: e6fd079 46e3db3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Apr 11 07:45:20 2009 -0500
+
+    Merge branch 'master' into pm-utils-1.2
+
+commit 46e3db3d321579217edbea90c1ddf6f98ea1f38b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Apr 11 07:43:58 2009 -0500
+
+    Use sched_smt_power_savings.
+    
+    There is no sched_smp_power_savings tunable.
+    
+    Thanks, Michael Biebl!
+
+commit e6fd0796858826bfc4404672d0234fb15789f8f2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Apr 3 13:49:15 2009 -0500
+
+    Bump revision number
+
+commit ab9399236ff33e9b22dbc18d01566609689c859a
+Merge: 813c1e4 11176a7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Apr 3 13:48:21 2009 -0500
+
+    Merge branch 'master' into pm-utils-1.2
+
+commit 11176a7d37f6a0854c8d9e338d972299589788dd
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Apr 3 13:42:01 2009 -0500
+
+    We should not need to chvt when suspending using KMS
+
+commit a79d16300c662080caf1775f1cf68f1be4049716
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Apr 3 13:39:55 2009 -0500
+
+    Add KMS support to 98-smart-kernel-video
+    
+    Also factor some things out to make 98-smart-kernel-video shorter.
+
+commit 584f08dc12fada69dbe1948a61cfc4b179b40eda
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Apr 3 13:27:56 2009 -0500
+
+    Move chvt handling into 99video
+    
+    This prepares for adding kernel modesetting support.
+
+commit 813c1e4e07b9a1ccd887c0eacdb714cf5715fd5c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Feb 8 17:23:37 2009 -0600
+
+    Bump version number for pm-utils 1.2.4
+
+commit 4755f6754b1a80db775676f7d485da0ee725a0c1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jan 30 04:51:50 2009 -0600
+
+    Make CHASSIS_TYPE always have Unknown if we cannot determine the chassis type.
+
+commit 328c2016b4adf0fc04de43f79c66c1477abdae3f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 26 06:50:13 2009 -0600
+
+    Resolve fd.o bug# 19658
+    
+    modunload was not unloading dependent modules correctly due to
+    incorrect string handling.  Fix provided by zak.kipling@cantab.net.
+
+commit 67ac2ed11b44df8f5405ee1c424f2073193aca5e
+Merge: cdf3765 df99431
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 26 06:24:33 2009 -0600
+
+    Merge commit 'UPSTREAM/master'
+
+commit df99431ba8ee5a2a5b552f32950ae98eec9757d2
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Sun Jan 18 11:20:47 2009 -0800
+
+    Match gentoo message "started" when checking for running services
+    
+    Gentoo uses the convention of printing the message "started" when
+    showing the status of services. Augment stopservice() to check this in
+    addition to "running". This also drops the unnecessary -c argument from
+    the grep command.
+    
+    Signed-off-by: Dan Nicholson <dbn.lists@gmail.com>
+
+commit cdf37656b3835da0c8476460076b03785e0b9758
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Dec 15 13:55:32 2008 -0600
+
+    Fix broken quirk handling introduced by auto-quirk debugging change.
+
+commit 8cadf34e33592697a2fca23b81f3ce640c79e762
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 14 13:36:16 2008 -0600
+
+    Document PM_DEBUG and PM_PROFILE
+
+commit 3ee39985a78ee89bae1f4c7e7865398c12ca1558
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 14 13:33:16 2008 -0600
+
+    Profile run_hooks as well as each individual hook
+
+commit 16531c217d0f2492d431b7f5db6c2e7b012ab648
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 14 12:15:29 2008 -0600
+
+    Factor out run_hook to make profiling easier
+
+commit c992f07b11dc5d77dd3de25607a7a66f1b289fd8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 14 12:00:53 2008 -0600
+
+    Add a profile function wrapper.
+    
+    This makes it easier to profile suspend/resume.  The profile function
+    should work on any callable item.
+
+commit 68e38d6e7746fe8d36d80f5b85d5b704bf49bcf2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Dec 15 06:08:22 2008 -0600
+
+    By default, pm-powersave does nothing with laptop-mode.
+    
+    So dpn't even mention it in our manpages.
+
+commit 265fcd57fe3d09062722a7e26bde07c2851fcc1f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 14 21:53:34 2008 -0600
+
+    Echo the quirks we got from HAL in 00auto-quirk.
+    
+    This will make pm-utils slightly easier to debug.
+    Thanks, Michael Biebl for the idea.
+
+commit e3c0135899e8f1b9c27333d4641dabf9c1a562cf
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 14 15:46:39 2008 -0600
+
+    hal-get-porperty runs just fine as a normal user
+
+commit 2c89b8f30b1d28ad98d17783ec6c75e27c5b7514
+Merge: 6f9cbbf 41be1ba
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Dec 14 13:37:04 2008 -0600
+
+    Merge branch 'pm-utils-1.2'
+
+commit 41be1ba0668222efd6b3861ce2edaf1398a40364
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 11 11:06:08 2008 -0600
+
+    Fix silly typo in pm-utils.pc.in.  Thanks, Robby!
+
+commit 6f9cbbf628bb19f488695e7fa6c5d63d24a2eaa7
+Merge: 3dc0090 74abfd9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 11 10:06:13 2008 -0600
+
+    Merge branch 'pm-utils-1.2'
+
+commit 3dc009097307409f9f44522e5ece9b9f2d1bec3b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Dec 11 10:04:50 2008 -0600
+
+    Export the default config dir using pkgconfig.
+
+commit 74abfd91d9aba25f1b5b8c3b9a238b426470b6e2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Dec 5 06:15:49 2008 -0600
+
+    Do not try to make removed hooks
+
+commit 2c253a933218e5256427bf84460e1060b3dc0f0e
+Merge: f0cf3ad 89c71b6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Dec 3 13:09:46 2008 -0600
+
+    Merge branch 'master' into pm-utils-1.2
+    
+    Conflicts:
+    	configure.ac
+
+commit 89c71b6e409194cb18a5a6cf6b358d2f36957ffd
+Merge: fbf72f5 618110a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Dec 3 13:06:54 2008 -0600
+
+    Merge branch 'maybe-pm-utils-1.2.3'
+
+commit 618110a72da2c22e50e3a6324be2332699103cca
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Dec 1 09:26:12 2008 -0600
+
+    Updated NEWS with major items for the 1.2 series.
+
+commit db9fd15445ee7c2eeb873b06cf89da15442d8e67
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 30 10:19:24 2008 -0600
+
+    Added notes on how to minimized user impact.
+    
+    After all, user perception of these things is our reality.
+
+commit 7dd6fe1ae1da23e5c051ca175b2834c5e5eef7ae
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 30 08:19:00 2008 -0600
+
+    Add more comments to uswsusp since it is being used as an example in documentation
+
+commit 0ef31524b229174b02c51d2134b4f56636c590db
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 30 07:51:37 2008 -0600
+
+    Describe stackable sleep modules in HOWTO.modules.
+
+commit 3e72a7a5adb9d3b69d45dda327ed5bde5ad2eabc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 30 09:51:38 2008 -0600
+
+    Drop 50ntpd
+    
+    ntpd operates normally over a sleep/wake cycle. Stoppping and
+    restarting it in a sleep hook is too adhoc. If it is essential
+    that ntpd be stopped and restarted, then having NetworkManager
+    do the job when interfaces go offline and come back online is
+    a better way to do things.
+
+commit d4c9650d3476643454c282b082fa45820f4d72ac
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 30 15:55:36 2008 -0600
+
+    Drop 65alsa -- it is useless by itself.
+    
+    alsa drivers that support suspend/resume will save their state without it.
+    
+    alsa drivers that don't will need to be unloaded and reloaded as well as
+    having their state saved and restored to work properly.
+    
+    See thread at http://mailman.alsa-project.org/pipermail/alsa-devel/2008-November/013030.html
+
+commit 3df57b4fbce6243f27d6cbf99f53034f862a9a6e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 30 08:37:20 2008 -0600
+
+    Support Slackware init system.
+
+commit 493224b1beeac0154807bcb1ac8a3007a46c435b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Nov 28 16:15:15 2008 -0600
+
+    90clock takes over a second to run on suspend.
+    
+    Most systems do not need it.  Add NEED_CLOCK_SYNC, and only run hwclock
+    if it is set.  This will probably go away entirely in a later release.
+
+commit 6eb53f4de576e9a569d9019f3398c23438c2cfa5
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Nov 29 08:52:41 2008 -0600
+
+    Bump revision number
+
+commit 199a735563e7f1f7146b1c0c7eb1fc3aa854a956
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Nov 30 18:19:12 2008 -0600
+
+    Remove 55battery
+    
+    HAL has handled rescanning the batteries since mid 2006.
+
+commit 2886a5de8fad097e21d4edb75de1eafecf70e718
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Oct 20 21:28:18 2008 -0500
+
+    Modified pm-utils.pc.in to make autoconf intergration easier
+    
+    This adds pm_sleephooks, pm_powerhooks, and pm_sleepmodules to the values that
+    pkg-config can return.
+
+commit fbf72f5fd7a685c79c858e2e400096fb65a8667e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Nov 29 08:52:41 2008 -0600
+
+    Bump revision number
+
+commit 290fb463ea2d9628a1b724d83d34a96c84b025c6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Nov 28 16:53:37 2008 -0600
+
+    Don't try to build 55battery anymore
+
+commit 74aead833bfc3ea7429e15938f7f836f0eb5f010
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Nov 28 16:15:15 2008 -0600
+
+    90clock takes over a second to run on suspend.
+    
+    Most systems do not need it.  Add NEED_CLOCK_SYNC, and only run hwclock
+    if it is set.  This should eventually turn into a quirk.
+
+commit 6e577968119b8997233b98620dd5a740c16d2412
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Nov 27 07:59:02 2008 -0600
+
+    HAL has handled this since mid 2006.
+
+commit ab813bbbc25a88c726045b53d97b3a776f0a726c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Oct 29 14:30:15 2008 -0500
+
+    Added dbus_send helper function.
+    
+    This function works just like dbus-send, but returns $NA if the command
+    fails for any reason.  Also modified hooks to use dbus_send where applicable.
+
+commit 6c9f2959a36e608e4d1f71230a9eaaa77940c54e
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Tue Oct 7 03:23:25 2008 +0200
+
+    Reset acpi_video_flags before suspend.
+    
+    If no --quirk-s3-* option is passed to pm-suspend, set acpi_video_flags
+    to 0. This allows to reliably test different set of quirks and clears
+    any flags that were set via the kernel boot option. We deliberately
+    ignore the kernel acpi_sleep option, quirks should be set via HAL.
+
+commit f0cf3adb37fd06e7cbb882c9ab4ba35da28a3531
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Oct 6 05:51:57 2008 -0500
+
+    pm-utils-1.2.2.1
+
+commit 61656ae7d8404796354bf24200c75105d5ec6be7
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Oct 6 05:49:03 2008 -0500
+
+    One last cleanup in 00auto-quirks
+
+commit 8bb909029274930145aaa99b4b8b5447fcf323de
+Merge: 78c842d 383ee6c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 20:53:06 2008 -0500
+
+    Merge branch 'master' into pm-utils-1.2
+
+commit 383ee6cc45b56086e7e5ea8846a1c0adae3cc035
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 19:35:14 2008 -0500
+
+    Do not save quirks if we were inhibited.
+
+commit 8125023126e165ecbe5bd01495ac30bfd94273b6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 19:17:08 2008 -0500
+
+    --store-quirks-as-fdi, not --save-quirks-as-fdi
+
+commit 78a6575ae849858eb822655dd363887cfd8a8162
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 18:42:00 2008 -0500
+
+    Document sleep module fallback behaviour in pm-action man page.
+
+commit 1fe13fe144d26cf827cc06b2ba164541cd4e29e9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 18:39:13 2008 -0500
+
+    Document hook ordering convention in the pm-action man page.
+
+commit 226914884fba883682fa60a40bebb3873ecde927
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 17:41:35 2008 -0500
+
+    Document --auto-quirks and --save-quirks-as-fdi in the pm-action man page.
+
+commit 7fa3f446439de179ae4d4bf73481e785b93fba34
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 17:17:21 2008 -0500
+
+    Always reset acpi video flags in 99video on resume
+
+commit 483cefcf0f7a9f3091bd03c7be52085f80134842
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 17:12:39 2008 -0500
+
+    Numbers are also valid in quirks from lshal.
+
+commit 78c842d66e376461206947ac53d3976f68afdc7f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 10:57:22 2008 -0500
+
+    Bump revision number to 1.2.2
+
+commit baa95d0f6f5fac987c85303f158accf17bcdbd8c
+Merge: d156e93 f90faf9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 10:55:48 2008 -0500
+
+    Merge branch 'master' into pm-utils-1.2
+
+commit f90faf9293b1dddba7fe6da2a22398e8b84e51cc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 09:27:25 2008 -0500
+
+    Fix incomplete renaming of _METHOD to _MODULE
+
+commit 806df338c05a972cb53de1c372e829f9f61fedd3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Oct 5 09:09:39 2008 -0500
+
+    Fix stupid thinko in has_parameter
+
+commit f7d7d72439101083925fccd7825fd711e790c4e0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Oct 4 21:21:29 2008 -0500
+
+    Do not save generated .fdi in /tmp
+    
+    Instead, save them in /etc/hal/fdi/information.
+    Closes an airline-plot potential DoS attack.
+
+commit d156e9312ea5c2fecb3d9ada08c3746012361550
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Oct 3 21:17:53 2008 -0500
+
+    Bump version to 1.2.1
+
+commit 0f7d491ad9574e730b0bd0ea14b003f7a0917205
+Merge: 969e565 390d301
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Oct 3 21:16:25 2008 -0500
+
+    Merge branch 'auto-backend' into pm-utils-1.2
+
+commit fe5fc86b7e4f03cb11f291433fd9479951eedfb7
+Merge: 5e629b5 969e565
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Oct 3 21:14:45 2008 -0500
+
+    Merge branch 'auto-quirks'
+
+commit 969e565492b096d578c7a22c683dc67a6d14613d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Sep 27 12:44:24 2008 -0500
+
+    Fixed typo in 00auto-quirk
+
+commit 5e629b56b92eb87da207d4d2c942492d87d425fa
+Merge: f9570ff ba5e251
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Sep 27 08:43:31 2008 -0500
+
+    Merge branch 'auto-quirks'
+
+commit f9570ff8a38aeffb21fd9d6a525dbad7dc5098fb
+Merge: 268ad38 390d301
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Sep 27 08:43:04 2008 -0500
+
+    Merge branch 'auto-backend'
+
+commit 268ad38428662c410c7c70ccf561dab8ee6ecd50
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Sep 27 08:42:27 2008 -0500
+
+    Use hal-get-property instead of dmidecode to get the chassis type.
+
+commit 390d3019c38e917d3baf9eea8209c54e4970fc5a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Sep 18 11:22:37 2008 -0500
+
+    Forgot to change sleep_method_help in pm-action.in
+
+commit 2fa2d36dd1cbd92f48de75782e4f5f7eca0b668b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 17 21:59:51 2008 -0500
+
+    Impliment module autoloading.
+    
+    We can now autodetect the proper sleep methods, and the sleep modules
+    are stackable.
+
+commit fc06462ba70a260cad0a4cb6c0d2fc9aa5ce3aea
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 17 21:52:13 2008 -0500
+
+    Always fall back to kernel methods for suspend and hibernate.
+    
+    That way we have a method of resilience in the case of misconfiguration,
+    and future sleep methods do not have to reimplement the kernel methods.
+
+commit 04d25924f782d96ef55f164aea55e3d227a8a3ec
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 17 21:41:26 2008 -0500
+
+    Move the check_ functions to pm-functions.
+    
+    Also conditionalize the do_ functions in the sleep modules.  Now, we only
+    declare the actual do_ functions if the system can in fact sleep using
+    the requested method.
+
+commit 38a9d169b831aa1528a47060612cba3dd5ff3514
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 17 19:47:17 2008 -0500
+
+    Make per-module help and before_hooks methods stackable.
+    
+    This will help with making the sleep methods stackable and
+    autodetectable.
+
+commit 982784806793454ea3b87babb3b399d98c8d1639
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 17 19:29:35 2008 -0500
+
+    Determine what sleep method we will try before sourcing pm-functions
+    
+    Lays some groundwork for allowing autodetect of sleep methods.
+
+commit 15c62582af5193f10fb7e612c2b1abb8072f793f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 17 19:19:18 2008 -0500
+
+    Modified pm-pmu to take a --check parameter
+    
+    This allow us to check and see if suspending via pmu will do The Right
+    Thing before actually performing a suspend via pmu.
+
+commit ba5e251fe28691a359660f0dfdd229a2f6089524
+Merge: f30564b 285ed3d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Sep 13 04:19:41 2008 -0500
+
+    Merge branch 'auto-quirks'
+
+commit f30564ba387d06df3428a16d5bd8664e35d16dae
+Merge: dd430a0 c6a445d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Sep 13 04:16:38 2008 -0500
+
+    Merge branch 'handle-pci-save'
+
+commit 285ed3d355956513ecb8509ef931860221aadd25
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 22:04:04 2008 -0500
+
+    Make 00auto-quirk fail gracefully if HAL is not there.
+
+commit abcd57e9730613bf08d75498fa348266a93f49b0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 17:25:43 2008 -0500
+
+    Use has_parameter instead of manually looping over parameters.
+
+commit 1f8e1bfb8b212d2edaf1f0bfd1a18aac23797cd5
+Merge: 5c193b1 dd430a0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 17:21:09 2008 -0500
+
+    Merge branch 'master' into auto-quirks
+
+commit dd430a021b2d413a1b6ffc8e9fbe104b2f72f35f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 17:19:19 2008 -0500
+
+    Add a little helper function to test for a single parameter.
+
+commit 5c193b1c9e24224f80cf59a8dd55f58e6b656fb8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 12:57:43 2008 -0500
+
+    Update TODO for --auto-quirk and --store-quirks-as-fdi
+    
+    We can grab quirks from HAL, and we know how to save quirks to a .fdi
+    file.
+
+commit 30572ed0fdfc2522ce64d10148cd7f74b97e56eb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 12:56:03 2008 -0500
+
+    Added support for saving quirks to a .fdi file
+    
+    We probably collect too much information here, but too much
+    is better than not enough.
+
+commit 0497c019ed8e49e8f1f4e39a8d934c56f754622c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 10:46:36 2008 -0500
+
+    Describe DWIM functionality in auto-quirk help.
+
+commit c768a36e484b917187b88069eb530c240b87083c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Sep 10 10:34:51 2008 -0500
+
+    Fix logging bug that was aborting help after the first hook.
+
+commit ef78d2649b9a6a8b7745241f7ad1b8416f017a7f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Sep 9 21:31:53 2008 -0500
+
+    When pm-action is invoked without any parameters, grab them from HAL
+    
+    This adds a bit of DWIM to pm-suspend and friends.
+
+commit 8a46966d6ea9329fba27f9eb3bfeaf298a419b36
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Sep 9 21:13:49 2008 -0500
+
+    Add help to 00auto-quirk
+    
+    Also fix a silly typo
+
+commit 9197b4173c308bcdcc9b5f8a4f8b95146e634833
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Sep 9 21:07:45 2008 -0500
+
+    Automagically grab quirks from HAL
+    
+    To use this functionality, run pm(suspend|hibernate|suspend-hybrid) with
+    --auto-quirks.
+
+commit c6a445deed2ad7321d6707a328eba0cd67639104
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Sep 9 15:11:29 2008 -0500
+
+    Updated 98smart-kernel-video to be aware of new quirks
+    
+    Are the kernel video drivers spart enough to handle no-fb and pci-save?
+    Only time will tell.
+
+commit 7da41036e8c8555fea8eeddfa66307d798bcf87d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Sep 9 14:48:56 2008 -0500
+
+    Added support for the nofb and pci_save HAL quirks.
+    
+    Right now there are no entries in any of the .fdi files that specify use of
+    these quirks, which is why they were probably never implemented in pm-utils.
+
+commit 6ab65e737b0d70c97cabb4cd795909115cbd7591
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Sep 7 09:22:59 2008 -0500
+
+    We handle hook failure and suspend_hybrid correctly now.
+    
+    Delete those sections from the TODO
+
+commit 9dc773bafb1354cb4ffbc31dc364817aca57ca41
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Sep 7 08:39:21 2008 -0500
+
+    pm-utils 1.2.0
+    
+    This release brought to you by Penelope Lowther, who is 4 weeks old
+    today.
+
+commit 113024e1bb6a12a667666d912123ecbd9a9ee984
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jul 25 07:47:19 2008 -0500
+
+    First pm-utils 1.2.0 release candidate
+
+commit 1125407844a46363a5ba8d4cf474de5cd8231431
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jul 23 08:07:25 2008 -0500
+
+    Also missed a ;;
+
+commit c91083f2a91b006ad19e853eb0d19f1263aef050
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jul 23 08:04:16 2008 -0500
+
+    Missed a close brace
+
+commit 3fec4c5c285fcb0eaad6de6dae3c4132e860944e
+Merge: 6ec54f8 6aea272
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jul 23 07:29:54 2008 -0500
+
+    Merge branch 'pm-utils-1.1' into pm-utils-1.2
+    
+    Conflicts:
+    
+    	configure.ac
+    	pm/sleep.d/98smart-kernel-video
+
+commit 6aea27259e25958bedfc352398128ca93de10e49
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jul 21 23:20:15 2008 -0500
+
+    Greatly expanded the 98smart-kernel-video hook.
+    
+    Each intelligent driver gets its own section, and we no longer
+    remove s3-bios and s3-mode quirks if we are using Intel kernel modesetting.
+
+commit 6ec54f84dd4dcc0ed1f670cdcb1894f4ed6a6239
+Merge: f76baff 873733d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Jul 10 13:49:34 2008 -0500
+
+    Merge branch 'two-parameter-sleep-hooks'
+
+commit f76baff97225aa45221d553b7541d3e4db953a04
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Jul 5 12:00:32 2008 -0500
+
+    Make some changes to core functionality to support pm-powersave
+    
+    This consists of core features extracted from the powersave-hooks branch, and
+    does the following:
+    
+    * Refactor some settings in pm-functions to make it easier to support seperate
+      settings for pm-action and pm-powersave.  Other than sharing a mechanism for
+      running hooks and being able to use certian utility functions, they do not
+      have much in common w.r.t settings and lifecycle rules for those settings.
+    
+    * Move take_suspend_lock from pm-functions to pm-action. pm-powersave uses a
+      simpler scheme, and there is not enough code sharing to justify having it in
+      pm-functions.
+    
+    * Add a bit of code to pm-functions to figure out what chassis type we are
+      running on.
+    
+    * Add a 00powersave hook that turns powersaving off across a suspend/resume.
+      Things like laptop-mode in particular have been known to cause issues in
+      some situations.
+    
+    * Make pm-powersave log to a real logfile and try to guess at the appropriate
+      powersave mode if called with no arguments.
+
+commit 873733dad6476a7c5f7ec6068fb0be7b4c62edbb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jul 2 20:57:10 2008 -0500
+
+    Modify the tuxonice sleep module to modify $REVERSE for suspend_hybrid
+    
+    pm-utils can handle suspend_hybrid correctly now, so make use of that
+    functionality.
+
+commit d06ab6c9c11c21d98ffbee19047678a1bd60b6a0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jul 1 21:15:23 2008 -0500
+
+    Update documentation to describe the new two-parameter sleep.d regime
+
+commit c7e053a05844af2789bb7fab3bf81b0c6d1abcb6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jul 1 21:09:09 2008 -0500
+
+    Add support for massing $METHOD as the second parameter to hooks
+    
+    This makes it easier for hooks that care about suspend_hybrid to handle
+    it correctly without having to force all the other hooks to care about it.
+    
+    Also updated 01grub to conform to the new plan.
+
+commit d3223855cbb91c01776aca2d4196b79f73afd7ae
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 27 23:34:48 2008 -0500
+
+    Make uswsusp work with the reordered hooks.
+    
+    00clear -> 90chvt and all that.
+
+commit 1167ff73476bb7e17507f12b0d9a2460957a8952
+Merge: 84e87ee 4256c9d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 27 23:22:13 2008 -0500
+
+    Merge branch 'vlowther-handle-hook-failure'
+
+commit 84e87eead51898570418f4e6ce86ec5b7651a33c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 27 20:09:22 2008 -0500
+
+    Minor updates and spelling fixes.
+
+commit 4256c9dd8f924deecd904f6b0b64817b1e7af74d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 22 11:40:24 2008 -0500
+
+    Added documentation in HOWTO.hooks covering abort on hook failure.
+
+commit 494ee04c73d8be70d5d5640e6c710d7073a22a0c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 20 23:26:31 2008 -0500
+
+    Document inhibit and inhibited in HOWTO.hooks
+
+commit 50243cc80599b56699cbf11c2872d905e3968d7d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 20 20:54:51 2008 -0500
+
+    update to pm-utils 1.1.2.3 with no change
+
+commit 965ff9c155d0151921514551881db4e6d499c214
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 20 20:50:18 2008 -0500
+
+    If suspend has already been inhibited, don't run more hooks.
+
+commit 153cc173c901761bc87b44759f6ce9a46de04da7
+Merge: f89c736 315af0b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 8 19:19:50 2008 -0500
+
+    Merge branch 'master' into vlowther-handle-hook-failure
+
+commit f89c73694e5c5a057f06460410d278f3727e5225
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 8 19:17:36 2008 -0500
+
+    Simplify hook exit status testing logic a bit.
+
+commit 82c7efe54c7b04f2cf5bf73d9b0bf1c32fb26f56
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 8 18:53:19 2008 -0500
+
+    We have new manpages, so delete that bit of the TODO.
+
+commit 315af0beb95acefc786e8d025729da07ecd825c2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 8 18:53:19 2008 -0500
+
+    We have new manpages, so delete that bit of the TODO.
+
+commit eb21ea1fa1cf633a88ac44fa8651e9691ae8c1c8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 8 18:27:15 2008 -0500
+
+    Bumped revision to 1.1.2.3-test1 for testing purposes.
+
+commit b4dd07cdcad09ca8077ac28fbd435d947654777a
+Merge: b1ce8fe 7a2e509
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 6 20:48:22 2008 -0500
+
+    Merge branch 'master' into vlowther-handle-hook-failure
+
+commit 7a2e5093d110de02039ee3eca1f5ee290ef72c49
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 6 20:35:27 2008 -0500
+
+    Documentation updates describing the sleep hook ordering convention.
+
+commit b1ce8fe746a3e23d8cde072c3b2ba2060e56c62f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 6 19:48:38 2008 -0500
+
+    Incorrect comparison to skip non-run hooks when running hooks in reverse.
+
+commit 772852daba024d968ddad8fa2c440d72433f9e8e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 6 19:42:54 2008 -0500
+
+    Remember to escape > in pm-functions when running hooks too.
+
+commit 9187f1c652c40bbc9e1e8c7a1b72c18424a99afb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 6 19:38:26 2008 -0500
+
+    Actually remember to source our functions file in 50ntpd
+
+commit 68cc25ef5701abd38066797fbc6a86e6f461060a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Jun 6 19:34:53 2008 -0500
+
+    Add missing close brace in 50ntpd
+
+commit 373c74b6ac3748cba04ee4e145555d93a409f4d0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Jun 5 08:23:22 2008 -0500
+
+    Escape > comparison in 98smart-kernel-video
+    
+    This closes Bug 16175 in fd.o bugzilla
+
+commit e0c3437b0f934b83675a560a8cdbdd3212f98b1e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Jun 5 08:23:22 2008 -0500
+
+    Escape > comparison in 98smart-kernel-video
+    
+    This closes Bug 16175 in fd.o bugzilla
+
+commit 0218a2dd4a87a2d4966eb0c49843c2773dc36453
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 1 12:10:14 2008 -0500
+
+    Add initial support for handling hook failure
+    
+    If a hook exits with a status code other then 0 or one of the
+    already-defined exit codes:
+    
+    * Inhibit suspend/resume, and do not run any more hooks.
+    * Track the last sucessful hook that ran, and if we have to run hooks
+      in reverse start with that hook.
+    * If we inhibited for any reason, exit with a non-zero return code from
+      pm-action.
+
+commit df34a14f1875c8bf650efbd0a9fa0a7561aa1677
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 1 09:12:52 2008 -0500
+
+    Start 1.2 development cycle
+
+commit 1803186ad283ad2ffee10956b197fc2199c0117b
+Merge: c232dc3 3dbc767
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Jun 1 08:35:32 2008 -0500
+
+    Merge branch 'vlowther-reorganize-hooks'
+
+commit c232dc324c37debc1268ea7f8d6f5a46c2a135d3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed May 28 21:27:04 2008 -0500
+
+    Bump revision to 1.1.2.2
+
+commit 0a9f28988ccdfe2209f3864414168461b0115aae
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed May 28 20:44:46 2008 -0500
+
+    Don't quote $PM_CMDLINE when saving initial parameters.
+
+commit fc4b5c0962ca731ff59d1867a68caa0c00b8b02e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed May 28 20:06:44 2008 -0500
+
+    Make parameter manipulation more robust in the face of programmer
+    error.
+    
+    Use cp and rm when manipulating parameter files instead of mv.
+
+commit 3dd57d94dd26f2d0012fbc7bd1f3d192496c4491
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed May 28 18:34:12 2008 -0500
+
+    Fix broken add_parameters functionality.
+    
+    Also change storage directory cleanup to make things like this
+    easier to debug in the future.
+
+commit 70f9c0b631b6bb6f2f394c0650d3b0b85c10a1c9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 19:09:32 2008 -0500
+
+    Bump revision number
+
+commit eb03d095b926b43f116b9549cc0f38c8439ec65f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 18:59:13 2008 -0500
+
+    Save PM_CMDLINE correctly so that it shows up nicely in the logs.
+
+commit bc70374c72ca0cc04e777ed15639fef0c8b9c847
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 18:48:32 2008 -0500
+
+    Ensure that PARAMETERS.rm always exists.
+
+commit cf6120adf4c455eb31d09955382fdd01bb16ef9d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 18:45:32 2008 -0500
+
+    Moved parameter saving os that it always happens after we take the lock.
+
+commit 27b3f0f77592989863351634aad78d615b8cbba4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 18:41:20 2008 -0500
+
+    Fix reversed logic when creating a parameters file.
+
+commit 361e8a769a808f5f329f80f24f67d5d144f334b6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 18:37:34 2008 -0500
+
+    Save all parameters into a file instead of one file per param.
+    
+    This closes a security hole noticed by mbiebl.
+
+commit 605e67234f5b9690feacc3431ed227db637df18a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 10:43:52 2008 -0500
+
+    Return $NA instead of 1 when smart-kernel-video is not applicable.
+
+commit 0f506a904a0814d95a2d41ca873cfcf1776cff20
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue May 27 07:04:00 2008 -0500
+
+    Fixed error resulting in no parameters being saved.
+    
+    Moved the "mkdir -p ${STORAGEDIR}" command.
+
+commit 8d90eea7dea8ec0bc2f4ab62feeb965cac8675ba
+Merge: d48f63c d9f3d68
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon May 26 07:44:55 2008 -0500
+
+    Merge branch 'man-xml'
+
+commit d48f63c55f7281a2540dbb5515d5a42c1332545e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon May 26 07:34:32 2008 -0500
+
+    Actually install the documentation.
+
+commit 595753506a5904c234964043b72bc53734e83dd7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon May 26 07:05:02 2008 -0500
+
+    Bump version number in preperation for release
+
+commit 5e1b6fd697a7f14ad3bbec628d6bef09951a3995
+Merge: f94d93e 6b1b26a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon May 26 06:50:56 2008 -0500
+
+    Merge branch 'man-xml'
+    
+    xml-ized our manpages, and added manpages graciously donated by the
+    Debian project.
+
+commit f94d93e8d4d988e7aa1bdc36bbbf0fadea724083
+Merge: ab2deff a95fac9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon May 26 06:49:32 2008 -0500
+
+    Merge branch 'vlowther-binary-video-quirks'
+
+commit ab2deff4eae5954e02bed2f01fbf81d2300b82fb
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Thu May 22 07:07:29 2008 -0700
+
+    Fix ChangeLog generation in distcheck
+    
+    Fixed the ChangeLog target for all the various situations it might fail
+    in distcheck.
+
+commit f68c246e2f2bbf2e52d0369bb195ff7aedb3c72a
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Thu May 22 06:57:54 2008 -0700
+
+    Don't remove ChangeLog on distclean
+    
+    distclean is used in tarballs to return to a pristine state. Removing
+    the distributed ChangeLog would violate that.
+
+commit 080429bad72c1ca87f636b85689d33e9096ff83b
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Thu May 22 06:54:39 2008 -0700
+
+    Ignore more generated files
+
+commit d9f3d682eb02d08afbd29b0c588f90b414d2e482
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Thu May 22 06:11:38 2008 -0700
+
+    xmlto only takes a single file, don't pass more
+    
+    Minor nitpick so that only a single file, the first prerequisite, is
+    passed to xmlto since it can only handle taking a single file. There was
+    only one prerequisite anyway, so... not much to see here.
+
+commit e458c6e809cd2cf2112bbb885bec8d0b97af70a5
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Thu May 22 06:04:28 2008 -0700
+
+    Only create manpage symlinks when target pages have been installed
+    
+    Instead of always creating the symlinks to pm-action.8, we first check
+    that it's actually installed.
+
+commit 6db906ca51cc13d752f0b7e3462fd372ef06a49f
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Thu May 22 05:49:05 2008 -0700
+
+    Only build manpages when xmlto is available
+    
+    Don't require users to have xmlto and DocBook XML installed just to try
+    pm-utils. However, since the man pages are required for dist, prebuilt
+    pages will be available in the tarballs.
+
+commit 3dbc767c57e1a1ff1c59bcb6542a1f2ef7875579
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun May 18 10:31:37 2008 -0500
+
+    update Makefile.am to reflect hook name changes,
+
+commit 9eaef4ff2319e3813ba7ce17c30ffcdfb76506c2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun May 18 10:27:53 2008 -0500
+
+    Even more reorganization
+
+commit cc55fcd04883f1462144eb3efdbb1c09fe7d6089
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun May 18 10:25:01 2008 -0500
+
+    Split the NTP handling code in 90clock into its own code.
+    
+    While I was at it, reorganized the hooks to conform to the new
+    ordering convention.
+
+commit 6b1b26a50be94eef59df0a735a2b4ba0358662a7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 17 19:24:56 2008 -0500
+
+    Missing a <para> tag in pm-powersave
+
+commit a95fac932e9f9a921690860bd01f4e5b88b619c2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 17 19:17:21 2008 -0500
+
+    Stefan pointed out that >= is not a valid string comparison op for test.
+
+commit b7689e5134fa18982d1b98711f057754d0ecbed2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 17 19:02:56 2008 -0500
+
+    More pm-actiom manpage updates.
+
+commit a6e2ad4abd3b16657ee792311c25a364d537d38d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 17 10:01:00 2008 -0500
+
+    Remenber to set IFS back to normal before exiting run_quirks.
+
+commit 824f18a0d32f9f2a1ef661748bd35245a850af03
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 17 09:54:18 2008 -0500
+
+    arrgh, need to actually export PM_CMDLINE.
+
+commit e030d991958724c96d17adb244d64d17c4dd9df6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 17 09:43:08 2008 -0500
+
+    Cleanups to parameter manipulation to make it a bit less evil
+    
+    This involved restructuring the run_hooks loop a bit, but it does clean
+    things up some.
+
+commit 6394817797757edcc5a3e20efaad0d6d95398557
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 22:49:15 2008 -0500
+
+    log() is not in scope in hooks.
+
+commit d37f75e1b7b3c7ab8fee98606ecb3334b3af1eab
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 22:40:56 2008 -0500
+
+    Make remove_parameters all work again.
+
+commit b680545d57649aeef740b91657e381512553ee47
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 22:19:47 2008 -0500
+
+    Fix another stupid error in get_parameters
+    
+    * is not a valid parameter.
+
+commit 2292a5914e63fb911b4c074155e1f2c71418fbfe
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 22:07:39 2008 -0500
+
+    fix stupid typo in get_parameters.
+
+commit 6ddd3b7eec599bf29ac1b4a5c61a153708c202a9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 21:56:36 2008 -0500
+
+    Handle binary video drivers using --quirk-none instead of disable_hook
+    
+    Otherwise, we would have to duplicate everything to handle the uswsusp use
+    case, and that would be extra annoying.
+
+commit 22aaeeca28fbbbce7ed9d01124ed51ccbf450888
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 21:18:53 2008 -0500
+
+    Minor cleanups in 98-smart-kernel-video
+
+commit 8c366f223d8db7143ef7c458f0503655af5716b6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 21:12:47 2008 -0500
+
+    Split smart kernel video driver handling to a different hook.
+    
+    The new 98-smart-kernel-video hook just disables 99video outright if we are
+    running a video driver that is spart enough to handle its own quirks.
+
+commit 57d53b3bcb4aa218a63b48d14dc5ca0a1caad99a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 21:05:08 2008 -0500
+
+    Added support for vbe post with a romfile
+    
+    Apparently some video cards do not post when using the onboard BIOS.
+
+commit 8dd65d7dacc708f7320b0d362085889eb4f31f1a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri May 16 19:16:00 2008 -0500
+
+    Added support in 99video to check for a "smart enough" kernel video driver
+    
+    One that is "smart enough" knows how to handle video card reinitialization
+    without needing any of the usual quirks.  Right now that list includes:
+    * nVidia binary driver.
+    * fglrx ATI binary driver.
+    * Intel i915 DRM driver on kernels at or after 2.6.26
+
+commit a91dfd180848a8b61bcdfa966360636c820bfa7d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu May 15 13:02:44 2008 -0500
+
+    Split out the debugging information into README.debugging.
+    
+    I will add more thurough information on how to debug pm-utils later.
+
+commit 19a2e2412b19816b15380791774811b377abe9a4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon May 12 13:06:07 2008 -0500
+
+    Forgot pm-powersave.xml
+
+commit f4b0f36cceaafe2368d8a0ba41515e89253add4d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon May 12 13:02:13 2008 -0500
+
+    Remove Debian-specific information from the imported manpages.
+    
+    Also rewrote parts of the pm-action manpage for clarity.
+
+commit 2250cd17cf7da757a267aa0d57e4fe9d48a6f3a5
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 19:11:16 2008 +0200
+
+    Fix man page section
+    
+    - Put pm-pmu into man page section 8 (admin tools)
+    - Fix references to pm-suspend, which is also section 8
+
+commit 3342684a217aefa3179192dad9cb364b9a319e20
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:55:54 2008 +0200
+
+    Make xmlto mandatory.
+    
+    Make xmlto mandatory for now. We can provide ./configure switch if
+    requested.
+
+commit c6c675a5d85e0a3cf664eeb2e936102623cbf8d2
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:47:55 2008 +0200
+
+    Create symlinks for pm-action man page
+    
+    Create symlinks for pm-suspend.8, pm-suspend-hybrid.8 and pm-hibernate.8
+    pointing to pm-action.8
+
+commit 2ceff51a323d13ab9b8df1a0b6db46b436d8e053
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:36:18 2008 +0200
+
+    Create man pages from docbook xml
+    
+    - Remove old docbook2man rules.
+    - Add rules for creating man pages from docbook xml using xmlto.
+
+commit 8cff1174e991e21283032439ca972a6b4005c91f
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:34:59 2008 +0200
+
+    Ignore *.8 man pages.
+
+commit dfb21b7d57fe12f2c9db3eb7d6904a0ab531b70b
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:34:23 2008 +0200
+
+    Fix configure check for xmlto
+    
+    - Search for xmlto, not XMLTO
+    - Remove obsolete check for docbook2man
+
+commit 0d7f3d63b713c063703c2ab75d49eb5689dcfe6c
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:25:05 2008 +0200
+
+    Convert docbook sgml man pages to docbook xml
+
+commit a82ff0c63a73903bc314ea86847a0d712d38645b
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:24:24 2008 +0200
+
+    Copy docbook xml man pages from Debian.
+
+commit 6816feeeee67fe9ee84d409753dc590c16ddfaa3
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:02:22 2008 +0200
+
+    Add a configure check for xmlto
+
+commit c6c5d707f81f7c3c8b44971c0f48b63e634dbaed
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat May 10 18:06:20 2008 +0200
+
+    Ignore autogenerated pm/pm-functions.
+
+commit 49ef4f784d8489780542736d748cad04fe05a34f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 10 08:44:05 2008 -0500
+
+    Added special-casing of mode 3 in vbe_restoremode
+    
+    When we are restoring our vbe mode back to mode 3 (a text mode),
+    use vga routines instead of vbe routines.  Matthew Garret says it is
+    more stable that way.
+
+commit b8fb53358d2aa90d694080486bd7f828d891e0be
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 10 08:18:21 2008 -0500
+
+    Minor functions.in formatting changes.
+
+commit 831626d71e56c9241a3a77eab6f4cbc7f99e01d1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat May 10 07:53:48 2008 -0500
+
+    pm-functions.in cleanups and minor fixes.
+    
+    Mostly adding comments to functions whose purpose is not immediatly obvious.
+    Also restructured init_logfile to test for a null $1 before the file tests.
+
+commit e385c44402d3d1ba80b17e96ba4ced6d4c3650fa
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed May 7 20:40:04 2008 -0500
+
+    Fix vbe mode restore bug
+    
+    Partial fix for pm-utils bug no. 15840 -- it does not include the
+    vgamode special-case code.
+    
+    Thanks, Martin Pitt!
+
+commit ddbee7518ba53ab2161934bcdc4eea0394a27371
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Apr 30 22:27:25 2008 -0500
+
+    Simplify implementation of check_suspend a bit.
+    
+    Why use 4 commands where 2 will do?
+
+commit 2d7fce602129abb1ce0590cd00637375a3423a62
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Apr 30 22:19:41 2008 -0500
+
+    Added comments and minor fixes.
+
+commit 39b5eb3eb9a7353c5dacc91b672afae3ce9c97de
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Apr 30 19:15:31 2008 -0500
+
+    Normalize error checking introduced by a068f3fbc7c522.
+    
+    'if [ command_exists "do_$METHOD" ]' always returns true -- [ is a command,
+    not shell syntax.
+
+commit d98360b945cd44701a925192f36d7ef681a92823
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Mon Apr 28 07:41:16 2008 -0700
+
+    Only build man pages when docbook2man is available
+    
+    Since not everyone has the whole DocBook chain, the building of the
+    man pages is now conditional on the docbook2man utility being available.
+    The built man pages are always included in `make dist', meaning that
+    docbook2man must be available in that situation.
+
+commit a068f3fbc7c522bba62991dd7ffc7a2eb4aeee2e
+Author: Till Maas <opensource@till.name>
+Date:   Mon Apr 28 03:00:22 2008 +0200
+
+    - do not run hooks if do_$METHOD does not exist
+    - log it when it does not exist
+    - log abortion because of $INHIBIT
+
+commit 3c12201486d6470e6f3596704f8d305e71a143ea
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Apr 27 16:32:24 2008 -0500
+
+    Fix bug that would cause init_logfile to die if the logfile did not exist.
+    
+    Add an explicit check for file existence instead of relying on -O to do it
+    for us.
+    
+    Thanks, Till Mass for pointing this out.
+
+commit 1fd4bb49ff73fff69fa6e4e94baeb9699fa2f00e
+Author: Till Maas <opensource@till.name>
+Date:   Mon Apr 14 22:29:53 2008 +0200
+
+    - add -w to grep in hibernate check to avoid matching "testproc" with "test"
+      "shutdown" with "shut" Reported: Red Hat Bugzilla: #427018
+
+commit e9f88b34d75052bab78fe9747f5c90b9f0f4a02c
+Author: Till Maas <opensource@till.name>
+Date:   Mon Apr 14 20:57:32 2008 +0200
+
+    - Mention "${PM_FUNCTIONS}" instead of harcoded 32bit path for functions file
+
+commit e6219e13d19c741c24822da40e20d37b81b3be5a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Apr 12 08:26:17 2008 -0500
+
+    Fixed arithmetic expansion bug in uswsusp found by checkbashisms.
+
+commit 69456c003c8a03e809f88f159aeaa05d35134b71
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Apr 10 22:02:15 2008 -0500
+
+    Added a README file for the distributions.
+    
+    It describes a better method for packaging hooks needed for suspend/resume --
+    namely, put the hooks in the package tht requires them rather than making them
+    a part of the pm-utils package.
+
+commit 93af881ac18718c8eae7f575c3f30396791b0e75
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Apr 7 10:55:05 2008 +0200
+
+    Add safety check before writing mode to /sys/power/disk
+    
+    Be extra paranoid and only set HIBERNATE_MODE if it is actually
+    supported.
+
+commit 4b527b7b88e146e9633a11337e3055d282b5c281
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Apr 7 10:47:28 2008 +0200
+
+    /dev/pmu better be a character device
+
+commit 782e3549d5cafb2a35e83faf88695a742a5fe64b
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Apr 7 00:12:43 2008 +0200
+
+    Disable 00clear for uswusp sleep module.
+    
+    s2ram has its own vt switching logic, so disable 00clear for the uswsusp
+    sleep module.
+
+commit a410403c9fcf04841805d0311424bf6d7d3e083e
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Wed Apr 2 09:41:12 2008 +0200
+
+    Check for s2ram in check_suspend().
+    
+    The uswsusp sleep module uses s2ram now for do_suspend(), so check
+    for the command in check_suspend().
+
+commit 9a5792fbc6198c3b2a0fa89e4765b199cc65fb83
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Tue Apr 1 01:51:05 2008 +0200
+
+    Add some ideas how to integrate pm-utils with hal
+    
+    Add functionality to automatically retrieve quirks from hal or store
+    them as fdi file.
+
+commit 32fa5f0c571d15b79547981501d2047ed094e9bd
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Tue Apr 1 01:46:20 2008 +0200
+
+    Add some notes about updating and merging the man pages from Debian.
+
+commit 5ab80370c35c1b8a103b86ee7ab4861c9e2fd814
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Mar 31 18:22:27 2008 -0500
+
+    Added note about suspend-hybrid handling to TODO.
+    
+    Also modified formatting to make it easier to read.
+
+commit 0bb9565ead57cba02c02b73f6ee7f59bc60b89ff
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Mar 31 19:38:35 2008 +0100
+
+    post release version bump
+
+commit 2c0d6788531e79e5eb184e60420064edc9a83ed6
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Mar 31 19:37:51 2008 +0100
+
+    Victor Lowther is the new maintainer of pm-utils
+
+commit 6eed56bc0073e8ff2cc5aad8ee9f3355e8bddd32
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 30 10:51:19 2008 -0500
+
+    Final touchup to NEWS, make logging in pm-action a bit prettier.
+
+commit 116ed5d18838652f2405126958e8ed6e75527224
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 30 10:42:44 2008 -0500
+
+    Updated NEWS file to include changes to the pm-utils project.
+
+commit 4ffb15d6e3f0f87f952a7e747563ead099f8ae6a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 29 17:44:16 2008 -0500
+
+    Updated version number
+
+commit 4db81081d77847abc7461423dc0b40b60587c2d2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 29 16:21:26 2008 -0500
+
+    Comment fixups in preperation for release.
+    
+    In particular, add comments to the top of the sleep hooks describing what
+    each of them is for.
+
+commit b0c4c0a8bd4139a9da92f4cd25d0694b5911d9e1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 29 15:12:12 2008 -0500
+
+    Spelling fixes in README and TODO
+
+commit 0c8886a67f04414c65ff71cea6d046f4f903ca30
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 29 14:14:55 2008 -0500
+
+    Updated NEWS and TODO files in preperation for release.
+    
+    See the files themselves for more details.
+
+commit 763243bad7ed0daf433e8c1793b602f563c5fbbd
+Merge: bae3503 df039c9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 29 12:53:57 2008 -0500
+
+    Merge branch 'master' of ssh://vlowther@git.freedesktop.org/git/pm-utils
+
+commit bae3503fb464be7a0cd78462cd2c3d0b65e51a23
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 29 12:52:14 2008 -0500
+
+    Updated README in preperation for making a stable release.
+
+commit df039c9dc6917d7283d50c78a17405d38af77e96
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Fri Mar 28 15:44:43 2008 +0100
+
+    Improve PMU check
+    
+    Test if /dev/pmu is a character device.
+
+commit bf5f55f5b5ec375ac1b0b565011b8bf9d0ccf178
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 19:33:44 2008 -0500
+
+    Avoid incorrect exit code 1 failure messages in the log.
+    
+    Do this by forcing resume_video to always return 0, and by having
+    modreload expliticly log if it cannot reload a module we unloaded before
+    suspend.
+
+commit 61e2d92c43953537855e89b744844b0af7b84700
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 19:15:51 2008 -0500
+
+    Prettify logging a bit more.
+    
+    Now with added timestamps, so you can see how long running all the hooks takes.
+
+commit f5419be4798d653a76e18e598236b140450ea127
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 18:05:36 2008 -0500
+
+    Cleaned up logging of which hooks ran a bit more.
+    
+    Do this by making log understand the -n option.
+    To retain strict POSIX compatibility, we now use printf instead of echo
+    in the log function.
+
+commit 5c88707ceb3ed04d7562f31f5a3aee1a4c1d895b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 18:58:54 2008 -0500
+
+    No need to clear the screen on 00clear.
+    
+    Allocating and deallocating vt 63 take care of that for us.
+
+commit 4177c51a5b713eff1dd07c65c723a87e297410c9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 18:54:06 2008 -0500
+
+    Modify 94cpufreq to use savestate/restorestate more efficiently
+
+commit 95905af6b3a549b12bb9054043ce91a53d54c3cc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 13 17:24:55 2008 -0500
+
+    No need to print replies from dbus in 55battery.
+
+commit 6ae1dd2b1f0ab8f9e7f63e38473f109bafc8106b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 13 17:22:00 2008 -0500
+
+    Simplified implementation of 49bluetooth.
+    
+    No need for awk or for case statements.
+
+commit 23bc36cba4c017f70198ce3278db5597183f1e41
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 17:45:09 2008 -0500
+
+    Use 'all' instead of "*" to remove all commandline paraameters.
+
+commit a0b7a9e72d98312a1efd94e738a427c2694461df
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 16:49:51 2008 -0500
+
+    Missed a close quote in modules.d/kernel
+
+commit 73ab1734f6d353ad4ee2d2f671e3944810fb88e7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 16:43:07 2008 -0500
+
+    Added easy support to drop all parameters.
+    
+    Just set DROP_PARAMETERS to "*"
+
+commit f75ffa2e8c5391b50177375f0b46653dbd38cc7f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 20 12:48:19 2008 -0500
+
+    Changed kernel hibernation to use the default kernel method unless overridden.
+    
+    Hopefully this will get rid of the bug reports where "platform" causes
+    problems.  If it does not, we should probably default to "shutdown" as the
+    default method.
+
+commit 868a6fabf6b254c53b12309fa9719eb5120e6d3f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 19 21:34:37 2008 -0500
+
+    Fixups in hook blacklisting and parameter removal.
+
+commit a4f4526748482fd8c08a132d4dcb4762fc111041
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 19 21:25:37 2008 -0500
+
+    remove_parameters was not doing The Right Thing.
+    
+    Rewrote parameter removal loop to try and fix that.
+
+commit 0129bc69e33523c9746a44fb4a78e25579acecb8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 19 21:09:40 2008 -0500
+
+    Make the hook blacklist and parameter overrides use env. variables.
+    
+    This came about after a long discussion with mbiebl on the best way to
+    configure settings in pm-utils.
+
+commit 174f1430e76dfcf9d45e6d44422a47c2e2bba369
+Merge: ea374c8 55e3dbb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 19 20:35:54 2008 -0500
+
+    Merge branch 'vlowther-stabilization-bugfixes' into vlowther-default-parameters
+    
+    Conflicts:
+    
+    	pm/pm-functions.in
+
+commit 55e3dbbfe6dc6ffae294cb1976a1a5c6cf9362da
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 19 20:15:47 2008 -0500
+
+    Added copious commenting in the defaults file.
+
+commit 616c86edd7030f3cb1eaf7e08444f8882830977a
+Merge: 53743fa 2d224fc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 19 19:50:53 2008 -0500
+
+    Merge branch 'master' into vlowther-stabilization-bugfixes
+
+commit 53743fa7e2f1248fcaf1e6fe62a8390dcfadffcf
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 19 19:48:31 2008 -0500
+
+    Rewrite fix for suspend_hybrid in a more elegant fashion
+    
+    We add a new variable $METHOD in pm-action.  It holds the sleep method
+    we were asked to invoke.  $ACTION is chosen baed on the value of METHOD.
+
+commit ea374c82c37f881398cfa0eea2c7518286e1ae42
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 18 19:25:39 2008 -0500
+
+    Addind logging to add_parameter and remove_parameter
+
+commit aaf4bb9cc962c4aaf5004d53ce86d5fc29ae2be9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 18 19:21:19 2008 -0500
+
+    Fix logic error in remove_parameter.
+
+commit e49b18c42f3c501e3d352df8b5356ba8cff1e6ab
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 18 19:05:31 2008 -0500
+
+    Updated /etc/pm/parameters parsing.
+    
+    Now we can add and remove parameters passed from our invoker.
+
+commit 2d224fc56941d6c6c65b51d0e9943b331b8e69b8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Mar 17 19:16:19 2008 -0500
+
+    Mask out acpi_sleep settings when --quirk-none is passed.
+    
+    mbiebl and I have been discussing removing the current behaviour
+    for --quirk-none.  This patch retains the behaviour where --quirk-none masks
+    out the other video quirks instead of signalling that no quirks are required.
+
+commit 5292f700d84d50e40d6690d415ba5f97b39979d4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Mar 17 12:24:04 2008 -0500
+
+    Add more logging -- log parameters and the hook blacklist.
+    
+    This patch adds basic logging of our commandline parameters before
+    and after loading the parameter overrides.
+    
+    It also adds logging of our initial blacklist entries.
+
+commit 29a615e95956da7bbc925a0d139ea38fa4956530
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Mar 17 07:30:45 2008 -0500
+
+    Actually make "make dist" work.
+    
+    --git-dir has to come before the log command when generating the changelog.
+
+commit 5d4eaefc302d35d5a3ac2fbdf09a799597b5c536
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 16 18:57:38 2008 -0500
+
+    QUIRK_NONE was not being honored in uswsusp.
+    
+    Added code to zero out OPTS if QUIRK_NONE = true.
+
+commit f8a6c613a3f432b96d076e16c036de74c27a0856
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Mar 17 00:27:07 2008 +0100
+
+    Remove outdated documentation.
+    
+    We handle video quirks in uswsusp now, so this documentation is outdated
+    and best removed.
+
+commit 5de0eb47fc7b0a07b9fc1df6ad20ed9912ef492a
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Mar 17 00:13:46 2008 +0100
+
+    Parse video quirks in uswsusp sleep module
+    
+    - Parse the video quirks in the uswsusp and pass it to s2ram (do_suspend) and
+      s2both (do_suspend_hybrid).
+    - Show the available quirks in the help method.
+    - quirk-save-pci is currently s2ram specific and not yet provided by hal.
+    - quirk-dpms*, quirk-reset-brightness and quirk-vga-mode3 are not handled by s2ram and
+      thus simple no-ops.
+
+commit 54eff27133ce0ed1f899b237d9946a3f31546a96
+Merge: 1234dd9 fe61299
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sun Mar 16 23:58:19 2008 +0100
+
+    Merge branch 'pmu'
+
+commit 1234dd9926d0f5a816a5a0728d7289dd932d87e0
+Merge: 9ebfc96 e9f2ddf
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 16 17:24:52 2008 -0500
+
+    Merge branch 'master' into vlowther-stabilization-bugfixes
+
+commit 9ebfc96ce7558bb7db0132d579ec85dde77237e9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 16 16:49:11 2008 -0500
+
+    Updated README to describe /etc/pm/blacklist and /etc/pm/parameters.
+    
+    Also added a bit of documentation describing --help.
+
+commit fe612997f9809777864ce859ad5ad47a02fb6dcb
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sun Mar 16 19:01:59 2008 +0100
+
+    Better PMU support.
+    
+    - If /dev/pmu is existent, assume we can suspend
+    - Don't try to run pm-pmu on machines without a PMU
+
+commit e802a8c71ed3a2f696181d69b0feca80b5aba06f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 16 16:33:36 2008 -0500
+
+    Consolidated console save/restore code.
+    
+    Instead of having console switch/restore logic spread out all over the place,
+    have 00clear perform all our console switching.
+
+commit e9f2ddf6709c2d8b8bf9eed16a20a2123a51f747
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sun Mar 16 19:07:02 2008 +0100
+
+    Make the modules shell script
+    
+    We install the sleep modules as _SCRIPTS, so they should be 0755 and have a
+    shebang. This has the additional benefit that editors automatically enable
+    syntax coloring.
+
+commit 4fe96950186e616db17767ce78690f7b82231a51
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 16 11:24:55 2008 -0500
+
+    Fix bug where pm-is-supported could only be run as root.
+    
+    Now we only parse the blacklist and the default parameters when we are taking
+    the suspend lock.
+
+commit 1de164bdd3915e7c93329a9df77064ed7b402ea1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 15 18:04:11 2008 -0500
+
+    Mostly seperated vt switching logic from the suspend_lock logic.
+    
+    This should fix the breakage implemented by moving the locking.
+
+commit 40cf5324abdfa5eac08cba836ca84097849ad188
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 15 17:18:17 2008 -0500
+
+    Implemented sleep_method_help support.
+    
+    This intergrates sleep modules into the help system.
+
+commit de8659ed4bb5d42251ee8695fc54642dbcce0604
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 15 17:07:49 2008 -0500
+
+    Moved locking in pm-action.
+    
+    This fixes a help-related bug that Michael Biebl noted.
+
+commit 962304a9279c244c9cdc1328cb800dd6bd49736e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 15 16:38:32 2008 -0500
+
+    Restore separate logging functionality
+    
+    Somehow the changes introduced by 1fb77e994d7d1628c86324066693fd23d4abfb6c
+    got dropped in the merge process.  Restored them.
+
+commit 135bc1f5858caeae2b803e1e5c220b284c45b03c
+Merge: 0234380 c99900e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 15 13:54:18 2008 -0500
+
+    Merge branch 'vlowther-dynamic-hook-disable' into vlowther-default-parameters
+
+commit c99900e9e8bf7f909ac42f825e5f2694dc26b611
+Merge: 8626bbd ac2e951
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 15 13:53:31 2008 -0500
+
+    Merge branch 'master' into vlowther-dynamic-hook-disable
+    
+    Conflicts:
+    
+    	pm/pm-functions.in
+
+commit ac2e951e553f69dc5ab04b37f4e973bebdb1f5c4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Mar 14 07:21:34 2008 -0500
+
+    Split functions.in into functions.in and pm-functions.in
+    
+    pm-functions.in contains the functionality that should only be used by the
+    pm-utils frontends (pm-action, pm-is-supported, and pm-powersave).
+    
+    functions.in contains code that is shared between the hooks and the pm-utils
+    frontends.
+    
+    The reason behind splitting this out is to reduce namespace pollution in
+    the hooks and to eventaully make it easier to split the hooks into their
+    own package.
+
+commit 0234380da899b2ae52ab5d88dde9914c6f1e3170
+Merge: 44cbf06 8626bbd
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 13 10:02:51 2008 -0500
+
+    Merge branch 'vlowther-dynamic-hook-disable' into vlowther-default-parameters
+
+commit 8626bbd7551f8342abc7536899f55f49fd0820e9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 13 10:01:31 2008 -0500
+
+    Updated HOWTO.modules to mention before_hook.
+    
+    Sleep module writers, take note.
+
+commit 44cbf065577bbe9ae9ffc783895cbe45f42c3f13
+Merge: dce0189 a30d46c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 11 19:56:03 2008 -0500
+
+    Merge branch 'vlowther-dynamic-hook-disable' into vlowther-default-parameters
+
+commit a30d46c64050f919f96baf626ae13d79d1023317
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 11 19:54:21 2008 -0500
+
+    Optionally ignore two leading digits in the hook filename in hook_ok
+    
+    Requested by Michael Biebl.
+
+commit dce01897081f9c23b3b33ed600b4190ac91f8ee3
+Merge: 0978de0 02685b1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 11 17:29:29 2008 -0500
+
+    Merge branch 'vlowther-dynamic-hook-disable' into vlowther-default-parameters
+
+commit 02685b1ea67e656c646f8bcbad6645df08441ee5
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Mar 11 17:28:03 2008 -0500
+
+    Updated hooks documentation.
+
+commit 0978de0966987eb2426cfdb3a78d77eca7c4ed98
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 9 15:11:08 2008 -0500
+
+    Added support for passing default parameters.
+    
+    We add them in the  "$PM_UTILS_ETCDIR/parameters" file, and they are
+    simply appended to the PM_CMDLINE env variable.
+
+commit 73157d2bd3fc9ece5b5747bf69dfc39d4b2e0390
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 9 14:56:05 2008 -0500
+
+    Move PM_CMDLINE declaration into pm_functions.in.
+    
+    This lays the groundwork for allowing the user to add default parameters
+    to potentially override the ones that HAL passes to us.
+
+commit 47cc4095aa3a310b829a9b274d5de0f7e6af7326
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 9 14:49:50 2008 -0500
+
+    Ensure wwe have made $STORAGEDIR before trying to blacklist hooks.
+
+commit cab059db8842ffcae4b34af9805e34f3ae4f41d3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 9 14:43:14 2008 -0500
+
+    Fixed stupid typo in disablehook.
+
+commit fc6700f0bed495ca6323ad8223b8bdef5351837c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 9 14:37:46 2008 -0500
+
+    Really really make reading the default blacklist work.
+
+commit 520985236611d96a597bbc68dcaddc93451d1fa6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Mar 9 14:12:58 2008 -0500
+
+    Actually source the correct blacklist file.
+
+commit 66db33b5431a1f01df6c500c22d5ca0bd362acc1
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat Mar 8 03:16:33 2008 +0100
+
+    Implement the root check using id, $EUID seems to be a bash only feature.
+
+commit d672471adca4ec3208e15c2198e46004541a20de
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Mar 7 20:15:48 2008 -0600
+
+    Moved the "Running hook" diagnostic message in run_hooks.
+
+commit 198136577ea5c57e86aa9b01f95d63ce0b882e5c
+Merge: 4b19986 fee2b63
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Mar 7 20:12:35 2008 -0600
+
+    Merge branch 'master' into vlowther-dynamic-hook-disable
+
+commit fee2b6346509d94b24670fcd2d5f151568617cd2
+Merge: ea906bd 593be4a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Mar 7 19:55:39 2008 -0600
+
+    Merge branch 'master' of git://anongit.freedesktop.org/pm-utils
+
+commit 593be4adab75f1db65b832106ca78be25b9b2cf2
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Fri Mar 7 16:29:09 2008 +0100
+
+    Fix a quirk parsing in 99video.
+    
+    - We no longer use $@, so replace $1 with $opt and remove shift
+    - Remove an unnecessary check.
+
+commit ea906bd716a435abcff0cc580982eabee9c90bd4
+Merge: 5944c4c 2428334
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Mar 7 07:17:31 2008 -0600
+
+    Merge branches 'vlowther-create-ChangeLog-on-demand' and 'vlowther-remove-autogenerated-man-pages'
+
+commit 5944c4c006a8ac753baf9add36095eddeddb5ba9
+Merge: 1866fab a0c3dfa
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Mar 7 07:16:56 2008 -0600
+
+    Merge branch 'master' into vlowther-create-ChangeLog-on-demand
+
+commit 2428334b9068281493d1fb5b02fc76d1b47ef342
+Merge: 4aa61c8 a0c3dfa
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Mar 7 07:16:37 2008 -0600
+
+    Merge branch 'master' into vlowther-remove-autogenerated-man-pages
+
+commit acaf13ae802f72a3c37217c86f80c80db69f852e
+Merge: ae82bec a0c3dfa
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Fri Mar 7 08:23:19 2008 +0100
+
+    Merge branch 'master' of git://anongit.freedesktop.org/git/pm-utils
+
+commit 4b1998601c7b075a432bdd7fd6975ca2d3689995
+Merge: 283ed26 61307c3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 21:29:38 2008 -0600
+
+    Merge branch 'vlowther-split-functions-in-two' into vlowther-dynamic-hook-disable
+
+commit 61307c3c16cc1b06bb3c1e8d3636c3c14832a4f9
+Merge: a1431a2 a0c3dfa
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 21:27:03 2008 -0600
+
+    Merge branch 'master' into vlowther-split-functions-in-two
+
+commit 283ed262ab666f853d18e632e54052021f58f638
+Merge: 6ed9717 a0c3dfa
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 20:35:09 2008 -0600
+
+    Merge branch 'master' into vlowther-dynamic-hook-disable
+
+commit 6ed9717e8e6621634eaeec9cd3753413fd924459
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 20:32:06 2008 -0600
+
+    uswsusp disables 99video hook now.
+
+commit 96442732e5b8729332cc715e992392aeb3b8cae9
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 20:30:47 2008 -0600
+
+    Change the default blacklist location to PM_SYSCONFDIR.
+    
+    Also add before_hooks support to run_hooks.
+
+commit a0c3dfab5a1381677b2ef991ae40c7e7b52c1c60
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 19:21:12 2008 -0600
+
+    Revert "Even shorter quirk environment variable names."
+    
+    This reverts commit 6d877fe5e1439496b20365e6877916ab3c7446f2.
+    
+    Requested by Michael Biebl.  Does not affect functionality.
+
+commit a4ca3e7c2d1d1fae584ac23195a13981947884c0
+Merge: 2b08245 5da6cdf
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 19:16:23 2008 -0600
+
+    Merge branch 'master' into vlowther-hook-option-processing
+
+commit 5da6cdfef068db2fac484e45732f50a572074343
+Merge: 04f05c2 02c4338
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 19:08:22 2008 -0600
+
+    Merge branch 'vlowther-video-merge'
+
+commit e3403ecac7243e571dd6bdc01b38f15af39e543e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 14:08:52 2008 -0600
+
+    Have pm-functions.in read an initial list of hooks to blacklist.
+    
+    Be a little smart about it, and allow comments.
+
+commit 314642f6d67ab7658d2762aafa598971ce1c865e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 13:52:23 2008 -0600
+
+    Make run_hooks skip disabled hooks.
+    
+    Eventually we will print a helpful diagnostic in the logfile saying what
+    disabled the hook based on the contents of the disabled file, but that is a
+    job for a later date.
+
+commit 4a9919cea52219555cb87e308afcace3104c39e2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 13:44:31 2008 -0600
+
+    Add disablehook() function to functions.in.
+    
+    This is the first step in allowing hooks to be dynamically disabled while
+    pm-utils is running.
+
+commit 1866fab10d7f630278357a33c8289c136996c1bc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 13:15:44 2008 -0600
+
+    Made ChangeLog creation process more robust.
+    
+    Changes based on feedback from Dan Nicholson.
+
+commit 04f05c28427de4c1e96cb3b343834c22f7dcad7d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 10:19:48 2008 -0600
+
+    Fixed the case where two or more cores share the same cpufreq settings.
+    
+    If the cpufreq directory is a symlink, that that cpu shares it settings
+    with another cpu.  In that case, skip this cpu.
+
+commit 02c4338048175769ca81ee75d25b1dda8706c039
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Mar 6 10:08:45 2008 -0600
+
+    Silence sysctl output in 99video.
+
+commit a1431a2e40a2739cd05e5c6f0a7fc15a9e53ab2b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 5 15:32:47 2008 -0600
+
+    Updated pm/Makefile.am to know about pm-functions.
+
+commit 9232cd18a317936de20d365b4e9178eead4c7c41
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 5 15:26:47 2008 -0600
+
+    Split functions.in into functions.in and pm-functions.in
+    
+    pm-functions.in contains the functionality that should only be used by the
+    pm-utils frontends (pm-action, pm-is-supported, and pm-powersave).
+    
+    functions.in contains code that is shared between the hooks and the pm-utils
+    frontends.
+    
+    The reason behind splitting this out is to reduce namespace pollution in
+    the hooks.
+
+commit 94722ed73c79fefc3e98c6cd1c194eddeb325aeb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 5 15:17:15 2008 -0600
+
+    Rearrange functions.in in preperation for splitting it in two.
+
+commit 4aa61c883c8d0eb691b408e2967f63434ef8eca2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 5 14:28:07 2008 -0600
+
+    Do not track the man pages.
+    
+    They are generated from the SGML files, so we do not need to track them in git.
+
+commit 28836a53fd617b6eeabda4a57fc4d15801d69a49
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 5 09:10:36 2008 -0600
+
+    Generate ChangeLog on demand.
+    
+    Specifically, any make target that requires it (make dist, etc) will
+    generate pull an appropriately-formatted changelog out of git.
+
+commit 2b082457e3a9d8f8067376fd45668fc7595b8fea
+Merge: bf4f3e0 9f3e2ea
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Mar 5 09:01:02 2008 -0600
+
+    Merge branch 'master' into vlowther-hook-option-processing
+
+commit ae82bec26a64721674148cfa15a1f204528de2c2
+Merge: d1e11fc 9f3e2ea
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Tue Mar 4 01:43:53 2008 +0100
+
+    Merge branch 'master' of git://anongit.freedesktop.org/git/pm-utils
+
+commit bf4f3e0cce274f95e76d88fed3e337d87822e363
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Mar 3 18:28:17 2008 -0600
+
+    Updated the HOWTO.hooks to document the help parameter.
+    
+    Also added a section dealing with suspend_hybrid.
+
+commit 9f3e2ea40123ca048d99f2a0d3911af642c87cfa
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Mar 3 18:09:35 2008 -0600
+
+    Fixed typo in 94cpufreq introduced while fixing the suspend_hybrid glitch.
+    
+    Thanks, Michael Biebl!
+
+commit d1e11fc3c9d50be7c1bcf9d318c509c2b0639ed8
+Merge: 4602610 4ccda76
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sun Mar 2 03:17:45 2008 +0100
+
+    Merge branch 'master' of git://anongit.freedesktop.org/git/pm-utils
+
+commit 053da7a5efd23b23527d073c0e63785211c4c954
+Merge: 6d877fe 25b9408
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 19:10:44 2008 -0600
+
+    Merge branch 'vlowther-video-merge' into vlowther-hook-option-processing
+
+commit 25b94082bc1588f5c9a2dc4be857531c774b8b2b
+Merge: 8330c3a 4ccda76
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 19:06:48 2008 -0600
+
+    Merge branch 'master' into vlowther-video-merge
+
+commit 4ccda76bcc288f5505abc97caffb913d35e71c26
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 18:50:27 2008 -0600
+
+    Add comments in pm-action detailing the steps we are taking.
+
+commit e5c47367b743af80155176d69c1f4e7ca69843c6
+Merge: 76dd8d9 369ac12
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 18:41:09 2008 -0600
+
+    Merge branch 'master' into vlowther-move-pm-main
+
+commit 369ac121377c6e840a3295eeeb84e96104f9fe1f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 18:28:47 2008 -0600
+
+    We were not handing the suspend_hybrid case correctly this whole time.
+    
+    Shame on me for not spotting this earlier.
+
+commit 76dd8d91365b0c5e85cd6d494c7a5e2b3c27235b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 18:27:36 2008 -0600
+
+    Fixed up merge errors merging back with master.
+
+commit 9022cb6113a910ae559cbb3a3833f07107df400d
+Merge: f33864c 9343bda
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 18:09:53 2008 -0600
+
+    Merge branch 'master' into vlowther-move-pm-main
+    
+    Conflicts:
+    
+    	src/pm-action.in
+
+commit 6d877fe5e1439496b20365e6877916ab3c7446f2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 11:02:51 2008 -0600
+
+    Even shorter quirk environment variable names.
+
+commit 1fb77e994d7d1628c86324066693fd23d4abfb6c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 10:37:49 2008 -0600
+
+    Cleaned up output for --help
+    
+    Did this by adding a log() function and using that instead of echo when
+    we were just echoing test to get it into the log.
+
+commit 8d5f23f720c121508bd61202cbd75c6d91a07f6d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 10:26:49 2008 -0600
+
+    Moved video-specific option processing to 99video.
+
+commit dc1a31a76a26ff5258f02b0f533c53974c00e687
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 10:08:05 2008 -0600
+
+    first pass at using run-hooks to get help info.
+    
+    The output from this will be ugly, if it even works.
+
+commit 3c2766986130026a47badff7edb740709c0a5b1e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 09:56:38 2008 -0600
+
+    Add help function to 99video.
+    
+    This is the first step in making hooks handle option processing for their
+    options instead of having the pm-utils framework handle it.
+
+commit 8330c3a6c14ba33563ddcf76fe53288a4f1cb9ab
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 10:06:13 2008 -0600
+
+    arrgh -- forgot to remove 20video from Makefile.am
+
+commit e28844bc7a42cab0d5d08ba0aa351885b3fa78c8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 09:32:20 2008 -0600
+
+    Aesthetic cleanup to the quirk-handling code.
+
+commit fda3bb71c9e4d4fbfc730d1277085e241475ceb1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 09:02:41 2008 -0600
+
+    Shortened quirk environment varialbe names.
+    
+    Also made option handling code in pm-action easier to read.
+
+commit 5d7e32ef87f97cb09890b7690f9f62c3395ab673
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 08:38:37 2008 -0600
+
+    Replace if statements with command chaining in 99video.
+
+commit 0671b13c2aa695a35ef0a703ac3cf9cf877dca0e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 08:24:37 2008 -0600
+
+    Add a quirk helper function to start cleaning up the ugly if mess in 99video.
+
+commit faa4c5d24da753010f033561a02b4e7499b79eb3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Mar 1 08:11:42 2008 -0600
+
+    Rearrange quirk handling to bring it in line with s2ram.
+
+commit fba432cae9b7cba19e2d9dad0b11417ad9d6f717
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 29 00:02:49 2008 -0600
+
+    Save framebuffer state after saving videostate.
+
+commit 49de11afaa42ae63d5a030c1b146d828ae2e5eac
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 27 20:20:33 2008 -0600
+
+    Modified acpi_flag setting to use arithmetic expansion.
+    
+    This gets rid of an ugly if statement and makes the code more legible.
+
+commit 17d18f832ac3c20b2c86bf9d76c7296d0561ee02
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 27 20:14:06 2008 -0600
+
+    Modified 99video to use savestate/restorestate to save and restore VBE state.
+    
+    This utilizes the functionality added in the last patch, and makes the hook
+    more location-independent.
+
+commit 58c7d77aa0f37f1d50f89753e1a846795476bc47
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 27 20:06:07 2008 -0600
+
+    Made savestate and restorestate in functions.in orthogonal.
+    
+    You can pipe data into savestate, and pipe it back out of restorestate.
+    This also makes savestate/restorestate able to cleanly handle data with
+    embedded NULs and other such nasties that may confuse bash.
+    
+    Savestate is still backwards compatible with the older calling convention.
+
+commit df278aba456f44fe4573c60ba0d524370ee5ad96
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 27 20:01:14 2008 -0600
+
+    Added support for DISPLAY_QUIRK_NONE to pm-action.in.
+
+commit 81ee00dc3b1a85471c53cb193c9f1edb63e71fc7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 27 19:58:23 2008 -0600
+
+    Added support in the video hook for DISPLAY_QUIRK_NONE.
+    
+    When it is set to true, avoid quirk handling by exiting immediatly.
+
+commit a7278a0bc224226f9cd3d0199347051ec7ab9bed
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 27 19:53:42 2008 -0600
+
+    Folded 20video functionality into 99video and deleted 20video.
+
+commit 4602610deaaa6846598e74312ea37e2731b53e35
+Merge: d77df4e 9343bda
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat Feb 23 11:32:43 2008 +0100
+
+    Merge branch 'master' of git://anongit.freedesktop.org/git/pm-utils
+
+commit 9343bda51f8feff514b2bd0430c6435ee7466148
+Merge: 65c84de 734f80b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 23 00:33:23 2008 -0600
+
+    Merge branch 'master' into stabilizaton
+
+commit f33864caecfea67be95abf0719e96861d6c243b3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Feb 21 20:28:46 2008 -0600
+
+    Added back the comment explaining the trap statement.
+
+commit b8ccc1c4cc2c5415eb57cf9a0b05218c24e4914d
+Merge: a6eeb80 734f80b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Feb 21 20:23:54 2008 -0600
+
+    Merge branch 'master' into vlowther-move-pm-main
+
+commit d77df4eb4107f2361b5add5b9165fa1b6a4d4996
+Merge: 8faffa6 734f80b
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Wed Feb 20 15:32:25 2008 +0100
+
+    Merge branch 'master' of git://anongit.freedesktop.org/git/pm-utils
+
+commit 734f80b6de32c6740fc908f43407e46f36401416
+Merge: 2ffbb21 4dc7cb0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Feb 19 18:09:17 2008 -0600
+
+    Merge branch 'vlowther-fix-broken-hook-sort'
+
+commit 4dc7cb0363398b719505c1015aec3c2c22e994da
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Feb 19 17:01:56 2008 -0600
+
+    Fix broken sorting in run_hooks.
+
+commit 8faffa678d950ce32703fd27b4980ea015abec08
+Merge: 4b7284e 2ffbb21
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Tue Feb 19 11:42:46 2008 +0100
+
+    Merge branch 'master' of git://anongit.freedesktop.org/git/pm-utils
+
+commit 2ffbb213b02eebe32eda93cf4330a11150aa1b7b
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Tue Feb 19 01:40:38 2008 +0000
+
+    rename obsolete onfigure.in -> configure.ac - no other changes
+
+commit 4b7284e880532354323704143a9f698bd54b2027
+Merge: 9fbde30 28f4915
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat Feb 16 23:52:32 2008 +0100
+
+    Merge branch 'master' of git://anongit.freedesktop.org/git/pm-utils
+
+commit a6eeb8096864bee88efe09f6cbb3d9ee3b24cdbd
+Merge: 4d455ce 28f4915
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 15:00:07 2008 -0600
+
+    Merge branch 'master' into vlowther-move-pm-main
+
+commit 65c84de480fb3565978e8a0778d53023a242ea95
+Merge: 8672d50 28f4915
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 14:52:33 2008 -0600
+
+    Merge branch 'master' into stabilizaton
+
+commit 28f4915e717fbc31b5410f77bf7882928def0545
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Thu Feb 14 18:32:01 2008 +0100
+
+    Replace -O with -f where appropriate
+    
+    The owner check for sourcing config files/sleep modules is wrong, because it
+    doesn't allow to run pm-is-supported unprivileged.
+    In addition, source the sleep module after source_configs, so SLEEP_MODULE can
+    be configured via /etc/pm/config.d/
+
+commit 3a8459c883ef0e2730278fe23f873f4c3c6912c2
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Thu Feb 14 17:17:33 2008 +0100
+
+    Fix inverse file owner check in init_logfile()
+
+commit 7f51729e23cfb0906ddd37d4bb24b8d26653d06e
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Thu Feb 14 16:52:28 2008 +0100
+
+    Clean up generated files and put *.in files in the tarball.
+    
+    Make sure to clean up all generated files on "make clean".
+    Don't distribute generated files in the dist tarball, only the *.in files.
+    Add generated files to .gitignore.
+    Use consistend naming for the install dirs.
+    Install defaults file as data file.
+    Keep EXTRA_DIST and CLEANFILES in sync.
+
+commit 1a9e28fa4a4d2cb1e1be016ac50188b3de871da9
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Thu Feb 14 16:26:50 2008 +0100
+
+    Add safety checks for *_fbcon()
+
+commit 13a8102dffe3b54d44cbf5d8989cf68cd5971591
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Thu Feb 14 16:23:46 2008 +0100
+
+    Consistently use tabs for indentation.
+
+commit 2b99001c87461df573cf6ae3091f88e193ede23a
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Sat Feb 16 10:19:40 2008 -0600
+
+    99video had a missing closing bracket.
+    
+    While fixing that I noticed
+    that we use an inconsistent style for function brackets. I chose
+    foo()
+    {
+    }
+    
+    as it seemed to be the most used one.
+    
+    Cheers,
+    Michael
+
+commit 8672d50c1fca29b2bbaedf90b5c27a319952717c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:15:22 2008 -0600
+
+    Removed redundant call to exit in pm-is-supported.
+
+commit 5f98b0a73d390ef42c4219939610f7c8d17ab1cb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:12:34 2008 -0600
+
+    Removed redundant exit call in pm-action.in
+
+commit e440eea026349b5e2e3f9e77b6cc38af12468331
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:10:34 2008 -0600
+
+    Our version of on_ac_power does not return 255.
+    
+    Having the man page say it does might be a little confusing.
+
+commit da108f79aa86b2b131437e6d680891d641b569ea
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:06:22 2008 -0600
+
+    Get rid of redundant calls to exit in 99video
+
+commit a91ff846eebca791a55ab02afa4413ed33d13c77
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:05:44 2008 -0600
+
+    Modify 95led to exit $NA where applicable.
+
+commit a295ae5e7d7d26cafcef9c9ff9ab54ef09a461d1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:04:42 2008 -0600
+
+    Modify 94cpufreq to exit $NA where  applicable.
+
+commit 109c1b9f93402e9d5bf79616ea040e7deda28167
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:03:57 2008 -0600
+
+    Modify 90clock to exit $NA when applicable.
+
+commit c4ad6d12417de2ce9dc76fb88ce042e43ddc3d51
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:02:58 2008 -0600
+
+    Get rid of redundant calls to exit.
+
+commit bb2c3cdf1b1438f743803eab084995b25b61053e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:02:26 2008 -0600
+
+    Modify 50modules to return $NA of there are no modules to unload.
+
+commit 729754f008fc99d401583b493de03b73fedaa2bf
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 10:00:57 2008 -0600
+
+    Modify 49bluetooth to exit $NA where applicable.
+    
+    Also got rid of redundant calls to exit.
+
+commit b1fdee390a5b5972b0c71752445354f9d3f50816
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 09:59:53 2008 -0600
+
+    Get rid of redundant calls to exit.
+
+commit 25e73f1a6b1340f6ff125c3126a39f4d30788f04
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 09:58:56 2008 -0600
+
+    Modify 10NetworkManager to exit $NA where applicable.
+    
+    Also get rid of redundant calls to exit.
+
+commit 95e8d891352a373d1c1d8e55eebc46ab1d445621
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 09:57:44 2008 -0600
+
+    Modify 05led to exit $NA where applicable.
+    
+    Also get rid of redundant calls to exit.
+
+commit 436ebacce6b142b956d5f94d1bb8b0568343cd2f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 09:56:30 2008 -0600
+
+    Fix up 01grub to exit $NA when the hook is not applicable.
+    
+    Also get rid of redundant calls to exit.
+
+commit c62130114d1207163c9ed4628a41657695388672
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 09:55:03 2008 -0600
+
+    Get rid of redundant call to exit in 00logging.
+
+commit 256fefe91df74dd82991a5db5e17130feb51c339
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 09:54:38 2008 -0600
+
+    Get rid of redundant call to exit.
+
+commit 81c9a1a9be78b7c105330e66fcf540b0520962ab
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 16 09:38:24 2008 -0600
+
+    Display hook exit statuses on the logfile.
+    
+    This also reserves exit code 254 for the hooks to indicate that the hook
+    was not applicable to the system.  We treat this specially because it is
+    not a failure on the hooks part that it cannot run on that system.
+
+commit 9fbde3095567e3a7ea6a9f14096e1185042d4b40
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Thu Feb 14 16:52:28 2008 +0100
+
+    Clean up generated files and put *.in files in the tarball.
+    
+    Make sure to clean up all generated files on "make clean".
+    Don't distribute generated files in the dist tarball, only the *.in files.
+    Add generated files to .gitignore.
+    Use consistend naming for the install dirs.
+    Install defaults file as data file.
+    
+    Improve in_files handling a bit.
+
+commit 4d455cec32aefbd9bbc89587fb5676e280e76914
+Merge: 30ce87e 03a59b3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 13 20:52:34 2008 -0600
+
+    Merge branch 'master' into vlowther-move-pm-main
+    
+    Conflicts:
+    
+    	pm/functions.in
+    	src/pm-action.in
+
+commit 03a59b39d415366cb7068886f103db8fa6ef6aac
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Wed Feb 13 11:52:18 2008 -0800
+
+    More descriptive autogen output for missing autotools
+    
+    In the case that autoreconf is missing, we can prompt the user which
+    packages will be needed (autoconf and automake). Otherwise, we'll just
+    have to rely on the error output from autoreconf, which should be
+    sufficiently useful.
+
+commit 6337e09082a70861fb2314c8c2ebecddb3698808
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Thu Feb 7 10:49:26 2008 -0800
+
+    Much simpler autogen.sh for our needs
+    
+    The current autogen.sh script had way too much baggage for what we use
+    in pm-utils. My guess is it was copied from a GNOME package.
+    
+    Anyway, this slims down autogen.sh to just use autoreconf, which will do
+    the right thing. This autogen.sh is a virtual copy of the "official"
+    script used in Xorg.
+
+commit dc910a771f41ddae9f162d2e5fbde4e95dd715b3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 13 11:24:22 2008 -0600
+
+    Added a readme describing how to use s2ram/s2both's internal video quirk handling.
+
+commit ca6511884ef1623781c82e9f420337cb2340cbc4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Feb 12 19:31:57 2008 -0600
+
+    Fix thinko in 99video w.r.t framebuffer console states.
+
+commit 02e9623c6f0adb3c3b6c03d77bbfaff1c4434744
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Feb 12 08:51:16 2008 -0600
+
+    This patch adds framebuffer console handling routines.
+    
+    It is the only thing that we were missing from the s2ram tools.
+
+commit d5907c546116762cbb1f50b362fe163caed97c78
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 11 18:49:43 2008 -0600
+
+    Moved the SLEEP_FUNCTIONS declaration to after where we load defaults.
+
+commit 982ccdf2b02742bfdcd8e8bdd7e1a3ebe8856ec8
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 11 18:26:54 2008 -0600
+
+    Added a check for /dev/snapshot when using uswsusp.
+
+commit e55fd77ebd34da61718bda8e698bbb9c4c8add14
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 11 17:30:55 2008 -0600
+
+    On second thought, we don't need to mess with s2ram when using uswsusp.
+
+commit fa95410cff8fb0837b07d02c702f9a9b7e152c4b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 11 16:46:25 2008 -0600
+
+    Add more paranoia to check_suspend_hybrind in uswsusp.
+
+commit 58f482cc83d892d0cfd32d2fb0114148d9b17b48
+Merge: 25c7ae7 5a7cb8d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 11 16:25:09 2008 -0600
+
+    Merge branch 'master' into vlowther-even-simpler-sleep-modules
+
+commit 25c7ae741c74c59361946af749f120787db7caa0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 11 16:24:46 2008 -0600
+
+    Added completely untested uswsusp support.
+    
+    Use at your own risk.
+
+commit 5a7cb8d1fb6fe8068aea8ec904161c6dc912711b
+Merge: 2ff6d1b 1049641
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Feb 10 21:58:38 2008 -0600
+
+    Merge branch 'vlowther-security-fixes'
+
+commit 2ff6d1b801dab07a75eaa9cf773134574014180f
+Merge: 1b2828a ad92f81
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sun Feb 10 08:51:01 2008 -0600
+
+    Merge branch 'master' into vlowther-simpler-hooks
+
+commit 104964140b8c896c1bf1cdace338e509ea3544f1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 20:13:08 2008 -0600
+
+    pm-is-supported.in needs to be tranformed before it can run.
+    
+    Update the permissions to reflect that.
+
+commit 84d971f5000e400894e7a1fbbb4397cd7c09d7cd
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 20:12:08 2008 -0600
+
+    No need for extra x's in comparisons in pm-powersave.in
+
+commit f3fa39954440adf512b624e137e2d181dc24939b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 20:09:38 2008 -0600
+
+    Should be ${REVERSE}, not {$REVERSE} in pm-action.in
+    
+    I am so embarrased.
+
+commit eb6035a9f7b159927de5a24e7a7ef2c2f700e4c2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 20:06:22 2008 -0600
+
+    Minor quotation updates in on_ac_power
+
+commit bba04875dbef9343612e3aec2ee9c67d05b0d51e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 20:04:02 2008 -0600
+
+    Reverse ordering of the if command_exists ... in 20video
+    
+    This brings this hook inline with 99video, and is easier to read.
+
+commit ebcb472fe233a2b215ada2ae94a71293a8e10636
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 20:00:04 2008 -0600
+
+    Minor quotation fixes in 99video
+
+commit 1f4cae1db1ff4a9f42b9d1194562e69244864879
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:57:39 2008 -0600
+
+    Removed unneeded redirect on 95led.
+
+commit 7ba73da6e6926bd574e54bce93ff2d8f14bf8b58
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:56:26 2008 -0600
+
+    Minor quotation fix in 94cpufreq.
+
+commit 07bec2d38626067358fc84675a1e526f69ab86b0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:54:01 2008 -0600
+
+    90clock updates
+    
+    Modified 90clock to pass just a filename to the locking functions, and
+    to get rid of an unneeded return command.
+
+commit b58256a2505e1116be1090741472285959c58bbc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:48:07 2008 -0600
+
+    No need for extraneous redirects in 05led any more.
+
+commit ad1dd3c2c9280c3d432b6da9a530e060287fc40f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:46:29 2008 -0600
+
+    Added missing ;; in a case statement in 01grub
+
+commit 7d3bbfdd70a4dcc4c0f1717c34c45a585675c6b7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:42:36 2008 -0600
+
+    Get rid of redundant return command in toxonice.
+
+commit f8fd6a4fb0301b4e3e2767b06e2b561f1b15f7a1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:39:56 2008 -0600
+
+    Minor correctness updates
+    
+    Mostly quotation fixes and the like.
+
+commit f0162d97d03f6ceaaea581a61ee6cfb2f335c331
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:32:01 2008 -0600
+
+    Verify ownership of pm-utils sourced or executed files
+    
+    When sourcing or executing something that is a part of pm-utils, make sure
+    we user running pm-utils owns it instead of just checking that it exists.
+
+commit 0debc2e54d173fe88b739394fb3a5b0cb0b8be7c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:20:48 2008 -0600
+
+    Make locking and unlocking not accept arbitrary paths.
+    
+    This removes the ability for someone to thoughtlessly overwrite something
+    critical when trying to take a lock.
+
+commit eb86a98f2778fcbc373fd2579f0f6e2c2e3007dc
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:06:15 2008 -0600
+
+    Do not init the logfile until after we take the suspend lock.
+
+commit 7dbbc618a3e7ff83393666df3ee9289ae1d7a32d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 19:05:03 2008 -0600
+
+    Made init_logfile a little more paranoid about what it overwrites.
+
+commit ad92f817445390525e66b40ac8d9906e58f99810
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 16:21:24 2008 -0600
+
+    Added slightly more explanatory note on configuring tuxonice.
+
+commit 8b8038ea2edd07bcc3df7f2c79e664979ec4c795
+Merge: 3c1b3c0 70dee98
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 16:06:37 2008 -0600
+
+    Merge branch 'master' into vlowther-even-simpler-sleep-modules
+
+commit 3c1b3c0de9685ca3430d8a4b9409958254fe0c65
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 15:58:34 2008 -0600
+
+    Revert "Merge branch 'vlowther-simpler-hooks' into vlowther-security-audit"
+    
+    This reverts commit 314d2025e30c71e9bdb482191527378ec56ab7b0.
+
+commit 314d2025e30c71e9bdb482191527378ec56ab7b0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 9 15:47:04 2008 -0600
+
+    Merge branch 'vlowther-simpler-hooks' into vlowther-security-audit
+    
+    Conflicts:
+    
+    	pm/HOWTO.hooks
+    	pm/functions.in
+    	pm/sleep.d/Makefile.am
+
+commit 70dee9897723db36c2c0a3b83ff8510072a41aa6
+Merge: da9134c 347e419
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 19:51:45 2008 -0600
+
+    Merge branch 'master' into vlowther-debugging-hooks
+
+commit 6cbca38eb26a5b1a356abe3e0da106e0124f213d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 19:44:58 2008 -0600
+
+    add TODO about a needing a configuration mechanism for tuxonice
+    
+    (and, by extension, the rest of the sleep modules)
+
+commit 4084624c55b70acb69d93ffb553d0792fb495705
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 19:34:34 2008 -0600
+
+    Added a HOWTO.modules for writing sleep modules.
+
+commit 66f32534a8d39c0f49cc5c78393da3222858596d
+Merge: d3b75b0 347e419
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 19:04:11 2008 -0600
+
+    Merge branch 'master' into vlowther-even-simpler-sleep-modules
+
+commit 1b2828a4abd7d160f273c1fbb3c47ff37291195f
+Merge: d76c106 347e419
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 18:56:26 2008 -0600
+
+    Merge branch 'master' into vlowther-simpler-hooks
+
+commit 30ce87e6e801060653b450f5452619eb47f63082
+Merge: 380bae1 347e419
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 18:52:52 2008 -0600
+
+    Merge branch 'master' into vlowther-move-pm-main
+
+commit da9134ce814cb70db21be481607067d59d57682c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 18:06:20 2008 -0600
+
+    Added a little script to build and install pm-utils in a temp
+    directory.
+
+commit d8dcc81a0fa75b9a43bf5caf3d5b2fc21ee31520
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 17:32:38 2008 -0600
+
+    If PM_DEBUG = true, then set -x in functions.
+    
+    This will store trace logs in the logfile.
+
+commit d3b75b018a1f04fc6169616f3b5aa89f85197c01
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Fri Feb 8 14:04:25 2008 -0600
+
+    Dan Nicholson suggested changes -- get rid of some unneeded return $?, and
+    modify the Makefile.am to simplify it.
+
+commit d76c10655080ee7a949841b1511f47ac13436999
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Wed Feb 6 12:56:03 2008 -0600
+
+    Move the actuall hook running into a subshell.
+    One less place for future maintainers to forget to change IFS back.
+
+commit 558c2fbfb3157a0d18d66dd8b6b34a2c24c61164
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Feb 5 16:09:04 2008 -0600
+
+    Simplify hook implementation.
+    
+    	modified:   pm/HOWTO.hooks
+    	modified:   pm/functions.in
+    	modified:   pm/sleep.d/Makefile.am
+    	deleted:    pm/sleep.d/zzz
+    
+    * Merge the functionality of find_hooks and run_hooks.  This results in
+    a new run_hooks function which is much simpler than the old one and is
+    much more resistant to breaking due to odd filenames.
+    * Actually implements the functionality mentioned in README where you
+    can create a nonexecutable file in /etc/pm/(sleep|power).d that will
+    prevent the copy in /usr/lib/pm-utils/(sleep|power).d from running.
+    * Undoes the "nonzero exit code means do not run on resume" and
+    auto-reverse pseudofeatures I added in the POSIX series. If anyone likes
+    them, they can be added back at the cost of either passing a function to
+    run_hooks or maintaining a global variable.
+    * Merges the functionality that was in zzz back into pm_main. Although
+    zzz was a slightly funny name, upon further reflection it was a bad idea
+    and makes it harder to implement some partitioning of functionality that
+    will be needed if/when the hooks are split into their own project.
+    * Updates the documentation to reflect these changes.
+
+commit 537449f1acb100d5a49aa314cc40afaa7ef1ccae
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Feb 7 14:23:31 2008 -0600
+
+    Added tuxonice support to modular sleep branch
+
+commit 64c5393ce7d5ad02f773d11aa3d2cf307393fc08
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 6 12:07:48 2008 -0600
+
+    ...and make it check in the case statement too. :|
+
+commit 5ca9d9514c09b2d83808ffa4e2ca0b8c64d1fe4c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 6 12:06:17 2008 -0600
+
+    Make pm-is-supported translate $ACTION correctly.
+
+commit a92675f0a02396494b7e5d58fa7ea841ccbe0cc5
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 6 10:36:16 2008 -0600
+
+    Even simpler modularization of sleep methods.
+    This splits the actual functions that perform the sleep/wakeup into
+    a file which is sourced, adds an environment variable which controls
+    which module is sourced, moves the check functions into the sleep module,
+    modifies pm-action and pm-is-supported to take these changes into account, and
+    modifies the automake machinery to take these changes into account.
+
+commit 380bae163b946840e735c982974e232ec6b2e678
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 6 23:00:48 2008 -0600
+
+    Followup to the last patch.  Sunce we moved pm_main functionality to the only
+    place it is actually used, remove it from functions.
+
+commit a9169f14d8000709d23e70ebed783070000d9374
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Feb 6 22:58:57 2008 -0600
+
+    You know, the original reason pm_main was moved to functions is because
+    it was shared between pm-suspend and pm-hibernate.  Since all those scripts
+    are not symlinks to pm-action, we do not need a pm_main in functions cluttering
+    up the namespace.
+    
+    This patch clones pm-main functionality in pm-action
+
+commit 347e419b1e55bd9293b80831e661cc410123ef7c
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Wed Feb 6 09:56:51 2008 -0800
+
+    pkg-config file to support 3rd party programs
+    
+    A pkg-config file has been added to allow 3rd party programs to find out
+    about the user's pm-utils installation. This means they can make an
+    informed decision about where to install a sleep hook, for instance.
+
+commit 8df496aeffe3a7114fa01912d7605693c5bc64b9
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Wed Feb 6 10:01:51 2008 -0800
+
+    Make distcheck work
+    
+    None of the EXTRA_DIST files actually exist, causing `make distcheck' to
+    fail.
+
+commit 480fc5ffacd8292afd72114fe13ee1f4c71d29bb
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Wed Feb 6 09:58:38 2008 -0800
+
+    Ignore generated files
+
+commit 7b36dd7d2a95170f1bb676b2faf39159112accb3
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 4 15:59:53 2008 -0600
+
+    Removed executable bits on the *.in files to emphasize their
+    non-executability.
+    
+    Added an executable bit on src/pm-is-supported becaues it is.
+
+commit c14bf0f13d2f0c971ab12716e8fb1fbad18df3fa
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 4 12:22:52 2008 -0600
+
+    Fix double-quotes introduced by previous changes.
+
+commit 0b47c3f1651aa31a827c2ac19d3df445b8280a6a
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 4 12:21:50 2008 -0600
+
+    Revert "Revert "Moved text substitutions for automake to the top of pm/functions.in,""
+    
+    This reverts commit 1a682643d705efade2cea6322638662d238d2d66.
+
+commit 1a682643d705efade2cea6322638662d238d2d66
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 4 12:20:59 2008 -0600
+
+    Revert "Moved text substitutions for automake to the top of pm/functions.in,"
+    
+    This reverts commit d752433234db1de35de6256a39d84af2719c5ae2.
+
+commit d752433234db1de35de6256a39d84af2719c5ae2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Feb 4 12:20:18 2008 -0600
+
+    Moved text substitutions for automake to the top of pm/functions.in,
+    and export them as environment variables.
+
+commit e21eff8128eb04e61132c33cef2a36e6fef72765
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 12:50:44 2008 -0600
+
+    Add cleanfiles in Makefile.am, and actually export PM_FUNCTIONS in pm-powersave
+
+commit 8ae41d104086544631aaf76fd213c5ae8a32de64
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 12:45:03 2008 -0600
+
+    Use autotools to make pm-action and pm-powersave location independent.
+
+commit f1c9c11681680e059abc0bb56f0b20a726c29f91
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 10:10:54 2008 -0600
+
+    Renamed pm-powersave in preperation for making it location-independent.
+
+commit 7616c68a5aed5caf806056b6dd2d47a2f68950ad
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 10:07:29 2008 -0600
+
+    Renamed pm-action in preperation for making it location independent.
+
+commit eb9e9de8b93c03a554461f0d1eeea1dba0c78f97
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 10:06:24 2008 -0600
+
+    Modify src/Makefile.am in preperation for making the pm-action scripts
+    location independent.
+
+commit 349c2e5a0c7ab1c81be31eeae2d633935d1823a2
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 12:39:57 2008 -0600
+
+    Use autotools to make functions location-independent.
+
+commit a50dc9e1dd0b267cbc67eb34913d2f427a618671
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 09:47:39 2008 -0600
+
+    Rename functions in preperation for autotools based location independence
+
+commit 7dcff332d16522b7e5f69839b279576b70b5a0f0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 09:34:29 2008 -0600
+
+    Added support for transforming .in files in pm/Makefile.am
+
+commit ed60581bb7ff249ae9cf509c5937929af1f85c47
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 12:21:46 2008 -0600
+
+    Modified hooks to source $PM_FUNCTIONS instead of /usr/lib/pm-utils/functions
+
+commit 7b30515881b033ed2d1e4e11f3c8b3bc5e205683
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 12:14:31 2008 -0600
+
+    Update pm-powersave to export the location of pm/functions in PM_FUNCTIONS
+
+commit fa5cbe713ac0360ecdeb6f6dae1a12ab8ed53dbf
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Sat Feb 2 12:11:49 2008 -0600
+
+    Export location of pm/functions from pm-action
+
+commit 5953cb0f775e2fe66d74ba8f0581ee8eb00e8393
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Thu Jan 31 16:08:57 2008 -0600
+
+    CPUfreq fixups:
+      Only look at cpus that have an active governor
+      Fix inverted conditional when checking to see if we should restore
+        a governor
+    
+    99video vixes:
+      I had the tests backwards for the vbe|radeon helpers backwards.  Woe is me.
+    
+    Overall: Minor quotation fixes.
+
+commit 5d1e6ad771b709bcbeb67b9c165160b95ab0dc0f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jan 30 18:52:11 2008 -0600
+
+    Spelling fixes in HOWTO.hooks.
+
+commit f2746047eefdd3a95bc781436e809721c65f6fa6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jan 30 16:01:57 2008 -0600
+
+    Actually fix typo in 99video
+    My git-rebase fu is weaker than I thought.
+
+commit 4464450b8af957886d7af656a6b38b634a7a4f6f
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jan 30 14:46:34 2008 -0600
+
+    Simplify the implimentation of command_exists
+
+commit fac162b407e86dc5719c978dedd1277e216d255b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 15:16:24 2008 -0600
+
+    Added entries in .gitignore to ignore vim backup and swap files.
+
+commit 125d51f86d6acb7f5b61da798777a1a58f96f898
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 15:14:48 2008 -0600
+
+    Made zzz executable.
+
+commit a2dedcabe14d9ae537e5106b597fe80edd4c025c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 15:13:38 2008 -0600
+
+    in 94cpufreq, just exit outright if /sys/devices/system/cpu/ is not present.
+
+commit 3d56eb2cd40e1ee955d915474c1d38efe5de42bd
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 14:47:49 2008 -0600
+
+    Don't do anything in 65alsa if there is no alsactl command.
+
+commit a6456ef1218721f18778b1493a19ce7f5d418a4e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 14:46:08 2008 -0600
+
+    Deleted commented-out commands, minor quotation fixes to 55battery.
+
+commit 722439bb487e90a8c82a1c58c7bf3f1883be1f26
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 14:42:12 2008 -0600
+
+    move the sanity check in 49bluetooth outside the suspend function.
+
+commit c9b80d9f2690bc923ccf4beca0559c061c9dc8f6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 14:39:50 2008 -0600
+
+    Do not do anything in 10NetworkManager if dbus-send does not exist.
+
+commit fa58fea16a6ac1dca30961f50b19fa07198ca85e
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Wed Jan 30 15:50:11 2008 -0600
+
+    Added a HOWTO file for writing hooks,
+    modified 99video to fix a typo.
+
+commit 434e1b85f571e3ecbb8b7e43f93ce5de922f587c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 14:37:20 2008 -0600
+
+    Use the command_exists utility function instead of
+    directly calling type thing |grep -q "not found".
+
+commit ccf72b774837ac9fdd5a56054376e2939a8a32ee
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 14:32:27 2008 -0600
+
+    Add a function to test for the existence of a command, either a
+    function, executable, or shell builtin.
+
+commit fd9ee75a77bf14c9826fadefb66e86af98360f03
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 14:28:29 2008 -0600
+
+    Make 05led exit 1 iff we are not running on an IBM system.
+    This will cause it to be skipped on resume if we are on a system
+    that does not need it.
+
+commit 21cc1e1c172b6fa2bd282c41b1fbccc48e608b1c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 13:55:17 2008 -0600
+
+    Get rid of extraneous shell evals.
+    The commands will have their output redirected appropriately.
+
+commit 8189f4e999f8da778754d4aa7f77f92e0a526a4a
+Author: Dan Nicholson <dbn.lists@gmail.com>
+Date:   Tue Jan 29 21:36:44 2008 +0000
+
+    Earlier Victor and I discussed moving the sleep after the check in
+    spin_lock(). That got lost in the shuffle, so here's a new patch.
+
+commit 4b62a077eda4cf0055ca50225e50d7d581669d1c
+Author: Nigel Cunningham <nigel@nigel.suspend2.net>
+Date:   Tue Jan 29 21:12:27 2008 +0000
+
+    Here's a new patch (this time against current git) to enable
+    suspend-to-both support if we have suspend-to-ram and TuxOnIce.
+
+commit dd55c3a612b9393b1600cfff1c647b0c4d0823ae
+Author: Till Maas <opensource@till.name>
+Date:   Tue Jan 29 20:48:09 2008 +0000
+
+    apply an updated version of 5a5e848b49e33ebf538953bdd132e8ccb0d7377b
+
+commit d01d5cb977b7b56e1eea5168e8ea699039aa6a9f
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Tue Jan 29 20:46:56 2008 +0000
+
+    Revert "Here is now a patch agains pm-utils git with /var/run/pm-utils/lock as"
+    
+    This reverts commit 5a5e848b49e33ebf538953bdd132e8ccb0d7377b.
+
+commit 0de89bf5f75ac3ba46f464f51e46c416ad0781ef
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Tue Jan 29 18:27:31 2008 +0000
+
+    Instead of duplicating the checks in pm-action, simply call pm-is-supported.
+    Add also initial support for the --suspend-hybrid command (The actual
+    implementation of do_suspend_hybrid is still tbd).
+
+commit a89c9649210479110f4af37f27b905434920f607
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Tue Jan 29 18:24:41 2008 +0000
+
+    Patch attached to do the appropriate redirection for pm-powersave.
+
+commit 5a5e848b49e33ebf538953bdd132e8ccb0d7377b
+Author: Till Maas <opensource@till.name>
+Date:   Tue Jan 29 18:22:28 2008 +0000
+
+    Here is now a patch agains pm-utils git with /var/run/pm-utils/lock as
+    lockfile. It also makes sure that /var/run/pm-utils, i.e. the directory for
+    the lockfile is generated, and it uses variables for the directories to store
+    state and service information and creates/removes them properly. They are now
+    subdirectories of /var/run/pm-utils.
+    
+    Also it moves the take_suspend_lock() line back to its original place, one
+    of the other patches moved it to the wrong location within the funtions file.
+
+commit 761e76c6ea2ee9acfd62efc343aebf8238761ec4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 22:54:20 2008 +0000
+
+    That reminds me, the -- in that tr command paramater is a GNUism, and
+    I should remove it.
+
+commit ea744ea29552cb068bf3c05ecf80d2a8d336848b
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 22:53:28 2008 +0000
+
+    This patch modifies the module
+    unload/reload code to be POSIX compliant, and includes a minor
+    quotation fix in on_ac_power.
+
+commit dba53342fd80a01f8d932b8d32a0057562128ab7
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Jan 28 21:15:54 2008 +0000
+
+    remove obsolete .cvsignore files
+
+commit e823b31b36dd995e048731394a4428c4431d1650
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Jan 28 21:00:14 2008 +0000
+
+    /etc/pm/config is no longer supported
+
+commit f05e855408a8e408f9175877f5f623abf0cd03ad
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jan 28 20:54:08 2008 +0000
+
+    fix the gitignore, oops
+
+commit 05ffa5cb342bd850abd719f02d5a6ba1ba31fe29
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:52:12 2008 +0000
+
+    Use file globbing instead of trying to parse the output of ls, change
+    default governor from userspace to performance because performance
+    is the compiled-in default for just about everything that uses
+    cpufreq.
+
+commit 145ebf1c3fa5fc11ee49ccfc652a5384bd157ea0
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:49:52 2008 +0000
+
+    Modify the ntpd handling to use the generic locking infrastructure, tab fixes.
+
+commit 6721d29724b62be596e56db9026e1c27c112819d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:48:56 2008 +0000
+
+    If there is no state to save when running the ibm bluetooth hook, then
+    don't do anything instead of saving state that says there was no
+    state to save.
+
+commit 9f6e1f5911168ce032e04f7a0f9ddc5ed67495bb
+Author: Michael Biebl <mbiebl@gmail.com>
+Date:   Mon Jan 28 20:47:29 2008 +0000
+
+    This patch got rid of one usage of the usleep function. usleep is
+    redhat only ttbomk, so it's safer to simply use sleep. This patch
+    replaces the remainig usleep in 99video with sleep.
+
+commit 2963a225debe23edef4ec71049567ec01a6dda0c
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:46:33 2008 +0000
+
+    Modified the main suspend/resume function to use the new locking infrastructure.
+
+commit 7041cdf6063e4f7d705537f083f877fae1255e68
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:45:01 2008 +0000
+
+    nullglob is a bashism.  POSIX does not have it, and the previous
+    patches have gotten rid of our dependency on it.
+
+commit dc6944d6dbce95db990b136ea446d6067f8d60a4
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:43:53 2008 +0000
+
+    Modify the hook-running infrastructure to be generic and to be
+    POSIX-compliant.  Modified pm_main to use the new hook-running
+    infrastructure.
+
+commit 42e534c0c467e6bb895cf493da373b7675fe2be6
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:41:11 2008 +0000
+
+    Adds a generic locking mechanism built around directory creation/removal.
+
+commit 4a8036a4185ad32c4f7d2cedbe6ef3bf76948b97
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jan 28 20:38:32 2008 +0000
+
+    two more things in gitignore
+
+commit 6c4f5b58e6ce915c96f29935f2f719f39586f378
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:37:02 2008 +0000
+
+    Make condition checking in (20|99)video POSIX compliant, and modify
+    vbe() and radeon() to only check for the existence of (vbe|radeon)tool
+    once per hook invocation instead of once per function invocation.
+
+commit 9e058adb8718d3682c8a5b861e3f8796e4e3bbdb
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:35:53 2008 +0000
+
+    Rewrite service and state handling to make POSIX compliant and to get
+    rid of potential eval-related security holes.
+
+commit b60758f2b8f25dffab5aa74547c8c6cdf0d3eca1
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:02:53 2008 +0000
+
+    Minor updates to README -- /etc/pm/hooks has not existed in a long time.
+
+commit 1bc5e0cff57d33580bd07334dae5d4cb5c260e18
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 20:01:04 2008 +0000
+
+    Add entry for myself in AUTHORS
+
+commit 9785a16e5619b51d89343d290b9cae14bde2a954
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 19:59:34 2008 +0000
+
+    All scripts are now POSIX compliant, change shebang lines to have them
+    run under /bin/sh instead of /bin/bash. Also take care of a few more
+    minor fixups.
+
+commit 103ac946fc745e048736b78bd50d0dcc5dcb5da7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 19:58:11 2008 +0000
+
+    Simplify parameter expansion in pm-action and pm-is-supported.
+
+commit 96560c7ef164c756669f22df2b9d198bf3731100
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 19:56:36 2008 +0000
+
+    Made config file loading POSIX-compliant and got rid of a redundant
+    local variable in the config file loading function.
+
+commit b8b5c82c09a9b48cbadaa8c2cdb993f79bfee09d
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 19:55:32 2008 +0000
+
+    Modified pm-powersave to use the new hook-running infrastructure instead of including a duplicate copy of its own.
+
+commit a7608722ff88455a99a0efc139fa285acad815d7
+Author: Victor Lowther <victor.lowther@gmail.com>
+Date:   Mon Jan 28 19:52:14 2008 +0000
+
+    remove sysfont wrapper call. no other distro from fedora uses it
+    
+    On Jan 28, 2008 11:31 AM, Dan Nicholson <dbn.lists@gmail.com> wrote:
+    > On Jan 27, 2008 9:42 PM, Vasiliy G Tolstov <v.tolstov@selfip.ru> wrote:
+    > > Gentoo does not have this utilities. Default gentoo init script that
+    > > setting console font executes /bin/setfont
+    >
+    > That's because setsysfont is a Fedora specific wrapper script around
+    > setfont in their initscripts package.
+    >
+    > http://cvs.fedoraproject.org/repo/pkgs/initscripts/initscripts-8.60.tar.bz2/a0e888cc91ef6350a991985567d21366/initscripts-8.60.tar.bz2
+    
+    In that case...
+    
+    Patch attached to remove 60sysfont.  setsysfont is Fedora-specific,
+    and other distros do not use it.
+
+commit 2af15dbd00801c55f7683ec8eabb3d9cba3023af
+Author: Till Maas <opensource@till.name>
+Date:   Sun Jan 27 10:40:04 2008 +0000
+
+    This patch makes it possible to use a different hibernate mode, valid modes are
+    according to Documentation/power/interface.txt
+    platform shutdown reboot testproc test
+    Red Hat Bugzilla: https://bugzilla.redhat.com/show_bug.cgi?id=375701
+
+commit 40d7d07afd59fde567c36a6f684ff329fd1394bb
+Author: Till Maas <opensource@till.name>
+Date:   Sun Jan 27 10:38:50 2008 +0000
+
+    Set the sort order in functions instead of pm-action.
+
+commit de1ace906a3c99b01996b7a0e8dfabcabf0262c9
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sat Jan 26 18:06:26 2008 +0000
+
+    rename hooks into sleep.d -- this is something we have wanted to
+    do for a long time, but CVS made it hard
+
+commit 67645abd5351105a1d18f8615e789c4234e0d480
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sat Jan 26 17:50:24 2008 +0000
+
+    add the .gitignore files to ignore the build stuff
+
+commit a1e346dd88820b75f0e8d28f3c9ffb9b3604e4cf
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sat Dec 29 11:58:18 2007 +0000
+
+    2007-12-29  Richard Hughes  <richard@hughsie.com>
+    
+    * pm/functions:
+    * src/pm-powersave:
+    Red Hat Bugzilla: https://bugzilla.redhat.com/show_bug.cgi?id=302401
+    (Issue 2 in the bug report)
+    
+    Without the uniq files in the sleep.d or power.d directory may run twice.
+    Also this patch removes a uneccessary -e test in the if statements, the
+    -x test already includes a -e test.
+    
+    Also this patch adds a modeline for vim no to expand tabs, because tabs are
+    used in the files for indentation.
+    From Till Maas <opensource@till.name>, many thanks.
+
+commit d2d72cb5c174e0873530773a1e371c2310809c6b
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sat Dec 29 11:56:31 2007 +0000
+
+    2007-12-29  Richard Hughes  <richard@hughsie.com>
+    
+    * pm/functions:
+    * src/pm-powersave:
+    Red Hat Bugzilla: https://bugzilla.redhat.com/show_bug.cgi?id=302401
+    (Issue 1 in the bug report)
+    This patch makes sure that the nullglob option is set. This makes
+    sure that the result of a filename expansion is empty, when the
+    pattern does not match.
+    From Till Maas <opensource@till.name>, many thanks.
+
+commit 003f29807f418cd4bd14fb51569b5b95a2d9dfa5
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sat Dec 29 11:54:57 2007 +0000
+
+    2007-12-29  Richard Hughes  <richard@hughsie.com>
+    
+    * src/pm-action:
+    This patch makes pm-action show the filename in help, that was used
+    to invoke it, e.g. pm-suspend
+    From Till Maas <opensource@till.name>, many thanks.
+
+commit 88d3e5a21878e22f0c6e13f656417eccd4750be9
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sun Dec 23 23:03:12 2007 +0000
+
+    2007-12-23  Richard Hughes  <richard@hughsie.com>
+    
+    * man/pm-pmu.1:
+    * man/pm-pmu.sgml:
+    Fix a typo in the pm-pmu manpage.
+    RedHat Bugzilla report: https://bugzilla.redhat.com/show_bug.cgi?id=286201
+
+commit aac703ae48779eab946664035c9e7aa2d079b43d
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sun Dec 23 23:01:45 2007 +0000
+
+    2007-12-23  Richard Hughes  <richard@hughsie.com>
+    
+    * pm/functions:
+    There is no need to remove the logfile, because the '>' after exec in
+    the next line already truncates the logfile to zero length.
+    Also removing is wrong, because it destroys the selinux context of the
+    logfile. Bugzilla Reports:
+    https://bugzilla.redhat.com/show_bug.cgi?id=237840
+    https://bugzilla.redhat.com/show_bug.cgi?id=238068
+
+commit ca7e573f6eecf69148cb20d1868b0a72dfc6a78c
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Sun Dec 23 22:57:21 2007 +0000
+
+    2007-12-23  Richard Hughes  <richard@hughsie.com>
+    
+    * pm/functions:
+    - Check for the individual config file, not the list.
+
+commit 573b8d21d74958a5db0736430075e520d84ea126
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Sep 10 21:15:06 2007 +0000
+
+    - remove laptop-tools here
+
+commit a6989776ce2e519441ce05f73a0528f8b71f5429
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Sep 10 21:10:23 2007 +0000
+
+    - bump minor rev
+
+commit b373a9a25c57eda819a75fca94dffcb85d712c83
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Aug 13 17:38:51 2007 +0000
+
+    Remove laptop-tools entirely, it doesn't make any sense (rhbz#251617)
+
+commit 86e6293f468c627970ce8e5356c29b5c4d98491a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Jun 18 20:42:36 2007 +0000
+
+    - Add support for "--quirk-reset-brightness" (fixes the Fujitsu Lifebook S7110)
+
+commit 29ab136954604b2f12f729d0aaac6f685c46700c
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 4 15:50:30 2007 +0000
+
+    2007-06-04  Richard Hughes  <richard@hughsie.com>
+    
+    * pm/hooks/20video:
+    We are not turning off the DAC and light in 20video, but we are
+    turning it on in 99video. Fix.
+
+commit d9ce933889678092cd4d932c023c95e58387325d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue May 15 15:04:28 2007 +0000
+
+    - make man pages not get cleaned up by "make clean"
+
+commit b91649705a335a6896153ab26f5ee0b008bab150
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue May 15 14:57:02 2007 +0000
+
+    - fix exports of config variables
+
+commit eb463888c27f9c5214db479e1bedbfb9bb29eb65
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Apr 25 17:30:31 2007 +0000
+
+    - this redirect is bogus
+
+commit 40197ee4908b825643ee281ecdc705ef7e1a93a3
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Mar 26 14:18:07 2007 +0000
+
+    - fix source_configs to not error when the config dir is empty
+
+commit 60aa6beb5383c609b39c74c0fad94b8ab9f18ef5
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Mar 26 14:06:35 2007 +0000
+
+    - bump version, add changelog
+
+commit 2637da98f775fbedb1c1898aad3eab379adbf2eb
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Mar 16 16:19:58 2007 +0000
+
+    - work around broken regexps in some versions of bash, also fewer
+      forks ;) (patch from Stefan)
+
+commit fa4c8e2ecbce89a82d83ef9e41c1d37d18d8e985
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Mar 16 15:12:23 2007 +0000
+
+    - get rid of the complicated config stuff; the new layout obviates the
+      need for it (patch from Stefan)
+
+commit cd7a9f1167274cf0c14c88c47fdd59218e5f7d8c
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Mar 15 00:42:56 2007 +0000
+
+    fix typo
+
+commit 5ea16a96f795e47756ef372b415020c743354d19
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Mar 14 17:16:45 2007 +0000
+
+    - fix path for 'functions'
+
+commit 38f98cdf639b69a6a7896753691d8a6a78a50669
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Mar 14 16:40:30 2007 +0000
+
+    - use 'service' rather than calling init.d files directly
+
+commit 264aea5efe616901dcf8183d428ae4a43d9b2a5a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Mar 14 15:37:04 2007 +0000
+
+    - Fix cpufreq save/restore on multi-core cpus
+
+commit 7c8e24b2fd81d77f1bf6a622eb2471c0e0f2d807
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Mar 14 15:25:24 2007 +0000
+
+    -fix service restarting with . or - in the name
+
+commit dbac0970155f07841fb2280a48c2c1079d6b79fd
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Mar 14 15:07:11 2007 +0000
+
+    - don't remove "button" any more.
+
+commit ff83e338fbe5688c7c3e949a837e748f55e98d6c
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Mar 14 15:06:19 2007 +0000
+
+    - pm-reset-swap fixes from stefan
+
+commit b85e949dadef4732847ba1f114bc325b7c19393f
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Mar 14 14:49:44 2007 +0000
+
+    -add warning comment in defaults
+
+commit e540e66d3485fa4cf554504f1390cbcbd58812c9
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 13 14:22:53 2007 +0000
+
+    - ... I thought that would work.
+
+commit 054ad212230a8b39dfa2c9c20aa2c737b28b95a7
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 13 14:20:04 2007 +0000
+
+    - fix pm-is-supported installation
+
+commit 09be37709a04eb7b336edecb56e747b90b29f0db
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 13 14:06:51 2007 +0000
+
+    - er, make it .2
+
+commit f1e2558091a9e94321d75ad1ff7bb768507fd33d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 13 14:06:21 2007 +0000
+
+    - bump version
+
+commit faffa6b4fb3cfbd2df7f861cc121dd4ff36739cb
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 13 14:05:51 2007 +0000
+
+    - add pm-is-supported
+    - add pm-suspend-hybrid
+
+commit 428355d0870d7c4419a00753e9297e8160602784
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:59:05 2007 +0000
+
+    - add /usr/lib/pm-utils/bin to $PATH
+
+commit 5a3c8ac03bcc3ae0c19bbea72b9936efd37c580e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:55:31 2007 +0000
+
+    - get the path for "functions" right.
+
+commit dd5a52d9c316eb52a9c652a8e6fe5f5d23f39ce2
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:37:17 2007 +0000
+
+    - I'm really not even sure why these are version controlled...
+
+commit 6b2c9bc624a8efba20501aca91930080a177db9a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:35:59 2007 +0000
+
+    - make sure pm-action is bundled in
+
+commit 38ad105a26a49f01d4a88d9d40c77c955be48cda
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:20:25 2007 +0000
+
+    - fix path here, too
+
+commit e6dce8f52f2f1e4e546c21b0b415aef58f0dda69
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:20:06 2007 +0000
+
+    - fix path for sysfont hook
+
+commit 0de7792eac7ed53b28a241a0207ceb309f46d9ea
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:10:13 2007 +0000
+
+    - get the version number right, too.
+
+commit e6ae0244dec7430619acea404a0973cbe20d09d9
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:08:46 2007 +0000
+
+    - er, get the version number bit right ;)
+
+commit a772fdf6017e76d904555311060aae7e416274cf
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:08:05 2007 +0000
+
+    - change to use the new directory layout
+    - bump version to 0.99.2
+
+commit 8a16baec2900770f24b553b5309f3df9edc3ea07
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 19:03:19 2007 +0000
+
+    - use "bash" not "sh"
+
+commit fd836c73a4be54b46bcdbfdf8f56487f93fbc0f5
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 18:57:36 2007 +0000
+
+    - add pm-reset-swap here
+
+commit 17581d15af3e678b745dd25b99db459c351e885a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 17:56:28 2007 +0000
+
+    - fix date on changelog
+
+commit 3c75df6e506e77ea4d38a7abeea1e2876c6837ef
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 6 17:56:11 2007 +0000
+
+    - use "bash" not "sh" in hook scripts
+
+commit e3d62981a58d3d105d721f7ad7ad7222c6a1673d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Mar 2 21:35:38 2007 +0000
+
+    - use .Rescan since davidz fixed it.
+
+commit 65c64c4341e92d856afb39b737ceb696308a89ef
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Mar 1 18:29:14 2007 +0000
+
+    - fix shell quoting in variable tests
+
+commit 7b9a7de77ae44556f2716eaae86038c7f4fd9d23
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Mar 1 18:27:01 2007 +0000
+
+    - fix use of [ with =~
+
+commit 2702adc1d394e3120a6397eda5d96a06cd9ca8d7
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Mar 1 17:01:53 2007 +0000
+
+    - make this work entirely in the resume/thaw path
+    - don't use hal-device, use hal-set-property
+
+commit 91a8abb2b8057ec5bba82dfac01a5058a3000b4b
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Mar 1 16:55:41 2007 +0000
+
+    - minor cleanups to NM hook
+
+commit 944c781fea78b86279a15281d6ec19d2fdbb0fdc
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Mar 1 04:14:55 2007 +0000
+
+    - add battery probing hook
+
+commit 0f0c785facb7332cf0f4f4eca57d0c881cf3d97b
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 19:45:49 2007 +0000
+
+    - Fix man page generation.
+
+commit 04280470e4c9f742c2677152316f792b93a91c3d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 18:59:25 2007 +0000
+
+    - manually fix up the crap that's getting generated...
+
+commit 6c7a86e783f39d7767e2537129494823e2de4ca9
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 18:54:26 2007 +0000
+
+    - split 20video's resume/thaw components out to 99video so it'll run sooner.
+
+commit 1014e2094be149ff3086bafe5de368d3f498705d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 18:21:47 2007 +0000
+
+    - bump version for prerelease
+
+commit e5767aec119b271b4e6e722315046b68225d0303
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 18:19:02 2007 +0000
+
+    - add error messages
+
+commit 5ff08f96b93233502eaa4a5094e369200a9dce9f
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 18:14:22 2007 +0000
+
+    - handle emacs backups like we handle them in pm/functions
+
+commit 5cb482e387a076187440c7ea626147a640f31655
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 18:10:44 2007 +0000
+
+    - don't squash sysfont's output
+
+commit 7cac94889552b2fbb025981e3d8d5d657f3173b8
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 18:07:04 2007 +0000
+
+    - handle command line options for video quirks (patch from hughsie and pjones)
+
+commit c35499ec3ef9338485ea90f3b6715e803a093553
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 16:50:12 2007 +0000
+
+    - add changelog for pm/functions change
+
+commit 7d427f7f7dec95cc07217fe393ceb8710092df00
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 20 16:44:38 2007 +0000
+
+    - fix functions to get module unloading right with _ and - in the names
+
+commit 8c6c3eb0bc95b9781787ab12053d2b77437368ea
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Feb 2 17:53:55 2007 +0000
+
+    - Fix setsysfont hook to actually hit tty0, not the pty of the current task.
+
+commit dd5832149649ffc7128548e83f9592468801f9f4
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Jan 30 16:50:27 2007 +0000
+
+    - add pm hook to save and restore alsa settings
+    - add 60sysfont and 65alsa to Makefile.am
+
+commit 533751122ad699a8390954bd1a611560ffb30f9b
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Jan 30 16:46:03 2007 +0000
+
+    - add a hook that sets they sysfont on resume/thaw
+
+commit caa75b6b70659dc11a027fc3ea26feb9526bb4f9
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Jan 30 16:42:49 2007 +0000
+
+    - add rhbz info
+
+commit 12647523744702ff051bbc6dc5fb5ec511dc92d7
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Jan 30 16:42:12 2007 +0000
+
+    - remove mDNSResponder stuff from the networkmanager hook.
+
+commit 71029b29f43c01a57d33fb56050aeeae69294fc5
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Jan 30 16:34:37 2007 +0000
+
+    - fix permission checking (patch from Phil Knirsch, rhbz #222819)
+
+commit fe79418e9ee0c15b371eb309e09ea109687c67ab
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Jan 29 21:54:45 2007 +0000
+
+    - add changelog entry for pm-reset-swap
+
+commit 410a8b3c63b178560b8b007e66f6618754039cc0
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Jan 29 21:49:45 2007 +0000
+
+    - Add a utility to remove the S1SUSPEND stamp from a swap device.
+
+commit 3c086a1670d928452b009a9e1269af0ab1b956b7
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Jan 2 16:44:51 2007 +0000
+
+    - Set scheduler policy for different power states
+
+commit 5ea0c449249186457d3cccda5dd1eaafa71806a1
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Dec 5 16:35:15 2006 +0000
+
+    - Fix on_ac_power not to use batteries as an indicator
+
+commit 514521c81363a72f77d8bbeb3e03ee80d78e6609
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Nov 30 20:07:04 2006 +0000
+
+    - log when hooks finish
+    - don't discard service start+stop messages
+
+commit 44a852c154905bfbdf71001e8fa1e815a6bc5a7c
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Nov 30 20:05:46 2006 +0000
+
+    - don't stop services or remove modules during suspend, just turn off the
+      device.  (This needs some more work on non-thinkpad machines, I think...)
+
+commit ff1c00e625db258eb0537f285f382c52366e598c
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Nov 29 22:36:45 2006 +0000
+
+    add changelog for source_configs rewrite
+
+commit d00a43fb93d027c6b2150c2bbece696039f0cd54
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Nov 29 22:35:47 2006 +0000
+
+    - make source_configs work right (from Stefan)
+
+commit 961d6b723b46f8f6eaae8a2aed9c4e5a6697d5e4
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Nov 28 23:03:12 2006 +0000
+
+    - enable 94cpufreq hook for all cases
+
+commit abc1939bbd45ca27a81cd654e111b023fdb39b4f
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Nov 14 16:08:58 2006 +0000
+
+    - log kernel stats if PM_LOGFILE is set
+
+commit c0bf4d8827576a8cf9e3896fcf55501f848536a2
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Nov 14 16:01:30 2006 +0000
+
+    - Fix logging of hook names (patch from Holger Macht).
+
+commit 0d45d3bc15db2dab8d7384e6bbb4224076de2e9b
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Nov 14 16:00:12 2006 +0000
+
+    - sort initializations of the globals
+    - add some comments about them.
+
+commit 987744081866325a21b267e770a752eaf5589b13
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Nov 6 16:35:42 2006 +0000
+
+    - be more picky about sanity checks on /sys/power/state's contents and
+      /sys/power/disk's presense.
+
+commit 33fc341c70a65ee42a8fafa9d497683748c4a42e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Oct 31 18:18:53 2006 +0000
+
+    - add some missing changelog entries
+
+commit f4944ebf09129e88fe08b967258ec92071191b84
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Oct 31 17:52:16 2006 +0000
+
+    - add INHIBIT support (seife, pjones)
+
+commit 748e8139c551ed510d4d818b2d3cf4a11c62ddd1
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Oct 31 15:40:51 2006 +0000
+
+    - don't initialize RESUME_MODULES
+
+commit d8568c6b842cc345a4b8d995b797b82ab495ab3c
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Oct 30 18:43:12 2006 +0000
+
+    foo
+
+commit 26734ae6163fdf0149f0fc640366d818808c3ef3
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Oct 30 18:28:17 2006 +0000
+
+    foo
+
+commit 844f38b43d835e9c14fd29900eb31cfa2bc56792
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Oct 30 18:17:03 2006 +0000
+
+    - I'm just testing my mail filter rules.
+
+commit 66eeeb65f29003ae2f6c0d0470aaea884232268a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Oct 30 15:40:42 2006 +0000
+
+    - rename LOGFILE to PM_LOGFILE
+    - use exec to redirect our stdin/stdout to the log
+    - inherit PM_LOGFILE from the environment if it's set there.
+
+commit f1697c420ad54a9ba5f09d8aa35c191452887f8d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Sat Oct 21 19:47:02 2006 +0000
+
+    - use modprobe -r, not rmmod
+
+commit 703a54dd5fc315791e85e78f72582867fe677dc4
+Author: Peter Jones <pjones@redhat.com>
+Date:   Sat Oct 21 19:43:40 2006 +0000
+
+    - module load/unload fixes from Stefan.
+
+commit 786fc6815f6e078113f2cc3d15612a10016de79b
+Author: Peter Jones <pjones@redhat.com>
+Date:   Sat Oct 21 19:18:19 2006 +0000
+
+    - Merge logging infrastructure from Stefan Seyfried <seife@suse.de>
+
+commit 908f33c1261f87b371bd6ef30d1e217709d5a30a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Oct 11 22:49:27 2006 +0000
+
+    - fix missing decrement in reverse-hooks loop.
+
+commit 8d07110eeb2e0a604087f4123f7c3e55ed2934c6
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Oct 10 16:14:50 2006 +0000
+
+    - don't source /etc/rc.d/init.d/functions, we don't need it
+    - set sane script-wide path
+    - use "read" instead of "cat" to read /.suspended
+    - use globbing to exclude emacs's litter
+    - use shell not awk to do the hook reversal
+    - don't specify full paths for programs in PATH
+
+commit b6f6896d86eb10935571bc65d398094f9590b33e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Sep 28 21:25:36 2006 +0000
+
+    - ignore emacs backup files in config dirs
+
+commit 48b9b9adcafbc071566cda9581b39c3c2b82b3b8
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Jun 14 16:05:20 2006 +0000
+
+    - don't show an error message on platforms without /dev/pmu, just exit 1
+
+commit f594add7b1c23c7e56c80ce2b28c45ff972bbc97
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Jun 14 15:15:39 2006 +0000
+
+    - add changelog entries for the stuff I committed this morning
+
+commit 897c063fef9ba66f99bd05ca37e9bca5acef958f
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Jun 14 04:08:03 2006 +0000
+
+    - fix DESTDIR usage
+    - don't clobber install-exec-am; use install-exec-hook instead
+    - put on_ac_power in bindir not sbindir
+
+commit fb0a58572cef7100dbb0f5757f570d0fe7928fc7
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Jun 14 04:07:21 2006 +0000
+
+    - fix DESTDIR usage
+    - don't clobber install-exec-am; use install-exec-local instead
+
+commit c6f6d591dcd927dacd59128812d75c2f61f6e484
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Jun 14 03:18:47 2006 +0000
+
+    - fix broken script directory
+
+commit f32e7bcb5cc2c8d78a797c417492d8b0e1269439
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Jun 13 21:11:03 2006 +0000
+
+    - add hook to make sure cpufreq is set to userspace control during hibernate,
+      or else we get nasty deadlock issues.  (this can be reverted/disabled when
+      the kernel gets fixed)
+
+commit 948f5275074d4741f40a19afae92496bea61897b
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Jun 12 17:12:40 2006 +0000
+
+    - don't allow non-root to run things
+
+commit 31894fcfa2d621927b362d94564df6271562a398
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 22:16:33 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * src/Makefile.am:
+    symlink pm-suspend and pm-hibernate to pm-action
+
+commit e7d0b3a948cacdddd89a22a101004bc13a5f8e62
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 22:03:20 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * configure.in:
+    * pm/Makefile.am:
+    Create /etc/pm/config.d on package install as this is an empty
+    directory for custom configs.
+    
+    * src/Makefile.am:
+    Build the src, and install the scripts. TODO: symlink the pm-* scripts.
+
+commit be6bc9d7464bb9897acec10fdf7580aa3d212326
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 21:47:28 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * INSTALL:
+    Add this GNU required file.
+    
+    * man/on_ac_power.1:
+    * man/pm-pmu.1:
+    Newest files (from the SGML files)
+    
+    * .cvsignore:
+    * man/.cvsignore:
+    * pm/.cvsignore:
+    * pm/Makefile.am:
+    * pm/hooks/.cvsignore:
+    * pm/power.d/.cvsignore:
+    * src/.cvsignore:
+    Add these files to keep cvs happy.
+
+commit 7306ce4d2ae22de302034f2d6c69aaf1b8cea9cd
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 21:26:02 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * Makefile:
+    Remove old build system, as Makefile is now autogenerated.
+    
+    * Makefile.am:
+    * configure.in:
+    Add in master build files for the autotooled build system.
+
+commit f0e3d83cf652c34adc34fd83e6c7c347f463c27c
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 21:09:24 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * man/Makefile.am:
+    Connect up the sgml->.1 conversion to the autotools build system.
+
+commit 96647f5aff3eb9cebcafb4148825f69108f49423
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 20:55:08 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * MAINTAINERS:
+    Add pjones as maintainer.
+    
+    * autogen.sh:
+    * pm/Makefile.am:
+    * pm/hooks/Makefile.am:
+    * pm/power.d/Makefile.am:
+    Start to add autotools build system.
+
+commit f120e807617807d4a04fbdb186d9a89677317a13
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 20:49:48 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * man/on_ac_power.sgml:
+    * man/pm-pmu.sgml:
+    Don't use hardcoded .1 files, instead generate them using sgml files.
+
+commit e32beb674d911c0c0bf8195bde9e29e0fbb1141d
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Mon Jun 5 20:37:49 2006 +0000
+
+    2006-06-05  Richard Hughes  <richard@hughsie.com>
+    
+    * NEWS: Add this file for release news. Required for autofoo.
+
+commit ee3f9a545acbdd51b059c1f1a7d35e8a67e933fe
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Wed May 17 19:08:38 2006 +0000
+
+    2006-05-17  Richard Hughes  <richard@hughsie.com>
+    
+    	* .cvsignore:
+    	Add this file to keep CVS happy.
+    
+    	* pm/power.d/laptop-tools:
+    	* Makefile.am:
+    	Add this folder and file to make the low power actions easy to add.
+    
+    	* pm-powersave:
+    	Do not just do hardcoded actions, instead run the scripts in
+    	/etc/pm/power.d/ with true and false arguments.
+
+commit abea65d43fd0945a6f14bd0a979f5c57837d9289
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue May 16 15:15:05 2006 +0000
+
+    - make sure we do VT_SWITCH once _before_ switching back to X, so that the
+      screen is in a sane mode when X gets it.
+
+commit 97a5d3155a042bcc55825eef178a4202fc604e7e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue May 2 20:47:59 2006 +0000
+
+    - add a hack to compensate for broken system headers.
+
+commit 15dca265544fb9dc5215cb4ef0a9d29b530c367e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue May 2 18:19:14 2006 +0000
+
+    - add pm-pmu, at least for now
+
+commit 759a83ad40f915c74d89f3f153281c998233d8be
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue May 2 18:13:48 2006 +0000
+
+    - add copyright and license notices
+
+commit 0af91bce436b75b38186c2504ee5a8a520d5eed5
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon May 1 19:51:29 2006 +0000
+
+    - handle an empty config.d correctly.
+
+commit 7a0b8ee55e9ba57ab2f7e2b60523bc31b6784f79
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon May 1 15:20:59 2006 +0000
+
+    actually make this work
+
+commit 3a6757b9f1e613fc5471083e2eeb9bc1beec8165
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon May 1 14:56:12 2006 +0000
+
+    - use override to set it
+
+commit 16528b4c40ee7f63908d0f3c6cb499a3030280a1
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon May 1 14:48:24 2006 +0000
+
+    - add "make test-archive"
+
+commit b81999fa786b3f3ffd93c7d297b4cae4d5e5728c
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon May 1 14:36:43 2006 +0000
+
+    - changelog for on_ac_power removal change.
+
+commit e3e833f459cdc28c359e5d468dd67d9786fd644e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon May 1 14:36:01 2006 +0000
+
+    - don't kill on_ac_power in "make clean"
+
+commit 7fec605fdf356d4a3d76fb7b6815dd674bece9ae
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon May 1 14:34:17 2006 +0000
+
+    - bumping the number for some CVS testing
+
+commit 20cb6a468665a0e7fd83ffef179f7283e283be09
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Apr 28 17:34:05 2006 +0000
+
+    - change on_ac_power to be a shell script
+
+commit d0390318d1ca6c9cb7420018d9ff23771896ee6a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Apr 28 15:56:07 2006 +0000
+
+    - revert bogus change WRT led behavior
+
+commit 93de24fe63ac36718084664c54f65720e29835ec
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Fri Apr 28 15:34:40 2006 +0000
+
+    2006-04-28  Richard Hughes  <richard@hughsie.com>
+    * pm/functions-ati:
+    * pm/functions-intel:
+    * pm/functions-nvidia:
+    Remove these files as we've now agreed that this belongs in HAL, and a HAL patch is close to being accepted.
+
+commit a12e9be4433fd765827aa4cd374e1427da250b7a
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Fri Apr 28 15:26:19 2006 +0000
+
+    2006-04-28  Richard Hughes  <richard@hughsie.com>
+    * pm/hooks/05led: Remove this file as we want the led to turn on at the *end* of the hooks stuff. We shouldn't have this and 95led.
+    * pm/hooks/95led: rename to 95ibm_led as this is ibm specific. Make sure the led blinks at suspend, and turns off when we resume.
+
+commit fa1915e5893514b98897ee569937bc0ee3aff67c
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Apr 27 23:42:49 2006 +0000
+
+    - update changelog
+
+commit 2254418346e5ca65999ca2d95e6ed2a5ab9ea291
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Apr 27 23:41:52 2006 +0000
+
+    - get rid of *.{pam,app}, as they're not very cross-distro
+
+commit c5d67c483483953bf64f5280f92db755537c688e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Apr 27 19:21:09 2006 +0000
+
+    - changelogs!
+
+commit 96c1808b64c5c954db4e0a53020bbd14540474d2
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Apr 27 19:10:53 2006 +0000
+
+    - don't stop/start services unless the initscript is executable
+    - use /etc/init.d/$name instead of "service".
+
+commit 0e054672fc64cbb30d00967a81daae42386889ec
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Apr 27 19:08:04 2006 +0000
+
+    - set LC_COLLATE
+
+commit f4d24f06dd905563f628b11155c8244f8639e328
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Apr 27 18:52:47 2006 +0000
+
+    - allow for /etc/pm/config.d/
+
+commit 3a3d1ba965163a5ede3329973e458a09e105a155
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Thu Apr 27 08:05:43 2006 +0000
+
+    2006-04-27  Richard Hughes  <richard@hughsie.com>
+     * pm/functions: Remove the video handling logic, as it is moving to HAL.
+     * pm/functions-ati: * pm/functions-intel: * pm/functions-nvidia: Add a comment saying that the files are unused. When HAL video stuff is completed, they can be removed.
+     * pm/hooks/20video: Switch to using the HAL methods as discussed.
+
+commit f541984ba988aae495aac2044e56bdb400410bd2
+Author: Richard Hughes <richard@hughsie.com>
+Date:   Wed Apr 26 22:00:21 2006 +0000
+
+    2006-04-26  Richard Hughes  <richard@hughsie.com>
+     * Add README
+     * Add AUTHORS
+
+commit 8e2395b91c02b0c028d7dd0cadbdfbce9c85faac
+Author: Peter Jones <pjones@redhat.com>
+Date:   Wed Apr 26 17:21:28 2006 +0000
+
+    - add changelog and license stuff
+
+commit 986eec6b464fae96773c412d957a10a788018639
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 25 22:08:17 2006 +0000
+
+    revert last change
+
+commit f95ca22913e39ed0878f82008ca3e6e91e398241
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 25 22:06:55 2006 +0000
+
+    - boring whitespace change to make sure email notifications work
+
+commit ce7a8d8524ffdbae1aa0fb44506d07320f5c59a5
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 25 14:27:07 2006 +0000
+
+    - bump version for last release before moving it once again :/
+
+commit ce69a33aace4d0df24ca936e371f4814844e45d4
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 25 14:19:57 2006 +0000
+
+    - use /etc/pm/config instead of /etc/sysconfig/pm , so this is completely
+      cross-distro clean.
+
+commit 16721a4c0359b725deb67ecbbd2b1c5ccaf809bc
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 21:49:08 2006 +0000
+
+    - test cvs repo
+
+commit 91220474e915502dd51467f53f8d0230e83ba8d2
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 04:42:22 2006 +0000
+
+    - get rid of some debug code
+
+commit 7a8a81a39754d53ec5889400cc451ab8c36fdc2e
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 04:38:46 2006 +0000
+
+    - minor cleanups
+
+commit b4cdd38f75690b574ee26852b65ad9c46e61ac2d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 04:32:02 2006 +0000
+
+    - nobody knows who "vbetool dpms on" actually works for, so let's not do it...
+
+commit 0a399185568c5b0e6e0520d8e81ff5909e564f62
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 01:35:20 2006 +0000
+
+    - fix syntax error
+
+commit 823a876e4caf60f83dca3a3fff354b24eb368085
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 01:10:33 2006 +0000
+
+    - bump the version
+
+commit 1f41c6f50cd199a04938dc214fe6d32753eecee5
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 00:54:42 2006 +0000
+
+    - don't fork a subshell to run vbetool
+
+commit 7afb9aba391be33b477d9c15b73f3613900dc794
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 00:54:27 2006 +0000
+
+    - don't fork a subshell for vbetool runs
+
+commit 0af8ebabb85bf97ef9a748d59a824e53dda52653
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Apr 18 00:41:05 2006 +0000
+
+    - work around the fact that hci_usb and some bluetooth stuff don't do
+      suspend right
+
+commit 011db0ab696f5c83720eb199a07f4c6508379b58
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 21:27:01 2006 +0000
+
+    - merge comments from roland on error handling here
+
+commit b5baa6c299d789ae4fb12ea2d5d93020760c71d7
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 21:10:53 2006 +0000
+
+    - um, don't send output to /dev/null when we want it in a file.
+
+commit 9a4e5230df28d38a75641d6e5cd5f218c1bf75a0
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 19:07:40 2006 +0000
+
+    - use infrastructure for ntpd's suspend/resume
+
+commit a0b6718e005ec8158a603e6fd59e977abccdfc89
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 19:02:32 2006 +0000
+
+    - should be "restartservice" not "startservice"
+
+commit 213d7f81ff0c46c97de9a01773549945e6d7d6e9
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 19:00:07 2006 +0000
+
+    - use infrastructure for module unload/reload so we don't reload modules
+      that weren't ever loaded
+
+commit 7a3f830b82ce3a9ff924da5c45b51471a8f3b98f
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 18:58:33 2006 +0000
+
+    - use infrastructure to start/stop mDNSResponder
+
+commit 364d18b96390bcfc4b1abdffd5e237640068ba20
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 18:56:52 2006 +0000
+
+    - minor reformat
+
+commit 8a02b370998e60d3272fb418a84b5377f4c0b1d3
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 18:55:02 2006 +0000
+
+    - fix typo in take_suspend_lock that causes it to be useless (sigh)
+    - add functions for scripts to save state between suspend/resume
+
+commit 7c26ec387e4e040178dd9366a7e7476abe0bf4a7
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 18:46:48 2006 +0000
+
+    - don't load /etc/pm/functions since we don't use it
+    - use "modprobe -r" not "rmmod"
+
+commit 89460b77a448bc5de1e03ffa64a8285fee6f277a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 18:45:25 2006 +0000
+
+    - don't load /etc/pm/functions since it's not used
+
+commit 8b00dd93e8f5afc53042815a28eb2f5114ad06fb
+Author: Peter Jones <pjones@redhat.com>
+Date:   Mon Apr 17 18:43:16 2006 +0000
+
+    - rework loading of /etc/sysconfig/pm so hooks don't need to load
+      /etc/pm/functions unless they actually need code from it
+    - remove spurious subshell-parens
+
+commit d82f30c9c5047c161a70f611125ccca1e5612643
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Mar 17 05:15:41 2006 +0000
+
+    - bump version
+
+commit 1ecbe91885e4a1f5665888cfe6b9946a7134b2ae
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 14 16:12:15 2006 +0000
+
+    - get the resume hooks right
+
+commit 66cb171a7ffd41388cc568e43a44ecd7264bba1a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Mar 14 14:56:26 2006 +0000
+
+    - move near-identical pm-suspend and pm-resume logic to pm/functions
+    - make pm-suspend and pm-resume generic, using pm-action
+    - add "hibernate" and "thaw" actions to scripts
+    - get rid of kludgy PM_MODE
+    - add pm/hooks/00clear, which clears the screen on tty63 before doing all
+      this stuff
+    - move pm-hibernate's default_resume_kernel into 01grub, which only does
+      anything on "hibernate"
+    - make 20video not do anything on hibernate either, not just thaw
+
+commit 976d0852cce44d9f0a3cde3e0d51e0ee0f3b5ac9
+Author: Peter Jones <pjones@redhat.com>
+Date:   Sat Mar 11 18:37:37 2006 +0000
+
+    - bump version
+
+commit 40e1b74063b72090e9546027427da659c3a97f9a
+Author: Peter Jones <pjones@redhat.com>
+Date:   Sat Mar 11 18:35:05 2006 +0000
+
+    - make this much more readable so we don't keep screwing it up.
+
+commit 938c8309e9bfb8c10c590079e55b402d2e84aeb2
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Mar 10 22:42:04 2006 +0000
+
+    - update to 0.14-1
+
+commit 725b22277be84bb6cb72743c33b447dcb1561140
+Author: Peter Jones <pjones@redhat.com>
+Date:   Fri Mar 10 22:34:06 2006 +0000
+
+    - fix hibernate check
+    - fix hibernate resume choice check (-a instead of -o)
+    - I am a dumbass and jeremy sucks at code review.
+
+commit 0f66d6c332216bf98a518c47a07c98ad7866beb3
+Author: Phil Knirsch <pknirsch@redhat.com>
+Date:   Fri Mar 3 13:27:34 2006 +0000
+
+    - Revert the last few changes as it seems to cause more problems than it fixes
+      for ATI chipsets.
+
+commit f23f61f682ae26eb3a8985f1a688869c4231b5b5
+Author: Phil Knirsch <pknirsch@redhat.com>
+Date:   Wed Mar 1 15:23:42 2006 +0000
+
+    - Updated version in makefile
+
+commit 87a55ac0a2aa2fe2403397a7c656ba8ee3ebaeb2
+Author: Phil Knirsch <pknirsch@redhat.com>
+Date:   Wed Mar 1 15:22:38 2006 +0000
+
+    - Use vbetool post instead of vbetool dpms on for ATI cards.
+
+commit 6171b6ca2802c46d0eeba18b9e6a366a77e23c50
+Author: Peter Jones <pjones@redhat.com>
+Date:   Tue Feb 28 17:04:19 2006 +0000
+
+    - don't post video by default on resume from hibernate
+
+commit 3b7440695996c6c96dccd0708f1328dd606a0fe1
+Author: Jeremy Katz <katzj@redhat.com>
+Date:   Tue Feb 28 16:51:20 2006 +0000
+
+    fix nvidia resume to actually have the display on.  tested on
+    toshiba tecra m3 at my desk
+
+commit a748ded06075250f343553f7cde50843d00bc0f6
+Author: Phil Knirsch <pknirsch@redhat.com>
+Date:   Fri Feb 24 12:29:29 2006 +0000
+
+    - Added missing pciutils-devel BuildRequires (#182566)
+    - Fixed missing vbestata save/restore calls for video suspend/resume (#182167,
+      #169494)
+    - Renamed hook scripts to allow local pre and post inserts (#179421)
+    - Added support for blinking led lights on Thinkpad Laptops during suspend
+      (#179420)
+    - Added pm-powersave script for powersaving via HAL (#169054)
+    - Added symlinks for pm-shutdown and pm-restart (#165953)
+
+commit 3758340f1b05ff9ffadff01f85c6e915c1c6b2d9
+Author: Jeremy Katz <katzj@redhat.com>
+Date:   Thu Feb 23 23:28:13 2006 +0000
+
+    call grub with --no-floppy on hibernate
+
+commit 88b8b2ff8a9695a92486abc5eee9911cff7e0442
+Author: Jeremy Katz <katzj@redhat.com>
+Date:   Wed Jan 25 01:02:40 2006 +0000
+
+    * make pm-hibernate set the default kernel to boot to the one we're running
+      so that resuming works
+    * rmmod button before suspend per davej
+
+commit b8a03b4aa5881355184c8072c4a777de3591efbe
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Dec 22 19:52:06 2005 +0000
+
+    update version
+
+commit c467e1cdd05409a54e73df0e58860a2b7ce39f5d
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Dec 22 19:51:37 2005 +0000
+
+    fix for new pciutils that changed the output format randomly.
+
+commit c1488e1547b277f37de348b5d810e57f5caa3fed
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Dec 1 00:39:54 2005 +0000
+
+    - bump version to 0.7
+
+commit d8c99913c2ae012f97a91c690bb9719060f09bbc
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Dec 1 00:39:16 2005 +0000
+
+    - restart ntp in the background (after some delay) since the network isn't back
+      up yet, and it'll try to resync before backgrounding itself.
+
+commit f6c37c8902ff9043e8865426f63cb47ebe1b9763
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Dec 1 00:38:13 2005 +0000
+
+    - change to vt63 before we actually suspend, so that the videomode switch
+      doesn't wake Jeremy's video back up.
+
+commit 6803cc0b92e92d49e81d9e8ec17fb861dd58dd54
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Nov 10 20:23:59 2005 +0000
+
+    . bump version
+
+commit bf61d0d9a174b2ccecacb1fb1ade881362bf9973
+Author: Peter Jones <pjones@redhat.com>
+Date:   Thu Nov 10 20:20:48 2005 +0000
+
+    . remove calls to acpi_video_cmd; the function isn't there anyway, and if
+      people want it they can use hooks.
+    . fix typo in call to radeontool
+
+commit 274aceb03e8da09566215718e1cc949f45a4ede9
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Fri Sep 30 16:03:02 2005 +0000
+
+    check for presence of various tools/files before using them (#169560,
+    #196562)
+
+commit 4922087d2ba94b5c942bf941b7eaafc2e1f1e78e
+Author: Jeremy Katz <katzj@redhat.com>
+Date:   Fri Aug 12 22:03:33 2005 +0000
+
+    add pm-hibernate stuff
+
+commit 1f71777dc9ec5369530de54faec5ec55f4e80a70
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 14:09:56 2005 +0000
+
+    fix path to video functions
+
+commit a6b53f6ef9a7c30c746a53084e747f1d57d9b605
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 05:29:03 2005 +0000
+
+    silence!
+
+commit 062452fa99a589248ec52a71b66ad2f31d69f767
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 05:27:19 2005 +0000
+
+    you know, it helps if you include all the files
+
+commit 91f949dd06cafe2eb0277f963543ced5ccc556ec
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 05:23:41 2005 +0000
+
+    duh
+
+commit 6d1b55109652fdb39d56962224188963ff588eff
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 05:20:19 2005 +0000
+
+    yet more build fixes
+
+commit ef785aee7b20d88976a91720e68b3c4cc958cf56
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 05:19:13 2005 +0000
+
+    make it build
+
+commit e945511621a079b5fe2654491cdb610f739c57b4
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 05:14:18 2005 +0000
+
+    whoops
+
+commit 9e81319ce7a4782b1d1b219553eaf839634d8e52
+Author: Bill Nottingham <notting@redhat.com>
+Date:   Tue Jul 5 05:12:08 2005 +0000
+
+    check in some stuff

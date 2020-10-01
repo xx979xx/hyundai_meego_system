@@ -1,0 +1,570 @@
+Major changes in 1.7.2
+======================
+* ftp: Parse mode, user and group for unix listings
+* ftp: Implement chmod
+* sftp: Catch invalid argument type for chmod command
+* smb: Catch invalid argument type when setting mtime
+* Translation updates
+
+Major changes in 1.7.1
+======================
+* Various build issues fixed
+* Fix gvfs client code on ARM platform
+* ftp: Fix refcounting of addresses when connecting
+* ftp: Detect TLS and SSL support
+* afc: Add ability to mount the house-arrest service
+* afc: Add support for House Arrest protocol to access
+       the Documents/ folder within applications
+* Translation updates (nb, es, he, et)
+
+Major changes in 1.7.0
+======================
+* sftp: Close pty master in child process to prevent SELinux denial
+* fuse: Add proper truncate support for open()
+* Port to GSettings
+* gdu: Treat mounts as hidden if they have a path element
+  that starts with a dot
+* Translation updates (ug, th)
+
+Major changes in 1.6.5
+======================
+* Remove app lookup extension (now handled internally in GIO)
+* gphoto: Use correct address for GPhoto mounts with gudev
+* sftp: Fix poll() timeout
+
+Major changes in 1.6.4
+======================
+* Lots of translation updates
+* afc: Add support for photo thumbnails on iOS4
+* daemons: Move GConf initialization from backend constructor
+* sftp: Use poll() to cope with openssh-5.6 changes
+
+Major changes in 1.6.3
+======================
+* translation updates
+* fix the build against recent glib
+* afc: remove com.apple.afc dependency
+* afc: add password dialog
+* ftp: fix undeclared variable
+* ssh: improve password dialog
+
+Major changes in 1.6.1
+======================
+* Translation updates
+* client: Always return ERROR_CANCELLED for cancelled operations
+* afc: Don't handle jailbroken phones
+* afc: Detect ipad with right name and icon
+* ftp: Better handling of some PWD results
+* gdu: Support eject of blank cdroms
+* client: Don't loop on problematic dbus input
+
+Major changes in 1.6
+====================
+* afc: Allow copy of folders
+* gphoto2: Don't access things accessible via afc too
+* Translation updates
+
+Major changes in 1.5.5
+======================
+* Fix with-dbus-service-dir configure switch
+* ftp: Cleanup (close the data connection unconditionally)
+* archive: Use archive_errno() the correct way
+* Correct return values on error for programs
+* Translation updates
+
+Major changes in 1.5.4
+======================
+* gphoto2: Better support for devices that are read-only + delete
+* gdu: Various fixes and preparation for LVM
+* ftp: fix asserts
+* sftp: remember to save password if username changed
+* gio module: don't call g_file_find_enclosing_mount_async callback directly
+* gvfs-monitor: Track moves if availible
+* Translation updates
+
+Major changes in 1.5.3
+======================
+* afc: Update for libimobiledevice (rename of libiphone)
+* ftp: Handle cases where symlink target is not defined
+* ftp: Prefer PASV/PORT to EPSV/EPRT for IPv4, the latter for IPv6
+* Translation updates
+
+Major changes in 1.5.2
+======================
+* Support new "default location" gio mount attribute
+* Enable support for lazy loading of gio modules
+* Don't build hal if building gdu
+* daemon: Finalize backend on unmount
+* metadata: stability and leak fixes
+* metadata: fix data loss on i/o error
+* fuse: Don't support readlink
+* fuse: Allow setting mtime
+* fuse: Fix permissions
+* smb: Fix free space reporting on some servers
+* gdu: handle mounts better
+* trash: Fix crash/assert
+
+Major changes in 1.5.1
+======================
+* Translation updates
+* FreeBSD support for the gphoto2 backend
+* Don't show ssh dns-sd items in dns-sd:, only sftp ones
+* New AFC backend, providing access to Apple's iPhone, and iPod Touch devices
+* Don't silently overwrite when restoring from trash
+* Don't subscribe to unnecessary HAL D-Bus events
+* Avoid error dialogs when the user canceled
+* Don't confuse media players for cameras
+* gdu: Consider logical partitions when determining if a drive should be ignored
+* gdu: Separated "Safely Remove Drive" from "Eject"
+* gdu: Disallow mounting/ejecting empty drives
+* gdu: Handle NULL device objects
+* obexftp: Fix a crash in the backend
+* obexftp: Delete source file after move (remove_source switch)
+* http: Support querying input streams
+* http: Store and use cookies
+* smb: Support querying filesystem size and free space
+* ftp: Fixed parsing of CMU/VMS-IP FTP style listing
+* Support for loading icon and title on Blu-ray video discs
+* Bugs fixed: 595981, 596867, 517014, 593045, 594928, 586724, 586729, 597104, 580825
+
+Major changes in 1.4.0
+======================
+* Translation updates
+* metadata: fix leaks
+* fix some uninitialized memory reads
+* Always return metadata:: as a writable namespace for all backends
+
+Major changes in 1.3.6
+======================
+* Translation updates
+* ftp: robustness fixes
+* gdu: Avoid unnecessary authentication dialogs
+
+Major changes in 1.3.5
+======================
+
+* Properly translate gvfs-* programs
+* Implement support for g_cancellable_release_fd
+* sftp: Handle existing file on mkdir
+* smb: Better performance when reading files
+* ftp: Fix memory leaks
+* Make dav mounts work be accessible with fuse (#590730,#590862)
+* metadata: Fix memory leaks in daemon
+* metadata: Fix rare write error on journal wrapover
+* gphoto: Handle removal of camera with multiple storage heads
+* hal: Fix crash for volumes with no HAL UDI
+
+Major changes in 1.3.4
+======================
+
+* ftp: Make large FTP transfers work
+* gphoto: use udev instead of hal
+* Fix build on FreeBSD
+* Bugs fixed: 588187, 589915, 573994, 590793, 576229, 589434
+
+Major changes in 1.3.2
+======================
+
+* metadata-store: initial implementation
+* gvfs-ls: add a -n option to gvfs-ls for nofollow-symlinks
+* gvfsd-computer: better handling of PC floppy drives
+* ftp: EPTR support
+* cdda: Support gudev (and prefer it instead of hal)
+* Add support user interaction when unmounting mounts (gdu, gphoto2)
+* Add support starting/stopping drives (gdu monitor)
+* Fix 'make distcheck'
+* Bugs fixed: 582175, 516704, 586280, 585853, 582772, 585591, 587484
+
+Major changes in 1.3.1
+======================
+* Add Gnome Disk utility based volume monitor
+* Emit pre-unmount signal on GMounts
+* Use new race-free cancellation connect APIs
+* fix crash with newer glib
+* avoid sending progress info if not needed
+* ftp: Convert to use gio network APIs
+* ftp: Restructure code significantly
+* ftp: Fix logging in to a FTP server only works for the 2nd attempt
+* ftp: Handle files > 4 gig
+* gphoto: Fix support for Canon EOS 5D
+* sftp: Pick up SSH_AUTH_SOCK from gnome-keyring
+* sftp: Don't trust remote permissions for uids other than user
+* cdda: verify filenames before using
+* gvfs-copy: Show speed when copying
+
+Major changes in 1.2.2
+======================
+* ftp: Fix error handling in some cases
+* proxy monitor: Fix warning spew
+
+Major changes in 1.2.1
+======================
+* Fix duplicate CD audio icons after remount
+* Fix problems mounting encrypted volumes
+* Handle usernames with @ in them better in uris
+* trash: handle weird filenames correctly
+* sftp: Fix various error conditions
+* volume monitors: emit pre-unmount signals
+* smb: Fix various error conditions
+* fuse: Make sure closing a file flushed the file on the backend
+
+Major changes in 1.2.0
+======================
+* sftp: Don't hang if ssh no authentication method availible
+* Don't leak file monitors
+* computer: don't show shadowed mounts
+
+Major changes in 1.1.8
+======================
+* Fix crashers and leaks
+* Handle file:// uris with anchors in gvfs-open
+* fuse: Support ftruncate to the current file size
+* escape/unescape hostname part in uris, allowing spaces in e.g. smb domains
+* hal: Fix "No mount object" error on mount
+* Change details of the new .xdg-volume-info file format
+* Fix races in cancellation of gvfs streams
+* Remove debug spew from backends
+* ftp: Fix anonymous login
+* gphoto2: Ignore broken storages with no capacity
+* Don't globally modify COMP_WORDBREAKS in bash completion script
+* Don't ask for username when getting ssh key passphrase
+
+Major changes in 1.1.7
+======================
+* Fix build on some platforms
+* ftp: Fix short read errors
+* gphoto2: Make it work on iphone
+* sftp: Fix symlink creation
+* fuse: Better support of truncation, fixing OOo save
+* proxy monitors: Support mount operations, etc
+* gvfs-mount: add --device commandline support
+* sftp: Fix protocol bug that made some servers not work
+* general support for query_info over streams, implemented for smb, sftp
+* Initial support for .xdg-volume-info reading
+
+Major changes in 1.1.6
+======================
+* Fix crashes
+* trash: Better messages
+* Clean up glib and gtk includes
+* archive: Build with later versions of libarchive
+* dav: Fix folder creation
+* dav: Fix redirection when user is specified in url
+* http: fix error propagation
+* sftp: Try to preserve ownership when replacing a file
+
+Major changes in 1.1.5
+======================
+* network: Pick up SMB shares from zeroconf
+* obexftp: Write support for
+* obexftp: Support obexftp over usb
+* trash: Don't follow symlinks on delete
+* fix crashes
+
+Major changes in 1.1.4
+======================
+* Trash performance fixes
+* Fuse performance fixes
+
+Major changes in 1.1.3
+======================
+* ftp: fix limited number of connections causes commands to fail (#565504)
+* trash: fix parallel build doesn't work (#562955)
+* trash: add trash::orig-path and trash::deletion-date info
+* trash: set files to mode 700 before deleting to deal with users trashing read-only directories
+* smb-browse: browsing authentication support (#524485)
+* smb-browse: make backend not automounted anymore
+
+Major changes in 1.1.2
+======================
+* New trash backend
+* Use the new shadow mount facility in gio
+* gphoto2: Use shadow mounts
+* obex: Fix icon for root directory
+* http: Fix major memory leak
+* http: Support proxies
+
+Major changes in 1.1.1
+======================
+* Reverse map FUSE pathnames to gvfs locations
+* Fix crashes
+* Show better icon info in gvfs-info
+* Support custom icons for gvfs backends
+* dav: support uris (dav+sd://) which specify dns-sd services instead of resolved ip+port
+* ftp: Fix time parsing
+* ftp: Show username in auth dialog if specified in uri
+* ftp: Support UTF8 server feature
+* ftp: Use LIST -a instead of LIST on unix servers
+* fuse: Fix major race in that caused crashes
+* fuse: Set st_blocks so that e.g. the "du" command works
+* gphoto: use custom icons for faster thumbnails
+* obexftp: Port to bluez 4 API
+* sftp: If name specified in mount, use in name too so that fuse paths are unique
+* sftp: Support /etc/favicon.png
+* smb: Don't ask for password twice if cancelled
+* smb: support setting timestamp
+
+Major changes in 0.99.7
+=======================
+
+* Go back to using powers of 10 instead of powers of 2 for display sizes.
+  This means we will agree with printed sizes for most devices (e.g. memory
+  sticks will now correctly report "64MB volume" instead of previous
+  "61.7MB volume").
+
+* Bug fixes:
+  546971 - rhythmbox crashed when ejecting an ipod device
+  550858 - Export CD-Text info via xattrs
+
+* Translation updates:
+  nb.po (Kjartan Maraas), nl.po (Wouter Volsterlee), pt.po (Duarte Loreto),
+  cs.po (Petr Kovar)
+
+Major changes in 0.99.6
+=======================
+
+* Better cross-backend copy/move logic. Now will perform an actual file
+  system move if possible, even when the source and target are handled
+  by different backends (e.g. trash and local).
+* Now requires libsoup >= 2.23.91.
+
+* Bug fixes
+  548841 - Incorrect usage of plural forms in gphoto backend
+  547133 - Getting mtime over http backend is broken
+  538573 - lastmodified uses ISO 8601 date/time where it should use http-date
+  549253 - error path leaks
+  549553 - gvfs mangles uri for unhandled schemes
+  550100 - gio uses 10^3 base (SI) for volume names
+  529971 - Restore from trash appears to do a file copy
+  RH 460223 - gnome-mount no longer automatically opens LUKS-encrypted
+              partitions
+
+* Translation updates:
+  nl.po (Wouter Bolsterlee), gl.po (Ignacio Casal Quinteiro), es.po
+  (Jorge Gonzalez), pt_BR.po (Og Maciel), et.po (Priit Laes), eu.po
+  (Inaki Larranaga Murgoitio), th.po (Theppitak Karoonboonyanan), ja.po
+  (Takeshi AIHANA), vi.po (Nguyễn Thái Ngọc Duy), fr.po (Robert-André
+  Mauchin), he.po (Yair Hershkovitz), nb.po (Kjartan Maraas), mk.po
+  (Jovan Naumovski), de.po (Hendrik Richter), ga.po (Seán de Búrca),
+  zh_HK.po (Chao-Hsiung Liao), zh_TW.po (Chao-Hsiung Liao), sv.po
+  (Daniel Nylander)
+
+Major changes in 0.99.5
+=======================
+
+* FTP backend now restores file permissions when replacing a file.
+* Miscellaneous unreported bug fixes.
+
+* Bug fixes
+  41852  - Items should be restored to orig. name when moved out of trash
+  546300 - g_file_replace_async doesn't allow NULL etag
+
+* Translation updates:
+  be@latin (Ihar Hrachyshka), es (Priit Laes, Jorge Gonzalez),
+  th (Theppitak Karoonboonyanan), pt_BR (Og Maciel), pl (Tomasz
+  Dominikowski), ml (Praveen Arimbrathodiyil), pt (Duarte Loreto),
+  fi (Ilkka Tuohela), zh_HK (Chao-Hsiung Liao), zh_TW (Chao-Hsiung Liao),
+  cs (Petr Kovar), gl (Ignacio Casal Quinteiro), ja (Takeshi AIHANA),
+  he (Yair Hershkovitz), gu (Sweta Kothari), ar (Djihed Afifi)
+
+
+Major changes in 0.99.4
+=======================
+
+* Require glib >= 2.17.6
+* Support und update serialization of GEmblem and GEmblemedIcon
+* Add x-content/* support to daemon mounts
+* Use standard icon names
+
+* Bug fixes
+  545695 – any new volume is mounted twice
+  545489 – Nautilus hangs when inserting a CD
+  544008 – g_daemon_file_replace_async mode err
+  543552 – gvfs-fuse-daemon crashes if dbus dies
+  528891 – Handle URI schemes case insensitive
+  525779 – Dont look for trashs dir on sys mounts
+  545968 – leaks xml documents in error cases
+  545966 – Disallow net access to WebDAV xml parser
+  509740 – Trash icon not updated ..
+  539167 – Use g_set_error_literal where appropriate
+  528848 – [PATCH] statfs lies
+  518284 – need to add i18n on module branching
+
+* Translation updates:
+  it (Luca Ferretti), gl (Ignacio Casal Quinteiro), es (Jorge Gonzalez)
+  ja (Takeshi AIHANA), ar (Khaled Hosny), pt_BR (Vladimir Melo),
+ 
+
+Major changes in 0.99.3
+=======================
+* Fix frequent crasher in volume monitor
+
+Major changes in 0.99.2
+* Move hal and gphoto volume monitors out of process
+* Fix recursive copying
+* Require glib >= 2.17.4
+* Make the fuse daemon more reliable
+* Many smaller bugfixes
+* et (Ivar Smolin), vi (Clytie Siddall), 
+  ar (Djihed Afifi, Khaled Hosny)
+
+Major changes in 0.99.1:
+* Fix directory copy/delete problems
+* Fuse daemon robustness fixes
+* Allow mounting non-standard ISO images
+* Better username/domain tests on mount spec
+* Require gphoto >= 2.4.0
+* Fix strdup()/g_free() confusion
+* Use consistent translatable strings for mount and volume
+* Plug some memory leaks
+* Many smaller bug fixes
+* Translation updates: 
+  ar (Djihed Afifi, Khaled Hosny), bg (Alexander Shopov),
+  et (Ivar Smolin), he (Yair Hershkovitz),
+  nb (Kjartan Maraas), tr (Baris Cicek), vi (Clytie Siddall)
+
+Major changes in 0.2.2:
+* Respect the giomoduledir provided in gio package config file
+* Better mount icon and name for archive backend
+* Fix crashes with cancelled stream ops
+* Fix race that caused a mount to hang for a client
+* Implement async query_filesystem_info
+* Fix minor leaks
+* trash: Correct display names for directories
+* sftp: Kerberos support
+* smb: Port to new samba 3.2.0 API (backwards compat)
+* sftp: Handle overwrites correctly (was silent overwrite)
+
+Major changes in 0.2.1:
+* Added archive backend
+* Implement most of the async functions in GDaemonFile
+* Correctly handle usernames in uris for ftp://
+* Ftp fixes
+* Webdav fixes
+* Add gvfs-rename command line utility
+* Fix cancellation
+* OpenBSD fixes
+* smb: hide dot files
+* Enviroment variable to disable fuse backend at runtime
+
+Major changes in 0.2.0:
+* Fix crashes
+* Build and portability fixes
+* Better mime icons for remote shares
+* Don't show mounts and volumes outside /media
+* Don't automount gphoto mounts
+* Translate cd disc names
+* ftp: Updates
+* obex: Give better error message on broken phones
+* sftp: Allow setting permissions
+* dav: Correct mount name, file icons and file types
+
+Major changes in 0.1.11:
+* Correctly free mounts
+* Disable debug log
+
+Major changes in 0.1.10:
+* Fix volume monitor change reporting
+* Fix timeout during automount
+
+Major changes in 0.1.9:
+* Added ftp backend
+* Added obexftp backend
+* Locking fixed for volume monitors
+* Better bash completion
+* Better webdav support
+* Allow backends to specify uri details in .mount file
+* Fix leaks and crashes
+* Fix icon for audio cds
+
+Major changes in 0.1.8:
+* Update for gio API changes
+* Add gphoto2 backend
+* Add network: and dns-sd: backend support
+* Http and webdav backend updates
+* Keyring support
+* Fix crashes and deadlocks
+* Add trash::item-count attribute to trash:///
+* Fix smb reads > 65535 bytes breaking on some servers
+* Fix cancellation race in reading
+* Fill in thumbnail info for backends
+* sftp: Handle host identity changes
+* Enable translations everywhere
+* Add bash completion support for command line apps
+* Fix handling of blank cds and audio cds
+* Support port in sftp uris
+
+Major changes in 0.1.7:
+* Update for gio API changes
+* Add gconf based implementation of
+  g_app_info_get_default_for_uri_scheme
+* Fix crashes
+* Allow navigation with http uris
+* Better file read performance with readahead and
+  large block reads
+* Lots of bugs fixed in trash backend
+* Pick up cdrom icons from autorun.inf
+* Add "filesystem" file to computer://
+* Fix renaming in sftp and smb
+
+Major changes in 0.1.6:
+* Add files missing in the released 0.1.5 tarball
+
+Major changes in 0.1.5:
+* Update to work with latest glib
+* Fix sftp error handling on reading directories
+* Use correct file info attribute name style
+* Add gvfs-mkdir app
+* hal: Don't show drives if all volumes are hidden
+* Enable translations
+
+Major changes in 0.1.4:
+* Update to work with latest glib
+* Fix compiler warnings
+
+Major changes in 0.1.3:
+* Various fixes to hal volume monitor
+* Make gvfsd reload config on SIGUSR1
+* Updates to http/dav backends
+* Port http backend to libsoup 2.4.
+* Initial burn:/// backend
+* Add ssh: alias for sftp:
+* Fix fuse mount
+* Automount fuse on startup of daemon
+* Various bugfixes
+
+Major changes in 0.1.2:
+* Switch to intltool fro translation setup
+* Update to latest gio APIS
+* Add mount list option to gvfs-mount
+* Specify fallback icons in hal backend
+* Implement more of computer: backend
+* Initial http backend
+* Fix get_relative_path bug on root paths
+
+Major changes in 0.1.1:
+* Use gio from glib (glib 2.15.1 required)
+* Fix translation issues
+* Fix various sftp backend issues
+* Move .mount files to /usr/share/gvfs/mounts
+* Add initial computer:/// backend
+
+Major changes in 0.1.0:
+* Use gio from glib (glib 2.15.0 required)
+* Update to API changes in gio
+* add cdda backend
+* add hal volume monitor
+
+Major changes in 0.0.2:
+* Updated to work win gio-standalone 0.1.2
+* Build fixes on various platforms
+* Don't link client lib to libgvfscommon.so
+* Change how the uri mapper works
+* Integrate standard uri mappers (i.e. smb) into client libs
+  (You might need to remove $prefix/lib/gvfs/modules/libsmb.so
+   from an older version if you install this)
+* Cleanly handle when gvfs daemons die, without
+  crashing the app
+* Implement unmounting
+* Rename master daemon to "gvfsd" and mount daemons to
+  names like "gvfsd-sftp".

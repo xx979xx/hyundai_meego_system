@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# This file is part of PulseAudio.
+#
+# PulseAudio is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# PulseAudio is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with PulseAudio; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+# USA.
+
+CONFIG_SELECT=""
+# Boardname is not mandatory to have
+if [ -e /etc/boardname ]; then
+    BOARDNAME_REVISION=`cat /etc/boardname`
+    BOARDNAME=`echo $BOARDNAME_REVISION | sed 's!_[a-zA-Z0-9]*$!!g'`
+
+    if [ -e /etc/pulse/$BOARDNAME_REVISION.pa ]; then
+        # Found configuration specific to board and revision.
+        CONFIG_SELECT="-n --file=/etc/pulse/$BOARDNAME_REVISION.pa"
+    elif [ -e /etc/pulse/$BOARDNAME.pa ]; then
+        # Found configuration specific to board.
+        CONFIG_SELECT="-n --file=/etc/pulse/$BOARDNAME.pa"
+    fi
+fi
+
+if [ -x /usr/bin/start-pulseaudio-x11 ] ; then
+    /usr/bin/start-pulseaudio-x11 $CONFIG_SELECT "$@"
+else
+    set -e
+    [ -z "$PULSE_SERVER" ]
+    /usr/bin/pulseaudio --start $CONFIG_SELECT "$@"
+fi

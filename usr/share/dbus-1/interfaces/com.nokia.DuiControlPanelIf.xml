@@ -1,0 +1,23 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+    <interface name="com.nokia.DuiControlPanelIf">
+        <method name="launch">
+        </method>
+        <method name="mainPage">
+        </method>
+        <method name="categoryPage">
+            <arg name="category" type="s" direction="in"/>
+        </method>
+        <method name="appletPage">
+            <arg name="params" type="s" direction="in"/>
+            <arg name="" type="b" direction="out"/>
+        </method>
+        <method name="appletPage">
+            <arg name="params" type="as" direction="in"/>
+            <arg name="" type="b" direction="out"/>
+        </method>
+        <signal name="closeAppletLaunchers">
+        </signal>
+    </interface>
+</node>
+

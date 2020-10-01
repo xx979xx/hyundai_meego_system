@@ -1,0 +1,39 @@
+MColorListStyle {
+    background-color : #000000;
+}
+
+MColorList MButtonStyle#ColorSelectionButton.Landscape {
+    minimum-size: 6.8mm 5.8mm;
+    maximum-size: 6.8mm 5.8mm;
+    preferred-size: 6.8mm 5.8mm;
+    margin-top: 0.3mm;
+    margin-bottom: 0.3mm;
+    margin-left: 0.2mm;
+    margin-right: 0.2mm;
+}
+
+MColorList MButtonStyle#ColorSelectionButton.Portrait {
+    minimum-size: 8mm 8mm;
+    maximum-size: 8mm 8mm;
+    preferred-size: 8mm 8mm;
+    margin-top: 0.3mm;
+    margin-bottom: 0.3mm;
+    margin-left: 0.3mm;
+    margin-right: 0.3mm;
+}
+
+MColorList MWidgetStyle#ColorSelectionContainer.Landscape {
+    background-color: #000000;
+    margin-top: 0.9mm;
+    margin-bottom: 0.9mm;
+    margin-left: 1.1mm;
+    margin-right: 1.1mm;
+}
+
+MColorList MWidgetStyle#ColorSelectionContainer.Portrait {
+    background-color: #000000;
+    margin-top: 2.3mm;
+    margin-bottom: 2.3mm;
+    margin-left: 0.9mm;
+    margin-right: 0.9mm;
+}

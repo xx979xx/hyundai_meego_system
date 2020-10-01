@@ -1,0 +1,359 @@
+@const CFP_CM: 30px 30px 30px 30px;
+@const CFP_HEIGHT: 8.3mm;
+@const CFP_HEIGHT_SMALL: 6.7mm;
+@const CFP_BG:                   meegotouch-list-background $CFP_CM;
+@const CFP_BG_PRESSED:           meegotouch-list-background-pressed $CFP_CM;
+@const CFP_BG_SELECTED:          meegotouch-list-background-selected $CFP_CM;
+@const CFP_BG_INVERTED:          meegotouch-list-inverted-background $CFP_CM;
+@const CFP_BG_INVERTED_PRESSED:  meegotouch-list-inverted-background-pressed $CFP_CM;
+@const CFP_BG_INVERTED_SELECTED: meegotouch-list-inverted-background-selected $CFP_CM;
+@const CFP_BG_TOP:                   meegotouch-list-background-vertical-top $CFP_CM;
+@const CFP_BG_TOP_PRESSED:           meegotouch-list-background-pressed-vertical-top $CFP_CM;
+@const CFP_BG_TOP_SELECTED:          meegotouch-list-background-selected-vertical-top $CFP_CM;
+@const CFP_BG_TOP_INVERTED:          meegotouch-list-inverted-background-vertical-top $CFP_CM;
+@const CFP_BG_TOP_INVERTED_PRESSED:  meegotouch-list-inverted-background-pressed-vertical-top $CFP_CM;
+@const CFP_BG_TOP_INVERTED_SELECTED: meegotouch-list-inverted-background-selected-vertical-top $CFP_CM;
+@const CFP_BG_CENTER:                   meegotouch-list-background-vertical-center $CFP_CM;
+@const CFP_BG_CENTER_PRESSED:           meegotouch-list-background-pressed-vertical-center $CFP_CM;
+@const CFP_BG_CENTER_SELECTED:          meegotouch-list-background-selected-vertical-center $CFP_CM;
+@const CFP_BG_CENTER_INVERTED:          meegotouch-list-inverted-background-vertical-center $CFP_CM;
+@const CFP_BG_CENTER_INVERTED_PRESSED:  meegotouch-list-inverted-background-pressed-vertical-center $CFP_CM;
+@const CFP_BG_CENTER_INVERTED_SELECTED: meegotouch-list-inverted-background-selected-vertical-center $CFP_CM;
+@const CFP_BG_BOTTOM:                   meegotouch-list-background-vertical-bottom $CFP_CM;
+@const CFP_BG_BOTTOM_PRESSED:           meegotouch-list-background-pressed-vertical-bottom $CFP_CM;
+@const CFP_BG_BOTTOM_SELECTED:          meegotouch-list-background-selected-vertical-bottom $CFP_CM;
+@const CFP_BG_BOTTOM_INVERTED:          meegotouch-list-inverted-background-vertical-bottom $CFP_CM;
+@const CFP_BG_BOTTOM_INVERTED_PRESSED:  meegotouch-list-inverted-background-pressed-vertical-bottom $CFP_CM;
+@const CFP_BG_BOTTOM_INVERTED_SELECTED: meegotouch-list-inverted-background-selected-vertical-bottom $CFP_CM;
+@const CFP_M_TOP:    0.7mm;
+@const CFP_M_BOTTOM: 0.6mm;
+@const CFP_M_LEFT:   $INDENT_DEFAULT;
+@const CFP_M_RIGHT:  $INDENT_DEFAULT;
+
+/* large panels */
+
+#CommonFramePanel {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_PRESSED;
+}
+#CommonFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_SELECTED;
+}
+
+#CommonTopFramePanel {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_TOP;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonTopFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_PRESSED;
+}
+#CommonTopFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_SELECTED;
+}
+
+#CommonCenterFramePanel {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonCenterFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_PRESSED;
+}
+#CommonCenterFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_SELECTED;
+}
+
+#CommonBottomFramePanel {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM;
+margin-top:        0;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonBottomFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_PRESSED;
+}
+#CommonBottomFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_SELECTED;
+}
+
+/* small panels */
+
+#CommonSmallFramePanel {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT_SMALL;
+preferred-size:    -1 $CFP_HEIGHT_SMALL;
+maximum-size:      -1 $CFP_HEIGHT_SMALL;
+background-tiles:  ;
+background-image:  $CFP_BG;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_PRESSED;
+}
+#CommonSmallFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_SELECTED;
+}
+
+#CommonSmallTopFramePanel {
+minimum-size:      $SIZE_LIST 6.5mm;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_TOP;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallTopFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_PRESSED;
+}
+#CommonSmallTopFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_SELECTED;
+}
+
+#CommonSmallCenterFramePanel {
+minimum-size:      $SIZE_LIST 6.4mm;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallCenterFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_PRESSED;
+}
+#CommonSmallCenterFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_SELECTED;
+}
+
+#CommonSmallBottomFramePanel {
+minimum-size:      $SIZE_LIST 6.6mm;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM;
+margin-top:        0;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallBottomFramePanel:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_PRESSED;
+}
+#CommonSmallBottomFramePanel:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_SELECTED;
+}
+
+/* large inverted panels */
+
+#CommonFramePanelInverted {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_INVERTED;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_INVERTED_PRESSED;
+}
+#CommonFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_INVERTED_SELECTED;
+}
+
+#CommonTopFramePanelInverted {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_INVERTED;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonTopFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_INVERTED_PRESSED;
+}
+#CommonTopFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_INVERTED_SELECTED;
+}
+
+#CommonCenterFramePanelInverted {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_INVERTED;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonCenterFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_INVERTED_PRESSED;
+}
+#CommonCenterFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_INVERTED_SELECTED;
+}
+
+#CommonBottomFramePanelInverted {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_INVERTED;
+margin-top:        0;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonBottomFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_INVERTED_PRESSED;
+}
+#CommonBottomFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_INVERTED_SELECTED;
+}
+
+/* small inverted panels */
+
+#CommonSmallFramePanelInverted {
+minimum-size:      $SIZE_LIST $CFP_HEIGHT_SMALL;
+preferred-size:    -1 $CFP_HEIGHT_SMALL;
+maximum-size:      -1 $CFP_HEIGHT_SMALL;
+background-tiles:  ;
+background-image:  $CFP_BG_INVERTED;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_INVERTED_PRESSED;
+}
+#CommonSmallFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_INVERTED_SELECTED;
+}
+
+#CommonSmallTopFramePanelInverted {
+minimum-size:      $SIZE_LIST 6.5mm;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_INVERTED;
+margin-top:        $CFP_M_TOP;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallTopFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_INVERTED_PRESSED;
+}
+#CommonSmallTopFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_TOP_INVERTED_SELECTED;
+}
+
+#CommonSmallCenterFramePanelInverted {
+minimum-size:      $SIZE_LIST 6.4mm;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_INVERTED;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallCenterFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_INVERTED_PRESSED;
+}
+#CommonSmallCenterFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_CENTER_INVERTED_SELECTED;
+}
+
+#CommonSmallBottomFramePanelInverted {
+minimum-size:      $SIZE_LIST 6.6mm;
+preferred-size:    -1 $CFP_HEIGHT;
+maximum-size:      -1 $CFP_HEIGHT;
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_INVERTED;
+margin-top:        0;
+margin-bottom:     $CFP_M_BOTTOM;
+margin-left:       $CFP_M_LEFT;
+margin-right:      $CFP_M_RIGHT;
+}
+#CommonSmallBottomFramePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_INVERTED_PRESSED;
+}
+#CommonSmallBottomFramePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CFP_BG_BOTTOM_INVERTED_SELECTED;
+}

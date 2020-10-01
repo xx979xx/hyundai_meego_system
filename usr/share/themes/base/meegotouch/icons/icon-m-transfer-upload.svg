@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-transfer-upload-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-transfer-upload">
+	<rect style="fill:none;" width="48" height="48"/>
+	<path style="fill:#333333;" d="M15.748,27.956h4.946l0,8.159c0,0.354,0.285,0.635,0.637,0.635h5.355
+		c0.398,0.002,0.639-0.33,0.639-0.635v-8.157l4.902-0.002c0.43,0,0.971-0.51,0.475-1.058l-8.219-7.938
+		c-0.252-0.281-0.693-0.278-0.947-0.003l-8.26,7.941C14.854,27.359,15.268,27.956,15.748,27.956z"/>
+	<rect x="16.125" y="11.25" style="fill:#333333;" width="15.75" height="5.25"/>
+	<path style="fill:#333333;" d="M24,0.75C11.18,0.75,0.75,11.18,0.75,24S11.18,47.25,24,47.25c12.82,0,23.25-10.43,23.25-23.25
+		S36.82,0.75,24,0.75z M24,43.264C13.378,43.264,4.735,34.621,4.735,24C4.735,13.377,13.378,4.736,24,4.736S43.264,13.377,43.264,24
+		C43.264,34.621,34.622,43.264,24,43.264z"/>
+</g>
+</svg>

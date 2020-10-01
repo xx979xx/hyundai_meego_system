@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/tracker/extract/" id="org.freedesktop.Tracker.Extract" gettext-domain="tracker">
+    <key name="verbosity" enum="org.freedesktop.Tracker.TrackerVerbosity">
+      <default>'errors'</default>
+      <summary>Log verbosity</summary>
+      <description>Log verbosity.</description>
+    </key>
+
+    <key name="sched-idle" enum="org.freedesktop.Tracker.TrackerSchedIdle">
+      <default>'first-index'</default>
+      <summary>Scheduler priority when idle</summary>
+      <description>The scheduler is the kernel component that decides which runnable application will be executed by the CPU next. Each application has an associated scheduling policy and priority.</description>
+    </key>
+
+    <key type="i" name="max-bytes">
+      <summary>Max bytes to extract</summary>
+      <description>Maximum number of UTF-8 bytes to extract.</description>
+      <range min="0" max="10485760"/>
+      <default>1048576</default>
+    </key>
+
+    <key type="i" name="max-media-art-width">
+      <summary>Max media art width</summary>
+      <description>Maximum width in pixels for any media art extracted. Anything bigger is resized. Set to -1 to disable saving media art from files. Setting to 0 sets no limit on the media art width.</description>
+      <range min="-1" max="2048"/>
+      <default>0</default>
+    </key>
+  </schema>
+</schemalist>

@@ -1,0 +1,425 @@
+Overview of changes from libgdata 0.6.5 to libgdata 0.6.6
+=========================================================
+
+Major changes:
+* Fixed attribute escaping for several elements
+* Fixed asynchronous authentication success notification
+* Various small fixes to the core, YouTube and Documents services
+* Fixed many small and large memory leaks
+* Fixed the XML comparisons in the test suite re. changes to GHashTable in GLib master
+
+Bugs fixed:
+* Bug 630350 — Email address cannot contain name
+* Bug 635736 — Asynchronous authentication tests broken
+
+Overview of changes from libgdata 0.6.4 to libgdata 0.6.5
+=========================================================
+
+Major changes:
+* Fixed the introspection build with gobject-introspection >= 0.9.7 and bumped our dependency to match
+* Added a lot of missing introspection annotations
+* Fixed a few small leaks
+
+Bugs fixed:
+* Bug 630756 — 0.6.4 fails to build with newer version of gobject-introspection (git)
+
+Overview of changes from libgdata 0.6.3 to libgdata 0.6.4
+=========================================================
+
+Major changes:
+* Fixed the behaviour of gdata_entry_get_id() for GDataPicasaWebAlbum and GDataPicasaWebFile, which was previously *broken*
+  Use gdata_picasaweb_album_get_id() and gdata_picasaweb_file_get_id() for the equivalent results now
+* Don't send ETags if a query is modified since it was last used; this improves libgdata's behaviour for programs which re-use GDataQuery instances
+* Lots of documentation fixes and improvements
+* Added missing #includes to gdata.h
+* Improved error reporting about network and proxy problems
+
+API changes:
+* Added GDataPicasaWebAlbum:album-id, gdata_picasaweb_album_get_id(), GDataPicasaWebFile:file-id and gdata_picasaweb_file_get_id()
+* Fix the value returned by gdata_entry_get_id() for GDataPicasaWebAlbum and GDataPicasaWebFile; it is now a full URI
+
+Bugs fixed:
+* Bug 613529 — Sending ETag with modified query
+
+Overview of changes from libgdata 0.6.2 to libgdata 0.6.3
+=========================================================
+
+Major changes:
+* Contacts' names can now be set as an entire GDataGDName, rather than piecemeal
+* Added the kind category to GDataContactsContact on init
+
+API changes:
+* Added gdata_contacts_contact_set_name and made GDataContactsContact:name writeable
+* Setters in GDataGDPostalAddress no longer accept empty strings (only NULL or a non-empty string)
+
+Updated translations:
+* eu (Iñaki Larrañaga Murgoitio)
+* pl (Piotr Drąg)
+* ru (Alexandr Andrushchenko, Andrew Grigorev)
+
+Overview of changes from libgdata 0.6.1 to libgdata 0.6.2
+=========================================================
+
+Major changes:
+* Fixed introspection build for machines without a system-wide libtool
+
+Bugs fixed:
+* Bug 610273 — Fails to build without a system-wide libtool
+
+Updated translations:
+* zh_CN (Aron Xu)
+
+Overview of changes from libgdata 0.6.0 to libgdata 0.6.1
+=========================================================
+
+Major changes:
+* Fixed introspection build for previously-non-installed libgdata
+
+Bugs fixed:
+* Bug 610007 — libgdata introspection support requires installed libgdata.pc
+
+Updated translations:
+* en_GB (Philip Withnall)
+
+Overview of changes from libgdata 0.5.0 to libgdata 0.6.0
+=========================================================
+
+Major changes:
+* Added feed icon support
+* Added support for querying for user information on the PicasaWeb service
+* Added some code examples to the documentation
+* Ensured UTF-8 is supported correctly everywhere
+* Added GObject introspection support (GData-0.0.gir)
+* Added a download API for PicasaWeb images and thumbnails
+* Added an asynchronous PicasaWeb upload API
+* Reorganised the build system to use non-recursive automake
+* Added gcov support and consequently improved test coverage somewhat
+* Ensured HTTPS requests are used wherever possible, unless the LIBGDATA_FORCE_HTTP environment variable is set
+* Modified memory management to consistently use the GLib memory manager, eliminating 53 calls to g_strdup() on an average test run
+* Consolidated generic API errors to GDATA_SERVICE_ERROR_PROTOCOL_ERROR
+
+API changes:
+* Added gdata_picasaweb_query_new_with_limits
+* Added gdata_feed_get_icon
+* Added GDataPicasaWebUser, gdata_picasaweb_service_get_user
+* Removed gdata_picasaweb_album_get_name, gdata_picasaweb_album_get_description, gdata_picasaweb_album_set_description and corresponding properties
+* Added GDataPicasaWebFeed
+* Removed gdata_youtube_video_get_title, gdata_youtube_video_set_title
+* Added gdata_media_content_download, gdata_media_thumbnail_download
+* Added gdata_picasaweb_service_insert_album
+* Added gdata_picasaweb_service_upload_file_async, gdata_picasaweb_service_upload_file_finish
+* Added gdata_gd_organization_get_location, gdata_gd_organization_set_location,
+  gdata_gd_email_address_get_display_name, gdata_gd_email_address_set_display_name
+* Added GDataOperationType
+* Removed GDATA_SERVICE_ERROR_WITH_*; GDATA_SERVICE_ERROR_PROTOCOL_ERROR is now returned instead
+
+Bugs fixed:
+* Bug 597248 — Add gdata_picasaweb_query_new_with_limits
+* Bug 598746 — gdata_picasaweb_query_set_image_size documentation fix
+* Bug 598910 — Timestamp bug
+* Bug 598912 — Test data was changed by my mucking around with comments
+* Bug 598893 — gdata_picasaweb_album_new doesn't set a valid visibility
+* Bug 599140 — Have albums initialise date to now by default
+* Bug 589858 — Handle gphoto XML elements found in 'GDataFeed'
+* Bug 598913 — Add gdata_picasaweb_service_insert_album()
+* Bug 602156 — GDataUploadStream should close GOutputStream on dispose
+* Bug 598649 — Download API for PicasaWeb images and thumbnails
+* Bug 600262 — Add async PicasaWeb upload API
+* Bug 604313 — Test failures in 0.5.1
+* Bug 601919 — Expand a comment, organise some media tests
+* Bug 598748 — *_download_document prevents non-overwriting saving into directories
+* Bug 607607 — Undefined symbol with introspection
+
+Updated translations:
+* cs (Marek Cernocky, Petr Kovar)
+* de (Mario Blättermann)
+* es (Jorge González)
+* fr (Claude Paroz, Julien Hardelin)
+* gl (Fran Dieguez)
+* hu (Gabor Kelemen)
+* it (Rita Bandiera)
+* ja (Takeshi AIHANA)
+* pt (António Lima)
+* pt_BR (Djavan Fagundes, Og Maciel)
+* sl (Matej Urbančič)
+* sv (Daniel Nylander)
+* zh_CN (Aron Xu)
+
+Overview of changes from libgdata 0.4.0 to libgdata 0.5.0
+=========================================================
+
+Major changes:
+* Added Exif support for PicasaWeb files
+* Added the ability to query single Google Documents files
+* Errors are now logged in the "libgdata" domain
+* Added GeoRSS support for PicasaWeb files and albums
+* Optimisation to the XML output functions
+* Added streaming download and upload support using GDataDownloadStream and GDataUploadStream
+* Added support for silent building with AM_SILENT_RULES
+* Updated the GData namespace to version 3, improving name and address support
+
+API changes:
+* Changed gdata_documents_*_download_document to accept a destination file, rather than a directory
+* Added gdata_picasaweb_file_get_distance, gdata_picasaweb_file_get_exposure, gdata_picasaweb_file_get_flash, gdata_picasaweb_file_get_focal_length
+  gdata_picasaweb_file_get_fstop, gdata_picasaweb_file_get_image_unique_id, gdata_picasaweb_file_get_iso, gdata_picasaweb_file_get_make
+  gdata_picasaweb_file_get_model and corresponding properties
+* Added GDataExifTags
+* Added gdata_documents_entry_is_deleted
+* Added GDataEntry:rights, gdata_entry_get_rights, gdata_entry_set_rights
+* Added gdata_documents_service_query_single_document
+* Added GDataPicasaWebAlbum:latitude, GDataPicasaWebAlbum:longitude, gdata_picasaweb_album_get_coordinates, gdata_picasaweb_album_set_coordinates,
+  GDataPicasaWebFile:latitude, GDataPicasaWebFile:longitude, gdata_picasaweb_file_get_coordinates, gdata_picasaweb_file_set_coordinates
+* Added GDataGeoRSSWhere
+* Added GDataDownloadStream
+* Added GDATA_SERVICE_ERROR_WITH_DOWNLOAD, GDATA_SERVICE_ERROR_WITH_UPLOAD service errors
+* Added gdata_documents_*_get_download_uri
+* Added GDataUploadStream
+* Added GDataGDName
+* Added GDataGDOrganization:department, gdata_gd_organization_get_department, gdata_gd_organization_set_department, GDataGDOrganization:job-description,
+  gdata_gd_organization_get_job_description, gdata_gd_organization_set_job_description, GDataGDOrganization:symbol, gdata_gd_organization_get_symbol,
+  gdata_gd_organization_set_symbol
+* Added GDATA_GD_MAIL_CLASS_*, GDATA_GD_ADDRESS_USAGE_*
+* Removed the address parameter from gdata_gd_postal_address_new
+* Added GDataGDPostalAddress:mail-class, gdata_gd_postal_address_get_mail_class, gdata_gd_postal_address_set_mail_class, GDataGDPostalAddress:usage,
+  gdata_gd_postal_address_get_usage, gdata_gd_postal_address_set_usage, GDataGDPostalAddress:agent, gdata_gd_postal_address_get_agent,
+  gdata_gd_postal_address_set_agent, GDataGDPostalAddress:house-name, gdata_gd_postal_address_get_house_name, gdata_gd_postal_address_set_house_name,
+  GDataGDPostalAddress:street, gdata_gd_postal_address_get_street, gdata_gd_postal_address_set_street, GDataGDPostalAddress:po-box,
+  gdata_gd_postal_address_get_po_box, gdata_gd_postal_address_set_po_box, GDataGDPostalAddress:neighborhood, gdata_gd_postal_address_get_neighborhood,
+  gdata_gd_postal_address_set_neighborhood, GDataGDPostalAddress:city, gdata_gd_postal_address_get_city, gdata_gd_postal_address_set_city,
+  GDataGDPostalAddress:subregion, gdata_gd_postal_address_get_subregion, gdata_gd_postal_address_set_subregion, GDataGDPostalAddress:region,
+  gdata_gd_postal_address_get_region, gdata_gd_postal_address_set_region, GDataGDPostalAddress:postcode, gdata_gd_postal_address_get_postcode,
+  gdata_gd_postal_address_set_postcode, GDataGDPostalAddress:country, GDataGDPostalAddress:country-code, gdata_gd_postal_address_get_country,
+  gdata_gd_postal_address_get_country_code, gdata_gd_postal_address_set_country
+* Added GDataContactsContact:name, gdata_contacts_contact_get_name
+* Added gdata_documents_service_get_upload_uri
+
+Bugs fixed:
+* Bug 589265 – Crash on query error
+* Bug 589545 – *_download_document(): let the client decide where to download
+* Bug 589201 – Add EXIF support for PicasaWeb image files
+* Bug 589850 – gdata_picasaweb_album_get_timestamp() returns date in 1970!
+* Bug 590345 – <gd:deleted> handling in GDataDocumentsEntry
+* Bug 589855 – Obsolete <rights> not handled in GDataPicasaWebAlbum parse_xml()
+* Bug 590341 – Allow querying of single documents
+* Bug 590132 – Unhandled XML for georss
+* Bug 590568 – Crash on querying inside a folder
+* Bug 591966 — Can't query single spreadsheets
+* Bug 591974 — remove_document_from_folder moves documents to the trash
+* Bug 591691 — Getting a feed containing PDF documents returns NULL
+* Bug 592124 — G_LOG_DOMAIN not set for subdirectories
+* Bug 592845 — Undefined symbol: gdata_picasaweb_query_new_with_limits
+* Bug 593239 — Use GDataUploadStream for uploading files
+* Bug 593336 — Query parameter "q=..." isn't valid for album kinds
+
+Updated translations:
+* de (Mario Blättermann)
+* en_GB (Philip Withnall)
+* es (Jorge González)
+* eu (Iñaki Larrañaga Murgoitio)
+* fr (Nicolas Repentin)
+* gl (Fran Dieguez)
+* hu (Gabor Kelemen)
+* nb (Kjartan Maraas)
+* po (Piotr Drąg)
+* pt (António Lima)
+* pt_BR (Flamarion Jorge)
+* sv (Daniel Nylander)
+* zh_HK (Chao-Hsiung Liao)
+* zh_TW (Chao-Hsiung Liao)
+
+Overview of changes from libgdata 0.3.0 to libgdata 0.4.0
+=========================================================
+
+Major changes:
+* Added comparison functions for all small XML elements (such as GDataLink and friends)
+* Added GDataContactsContact photo support
+* Translatable strings are now even clearer, and all have translator comments
+* Fixed a number of locale-dependent bugs
+* Converted small XML element structs to full GObjects
+* Added a PicasaWeb service by Richard Schwarting <aquarichy@gmail.com>
+* Fixed more licencing issues (libgdata is licenced under LGPLv2.1+)
+* Required link relation types to be full URIs
+* Added a Google Documents service by Thibault Saunier <saunierthibault@gmail.com>
+
+API changes:
+* Added gdata_contacts_contact_get_extended_properties
+* Added *_compare
+* Added GDataContactsContact:has-photo, gdata_contacts_contact_has_photo, gdata_contacts_contact_get_photo, gdata_contacts_contact_set_photo
+* Converted GDataAuthor, GDataCategory, GDataLink, GDataGenerator to GObjects (removed *_free functions and added mandatory field accessors)
+* Converted GDataGDEmailAddress, GDataGDFeedLink, GDataGDIMAddress, GDataGDOrganization, GDataGDPhoneNumber, GDataGDPostalAddress, GDataGDRating,
+  GDataGDWhen, GDataGDReminder, GDataGDWhere, GDataGDWho to GObjects (removed *_free functions and added mandatory field accessors)
+* Converted GDataMediaCategory, GDataMediaContent, GDataMediaCredit, GDataMediaRating, GDataMediaRestriction, GDataMediaThumbnail to GObjects
+  (removed *_free functions and added mandatory field accessors)
+* Removed gdata_media_thumbnail_parse_time, gdata_media_thumbnail_build_time
+* Converted GDataYouTubeState to GObject (removed gdata_youtube_state_free and added mandatory field accessors)
+* Added GDataYouTubeControl
+* Added PicasaWeb service API
+* Removed gdata_entry_new_from_xml, other *_new_from_xml functions, gdata_entry_get_xml
+* Added gdata_parsable_new_from_xml, gdata_parsable_get_xml
+* Removed GDATA_PARSER_ERROR_UNHANDLED_XML_ELEMENT parser error
+* Added GDataParsableClass->element_name, GDataParsableClass->element_namespace
+* Added GDATA_LINK_ALTERNATE, GDATA_LINK_EDIT, GDATA_LINK_EDIT_MEDIA, GDATA_LINK_ENCLOSURE, GDATA_LINK_RELATED, GDATA_LINK_SELF, GDATA_LINK_VIA
+  for use with gdata_entry_look_up_link
+* Added gdata_contacts_service_update_contact
+* Added gdata_youtube_service_query_single_video, gdata_youtube_service_query_single_video_async, gdata_youtube_service_query_single_video_finish
+* Added gdata_youtube_video_get_video_id_from_uri
+* Added GDataYouTubeAspectRatio, gdata_youtube_video_get_aspect_ratio, gdata_youtube_video_set_aspect_ratio
+* Added Google Documents service API
+* Added gdata_contacts_contact_remove_all_email_addresses, gdata_contacts_contact_remove_all_im_addresses,
+  gdata_contacts_contact_remove_all_postal_addresses, gdata_contacts_contact_remove_all_phone_numbers, gdata_contacts_contact_remove_all_organizations
+
+Bugs fixed:
+* Bug 584417 – Strings are not properly formed for localisation
+* Bug 584737 – String parsing is locale-sensitive
+* Bug 579170 – Eliminate gdata_parser_error_unhandled_element
+* Bug 587277 – Some files are GPLv3 but license is LGPLv2.1?
+* Bug 588052 – Parse the yt:aspectratio tag
+* Bug 587073 – Add Google Documents service
+* Bug 588995 – float radix character depends on LC_NUMERIC, but Google wants "."
+
+Updated translations:
+* ca (Joan Duran)
+* de (Mario Blättermann)
+* en_GB (Philip Withnall)
+* es (Jorge González)
+* nb (Kjartan Maraas)
+* pa (A S Alam)
+* sv (Daniel Nylander)
+* uk (Maxim Dziumanenko)
+
+Overview of changes from libgdata 0.2.0 to libgdata 0.3.0
+=========================================================
+
+Major changes:
+* Empty (but present) entry titles are now set to an empty string, rather than NULL
+* GDataCalendarEvent has basic recurrence support
+* Optional GNOME support has been added for automagic proxy configuration (depends on libsoup-gnome-2.4)
+* Deprecated libsoup API has been removed, bumping the requirement to 2.26.1
+* Translation comments and some translatable strings have been made clearer
+* Default error handling has been improved
+* More async versions of functions have been added
+* The XML output of GDataCalendarCalendar has been completed
+* GDataYouTubeVideo now has support for recorded times and comment feed links
+* Added a GDataYouTubeQuery class
+* Access control list (ACL) support, implemented on GDataCalendarCalendar
+* Abstract XML parsing into GDataParsable to allow GDataFeed to be overridden
+* Added a GDataCalendarFeed class to deal with calendar-specific properties
+
+API changes:
+* Added GDataCalendarEvent:recurrence, gdata_calendar_event_get_recurrence, gdata_calendar_event_set_recurrence
+* Added GDataCalendarEvent:original-event-id, GDataCalendarEvent:original-event-uri, gdata_calendar_event_get_original_event_details
+* Added gdata_calendar_event_is_exception
+* Added GDATA_SERVICE_ERROR_NOT_FOUND, GDATA_SERVICE_ERROR_CONFLICT
+* Changed GDataServiceClass->parse_error_response
+* Added gdata_service_insert_entry_async, gdata_service_insert_entry_finish
+* Added gdata_service_update_entry_async, gdata_service_update_entry_finish
+* Added gdata_service_delete_entry_async, gdata_service_delete_entry_finish
+* Added gdata_color_to_hexadecimal
+* Added GDataYouTubeVideo:comments-feed-link, gdata_youtube_video_get_comments_feed_link
+* Added GDataYouTubeVideo:recorded, gdata_youtube_video_get_recorded, gdata_youtube_video_set_recorded
+* Added read_only parameter to gdata_gd_feed_link_new and member to GDataGDFeedLink
+* Added GDataYouTubeQuery
+* Added GDataAccessHandler, GDataAccessRule
+* Added GDATA_SERVICE_ERROR_FORBIDDEN
+* Added GDataParsable
+* Changed GDataEntry to extend GDataParsable, rather than GObject
+* Removed GDataEntry->parse_xml
+* Changed GDataFeed to extend GDataParsable, rather than GObject
+* Added GDataCalendarFeed
+* Added GDataServiceClass->feed_type
+
+Bugs fixed:
+* Bug 582026 – Access Control List functionality
+* Bug 578367 – Add support for YouTube-specific query parameters
+* Bug 581706 – translation issues
+* Bug 580330 – Rejects empty entry titles
+
+Updated translations:
+* de (Mario Blättermann)
+* el (Giannis Katsampirhs)
+* en_GB (Philip Withnall)
+* es (Jorge González)
+* gl (Fran Diéguez, Antón Méixome)
+
+Overview of changes from libgdata 0.1.0 to libgdata 0.2.0
+=========================================================
+
+Major changes:
+* The updated entry is now returned when inserting an entry
+* Entries can be updated with gdata_service_update_entry
+* Entries can be deleted with gdata_service_delete_entry
+* GDataService has proxy support with the proxy-uri property
+* Redirects from the server are now handled correctly
+* API documentation is now complete
+* Unknown XML elements are stored and returned when building the XML for an entry
+* ETag support for entries and feeds
+* Added a Google Contacts service
+
+API changes:
+* Added GDataEntry:etag, gdata_entry_get_etag
+* Added gdata_entry_get_categories
+* Added GDataFeed:etag, gdata_feed_get_etag
+* Added gdata_feed_look_up_entry
+* Added GDataGDWhen, gdata_gd_when_new, gdata_gd_when_free
+* Added GDataGDEmailAddress, gdata_gd_email_address_new, gdata_gd_email_address_free
+* Added GDataGDIMAddress, gdata_gd_im_address_new, gdata_gd_im_address_free
+* Added GDataGDPhoneNumber, gdata_gd_phone_number_new, gdata_gd_phone_number_free
+* Added GDataGDPostalAddress, gdata_gd_postal_address_new, gdata_gd_postal_address_free
+* Added GDataGDOrganization, gdata_gd_organization_new, gdata_gd_organization_free
+* Added GDataGDReminder, gdata_gd_reminder_new, gdata_gd_reminder_free
+* Renamed GDataQuery:strict to GDataQuery:is-strict, gdata_query_get_strict to gdata_query_is_strict, gdata_query_set_strict to gdata_query_set_is_strict
+* Added GDataQuery:etag, gdata_query_get_etag, gdata_query_set_etag
+* Added GDataService:proxy-uri, gdata_service_get_proxy_uri, gdata_service_set_proxy_uri
+* Added gdata_service_update_entry
+* Added gdata_service_update_entry
+* Removed gdata_service_get_session
+* Renamed GDataCalendarCalendar:hidden to GDataCalendarCalendar:is-hidden, gdata_calendar_calendar_get_hidden to gdata_calendar_calendar_is_hidden,
+  gdata_calendar_calendar_set_hidden to gdata_calendar_calendar_set_is_hidden
+* Renamed GDataCalendarCalendar:selected to GDataCalendarCalendar:is-selected,
+  gdata_calendar_calendar_get_selected to gdata_calendar_calendar_is_selected,
+  gdata_calendar_calendar_set_selected to gdata_calendar_calendar_set_is_selected
+* Renamed GDataCalendarEvent:event-status to GDataCalendarEvent:status, gdata_calendar_event_get_event_status to gdata_calendar_event_get_status,
+  gdata_calendar_event_set_event_status to gdata_calendar_event_set_status
+* Added gdata_calendar_event_get_people
+* Added gdata_calendar_event_get_places
+* Added gdata_calendar_event_add_time, gdata_calendar_event_get_times, gdata_calendar_event_get_primary_time
+* Removed gdata_calendar_event_set_edited
+* Made GDataCalendarEvent:edited read-only
+* Removed gdata_calendar_event_get_start_time, gdata_calendar_event_set_start_time, gdata_calendar_event_get_end_time, gdata_calendar_event_set_end_time,
+  gdata_calendar_event_get_when_value, gdata_calendar_event_set_when_value
+* Renamed GDataCalendarQuery:ctz to GDataCalendarQuery:timezone, gdata_calendar_query_get_ctz to gdata_calendar_query_get_timezone,
+  gdata_calendar_query_set_ctz to gdata_calendar_query_set_timezone
+* Added gdata_calendar_service_insert_event
+* Renamed g_time_val_get_type to gdata_g_time_val_get_type
+* Added Google Contacts service API
+
+Bugs fixed:
+* Bug 579631 – Add G_GNUC_WARN_UNUSED_RESULT to functions
+* Bug 578661 – ETag support
+* Bug 578662 – Support unknown XML elements
+* Bug 578653 – self-test fails to build on glib-2.18.x
+* Bug 578652 – Build failure: missing symbol: gdata_query_param_get_type
+
+Updated translations:
+* de (Mario Blättermann)
+* en_GB (Philip Withnall)
+* sv (Daniel Nylander)
+
+Overview of changes from libgdata 0.1.0 to libgdata 0.1.1
+=========================================================
+
+Major changes:
+* Fixed licencing issues
+* Changed website to http://live.gnome.org/libgdata
+
+API changes:
+* Renamed gdata_entry_lookup_link to gdata_entry_look_up_link
+* Renamed gdata_feed_lookup_link to gdata_feed_look_up_link
+
+Initial release of libgdata 0.1.0
+=================================
+
+Major changes:
+* Create project
+* Add mostly-complete support for YouTube queries and video uploads
+* Add basic and incomplete support for Google Calendar queries

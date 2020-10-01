@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-toolbar-dialer-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<g id="icon-m-toolbar-dialer_1_">
+	<rect style="fill:none;" width="32" height="32"/>
+	<rect x="12.16" y="1.022" style="fill:#FFFFFF;" width="7.79" height="4.544"/>
+	<path style="fill:#FFFFFF;" d="M8.108,1.022H2.136c-1.003,0-1.816,0.771-1.816,1.719v2.825h7.788V1.022z"/>
+	<path style="fill:#FFFFFF;" d="M31.68,2.741c0-0.947-0.812-1.719-1.816-1.719h-5.972v4.544h7.788V2.741z"/>
+	<rect x="12.16" y="9.529" style="fill:#FFFFFF;" width="7.79" height="4.545"/>
+	<rect x="12.16" y="18.036" style="fill:#FFFFFF;" width="7.79" height="4.544"/>
+	<rect x="0.32" y="9.529" style="fill:#FFFFFF;" width="7.788" height="4.545"/>
+	<path style="fill:#FFFFFF;" d="M0.32,20.861c0,0.949,0.813,1.719,1.816,1.719h5.972v-4.544H0.32V20.861z"/>
+	<path style="fill:#FFFFFF;" d="M23.892,22.58h5.972c1.005,0,1.816-0.77,1.816-1.719v-2.825h-7.788V22.58z"/>
+	<rect x="23.892" y="9.529" style="fill:#FFFFFF;" width="7.788" height="4.545"/>
+	<path style="fill:#FFFFFF;" d="M19.949,26.435v3.027c0,0.836-0.812,1.515-1.816,1.515h-4.157c-1.002,0-1.816-0.679-1.816-1.515
+		v-3.027H19.949z"/>
+</g>
+</svg>

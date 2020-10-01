@@ -1,0 +1,2 @@
+KERNEL=="mmcblk0p1", ACTION=="add",  RUN+="/bin/mount /dev/mmcblk0p1"
+KERNEL=="mmcblk0p1", ACTION=="remove",  RUN+="/bin/umount /dev/mmcblk0p1"

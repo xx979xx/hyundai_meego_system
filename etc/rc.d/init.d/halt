@@ -1,0 +1,151 @@
+#!/bin/bash
+#
+# halt          This file is executed by init when it goes into runlevel
+#               0 (halt) or runlevel 6 (reboot). It kills all processes,
+#               unmounts file systems and then either halts or reboots.
+#
+# Author:       Miquel van Smoorenburg, <miquels@drinkel.nl.mugnet.org>
+#               Modified for RHS Linux by Damien Neil
+#               Modified for Moblin and MeeGo by Auke Kok
+#
+
+NOLOCALE=1
+. /etc/init.d/functions
+
+# Write to wtmp file before unmounting /var
+/sbin/halt -w
+
+# start syncing dirty data to disk early  
+/usr/bin/ionice -t -c 3 -n 7 sync &
+
+UMOUNT="umount"
+[ ! -w /etc ] && UMOUNT="umount -n"
+
+# See how we were called.
+case "$0" in
+   *halt)
+	message=$"Halting system..."
+	command="/sbin/halt"
+	;;
+   *reboot)
+	message=$"Please stand by while rebooting the system..."
+	command="/sbin/reboot"
+	kexec_command="/sbin/kexec"
+	;;
+   *)
+	echo $"$0: call me as 'halt' or 'reboot' please!"
+	exit 1
+	;;
+esac
+case "$1" in
+   *start)
+   	;;
+   *)
+	echo $"Usage: $0 {start}"
+	exit 1
+	;;
+esac
+
+
+# start syncing dirty data to disk early
+sync &
+
+# Kill all processes.
+[ "${BASH+bash}" = bash ] && enable kill
+
+/sbin/killall5 -15
+sleep 1
+/sbin/killall5 -9
+
+# Remove stale backups
+rm -f /etc/mtab~ /etc/mtab~~
+
+# Clean up various /tmp bits
+rm -f /tmp/.X*-lock /tmp/.lock.* /tmp/.gdm_socket /tmp/.s.PGSQL.*
+rm -rf /tmp/.X*-unix /tmp/.ICE-unix /tmp/.font-unix /tmp/hsperfdata_* \
+	/tmp/kde-* /tmp/ksocket-* /tmp/mc-* /tmp/mcop-* /tmp/orbit-*  \
+	/tmp/scrollkeeper-*  /tmp/ssh-*
+
+# Clean up /var.
+rm -f /var/lib/rpm/__db* &> /dev/null
+rm -f /var/gdm/.gdmfifo &> /dev/null
+
+# remove the crash indicator flag
+rm -f /.autofsck
+
+# Save mixer settings, here for lack of a better place.
+if [ -s /etc/alsa/alsactl.conf -a -x /sbin/alsactl ]; then
+	/sbin/alsactl -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf --ignore store
+fi
+
+# Save random seed
+touch /var/lib/random-seed
+chmod 600 /var/lib/random-seed
+/bin/dd if=/dev/urandom of=/var/lib/random-seed count=1 bs=512 2>/dev/null
+
+# Turn off swap, then unmount file systems.
+[ -f /proc/swaps ] && SWAPS=`awk '! /^Filename/ { print $1 }' /proc/swaps`
+if [ -n "$SWAPS" ]; then
+    /sbin/swapoff $SWAPS
+    for dst in $SWAPS; do
+	if [[ "$dst" =~ ^/dev/mapper ]] \
+	    && [ "$(dmsetup status "$dst" | cut -d ' ' -f 3)" = crypt ]; then
+	    backdev=$(/sbin/cryptsetup status "$dst" \
+		| awk '$1 == "device:" { print $2 }')
+	    /sbin/cryptsetup remove "$dst"
+	fi
+    done
+fi
+
+# Unmount file systems, killing processes if we have to.
+# Unmount loopback stuff first
+__umount_loopback_loop
+
+# Unmount RPC pipe file systems
+__umount_loop '$3 ~ /^rpc_pipefs$/ || $3 ~ /^rpc_svc_gss_pipefs$/ {print $2}' \
+    /proc/mounts \
+    $"Unmounting pipe file systems: " \
+    $"Unmounting pipe file systems (retry): " \
+    -f
+
+LANG=C __umount_loop '$2 ~ /^\/$|^\/proc|^\/dev/{next}
+	$3 == "tmpfs" || $3 == "proc" {print $2 ; next}
+	/(loopfs|autofs|nfs|cifs|smbfs|ncpfs|sysfs|^none|^\/dev\/ram|^\/dev\/root$)/ {next}
+	{print $2}' /proc/mounts \
+	$"Unmounting file systems: " \
+	$"Unmounting file systems (retry): " \
+	-f
+
+# Try all file systems other than root, essential filesystems and RAM disks,
+# one last time.
+awk '$2 !~ /\/(|dev|proc|selinux|sys)$/ && $1 !~ /^\/dev\/ram/ { print $2 }' \
+    /proc/mounts | sort -r | \
+  while read line; do
+    fstab-decode $UMOUNT -f $line
+done
+
+if [ -x /sbin/halt.local ]; then
+   /sbin/halt.local
+fi
+
+# Remount read only anything that's left mounted.
+# echo $"Remounting remaining filesystems readonly"
+mount | awk '{ print $3 }' | while read line; do
+    fstab-decode mount -n -o ro,remount $line
+done
+
+# Now halt or reboot.
+echo $"$message"
+if [ -f /fastboot ]; then
+ echo $"On the next boot fsck will be skipped."
+elif [ -f /forcefsck ]; then
+ echo $"On the next boot fsck will be forced."
+fi
+
+# First, try kexec. If that fails, fall back to rebooting the old way.
+[ -n "$kexec_command" ] && $kexec_command -e -x >& /dev/null
+
+HALTARGS="-d"
+[ -f /poweroff -o ! -f /halt ] && HALTARGS="$HALTARGS -p"
+
+exec $command $HALTARGS

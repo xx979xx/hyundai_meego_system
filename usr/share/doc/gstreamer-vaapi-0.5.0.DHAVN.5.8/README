@@ -1,0 +1,92 @@
+
+  gstreamer-vaapi
+  VA-API support to GStreamer
+
+  Copyright (C) 2010-2011 Splitted-Desktop Systems
+  Copyright (C) 2011-2012 Intel Corporation
+  Copyright (C) 2011 Collabora Ltd.
+
+
+License
+-------
+
+gstreamer-vaapi helper libraries and plugin elements are available
+under the terms of the GNU Lesser General Public License v2.1+
+
+Overview
+--------
+
+gstreamer-vaapi consists in a collection of VA-API based plugins for
+GStreamer and helper libraries.
+
+  * `vaapidecode' is used to decode JPEG, MPEG-2, MPEG-4, H.264, VC-1,
+    WMV3 videos to video/x-vaapi-surfaces surfaces, depending on the
+    underlying HW capabilities.
+
+  * `vaapiupload' is used to convert from video/x-raw-yuv pixels to
+    video/x-vaapi-surface surfaces.
+
+  * `vaapidownload' is used to convert from video/x-vaapi-surface
+    surfaces to video/x-raw-yuv pixels.
+
+  * `vaapipostproc' is used to postprocess video/x-vaapi-surface
+    surfaces, for e.g. deinterlacing.
+
+  * `vaapisink' is used to display video/x-vaapi-surface surfaces to
+    screen.
+
+
+Features
+--------
+
+  * VA-API support from 0.29 to 0.32
+  * JPEG, MPEG-2, MPEG-4, H.264 and VC-1 ad-hoc decoders
+  * OpenGL rendering through VA/GLX or GLX texture-from-pixmap + FBO
+  * Support for the Wayland display server
+  * Support for headless decode pipelines with VA/DRM
+  * Support for major HW video decoding solutions on Linux (AMD, Intel, NVIDIA)
+
+
+Requirements
+------------
+
+Software requirements
+
+  * GStreamer 0.10.x:
+      libglib2.0-dev (>= 2.28)
+      libgstreamer0.10-dev (>= 0.10.36)
+        or with GstBaseSink::query()
+      libgstreamer-plugins-base0.10-dev (>= 0.10.36)
+      libgstreamer-plugins-bad0.10-dev (>= 0.10.22.1)
+        or with GstVideoContext, GstSurfaceBuffer, codecparsers
+
+  * Renderers:
+      DRM: libva-dev (>= 1.1.0), libdrm-dev, libudev-dev
+      X11: libva-dev (>= 1.0.1)
+      GLX: libva-dev (>= 1.0.3)
+      Wayland: libva-dev (>= 1.1.0), libwayland-dev (>= 0.95.0)
+
+Hardware requirements
+
+  * AMD platforms with UVD2 (XvBA supported)
+  * Intel Eaglelake (G45)
+  * Intel Ironlake, Sandy Bridge and Ivy Bridge (HD Graphics)
+  * Intel Poulsbo (US15W)
+  * Intel Medfield or Cedar Trail
+  * NVIDIA platforms with PureVideo (VDPAU supported)
+
+
+Usage
+-----
+
+  VA elements are automatically plugged into GStreamer pipelines. So,
+  using playbin2 should work as is. However, here are a few alternate
+  pipelines constructed manually.
+
+  * Play an H.264 video with an MP4 container in fullscreen mode
+  $ gst-launch-0.10 -v filesrc location=/path/to/video.mp4 ! \
+      qtdemux ! vaapidecode ! vaapisink fullscreen=true
+
+  * Play a raw MPEG-2 interlaced stream
+  $ gst-launch-0.10 -v filesrc location=/path/to/mpeg2.bits ! \
+      mpegvideoparse ! vaapidecode ! vaapipostproc ! vaapisink

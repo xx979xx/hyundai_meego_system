@@ -1,0 +1,82 @@
+/* MComboBoxStyle : MWidgetStyle */
+MComboBoxStyle {
+    margin-left:    $MARGIN_DEFAULT;
+    margin-right:   $MARGIN_DEFAULT;
+    margin-top:     $MARGIN_DEFAULT;
+    margin-bottom:  $MARGIN_DEFAULT;
+
+    padding-left:   $PADDING_DEFAULT;
+    padding-top:    $PADDING_DEFAULT;
+    padding-right:  $PADDING_DEFAULT;
+    padding-bottom: $PADDING_DEFAULT;
+
+    preferred-size: -1 $SIZE_LIST;
+    minimum-size:   $SIZE_ONE $SIZE_LIST;
+    maximum-size:   100% $SIZE_LIST;
+
+    indicator-image: "icon-m-common-combobox-arrow";
+
+    button-style-name:              "ComboBoxListItem";
+    title-object-name:              "CommonTitle";
+    sub-title-object-name:          "CommonSubTitle";
+    icon-object-name:               "CommonMainIcon";
+    progress-indicator-object-name: "CommonProgressBar";
+    indicator-object-name:          "CommonComboBoxIcon";
+
+    popup-list-type: "overlay";
+
+    has-title:      true;
+    separate-title: false;
+
+    /* not used, left for ABI compatibility*/
+    content-item-object-name: ;
+    item-mode: 0;
+}
+
+MComboBoxStyle:pressed {
+    sub-title-object-name: "CommonComboBoxButtonLabelPressed";
+}
+
+MComboBoxStyle[simpleButton] {
+    button-style-name:      "ComboBoxButton";
+    sub-title-object-name:  "CommonButtonLabel";
+    has-title:              false;
+    minimum-size:           51px 51px;
+    preferred-size:         -1 51px;
+    maximum-size:           -1 51px;
+}
+
+MComboBoxStyle[labelButton] {
+    button-style-name:      "ComboBoxButton";
+    title-object-name:      "CommonFieldLabel";
+    sub-title-object-name:  "CommonButtonLabel";
+    separate-title:         true;
+}
+
+MListItemStyle#ComboBoxListItem {
+    background-tiles:   ;
+    background-image:   ;
+    background-color:   ;
+    minimum-size:       $SIZE_LIST $SIZE_LIST;
+    preferred-size:     -1 $SIZE_LIST;
+    maximum-size:       100% $SIZE_LIST;
+}
+MListItemStyle#ComboBoxListItem:pressed {
+    background-tiles: ;
+    background-image: "meegotouch-panel-background-pressed" $CORNER_MARGINS;
+    background-color: ;
+}
+
+MListItemStyle#ComboBoxButton {
+    background-tiles: ;
+    background-image: meegotouch-button-background $CORNER_MARGINS;
+    minimum-size:     51px 51px;
+    preferred-size:   -1   51px;
+    maximum-size:     -1   51px;
+    padding-left:     $INDENT_DEFAULT;
+}
+MListItemStyle#ComboBoxButton:pressed {
+    background-tiles: ;
+    background-image: meegotouch-button-background-pressed $CORNER_MARGINS;
+}
+

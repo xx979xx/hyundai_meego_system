@@ -1,0 +1,45 @@
+/* MEscapeButtonPanelStyle : MSceneWindowStyle */
+MEscapeButtonPanelStyle {
+    minimum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    maximum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    preferred-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+
+    vertical-align: top;
+    horizontal-align: right;
+    offset: 0 0;
+
+    button-animation-length: 500;
+    has-close-button: true;
+
+    back-button-object-name: "BackButton";
+    close-button-object-name: "CloseButton";
+
+    back-button-icon-id: "icon-m-framework-back";
+    close-button-icon-id: "icon-m-framework-close";
+}
+
+MButtonIconStyle#BackButton {
+
+    icon-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+
+    minimum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    maximum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    preferred-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+
+    reactive-margin-left: $MARGIN_XLARGE;
+    reactive-margin-right: $MARGIN_XLARGE;
+    reactive-margin-bottom: $MARGIN_XLARGE;
+}                              
+
+MButtonIconStyle#CloseButton {
+
+    icon-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+
+    minimum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    maximum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    preferred-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+
+    reactive-margin-left: $MARGIN_XLARGE;
+    reactive-margin-right: $MARGIN_XLARGE;
+    reactive-margin-bottom: $MARGIN_XLARGE;
+}

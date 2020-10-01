@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#accounts-restore script
+
+exit 0

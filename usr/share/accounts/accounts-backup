@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#accounts-backup script
+
+exit 0

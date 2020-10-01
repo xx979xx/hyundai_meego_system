@@ -1,0 +1,15 @@
+sizescale 100
+unitwidth 131072
+res 57816
+hor 1
+vert 1
+sizes 500-1000000 0
+styles R I B BI
+family T
+fonts 15 0 0 0 0 0 0 0 0 0 MI S EX CW M G
+fontset B G 100..FFFF
+fontset HB G 100..FFFF
+fontset SB G 100..FFFF
+fontset - M 100..FFFF
+tcommand
+postpro grodvi

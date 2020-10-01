@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/system/osso/dsm/energymanagement/enable_power_saving</key>
+      <applyto>/system/osso/dsm/energymanagement/enable_power_saving</applyto>
+      <owner>mce</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Enable automatic power saving mode</short>
+	<long>Enable automatic power saving, true; Disable automatic power saving, false</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/energymanagement/force_power_saving</key>
+      <applyto>/system/osso/dsm/energymanagement/force_power_saving</applyto>
+      <owner>mce</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Unconditionally enable power saving mode</short>
+	<long>Unconditionally enable power saving, true; user selected and system controlled power saving, false</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/energymanagement/psm_threshold</key>
+      <applyto>/system/osso/dsm/energymanagement/psm_threshold</applyto>
+      <owner>mce</owner>
+      <type>int</type>
+      <list_type>int</list_type>
+      <default>20</default>
+      <locale name="C">
+        <short>Threshold for the power saving mode</short>
+	<long>This key contains the threshold for the power saving mode.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/system/osso/dsm/energymanagement/possible_psm_thresholds</key>
+      <applyto>/system/osso/dsm/energymanagement/possible_psm_thresholds</applyto>
+      <owner>mce</owner>
+      <type>list</type>
+      <list_type>int</list_type>
+      <default>[10, 20, 30, 40, 50]</default>
+      <locale name="C">
+        <short>Possible thresholds for the power saving mode</short>
+	<long>This key contains the allowed threshold values for the power saving mode.</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<types>
+
+  <doc>
+Core Types for Context properties
+=================================
+
+
+Fundamental types
+-----------------
+  </doc>
+
+  <type name="value">
+    <doc>
+      Any representable value.
+    </doc>
+  </type>
+
+  <type name="bool" base="value">
+    <doc>
+      A boolean.
+    </doc>
+  </type>
+
+  <type name="number" base="value">
+    <params>
+      <min doc="Lower bound" type="number"/>
+      <max doc="Upper bound" type="number"/>
+    </params>
+    <doc>
+      A number with in the range indicated by the "min" and
+      "max" parameters.  The value is represented as either a
+      "int32", "uint32", "int64", "uint64", or "double".
+    </doc>
+  </type>
+
+  <type name="integer" base="number">
+    <params>
+      <min doc="Lower bound" type="number"/>
+      <max doc="Upper bound" type="number"/>
+    </params>
+    <doc>
+      A integer, represented as any of the numeric types.  If the value
+      is a "double", it is rounded to an integer, but not necessarily to
+      the nearest.  The "min" and "max" parameters, when given, constrain
+      the range of the integer.
+    </doc>
+  </type>
+
+  <type name="string" base="value">
+    <doc>
+      A string.
+    </doc>
+  </type>
+
+  <type name="list" base="value">
+    <params>
+      <min  doc="Minimum length" type="integer"/>
+      <max  doc="Maximum length" type="integer"/>
+      <type doc="Element type"   type="type"/>
+    </params>
+    <doc>
+      A list with elements of the given type and minimum and
+      maximum length given by the "min" and "max" parameters,
+      respectively.
+      +
+      When the "type" parameter is omitted, it defaults to
+      "value".
+    </doc>
+  </type>
+
+  <type name="map" base="value">
+    <params>
+      <rest doc="The allowed keys"/>
+    </params>
+    <doc>
+      A map.  The parameters specify the allowed keys in the map.
+      +
+      Each parameter is a association tree that describes one
+      possible key.  The name of the tree is the key itself, and
+      the second level of the tree can have "doc" and "type"
+      attributes for that key.
+      +
+      When the special key name "allow-other-keys" is present,
+      all keys are allowed; otherwise, only the specified keys
+      have any meaning and additional keys are an error.
+      +
+      When no parameters are given, all keys are allowed.
+    </doc>
+  </type>
+
+  <doc>
+Generic types
+-------------
+  </doc>
+
+  <type name="association-tree" base="value">
+    <doc>
+      A tree made from nested lists, used to associate
+      (hierarchical) keys with values.
+      +
+      For example, the association tree
+      +
+      [ "foo", [ "bar", 12 ], [ "baz", 42 ] ]
+      +
+      associates "foo", "bar" with 12 and "foo", "baz" with 42.
+      +
+      Association trees are often used as a simple "Nano DOM" for
+      XML documents.
+      +
+      Formally, a association tree is a list whose first element is
+      a string, and whose rest elements are either association
+      trees, or a single value.
+      +
+      The "name" of a association tree is the first element of its
+      top-level list.
+      +
+      As a special case, a association tree with just a name and no
+      other elements can be abbreviated by just stating the name as
+      a string.  E.g., the following two values are equivalent when
+      considered as a association tree:
+      +
+      "foo"
+      [ "foo" ]
+    </doc>
+  </type>
+
+  <type name="association-list">
+    <base>
+      <list type="association-tree"/>
+    </base>
+    <doc>
+      A list of association trees.
+    </doc>
+  </type>
+
+  <type name="string-enum" base="string">
+    <params>
+      <rest doc="The possible values"/>
+    </params>
+    <doc>
+      This is the base type for enumerations of fixed strings.  The
+      parameters describe the possible values.
+      +
+      Each parameter is a association tree that describes one of
+      the choices.  The name of the association tree is the
+      string for the choice itself and the second level of the
+      tree can have a "doc" attribute for that choice.
+    </doc>
+  </type>
+
+  <type name="int-enum" base="integer">
+    <params>
+      <rest doc="The possible values"/>
+    </params>
+    <doc>
+      This is the base type for enumerations of fixed integers.
+      The parameters describe the possible values.
+      +
+      Each parameter is a association tree that describes one of
+      the choices.  The name of the association tree is a
+      symbolic name for the choice itself and the second level
+      of the tree must have a "value" attribute that gives the
+      numerical value of the choice in decimal.  A choice can
+      also have a "doc" attribute, of course.
+    </doc>
+  </type>
+
+  <doc>
+Specific types
+--------------
+  </doc>
+
+  <type name="type"
+        base="association-tree">
+    <doc>
+      A reference to a type, consisting of a name and optional
+      parameters.
+      +
+      Type references are just association trees: the name of
+      the tree names the referenced type, and the associations
+      of the association tree are the parameters.
+    </doc>
+  </type>
+
+  <type name="temperature"
+        doc="A temperature in Kelvin.">
+    <base>
+      <number min="0"/>
+    </base>
+  </type>
+
+  <type name="energy"
+        base="number">
+    <doc>
+      An amount of energy, in Joule.
+    </doc>
+  </type>
+
+  <type name="power"
+        base="number">
+    <doc>
+      A power, in Watt.
+    </doc>
+  </type>
+
+  <type name="time"
+        base="integer">
+    <doc>
+      A point in time, represented as the number of nano-seconds since
+      00:00 January 1, 1970, UTC.
+    </doc>
+  </type>
+
+  <type name="distance"
+        base="integer">
+    <doc>
+      A physical length between two points, in meters.
+    </doc>
+  </type>
+
+  <type name="duration"
+        base="integer">
+    <doc>
+      A time duration, in nano-seconds.
+    </doc>
+  </type>
+
+  <type name="percentage">
+    <base>
+      <integer min="0" max="100"/>
+    </base>
+    <doc>
+      A percentage.
+    </doc>
+  </type>
+
+  <type name="location-source">
+    <base>
+      <string-enum>
+        <satellite/>
+        <wlan/>
+        <cellular/>
+        <timezone/>
+      </string-enum>
+    </base>
+    <doc>
+      Describes a source of location information.  Possible values are
+      "satellite", "wlan", "cellular", and "timezone".
+    </doc>
+  </type>
+
+  <type name="tracker-uri"
+        base="string">
+    <doc>
+      A URI that names a object in the Tracker object store.
+    </doc>
+  </type>
+
+</types>

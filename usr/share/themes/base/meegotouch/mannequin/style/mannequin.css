@@ -1,0 +1,29 @@
+/*
+ * mannequin - MeeGo placeholder application
+ * Copyright (c) 2009, 2010 Intel Corporation.
+ *
+ * This program is licensed under the terms and conditions of the
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+#MannequinPage {
+    horizontal-align: center;
+    vertical-align: center;
+}
+#MannequinMessage {
+    background-image: none;
+    text-color: white;
+    preferred-size: 80% -1;
+    minimum-size:   80% -1;
+    maximum-size:  100% 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}

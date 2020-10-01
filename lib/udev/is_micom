@@ -1,0 +1,19 @@
+#!/bin/sh
+
+P=/sys$(dirname "$1")
+
+VEND=$(cat "$P"/id/vendor 2>/dev/null)
+PROD=$(cat "$P"/id/product 2>/dev/null)
+
+if test "x$VEND" = "x016e" -a "x$PROD" = "x0001"; then
+   echo "IS_MICOM_TOUCHSCREEN=1"
+fi
+
+if test "x$VEND" = "x016e" -a "x$PROD" = "x0002"; then
+   echo "IS_MICOM_KEYS=1"
+fi
+
+if test "x$VEND" = "x016e" -a "x$PROD" = "x0003"; then
+   echo "IS_MICOM_ENCODERS=1"
+fi
+

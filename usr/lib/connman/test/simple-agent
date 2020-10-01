@@ -1,0 +1,105 @@
+#!/usr/bin/python
+
+import gobject
+
+import dbus
+import dbus.service
+import dbus.mainloop.glib
+import sys
+
+class Canceled(dbus.DBusException):
+	_dbus_error_name = "net.connman.Error.Canceled"
+
+class Agent(dbus.service.Object):
+	passphrase = None
+	wpspin = None
+
+	@dbus.service.method("net.connman.Agent",
+					in_signature='', out_signature='')
+	def Release(self):
+		print("Release")
+		mainloop.quit()
+
+	@dbus.service.method("net.connman.Agent",
+					in_signature='oa{sv}',
+					out_signature='a{sv}')
+	def RequestInput(self, path, fields):
+		print "RequestInput (%s,%s)" % (path, fields)
+
+		if not self.passphrase and not self.wpspin:
+			args = raw_input('Answer: ')
+
+			response = {}
+
+			for arg in args.split():
+				if arg.startswith("Passphrase="):
+					passphrase = arg.replace("Passphrase=", "", 1)
+					response["Passphrase"] = passphrase
+					break
+				if arg.startswith("WPS="):
+					wpspin = arg.replace("WPS=", "", 1)
+					response["WPS"] = wpspin
+					break
+		else:
+			if self.passphrase:
+				response["Passphrase"] = self.passphrase
+			else:
+				response["WPS"] = self.wpspin
+
+		print "returning (%s)" % (response)
+
+		return response
+
+	@dbus.service.method("net.connman.Agent",
+					in_signature='os',
+					out_signature='')
+	def ReportError(self, path, error):
+		print "ReportError %s, %s" % (path, error)
+		retry = raw_input("Retry service (yes/no): ")
+		if (retry == "yes"):
+			class Retry(dbus.DBusException):
+				_dbus_error_name = "net.connman.Agent.Error.Retry"
+
+			raise Retry("retry service")
+		else:
+			return
+
+
+	@dbus.service.method("net.connman.Agent",
+					in_signature='', out_signature='')
+	def Cancel(self):
+		print "Cancel"
+
+def print_usage():
+	print "Usage: %s Passphrase=<passphrase> WPS=<wpspin>" % (sys.argv[0])
+	print "Help: %s help" % (sys.ar[0])
+	sys.exit(1)
+
+if __name__ == '__main__':
+	if len(sys.argv) == 2 and sys.argv[1] == "help":
+		print_usage()
+
+	dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+
+	bus = dbus.SystemBus()
+	manager = dbus.Interface(bus.get_object('net.connman', "/"),
+					'net.connman.Manager')
+
+	path = "/test/agent"
+	object = Agent(bus, path)
+
+	if len(sys.argv) >= 2:
+		for arg in sys.argv[1:]:
+			if arg.startswith("Passphrase="):
+				object.passphrase = arg.replace("Passphrase=", "", 1)
+			elif arg.startswith("WPS="):
+				object.wpspin = arg.replace("WPS=", "", 1)
+			else:
+				print_usage()
+
+	manager.RegisterAgent(path)
+
+	mainloop = gobject.MainLoop()
+	mainloop.run()
+
+	#manager.UnregisterAgent(path)

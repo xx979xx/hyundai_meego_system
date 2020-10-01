@@ -1,0 +1,1398 @@
+== 0.8.1 ==
+	
+2008-09-01  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac: 
+	* NEWS:
+	Version 0.8.1
+
+2008-07-29  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-info.c: 
+	Check for documents appearing between *Menu and
+	the first category.
+	bug #12515
+	
+	* util/rarian-sk-get-cl.cpp: 
+	If $USERNAME isn't set, use default (UNKNOWN)
+	bug #14872
+	
+	* util/rarian-sk-update.in: 
+	Remove longopts to make FreeBSD / Solaris work properly
+	bug #11839
+
+	* librarian/rarian-info.c:
+	Only return best result when it exists
+	Bug #15274 - Saleem Abdulrasool
+	
+	* librarian/rarian-man.c: 
+	* librarian/rarian-info.c:
+	* librarian/rarian-reg-utils.c:
+	* librarian/rarian-reg-full.c:
+	Close files once they're used
+	bug #15654
+	
+	* librarian/rarian-man.c:
+	Ensure directories exist before trying to
+	read them
+	bug #15755
+	
+	
+== 0.8.0 ==
+
+2008-03-09  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* NEWS:
+	Version 0.8.0
+
+2008-01-13  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-omf.cpp: 
+	Remove debug output that got left in
+	and slightly better categorisation
+	
+== 0.7.1 ==
+	
+2008-01-07  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* NEWS:
+	Version 0.7.1
+	
+	* librarian/rarian-omf.cpp: 
+	Improve parsing of omf categories
+
+2008-01-07  Don Scorgie  <Don@Scorgie.org>
+
+	* docs/rar-lib.xhtml:
+	* librarian/rarian-info.c:
+	* librarian/rarian-info.h:
+	* librarian/rarian-man.c:
+	Add LZMA support
+	Bug #13255 - Per Øyvind Karlsen
+
+2008-01-07  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-omf.cpp:
+	Make attributes insensitive to ordering
+
+== 0.7.0 ==
+
+2007-11-26  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* NEWS:
+	Version 0.7.0
+
+	* librarian/rarian-utils.h:
+	Define FALSE for use in -reg-utils.c
+	
+2007-11-14  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-reg-utils.c:
+	* librarian/rarian-reg-full.c:
+	* librarian/rarian-reg-utils.h:
+	* librarian/rarian-reg-full.h:
+	Make process_section_path return void
+	(fixes compiler warning - bug #13201)
+
+	Add new attributes for hidden (NoDisplay)
+	and default section (DocDefaultSection)
+	to the .document file parsing
+
+	Increase scrictness of parsing in line with
+	the spec.
+	
+
+2007-11-12  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-omf.cpp: 
+	Make omfs return (approximate)
+	fd.o categories.  I'm sorry.
+	
+	* docs/omf_equivalence.txt:
+	Doc explaining the categorisation.
+	Improvements welcome.
+
+	* docs/Makefile.am:
+	Add omf_equivalence to EXTRA_DIST
+	
+	* util/rarian-example.c:
+	Make example program spit out categories
+		
+2007-11-07  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac: 
+	* docs/rarian.document.in:
+	Bump API version to 0.7.0 to avoid
+	confusion
+	Fix various warnings about AM_INIT_AUTOMAKE
+	Fix warning about ignoring datarootdir
+	
+	* librarian/rarian-info.h:
+	* librarian/rarian.h:
+	* librarian/rarian-main.h:
+	* librarian/rarian-reg-full.c:
+	* librarian/Makefile.am:
+	* librarian/rarian-man.h:
+	* librarian/rarian-reg-utils.h:
+	* librarian/rarian-omf.cpp:
+	* util/rarian-sk-get-cl.cpp:
+	* util/rarian-example.c:
+	* util/rarian-sk-migrate.cpp:
+	Add an error guard to ensure people
+	acknowledge the API-instability of
+	Rarian
+	Move rarian.h to rarian-main.h and
+	add new all-encompassing rarian.h
+	header (follow the way of others)
+	
+2007-11-07  Don Scorgie  <Don@Scorgie.org>
+
+
+	* librarian/rarian-info.c: 
+	Fix silly error with iteration taking wrong
+	argument
+	(bug #12279 part 2 - Matt Keenan)
+	
+	* librarian/rarian-reg-utils.c: 
+	* librarian/rarian-reg-full.c: 
+	Fix non-return of structs from _new functions
+	(bug #12279 part 1 - Matt Keenan)
+	
+== 0.6.0 ==
+
+2007-09-12  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* NEWS:
+	Version 0.6.0
+
+2007-09-11  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/Makefile.am:
+	* librarian/rarian-reg-utils.c: 
+	* librarian/rarian-reg-full.c: 
+	* librarian/rarian-omf.cpp:
+	* librarian/rarian-man.c:
+	* librarian/rarian-language.c:
+	* librarian/rarian-info.c:
+	* librarian/rarian-main.c: 
+	Only export required symbols
+	(bug #12147 and bug #11969 - 
+	 based on patch by Daniel Macks)
+	
+	* util/rarian-sk-get-cl.cpp: 
+	#include <sys/types.h> to fix build on OSX
+	(bug #12359)
+	
+	* librarian/rarian-reg-utils.c: 
+	* librarian/rarian-reg-full.c: 
+	Fix crash when identifier is NULL
+	Fix negative indexes into rrn_strndup
+	(bug #12226 - Hans Petter Jansson)
+	
+	* util/rarian-sk-config.in: 
+	When OMF reading is enabled, return sensible results for
+	OMF dir in config
+	(bug #12212)
+	
+	* librarian/rarian-reg-utils.c: 
+	Fix crash on EOF in .document files
+	(bug #12131 - Hans Petter Jansson)
+	
+	* rarian.pc.in: 
+	Fix building on Solaris due to missing carriage return
+	(bug #12043)
+	
+	* README: 
+	* data/beanstalk.document:
+	* data/beanstalk-climbing.section: 
+	* docs/license.xhtml: 
+	* docs/rar-skcompat.xhtml: 
+	* docs/rar-mdf.xhtml: 
+	* docs/rar-lib.xhtml: 
+	s/you're/your/ in relevant places
+	(bug #12008)
+	
+	* librarian/rarian-omf.h: 
+	* librarian/rarian-omf.cpp: 
+	* librarian/rarian-utils.c:
+	* librarian/rarian-utils.h:
+	* librarian/rarian-language.c:
+	* librarian/rarian-language.c:
+	Fix copyright headers
+	
+	* librarian/rarian-language.c:
+	Add language fallbacks (LANGUAGE to LC_ALL to LANG to C)
+	Explode languages to get correct fallbacks
+	(GNOME bug #474556)
+
+2007-08-23  Don Scorgie  <Don@Scorgie.org>
+
+	* util/rarian-sk-preinstall.cpp: 
+	Fix off-by-one error in preinstall
+	(fixes bug #12052 - Ghee Teo)
+	
+2007-08-13  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* NEWS:
+	Bump version to 0.5.8
+
+2007-08-13  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-info.c: 
+	Missing argument to sprintf added
+	(Fixes bug #11976 and possible #11957 again)
+
+2007-08-12  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* util/rarian-sk-rebuild.in:
+	* util/rarian-sk-config.in:
+	* util/Makefile.am:
+	* util/rarian-sk-update.in:
+	Build fixes for FreeBSD
+	
+	* librarian/rarian-info.c:
+	Reuse filename in check_file
+	Reduces number of malloc by quite a margin
+	Should also (hopefully) fix
+	bug #11957
+
+	* librarian/rarian-info.c:
+	Fix crashing on entried without a filename
+	(bug #11896)
+	
+	* util/rarian-example.c:
+	Uncomment man and info that got done
+	accidently
+
+	* librarian/rarian-man.c:
+	Fix issue with man pages not showing their 
+	section.  Fix path reading from manpath prog
+	to correctly get last path (bug #11901)
+
+	* TODO:
+	Update TODO slightly
+
+	* MAINTAINERS:
+	Add MAINTAINERS file, since someone asked.
+
+	* util/rarian-sk-update.in: 
+	When not reading OMF's directly, make the update
+	script work again.
+
+2007-08-06  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-man.c:
+	* librarian/rarian-main.c:
+	* librarian/rarian-reg-utils.c:
+	* librarian/rarian-reg-full.c:
+	* util/rarian-sk-get-cl.cpp:
+	* util/rarian-sk-migrate.cpp:
+	Build fixes for Solaris and other non-Linux platforms
+	- Based on patch from Damien Carbery (bug #11792)
+	
+
+	* librarian/rarian-main.c: 
+	* librarian/rarian-man.c: 
+	strdup() environment variables to
+	allow freeing correctly
+	- Jan de Groot (bug #11799)
+	(And then fix the resulting segfault)
+	
+	* librarian/rarian-omf.cpp: 
+	Fix categories for omf files
+
+2007-07-31  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac: 
+	* NEWS:
+	Bump to version 0.5.6 to
+	get new stuff out ASAP
+
+2007-07-31  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-main.c: 
+	* librarian/rarian-omf.h:
+	* librarian/rarian-omf.cpp:
+	* librarian/Makefile.am:
+	* configure.ac:
+	* util/rarian-sk-rebuild.in:
+	* util/rarian-sk-update.in:
+	New (default) mode.  Instead of
+	converting omf files to .document files,
+	we read the omf directly and add construct the
+	RrnReg entries internally.  This should stop
+	all installation problems and make it easier for
+	distros to package.
+	Effected script now exit without doing anything.
+	(removed with --disable-omf-read configure option)
+	
+	* util/Makefile.am:
+	Move script cleanup from clean to distclean
+	
+2007-07-30  Don Scorgie  <Don@Scorgie.org>
+
+	* util/Makefile.am: 
+	mkdir in $(DESTDIR) instead of ignoring it
+	
+=== 0.5.4 ===
+2007-07-29  Don Scorgie  <Don@Scorgie.org>
+
+	* NEWS:
+	* configure.ac:
+	Version bump to 0.5.4
+	
+	* README:
+	Remove older stuff implying the release was 0.4.9
+	
+	* util/rarian-sk-update.in: 
+	Make -p specify where the mtimes file should
+	be written
+
+	* librarian/rarian-main.c:
+	* librarian/rarian-language.c:
+	Remove some unneccessary memory allocations
+	(Jens Granseuer)
+
+	* util/rarian-sk-update.in: 
+	* configure.ac:
+	* util/rarian-sk-rebuild.in:
+	* util/rarian-sk-config.in:
+	* util/Makefile.am:
+	Keep the mtimes file in 
+	$localstatedir/lib/rarian to
+	save having hidden files in $prefix/share
+	
+	* configure.ac: 
+	Make specifying --prefix work again
+
+	* util/rarian-sk-update.in: 
+	Fix infinite loop bug on --help
+	
+	* configure.ac:
+	Make executable
+
+	* configure.ac: 
+	When autogen with no arguments,
+	set the bindir etc. properly
+
+	* util/rarian-sk-update.in: 
+	Handle -p option correctly (sk-compat)
+
+	* util/rarian-sk-rebuild.in:
+	Only try grepping .rarian-update-mtimes if
+	it exists
+
+==== 0.5.2 ====
+2007-07-26  Don Scorgie  <Don@Scorgie.org>
+
+	* NEWS: 
+	* configure.ac:
+	Version 0.5.2
+	
+	* docs/license.xhtml: 
+	Add file to describe license for docs
+	and reproduce license for source.
+
+	* docs/index.xhtml:
+	Link to license file as "preamble"
+
+2007-07-23  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-man.h:
+	s/find_name/find_from_name
+	Silly error.
+	
+	* util/Makefile.am: 
+	Fix symlinks for packagers (Daniel Holbach)
+	
+	* util/rarian-sk-install.in: 
+	Make the "update script" work correctly
+	with dash (Daniel Holbach)
+
+2007-07-11  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* Makefile.am:
+	Disable updating scrollkeeper db when
+	distchecking
+
+	* configure.ac: 
+	* docs/Makefile.am:
+	* doc/rarian.document.in:
+	* util/rarian-sk-rebuild.in:
+	* util/rarian-sk-config.in:
+	* util/rarian-sk-update.in:
+	Fix issue with older autoconf and
+	datarootdir (Shaun McCance)
+
+2007-07-04  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	Updated test for malloc.h
+	(issue #8)
+
+	* util/rarian-sk-update.in: 
+	Override the default destination dir
+	when installing omf's to a different
+	prefix (issue #7)
+	
+	* configure.ac: 
+	* docs/Makefile.am:
+	* docs/rarian.document.in:
+	Minor fixes to make documentation install
+	correctly and in the correct locations
+	
+	* docs/rarian.document.in:
+	Write a meta-data file for the documentation
+	
+	* configure.ac: 
+	* Makefile.am:
+	Make documentation installable (I hope) - 1st pass
+
+2007-07-04  Don Scorgie  <Don@Scorgie.org>
+
+	* docs/index.xhtml: 
+	* docs/rar-mdf.xhtml:
+	* docs/rar-lib.xhtml:
+	* docs/rar-skcompat.xhtml:
+	More documentation stuff.  Added
+	big chunk on writing scrollkeeper omf
+	file.  Documentation is now (relatively)
+	complete.  Enough for now anyway.
+
+2007-07-02  Don Scorgie  <Don@Scorgie.org>
+
+	* util/rarian-sk-migrate.cpp: 
+	Fix issue with stupid omf files that stupidly
+	don't stupidly define seriesid.  Make error
+	message a little less cryptic.
+
+2007-06-29  Don Scorgie  <Don@Scorgie.org>
+
+	* docs/rar-lib.xhtml: 
+	Write some documentation on the library, including API reference.
+
+2007-06-28  Don Scorgie  <Don@Scorgie.org>
+
+	* util/Makefile.am:
+	Only try installing / linking sk-extract when
+	ENABLE_EXTRACT is set
+	
+	* configure.ac: 
+	Check for xsltproc instead of complete libxslt
+	(as that's all we use)
+	Fixes issue #6
+	
+	* docs/rar-mdf.xhtml:
+	* docs/rar-skcompat.xhtml: 
+	* docs/index.xhtml: 
+	* docs/rar-lib.xhtml: 
+	* docs/Makefile.am:
+	Add beginnings of documentation.  index and rar-mdf
+	are (badly) written.  Others are empty atm.
+	Not installed yet.
+
+2007-06-22  Don Scorgie  <Don@Scorgie.org>
+
+	* librarian/rarian-man.c: 
+	Mark man as initialised, instead of
+	overflowing it each time.
+	Reduces memory consumption (by ~50Mb)
+	and speeds up repeated accesses by 2^infty
+
+2007-06-20  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac:
+	* librarian/rarian-utils.c:
+	* librarian/rarian-info.c:
+	Only #iclude malloc.h when it's available
+	
+	* util/rarian-sk-get-cl.cpp: 
+	Use rrn_strndup instead of default version
+	Fix an error with the naming of the
+	template file.
+	
+	* util/Makefile.am:
+	update build to work in a chroot (Florian Steinel)
+	 - Resolves issue #2
+
+	* util/Makefile.am:
+	* configure.ac:
+	Make running scrollkeeper-update at install-time
+	an option (Florian Steinel)
+	- Resolves issue #3
+	
+
+=== Version 0.5.0 ===
+
+2007-06-18  Don Scorgie  <Don@Scorgie.org>
+
+	* configure.ac: 
+	* NEWS:
+	* Makefile.am:
+	* data/Makefile.am:
+	Bump version to 0.5.0
+	Several minor fixes to make dist work
+
+	* autogen.sh:
+	Remove dependance on gnome-autogen.sh
+
+	* README:
+	* TODO:
+	Update to new name, clean up slightly
+	
+	* COPYING: 
+	* COPYING.LIB:
+	* COPYING.UTILS:
+	Add appropriate licenses for the different 
+	parts of the package
+
+The following is an SVN log of all changes to date, 
+while it was living in my repo at home.  Future changes 
+will be documented properly.  I hope.
+
+------------------------------------------------------------------------
+r142 | don | 2007-05-28 14:35:19 +0100 (Mon, 28 May 2007) | 3 lines
+
+Add wrapper scripts get-{extended}-content-list
+Add sk-cl.xml to distribution.  Install it.  Use new directory
+
+------------------------------------------------------------------------
+r141 | don | 2007-05-28 14:27:34 +0100 (Mon, 28 May 2007) | 2 lines
+
+Minor correction to make series id work properly
+
+------------------------------------------------------------------------
+r140 | don | 2007-05-28 13:04:05 +0100 (Mon, 28 May 2007) | 3 lines
+
+Add more work on cl stuff.  Now works for different languages etc.
+Slightly more to be done soon
+
+------------------------------------------------------------------------
+r139 | don | 2007-05-28 12:36:05 +0100 (Mon, 28 May 2007) | 2 lines
+
+Add initial attempt at get-cl stuff.  Sort of works
+
+------------------------------------------------------------------------
+r138 | don | 2007-05-25 20:20:26 +0100 (Fri, 25 May 2007) | 2 lines
+
+Add support for omf files in preperation for -cl stuff
+
+------------------------------------------------------------------------
+r137 | don | 2007-05-25 19:38:59 +0100 (Fri, 25 May 2007) | 2 lines
+
+Minor updates to be slightly cleaner
+
+------------------------------------------------------------------------
+r136 | don | 2007-05-25 19:22:38 +0100 (Fri, 25 May 2007) | 2 lines
+
+Add scrollkeeper-extract equivalent (wrapper around xsltproc)
+
+------------------------------------------------------------------------
+r135 | don | 2007-05-24 20:25:05 +0100 (Thu, 24 May 2007) | 2 lines
+
+Add seriesid program
+
+------------------------------------------------------------------------
+r134 | don | 2007-05-24 19:22:06 +0100 (Thu, 24 May 2007) | 2 lines
+
+Minor updates
+
+------------------------------------------------------------------------
+r133 | don | 2007-05-24 19:18:50 +0100 (Thu, 24 May 2007) | 2 lines
+
+Add real replacement for scrollkeeper preinstall
+
+------------------------------------------------------------------------
+r132 | don | 2007-05-23 21:36:38 +0100 (Wed, 23 May 2007) | 5 lines
+
+Add replacement for
+ scrollkeeper-get-index-from-index-from-docpath
+ scrollkeeper-get-toc-from-docpath
+ scrollkeeper-get-toc-from-id
+
+------------------------------------------------------------------------
+r131 | don | 2007-05-23 21:26:18 +0100 (Wed, 23 May 2007) | 2 lines
+
+Add scrollkeeper-config replacement
+
+------------------------------------------------------------------------
+r130 | don | 2007-05-23 20:17:33 +0100 (Wed, 23 May 2007) | 2 lines
+
+Fix rebuild script
+
+------------------------------------------------------------------------
+r129 | don | 2007-05-23 20:03:56 +0100 (Wed, 23 May 2007) | 2 lines
+
+Add attempt at rebuild script.  Needs more work
+
+------------------------------------------------------------------------
+r128 | don | 2007-05-23 19:06:29 +0100 (Wed, 23 May 2007) | 3 lines
+
+Fix compile warnings.  Fix from Daniel Holbach
+Add scrollkeeper-install / scrollkeeper-uninstall replacement (seriously, read the script, see what it does ;) )
+
+------------------------------------------------------------------------
+r127 | don | 2007-05-03 19:47:38 +0100 (Thu, 03 May 2007) | 5 lines
+
+Bump version to 0.4.6pre1
+Add man find_from_uri (empty) function
+Fix info to handle >1 dir file properly
+Fix info to add final entry
+
+------------------------------------------------------------------------
+r126 | don | 2007-04-14 18:04:05 +0100 (Sat, 14 Apr 2007) | 5 lines
+
+Rework how man pages are stored - much quicker now
+(split into different sections refleting yelp)
+Remove get_sections for now
+Install man and info headers
+
+------------------------------------------------------------------------
+r125 | don | 2007-04-14 13:29:21 +0100 (Sat, 14 Apr 2007) | 5 lines
+
+Add shutdown to man pages
+Fix shutdown to others to return to pristine state
+Fix language calls to implicitly call lang_init as required
+
+
+------------------------------------------------------------------------
+r124 | don | 2007-04-14 13:07:36 +0100 (Sat, 14 Apr 2007) | 4 lines
+
+Add (basic) man page support
+Update example program to print man pages
+Add spoon_language_get_langs to return a char** of languages to use
+
+------------------------------------------------------------------------
+r123 | don | 2007-04-02 22:40:17 +0100 (Mon, 02 Apr 2007) | 6 lines
+
+spoon-main.{c,h}: add spoon_find_entry_from_uri helper function
+spoon_reg_utils.c: Fixes to get file:// uri's correct
+spoon-info.{c,h}: Info page parsing.  Yay.
+libspoon/Makefile.am: Add info page files
+spoon-example.c: Add example info parsing
+
+------------------------------------------------------------------------
+r122 | don | 2007-03-25 21:37:29 +0100 (Sun, 25 Mar 2007) | 2 lines
+
+Add spoon_for_each_in_category for ease of implementation in yelp
+
+------------------------------------------------------------------------
+r121 | don | 2007-03-25 19:45:21 +0100 (Sun, 25 Mar 2007) | 3 lines
+
+More fixes to include correct dir
+Install headers
+
+------------------------------------------------------------------------
+r120 | don | 2007-03-25 19:17:40 +0100 (Sun, 25 Mar 2007) | 3 lines
+
+Bump version number for continuity
+Fix some pkg-config stuff
+
+------------------------------------------------------------------------
+r119 | don | 2007-03-24 15:18:30 +0000 (Sat, 24 Mar 2007) | 3 lines
+
+dd pkg-config file,
+update configure.ac and Makefile.am to build and distribute
+
+------------------------------------------------------------------------
+r118 | don | 2006-11-25 15:44:42 +0000 (Sat, 25 Nov 2006) | 2 lines
+
+Bump version to 0.4.  Add a LICENSE section to README
+
+------------------------------------------------------------------------
+r117 | don | 2006-11-25 15:24:11 +0000 (Sat, 25 Nov 2006) | 3 lines
+
+Add docs and a copy of the current help system spec to that dir.
+Update Makefiles to include current documents, where needed
+
+------------------------------------------------------------------------
+r116 | don | 2006-11-25 14:07:19 +0000 (Sat, 25 Nov 2006) | 2 lines
+
+Update README and TODO
+
+------------------------------------------------------------------------
+r115 | don | 2006-11-25 13:30:28 +0000 (Sat, 25 Nov 2006) | 2 lines
+
+Don't crash on unset LANGUAGE
+
+------------------------------------------------------------------------
+r114 | don | 2006-11-24 19:16:39 +0000 (Fri, 24 Nov 2006) | 2 lines
+
+Don't echo unneccessarily.
+
+------------------------------------------------------------------------
+r113 | don | 2006-11-24 19:09:03 +0000 (Fri, 24 Nov 2006) | 2 lines
+
+Don't scan unneccesary locations.  Only scan $XDG_DATA_HOME/help.
+
+------------------------------------------------------------------------
+r112 | don | 2006-11-24 19:04:46 +0000 (Fri, 24 Nov 2006) | 2 lines
+
+Scan $XDG_DATA_HOME first, as per the spec
+
+------------------------------------------------------------------------
+r111 | don | 2006-11-23 19:39:10 +0000 (Thu, 23 Nov 2006) | 5 lines
+
+Add spoon-utils for various utils that may be useful anywhere.
+Add functions to strip leading and trailing space from entries.
+Allows thing like "docpath = <name> " etc.
+(Functions are "borrowed" from glib)
+
+------------------------------------------------------------------------
+r110 | don | 2006-11-23 19:13:29 +0000 (Thu, 23 Nov 2006) | 4 lines
+
+Big ol' update.  Clean up old versions.  Add comments and nice verbose 
+output.
+Add -V option to print version info.
+
+------------------------------------------------------------------------
+r109 | don | 2006-11-23 18:36:51 +0000 (Thu, 23 Nov 2006) | 3 lines
+
+Yet another spoon-update rewrite.  Hopefully completed this time.
+The script is messy.  I'll clean that up any minute now
+
+------------------------------------------------------------------------
+r108 | don | 2006-11-17 19:49:47 +0000 (Fri, 17 Nov 2006) | 3 lines
+
+Update _full stuff to be similar to the reg stuff.
+s/path/uri/ in structs (as it's actually a URI, not a path)
+
+------------------------------------------------------------------------
+r107 | don | 2006-11-17 19:20:25 +0000 (Fri, 17 Nov 2006) | 4 lines
+
+Fix paths to be correct URI's.
+Fix all sections to have good URI's
+Print out the URI's prettily within the example program.
+
+------------------------------------------------------------------------
+r106 | don | 2006-11-17 18:27:52 +0000 (Fri, 17 Nov 2006) | 4 lines
+
+Add priority to Sections to get the right section if defined in multiple 
+places within the path.
+Actually select the correct section
+
+------------------------------------------------------------------------
+r105 | don | 2006-11-17 16:03:01 +0000 (Fri, 17 Nov 2006) | 4 lines
+
+Update update script to find result directory when installed properly
+Move lots of stuff to reflect the correct spec names.
+Update *_full to offer all the options and work correctly.
+
+------------------------------------------------------------------------
+r104 | don | 2006-11-17 12:21:46 +0000 (Fri, 17 Nov 2006) | 4 lines
+
+Update TODO
+Rename all elements of SpoonReg to better names reflecting the spec 
+better
+
+------------------------------------------------------------------------
+r103 | don | 2006-11-17 12:09:08 +0000 (Fri, 17 Nov 2006) | 4 lines
+
+Remove migrate-all script.  It's now handled properly by the update 
+script.
+Few minor updates to stop update script falling over
+
+------------------------------------------------------------------------
+r102 | don | 2006-11-17 11:57:21 +0000 (Fri, 17 Nov 2006) | 2 lines
+
+Big ol' update to help string.  Make various other options work properly
+
+------------------------------------------------------------------------
+r101 | don | 2006-11-17 11:30:13 +0000 (Fri, 17 Nov 2006) | 2 lines
+
+Add proper scrollkeeper compatibility
+
+------------------------------------------------------------------------
+r100 | don | 2006-11-17 00:59:30 +0000 (Fri, 17 Nov 2006) | 2 lines
+
+Add argument parsing to update, allowing it to do different directories
+
+------------------------------------------------------------------------
+r99 | don | 2006-11-16 22:51:14 +0000 (Thu, 16 Nov 2006) | 3 lines
+
+More updates to the update script.  Seems to work okay now for multiple 
+insertions / deletions
+
+------------------------------------------------------------------------
+r98 | don | 2006-11-16 20:45:23 +0000 (Thu, 16 Nov 2006) | 3 lines
+
+Add initial update script.  Make mirgration script dump times to correct 
+file
+
+------------------------------------------------------------------------
+r97 | don | 2006-11-15 20:44:13 +0000 (Wed, 15 Nov 2006) | 3 lines
+
+Add language shutdown function
+Remove extra locale we were carting everywhere
+
+------------------------------------------------------------------------
+r96 | don | 2006-11-15 20:26:06 +0000 (Wed, 15 Nov 2006) | 3 lines
+
+Cleanup old locale stuff that isn't used any more.
+Fix some compiler warnings
+
+------------------------------------------------------------------------
+r95 | don | 2006-11-15 20:06:46 +0000 (Wed, 15 Nov 2006) | 4 lines
+
+Make language stuff work correctly.
+Make lingua dirs get checked first (so they take priority with an 
+directory)
+
+------------------------------------------------------------------------
+r94 | don | 2006-11-15 19:14:55 +0000 (Wed, 15 Nov 2006) | 4 lines
+
+Add spoon-language files for dealing with languages.  They don't work 
+yet, but...
+Adapt spoon-main to call the languages code
+
+------------------------------------------------------------------------
+r93 | don | 2006-11-15 18:14:52 +0000 (Wed, 15 Nov 2006) | 5 lines
+
+Reverse children in documents, so they're really in the correct order.
+Add 'prev' to SpoonSect to accomodate this.
+Only use 1 space instead of tab when printing children in example 
+program
+
+------------------------------------------------------------------------
+r92 | don | 2006-11-15 17:34:28 +0000 (Wed, 15 Nov 2006) | 3 lines
+
+Make sections defined in relation to other sections in .section files 
+work properly (try saying that 3 times fast ;)
+
+------------------------------------------------------------------------
+r91 | don | 2006-11-15 15:45:00 +0000 (Wed, 15 Nov 2006) | 5 lines
+
+Correctly handle "sections of a section defined in the document file".
+Print all children title (even children of children of children) in a 
+nice format in spoon-example
+Add section-of-a-section example to beanstalk.document
+
+------------------------------------------------------------------------
+r90 | don | 2006-11-15 14:46:03 +0000 (Wed, 15 Nov 2006) | 3 lines
+
+Handle sections better.  Add all available sections to the reg.
+In example program, print out section names
+
+------------------------------------------------------------------------
+r89 | don | 2006-11-15 14:39:54 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+More minor updates
+
+------------------------------------------------------------------------
+r88 | don | 2006-11-15 14:34:59 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+Minor typo
+
+------------------------------------------------------------------------
+r87 | don | 2006-11-15 13:43:55 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+Update TODO slightly
+
+------------------------------------------------------------------------
+r86 | don | 2006-11-15 13:43:46 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+Add section document to SVN for testing
+
+------------------------------------------------------------------------
+r85 | don | 2006-11-15 13:37:48 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+Add a couple of sections to Beanstalk manual
+
+------------------------------------------------------------------------
+r84 | don | 2006-11-15 13:32:26 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+Move example document to more sane name
+
+------------------------------------------------------------------------
+r83 | don | 2006-11-15 13:32:07 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+Update Example file to new format
+
+------------------------------------------------------------------------
+r82 | don | 2006-11-15 00:14:45 +0000 (Wed, 15 Nov 2006) | 2 lines
+
+Add TODO list
+
+------------------------------------------------------------------------
+r81 | don | 2006-11-15 00:06:31 +0000 (Wed, 15 Nov 2006) | 4 lines
+
+Replace files with own-language versions if found later in the path (and 
+previous versions are secondary lang)
+If identifier isn't found, default to org.other.<basename>
+
+------------------------------------------------------------------------
+r80 | don | 2006-11-14 21:56:34 +0000 (Tue, 14 Nov 2006) | 2 lines
+
+Add support for reg->lang as it is actually needed.
+
+------------------------------------------------------------------------
+r79 | don | 2006-11-14 21:35:34 +0000 (Tue, 14 Nov 2006) | 3 lines
+
+Add lots more code to deal with sections.  Though, it appears mostly to 
+segfault on running :(  Don't have any real sections to test on yet...
+
+------------------------------------------------------------------------
+r78 | don | 2006-11-14 20:27:08 +0000 (Tue, 14 Nov 2006) | 3 lines
+
+Add *Highly* experimental code to use sections.  Not that it works yet, 
+of course ;)
+
+------------------------------------------------------------------------
+r77 | don | 2006-11-14 20:05:07 +0000 (Tue, 14 Nov 2006) | 3 lines
+
+Use [Document] section header
+Use .document suffix on generated files
+
+------------------------------------------------------------------------
+r76 | don | 2006-11-14 20:01:38 +0000 (Tue, 14 Nov 2006) | 7 lines
+
+Add support for multiple categories.
+Add lots extra entries into SpoonReg struct
+Make spoon_reg_new public
+Fix several (internal) APIs
+Make migration script use the _new public api instead of
+initing everyhting itself.
+
+------------------------------------------------------------------------
+r75 | don | 2006-11-14 18:40:09 +0000 (Tue, 14 Nov 2006) | 3 lines
+
+Update spoon-reg-full to have all available fields.
+Update migration script to create valid files according to the spec.
+
+------------------------------------------------------------------------
+r74 | don | 2006-11-14 18:04:25 +0000 (Tue, 14 Nov 2006) | 4 lines
+
+Handle lines > 1024 chars long
+Fix some memory leaks (now leak free according to valgrind)
+ - before we leaked ~ 4 Mb
+
+------------------------------------------------------------------------
+r73 | don | 2006-11-14 15:11:18 +0000 (Tue, 14 Nov 2006) | 5 lines
+
+Use XDG_DATA_DIRS instead of silly config file.  Use $prefix/help 
+instead of $prefix/spoon
+Make spoon_init implicit in calls to api.  Remove spoon_init from public 
+api.
+
+------------------------------------------------------------------------
+r72 | don | 2006-09-06 14:29:33 +0100 (Wed, 06 Sep 2006) | 3 lines
+
+(Can't really remember).
+Updated README somewhat for new release.  ???Unknown other 2
+
+------------------------------------------------------------------------
+r71 | don | 2006-09-05 20:25:52 +0100 (Tue, 05 Sep 2006) | 2 lines
+
+Bump Version Number
+
+------------------------------------------------------------------------
+r70 | don | 2006-09-05 20:24:20 +0100 (Tue, 05 Sep 2006) | 3 lines
+
+If the series is undefined, use the current time as an indicator
+Handle dups by using the newer doc
+
+------------------------------------------------------------------------
+r69 | don | 2006-09-05 20:10:31 +0100 (Tue, 05 Sep 2006) | 2 lines
+
+Slight update to help strings to actually reflect reality
+
+------------------------------------------------------------------------
+r68 | don | 2006-09-02 18:56:48 +0100 (Sat, 02 Sep 2006) | 4 lines
+
+More installation work.
+Stupid config file now in place.
+lib scans config file and reads each dir in turn
+
+------------------------------------------------------------------------
+r67 | don | 2006-09-01 20:55:50 +0100 (Fri, 01 Sep 2006) | 3 lines
+
+First complete pass at installation.  Lib / utils can be installed and 
+run from installed location
+
+------------------------------------------------------------------------
+r66 | don | 2006-09-01 20:39:47 +0100 (Fri, 01 Sep 2006) | 2 lines
+
+Some minor cleanups
+
+------------------------------------------------------------------------
+r65 | don | 2006-09-01 20:37:21 +0100 (Fri, 01 Sep 2006) | 2 lines
+
+Remove obsolete process_dir and replace with new versions
+
+------------------------------------------------------------------------
+r64 | don | 2006-09-01 20:36:20 +0100 (Fri, 01 Sep 2006) | 2 lines
+
+Much work on getting installed option working
+
+------------------------------------------------------------------------
+r63 | don | 2006-08-12 20:09:51 +0100 (Sat, 12 Aug 2006) | 7 lines
+
+Bump version to 0.2
+Clean up some dead code
+Remove -full (files and functions) from library 
+Link -full directly to migrate
+Update bash script slightly (?)
+Update README to reflect release
+
+------------------------------------------------------------------------
+r62 | don | 2006-08-12 19:16:21 +0100 (Sat, 12 Aug 2006) | 2 lines
+
+Fix an annoying seg fault.  memory size is a bitch
+
+------------------------------------------------------------------------
+r61 | don | 2006-08-12 18:01:12 +0100 (Sat, 12 Aug 2006) | 12 lines
+
+Wow.  Lots of changes I've forgotten about :(
+* Add type to Reg and RegFull
+* First pass at a brand new migration script to save from loading all 
+the list
+ - Takes in a path and a base filename
+ - From that, the directory is scanned for all files that match the 
+pattern
+ - The Full struct is then filled with each file
+Currently doesn't work 100%, but its not too bad just now
+Removes all the hacky-patch type stuff, which is all commented out for 
+now
+
+------------------------------------------------------------------------
+r60 | don | 2006-08-12 13:55:05 +0100 (Sat, 12 Aug 2006) | 3 lines
+
+Check the uri and title of docs when created.  If either are NULL, don't 
+return the document
+
+------------------------------------------------------------------------
+r59 | don | 2006-08-12 13:49:48 +0100 (Sat, 12 Aug 2006) | 2 lines
+
+Fix crashing on languages != C.  Use strcmp instead of strstr (d'oh)
+
+------------------------------------------------------------------------
+r58 | don | 2006-08-12 13:30:12 +0100 (Sat, 12 Aug 2006) | 2 lines
+
+More updates to pass distcheck
+
+------------------------------------------------------------------------
+r57 | don | 2006-08-12 13:16:51 +0100 (Sat, 12 Aug 2006) | 2 lines
+
+Move script from .sh to .in to make building and installing cooler
+
+------------------------------------------------------------------------
+r56 | don | 2006-08-12 13:07:35 +0100 (Sat, 12 Aug 2006) | 3 lines
+
+Change output filename better reflect the originating fileanme, sans 
+locale
+
+------------------------------------------------------------------------
+r55 | don | 2006-08-12 12:02:44 +0100 (Sat, 12 Aug 2006) | 3 lines
+
+More fixes for migration.  Correctly translate C omfs when no series is 
+present
+
+------------------------------------------------------------------------
+r54 | don | 2006-08-12 11:02:10 +0100 (Sat, 12 Aug 2006) | 2 lines
+
+Don't add language entries if they already exist in the scroll file
+
+------------------------------------------------------------------------
+r53 | don | 2006-08-11 21:21:13 +0100 (Fri, 11 Aug 2006) | 4 lines
+
+Add hacky (and terrible) function to find evil non-series-id docs and 
+add them to the appropriate spoon scroll
+Make the for_each functions stop on receiving FALSE
+
+------------------------------------------------------------------------
+r52 | don | 2006-08-11 20:48:00 +0100 (Fri, 11 Aug 2006) | 3 lines
+
+D'oh! Don't dump the uri for all fields.  Actually put in the title and 
+desc.
+
+------------------------------------------------------------------------
+r51 | don | 2006-08-11 20:39:36 +0100 (Fri, 11 Aug 2006) | 3 lines
+
+First pass at attempting to mod the shell script into shape.  Painful 
+isn't the word for now
+
+------------------------------------------------------------------------
+r50 | don | 2006-08-11 20:30:20 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+Fix comment at top of extended keyfile dump
+
+------------------------------------------------------------------------
+r49 | don | 2006-08-11 20:06:17 +0100 (Fri, 11 Aug 2006) | 5 lines
+
+Add global function to reg-full to add new fields
+Make existsing construction code in RegFull use this function
+Add extra stuff to sk-migrate to cope with finding existing series 
+(Untested for now)
+
+------------------------------------------------------------------------
+r48 | don | 2006-08-11 19:46:55 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+If lang is defined and != C, add lang modifier to the new spoon file
+
+------------------------------------------------------------------------
+r47 | don | 2006-08-11 19:43:39 +0100 (Fri, 11 Aug 2006) | 3 lines
+
+* Fill in the find_series type logic
+* Add checks to sk-migrate - it almost works a bit now ;)
+
+------------------------------------------------------------------------
+r46 | don | 2006-08-11 19:29:13 +0100 (Fri, 11 Aug 2006) | 4 lines
+
+* Migrate all warnings and errors to stderr
+* Update lots of sk-migrate prog to find sk series (doesn't work just 
+yet)
+
+------------------------------------------------------------------------
+r45 | don | 2006-08-11 18:54:36 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+Make locale matching work properly
+
+------------------------------------------------------------------------
+r44 | don | 2006-08-11 18:50:33 +0100 (Fri, 11 Aug 2006) | 5 lines
+
+Loads more work on new format:
+* Handle different descriptions when not in Full mode
+* Add 2 code paths for spoon-example (1 commented out)
+* Alter API to pass locale to (pretty much) every function ;)
+
+------------------------------------------------------------------------
+r43 | don | 2006-08-11 18:12:31 +0100 (Fri, 11 Aug 2006) | 3 lines
+
+Iterate through all titles in the for-each function.  Remove the 
+leading '[' form lang
+
+------------------------------------------------------------------------
+r42 | don | 2006-08-11 17:52:56 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+Make spoon-example work properly with the new Full stuff
+
+------------------------------------------------------------------------
+r41 | don | 2006-08-11 17:36:49 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+More Full updates.  Add mirror functions for each function in spoon-main
+
+------------------------------------------------------------------------
+r40 | don | 2006-08-11 17:25:25 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+More regFull work
+
+------------------------------------------------------------------------
+r39 | don | 2006-08-11 17:16:44 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+Add new reg-full files and update Makefile to include them
+
+------------------------------------------------------------------------
+r38 | don | 2006-08-11 16:21:27 +0100 (Fri, 11 Aug 2006) | 2 lines
+
+Add translations in anticipation of future work
+
+------------------------------------------------------------------------
+r37 | don | 2006-07-30 11:20:11 +0100 (Sun, 30 Jul 2006) | 2 lines
+
+Oops.  Add sk-migrate-all to generated tarball
+
+------------------------------------------------------------------------
+r36 | don | 2006-07-30 11:17:19 +0100 (Sun, 30 Jul 2006) | 2 lines
+
+Update README to reflect change
+
+------------------------------------------------------------------------
+r35 | don | 2006-07-30 11:16:46 +0100 (Sun, 30 Jul 2006) | 2 lines
+
+Convert spoon-sk-migrate-all.sh to spoon-sk=migrate-all during build
+
+------------------------------------------------------------------------
+r34 | don | 2006-07-29 22:04:34 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Added lengthy README to talk about the package.
+
+------------------------------------------------------------------------
+r33 | don | 2006-07-29 19:21:05 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Add 3 files needed to autogen properly
+
+------------------------------------------------------------------------
+r32 | don | 2006-07-29 19:18:41 +0100 (Sat, 29 Jul 2006) | 4 lines
+
+Fix some little bits n pieces.
+Don't die when the C fallback can't be found
+Increase line length when reading to stop overflow
+
+------------------------------------------------------------------------
+r31 | don | 2006-07-29 19:09:00 +0100 (Sat, 29 Jul 2006) | 3 lines
+
+Fix crashes in sk-migration when things arn't defined properly.  Make 
+migration script work much better
+
+------------------------------------------------------------------------
+r30 | don | 2006-07-29 17:58:04 +0100 (Sat, 29 Jul 2006) | 3 lines
+
+Add migrate-all (Hello World shell script)
+Add to makefile as script
+
+------------------------------------------------------------------------
+r29 | don | 2006-07-29 16:53:21 +0100 (Sat, 29 Jul 2006) | 3 lines
+
+Dump the resulting keyfile to stdout.  Allows redirection by the script 
+(that will be created now)
+
+------------------------------------------------------------------------
+r28 | don | 2006-07-29 16:47:48 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Clean up file somewhat
+
+------------------------------------------------------------------------
+r27 | don | 2006-07-29 16:43:50 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Drag name, URI and description out of file
+
+------------------------------------------------------------------------
+r26 | don | 2006-07-29 16:27:37 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Dump elements and attributes to stdout.  Start work on parsing
+
+------------------------------------------------------------------------
+r25 | don | 2006-07-29 15:41:18 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Move sk-migrate to c++.  Makes compilation work
+
+------------------------------------------------------------------------
+r24 | don | 2006-07-29 15:40:54 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Update spoon-sk-migrate to pull in tinyxml
+
+------------------------------------------------------------------------
+r23 | don | 2006-07-29 15:30:15 +0100 (Sat, 29 Jul 2006) | 2 lines
+
+Add initial work on sk-migrate
+
+------------------------------------------------------------------------
+r22 | don | 2006-07-28 19:48:08 +0100 (Fri, 28 Jul 2006) | 4 lines
+
+Add lots of new files for the sk-migrate program.  Including tinyXML.  
+Change configure script to check for CXX and Makefile to actually build 
+the (Hello World) program
+
+------------------------------------------------------------------------
+r21 | don | 2006-07-28 19:04:16 +0100 (Fri, 28 Jul 2006) | 2 lines
+
+Remove stupig printf's.  Fix stupid crasher.
+
+------------------------------------------------------------------------
+r20 | don | 2006-07-28 18:47:22 +0100 (Fri, 28 Jul 2006) | 5 lines
+
+Switch to using (more sane) strdup.  Fixes strange character issues 
+(mostly)
+
+Add spoon_shutdown to free all internal lists etc.
+
+------------------------------------------------------------------------
+r19 | don | 2006-07-28 17:49:41 +0100 (Fri, 28 Jul 2006) | 2 lines
+
+Make list work properly.  Not just the first and last elements
+
+------------------------------------------------------------------------
+r18 | don | 2006-07-28 17:41:02 +0100 (Fri, 28 Jul 2006) | 5 lines
+
+Lots of updates.  Makes it able to register docs properly.  Makes 
+for_each work.
+
+Lots of problems with non-NULL termination.
+
+------------------------------------------------------------------------
+r17 | don | 2006-07-28 15:43:19 +0100 (Fri, 28 Jul 2006) | 2 lines
+
+Simple-parse the example file
+
+------------------------------------------------------------------------
+r16 | don | 2006-07-28 14:50:17 +0100 (Fri, 28 Jul 2006) | 2 lines
+
+Add spoon-reg-utils.  Update other files to work correctly
+
+------------------------------------------------------------------------
+r15 | don | 2006-07-28 14:30:26 +0100 (Fri, 28 Jul 2006) | 3 lines
+
+Kill the stupid warnings created by autoconf.  Use autoscan to generate 
+very basic configure.ac
+
+------------------------------------------------------------------------
+r14 | don | 2006-07-27 22:00:55 +0100 (Thu, 27 Jul 2006) | 3 lines
+
+Make everything build!
+Link spoon-example to libspoon
+
+------------------------------------------------------------------------
+r13 | don | 2006-07-27 21:51:03 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Update Makefile to link against newly created library
+
+------------------------------------------------------------------------
+r12 | don | 2006-07-27 21:49:09 +0100 (Thu, 27 Jul 2006) | 3 lines
+
+Add in start of library - stubs for init and for_each
+Update Makefile to build it
+
+------------------------------------------------------------------------
+r11 | don | 2006-07-27 21:43:05 +0100 (Thu, 27 Jul 2006) | 3 lines
+
+Initial "Hello World" version of spoon-example.
+Update Makefile to build it
+
+------------------------------------------------------------------------
+r10 | don | 2006-07-27 21:39:42 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Add some (preliminary) content to the example file
+
+------------------------------------------------------------------------
+r9 | don | 2006-07-27 20:57:03 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Add datadir with (empty) example.spoon file
+
+------------------------------------------------------------------------
+r8 | don | 2006-07-27 20:55:09 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Update configure just enough to be able to build the Makefiles
+
+------------------------------------------------------------------------
+r7 | don | 2006-07-27 20:47:53 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Update autogen to actually run
+
+------------------------------------------------------------------------
+r6 | don | 2006-07-27 20:47:15 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Add empty README
+
+------------------------------------------------------------------------
+r5 | don | 2006-07-27 20:41:14 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Add more Makefiles.  Delete Backups
+
+------------------------------------------------------------------------
+r4 | don | 2006-07-27 20:40:35 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Add various files to top directory
+
+------------------------------------------------------------------------
+r3 | don | 2006-07-27 20:24:30 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Add 2 empty directories for libspoon and utils
+
+------------------------------------------------------------------------
+r2 | don | 2006-07-27 20:22:47 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Remove strange file
+
+------------------------------------------------------------------------
+r1 | don | 2006-07-27 20:17:01 +0100 (Thu, 27 Jul 2006) | 2 lines
+
+Initial Import of empty structure
+
+------------------------------------------------------------------------

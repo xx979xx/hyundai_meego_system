@@ -1,0 +1,31 @@
+MExtensionHandleStyle {
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    /* The image to be drawn on top of the extension when it is in a broken state */
+    broken-image: "icon-m-common-error";
+    /* Offset of the broken image relative to the top right corner of the applet */
+    broken-image-offset: -8 4;
+    /* The radius of the blur to be applied in a broken state */
+    broken-blur-radius: 6;
+    /* The opacity when in a broken state */
+    broken-opacity: 0.5;
+}
+MExtensionHandleStyle.Landscape {
+    /* The size used if the remote process requests a larger size */
+    forced-maximum-size: 816 816;
+    /* The size used if the remote process requests a smaller size */
+    forced-minimum-size: 88 88;
+}
+MExtensionHandleStyle.Portrait {
+    /* The size used if the remote process requests a larger size */
+    forced-maximum-size: 432 840;
+    /* The size used if the remote process requests a smaller size */
+    forced-minimum-size: 88 88;
+}

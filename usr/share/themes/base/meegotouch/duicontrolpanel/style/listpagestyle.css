@@ -1,0 +1,67 @@
+#listPage {
+    	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+
+#listPage.Landscape
+{
+    minimum-size: 100% 100%;
+    maximum-size: 100% 100%;
+    preferred-size: 100% 100%;
+}
+
+#listPage.Portrait
+{
+    minimum-size: 100% 100%;
+    maximum-size: 100% 100%;
+    preferred-size: 100% 100%;
+}
+
+
+DuiAbstractLayoutPolicyStyle#verticalPolicy {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    preferred-size: 100% 100%;
+}
+
+#buttonRow {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1mm;
+    padding-bottom: 1mm;
+    background-image: "device-settings-header-bg" 0 0 3 6;
+    background-opacity: 1.0;
+}
+
+#buttonRow.Landscape {
+    preferred-size: 100% 74;
+    minimum-size: 100% 74;
+    maximum-size: 100% 74;
+}
+
+#buttonRow.Portrait {
+    preferred-size: 100% 74;
+    minimum-size: 100% 74;
+    maximum-size: 100% 74;
+}
+
+#list {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}

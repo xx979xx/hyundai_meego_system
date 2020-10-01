@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# chkconfig: 2345 99 01
+# description: generate sreadahead pack file if needed
+
+case $1 in
+start)
+	# don't generate a file if one is already present
+	if [ -f /etc/readahead.packed ]; then
+		exit 0
+	fi
+
+	# delay running this code for a few seconds to let the desktop
+	# start up properly
+	(
+		sleep 15
+		cd /tmp
+		/usr/bin/ionice -c 3 find / -xdev -type f | grep -v -e "/usr/src" -e "/usr/include" -e "/tmp" -e "/var/log" > readahead.packed.in
+		grep -qw /home /proc/mounts && ionice -c 3 find /home -xdev -type f >> readahead.packed.in
+		/bin/nice sreadahead-pack readahead.packed.in
+		mv readahead.packed /etc/readahead.packed
+		rm -f readahead.packed.in
+	) &
+	;;
+esac
+

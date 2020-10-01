@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec /usr/bin/invoker --type=m $0.launch "$@" 
+

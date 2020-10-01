@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-camera-pause-indication-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<g id="icon-m-camera-pause-indication">
+	<rect style="fill:none;" width="32" height="32"/>
+	<path style="fill:#FFFFFF;" d="M16,3.7c6.783,0,12.3,5.518,12.3,12.3c0,6.781-5.517,12.3-12.3,12.3C9.218,28.3,3.7,22.781,3.7,16
+		C3.7,9.218,9.218,3.7,16,3.7 M16,0.5C7.454,0.5,0.5,7.453,0.5,16S7.454,31.5,16,31.5c8.548,0,15.5-6.953,15.5-15.5
+		S24.548,0.5,16,0.5L16,0.5z"/>
+	<g>
+		<path style="fill:#FFFFFF;" d="M14.601,21c0,1.1-0.9,2-2,2h-1.25c-1.1,0-2-0.9-2-2V11c0-1.1,0.9-2,2-2h1.25c1.1,0,2,0.9,2,2V21z"
+			/>
+	</g>
+	<g>
+		<path style="fill:#FFFFFF;" d="M22.65,21c0,1.1-0.9,2-2,2H19.4c-1.1,0-2-0.9-2-2V11c0-1.1,0.9-2,2-2h1.25c1.1,0,2,0.9,2,2V21z"/>
+	</g>
+</g>
+</svg>

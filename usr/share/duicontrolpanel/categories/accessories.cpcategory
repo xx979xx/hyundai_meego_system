@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name=Accessories
+Name-logical-id=qtn_sett_main_accessories
+
+Value="USB, TV-out, Tele coil"
+Value-logical-id=qtn_sett_main_accessories_label2
+
+Icon=icon-m-settings-accessories
+
+Aliases=
+Translation-catalogs=
+
+Order=100
+

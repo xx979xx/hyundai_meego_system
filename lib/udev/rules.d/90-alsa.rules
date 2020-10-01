@@ -1,0 +1,4 @@
+ACTION=="add", SUBSYSTEM=="sound", KERNEL=="controlC*", \
+  RUN+="/sbin/alsactl -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf --initfile=/lib/alsa/init/00main restore /dev/$name"
+ACTION=="remove", SUBSYSTEM=="sound", KERNEL=="controlC*", \
+  RUN+="/sbin/alsactl -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf store /dev/$name"

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<gconf>
+	<dir name="schemas">
+		<dir name="apps">
+			<dir name="meego-app-email">
+				<entry name="confirmdeletemail" mtime="1441167189" type="schema" stype="bool" owner="meego-app-email">
+					<local_schema locale="C" short_desc="">
+						<default type="bool" value="true"/>
+					</local_schema>
+				</entry>
+				<entry name="newmailnotifications" mtime="1441167189" type="schema" stype="bool" owner="meego-app-email">
+					<local_schema locale="C" short_desc="">
+						<default type="bool" value="true"/>
+					</local_schema>
+				</entry>
+				<entry name="signature" mtime="1441167189" type="schema" stype="string" owner="meego-app-email">
+					<local_schema locale="C" short_desc="">
+						<default type="string">
+							<stringvalue></stringvalue>
+						</default>
+					</local_schema>
+				</entry>
+				<entry name="updateinterval" mtime="1441167189" type="schema" stype="int" owner="meego-app-email">
+					<local_schema locale="C" short_desc="">
+						<default type="int" value="0"/>
+					</local_schema>
+				</entry>
+			</dir>
+		</dir>
+	</dir>
+	<dir name="apps">
+		<dir name="meego-app-email">
+			<entry name="confirmdeletemail" mtime="1441167189" schema="/schemas/apps/meego-app-email/confirmdeletemail"/>
+			<entry name="newmailnotifications" mtime="1441167189" schema="/schemas/apps/meego-app-email/newmailnotifications"/>
+			<entry name="signature" mtime="1441167189" schema="/schemas/apps/meego-app-email/signature"/>
+			<entry name="updateinterval" mtime="1441167189" schema="/schemas/apps/meego-app-email/updateinterval"/>
+		</dir>
+	</dir>
+	<dir name="desktop">
+		<dir name="meego">
+			<dir name="background">
+				<dir name="portrait">
+					<entry name="picture_filename" mtime="1441167182" type="string">
+						<stringvalue>/usr/share/themes/meego/meegotouch/images/MeeGo-People-portrait.png</stringvalue>
+					</entry>
+				</dir>
+				<dir name="landscape">
+					<entry name="picture_filename" mtime="1441167182" type="string">
+						<stringvalue>/usr/share/themes/meego/meegotouch/images/MeeGo-People-landscape.png</stringvalue>
+					</entry>
+				</dir>
+			</dir>
+		</dir>
+	</dir>
+</gconf>

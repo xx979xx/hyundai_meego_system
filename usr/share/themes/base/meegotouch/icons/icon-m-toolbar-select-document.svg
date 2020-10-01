@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-toolbar-select-document-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<g id="icon-m-toolbar-select-document">
+	<rect style="fill:none;" width="32" height="32"/>
+	<polygon style="fill:#FFFFFF;" points="13.897,0.144 13.897,8.947 22.43,8.947 22.43,8.677 	"/>
+	<path style="fill:#FFFFFF;" d="M14.887,13.335l7.542,2.656v-4.967h-8.74c-1.029,0-1.869-0.839-1.869-1.87V0H0.832
+		C0.375,0,0,0.374,0,0.832V24.92c0,0.458,0.375,0.83,0.832,0.83h17.061L14.887,13.335z M10.132,12.876H2.596v-3h7.536V12.876z
+		 M10.132,7.059H2.596v-3h7.536V7.059z"/>
+	<path style="fill:#FFFFFF;" d="M29.408,32L24,26.032l-2.168,3.24L19.104,18l10.924,3.847l-3.435,1.837L32,29.653L29.408,32
+		L29.408,32z"/>
+</g>
+</svg>

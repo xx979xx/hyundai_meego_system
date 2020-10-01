@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0">
+
+  <!-- Warning: this schema is partially inconsistent with the XML format used by the vformat
+       converter. It will be updated soon, but in the meantime if you depend on the details of the
+       format, please also check the converter source (and report any bugs or inconsistencies you spot). -->
+
+  <xsd:element name="contact">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="Address"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="AddressLabel" type="AddressLabel"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Anniversary" type="DateContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Assistant" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Birthday" type="DateContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="BlogUrl" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="CalendarUrl" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Categories" type="Categories"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Class" type="StringContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="EMail" type="EMail"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="FbUrl" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="FileAs" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="FormattedName" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="FreeBusyUrl" type="StringContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="GroupwiseDirectory" type="GroupwiseDirectory"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IM-AIM" type="IM"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IM-GaduGadu" type="IM"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IM-ICQ" type="IM"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IM-Jabber" type="IM"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IM-MSN" type="IM"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IM-Yahoo" type="IM"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IM-Yabber" type="IM"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="IRC" type="StringContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="KDE-Extension" type="Extension"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Key" type="Key"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Location" type="Location"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Logo" type="Logo"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Manager" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Name" type="Name"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Nickname" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Note" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Organization" type="Organization"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Photo" type="Photo"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="PhotoUrl" type="StringContent"/>
+		<xsd:element maxOccurs="1" minOccurs="0" name="Profession" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Revision" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Role" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="SMS" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Sound" type="Sound"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Spouse" type="StringContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Telephone" type="Telephone"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Title" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Uid" type="StringContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Url" type="StringContent"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="UserDefined" type="UserDefined"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="Version" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="VideoUrl" type="StringContent"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="WantsHtml" type="StringContent"/>
+      </xsd:sequence>
+      <xsd:attribute name="version" type="xsd:integer"/>
+    </xsd:complexType>
+  </xsd:element>
+
+    <xsd:complexType name="StringContent">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="DateContent">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+
+  <xsd:simpleType name="Preferred">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="true"/>
+      <xsd:enumeration value="false"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="AddressLocation">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Home"/>
+      <xsd:enumeration value="Work"/>
+      <xsd:enumeration value="Domestic"/>
+      <xsd:enumeration value="International"/>
+      <xsd:enumeration value="Postal"/>
+      <xsd:enumeration value="Parcel"/>
+      <xsd:enumeration value="Other"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+    <xsd:complexType name="Address">
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="PostOfficeBox" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="ExtendedAddress" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Street" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Locality" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Region" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="PostalCode" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Country" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="Location" type="AddressLocation"/>
+      <xsd:attribute name="Pref" type="Preferred"/>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="AddressLabel">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="Location" type="AddressLocation"/>
+      <xsd:attribute name="Preferred" type="Preferred"/>
+    </xsd:complexType>
+
+	<xsd:complexType name="Categories">
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Category" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+
+
+  <!--
+  <xsd:simpleType name="EMailType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Internet"/>
+      <xsd:enumeration value="IbmMail"/>
+      <xsd:enumeration value="Aol"/>
+      <xsd:enumeration value="AppleLink"/>
+      <xsd:enumeration value="AttMail"/>
+      <xsd:enumeration value="Cis"/>
+      <xsd:enumeration value="eWorld"/>
+      <xsd:enumeration value="MciMail"/>
+      <xsd:enumeration value="Powershare"/>
+      <xsd:enumeration value="Prodigy"/>
+      <xsd:enumeration value="Tlx"/>
+      <xsd:enumeration value="X400"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  -->
+
+  <xsd:simpleType name="EMailLocation">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Home"/>
+      <xsd:enumeration value="Work"/>
+      <xsd:enumeration value="Other"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+
+    <xsd:complexType name="EMail">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="Type" type="xsd:string"/>
+      <xsd:attribute name="Location" type="EMailLocation"/>
+      <xsd:attribute name="UI-Slot" type="xsd:string"/>
+      <xsd:attribute name="Preferred" type="Preferred"/>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="Name">
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="LastName" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="FirstName" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Additional" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Prefix" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Suffix" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="Organization">
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="Name" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="Department" type="xsd:string"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="Unit" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+
+
+  <xsd:simpleType name="TelephoneType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Voice"/>
+      <xsd:enumeration value="Cellular"/>
+      <xsd:enumeration value="Fax"/>
+      <xsd:enumeration value="Message"/>
+      <xsd:enumeration value="Pager"/>
+      <xsd:enumeration value="Modem"/>
+      <xsd:enumeration value="Isdn"/>
+      <xsd:enumeration value="Assistant"/>
+      <xsd:enumeration value="Callback"/>
+      <xsd:enumeration value="Company"/>
+      <xsd:enumeration value="Car"/>
+      <xsd:enumeration value="Radio"/>
+      <xsd:enumeration value="Telex"/>
+      <xsd:enumeration value="TtyYtdd"/>
+      <xsd:enumeration value="Bbs"/>
+      <xsd:enumeration value="Video"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="TelephoneLocation">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Home"/>
+      <xsd:enumeration value="Work"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+    <xsd:complexType name="Telephone">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="Type" type="TelephoneType"/>
+     <xsd:attribute name="UI-Slot" type="xsd:integer"/>
+     <xsd:attribute name="Location" type="TelephoneLocation"/>
+     <xsd:attribute name="Preferred" type="Preferred"/>
+    </xsd:complexType>
+
+
+  <xsd:simpleType name="KeyType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="X509"/>
+      <xsd:enumeration value="Pgp"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+    <xsd:complexType name="Key">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="Type" type="KeyType"/>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="Location">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Latitude" type="xsd:string"/>
+        <xsd:element minOccurs="1" name="Longitude" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+
+  <xsd:simpleType name="Messaging">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Home"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+    <xsd:complexType name="IM">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="Location" type="Messaging"/>
+     <xsd:attribute name="UI-Slot" type="xsd:integer"/>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="GroupwiseDirectory">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="Location" type="AddressLocation"/>
+     <xsd:attribute name="UI-Slot" type="xsd:integer"/>
+    </xsd:complexType>
+
+
+  <xsd:simpleType name="Bool">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="True"/>
+      <xsd:enumeration value="False"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+    <xsd:complexType name="WantsHTML">
+     <xsd:attribute name="Type" type="Bool"/>
+    </xsd:complexType>
+
+
+  <xsd:simpleType name="ImageFormat">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Bmp"/>
+      <xsd:enumeration value="Gif"/>
+      <xsd:enumeration value="Cgm"/>
+      <xsd:enumeration value="Wmf"/>
+      <xsd:enumeration value="Met"/>
+      <xsd:enumeration value="Pmb"/>
+      <xsd:enumeration value="Dib"/>
+      <xsd:enumeration value="Pict"/>
+      <xsd:enumeration value="Tiff"/>
+      <xsd:enumeration value="Ps"/>
+      <xsd:enumeration value="Pdf"/>
+      <xsd:enumeration value="Jpeg"/>
+      <xsd:enumeration value="Mpeg"/>
+      <xsd:enumeration value="Mpeg2"/>
+      <xsd:enumeration value="Avi"/>
+      <xsd:enumeration value="Qtime"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ImageEncode">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="b"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+<!-- TODO: RFC2426 vCard Commonly Used Parameter Definition - simpleType for img-inline-value -->
+  <xsd:simpleType name="ImageValue">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="URI"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+    <xsd:complexType name="Logo">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="Type" type="ImageFormat"/>
+     <xsd:attribute name="Encoding" type="ImageEncode"/>
+     <xsd:attribute name="Value" type="ImageValue"/>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="Photo">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="Type" type="ImageFormat"/>
+     <xsd:attribute name="Encoding" type="ImageEncode"/>
+     <xsd:attribute name="Value" type="ImageValue"/>
+    </xsd:complexType>
+
+
+  <xsd:simpleType name="SoundFormat">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Wave"/>
+      <xsd:enumeration value="Pcm"/>
+      <xsd:enumeration value="Aiff"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+    <xsd:complexType name="Sound">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="Type" type="SoundFormat"/>
+     <!-- TODO: RFC2446 - vCard Type Definition - Create xsd Types for snd-inline-param (e.g. Value, ...) -->
+     <xsd:attribute name="Value" type="xsd:string"/>
+    </xsd:complexType>
+
+
+
+    <xsd:complexType name="UserDefined">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+     </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Extension">
+      <xsd:sequence>
+        <xsd:element minOccurs="1" name="ExtName" type="xsd:string"/>
+        <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

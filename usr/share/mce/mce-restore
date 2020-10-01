@@ -1,0 +1,12 @@
+#! /bin/sh
+
+(touch /var/lib/mce/restored) && (cp $HOME/.mce/* /var/lib/mce/)
+status=$?
+
+if [ $status -ne 0 ]; then
+	status=2
+else
+	rm -rf $HOME/.mce
+fi
+
+exit $status

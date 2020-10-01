@@ -1,0 +1,10 @@
+plugin Media 
+MediaGridView 0.1 MediaGridView.qml
+MediaMultiBar 0.1 MediaMultiBar.qml
+MediaToolbar 0.1 MediaToolbar.qml
+MediaToolbarButton 0.1 MediaToolbarButton.qml
+MediaPreviewStrip 0.1 MediaPreviewStrip.qml
+VolumeSlider 0.1 VolumeSlider.qml
+NoContent 0.1 NoContent.qml
+NoContentBase 0.1 NoContentBase.qml
+HelpContent 0.1 HelpContent.qml

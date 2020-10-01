@@ -1,0 +1,36 @@
+/* MSheetStyle : MSceneWindowStyle */
+MSheetStyle {
+    minimum-size: 100% 80%;
+    preferred-size: 100% 100%;
+    maximum-size: 100% 100%;
+
+    vertical-align: bottom;
+    horizontal-align: left;
+
+    offset: 0 0;
+
+    header-slot-style-name: "CommonSheetHeaderPanel";
+    central-slot-style-name: "SheetCentralSlot";
+    header-animation: "MWidgetSlideAnimation";
+}
+
+MSheetStyle#Inverted {
+    header-slot-style-name: "CommonSheetHeaderPanelInverted";
+    central-slot-style-name: "SheetCentralSlotIverted";
+    background-color: $COLOR_INVERTED_BACKGROUND;
+}
+
+#SheetCentralSlot
+{
+    background-image: ;
+    background-tiles: ;
+    background-color: $COLOR_BACKGROUND;
+}
+
+#SheetCentralSlotIverted
+{
+    background-image: ;
+    background-tiles: ;
+    background-color: $COLOR_INVERTED_BACKGROUND;
+}
+

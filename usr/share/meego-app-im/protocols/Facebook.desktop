@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=IMProtocol
+Name=Facebook
+
+[MTI]
+Id=im-facebook
+Content=FacebookAccountContent
+ConnectionManager=gabble
+Protocol=jabber
+Icon=image://themedimage/icons/services/facebook

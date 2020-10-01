@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper>
+    <name>Energy Blue</name>
+    <name xml:lang="en_GB">Energy Blue</name>
+    <filename>/usr/share/backgrounds/images/moblin-energy-blue-1024x600.png</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+</wallpapers>

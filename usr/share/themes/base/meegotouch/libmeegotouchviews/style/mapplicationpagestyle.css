@@ -1,0 +1,36 @@
+/* BASE */
+
+/* MApplicationPageStyle : MSceneWindowStyle */
+MApplicationPageStyle {
+    /* inherited from MSceneWindowStyle */
+    vertical-align: top;
+    horizontal-align: left;
+
+    minimum-size: 100% 80%;
+    preferred-size: 100% 100%;
+    maximum-size: 100% 100%;
+
+    has-title-label: false;
+}
+
+MApplicationPageStyle.Portrait {
+    background-image: $BACKGROUND_PORTRAIT;
+    background-color: $COLOR_BACKGROUND;
+}
+
+MApplicationPageStyle.Landscape {
+    background-image: $BACKGROUND_LANDSCAPE;
+    background-color: $COLOR_BACKGROUND;
+}
+
+MApplicationPage MLabelStyle#titleLabel {
+   maximum-size: 100% $HEIGHT_STATUSBAR;
+   preferred-size: 100% $HEIGHT_STATUSBAR;
+   minimum-size: 100% $HEIGHT_STATUSBAR;
+}
+
+MApplicationPageStyle#QtTransparentApplicationPage {
+   background-color: ;
+   background-image: ;
+   background-opacity: 0;
+}

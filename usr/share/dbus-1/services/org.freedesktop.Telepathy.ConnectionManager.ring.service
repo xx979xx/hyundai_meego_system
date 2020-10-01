@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.freedesktop.Telepathy.ConnectionManager.ring
+Exec=/usr/lib/telepathy/telepathy-ring
+

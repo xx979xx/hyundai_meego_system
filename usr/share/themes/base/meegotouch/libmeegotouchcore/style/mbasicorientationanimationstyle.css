@@ -1,0 +1,10 @@
+MBasicOrientationAnimationStyle {
+    /*
+       Phase 0: Navigation bar & dock widget slide out, scene windows fade out
+       Phase 1: Screen is rotated
+       Phase 2: Navigation bar & dock widget slide in, scene window fade in
+     */
+    phaseZeroDuration: 200;
+    phaseOneDuration: 300;
+    phaseTwoDuration: 200;
+}

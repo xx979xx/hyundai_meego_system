@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=com.lge.car.micom
+Exec=/app/bin/micommanager_userspace
+

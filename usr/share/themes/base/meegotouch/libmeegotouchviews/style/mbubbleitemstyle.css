@@ -1,0 +1,109 @@
+
+MBubbleItemStyle {
+    /* inherited from MWidgetStyle */
+    minimum-size: $SIZE_ONE $SIZE_ONE;
+
+    margin-left:   $MARGIN_DOUBLE;
+    margin-right:  $MARGIN_DOUBLE;
+    margin-top:    $MARGIN_DOUBLE;
+    margin-bottom: 0;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+
+    font : $FONT_DEFAULT;
+    text-color : $COLOR_FOREGROUND;
+
+    timestamp-font : $FONT_XSMALL;
+    timestamp-text-color : $COLOR_SECONDARY_FOREGROUND;
+
+    bubble-object-name : "";
+    avatar-object-name : "MBubbleItemAvatar";
+}
+
+MBubbleItemStyle:outgoing {
+    text-color : $COLOR_INVERTED_FOREGROUND;
+    timestamp-text-color : $COLOR_INVERTED_SECONDARY_FOREGROUND;
+
+    margin-left:   $MARGIN_DOUBLE;
+    margin-right:  $MARGIN_DOUBLE;
+    margin-top:    $MARGIN_DOUBLE;
+    margin-bottom: 0;
+}
+
+MBubbleItemBackgroundStyle {
+    padding-top : $PADDING_DOUBLE; 
+    padding-left : $PADDING_XXLARGE;
+    padding-bottom : $PADDING_DOUBLE; 
+    padding-right : $PADDING_XLARGE;
+
+    mirrored-object-name: "Mirrored";
+
+    press-feedback: press;
+    release-feedback: release;
+}
+
+MBubbleItemBackgroundStyle:incoming {
+    background-tiles : "meegotouch-speechbubble-incoming-background" 24px 12px 12px 12px;
+}
+
+MBubbleItemBackgroundStyle:outgoing {
+    background-tiles : "meegotouch-speechbubble-outgoing-background" 12px 12px 24px 12px;
+    padding-left : $PADDING_XLARGE;
+}
+
+MBubbleItemBackgroundStyle:incoming-pressed {
+    background-tiles : "meegotouch-speechbubble-incoming-background-pressed" 24px 12px 12px 12px;
+}
+
+MBubbleItemBackgroundStyle:outgoing-pressed {
+    background-tiles : "meegotouch-speechbubble-outgoing-background-pressed" 12px 12px 24px 12px;
+    padding-left : $PADDING_XLARGE;
+}
+
+MBubbleItemBackgroundStyle#Mirrored {
+    background-tiles : "meegotouch-speechbubble-incoming-mirrored-background" 24px 12px 12px 12px;
+}
+
+MBubbleItemBackgroundStyle#Mirrored:outgoing {
+    background-tiles : "meegotouch-speechbubble-outgoing-mirrored-background" 12px 12px 24px 12px;
+    padding-left : $PADDING_XLARGE;
+}
+
+MBubbleItemBackgroundStyle#Mirrored:incoming-pressed {
+    background-tiles : "meegotouch-speechbubble-incoming-mirrored-background-pressed" 24px 12px 12px 12px;
+}
+
+MBubbleItemBackgroundStyle#Mirrored:outgoing-pressed {
+    background-tiles : "meegotouch-speechbubble-outgoing-mirrored-background-pressed" 12px 12px 24px 12px;
+    padding-left : $PADDING_XLARGE;
+}
+
+#MBubbleItemAvatar {
+    preferred-size: 8.0mm 8.0mm;
+    minimum-size: 8.0mm 8.0mm;
+    maximum-size: 8.0mm 8.0mm;
+
+    margin-left:   $MARGIN_DOUBLE;
+    margin-right:  $MARGIN_DOUBLE;
+    margin-top:    0;
+    margin-bottom: $MARGIN_DOUBLE;
+}
+
+#InformationalIcon {
+    preferred-size: $SIZE_ICON_SMALL $SIZE_ICON_SMALL;
+    minimum-size: $SIZE_ICON_SMALL $SIZE_ICON_SMALL;
+    maximum-size: $SIZE_ICON_SMALL $SIZE_ICON_SMALL;
+}
+
+#InformationalLabelIncoming {
+    font: $FONT_XSMALL;
+    color: $COLOR_FOREGROUND;
+}
+
+#InformationalLabelOutgoing {
+    font: $FONT_XSMALL;
+    color: $COLOR_INVERTED_FOREGROUND;
+}

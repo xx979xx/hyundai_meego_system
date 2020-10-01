@@ -1,0 +1,53 @@
+=== pm-utils ===
+
+What is pm-utils?
+
+* Pm-utils provides simple shell command line tools to suspend and
+  hibernate computer that can be used to run vendor, distribution, or
+  user supplied scripts on suspend and resume.
+
+Why do we need it?
+
+* All the main distributions  are re-implementing the same
+  functionality to support common power management
+  operations. pm-utils provides a standardized distribution agnostic
+  layout and interface for common power management tasks, which frees
+  software and hardware vendors from having to maintain
+  distribution-specific suspend/resume functionality.
+
+* Suspend/resume functionality can be easily modified by installing
+  files into the /etc/pm/sleep.d directory.  These files, known as
+  hooks, can perform specific tasks on suspend/resume, such as:
+   
+   - enabling and disabling standby LED's on laptop hardware 
+   - enabling suspend GUI's like suspend2 
+   - re-enabling video
+   - starting and stopping services that can't cope with suspending 
+   - re-syncing the time with ntp 
+   - removing and modprobing modules when needed 
+   - setting grub to be the default target for a hibernate-resume 
+   - other wacky things that need doing on specific systems
+
+How do hooks work?
+
+* You put an executable file in /etc/pm/sleep.d.  When suspend or
+  hibernate is called, several things happen:
+  
+  1) The files in /etc/pm/config.d/* are evaluated in C sort order.  
+     These files can be provided by individual packages outside of
+     pm-utils, and contain globally available configuration settings
+     for pm-utils and the hooks.
+  2) Each of the hooks in /etc/pm/sleep.d/* are executed in C sort
+     order, with a command line argument of either "suspend" or "hibernate". 
+  3) The system suspends or hibernates.
+  4) Some event happens to wake the machine up
+  5) Each of /etc/pm/sleep.d/* are executed in reverse C sort order,
+     with a command line argument of "resume" or "thaw".
+
+* For more detailed information on how hooks work and how to write one,
+  read HOWTO.hooks .
+
+* For information on how to debug pm-utils, read README.debugging.
+
+  That's it!
+

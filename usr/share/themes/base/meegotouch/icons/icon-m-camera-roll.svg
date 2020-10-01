@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-camera-roll-layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-camera-roll">
+	<rect style="fill:none;" width="48" height="48"/>
+	<path style="fill:#FFFFFF;" d="M27,8.25h-7.5v-3c0-0.791-0.711-1.5-1.5-1.5h-6.75c-0.789,0-1.5,0.709-1.5,1.5v3h-7.5
+		c-2.25,0-1.5,3,0,3V42c-1.5,0-2.25,2.926,0,2.926H27c2.25,0,1.5-2.926,0-2.926V11.25C28.5,11.25,29.25,8.25,27,8.25z M10.5,42H6
+		V11.176h4.5V42z"/>
+	<path style="fill:#FFFFFF;" d="M30,12.75v27h4.5v-7.5c0-2.25,0.75-3.824,3-3.824l9.75,0.074V12.75H30z M34.5,21h-3v-6.074l3,0.074
+		V21z M39.75,21h-3v-6.074l3,0.074V21z M45,21h-3v-6.074L45,15V21z"/>
+</g>
+</svg>

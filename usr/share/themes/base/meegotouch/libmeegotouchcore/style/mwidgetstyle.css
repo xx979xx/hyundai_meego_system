@@ -1,0 +1,39 @@
+/* base style for all widgets */
+/* only common styles are defined here */
+/* everything else goes to widget-specific .css */
+
+MWidgetStyle {
+    margin-left:   $MARGIN_DEFAULT;
+    margin-top:    $MARGIN_DEFAULT;
+    margin-right:  $MARGIN_DEFAULT;
+    margin-bottom: $MARGIN_DEFAULT;
+    
+    padding-left:   $PADDING_DEFAULT;
+    padding-top:    $PADDING_DEFAULT;
+    padding-right:  $PADDING_DEFAULT;
+    padding-bottom: $PADDING_DEFAULT;
+
+    reactive-margin-left:   0;
+    reactive-margin-top:    0;
+    reactive-margin-right:  0;
+    reactive-margin-bottom: 0;
+
+    background-tiles:;
+    background-image:;
+    background-color:;
+    background-boxed-percent: 0;
+    background-opacity: 1.0;
+
+    preferred-size: -1 -1;    /* Preferred size, e.g. size(10mm, 10mm) */
+    minimum-size: -1 -1;      /* Minimum size */
+    maximum-size: -1 -1;      /* Maximum size */
+
+    /* Name of the feedback effect to be given when widget receives press event. */
+    press-feedback:;
+
+    /* Name of the feedback effect to be given when widget receives release event. */
+    release-feedback:;
+
+    /* Name of the feedback effect to be given when widget receives cancel event. */
+    cancel-feedback:;
+}

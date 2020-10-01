@@ -1,0 +1,35 @@
+MMashupCanvasStyle {
+    /* Whether the applets on this mashup canvas should be inside containers or not */
+    container-mode: true;
+}
+
+MContainerStyle#MExtensionAreaInvisibleContainer {
+    margin-left:   0;
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+    
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+
+    background-opacity: 0.0;
+    background-image:;
+}
+
+MButtonStyle#MAppletInventoryButton {
+    preferred-size: 328 86;
+    minimum-size: 328 86;
+    maximum-size: 328 86;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 32;
+    margin-bottom: 32;
+    font: $FONT_DEFAULT;
+    background-opacity: 0.7;
+}
+
+MButtonStyle#MAppletInventoryButton:pressed {
+    background-opacity: 0.8;
+}

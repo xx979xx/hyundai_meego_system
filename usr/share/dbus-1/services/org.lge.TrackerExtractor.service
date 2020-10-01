@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.lge.TrackerExtractor
+Exec=/app/bin/DHAVN_TrackerExtractorPlugin

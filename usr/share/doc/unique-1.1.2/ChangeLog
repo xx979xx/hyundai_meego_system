@@ -1,0 +1,2021 @@
+commit 8ed084cf45766e8888d9c32025a4c950eca70c0e
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Aug 24 22:21:45 2009 +0100
+
+    [release] 1.1.2
+
+ NEWS         |   13 +++++++++++++
+ README       |    2 +-
+ configure.ac |    2 +-
+ 3 files changed, 15 insertions(+), 2 deletions(-)
+
+commit 2aafa7a48d5e0e8cd72244b4f94533ff01537374
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Aug 24 22:35:14 2009 +0100
+
+    [build] Fix distcheck
+
+ unique/Makefile.am |   21 +++++++++++----------
+ 1 files changed, 11 insertions(+), 10 deletions(-)
+
+commit d36e3b3707b1d414e31c45b5d8c0a1d28bc51fbc
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Jun 14 20:50:31 2009 +0100
+
+    Add introspection data generation
+    
+    Set up libunique to generate the GObject Introspection XML and typelib
+    from the source files and installed headers.
+
+ .gitignore                       |    3 +
+ build/autotools/Makefile.am      |    7 +++-
+ build/autotools/introspection.m4 |   88 ++++++++++++++++++++++++++++++++++++++
+ configure.ac                     |    8 +++-
+ unique/Makefile.am               |   36 +++++++++++++++
+ 5 files changed, 140 insertions(+), 2 deletions(-)
+
+commit 9af647ccd7d1ffb03b41557ebdd0b577fb454ae4
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Jun 14 10:56:58 2009 +0100
+
+    Disable single includes in the backends
+    
+    We should add the G_DISABLE_SINGLE_INCLUDES symbol inside the
+    dbus/ and bacon/ directories as well.
+
+ unique/bacon/Makefile.am |    1 +
+ unique/dbus/Makefile.am  |    1 +
+ 2 files changed, 2 insertions(+), 0 deletions(-)
+
+commit dd79ac1bd92afe4002c5ce6d99fda1ebadd26337
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Jun 14 10:52:19 2009 +0100
+
+    [build] Use the AS_COMPILER_FLAGS m4 macro
+    
+    We need to check if the compiler we use has support for the anal-retentive
+    maintainer flags we enable with --enable-maintainer-flags. The m4 macro
+    AS_COMPILER_FLAGS allows us to fall back gracefully to the subset of flags
+    that the compiler supports.
+
+ .gitignore                          |    4 ++-
+ build/autotools/Makefile.am         |    2 +-
+ build/autotools/as-compiler-flag.m4 |   62 +++++++++++++++++++++++++++++++++++
+ configure.ac                        |   12 ++++--
+ 4 files changed, 74 insertions(+), 6 deletions(-)
+
+commit f6b609721d86ef2edaf1edd976032a557fbc7c1a
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Jun 14 10:39:38 2009 +0100
+
+    [build] Use a variable to hold the D-Bus XML file
+
+ unique/dbus/Makefile.am |   13 ++++++++-----
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit a0d39b1579809e2d644a69b6625fcab0c9f728d0
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Jun 14 10:38:53 2009 +0100
+
+    [build] Show when we're generating the ChangeLog
+
+ Makefile.am |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit de65189c7cb4969a1c68ad6fa2d2aca7a9eba5f7
+Author: Armin Burgmeier <armin@arbur.net>
+Date:   Sun May 3 15:08:37 2009 +0100
+
+    [app] Remove weak ref on watched windows
+    
+    Fixes a crash when a watched window is freed after the UniqueApp
+    was freed.
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+
+ unique/uniqueapp.c |   27 +++++++++++++++------------
+ 1 files changed, 15 insertions(+), 12 deletions(-)
+
+commit 2e06eb42059afea94e89cf106ed7d7de4cb4db5e
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun May 3 10:55:07 2009 +0100
+
+    [app] Use X11-specific API under guards
+    
+    We should be using X11-specific API (either GDK-X11 or direct
+    Xlib calls) only under the GDK_WINDOWING_X11 define.
+    
+    The only X11-specific code is the slowly_and_stupidly_obtain_timestamp()
+    function we ported over from Nautilus. This function only has sense when
+    dealing with startup notification on X11, so if we are not building for
+    X11 we can safely use g_get_current_time() (we are building a fake startup
+    notification id anyway).
+    
+    This commit should hopefully make Libunique a tad more portable; we still
+    need a replacement IPC mechanism for non-Unix platforms, but I hope in
+    D-Bus being ported first. Other platforms startup notification mechanisms
+    should be implemented in GTK+ already.
+
+ unique/uniqueapp.c |   22 +++++++++++++++++++++-
+ 1 files changed, 21 insertions(+), 1 deletions(-)
+
+commit 2c594e55d418793a9467eb7ca02db916dd2394dd
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun May 3 10:53:05 2009 +0100
+
+    [build] Check for X11 if we are building for it
+    
+    Currently we use AC_PATH_XTRA and check for X11 using pkg-config
+    unconditionally. Instead, we should check for GTK+ first, see which
+    GDK target is installed and check for X11 only if we are building
+    against an X11 build.
+
+ configure.ac |   19 ++++++++++++++++---
+ 1 files changed, 16 insertions(+), 3 deletions(-)
+
+commit 9dc7d6b0153a15a58bbbd07b8ecb7b9db999cc1c
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun May 3 10:26:07 2009 +0100
+
+    [build] Allow disabling the bacon backend
+    
+    Somebody might want to disable the Unix domain sockets based IPC
+    mechanism, especially if we want to increase the future portability
+    of libunique.
+
+ configure.ac |   68 +++++++++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 44 insertions(+), 24 deletions(-)
+
+commit 8160fa256bc8347482c6f661b5aaf46a3a7db199
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun May 3 10:25:49 2009 +0100
+
+    [autogen] Remove trailing whitespace
+
+ autogen.sh |    1 -
+ 1 files changed, 0 insertions(+), 1 deletions(-)
+
+commit 933b872950c4ca7408bccd68a81b292dc735cad3
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun May 3 10:09:50 2009 +0100
+
+    [build] Fix macro usage
+    
+    With multi-branch checks we should be using AS_CASE() instead of
+    AS_IF(). We also have a bare if still in place.
+
+ configure.ac |   76 +++++++++++++++++++++++++++++++--------------------------
+ 1 files changed, 41 insertions(+), 35 deletions(-)
+
+commit f01929635748c7b9c83ef1e860be9fc5efba79b7
+Author: Armin Burgmeier <armin@arbur.net>
+Date:   Fri Apr 24 19:55:28 2009 +0200
+
+    Fixed an include to match GTK+'s single include policy
+    
+    The uniquebackend.h header is still including gdk/gdkscreen.h when
+    it should be including gdk/gdk.h instead.
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+
+ unique/uniquebackend.h |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit dd9c82a446235ca7ac421d02ee677cb61f34823f
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Apr 19 00:36:21 2009 +0100
+
+    [doap] Add a category element
+
+ unique.doap |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit aa420d2102344848db98c8c7619c97afa3483e13
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Apr 16 19:55:47 2009 +0100
+
+    [doap] Add GNOME extensions
+    
+    The GNOME project provides an extension to DOAP that allows the
+    description of the maintainer/author of a project to specify the
+    GNOME userid.
+
+ unique.doap |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 19a1489d018b0b2c1b5d245f86d83d130550d513
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Apr 16 18:25:46 2009 +0100
+
+    [doap] Add DOAP for Unique
+    
+    Add the DOAP (Description Of A Project) file for Unique.
+
+ unique.doap |   75 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 75 insertions(+), 0 deletions(-)
+
+commit c192a9774a01a4c340f99d2f63b894f74b3be55a
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 22:52:09 2009 +0100
+
+    Add MAINTAINERS file
+    
+    We require a MAINTAINERS file for GNOME projects.
+
+ MAINTAINERS |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 17e5f0ff821cf026c4fbe5a9fe06be5d7a9c0c60
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 22:48:27 2009 +0100
+
+    [build] Dist the shave files
+    
+    We need the shave template and m4 files when distchecking libunique.
+
+ build/autotools/Makefile.am |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 27c5b08f7d4c8143d860c4ffe6945a67a671894d
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 22:47:07 2009 +0100
+
+    [build] Use build/autotools for automake
+    
+    We need to reference build/autotools in the ACLOCAL_AMFLAGS variable
+    so that we can use conditionals defined inside m4 files.
+
+ Makefile.am |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit d89e69f66462631cc3790652ebe299cf2419f552
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 22:45:23 2009 +0100
+
+    [build] Patch gtk-doc.make on autogen
+    
+    There is a slight issue with gtk-doc's make rules, libtool 1.5 and the
+    shave scripts; it has been fixed upstream and will be available in
+    gtk-doc 1.12, but for the time being we need to live-patch the
+    gtk-doc.make at the end of the autogen process.
+
+ autogen.sh |   20 +++++++++++---------
+ 1 files changed, 11 insertions(+), 9 deletions(-)
+
+commit 4b1d0bbbe1b71f27736d2f4dd3d5f85596f78dca
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 18:27:10 2009 +0100
+
+    [build] Clean up the marshallers build rules
+    
+    Use the GEN message for consistency and also fix the rule so that
+    it does not output anything on the terminal.
+
+ unique/Makefile.am |   25 ++++++++++++++-----------
+ 1 files changed, 14 insertions(+), 11 deletions(-)
+
+commit cafc58430b576ebff224848838510c5e33c60917
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 18:26:19 2009 +0100
+
+    [build] Show GEN rules
+    
+    When generating the code from the XML description of the D-BUS
+    interface we should be using the GEN message to be consistent
+    with the "shaved" output of the rest of the build.
+
+ unique/dbus/Makefile.am |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 137650ce9e4210c43bb2f0e848c0ce4e0c34d20c
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 18:10:57 2009 +0100
+
+    [build] Make D-Bus user-configurable
+    
+    Bug 578777 – libunique 1.0.8 automagic D-Bus support
+    
+    Unique should add a configure command line switch to explicitly enable
+    or disable D-Bus support.
+
+ configure.ac |   88 ++++++++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 61 insertions(+), 27 deletions(-)
+
+commit ad8d8259fd963cb89fd23de1a8981d5422f57585
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Apr 13 17:34:06 2009 +0100
+
+    [build] Add SHAVE support
+    
+    SHAVE is a set of scripts and m4 macros for autotools that keep the
+    libtool and compiler outputs sane without requiring redirections to
+    files or /dev/null.
+
+ .gitignore                       |   15 +++++++-
+ Makefile.am                      |    2 +-
+ build/Makefile.am                |    1 +
+ build/autotools/shave-libtool.in |   69 +++++++++++++++++++++++++++++++++
+ build/autotools/shave.in         |   79 ++++++++++++++++++++++++++++++++++++++
+ build/autotools/shave.m4         |   77 +++++++++++++++++++++++++++++++++++++
+ configure.ac                     |   24 ++++++++----
+ 7 files changed, 257 insertions(+), 10 deletions(-)
+
+commit 481a54d8eba23a7cbec71137cdcc325de68b978e
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Apr 5 09:47:54 2009 +0100
+
+    [build] Disable single includes and deprecation
+    
+    Disabling the single header file inclusion and deprecations helps
+    making Unique compliant with the GLib and GTK+ 3.0 API cycle.
+
+ unique/Makefile.am |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit af0d50031feeb2a730615620d984b28ea7ab2114
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Apr 5 09:49:20 2009 +0100
+
+    Do not include gtkwindow.h
+    
+    Single header file inclusion in GTK+ is deprecated.
+
+ unique/uniqueapp.h |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 0b31feffedd6a29b35cfda0932d6226a5219d5bb
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sat Mar 21 20:22:03 2009 +0000
+
+    [docs] Ignore the namespace to build the index
+    
+    GTK-Doc 1.11 provides a much useful --name-space argument for the
+    gtkdoc-mkdb utility. By passing a string containing the library
+    namespace to that command line option, we can remove the namespace
+    from the symbols and have a useful index.
+
+ configure.ac              |    2 +-
+ doc/reference/Makefile.am |   38 +++++++++++++++++---------------------
+ 2 files changed, 18 insertions(+), 22 deletions(-)
+
+commit 952c91bbae5a6cf044d95416487a0b75c72c8e32
+Author: Takao Fujiwara <takao.fujiwara@sun.com>
+Date:   Sat Mar 21 20:01:30 2009 +0000
+
+    Do not attempt to convert UTF-8 data
+    
+    Bug 575826 – libunique unique_message_data_[get|set]_text don't work
+                 on none UTF-8
+    
+    When unique_message_data_set_text() is called on non UTF-8 locales,
+    the argument message_data->data is always set to UTF-8.
+    
+    And when unique_message_data_get_text() is called on non UTF-8 locales,
+    it tries to convert the current encoding to UTF-8 even if the string is
+    already UTF-8, so the conversion fails
+    
+    The data should be validated and converted only if the UTF-8 validation
+    fails.
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+
+ unique/uniquemessage.c |   23 +++++++++++++----------
+ 1 files changed, 13 insertions(+), 10 deletions(-)
+
+commit a5a3084b27fe8654cf15d3a4359f7e7a9493040d
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sat Mar 21 19:59:08 2009 +0000
+
+    [docs] Remove mentions of unique_command_register()
+    
+    The unique_command_register() function was replaced by
+    unique_app_add_command(). The documentation and warnings should
+    not be mentioning non-existing functions.
+
+ unique/uniqueapp.c |    6 ++----
+ 1 files changed, 2 insertions(+), 4 deletions(-)
+
+commit 9d2d2799c52bd50b9c6fa327af51ceef2bc52cb8
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Mar 19 14:58:45 2009 +0000
+
+    [docs] Remove mention of non-existing functions
+    
+    The custom commands registration process has been changed since
+    the 0.7 cycle. The correct function to register a new custom command
+    is unique_app_add_command().
+
+ unique/uniqueapp.h |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b123a1cd89195174746ed25c57b95bce01dae8a7
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Mar 19 13:23:09 2009 +0000
+
+    [docs] Show the version in the title
+    
+    Follow the convention of most libraries in the GNOME stack, and
+    show the version number in the API reference title.
+
+ doc/reference/unique-docs.xml |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit d55e5e468c926114e6216f52b641e19466c50ad2
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Mar 19 13:17:39 2009 +0000
+
+    [docs] Rename SGML to XML
+    
+    The -docs file is an XML file, even if named with the wrong
+    extension.
+
+ doc/reference/Makefile.am      |    2 +-
+ doc/reference/unique-docs.sgml |   95 ----------------------------------------
+ doc/reference/unique-docs.xml  |   95 ++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 96 insertions(+), 96 deletions(-)
+
+commit 940dcc76de715fdbbb1b725d05fb26338f58b029
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Mar 19 13:16:35 2009 +0000
+
+    Eliminate newline in the version XML template
+    
+    The newline introduced a break in the title.
+
+ doc/reference/version.xml.in |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit f2b6fc37d94018438aa9a1a2cd13573477c3c371
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Mar 19 12:42:44 2009 +0000
+
+    [build] Update the ChangeLog generation rule
+    
+    The ChangeLog generation rule is too simple and might be bound to fail
+    in weird ways.
+    
+    The git log command should be run through the "missing" script; it should
+    also use a temporary target, and check that we are running dist from a
+    git checkout.
+
+ Makefile.am |   19 ++++++++++---------
+ 1 files changed, 10 insertions(+), 9 deletions(-)
+
+commit 1d51cfe154c071e61061b2a4dd2bd61ee5ba8570
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Mar 19 12:40:41 2009 +0000
+
+    [configure] Update AC_INIT parameters
+    
+    Unique now has a product page on GNOME Bugzilla. Since it's called
+    "libunique" and there's a general agreement that package names should
+    match their Bugzilla product names, the tarball generated by dist
+    should be called "libunique-$VERSION.tar".
+
+ configure.ac |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit a03c41e75f2476f519db1a9d9847e22b8716afd9
+Author: Halton Huo <halton.huo@sun.com>
+Date:   Fri Feb 27 10:01:27 2009 +0000
+
+    [bacon] Chmod the socket file to 0700
+    
+    Bug 573366 – bacon socket file should be set mode as 0700
+    
+    If user choose use bacon as backend, the mode of socket files created under
+    /var/tmp/unique is 0755. Which means other user can talk to this socket. For
+    security concern, the created socket file should be set mode as 0700.
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+
+ unique/bacon/uniquebackend-bacon.c |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 3e921efe76625291b2098a716f013e09a144188c
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Feb 18 08:49:43 2009 +0000
+
+    Remove the GPL notice from the test
+    
+    The test-unique.c test/example is under the GPL, while the rest
+    of the codebase is under the LGPL. It is better to have the whole
+    codebase under a single license.
+    
+    Thanks to Vincent Untz.
+
+ tests/test-unique.c |   15 ---------------
+ 1 files changed, 0 insertions(+), 15 deletions(-)
+
+commit 5fde109f6476870448e297cae5568f5c8f8b2f3d
+Author: Halton Huo <halton.huo@sun.com>
+Date:   Mon Feb 16 11:11:02 2009 +0000
+
+    [build] Support suncc
+    
+    We should only set the maintainer compiler flags if we're using gcc.
+    
+    Fixes bug 571952 - -Werror cause compile failure with suncc
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@linux.intel.com>
+
+ configure.ac |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 3b36f343bec5147a34f2e589241975efc09871a0
+Author: Matthew Barnes <mbarnes@redhat.com>
+Date:   Fri Jan 30 11:47:00 2009 +0000
+
+    Unbreak subclassing of UniqueApp
+    
+    As one point, subclassing of UniqueApp was broken by the fact
+    that you cannot pass an empty startup-id since the logic to
+    determine a fake startup notification id was only invoked by
+    the UniqueApp constructors.
+    
+    This commit moves the startup notification id checks into its
+    own private setter function that is called by the GObject
+    property machinery when setting the UniqueApp:startup-id
+    property.
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+
+ unique/uniqueapp.c |  170 ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 87 insertions(+), 83 deletions(-)
+
+commit 2c9e349d4fc98a1e675ef64a7e1c9db3f538f60f
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Fri Jan 30 11:44:43 2009 +0000
+
+    [build] Rework the maintainer compiler flags
+    
+    Instead of overriding CPPFLAGS we should use a separate variable
+    for holding the optional, anal retentive compiler flags we use when
+    building odd-numbered version and when distchecking.
+    
+    Based on a patch by: Halton Huo <halton.huo@sun.com>
+
+ configure.ac             |    6 +++---
+ unique/Makefile.am       |   17 ++++++++++-------
+ unique/bacon/Makefile.am |    9 ++++++---
+ unique/dbus/Makefile.am  |   11 +++++++----
+ 4 files changed, 26 insertions(+), 17 deletions(-)
+
+commit c9d632aa464c4d7541f18a33ec377ab06177f16d
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Fri Jan 30 11:43:33 2009 +0000
+
+    [build] Use the right environment variables
+    
+    When calling gnome-autogen.sh we need a set of variables for
+    build options and setup.
+
+ autogen.sh |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 38c9a00c3552c5a0f6d879f40c889c66f04fabf0
+Author: Halton Huo <halton.huo@sun.com>
+Date:   Fri Jan 30 11:28:23 2009 +0000
+
+    [build] Use gnome-autogen instead of autoreconf
+    
+    The gnome-autogen script performs checks and operations that
+    the basic autoreconf does not, like setting up everything for
+    translation and localisation.
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+
+ autogen.sh |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+commit 744046d73f5c76bf489f5d72297251a3af5d1aea
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Mon Dec 22 11:33:15 2008 +0000
+
+    Copy the startup-id string, not just the pointer
+    
+    The fix for the memory leak of commit fd7aaf0e exposed the fact
+    that we did not copy the startup notification id across messages,
+    but we simply stored the pointer.
+    
+    This commit should fix the double-free errors happening to
+    applications using libunique.
+    
+    First report by: George Sherwood
+    Patch provided by: Matthias Clasen, Richard Hughes
+
+ unique/uniquemessage.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit ab5461dc516a3d3de7d1c1dbd120b8f22be456e7
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Nov 23 11:54:12 2008 +0000
+
+    Post stable branch bump to 1.1.1
+
+ configure.ac |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 9eec8cfadbf5e071958c1fd9d0e2d7b1d40dc1ad
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Nov 23 11:53:22 2008 +0000
+
+    Post release bump to 1.0.5
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 68e75a9fe94c6e6c41c956c4dad14a4e071f87a0
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Nov 23 11:50:16 2008 +0000
+
+    [release] Bump to 1.0.4
+
+ configure.ac |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 735994cd72eef67eeadf541c58371fbef2a3da2e
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Nov 23 11:50:06 2008 +0000
+
+    [release] Update the NEWS file
+
+ NEWS |    6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+commit fd7aaf0e5ca052eeb3a4641df315baa76dbcd99d
+Author: Cosimo Cecchi <cosimoc@gnome.org>
+Date:   Tue Nov 18 14:26:48 2008 +0000
+
+    Plug a leak in UniqueMessageData
+    
+    When deallocating a UniqueMessageData we also need to free the
+    startup notification id string.
+    
+    Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+
+ unique/uniquemessage.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit d6c2c945cde08a5f92ba7c5d84bf6baab84a00a9
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Oct 26 18:20:02 2008 +0000
+
+    Use g_memdup() when copying message data
+    
+    The UniqueMessageData payload can be any binary blob we pass to
+    it using unique_message_data_set(). For this reason, we cannot use
+    g_strndup(), as it will stop at '\0' bytes; we should use g_memdup()
+    instead, which does the right thing.
+
+ unique/uniquemessage.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit bade58645058ce11809cb7c7e5f049b97cf843ca
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Oct 26 17:19:59 2008 +0000
+
+    Set the enumeration values as static
+    
+    Apparently, when registering an enumeration GType, you have to
+    declar the GEnumValue array holding value, nick and name as a
+    "static const" instead of just "static". This is quite counter-
+    intuitive, since we already have a static variable posing as a
+    guard in place inside the _get_type() function. The GEnum
+    documentation is also particularly scarce in this regard.
+    
+    The fix is trivial and does not have side effects, and as it makes
+    libunique behave correctly on OpenBSD so it's a good thing to have
+    in the main tree.
+    
+    Patch by: Landry Breuil <gaston@gcu.info>
+    
+    Signed-off by: Emmanuele Bassi <ebassi@linux.intel.com>
+
+ unique/uniqueapp.c |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 24bcb71b4668cae83155aa2e28c1dd258fc5be7e
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:57:14 2008 +0100
+
+    [release] Post-release bump to 1.0.3
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit c320395109bf31277da140cba83de3c749e376c1
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:53:55 2008 +0100
+
+    [release] Pre-release bump to 1.0.2
+    
+    We're ready to release 1.0.2.
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 7080e69d934d532d6d3eba58a5699b0e5561afbb
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:52:54 2008 +0100
+
+    Use LibUnique and not Unique
+    
+    Apparently, somebody is still puzzled by the name of the library. The
+    project is called Unique, the library is LibUnique.
+
+ README |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit d7deb278b6d0139ca23dbf1fc3cce83c4af2b78b
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:52:30 2008 +0100
+
+    [release] Update NEWS
+
+ NEWS |    9 +++++++++
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+
+commit 952197e943e4ff331dade06984367ba65fdf4eb4
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:43:21 2008 +0100
+
+    Add UniqueCommand type function to the header
+    
+    The unique_command_get_type() function was exported but not
+    declared inside the header.
+    
+    Thanks to gtk-doc for catching this.
+
+ unique/uniqueapp.h |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit ec6b075f81d249d1ead8be632529951fc697e825
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:42:14 2008 +0100
+
+    Remove a compiler warning
+    
+    If we warn about an invalid input value, we should be good citizens
+    and return NULL - not garbage.
+
+ unique/uniqueapp.c |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit 4d5cd3934e178e7b5f8d508d3d9c4ec17cd0737a
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:40:38 2008 +0100
+
+    Silence a compiler warning
+    
+    We store the UniqueMessageData payload as an unsigned char, so we should
+    cast the pointer when passing it to g_strndup().
+
+ unique/uniquemessage.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 923b2c8d94425e39c4b4d197199a21b5967a79e7
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:39:00 2008 +0100
+
+    [build] Use git log when building the ChangeLog
+    
+    Instead of using a local script, use git log to build up the ChangeLog
+    file. This will allow valid dists on boxes different than mine.
+
+ Makefile.am |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 3d4e8c998b58b88a448ce11b37263638c13467cb
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:33:06 2008 +0100
+
+    [docs] Add filename accessors to the API reference
+    
+    Put the newly added filename accessor functions for UniqueMessageData
+    into the API reference.
+
+ doc/reference/unique-sections.txt |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit f0f67a3ef8985b3864f580c9c03119501b02beea
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:29:12 2008 +0100
+
+    [message] Add filename accessors
+    
+    Allow setting and getting a filename inside a UniqueMessageData.
+    
+    Using set_text()/get_text() to set filenames might break on non-UTF-8
+    locales because of the implicit text conversion; for this we need an
+    accessor pair that sets a raw C string. Since we added the raw getter
+    in a previous commit, it's safe to provide a simple wrapper around
+    unique_message_data_set()/unique_message_data_get() for setting plain
+    C strings such as filenames.
+    
+    Kudos to Alex Larsson for the idea.
+
+ unique/uniquemessage.c |   40 ++++++++++++++++++++++++++++++++++++++++
+ unique/uniquemessage.h |    3 +++
+ 2 files changed, 43 insertions(+), 0 deletions(-)
+
+commit 9bde1cd2023706d226bf30665ac72c2cbe454d8f
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:20:28 2008 +0100
+
+    Add a warning in the string/enum translation
+    
+    In case we don't find a GEnumValue using the provided string we
+    should emit a warning.
+    
+    Since not finding an enumeration is a programmer error we should
+    warn on the console.
+
+ unique/uniqueapp.c |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit 8d3b8f1f17f94f7f5540547603606d1a862768ab
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:19:30 2008 +0100
+
+    [docs] Add unique_message_data_get() to the API
+    
+    Put the newly added unique_message_data_get() function into the
+    gtk-doc generated API reference.
+
+ doc/reference/unique-sections.txt |    6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+commit 134d798ef31b13218e2cc8906ec33f536c118c5d
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Oct 1 10:17:20 2008 +0100
+
+    [message] Add raw data getter
+    
+    UniqueMessageData has a setter function for setting raw data inside
+    the structure, but it is missing a raw data getter.
+    
+    This commit adds unique_message_data_get() which returns a pointer to
+    the internal raw data and the length of the data.
+    
+    Using this new getter it is possible to implement other types of accessor
+    functions than the text/URIs LibUnique already ships.
+
+ unique/uniquemessage.c |   28 ++++++++++++++++++++++++++++
+ unique/uniquemessage.h |   37 ++++++++++++++++++++-----------------
+ 2 files changed, 48 insertions(+), 17 deletions(-)
+
+commit 029ce8abd022525506f5646d2f650bd1a6f378c7
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Sun Sep 7 06:21:56 2008 +0100
+
+    Intern some constant strings
+    
+    Use the intering capability of GLib on the type names and the
+    signal name of UniqueApp::message-received.
+
+ unique/uniqueapp.c       |    6 +++---
+ unique/uniqueinternals.h |    2 ++
+ unique/uniquemessage.c   |    2 +-
+ 3 files changed, 6 insertions(+), 4 deletions(-)
+
+commit c63d6e60eecf6d2e3b83d38f4448aa40cbde37a0
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Jul 31 14:45:05 2008 +0100
+
+    Do not export private symbols by default
+
+ unique/Makefile.am |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 34f551931336e34dca4e67f16cf088d66de83b1f
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Jul 31 14:43:07 2008 +0100
+
+    Namespace the LT versioning
+    
+    Libtool >= 2.2 complains if it finds a variable called ^LT_* inside
+    the configure. The simple fix is to just preprend the project name
+    to the LT_ variables.
+
+ configure.ac       |    8 ++++----
+ unique/Makefile.am |    2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit 377c60323f4d618bfbe31471097782961d85f12d
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Thu Jul 31 14:40:04 2008 +0100
+
+    Explicitly require x11
+    
+    Since we are using native X11 calls, we need to require X11 as well
+    as glib and gtk+.
+    
+    This should make compilation with --as-needed work again.
+
+ configure.ac |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit afa9032684706700a8af4752fc21e818a0796a3b
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Wed Jul 30 11:04:35 2008 +0100
+
+    Add a dist-hook to generate the ChangeLog
+
+ Makefile.am |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit ecf56af700522f4cdb41d34d38b5633dcc22b765
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Tue Jul 29 23:06:02 2008 +0100
+
+    Post-release bump to 1.0.1
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit c48ddf6cb0917acb544054017941e89f9c857523
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Tue Jul 29 23:05:00 2008 +0100
+
+    Release 1.0.0
+
+ NEWS         |    5 +++++
+ configure.ac |    6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 0b4bcaa8c9f5f91a64b802a904de0c45d13c6298
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Tue Jul 29 23:01:16 2008 +0100
+
+    Set the screen as well as presenting
+    
+    The default behaviour if all handlers fell through is to
+    present the first GtkWindow and setting it to the same
+    screen from whence the message came.
+
+ unique/uniqueapp.c |    7 ++++++-
+ 1 files changed, 6 insertions(+), 1 deletions(-)
+
+commit 7af32e2a5a10b32e3e1908e6109589c47643fa62
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Tue Jul 29 23:01:05 2008 +0100
+
+    Remove spurious g_print()
+
+ unique/uniqueapp.c |    4 ----
+ 1 files changed, 0 insertions(+), 4 deletions(-)
+
+commit f6e18145dd486f81f927edb292e6b58f4fb07add
+Author: Emmanuele Bassi <ebassi@gnome.org>
+Date:   Tue Jul 29 22:47:46 2008 +0100
+
+    Provide a default handler for ::message-received
+    
+    Without a default handler, the message accumulation would fall
+    through and the response would always be INVALID.
+    
+    The intended behaviour is that the ::message-received signal
+    emission chain should continue until a handler returns a valid
+    response code meaning: "I handled the signal". What is missing
+    is a way to tell the signal machinery that the handler did not
+    handle the signal. Hence, the UNIQUE_RESPONSE_PASSTHROUGH
+    response code has been added.
+    
+    The signal emission chain also needs a final handler, some place
+    that says that the bucket stops there; for this, we need a
+    class handler for the ::message-received signal. The default
+    behaviour, if no handler returned a valid code or if no handler
+    has been set, is to just call gtk_window_present() on the first
+    window inside the watch list. Obviously, if this is not the
+    wanted behaviour, you can either connect a handler to the signal
+    and stop the emission chain or you can subclass the UniqueApp
+    class and override the class handler yourself.
+    
+    Thanks to John Wendell for pointing out this gaping bug and for
+    the investigation.
+
+ unique/uniqueapp.c |   32 ++++++++++++++++++++++++++++++--
+ unique/uniqueapp.h |    4 +++-
+ 2 files changed, 33 insertions(+), 3 deletions(-)
+
+commit 001e6687085a5bc2d8cbb0c8a721e7ba228a55f8
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed May 14 14:35:10 2008 +0100
+
+    Rework the configure summary
+    
+    Visually separate the summary with a new line from both the
+    configure output and the next prompt.
+    
+    Also, center-align the configuration parameters list.
+
+ configure.ac |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit b9a89e1f3c7c8bcd40b84001e12e7ee6edfb2196
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed May 14 14:33:33 2008 +0100
+
+    Clean up the autogen script
+    
+    Unique needs a simpler autogen script than the one used by GTK+
+    that I copied a long time ago.
+
+ autogen.sh |  110 ++++++------------------------------------------------------
+ 1 files changed, 11 insertions(+), 99 deletions(-)
+
+commit c9f59faa91670503f558344ce713e7b2c3d348ff
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed May 14 13:06:12 2008 +0100
+
+    Do not use static GEnumValues
+    
+    To avoid useless relocations, the GEnumValues should not be set
+    as static; the values are used once anyway.
+
+ unique/uniqueapp.c |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit ef974992c040524b9d26974fa3c058f762d94990
+Author: Richard Hughes <hughsient@gmail.com>
+Date:   Wed May 14 12:00:27 2008 +0100
+
+    Another compilation fix
+
+ tests/test-unique.c |    5 ++---
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 668558e10e9608d10ea9f43bc2cee2ffe123a658
+Author: Richard Hughes <hughsient@gmail.com>
+Date:   Wed May 14 12:00:03 2008 +0100
+
+    Compilation fix
+
+ unique/bacon/uniquemessage-bacon.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 5f6843416de7b076f358e4abd3a66ff486e8b770
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 12:30:17 2008 +0100
+
+    Release 0.9.4
+    
+    Post release bump up to 0.9.5.
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit d99468076fa0b6f831d8c01ec96385f39742398c
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 12:25:38 2008 +0100
+
+    Include the versioning informations section
+
+ doc/reference/unique-docs.sgml |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 128619862aa184bc13efaac8601d4801dd5e9e31
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 12:24:39 2008 +0100
+
+    Add titles and subsections to the templates
+    
+    Clean up the API reference a bit, by setting titles for each
+    section and splitting API into logical subsections.
+
+ doc/reference/unique-sections.txt |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit f44ae08a193915d1104bdf73f81e474af9cef8fa
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 12:24:03 2008 +0100
+
+    Protect bare numbers
+    
+    The version numbers should be protected using parenthesis.
+
+ unique/uniqueversion.h.in |   16 +++++++++++-----
+ 1 files changed, 11 insertions(+), 5 deletions(-)
+
+commit ac1fdbc1a01f5d8dcce9d5c7fda876c613a03a30
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 11:47:49 2008 +0100
+
+    Change the default return value of the ::message-received signal
+    
+    If no signal handler has been connected to the ::message-received
+    signal, UniqueApp should return UNIQUE_RESPONSE_OK by default and
+    not UNIQUE_RESPONSE_INVALID.
+
+ unique/uniqueapp.c |    7 ++++---
+ 1 files changed, 4 insertions(+), 3 deletions(-)
+
+commit 953ccbdb3c8731fcb92dd0da4cc3ae6a169fb6c1
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 11:47:39 2008 +0100
+
+    Fix typo in the documentation
+
+ unique/uniqueapp.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 3afea0c11bd755f811ed748d8da066820d7f038f
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 11:40:43 2008 +0100
+
+    Update project page and main repository
+
+ README |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit ab42cdde65d68d9b25238aa3d9e59ef39807515f
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 11:30:33 2008 +0100
+
+    Clean up the test case
+    
+    Raise the main window first, then create the dialog, since the
+    message dialog is blocking (with gtk_dialog_run()).
+
+ tests/test-unique.c |   13 ++++---------
+ 1 files changed, 4 insertions(+), 9 deletions(-)
+
+commit 98b799ec6e774094a99fbe115d6ed562d4b8e4c6
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Apr 16 11:28:11 2008 +0100
+
+    Update the startup notification id on the watched windows
+    
+    We need to set the new startup notification id on the list of
+    watched window before actually emitting the ::message-received
+    signal, otherwise calls like gtk_window_present() will not
+    work.
+    
+    By removing the default signal handler for ::message-received
+    and calling gtk_window_set_startup_id() inside the
+    unique_app_emit_message_received() function we can set the
+    newly received startup notification id and "do the right thing".
+    
+    Thanks to Ross Burton for tracking this down.
+
+ unique/uniqueapp.c |   44 ++++++++++++++++++--------------------------
+ 1 files changed, 18 insertions(+), 26 deletions(-)
+
+commit 113a858dc1c8e10830d2f5c8a81405465337b82a
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Sep 30 17:03:20 2007 +0100
+
+    Use the correct variable for the debug compiler flags
+    
+    We use UNIQUE_DEBUG_CFLAGS now, so we need to update the Makefile
+    template with the right variable in order to use the debug messages
+    and symbols.
+
+ unique/dbus/Makefile.am |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 02c7741aaca8120fd9444f85868ca524d97fd616
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Sep 30 17:01:48 2007 +0100
+
+    Document which fields in UniqueMessageData are automatically set
+    
+    Libunique sets some fields of the UniqueMessageData structure when
+    emitting the UniqueApp::message-received signal. This commit adds
+    the documentation blurb to let the developer know which fields are
+    always set, even if a command was sent without a UniqueMessageData
+    structure.
+
+ unique/uniquemessage.c |   18 +++++++++++-------
+ 1 files changed, 11 insertions(+), 7 deletions(-)
+
+commit b05cf637e816f88143e1fd572f73634108bc81d3
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Sep 30 16:58:09 2007 +0100
+
+    Rename "maximum" debug level to "yes"
+    
+    Use a semi-standard value instead of using a custom name, and potentially
+    break all the build script defaulting to --enable=debug=yes.
+
+ configure.ac |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 3380fc0ded7e0dea7c265833373bc9dc768b7924
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Sep 30 16:56:43 2007 +0100
+
+    Rearrange the order of the SUBDIRS to build source before documentation
+
+ Makefile.am |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b0958f979d13fdb2a8fcab8863db66dc65dff309
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Fri Sep 14 15:12:44 2007 +0100
+
+    Update the debug flags when compiling with debug turned on
+    
+    Use -Wall -g in case we're compiling with the minimum debug level. Define
+    UNIQUE_ENABLE_DEBUG if we're running with high debug level.
+
+ configure.ac       |   11 +++++++----
+ unique/Makefile.am |    2 +-
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+
+commit acd32288982041ba8e7f9b77d28d43935d666358
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Tue Apr 15 22:58:43 2008 +0100
+
+    Raise the dialog and then the main window
+    
+    In the example code, use gtk_window_present_with_time() and the
+    urgency hint on the dialog; then, when the dialog gets destroyed,
+    use present_with_time() on the main window.
+
+ tests/test-unique.c |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit ddd1e188f44aa2c5581b178ca46a57f12be49037
+Author: Jonny Lamb <jonnylamb@jonnylamb.com>
+Date:   Mon Apr 14 04:00:21 2008 +0100
+
+    Fixed signed-ness issue with text length argument
+    
+    In unique_message_data_set_text, if length is -1, the length of the
+    string will be used, however length is an unsigned int causing a
+    segfault when -1 is used.
+    
+    Signed-off-by: Jonny Lamb <jonnylamb@jonnylamb.com>
+
+ unique/uniquemessage.c |    2 +-
+ unique/uniquemessage.h |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 244529f2b8e4ebcfb4f6d4b4f1f20080fafc363b
+Author: Jonny Lamb <jonnylamb@jonnylamb.com>
+Date:   Mon Apr 14 13:42:20 2008 +0100
+
+    Fixed a typo in the gtk-doc
+    
+    Signed-off-by: Jonny Lamb <jonnylamb@jonnylamb.com>
+
+ unique/uniquemessage.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 1e942e9fca4b1dd225eb6a84929effcd3e02ab5a
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Tue Apr 15 22:45:40 2008 +0100
+
+    Add a missing else to avoid overwriting the SN id
+    
+    The startup notification id was overridden every time, even when
+    we had it; this caused a leak if we didn't have it and we generated
+    a "fake" id, and it also caused the whole machinery to stop working.
+    
+    Thanks to Jonny Lamb and Ross Burton for catching it.
+
+ unique/uniqueapp.c |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 4c8b79d640715330c2260611db82a10b41879f0d
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Sep 12 15:28:59 2007 +0100
+
+    Update gitignore file
+
+ doc/reference/.gitignore |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit c79a831ffb924a7a7e6c02ba5caae0ae07f87259
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Sep 12 15:28:21 2007 +0100
+
+    Bump up to 0.9.4
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 6e594e08f0efc70d08df24f597df11b35e4ed325
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Sep 12 15:28:01 2007 +0100
+
+    Fix a typo in the gtk-doc
+
+ unique/uniquebackend.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit dba4dbcdacfcd9e7a7136803d3a2a837f4de67a3
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 19 18:00:00 2007 +0100
+
+    Fix merge fallout
+
+ unique/uniqueapp.c |    9 ---------
+ 1 files changed, 0 insertions(+), 9 deletions(-)
+
+commit 6679fae40243daf36ac4c35e424c8ecf192afb8b
+Merge: 246b494 7b0ca4c
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 19 17:36:12 2007 +0100
+
+    Merge branch 'window-watch' into work
+
+commit 246b494a56136c1796f858d74316bd0d4459a3ca
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 19 17:35:41 2007 +0100
+
+    Rename message-received signal emitter
+    
+    Use the full message name instead of just message.
+
+ unique/bacon/uniquefactory-bacon.c |    6 +++---
+ unique/dbus/uniquefactory-dbus.c   |    2 +-
+ unique/uniqueapp.c                 |   10 +++++-----
+ unique/uniqueinternals.h           |    8 ++++----
+ 4 files changed, 13 insertions(+), 13 deletions(-)
+
+commit 28994134de437449e16aa5c88c53ec37241fac7e
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 19 17:27:05 2007 +0100
+
+    Update gitignore files
+
+ .gitignore        |    1 +
+ po/.gitignore     |    1 +
+ unique/.gitignore |    1 +
+ 3 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 7b0ca4cb7b44e1ca2828df2fa98330a5ec0ae692
+Merge: ef4045b 1d2f916
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 19 16:39:27 2007 +0100
+
+    Merge branch 'work' into window-watch
+
+commit ef4045bb869903076a98fc2c76958eb2669d4cf0
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 19 16:38:25 2007 +0100
+
+    Use GDK to retrieve the startup notification id
+    
+    UniqueApp needs a startup notification id and will try to get one in every
+    way possible. GDK has most of the machinery already in place for doing this,
+    so we use it and fall back to the former implementation if that fails.
+
+ unique/uniqueapp.c |   19 +++++++++++++------
+ 1 files changed, 13 insertions(+), 6 deletions(-)
+
+commit 1d2f91642b113c2528fdbfdf46471f23462a0d11
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sat Jul 14 16:17:22 2007 +0100
+
+    Minor stylistical change in the bacon factory
+
+ unique/bacon/uniquefactory-bacon.c |    5 ++---
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+commit cbbedb05f1bb4beccd5c83c5db08297ffee02506
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sat Jul 14 16:16:59 2007 +0100
+
+    Ensure that we receive the correct response
+    
+    The ::message-received signal is RUN_LAST and has a return value accumulator.
+    This means that we need a signal class handler for it, otherwise we receive
+    an invalid value. Also, specify that UNIQUE_RESPONSE_INVALID must be 0, as
+    we assume it in a couple of places.
+
+ unique/uniqueapp.c |   12 ++++++++++++
+ unique/uniqueapp.h |    2 +-
+ 2 files changed, 13 insertions(+), 1 deletions(-)
+
+commit 815d5cc5b9334c76e4cd15e143346c01fb61997c
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sat Jul 14 16:14:43 2007 +0100
+
+    Use DISPLAY instead of the hostname as the token
+    
+    In the bacon backend, the DISPLAY environment variable as uniqueness token
+    guarantees that launching two different instances of an application on the
+    same machine but displayed on two different targets succeeds. This overcomes
+    a limitation in the current BaconMessageConnection code.
+
+ unique/bacon/uniquebackend-bacon.c |   24 ++++++++++++------------
+ 1 files changed, 12 insertions(+), 12 deletions(-)
+
+commit 3b41308421e144c5c3ca828bda46b77172cb2465
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 18:06:04 2007 +0100
+
+    Bump GTK+ required version to 2.11
+    
+    libunique now requires gtk+ 2.11/2.12 for the gtk_window_set_startup_id()
+    function, which changes the startup notification id on a window.
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit c6de06383b942939f72017055b514fdfa3db0c93
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 17:47:52 2007 +0100
+
+    Move the workspace code into UniqueBackend
+
+ doc/reference/unique-sections.txt |    2 +
+ tests/test-unique.c               |    3 +-
+ unique/uniqueapp.c                |   40 ++-----------------------------
+ unique/uniqueapp.h                |    5 ++-
+ unique/uniquebackend.c            |   47 +++++++++++++++++++++++++++++++++++++
+ unique/uniquebackend.h            |    3 ++
+ 6 files changed, 60 insertions(+), 40 deletions(-)
+
+commit 74a98d84891aad84781e8cd9d63b934d7cd7e6e8
+Merge: 1ad1ba2 208c3db
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 16:17:39 2007 +0100
+
+    Merge branch 'work' into window-watch
+
+commit 208c3dbe4093fbe0792061a22cb5ef83502edcd7
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 12:41:39 2007 +0100
+
+    Complete API reference
+
+ doc/reference/unique-sections.txt |    5 +--
+ unique/uniqueapp.h                |   17 ++++++++++-
+ unique/uniquebackend.h            |   17 ++++++++++
+ unique/uniquemessage.h            |    9 +++++
+ unique/uniqueversion.h.in         |   59 +++++++++++++++++++++++++++++++++++++
+ 5 files changed, 102 insertions(+), 5 deletions(-)
+
+commit 8503f677e9e676dbaedca49708a66811fc25c780
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 12:09:24 2007 +0100
+
+    Bump up revision to 0.9.3
+
+ configure.ac |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b52719be20bd447b7e1557cfe975f253d7cb24d4
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 12:08:58 2007 +0100
+
+    Use the correct LDFLAGS
+
+ unique/Makefile.am |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 6272755089a76ca7f21a2161283bbb51ba8394a1
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 11:59:12 2007 +0100
+
+    Add workspace support in the backend
+
+ tests/test-unique.c                |    5 +++--
+ unique/bacon/uniquemessage-bacon.c |   22 ++++++++++++++++------
+ unique/dbus/uniquebackend-dbus.c   |    6 ++++++
+ unique/dbus/uniquebackend-dbus.xml |    2 +-
+ unique/dbus/uniquefactory-dbus.c   |    3 ++-
+ 5 files changed, 28 insertions(+), 10 deletions(-)
+
+commit 64ebbdf91aaef2686f9818470e3b288d1ec40118
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 11:38:32 2007 +0100
+
+    Add support for passing the current workspace
+    
+    Applications might need to know from which workspace a message came. This
+    commit adds a workspace field to the UniqueMessageData structure which
+    gets filled by UniqueApp when sending a message to a running instance, just
+    like the screen and startup-id fields are set.
+
+ unique/uniqueapp.c       |   37 ++++++++++++++++++++++++++++++++++++-
+ unique/uniqueinternals.h |    1 +
+ unique/uniquemessage.c   |   16 ++++++++++++++++
+ unique/uniquemessage.h   |    1 +
+ 4 files changed, 54 insertions(+), 1 deletions(-)
+
+commit 0d78d5dd334134dcacca74557f341f16dba762bb
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 11:12:12 2007 +0100
+
+    Fix two bugs in UniqueApp
+    
+    Bug 1: If no startup notification id is set, correctly fake one.
+    Bug 2: Never commit before a make
+
+ tests/test-unique.c |    8 +++++++-
+ unique/uniqueapp.c  |    9 ++++++---
+ 2 files changed, 13 insertions(+), 4 deletions(-)
+
+commit fc6c87ce1b90e931d2ff0ce5ccf4669dc7ebc5c2
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 10:51:11 2007 +0100
+
+    Add reference documentation for UniqueMessageData API
+
+ unique/uniquemessage.c |   47 +++++++++++++++++++++++++++--------------------
+ 1 files changed, 27 insertions(+), 20 deletions(-)
+
+commit 02454fa6081fbf73a53167e31b00ab8c8849d00b
+Merge: d670192 d6e0cf7
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 10:41:59 2007 +0100
+
+    Merge branch 'xlibs-backend' into work
+
+commit d6e0cf7224e68cc3907c2f52f7e744deb16ef2ba
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 10:41:23 2007 +0100
+
+    Add documentation and fallback to unique_app_send_message()
+    
+    Now unique_app_send_message() checks whether is-running is FALSE and
+    returns UNIQUE_RESPONSE_INVALID if it's the case. I do not have strong
+    opinions on this one, though; it might make sense to actually emit the
+    message-received signal on the same instance, but it would be a programming
+    error to call unique_app_new() and unique_app_send_message() on the running
+    instance without actually checking with unique_app_is_running() beforehand.
+
+ unique/uniqueapp.c |   34 +++++++++++++++++++++++-----------
+ unique/uniqueapp.h |    3 +--
+ 2 files changed, 24 insertions(+), 13 deletions(-)
+
+commit 3a31d5681ac78ccc830ef490901462bc4230d326
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 10:37:52 2007 +0100
+
+    Add headers check and rename HAVE_DBUS macro
+
+ configure.ac           |   12 +++++++++---
+ unique/uniquebackend.c |    6 +++---
+ 2 files changed, 12 insertions(+), 6 deletions(-)
+
+commit d670192fc97692466bd206b24b4d8da1b3421a70
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Thu Jul 12 09:52:37 2007 +0100
+
+    Provide a default fallback for the test
+
+ tests/test-unique.c |    6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+commit 318ef6c1878aec5b9991b05b58cea8006ae6f3c2
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 18:18:37 2007 +0100
+
+    Fix the pkg-config template file
+
+ unique.pc.in |    5 ++---
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 1ad1ba2fd2dd5023d9c57f8574aa36a136545ee2
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 17:17:56 2007 +0100
+
+    Add window watching
+    
+    Using unique_app_watch_window() every watched window will get startup
+    notification changes when a message is received.
+
+ unique/uniqueapp.c |   65 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ unique/uniqueapp.h |    2 +
+ 2 files changed, 67 insertions(+), 0 deletions(-)
+
+commit 84934d5dff9ec421fd63b61be68b40f1598b914b
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 16:10:44 2007 +0100
+
+    Remove screen argument from the message data API
+    
+    The GdkScreen is automatically set up by Unique when sending a message
+    to the running instance, as well as the startup notification id.
+    
+    Allow passing a NULL UniqueMessageData to unique_app_send_message(): the
+    message will be created instead of copied.
+    
+    Fix a couple of leaks while we are at it.
+
+ tests/test-unique.c    |   40 ++++++++++++++++++++++++----------------
+ unique/uniqueapp.c     |   11 ++++++-----
+ unique/uniquemessage.c |   24 +++---------------------
+ unique/uniquemessage.h |    3 ---
+ 4 files changed, 33 insertions(+), 45 deletions(-)
+
+commit 5ad211194de17ed40cae0b30752a09274656c3e3
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 14:01:36 2007 +0100
+
+    Update build environment
+
+ ChangeLog   |    2 +-
+ Makefile.am |    5 +++--
+ README      |   14 ++++++++++++++
+ 3 files changed, 18 insertions(+), 3 deletions(-)
+
+commit 319924c319252a5dc2933f15511251e9604a77c5
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 13:47:20 2007 +0100
+
+    API reference documentation fixes
+
+ doc/reference/Makefile.am         |    1 +
+ doc/reference/unique-sections.txt |   19 ++++++++++---------
+ unique/uniquebackend.c            |   10 ++++++++++
+ unique/uniquebackend.h            |    2 +-
+ unique/uniquemessage.c            |   26 ++++++++++++++++++++------
+ unique/uniqueversion.h.in         |    8 ++++++++
+ 6 files changed, 50 insertions(+), 16 deletions(-)
+
+commit 2f338eab5aa20d6d2656f033365d5acaf3eb625c
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 13:08:18 2007 +0100
+
+    API changes
+    
+    UniqueApp constructor now takes two parameters: name and startup-id. A
+    new constructor has been added, unique_app_new_with_commands() which
+    removes the need to register the commands before calling unique_app_new();
+    a unique_app_add_command() function has been added for eventual bindings.
+    
+    The custom commands have been moved from a per-module hash table to a
+    per instance one, and will be cleaned up when disposing it.
+
+ doc/reference/Makefile.am          |    7 +-
+ tests/test-unique.c                |   20 ++--
+ unique/bacon/uniquebackend-bacon.c |    4 +-
+ unique/bacon/uniquefactory-bacon.c |    3 +-
+ unique/bacon/uniquemessage-bacon.c |   10 +-
+ unique/bacon/uniquemessage-bacon.h |    6 +-
+ unique/dbus/uniquebackend-dbus.c   |    2 +-
+ unique/dbus/uniquefactory-dbus.c   |    2 +-
+ unique/uniqueapp.c                 |  235 ++++++++++++++++++++++++------------
+ unique/uniqueapp.h                 |   15 ++-
+ unique/uniquebackend.c             |    2 -
+ unique/uniqueinternals.h           |    7 +-
+ 12 files changed, 206 insertions(+), 107 deletions(-)
+
+commit 1a1af1a45a69a4af3c2dfa0a8d5f926356d2b8c5
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 13:06:22 2007 +0100
+
+    Build fix
+
+ Makefile.am |   10 ++--------
+ 1 files changed, 2 insertions(+), 8 deletions(-)
+
+commit 4c3dcc6093dab5f0104824c587801ffcf16952f3
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Wed Jul 11 11:50:04 2007 +0100
+
+    Switch to runtime definition of the backend
+    
+    Every backend is now compiled in Unique and the actual implementation to
+    be used is decided by a compile time define and overridden by an environment
+    variable called UNIQUE_BACKEND.
+
+ configure.ac                       |   25 ++---------
+ doc/reference/unique-sections.txt  |    2 +
+ tests/Makefile.am                  |    7 +--
+ unique/Makefile.am                 |   65 +++++++++++++++---------------
+ unique/bacon/uniquebackend-bacon.c |   42 +++++--------------
+ unique/dbus/uniquebackend-dbus.c   |   32 +++++----------
+ unique/uniqueapp.c                 |   22 +++++++---
+ unique/uniquebackend.c             |   77 ++++++++++++++++++++++++++++++++++++
+ unique/uniquebackend.h             |   33 +++++++++++----
+ unique/uniqueinternals.h           |    9 +----
+ unique/uniqueversion.h.in          |    2 +-
+ 11 files changed, 183 insertions(+), 133 deletions(-)
+
+commit c276a20c66d1f316d647e14b0186572b4aabd73a
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 15:39:34 2007 +0100
+
+    And now fix my stupidity
+
+ .gitignore |    1 -
+ COPYING    |  510 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 510 insertions(+), 1 deletions(-)
+
+commit 77d4f1f3d400163fc43a391dcc5bbca6ae116d94
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 15:37:56 2007 +0100
+
+    Fix autotools utter stupidity
+
+ COPYING.LGPL |  510 ----------------------------------------------------------
+ 1 files changed, 0 insertions(+), 510 deletions(-)
+
+commit e7b9433f7f1a5d0cd05a12bb49af3edcae8e7b08
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 15:04:59 2007 +0100
+
+    Bump to 0.9.1 and repackage
+
+ configure.ac |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b3e04c0d51f562f2a0be5696e94824a67f27458f
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 15:04:25 2007 +0100
+
+    Add license information
+    
+    Unique is licensed under LGPL, so declare it inside every source file
+    and add the appropriate COPYING file.
+
+ COPYING.LGPL                       |  510 ++++++++++++++++++++++++++++++++++++
+ unique/bacon/uniquebackend-bacon.c |    9 +-
+ unique/bacon/uniquebackend-bacon.h |    6 +-
+ unique/bacon/uniquefactory-bacon.c |    9 +-
+ unique/bacon/uniquefactory-bacon.h |    8 +-
+ unique/dbus/uniquebackend-dbus.c   |    6 +-
+ unique/dbus/uniquebackend-dbus.h   |    6 +-
+ unique/unique.h                    |   21 ++
+ unique/uniqueapp.c                 |    6 +-
+ unique/uniqueapp.h                 |   21 ++
+ unique/uniquebackend.c             |   21 ++
+ unique/uniquebackend.h             |   21 ++
+ unique/uniquemessage.c             |   21 ++
+ unique/uniquemessage.h             |   21 ++
+ unique/uniqueversion.h.in          |   20 ++
+ 15 files changed, 684 insertions(+), 22 deletions(-)
+
+commit d4b9152d2179796e5b2e8b377ac5c6a83ec32c5e
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 15:03:21 2007 +0100
+
+    Drop compatibility with automake 1.7
+
+ autogen.sh |   17 ++++++-----------
+ 1 files changed, 6 insertions(+), 11 deletions(-)
+
+commit 52da3aa370a099fab4a3f5c4a5d3ee1a41c2af3d
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 10:37:26 2007 +0100
+
+    Build fixes to pass distcheck
+
+ Makefile.am        |    2 +-
+ unique/Makefile.am |    4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+commit a1e189c1d2fd07c75f40c033b329472bac7aee45
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 10:26:17 2007 +0100
+
+    Add ignore files
+
+ .gitignore               |   25 +++++++++++++++++++++++++
+ doc/reference/.gitignore |   23 +++++++++++++++++++++++
+ po/.gitignore            |    2 ++
+ tests/.gitignore         |    4 ++++
+ unique/.gitignore        |   17 +++++++++++++++++
+ unique/bacon/.gitignore  |    7 +++++++
+ unique/dbus/.gitignore   |    7 +++++++
+ 7 files changed, 85 insertions(+), 0 deletions(-)
+
+commit 99a0279655c8baaf8a3fd4c97368b2d5515a63ae
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 10:24:00 2007 +0100
+
+    Remove the xlibs backend
+    
+    The Xlibs based backend is not ready yet, so it's not included in the build
+    and it's not available as a configure switch. It will be developed in a
+    separate branch until ready for public consumption.
+
+ configure.ac |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 449636d410cac920e509bf531186752db3e82dd3
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Mon Jul 9 09:21:19 2007 +0100
+
+    Correctly terminate the packed message data
+
+ unique/bacon/uniquebackend-bacon.c |    3 ++-
+ unique/bacon/uniquefactory-bacon.c |   13 ++++---------
+ unique/bacon/uniquemessage-bacon.c |    4 ++++
+ 3 files changed, 10 insertions(+), 10 deletions(-)
+
+commit 034c9eb29cd8f7f3ddf3cc20c785b9742caca973
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 23:29:11 2007 +0100
+
+    Add backend as a symbold
+    
+    Export the UNIQUE_BACKEND_S symbol from uniqueversion.h, containing the
+    backend against which Unique was compiled in form of a string. The same
+    information is available using pkg-config, but it might be good to have
+    it accessible from within and without the library itself.
+
+ unique/uniqueversion.h.in |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 57e89c9081dec1999295e3bf60554af08a42fb81
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 23:22:36 2007 +0100
+
+    More documentation fixes
+
+ doc/reference/Makefile.am         |    5 +++--
+ doc/reference/unique-sections.txt |    2 ++
+ unique/uniqueapp.h                |   16 +++++++---------
+ 3 files changed, 12 insertions(+), 11 deletions(-)
+
+commit 004987e85ea0c78db4ad92eaf5c4d9ce9517fb8a
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 23:17:18 2007 +0100
+
+    Documentation fixes
+
+ unique/dbus/uniquebackend-dbus.c |    2 +-
+ unique/uniqueapp.c               |   14 +++++++++++++-
+ 2 files changed, 14 insertions(+), 2 deletions(-)
+
+commit 857cf6a2d2e7a154465708c7ddb2c6244a471735
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 23:08:59 2007 +0100
+
+    API Reference
+    
+    Add documentation and API reference templates to the build.
+
+ doc/reference/Makefile.am         |    2 +-
+ doc/reference/unique-docs.sgml    |   94 +++++++++++++++++++++++++++++++++++++
+ doc/reference/unique-sections.txt |   84 +++++++++++++++++++++++++++++++++
+ doc/reference/unique.types        |    2 +
+ unique/uniqueapp.c                |   29 +++++++++++
+ unique/uniquebackend.c            |    9 ++++
+ unique/uniquemessage.c            |   41 ++++++++++++++++-
+ unique/uniquemessage.h            |   41 ++++++++--------
+ 8 files changed, 280 insertions(+), 22 deletions(-)
+
+commit 323c8e3251b528616c3943a530881f4ad8def6c1
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 21:00:50 2007 +0100
+
+    Update simple test case
+    
+    Show the command received, along with the potential payload.
+
+ tests/test-unique.c |   34 ++++++++++++++++++++++++++++------
+ 1 files changed, 28 insertions(+), 6 deletions(-)
+
+commit 6bf55318bedb112d6ee8a1f05d075227f027e27f
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 20:51:33 2007 +0100
+
+    Dispose the UniqueBackend with the UniqueApp
+
+ unique/uniqueapp.c |   16 ++++++++++++++++
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+
+commit d531b7e9f7abd071938f6091ba0381d409c5371f
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 20:49:33 2007 +0100
+
+    Finish the "bacon" backend
+    
+    Implement the message packing and unpacking in the "bacon" backend. Also
+    deal with the stale named pipe files.
+
+ unique/bacon/uniquebackend-bacon.c |   36 +++++++++--
+ unique/bacon/uniquefactory-bacon.c |    2 +-
+ unique/bacon/uniquemessage-bacon.c |  118 +++++++++++++++++++++++++++++++++++-
+ unique/bacon/uniquemessage-bacon.h |    1 -
+ 4 files changed, 146 insertions(+), 11 deletions(-)
+
+commit 7e125cc6898b55d19880d103c65f429c62d25f65
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 18:12:14 2007 +0100
+
+    Initial commit of the bacon backend
+    
+    The "bacon" backend for Unique uses Unix domain sockets as the IPC mechanism.
+    It's based on BaconMessageConnection (hence the name), written by Bastien
+    Nocera for the Totem video player and used in other projects.
+
+ configure.ac                       |    1 +
+ unique/bacon/Makefile.am           |   19 ++
+ unique/bacon/uniquebackend-bacon.c |  487 ++++++++++++++++++++++++++++++++++++
+ unique/bacon/uniquebackend-bacon.h |   46 ++++
+ unique/bacon/uniquefactory-bacon.c |  217 ++++++++++++++++
+ unique/bacon/uniquefactory-bacon.h |   67 +++++
+ unique/bacon/uniquemessage-bacon.c |   25 ++
+ unique/bacon/uniquemessage-bacon.h |   41 +++
+ 8 files changed, 903 insertions(+), 0 deletions(-)
+
+commit 7c21d94f803361775bc3a3877101ff4ae5a7e9e1
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 18:08:27 2007 +0100
+
+    Add gtk-doc template
+
+ doc/reference/Makefile.am |   88 ++++++++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 87 insertions(+), 1 deletions(-)
+
+commit 74190f5e5f5d895a5074806f133088c84235c31a
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 16:37:30 2007 +0100
+
+    Fix compilation warnings
+    
+    The stricter compiler flags of the odd-numbered minor versions make compilation
+    utterly fail in a couple of places - mostly signedness issue with having an
+    unsigned char stored inside UniqueMessageData and the fact that we pass around
+    a lot of signed chars instead.
+
+ tests/test-unique.c              |    2 +-
+ unique/dbus/uniquebackend-dbus.c |    6 ++----
+ unique/dbus/uniquefactory-dbus.c |    5 ++---
+ unique/dbus/uniquefactory-dbus.h |    2 +-
+ unique/uniqueapp.c               |    2 +-
+ unique/uniquemessage.c           |   10 ++++++----
+ unique/uniquemessage.h           |    2 +-
+ 7 files changed, 14 insertions(+), 15 deletions(-)
+
+commit 0ebacc30a9e557d143d5a728ca5948a0f2680e44
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sun Jul 8 16:34:40 2007 +0100
+
+    Bump version back to 0.9.0
+    
+    We are still in beta, and odd-numbered minor versions come with a very
+    strict set of compiler flags, which help catching stupid errors.
+
+ configure.ac |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit b27db928528a67e4169ade37513899fdb050c8be
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sat Jul 7 11:49:11 2007 +0100
+
+    Add translatable files template
+
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 772546daa5d0b776bd6c6b17b2f3e1f16a35e175
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sat Jul 7 11:48:42 2007 +0100
+
+    Remove the upload command
+    
+    There's no need for an upload command in the Makefile template.
+
+ Makefile.am |    5 -----
+ 1 files changed, 0 insertions(+), 5 deletions(-)
+
+commit cc634f1e46306eb287a7f497c6a4ae6bec364b4c
+Author: Emmanuele Bassi <ebassi@openedhand.com>
+Date:   Sat Jul 7 11:41:45 2007 +0100
+
+    Initial import of Unique
+    
+    Unique is a library for writing single instance applications. An application
+    using Unique will block any othe instance of the same application launched
+    after the first one; any other instance can send a message to the running
+    application, for instance to open a list of URIs.
+    
+    Unique can be compiled against different backends, implementing the IPC
+    mechanisms used by different instances to communicate.
+    
+    This is the initial import of the Unique library: at the moment, only the
+    (default) D-Bus backend is working.
+    
+    The public API is not yet frozen.
+
+ AUTHORS                            |    1 +
+ ChangeLog                          |    1 +
+ Makefile.am                        |   33 ++
+ autogen.sh                         |  119 +++++++
+ configure.ac                       |  175 ++++++++++
+ doc/Makefile.am                    |    1 +
+ doc/reference/Makefile.am          |    1 +
+ doc/reference/version.xml.in       |    1 +
+ tests/Makefile.am                  |   18 +
+ tests/test-unique.c                |  190 +++++++++++
+ unique.pc.in                       |   13 +
+ unique/Makefile.am                 |   96 ++++++
+ unique/dbus/Makefile.am            |   36 ++
+ unique/dbus/uniquebackend-dbus.c   |  263 +++++++++++++++
+ unique/dbus/uniquebackend-dbus.h   |   43 +++
+ unique/dbus/uniquebackend-dbus.xml |   10 +
+ unique/dbus/uniquefactory-dbus.c   |  100 ++++++
+ unique/dbus/uniquefactory-dbus.h   |   57 ++++
+ unique/unique.h                    |    8 +
+ unique/uniqueapp.c                 |  651 ++++++++++++++++++++++++++++++++++++
+ unique/uniqueapp.h                 |  107 ++++++
+ unique/uniquebackend.c             |  166 +++++++++
+ unique/uniquebackend.h             |   60 ++++
+ unique/uniqueinternals.h           |   57 ++++
+ unique/uniquemarshal.list          |    1 +
+ unique/uniquemessage.c             |  390 +++++++++++++++++++++
+ unique/uniquemessage.h             |   36 ++
+ unique/uniqueversion.h.in          |   23 ++
+ 28 files changed, 2657 insertions(+), 0 deletions(-)

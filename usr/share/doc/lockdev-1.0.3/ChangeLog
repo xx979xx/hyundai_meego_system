@@ -1,0 +1,56 @@
+2006-04-20  Paweł Więcek <coven@debian.org>
+
+	* Version 1.0.3.
+
+	* src/lockdev.c: Updated _dl_filename_1 to distinguish between
+	  character and block devices. Lock file name changes thus from
+	  LCK.012.345 to LCK.C.012.345.
+	
+2005-10-03  Roger Leigh  <rleigh@debian.org>
+
+	* Version 1.0.2.
+
+	* LockDev/Makefile.PL: Merge shobs support from the Debian diff.
+
+	* Makefile Merge shobs support from the Debian diff.
+	(tarball): Remove --exclude option which was broken with current
+	versions of GNU tar.
+
+	* src/sample.c (main): Use liblockdev_incr_debug when the "-d"
+	option is used, to fix broken debugging support.
+
+	* src/ttylock.h: Convert K&R C into ISO C89 C.
+
+	* src/lockdev.h: Convert K&R C into ISO C89 C.
+
+	* src/lockdev.c:
+	(General) Replace the use of __linux__ with __GNU_LIBRARY__, and
+	use the GNU libc gnu_dev_major() and gnu_dev_minor() functions
+	rather than kernel macros.
+	(General) Convert K&R C into ISO C89 C.
+	(_dl_filename_1): Remove special casing for CUA devices on Linux
+	systems; these devices have long been deprecated and are no longer
+	available in current kernels.
+	(_dl_filename_2): If a device name has '/' separators in its name,
+	replace them with ':'s.  This is to support devices in
+	subdirectories.
+	(_dl_check_devname): If a device pathname starts with DEV_PATH,
+	e.g. "/dev/", strip off only "/dev/", rather than the entire path.
+	This is to support devices in subdirectories under /dev,
+	e.g. DevFS, udev, devpts and LVM.
+
+2001-05-27  Gergely Nagy  <algernon@debian.org>
+
+	* Rules.mk: extracted from debian/policy
+
+	* debian/rules: updated to new Debian Perl policy; move shared
+	library from /lib to /usr/lib; properly strip binaries; include
+	Section and Priority in the deb package
+
+	* debian/policy: bumped standards-version, added min_perl_policy
+
+	* debian/control: added build-depends, bumped standards-version,
+	and a few cosmetic fixes
+
+	* Makefile (perl-lib): Updated to new Debian Perl policy
+	(tarball): do not include debian/

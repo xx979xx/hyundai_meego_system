@@ -1,0 +1,14 @@
+###
+### The Debian Package sensord
+###
+
+This package provides the sensor system daemon. 
+
+# About CompassSensor
+
+The algorithms used with the magnetometer are proprietary, and are not
+included with this build. They can be installed from package
+sensorfw-plugins-compasslogic.
+
+Unless the package is installed, CompassSensor and MagnetometerSensor will
+fail to load.

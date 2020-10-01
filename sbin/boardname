@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# (C) Copyright 2011 Intel Corporation
+#
+# Authors:
+#    Auke Kok <auke-jan.h.kok@intel.com>
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; version 2
+# of the License.
+
+
+# if there's an override file, pass the contents of that file as boardname
+if [ -e /etc/boardname-override ]; then
+	if [ /etc/boardname-override -ef /etc/boardname ]; then
+		cat /etc/boardname-override && exit 0
+	fi
+	rm -f /etc/boardname
+	ln /etc/boardname-override /etc/boardname
+	cat /etc/boardname-override && exit 0
+	exit 1
+elif [ -e /etc/boardname ]; then
+	# if we've run this script before, use the previous results instead
+	# of doing all the parsing
+	cat /etc/boardname && exit 0
+	exit 1
+fi
+
+case `uname -m` in
+	i[3456]86)
+		B_ARCH="ia32"
+
+		B_VENDOR=`cat /sys/devices/virtual/dmi/id/board_vendor`
+		B_NAME=`cat /sys/devices/virtual/dmi/id/board_name`
+		B_VERSION=`cat /sys/devices/virtual/dmi/id/board_version`
+
+		if [ -z "$B_VERSION" -o "$B_VERSION" == "Not Available" ]; then
+			B_ID="${B_VENDOR}_${B_NAME}"
+		else
+			B_ID="${B_VENDOR}_${B_NAME}_${B_VERSION}"
+		fi
+
+		;;
+	arm*)
+		B_ARCH="arm"
+
+		B_NAME=`grep -e "Hardware.*\:" /proc/cpuinfo | cut -b "12-"`
+		B_REV=`grep -e "Revision.*\:" /proc/cpuinfo | cut -b "12-"`
+
+		if [ -z "$B_REV" ]; then
+			B_ID="${B_NAME}"
+		else
+			B_ID="${B_NAME}_${B_REV}"
+		fi
+
+		;;
+	*)
+		echo "Unsupported hardware. Please Add this arch to the boardname script" >&2
+		echo "or file a bug at https://bugs.meego.com/ to have this arch added" >&2
+		echo "to the boardname script." >&2
+		exit 1
+		;;
+esac
+
+# trim spaces, nonprintables etc.
+BOARDNAME=$(echo "${B_ARCH}_${B_ID}" | tr '[A-Z]' '[a-z]' | tr -cs 'a-zA-Z0-9\n' '_')
+
+# calling this script assumes you're consuming the stdout.
+echo $BOARDNAME
+
+# store for later use, program use etc. -- ignore errors here for now
+( echo $BOARDNAME > /etc/boardname ) > /dev/null 2>&1 || true
+
+exit 0

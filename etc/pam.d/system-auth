@@ -1,0 +1,12 @@
+auth        required      pam_env.so
+auth        required      pam_unix.so try_first_pass nullok
+
+account     required      pam_unix.so
+
+#password    required      pam_cracklib.so try_first_pass retry=3
+password    required      pam_unix.so try_first_pass  nullok md5 shadow
+
+session     optional      pam_keyinit.so revoke
+session     required      pam_limits.so
+session     [success=1 default=ignore] pam_succeed_if.so service in crond quiet use_uid
+session     required      pam_unix.so

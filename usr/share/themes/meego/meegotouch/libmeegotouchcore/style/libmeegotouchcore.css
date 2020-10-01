@@ -1,0 +1,9 @@
+@import "sizes.css";
+
+/* default style attribute values for common components */
+/* widget styles are imported in alphabetical order */
+
+@import "mdevicestyle.css";
+@import "commonlayouts.css";
+@import "mflowlayoutcontainerstyle.css";
+@import "mwidgetstyle.css";

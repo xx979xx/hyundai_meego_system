@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-messaging-smiley-tongue-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-messaging-smiley-tongue">
+	<rect style="fill:none;" width="48" height="48"/>
+	<path style="fill:#333333;" d="M27.858,30.926h-0.265c0.426,0.76,1.23,2.514,1.326,5.038C28.92,35.964,30,32.931,27.858,30.926z"/>
+	<path style="fill:#333333;" d="M39.75,25.285l-0.559,0.803c-0.131,0.277-5.238,4.838-15.191,4.838
+		c-9.953,0-15.061-4.561-15.19-4.838l-0.56-0.803c0.138,0.305,3.131,6.641,11.983,8.1c0.872,4.453,4.605,7.623,8.687,7.197
+		c4.354-0.452,7.478-4.824,6.966-9.744c-0.029-0.283-0.073-0.561-0.126-0.834C38.555,27.83,39.667,25.467,39.75,25.285z
+		 M28.635,37.837c-2.41,0.251-4.64-1.54-5.478-4.168c0.277,0.01,0.556,0.018,0.843,0.018c3.867,0,6.871-0.868,9.172-2.045
+		C33.281,34.83,31.328,37.557,28.635,37.837z"/>
+	<circle style="fill:#333333;" cx="16.276" cy="15.375" r="3.375"/>
+	<circle style="fill:#333333;" cx="31.724" cy="15.375" r="3.375"/>
+	<path style="fill:#333333;" d="M24,3c11.58,0,21,9.42,21,21s-9.42,21-21,21C12.42,45,3,35.58,3,24S12.42,3,24,3 M24,0
+		C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0L24,0z"/>
+</g>
+</svg>

@@ -1,0 +1,64 @@
+/* MToolbarTabStyle : MToolbarStyle */
+MToolbarTabStyle {
+    /* inherited from MWidgetStyle */
+    background-opacity: 0.0;
+
+    preferred-size: -1 $HEIGHT_NAVIGATIONBAR;
+    minimum-size: -1 $HEIGHT_NAVIGATIONBAR;
+    maximum-size: -1 $HEIGHT_NAVIGATIONBAR;
+
+    has-icons: true;
+    has-labels: false;
+    has-spaces: false;
+    label-only-as-common-button: false;
+}
+
+MButtonStyle[toolbartab] {
+    font: $FONT_XSMALL;
+    background-tiles: meegotouch-button-navigationbar-tab-button-background $CORNER_MARGINS;
+    background-color: $COLOR_BACKGROUND;
+    text-color: $COLOR_INVERTED_FOREGROUND;
+    /* inherited from MWidgetStyle */
+
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+    vertical-text-align: top;
+    horizontal-text-align: center;
+
+    text-margin-left: $MARGIN_MEDIUM;
+    text-margin-top: 0;
+    text-margin-right: $MARGIN_MEDIUM;
+    text-margin-bottom: 0;
+
+    minimum-size: -1 $HEIGHT_NAVIGATIONBAR;
+    preferred-size: 39.0mm $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 39.0mm $HEIGHT_NAVIGATIONBAR;
+
+    reactive-margin-top: $MARGIN_MEDIUM;
+    reactive-margin-bottom: $MARGIN_MEDIUM;
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-left:   $PADDING_MEDIUM;
+    padding-top:    $PADDING_MEDIUM;
+    padding-right:  $PADDING_MEDIUM;
+    padding-bottom: $PADDING_MEDIUM;
+}
+
+MButtonStyle[toolbartab].Portrait {
+    preferred-size: 100% $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 100% $HEIGHT_NAVIGATIONBAR;
+}
+
+MButtonStyle[toolbartab]:pressed {
+    background-image: meegotouch-button-navigationbar-tab-button-background-pressed $CORNER_MARGINS;
+    background-color: $COLOR_SELECT;
+}
+
+MButtonStyle[toolbartab]:selected {
+    background-image: meegotouch-button-navigationbar-tab-button-background-selected $CORNER_MARGINS;
+    background-color: $COLOR_SELECT;
+}

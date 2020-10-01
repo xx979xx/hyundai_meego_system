@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=STR_DLNA
+Comment=STR_DLNA
+GenericName=STR_DLNA
+Exec=17
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=
+Categories=
+MimeType=
+X-Desktop-File-Install-Version=0.16

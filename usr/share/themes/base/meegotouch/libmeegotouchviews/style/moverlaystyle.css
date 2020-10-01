@@ -1,0 +1,12 @@
+/* MOverlayStyle : MSceneWindowStyle */
+MOverlayStyle {
+
+    minimum-size: 100 100;
+    preferred-size: 100 100;
+    maximum-size: 100 100;
+
+    vertical-align: top;
+    horizontal-align: left;
+
+    offset: 0 0;
+}

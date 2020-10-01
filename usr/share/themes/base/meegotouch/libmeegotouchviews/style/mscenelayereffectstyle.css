@@ -1,0 +1,16 @@
+/* MSceneLayerEffectStyle : MSceneWindowStyle */
+MSceneLayerEffectStyle {
+    /* inherited from MSceneWindowStyle */
+    vertical-align: top;
+    horizontal-align: left;
+
+    minimum-size: 100% 100%;
+    preferred-size: 100% 100%;
+    maximum-size: 100% 100%;
+
+    /* inherited from MWidgetStyle */
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}

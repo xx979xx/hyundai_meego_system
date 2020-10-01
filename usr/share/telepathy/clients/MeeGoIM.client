@@ -1,0 +1,37 @@
+[org.freedesktop.Telepathy.Client]
+Interfaces=org.freedesktop.Telepathy.Client.Handler;
+
+[org.freedesktop.Telepathy.Client.Handler.HandlerChannelFilter 0]
+org.freedesktop.Telepathy.Channel.ChannelType s=org.freedesktop.Telepathy.Channel.Type.Text
+org.freedesktop.Telepathy.Channel.TargetHandleType u=1
+
+[org.freedesktop.Telepathy.Client.Handler.HandlerChannelFilter 1]
+org.freedesktop.Telepathy.Channel.ChannelType s=org.freedesktop.Telepathy.Channel.Type.Call.DRAFT
+org.freedesktop.Telepathy.Channel.TargetHandleType u=1
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT.InitialAudio b=true
+
+[org.freedesktop.Telepathy.Client.Handler.HandlerChannelFilter 2]
+org.freedesktop.Telepathy.Channel.ChannelType s=org.freedesktop.Telepathy.Channel.Type.Call.DRAFT
+org.freedesktop.Telepathy.Channel.TargetHandleType u=1
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT.InitialVideo b=true
+
+[org.freedesktop.Telepathy.Client.Handler.HandlerChannelFilter 3]
+org.freedesktop.Telepathy.Channel.ChannelType s=org.freedesktop.Telepathy.Channel.Type.FileTransfer
+org.freedesktop.Telepathy.Channel.TargetHandleType u=1
+
+[org.freedesktop.Telepathy.Client.Handler.HandlerChannelFilter 4]
+org.freedesktop.Telepathy.Channel.ChannelType s=org.freedesktop.Telepathy.Channel.Type.Text
+org.freedesktop.Telepathy.Channel.TargetHandleType u=2
+
+[org.freedesktop.Telepathy.Client.Handler.HandlerChannelFilter 5]
+org.freedesktop.Telepathy.Channel.ChannelType s=org.freedesktop.Telepathy.Channel.Type.ServerAuthentication
+org.freedesktop.Telepathy.Channel.Type.ServerAuthentication.AuthenticationMethod s=org.freedesktop.Telepathy.Channel.Interface.SASLAuthentication
+
+[org.freedesktop.Telepathy.Client.Handler.Capabilities]
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT/ice-udp=true
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT/gtalk-p2p=true
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT/audio=true
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT/audio/speex=true
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT/video=true
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT/video/theora=true
+org.freedesktop.Telepathy.Channel.Type.Call.DRAFT/video/h264=true

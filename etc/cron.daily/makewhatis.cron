@@ -1,0 +1,28 @@
+#!/bin/bash
+
+LOCKFILE=/var/lock/makewhatis.lock
+
+# the lockfile is not meant to be perfect, it's just in case the
+# two makewhatis cron scripts get run close to each other to keep
+# them from stepping on each other's toes.  The worst that will
+# happen is that they will temporarily corrupt the database...
+[ -f $LOCKFILE ] && exit 0
+
+# if MAKEWHATISDBUPDATES variable is set to "n" or "N", then the 
+# update will not passed
+
+MDU=`sed -n -e 's/^[[:blank:]]*MAKEWHATISDBUPDATES[[:blank:]]*\(.\)[[:blank:]]*$/\1/p' < /etc/man.config`
+([ "$MDU" == "n" ] || [ "$MDU" == "N" ]) && exit 0
+
+trap "{ rm -f $LOCKFILE ; exit 255; }" EXIT
+touch $LOCKFILE
+# Rebuild the database if makewhatis was since last full run,
+# otherwise just update with new pages
+if [ ! -f /var/cache/man/whatis ] ||
+   find /usr/sbin/makewhatis -newer /var/cache/man/whatis |grep -q .
+then
+	makewhatis -w
+else
+	makewhatis -U -w
+fi
+exit 0

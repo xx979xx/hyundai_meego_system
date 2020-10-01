@@ -1,0 +1,16 @@
+Parent=MainPage
+
+Name=Applications
+Name-logical-id=qtn_sett_main_applications
+
+Value="Installations, Application settings"
+Value-logical-id=qtn_sett_main_applictions_label2
+
+Icon=icon-m-settings-applications
+
+Aliases=Uncategorized
+Translation-catalogs=
+AppletSort=SortByTitle
+
+Order=30
+

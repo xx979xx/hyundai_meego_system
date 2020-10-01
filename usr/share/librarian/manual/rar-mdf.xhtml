@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Writing Rarian Meta-data files</title>
+</head>
+<body>
+<p><a href="index.xhtml">return to index</a></p>
+<h2>Overview</h2>
+<p>Rarian meta-data files are desktop files as defined by the proposed
+XDG help system spec (a copy of which is distributed with the Rarian
+source tarball).  A copy of specification on which this version of
+Rarian is based can also be found 
+<a href="http://www.gnome.org/~dscorgie/help-spec-0-2.html">here</a>.</p>
+
+<p>This section describes how to write the meta-data files and how to
+ensure they are picked up by the Rarian library.</p>
+
+<p><strong>WARNING</strong>: The meta-data format is not currently
+complete and is liable to change in incompatible ways in future
+releases.  It is strongly recommended to use the <a
+href="rar-skcompat.xhtml">scrollkeeper compatibility mode</a> at present.</p>
+
+<hr/>
+<h2>The basic structure</h2>
+<p>A sample meta-data file looks like:</p>
+<quote>
+<p># An example meta-data scroll file - beanstalk.document</p>
+<p>[document]</p>
+<p>Name=The Beanstalk Manual</p>
+<p>Name[de]=Das Beanstalk Manual</p>
+<p>DocIdentifier=org.freedesktop.beanstalk</p>
+<p>Categories=Utility;Finance</p>
+<p>DocPath=file:///usr/share/fdo/help/beanstalk/C/beanstalk.html</p>
+<p>DocPath[de]=file:///usr/share/fdo/help/beanstalk/de/beanstalk.html</p>
+<p>DocType=application/xhtml+xml</p>
+<p>Comment=Beanstalk provides access to golden eggs.  Climb it and find
+your destiny</p>
+<p>Comment[de]=German language not known.  Sorry.</p>
+</quote>
+
+<h3>Anatomy</h3>
+<p>The above file introduces most elements of the meta-data file
+format.</p>
+<ul>
+<li>Comments are marked as lines beginning with a '#' character and
+are ignored by the parser.</li>
+<li>Section names are encased in square brackets ([ ]) beginning a
+line.  A [document] section is required to be valid.</li>
+<li>Fields are of the form "Name=value"</li>
+<li>Other languages can be included by specifying the language type in
+square brackets at the end of the name: "Name[lang]=value"</li>
+<li>Key names are case-sensitive.  "Name" is not the same as "name".</li>
+<li>Any unknown keys are ignored.</li>
+<li>A section continues until another section or end-of-file is
+encountered</li>
+</ul>
+
+<h3>Recognised Fields</h3>
+<p>The [document] section of meta-data files can contain a number of
+fields, some of which are required.  This section gives details of
+what fields are available and what they do.  Fields marked as
+<strong>strong</strong> are necessary.</p>
+
+<dl>
+<dt><strong>Name</strong></dt>
+<dd>The title of the document</dd>
+<dt><strong>DocPath</strong></dt>
+<dd>The path to the file.  This should be in the form of a URI as above.</dd>
+<dt><strong>DocType</strong></dt>
+<dd>The mime type of the document.</dd>
+<dt>Comment</dt>
+<dd>Typically, help browsers will give a short description of the
+document to allow people to determine whether they want to look at the
+document.  This is what is displayed</dd>
+<dt>Icon</dt>
+<dd>The icon associated with the document, if there is one.</dd>
+<dt><strong>Categories</strong></dt>
+<dd>A semi-colon separated list of categories the document is relevant
+to.  The available categories can be found in the <a
+href="http://standards.freedesktop.org/menu-spec/latest/apa.html">XDG
+menu spec</a></dd>
+<dt>DocWeight</dt>
+<dd>The "weighting" given to documents.  Documents with higher
+DocWeight are shown below documents with lower DocWeights.  This
+should generally not be used without a good reason</dd>
+<dt><strong>DocIdentifier</strong></dt>
+<dd>The DocIdentifier is a reverse-DNS identifier used to determine
+whether two documents describe the same subject.  The general form of
+the DocIdentifier is "org.&lt;organisation&gt;.&lt;subject&gt;".  The "org."
+should be substituted for "com." for commercial programs.  Please
+choose the &lt;organisation&gt; appropriately.</dd>
+<dt>DocLang</dt>
+<dd>When the meta-data file describes a single language, but not the
+"C" locale, this field gives the language.  This is used for (e.g.)
+distributing language packs.</dd>
+</dl>
+
+<p><strong>TODO</strong>: Describe children element and where they are useful</p>
+
+<h3>Additional Fields</h3>
+<p>There are several fields that should not be used except in specific
+circumstances.  These are described here.</p>
+
+<dl>
+<dt>x-DocHeritage</dt>
+<dd>This is used when moving from scrollkeeper.  The scrollkeeper
+translation utilities form a new-style identifier of the form
+"org.scrollkeeper.&lt;scrollkeeper-seriesid&gt;".  In order to ensure
+your new document is picked up in it's place, you must specify this
+field in the form of: <p>x-DocHeritage=org.scrollkeeper.&lt;seriesid&gt;</p>
+</dd>
+<dt>x-Scrollkeeper-omf-loc</dt>
+<dd>This should never be used.  It is used by the scrollkeeper
+compatibility to provide the location of the scrollkeeper omf files.</dd>
+</dl>
+
+<h2>Making your meta-data files accessible</h2>
+<p>By default, Rarian will pick up meta-data files found in the "help"
+subdirectory of the XDG_DATA_DIRS environment variable.  If this
+environment variable is not set, Rarian will default to checking in
+/usr/share/help and /usr/local/share/help.</p>
+
+<p>In addition, the environment variable XDG_DATA_HOME can also be
+used to provide user-specific files.  Rarian will check
+$XDG_DATA_HOME/.share/help.  If XDG_DATA_HOME is not set, it defaults
+to $HOME.</p>
+
+<p>To be picked up by Rarian, the meta-data file must be placed in one
+of these directories (or a sub-directory thereof).  The only other
+requisite for documents is that the meta-data file must have the
+suffix ".document".  For example, the example file presented above
+would be named "beanstalk.document".</p>
+
+<h3>Accessing your documentation</h3>
+
+<p><strong>Note:</strong> This section is due for heavy revision once
+several things come together.  It is aimed at GNOME documentation
+currently.  Once the XDG help spec is implemented / supported, this
+will become obsolete</p>
+
+<p>Having written your documentation, copied your meta-data file
+to the correct location, you now have several options to access your
+documentation from your application:</p>
+<ul>
+<li>Use libgnome-provided help functions.</li>
+<li>Call "yelp" from the command line, with the parameter 
+"ghelp:&gt;name of meta-data file&lt;".  I.e. to load the beanstalk
+document, the command line would be: "yelp ghelp:beanstalk".</li>
+</ul>
+
+<p><strong>Note:</strong> libgnome currently uses a different method
+for determining the location and name of a file to be opened within
+yelp.  This may require some playing around with.  We are actively
+working to make this obsolete and rely more on the DocIdentifier.</p>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<provider
+  xmlns="http://contextkit.freedesktop.org/Provider"
+  bus="system" service="com.nokia.SensorService">
+    <key name="Screen.IsCovered"/>
+    <key name="Screen.TopEdge"/>
+    <key name="Position.IsFlat"/>
+    <key name="Environment.IsDark"/>
+    <key name="Environment.IsBright"/>
+    <key name="Position.Stable"/>
+    <key name="Position.Shaky"/>
+    <key name="Location.Heading"/>
+</provider>

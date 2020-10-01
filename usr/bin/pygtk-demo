@@ -1,0 +1,7 @@
+#! /usr/bin/python
+
+import sys
+import os.path
+pygtklibdir = os.path.join("/usr/lib", "pygtk", "2.0")
+sys.path.insert(0, pygtklibdir)
+execfile(os.path.join(pygtklibdir, "pygtk-demo.py"))

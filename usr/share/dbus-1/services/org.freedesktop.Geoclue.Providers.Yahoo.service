@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.freedesktop.Geoclue.Providers.Yahoo
+Exec=/usr/libexec/geoclue-yahoo

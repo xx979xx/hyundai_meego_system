@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=STR_RADIO
+Comment=STR_RADIO
+GenericName=STR_RADIO
+Exec=29
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=
+Categories=
+MimeType=
+X-Desktop-File-Install-Version=0.16

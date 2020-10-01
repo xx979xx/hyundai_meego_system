@@ -1,0 +1,24 @@
+
+MSceneWindowAnimatorStyle:popuplist {
+    transition-in-type: "fade";
+    transition-out-type: "fade";
+}
+
+MSceneWindowAnimatorStyle:messagebox {
+    transition-in-type: "fade";
+    transition-out-type: "fade";
+}
+
+MSceneWindowAnimatorStyle:information {
+    transition-in-type: "move.left";
+    transition-out-type: "move.right";
+}
+
+MSceneWindowAnimatorStyle:event {
+    transition-in-type: "move.right";
+    transition-out-type: "move.left";
+}
+
+
+
+

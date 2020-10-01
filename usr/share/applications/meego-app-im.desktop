@@ -1,0 +1,13 @@
+
+[Desktop Entry]
+Version=1.0
+Name=MeeGo Chat
+Comment=Chat, audio and video calls
+GenericName=Instant aessaging application
+Exec=meego-qml-launcher --opengl --fullscreen --app meego-app-im
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=meego-app-im
+Categories=Network;Chat;
+X-Desktop-File-Install-Version=0.16

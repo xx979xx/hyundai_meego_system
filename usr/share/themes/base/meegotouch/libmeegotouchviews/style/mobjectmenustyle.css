@@ -1,0 +1,78 @@
+/* MObjectMenuStyle : MSceneWindowStyle */
+
+MObjectMenuStyle {
+
+    /* inherited from MWidgetStyle */
+    minimum-size: 54.4mm -1;
+    preferred-size: 54.4mm -1;
+    maximum-size: 54.4mm -1;
+
+    vertical-align: center;
+    horizontal-align: center;
+
+    appear-feedback: appear-objectmenu;
+
+    title-style-name: "CommonPanelInverted";
+    title-icon-style-name: "CommonMainIcon";
+    title-label-style-name: "CommonSingleTitleInverted";
+    title-separator-style-name: "CommonHorizontalSeparator";
+}
+
+MObjectMenuStyle.Portrait {
+    minimum-size: 44.8mm -1;
+    preferred-size: 44.8mm -1;
+    maximum-size: 44.8mm -1;
+}
+
+MObjectMenu MButtonStyle {
+    minimum-size: -1 $SIZE_BUTTON;
+    minimum-size: -1 $SIZE_BUTTON;
+    maximum-size: -1 $SIZE_BUTTON;
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    text-margin-left: 0;
+    text-margin-right: 0;
+    text-margin-top: 0;
+    text-margin-bottom: 0;
+
+    padding-left: $INDENT_DEFAULT;
+    padding-right: $INDENT_DEFAULT;
+
+    horizontal-text-align: left;
+    font: $FONT_DEFAULT_BOLD;
+
+    background-tiles: meegotouch-button-objectmenu-background $CORNER_MARGINS;
+}
+MObjectMenu MButtonStyle:pressed {
+    background-tiles: meegotouch-button-objectmenu-background-pressed $CORNER_MARGINS;
+}
+
+MObjectMenu MPannableWidgetStyle {
+    /* 4 * SIZE_BUTTON */
+    minimum-size: -1 -1;
+    preferred-size: -1 -1;
+    maximum-size: -1 25.6mm;
+}
+MObjectMenu MPannableWidgetStyle.Portrait {
+    /* 9 * SIZE_BUTTON */
+    minimum-size: -1 -1;
+    preferred-size: -1 -1;
+    maximum-size: -1 57.6mm;
+}
+MObjectMenu MPannableWidgetStyle#objectMenuViewportWithoutTitle {
+    /* 6 * SIZE_BUTTON */
+    minimum-size: -1 -1;
+    preferred-size: -1 -1;
+    maximum-size: -1 38.4mm;
+}
+MObjectMenu MPannableWidgetStyle#objectMenuViewportWithoutTitle.Portrait {
+    /* 11 * SIZE_BUTTON */
+    minimum-size: -1 -1;
+    preferred-size: -1 -1;
+    maximum-size: -1 70.4mm;
+}
+

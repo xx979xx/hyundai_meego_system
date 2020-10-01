@@ -1,0 +1,14 @@
+/* MBasicLayoutAnimationStyle : MLayoutAnimationStyle */
+MBasicLayoutAnimationStyle {
+    x-translation-easing-curve: outback;
+    y-translation-easing-curve: outback;
+    opacity-easing-curve: linear;
+    initial-showing-opacity: 0.0;
+    final-hiding-opacity: 0.0;
+
+    animate-opacity: true;
+
+    /* inherited from MLayoutAnimationStyle */
+    duration: 600;
+}
+

@@ -1,0 +1,18 @@
+About
+=====
+
+usermode contains the userhelper program, which can be used to allow configured
+programs to be run with superuser privileges by ordinary users, and several
+graphical tools for users:
+* userinfo allows users to change their finger information.
+* usermount lets users mount, unmount, and format filesystems.
+* userpasswd allows users to change their passwords.
+
+New releases will be available at https://fedorahosted.org/usermode/ .
+
+Bugs
+====
+Please consider reporting the bug to your distribution's bug tracking system.
+
+Otherwise, report bugs at https://fedorahosted.org/usermode/ .  Bug reports
+with patches are especially welcome.

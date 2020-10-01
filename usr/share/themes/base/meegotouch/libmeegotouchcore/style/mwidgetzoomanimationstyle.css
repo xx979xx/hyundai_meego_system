@@ -1,0 +1,59 @@
+MWidgetZoomAnimationStyle#In {
+    opacity-animation-delay: 0;
+    opacity-animation-duration: 100;
+    opacity-animation-easing-curve: outexpo;
+    
+    scale-animation-duration: 500;
+    scale-animation-easing-curve: outexpo;
+
+    delay: 100;
+    scale: 0.6;
+    opacity: 1;
+
+    position-animation-distance-factor: 0.6;
+}
+
+MWidgetZoomAnimationStyle#Out {
+    opacity-animation-delay: 200;
+    opacity-animation-duration: 100;
+    opacity-animation-easing-curve: incubic;
+    
+    scale-animation-duration: 300;
+    scale-animation-easing-curve: incubic;
+
+    delay: 100;
+    scale: 0.6;
+    opacity: 1;
+
+    position-animation-distance-factor: 0.4;
+}
+
+MMessageBox MWidgetZoomAnimationStyle#In {
+    opacity-animation-delay: 0;
+    opacity-animation-duration: 100;
+    opacity-animation-easing-curve: linear;
+    
+    scale-animation-duration: 500;
+    scale-animation-easing-curve: outexpo;
+
+    delay: 200;
+    scale: 0.8;
+    opacity: 1;
+
+    position-animation-distance-factor: 0.8;
+}
+
+MMessageBox MWidgetZoomAnimationStyle#Out {
+    opacity-animation-delay: 200;
+    opacity-animation-duration: 100;
+    opacity-animation-easing-curve: linear;
+    
+    scale-animation-duration: 300;
+    scale-animation-easing-curve: incubic;
+
+    delay: 0;
+    scale: 0.8;
+    opacity: 1;
+
+    position-animation-distance-factor: 0.8;
+}

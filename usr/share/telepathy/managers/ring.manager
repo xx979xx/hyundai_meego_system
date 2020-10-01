@@ -1,0 +1,22 @@
+[ConnectionManager]
+BusName=org.freedesktop.Telepathy.ConnectionManager.ring
+ObjectPath=/org/freedesktop/Telepathy/ConnectionManager/ring
+
+[Protocol tel]
+param-org.freedesktop.Telepathy.Connection.Interface.Cellular.IMSI=s dbus-property
+param-org.freedesktop.Telepathy.Connection.Interface.Cellular.MessageServiceCentre=s dbus-property
+
+# SMS validity period in seconds
+# Range from 300 ... 38102400 (5 minutes to 63 weeks)
+param-org.freedesktop.Telepathy.Connection.Interface.Cellular.MessageValidityPeriod=u  dbus-property
+default-org.freedesktop.Telepathy.Connection.Interface.Cellular.MessageValidityPeriod=0
+
+param-org.freedesktop.Telepathy.Connection.Interface.Cellular.MessageReducedCharacterSet=b dbus-property
+default-org.freedesktop.Telepathy.Connection.Interface.Cellular.MessageReducedCharacterSet=false
+
+param-org.freedesktop.Telepathy.Connection.Interface.Anonymity.AnonymityModes=u dbus-property
+default-org.freedesktop.Telepathy.Connection.Interface.Anonymity.AnonymityModes=0
+
+# Deprecated
+param-account=s
+param-password=s

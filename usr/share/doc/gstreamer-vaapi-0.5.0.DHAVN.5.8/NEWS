@@ -1,0 +1,144 @@
+gst-vaapi NEWS -- summary of changes.  2012-08-DD
+Copyright (C) 2010-2011 Splitted-Desktop Systems
+Copyright (C) 2011-2012 Intel Corporation
+Copyright (C) 2011 Collabora
+
+Version 0.4.0 - DD.Aug.2012
+* Add support for video rotation
+* Add new video display APIs: Wayland and raw DRM for headless pipelines
+* Drop FFmpeg-based decoders, only use codecparsers-based ones
+* Only reset decoder if meaningful caps changed, e.g. size
+* Allocate the minimal number of video surfaces useful for decoding
+* Fix vaapisink to scale video down to fit the screen dimensions
+* Fix vaapidecode crash when trying to release an inexisten lock (Philip Lorenz)
+
+Version 0.3.8 - 20.Sep.2012
+* Disable FFmpeg-based decoders by default
+* Add JPEG decoder (based on codecparsers)
+* Fix crash when destroying GstVaapiDisplay objects early
+* Fix GLX rendering with FBO + texture-from-pixmap (fallback for VA/GLX)
+* Fix rendering with EMGD driver when overlay mode is used
+* Fix MPEG-2 decoding on Intel Atom platforms with EMGD driver
+* Fix release of dangling proxy surfaces when decoder is reset (Philip Lorenz)
+
+Version 0.3.7 - 26.Jun.2012
+* Fix vaapidecode to report unsupported codec profiles
+* Fix MPEG-2 decoding of streams with extra slice() information
+* Map MPEG-2 compatible High profile streams to Main profile
+* Map MPEG-4 Simple Scalable profile streams to Advanced Simple (Feng Yuan)
+* Fix various MPEG-4 decoding bugs (timestamps, reference frames) (Feng Yuan)
+* Don't forcibly resize user provided X windows (Holger Kaelberer)
+* Recalculate render rect only if caps are negotiated (Holger Kaelberer)
+
+Version 0.3.6 - 02.Apr.2012
+* Add support for decoding MPEG-2 interlaced streams
+* Add support for interlaced streams with FFmpeg decoders (Holger Kaelberer)
+* Add vaapipostproc element for video postprocessing (e.g. deinterlacing)
+* Skip all H.264 Filler Data NALs
+* Fix crashes in MPEG-4 decoder (Feng Yuan)
+* Fix fallback from MPEG-2 Simple to Main profile
+* Improve decoding of misformed MPEG-2 streams (+Feng Yuan)
+* Avoid a hang in playbin2 for some MPEG-2 TS streams (Feng Yuan)
+
+Version 0.3.5 - 02.Mar.2012
+* Fix H.264 decoding when emulation prevention bytes are detected
+* Skip all H.264 Access Unit (AU) NALs (Feng Yuan)
+* Fix modification process of H.264 reference picture lists (Feng Yuan)
+* Fix MPEG-2 stream size calculation (Sreerenj Balachandran)
+* Fix MPEG-2 decoding on Intel Gen with multiple slices per MB line
+* Fix crash when downloading/uploading VA images on PowerVR (Cedar Trail)
+* Fix double buffer free issues with some VA drivers
+* Fix crash when there is no free surface available for decoding
+* Skip profiles which have no entrypoints (Halley Zhao)
+* Fix minor memory leaks in plug-in elements
+
+Version 0.3.4 - 01.Feb.2012
+* Add H.264 decoder (based on codecparsers)
+* Add workaround for qtdemux not exposing H.263 profiles (Halley Zhao)
+* Alias H.263 Baseline profile to MPEG-4:2 Simple profile (Halley Zhao)
+* Use optimized path to submit slice data buffers
+* Fix possible memory leak in MPEG-2 decoder
+* Fix vaapisink to cap window size to the maximum display size
+* Fix MPEG-2, MPEG-4 and VC-1 decoders to refcount reference surfaces properly
+
+Version 0.3.3 - 16.Jan.2012
+* Add MPEG-2, MPEG-4 and VC-1 decoders (based on codecparsers)
+* Add support for GstXOverlay::set_render_rectangle() in vaapisink
+* Fix memory leak of GL texture (Nicolas Dufresne)
+* Fix vaapisink to automatically fit video to window
+* Fix vaapiupload to only set caps on newly created buffers (Nicolas Dufresne)
+* Fix gst_vaapi_ensure_display() to honour DISPLAY environment variable
+
+Version 0.3.2 - 06.Jan.2012
+* Rename vaapiconvert element to vaapiupload
+* Fix vaapiupload from NV12 buffers
+* Fix possible leaks of VA surfaces in FFmpeg decoder
+* Fix memory leak in vaapiupload initialization function
+* Fix possible crash in vaapidecode deinitialization code
+* Add vaapidownload element to convert from VA surfaces to YUV pixels
+
+Version 0.3.1 - 16.Dec.2011
+* Fix check for supported VA images
+* Add support for partial VA image updates
+* Add support for new subtitle/overlay infrastructure (Thibault Saunier)
+* Add missing video context queries in vaapisink/vaapiconvert (Nicolas Dufresne)
+
+Version 0.3.0 - 09.Dec.2011
+* Group all plugins into the same bundle
+* Use new XOverlay API (Sreerenj Balachandran)
+* Use new GstVideoContext and GstSurfaceBuffer API (Nicolas Dufresne)
+* Fix vaapidecode sink caps if decoder is in NULL state (Sreerenj Balachandran)
+* Fix auto-plugging and downstream buffer allocation (Nicolas Dufresne)
+* Fix crash in VA display init if no VA configs were found (Nicolas Dufresne)
+
+Version 0.2.7 - 07.Dec.2011
+* Relicense plugins and tests to LGPL v2.1 (SDS)
+* Fix MPEG-2 decoding from TS & PS streams
+* Fix build with newer versions of FFmpeg
+* Fix vaapiconvert direct-rendering modes
+* Fix use of invalid data at the end-of-stream
+
+Version 0.2.6 - 14.Jun.2011
+* Fix licensing terms (LGPL v2.1)
+
+Version 0.2.5 - 20.Jul.2010
+* Fix build with older VA-API 0.29-sds
+* Fix decoding of some H.264 streams. e.g. Ice Age 2 trailer
+* Fix VA/GLX support with texture-from-pixmap and GLX version < 1.3
+
+Version 0.2.4 - 18.May.2010
+* Fix video rendering rect within an embedder window (Totem)
+* Disable GLX rendering when vaapisink uses a foreign X window
+
+Version 0.2.3 - 16.May.2010
+* Fix memory leak of encoded buffers
+* Fix decoder caps to report codec aliases
+* Fix VC-1 decoding through the playbin2 pipeline
+
+Version 0.2.2 - 14.May.2010
+* Fix packaging dependencies
+* Fix a crash in the FFmpeg decoder on close
+* Fix OpenGL texture internal format (Clutter)
+* Fix foreign window size for embedding (Totem)
+
+Version 0.2.1 - 12.May.2010
+* Fix integration within the playbin2 pipeline
+* Fix vaapidecode to expose the HW supported caps only
+* Add GstXOverlay interface to vaapisink (Totem media player)
+
+Version 0.2.0 - 05.May.2010
+* Relicense gst-libs/ code to LGPL v2.1+
+* Add FFmpeg/VAAPI decoder for the new `vaapidecode' element
+
+Version 0.1.2 - 30.Mar.2010
+* Add AYUV image format
+* Add compatibility with the original VA-API 0.29
+* Add OpenGL support through VA/GLX extensions or TFP+FBO fallback
+
+Version 0.1.1 - 23.Mar.2010
+* Document public API for libgstvaapi-*.so.*
+* Optimize `vaapiconvert' pipeline (direct-rendering)
+* Allow `vaapisink` to render videos in fullscreen mode
+
+Version 0.1.0 - 16.Mar.2010
+* Initial release

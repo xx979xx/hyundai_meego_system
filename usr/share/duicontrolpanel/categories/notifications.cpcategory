@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name=Notifications
+Name-logical-id=qtn_sett_main_notifications
+
+Value="Home screen feed, Alerts"
+Value-logical-id=qtn_sett_main_notifications_label2
+
+Icon=icon-m-settings-notification
+
+Aliases=
+Translation-catalogs=
+
+Order=40
+

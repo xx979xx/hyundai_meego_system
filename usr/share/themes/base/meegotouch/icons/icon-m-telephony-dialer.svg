@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-telephony-dialer-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-telephony-dialer">
+	<rect style="fill:none;" width="48" height="48"/>
+	<rect x="18.122" y="1.076" style="fill:#333333;" width="11.921" height="6.955"/>
+	<path style="fill:#333333;" d="M11.92,1.076H2.778C1.244,1.076,0,2.257,0,3.707v4.324h11.92V1.076z"/>
+	<path style="fill:#333333;" d="M48,3.707c0-1.45-1.243-2.631-2.779-2.631h-9.142v6.955H48V3.707z"/>
+	<rect x="18.122" y="14.098" style="fill:#333333;" width="11.921" height="6.953"/>
+	<rect x="18.122" y="27.117" style="fill:#333333;" width="11.921" height="6.955"/>
+	<rect y="14.098" style="fill:#333333;" width="11.92" height="6.953"/>
+	<path style="fill:#333333;" d="M0,31.441c0,1.452,1.244,2.631,2.778,2.631h9.142v-6.955H0V31.441z"/>
+	<path style="fill:#333333;" d="M36.079,34.072h9.142c1.536,0,2.779-1.179,2.779-2.631v-4.324H36.079V34.072z"/>
+	<rect x="36.079" y="14.098" style="fill:#333333;" width="11.921" height="6.953"/>
+	<path style="fill:#333333;" d="M30.043,39.973v4.634c0,1.278-1.242,2.318-2.778,2.318h-6.363c-1.534,0-2.78-1.04-2.78-2.318v-4.634
+		H30.043z"/>
+</g>
+</svg>

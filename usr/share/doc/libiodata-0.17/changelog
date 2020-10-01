@@ -1,0 +1,117 @@
+iodata (0.17) unstable; urgency=low
+
+  * using qt4 qmake
+  * taking version number from changelog
+  * iodata-type-to-c++ compiler
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 17 Feb 2011 11:34:16 +0200
+
+iodata (0.0.16) unstable; urgency=low
+
+  * export read_file_to_string()
+  * added some destructors, fixed memory leaks
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 27 Dec 2010 12:24:03 +0200
+
+iodata (0.0.15) unstable; urgency=low
+
+  * Fixes: NB#187227
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 04 Nov 2010 11:23:26 +0200
+
+iodata (0.0.14) unstable; urgency=low
+
+  * qmlog inteface changed
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Sun, 31 Oct 2010 18:42:47 +0200
+
+iodata (0.0.13) unstable; urgency=low
+
+  * copyrgiht files
+  * gitorious+meego stuff
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 20 Aug 2010 16:22:11 +0300
+
+iodata (0.0.12) unstable; urgency=low
+
+  * Fixes: NB#186266 - timed linked to Qt GUI and X11 libraries
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 18 Aug 2010 15:22:39 +0300
+
+iodata (0.0.11) unstable; urgency=low
+
+  * Fixed: NB#168911 - Timed updates time config and alarm queue files in unsafe manner
+  * Fixed: NB#177670 - iodata fails to build with cs2009q3 compiler
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 06 Jul 2010 13:03:10 +0300
+
+iodata (0.0.10) unstable; urgency=low
+
+  * class storage, reading and writing files
+  * fixing __NAMES in header files (like 168897)
+  * using the new qmlog library to print log messages
+  * Fixed: NB#169281 - cute-timed overwrites queue file even if the contents do not change
+  * Fixed: NB#168911 - Timed updates time config and alarm queue files in unsafe manner
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 01 Jun 2010 13:53:50 +0300
+
+iodata (0.0.9) unstable; urgency=low
+
+  * fixed bitmask sorting
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 16 Apr 2010 09:50:09 +0200
+
+iodata (0.0.8) unstable; urgency=low
+
+  * empty type
+  * direct read/write files
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 23 Mar 2010 11:42:03 +0200
+
+iodata (0.0.7) unstable; urgency=low
+
+  * minor improvement of array handling
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 08 Mar 2010 10:30:44 +0200
+
+iodata (0.0.6) unstable; urgency=low
+
+  * Fixes: NB#154644 - timed fails to build under the Platform SDK (SB2)
+  * Thanks to Riku Voipio
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Sun, 14 Feb 2010 22:56:33 +0200
+
+iodata (0.0.5) unstable; urgency=low
+
+  * exporting qmake configuration profile
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Sun, 14 Feb 2010 19:57:57 +0200
+
+iodata (0.0.4) unstable; urgency=low
+
+  * started the new version after integration
+  * input/ouput/validation --- seem to work
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 26 Jan 2010 11:37:56 +0200
+
+iodata (0.0.3) unstable; urgency=low
+
+  * need to increase version number
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 25 Jan 2010 18:04:04 +0200
+
+iodata (0.0.2) unstable; urgency=low
+
+  * changed the version number, because 0.0.1 is already integrated
+  * added test case for cita and needed files
+  * root.pro doing SUBDIRS now
+  * renamed iodata.pro file
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 25 Jan 2010 14:47:40 +0200
+
+iodata (0.0.1) unstable; urgency=low
+
+  * made a new package for this library
+  * fixed one warning
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 19 Jan 2010 18:22:14 +0200

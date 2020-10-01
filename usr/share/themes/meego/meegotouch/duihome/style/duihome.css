@@ -1,0 +1,65 @@
+QuickLaunchBarStyle {
+    background-image: "meegotouch-quicklaunchbar-background" 2px 2px 2px 2px;
+}
+QuickLaunchBarStyle.Landscape {
+    minimum-size:   -1 12mm;
+    preferred-size: -1 12mm;
+    maximum-size:   -1 12mm;
+}
+QuickLaunchBarStyle.Portrait {
+    minimum-size:   -1 12mm;
+    preferred-size: -1 12mm;
+    maximum-size:   -1 12mm;
+}
+
+MButtonIconStyle#LauncherButton.Landscape {
+    font: $FONT_XXSMALL;
+}
+
+MButtonIconStyle#LauncherButton.Portrait {
+    font: $FONT_XXSMALL;
+}
+
+MButtonStyle#ToggleLauncherButton {
+    icon-size: 7.6mm 7.6mm;
+    icon-align: center;
+    margin-top:    $MARGIN_LARGE;
+    margin-bottom: $MARGIN_LARGE;
+}
+
+MButtonStyle#ToggleLauncherButton.Landscape {
+    preferred-size: -1 -1;
+    maximum-size:   -1 -1;
+    minimum-size:   8mm 8mm;
+    margin-left:    $MARGIN_DEFAULT;
+    margin-right:   $MARGIN_DEFAULT;
+}
+
+MButtonStyle#ToggleLauncherButton.Portrait {
+    preferred-size: -1 -1;
+    maximum-size:   -1 -1;
+    minimum-size:   8mm 8mm;
+    margin-left:    $MARGIN_DEFAULT;
+    margin-right:   $MARGIN_XSMALL;
+}
+
+MButtonIconStyle#QuickLaunchBarButton {
+    icon-size: 7.6mm 7.6mm;
+    icon-align: center;
+    margin-top:    $MARGIN_LARGE;
+    margin-bottom: $MARGIN_LARGE;
+}
+MButtonIconStyle#QuickLaunchBarButton.Landscape {
+    preferred-size: -1 -1;
+    maximum-size:   -1 -1;
+    minimum-size:   8mm 8mm;
+    margin-left:    $MARGIN_DEFAULT;
+    margin-right:   $MARGIN_DEFAULT;
+}
+MButtonIconStyle#QuickLaunchBarButton.Portrait {
+    preferred-size: -1 -1;
+    maximum-size:   -1 -1;
+    minimum-size:   8mm 8mm;
+    margin-left:    $MARGIN_DEFAULT;
+    margin-right:   $MARGIN_XSMALL;
+}

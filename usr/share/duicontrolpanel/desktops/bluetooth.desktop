@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=DUIApplet
+Name=Bluetooth
+Icon=
+Exec=
+
+[DUI]
+X-DUIApplet-Applet=libbluetoothapplet.so
+X-DUIApplet-ImageLandscape=Widget_landscape_weather.png
+X-DUIApplet-ImagePortrait=Widget_portrait_weather.png
+
+[DCP]
+Category=Connectivity
+Order=4
+

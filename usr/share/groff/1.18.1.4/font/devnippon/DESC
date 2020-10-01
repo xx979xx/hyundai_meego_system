@@ -1,0 +1,12 @@
+res 240
+hor 24
+vert 40
+unitwidth 10
+sizes 10 0
+fonts 6 R I B BI M G
+fontset B G 2E00..9FFF
+fontset - M 2E00..9FFF
+fontset B G FF00..FFEF
+fontset - M FF00..FFEF
+tcommand
+postpro grotty

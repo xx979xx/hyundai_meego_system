@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/apps/telepathy-logger/" id="org.freedesktop.Telepathy.Logger">
+    <key type="b" name="enabled">
+      <default>true</default>
+      <summary>Enable logging</summary>
+      <description>Globally enable or disable the Telepathy logger system. Setting it to "false" will completely disable all logging.</description>
+    </key>
+  </schema>
+</schemalist>

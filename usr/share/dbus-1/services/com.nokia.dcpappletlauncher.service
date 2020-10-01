@@ -1,0 +1,6 @@
+[D-BUS Service]
+Name=com.nokia.DcpAppletLauncher
+Interface=com.nokia.DcpAppletLauncherIf
+# Exec=/usr/bin/duicontrolpanel.launch -appletloader 
+Exec=/usr/bin/invoker --type=m /usr/bin/duicontrolpanel.launch -appletloader 
+

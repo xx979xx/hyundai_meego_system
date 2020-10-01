@@ -1,0 +1,8 @@
+MWarpAnimationStyle {
+    warp-duration: 300;
+    warp-distance: 30;
+
+    warp-in-delay: 200;
+    warp-in-curve: outcubic;
+    warp-out-curve: incubic;
+}

@@ -1,0 +1,15 @@
+MAbstractLayoutPolicyStyle {
+
+    /* A margin-space of -1 means to use the margins from the layout,
+rather than a policy-specific margin. The advantage of this is that
+the default layout margins change depending on whether the layout is
+inside another layout, etc.  */
+
+    margin-left: -1.0;
+    margin-right: -1.0;
+    margin-top: -1.0;
+    margin-bottom: -1.0;
+    vertical-spacing: 0.0;
+    horizontal-spacing: 0.0;
+
+}

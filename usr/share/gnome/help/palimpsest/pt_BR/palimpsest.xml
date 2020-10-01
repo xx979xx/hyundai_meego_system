@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "0.1">
+<!ENTITY manrevision "0.1">
+<!ENTITY date "June 2008">
+<!ENTITY app "<application>Palimpsest Disk Utility</application>">
+<!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file. 
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->]>
+<article id="index" lang="pt_BR">
+  <articleinfo>
+    <title>Manual do <application>Utilitário de Disco Palimpsest</application></title>
+    <abstract role="description">
+      <para>Este documento descreve o aplicativo Utilitário de Disco Palimpsest.</para>
+    </abstract>
+    <copyright> 
+      <year>2008</year> 
+      <holder>David Zeuthen</holder> 
+    </copyright><copyright><year>2009</year><holder>Krix Apolinário (krixapolinario@gmail.com)</holder></copyright> 
+    <publisher> 
+      <publishername>Projeto de Documentação do GNOME</publishername> 
+    </publisher> 
+      <legalnotice id="legalnotice">
+	<para>Permissão concedida para copiar, distribuir e/ou modificar este documento sob os termos da GNU Free Documentation License (GFDL), Versão 1.1 ou qualquer versão mais recente publicada pela Free Software Foundation sem Seções Invariantes, sem Textos de Capa Frontal, e sem Textos de Contracapa. Você pode encontrar uma cópia da licença GFDL no <ulink type="help" url="ghelp:fdl">link</ulink> ou no arquivo COPYING-DOCS distribuído com este manual.</para>
+         <para>Este manual é parte da coleção de manuais do GNOME distribuído sob os termos da GFDL. Se você quiser distribuir este manual separadamente da coleção, você pode fazê-lo adicionando ao manual uma cópia da licença, como descrito na seção 6 desta licença.</para>
+
+	<para>Muitos dos nomes usados por empresas para distinguir seus produtos e serviços são reivindicados como marcas registradas. Onde esses nomes aparecem em qualquer documentação do GNOME, e os membros do Projeto de Documentação do GNOME estiverem cientes dessas marcas registradas, os nomes aparecerão impressos em letras maiúsculas ou com iniciais em maiúsculas.</para>
+
+	<para>O DOCUMENTO E VERSÕES MODIFICADAS DO DOCUMENTO SÃO FORNECIDOS SOB OS TERMOS DA GNU FREE DOCUMENTATION LICENSE COM O ENTENDIMENTO ADICIONAL DE QUE: <orderedlist>
+		<listitem>
+		  <para>O DOCUMENTO É FORNECIDO NA BASE "COMO ESTÁ", SEM GARANTIAS DE QUALQUER TIPO, TANTO EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO LIMITADO A, GARANTIAS DE QUE O DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO SEJA COMERCIALIZÁVEL, LIVRE DE DEFEITOS, PRÓPRIO PARA UM PROPÓSITO ESPECÍFICO OU SEM INFRAÇÕES. TODO O RISCO A RESPEITO DA QUALIDADE, EXATIDÃO, E DESEMPENHO DO DOCUMENTO OU VERSÕES MODIFICADAS DO DOCUMENTO É DE SUA RESPONSABILIDADE. SE ALGUM DOCUMENTO OU VERSÃO MODIFICADA SE PROVAR DEFEITUOSO EM QUALQUER ASPECTO, VOCÊ (NÃO O ESCRITOR INICIAL, AUTOR OU QUALQUER CONTRIBUIDOR) ASSUME O CUSTO DE QUALQUER SERVIÇO NECESSÁRIO, REPARO OU CORREÇÃO. ESSA RENÚNCIA DE GARANTIAS CONSTITUI UMA PARTE ESSENCIAL DESTA LICENÇA. NENHUM USO DESTE DOCUMENTO OU VERSÃO MODIFICADA DESTE DOCUMENTO É AUTORIZADO SE NÃO FOR SOB ESSA RENÚNCIA; E</para>
+		</listitem>
+		<listitem>
+		  <para>SOB NENHUMA CIRCUNSTÂNCIA E SOB NENHUMA TEORIA LEGAL, TANTO EM DANO (INCLUINDO NEGLIGÊNCIA), CONTRATO, OU OUTROS, DEVEM O AUTOR, ESCRITOR INICIAL, QUALQUER CONTRIBUIDOR, OU QUALQUER DISTRIBUIDOR DO DOCUMENTO OU VERSÃO MODIFICADA DO DOCUMENTO, OU QUALQUER FORNECEDOR DE ALGUMA DESSAS PARTES, SER CONSIDERADOS RESPONSÁVEIS A QUALQUER PESSOA POR QUALQUER DANO, SEJA DIRETO, INDIRETO, ESPECIAL, ACIDENTAL OU CONSEQÜENCIAL DE QUALQUER INDIVÍDUO, INCLUINDO, MAS NÃO LIMITADO A, DANOS POR PERDA DE BOA VONTADE, TRABALHO PARADO, FALHA OU MAU FUNCIONAMENTO DO COMPUTADOR, OU QUALQUER E TODOS OS OUTROS DANOS OU PERDAS RESULTANTES OU RELACIONADOS AO USO DO DOCUMENTO E VERSÕES MODIFICADAS, MESMO QUE TAL PARTE TENHA SIDO INFORMADA DA POSSIBILIDADE DE TAIS DANOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+    <authorgroup>
+      <author role="maintainer">
+	<firstname>David</firstname> <surname>Zeuthen</surname>
+	<affiliation>
+	  <address>
+	    <email>davidz@redhat.com</email>
+	  </address>
+	</affiliation>
+      </author>
+    </authorgroup>
+    <revhistory>
+      <revision>
+	<revnumber>Manual do Utilitário de Disco Palimpsest V 0.1</revnumber>
+	<date>2008</date>
+	<revdescription>
+	  <para role="author">David Zeuthen <email>davidz@redhat.com</email></para>
+	</revdescription>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>Este manual descreve a versão 0.1 do Utilitário de Disco Palimpsest.</releaseinfo> 
+      <legalnotice> 
+      <title>Feedback</title> 
+      <para>Para relatar um erro ou fazer uma sugestão relacionada ao aplicativo <application>Utilitário de Disco Palimpsest</application> ou deste manual, siga as orientações na <ulink url="ghelp:gnome-feedback" type="help">Página de Feedback do GNOME</ulink>.</para>
+      </legalnotice>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Introdução.</title>
+      <para>Este é o guia do usuário do <application>Utilitário de Disco Palimpsest</application>.</para>
+    <figure id="mainwindow-fig"> 
+	<title>Janela do <application>Utilitário de Disco Palimpsest</application></title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/main-app.png" format="PNG"/> 
+	    </imageobject>
+	    
+	    <textobject> 
+	      <phrase>Mostra a janela principal <application>Utilitário de Disco Palimpsest</application>.</phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+    </figure>
+  </sect1>
+ 
+   <sect1 id="advanced">
+      <title>Utilitário de Disco Palimpsest Avançado.</title> 
+      <para>Utilitário de Disco Palimpsest é um programa complexo, com muitas configurações avançadas.</para>
+
+   </sect1>
+
+</article>

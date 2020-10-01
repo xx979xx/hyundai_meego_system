@@ -1,0 +1,1 @@
+ACTION=="add|change", SUBSYSTEM=="pci", ATTRS{vendor}=="0x8086", ATTRS{device}=="0x0806", ATTR{power/control}="auto"

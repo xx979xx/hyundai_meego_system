@@ -1,0 +1,13 @@
+#JSGF V1.0;
+
+grammar voice;
+
+public <voice> = <menu_commands> | <spinner_commands> | <app_commands>;
+
+<menu_commands> = HOME | MENU | BACK | CANCEL | OPEN | CLOSE | NEXT | PREVIOUS | TASKS;
+
+<spinner_commands> = NAVIGATION | SETTINGS | DIALER | WEB | PANELS;
+
+<app_commands> = OPEN <app_name>;
+
+<app_name>  = NAVIGATION | DIALER | CONTACTS | WEB | BROWSER | PHOTOS | MUSIC| VIDEOS | SETTINGS | PANELS;

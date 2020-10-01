@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-camera-focusmode-touch-screen-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<g id="icon-m-camera-focusmode-touch-screen">
+	<rect style="fill:none;" width="32" height="32"/>
+	<path style="fill:#FFFFFF;" d="M22.725,15.698c-0.408-1.444-2.814-0.761-2.404,0.682l0.41,1.443l-0.963,0.273l-1.092-3.85
+		c-0.41-1.442-2.815-0.76-2.405,0.684l0.819,2.886l-0.962,0.273l-1.229-4.329c-0.409-1.443-2.814-0.761-2.405,0.682l0.956,3.367
+		l-0.962,0.273l-2.73-9.619C9.348,7.02,6.942,7.703,7.366,9.195L11.994,25.5L24.5,21.95L22.725,15.698z"/>
+	<path style="fill:#FFFFFF;" d="M8.5,29H3V2.95L8.5,3V0.5H3C1.625,0.5,0.5,1.625,0.5,3v26c0,1.375,1.125,2.5,2.5,2.5h5.5V29z"/>
+	<path style="fill:#FFFFFF;" d="M23.5,3L29,2.95V29h-5.5v2.5H29c1.375,0,2.5-1.125,2.5-2.5V3c0-1.375-1.125-2.5-2.5-2.5h-5.5V3z"/>
+</g>
+</svg>

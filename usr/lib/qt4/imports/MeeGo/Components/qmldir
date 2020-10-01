@@ -1,0 +1,56 @@
+ActionMenu 0.1 ../Ux/Components/Common/ActionMenu.qml
+AppPage 0.1 ../Ux/Components/Common/AppPage.qml
+AppPageStack 0.1 ../Ux/Components/Common/AppPageStack.qml
+BottomToolBar 0.1 ../Ux/Components/Common/BottomToolBar.qml
+BottomToolBarRow 0.1 ../Ux/Components/Common/BottomToolBarRow.qml
+Button 0.1 ../Ux/Components/Common/Button.qml
+CCPContextArea 0.1 ../Ux/Components/Common/CCPContextArea.qml
+CheckBox 0.1 ../Ux/Components/Common/CheckBox.qml
+ContextMenu 0.1 ../Ux/Components/Common/ContextMenu.qml
+DropDown 0.1 ../Ux/Components/Common/DropDown.qml
+ExpandingBox 0.1 ../Ux/Components/Common/ExpandingBox.qml
+IconButton 0.1 ../Ux/Components/Common/IconButton.qml
+InfoBar 0.1 ../Ux/Components/Common/InfoBar.qml
+Label 0.1 ../Ux/Components/Common/Label.qml
+LayoutTextItem 0.1 ../Ux/Components/Common/LayoutTextItem.qml
+ModalContextMenu 0.1 ../Ux/Components/Common/ModalContextMenu.qml
+ModalDialog 0.1 ../Ux/Components/Common/ModalDialog.qml
+ModalFog 0.1 ../Ux/Components/Common/ModalFog.qml
+ModalMessageBox 0.1 ../Ux/Components/Common/ModalMessageBox.qml
+ModalSpinner 0.1 ../Ux/Components/Common/ModalSpinner.qml
+PageStack 0.1 ../Ux/Components/Common/PageStack.qml
+PopupList 0.1 ../Ux/Components/Common/PopupList.qml
+ProgressBar 0.1 ../Ux/Components/Common/ProgressBar.qml
+RadioButton 0.1 ../Ux/Components/Common/RadioButton.qml
+RadioGroup 0.1 ../Ux/Components/Common/RadioGroup.qml
+ScrollableMusicList 0.1 ../Ux/Components/Common/ScrollableMusicList.qml
+SelectionHandleSurface 0.1 ../Ux/Components/Common/SelectionHandleSurface.qml
+Slider 0.1 ../Ux/Components/Common/Slider.qml
+Spinner 0.1 ../Ux/Components/Common/Spinner.qml
+TextEntry 0.1 ../Ux/Components/Common/TextEntry.qml
+TextField 0.1 ../Ux/Components/Common/TextField.qml
+Theme 0.1 ../Ux/Components/Common/Theme.qml
+TimeSpinner 0.1 ../Ux/Components/Common/TimeSpinner.qml
+ToggleButton 0.1 ../Ux/Components/Common/ToggleButton.qml
+TopItem 0.1 ../Ux/Components/Common/TopItem.qml
+VerticalLayout 0.1 ../Ux/Components/Common/VerticalLayout.qml
+VerticalSlider 0.1 ../Ux/Components/Common/VerticalSlider.qml
+Window 0.1 ../Ux/Components/Common/Window.qml
+
+DatePicker 0.1 ../Ux/Components/DateTime/DatePicker.qml
+TimePicker 0.1 ../Ux/Components/DateTime/TimePicker.qml
+
+StatusBar 0.1 ../Ux/Components/Indicators/StatusBar.qml
+
+MusicPicker 0.1 ../Ux/Components/Media/MusicPicker.qml
+PhotoPicker 0.1 ../Ux/Components/Media/PhotoPicker.qml
+VideoPicker 0.1 ../Ux/Components/Media/VideoPicker.qml
+MucMediaGridView 0.1 ../Ux/Components/Media/MucMediaGridView.qml
+
+Units 0.1 ../Ux/Units/Units.qml
+
+plugin meego-ux-components-datetime ../Ux/Components/DateTime
+plugin meego-ux-components-indicators ../Ux/Components/Indicators
+plugin meego-ux-kernel ../Ux/Kernel
+plugin meego-ux-models ../Ux/Models
+plugin meego-ux-units ../Ux/Units

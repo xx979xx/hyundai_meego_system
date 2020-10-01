@@ -1,0 +1,27 @@
+/* MProgressIndicatorStyle : MWidgetStyle */
+MProgressIndicatorStyle {
+    active-image: Dot-accented;
+    inactive-image: Dot-empty;
+    speed: 40;
+    active-element-count: 2;
+    element-size: 1mm;
+    element-distance: 0.3;
+
+    /* inherited from MWidgetStyle */
+}
+
+MProgressIndicatorStyle[bar] {
+    active-image: "meegotouch-progressindicator-bar-progress" 8px 8px 8px 8px;
+    inactive-image: "meegotouch-progressindicator-bar-background" 8px 8px 8px 8px;
+
+    maximum-size: 100% 1.8mm;
+    minimum-size: $SIZE_BUTTON 1mm;
+    preferred-size: -1 1.8mm;
+    element-size: $SIZE_BUTTON;
+    speed: 50;
+
+    margin-left: $MARGIN_XSMALL;
+    margin-right: $MARGIN_XSMALL;
+    margin-top: $MARGIN_XSMALL;
+    margin-bottom: $MARGIN_XSMALL;
+}

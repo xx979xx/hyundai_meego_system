@@ -1,0 +1,8 @@
+[Geoclue Provider]
+Name=Gypsy
+Service=org.freedesktop.Geoclue.Providers.Gypsy
+Path=/org/freedesktop/Geoclue/Providers/Gypsy
+Requires=RequiresGPS
+Provides=ProvidesUpdates
+Interfaces=org.freedesktop.Geoclue.Position;org.freedesktop.Geoclue.Velocity
+Accuracy=Detailed

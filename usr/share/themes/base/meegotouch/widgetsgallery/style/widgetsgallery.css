@@ -1,0 +1,177 @@
+#feedbackButton2 {
+    press-feedback: press-different;
+    release-feedback: release-different;
+}
+
+#feedbackButton3 {
+    press-feedback: press-sluggish;
+    release-feedback: release-sluggish;
+}
+
+#feedbackButton4 {
+    press-feedback: press-babytoy;
+    release-feedback: release-babytoy;
+}
+
+#feedbackButton5 {
+    press-feedback: press-space;
+    release-feedback: release-space;
+}
+
+#feedbackButton6 {
+    press-feedback: ;
+    release-feedback: ;
+}
+
+#ageSlider {
+    minimum-feedback-interval: 40;
+}
+
+#brightnessSlider {
+    minimum-feedback-interval: 55;
+}
+
+#playerSeekBar {
+    steps-per-feedback: 10;
+    minimum-feedback-interval: 45;
+}
+
+#listWithSeparators {
+    horizontal-separator-object-name: "";
+    vertical-separator-object-name: "";
+}
+
+MSliderStyle#video-player-slider {
+
+    background-base-image: "video-duislider-background" 7px 7px 7px 7px;
+    background-elapsed-image: "video-duislider-background-elapsed" 7px 7px 7px 7px;
+    background-received-image: "video-duislider-background-received" 7px 7px 7px 7px;
+
+    handle-pressed-pixmap: "video-duislider-handle-pressed" 6.4mm 6.4mm;
+    handle-pixmap: "video-duislider-handle" 6.4mm 6.4mm;
+
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+
+    margin-left:    0;
+    margin-top:     0;
+    margin-right:   0;
+    margin-bottom:  0;
+
+    preferred-size: 80% -1;
+    minimum-size: 80% -1;
+    maximum-size: 80% -1;
+}
+
+MButtonStyle#video-player-button {
+
+    margin-left: $PADDING_XLARGE;
+    margin-top: $PADDING_XLARGE;
+    margin-right: $PADDING_XLARGE;
+    margin-bottom: $PADDING_XLARGE;
+
+    text-margin-left: 0;
+    text-margin-top: 0;
+    text-margin-right: 0;
+    text-margin-bottom: 0;
+
+    preferred-size: 7.5mm 5mm;
+    minimum-size: 7.5mm 5mm;
+    maximum-size: 7.5mm 5mm;
+
+    icon-size: 3.0mm 3.0mm;
+    icon-align: center;
+}
+
+MWidgetStyle#center-overlay-container {
+    background-image: multimedia-overlay-center-background 17px 17px 17px 17px;
+}
+
+MWidgetStyle#bottom-overlay-container {
+    background-image: multimedia-overlay-bottom-background 17px 17px 17px 17px;
+}
+
+MWidgetStyle#top-overlay-container {
+    background-image: multimedia-overlay-top-background 17px 17px 17px 17px;
+}
+
+MLabelStyle#video-title-label {
+    color: #FFFFFF;
+    preferred-size: -1 -1;
+
+    margin-left:   $PADDING_XLARGE;
+    margin-top:    $PADDING_XLARGE;
+    margin-right:  $PADDING_XLARGE;
+    margin-bottom: $PADDING_XLARGE;
+}
+
+#gridPage {
+    background-image: ;
+    background-color: black;
+}
+
+#iconButton {
+    text-color: black;
+}
+
+MButtonStyle#ExpandingBackgroundButton {
+    minimum-size: 10mm 10mm;
+    preferred-size: 10mm 10mm;
+    maximum-size: 10mm 10mm;
+
+    // margins have to be at least 25% of size
+    // because of the expanding-background trasition
+    // (during the transition the button will expand to 125% of its original size)
+    margin-left: 2.5mm;
+    margin-top: 2.5mm;
+    margin-right: 2.5mm;
+    margin-bottom: 2.5mm;
+    transition: "expanding-background";
+}
+
+MButtonStyle#ImplodingBackgroundButton {
+    background-image:;
+    background-color: transparent;
+
+    text-color: white;
+
+    minimum-size: 12.5mm 12.5mm;
+    preferred-size: 12.5mm 12.5mm;
+    maximum-size: 12.5mm 12.5mm;
+
+    transition: "imploding-background";
+}
+
+MButtonStyle#ImplodingBackgroundButton:pressed {
+    background-image: "meegotouch-button-background" $CORNER_MARGINS;
+
+    text-color: white;
+}
+
+MApplicationWindowStyle#IconTabsBottom {
+    tab-bar-style-name: "TabsBottomWithIcon";
+}
+
+MApplicationWindowStyle#LabelTabsBottom {
+    tab-bar-style-name: "TabsBottomWithLabel";
+}
+
+MApplicationWindowStyle#IconTabsTop {
+    floatable-tab-bar: true;
+    tab-bar-style-name: "TabsTopWithIcon";
+}
+
+MApplicationWindowStyle#LabelTabsTop {
+    floatable-tab-bar: true;
+    tab-bar-style-name: "TabsTopWithLabel";
+}
+
+MSheetStyle#PhotoViewer {
+    header-slot-style-name: "CommonSheetHeaderPanelInverted";
+    central-slot-style-name: "MSheetCentralSlotIverted";
+    background-color: black;
+    appearance-animation: "MWidgetFadeAnimation";
+    disappearance-animation: "MWidgetFadeAnimation";
+}

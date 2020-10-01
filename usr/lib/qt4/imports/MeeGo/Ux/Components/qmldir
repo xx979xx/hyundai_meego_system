@@ -1,0 +1,52 @@
+ActionMenu 0.1                  Common/ActionMenu.qml
+AppPage 0.1                     Common/AppPage.qml
+AppPageStack 0.1                Common/AppPageStack.qml
+BottomToolBar 0.1               Common/BottomToolBar.qml
+BottomToolBarRow 0.1            Common/BottomToolBarRow.qml
+Button 0.1                      Common/Button.qml
+CCPContextArea 0.1              Common/CCPContextArea.qml
+CheckBox 0.1                    Common/CheckBox.qml
+ContextMenu 0.1                 Common/ContextMenu.qml
+DropDown 0.1                    Common/DropDown.qml
+ExpandingBox 0.1                Common/ExpandingBox.qml
+IconButton 0.1                  Common/IconButton.qml
+InfoBar 0.1                     Common/InfoBar.qml
+Label 0.1                       Common/Label.qml
+LayoutTextItem 0.1              Common/LayoutTextItem.qml
+ModalContextMenu 0.1            Common/ModalContextMenu.qml
+ModalDialog 0.1                 Common/ModalDialog.qml
+ModalFog 0.1                    Common/ModalFog.qml
+ModalMessageBox 0.1             Common/ModalMessageBox.qml
+ModalSpinner 0.1                Common/ModalSpinner.qml
+PageStack 0.1                   Common/PageStack.qml
+PopupList 0.1                   Common/PopupList.qml
+ProgressBar 0.1                 Common/ProgressBar.qml
+RadioButton 0.1                 Common/RadioButton.qml
+RadioGroup 0.1                  Common/RadioGroup.qml
+ScrollableMusicList 0.1         Common/ScrollableMusicList.qml
+SelectionHandleSurface 0.1      Common/SelectionHandleSurface.qml
+Slider 0.1                      Common/Slider.qml
+Spinner 0.1                     Common/Spinner.qml
+TextEntry 0.1                   Common/TextEntry.qml
+TextField 0.1                   Common/TextField.qml
+Theme 0.1                       Common/Theme.qml
+ThemeImage 0.1                  Common/ThemeImage.qml
+TimeSpinner 0.1                 Common/TimeSpinner.qml
+ToggleButton 0.1                Common/ToggleButton.qml
+TopItem 0.1                     Common/TopItem.qml
+VerticalLayout 0.1              Common/VerticalLayout.qml
+VerticalSlider 0.1              Common/VerticalSlider.qml
+Window 0.1                      Common/Window.qml
+
+DatePicker 0.1                  DateTime/DatePicker.qml
+TimePicker 0.1                  DateTime/TimePicker.qml
+
+StatusBar 0.1                   Indicators/StatusBar.qml
+
+MusicPicker 0.1                 Media/MusicPicker.qml
+PhotoPicker 0.1                 Media/PhotoPicker.qml
+VideoPicker 0.1                 Media/VideoPicker.qml
+MucMediaGridView 0.1            Media/MucMediaGridView.qml
+
+plugin meego-ux-components-datetime DateTime
+plugin meego-ux-components-indicators Indicators

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=ControlPanelApplet
+Name=General
+Icon=datetime
+
+[MTS]
+Part=/usr/share/meego-ux-settings/General/GeneralSettings.qml

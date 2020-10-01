@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/tracker/writeback/" id="org.freedesktop.Tracker.Writeback" gettext-domain="tracker">
+    <key name="verbosity" enum="org.freedesktop.Tracker.TrackerVerbosity">
+      <default>'errors'</default>
+      <summary>Log verbosity</summary>
+      <description>Log verbosity.</description>
+    </key>
+  </schema>
+</schemalist>

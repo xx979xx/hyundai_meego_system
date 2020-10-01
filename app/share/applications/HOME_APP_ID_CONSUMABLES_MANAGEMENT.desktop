@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=STR_CONSUMABLES_MGMT
+Comment=STR_CONSUMABLES_MGMT
+GenericName=STR_CONSUMABLES_MGMT
+Exec=27
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=
+Categories=
+MimeType=
+X-Desktop-File-Install-Version=0.16

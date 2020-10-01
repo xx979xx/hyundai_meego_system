@@ -1,0 +1,23 @@
+liblockdev is (c) 1997, 1999 by Fabrizio Polacco <fab@prosa.it>
+
+Barak Pearlmutter <bap@cs.unm.edu>
+	- code revision 
+	- suggestion for the use of the semaphore.
+Juan Cespedes <cespedes@debian.org>
+	- code revision 
+Daniel Quinlan <quinlan@transmeta.com>
+	- suggestion to support the cua devices.
+	- suggestions for naming of functions.
+Raphael Hertzog <rhertzog@hrnet.fr>
+	- NMU for new perl
+Adam P. Harris
+	- changes in debian postinst.
+Martin Schulze
+	- changes in perl makefile
+	- suggestions for changes in assembler stage for debug.
+Hamish Moffatt, James Troup
+	- dependencies check.
+Yann Dirson
+	- suggestions for a debugging shared library.
+Gergely Nagy <algernon@debian.org>
+        - upstream maintainer since 1.0.1

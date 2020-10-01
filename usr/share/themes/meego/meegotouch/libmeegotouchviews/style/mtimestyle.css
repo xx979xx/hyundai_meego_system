@@ -1,0 +1,8 @@
+/* MTimeStyle : MWidgetStyle */
+MTimeStyle {
+    font: "Droid Sans" 48;
+    color: #FFA000;
+    time-format: "HH:mmA";
+
+    /* inherited from MWidgetStyle */
+}

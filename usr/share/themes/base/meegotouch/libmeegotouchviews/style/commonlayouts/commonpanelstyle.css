@@ -1,0 +1,531 @@
+@const CP_BG:                   ;
+@const CP_BG_PRESSED:           meegotouch-panel-background-pressed $CORNER_MARGINS;
+@const CP_BG_SELECTED:          meegotouch-panel-background-selected $CORNER_MARGINS;
+@const CP_INVERTED_BG:          ;
+@const CP_INVERTED_BG_PRESSED:  meegotouch-panel-inverted-background-pressed $CORNER_MARGINS;
+@const CP_INVERTED_BG_SELECTED: meegotouch-panel-inverted-background-selected $CORNER_MARGINS;
+@const CUP_BG:                  meegotouch-unread-panel-background $CORNER_MARGINS;
+@const CUP_BG_PRESSED:          meegotouch-unread-panel-background-pressed $CORNER_MARGINS;
+@const CUP_BG_SELECTED:         meegotouch-unread-panel-background-selected $CORNER_MARGINS;
+@const CUP_INVERTED_BG:         meegotouch-unread-panel-inverted-background $CORNER_MARGINS;
+@const CUP_INVERTED_BG_PRESSED: meegotouch-unread-panel-inverted-background-pressed $CORNER_MARGINS;
+@const CUP_INVERTED_BG_SELECTED:meegotouch-unread-panel-inverted-background-selected $CORNER_MARGINS;
+
+/*  PANELS & LAYOUTS */
+
+#CommonPanel {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CP_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonPanel:pressed {
+background-tiles:  ;
+background-image:  $CP_BG_PRESSED;
+}
+#CommonPanel:selected {
+background-tiles:  ;
+background-image:  $CP_BG_SELECTED;
+
+}
+
+#CommonPanelInverted {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonPanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG_PRESSED;
+}
+#CommonPanelInverted:selected {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG_SELECTED;
+}
+
+#CommonPanelNoFeedback {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CP_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+press-feedback:    ;
+release-feedback:  ;
+}
+#CommonPanelNoFeedback:pressed {
+background-tiles:  ;
+background-image:  $CP_BG;
+background-color:  ;
+}
+#CommonPanelNoFeedback:selected {
+background-tiles:  ;
+background-image:  $CP_BG;
+background-color:  ;
+
+}
+
+#CommonPanelNoFeedbackInverted {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+press-feedback:    ;
+release-feedback:  ;
+}
+#CommonPanelNoFeedbackInverted:pressed {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+}
+#CommonPanelNoFeedbackInverted:selected {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+}
+
+#CommonUnreadPanel { /* deprecated */
+minimum-size:      $SIZE_LIST $SIZE_LIST;    
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CUP_BG;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonUnreadPanel:pressed { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_BG_PRESSED;
+}
+#CommonUnreadPanel:selected { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_BG_SELECTED;
+}
+
+#CommonUnreadPanelInverted { /* deprecated */
+minimum-size:      $SIZE_LIST $SIZE_LIST;    
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST; 
+background-tiles:  ;
+background-image:  $CUP_INVERTED_BG;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonUnreadPanelInverted:pressed { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_INVERTED_BG_PRESSED;
+}
+#CommonUnreadPanelInverted:selected { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_INVERTED_BG_SELECTED;
+}
+
+#CommonLargeUnreadPanel { /* deprecated */
+minimum-size:      $SIZE_LIST $SIZE_LIST;    
+preferred-size:    -1 -1;
+maximum-size:      -1 -1;
+background-tiles:  ;
+background-image:  $CUP_BG;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonLargeUnreadPanel:pressed { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_BG_PRESSED;
+}
+#CommonLargeUnreadPanel:selected { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_BG_SELECTED;
+}
+
+#CommonLargeUnreadPanelInverted { /* deprecated */
+minimum-size:      $SIZE_LIST $SIZE_LIST;    
+preferred-size:    -1 -1;
+maximum-size:      -1 -1; 
+background-tiles:  ;
+background-image:  $CUP_INVERTED_BG;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonLargeUnreadPanelInverted:pressed { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_INVERTED_BG_PRESSED;
+}
+#CommonLargeUnreadPanelInverted:selected { /* deprecated */
+background-tiles:  ;
+background-image:  $CUP_INVERTED_BG_SELECTED;
+}
+
+
+#CommonSmallPanel {
+minimum-size:      64px 64px;   
+preferred-size:    -1 64px;   
+maximum-size:      -1 $SIZE_LIST; 
+background-tiles:  ;
+background-image:  $CP_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonSmallPanel:pressed {
+background-tiles:  ;
+background-image:  $CP_BG_PRESSED;
+}
+#CommonSmallPanel:selected {
+background-tiles:  ;
+background-image:  $CP_BG_SELECTED;
+}
+
+#CommonSmallPanelInverted {
+minimum-size:      64px 64px;   
+preferred-size:    -1 64px;   
+maximum-size:      -1 $SIZE_LIST; 
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonSmallPanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG_PRESSED;
+}
+#CommonSmallPanelInverted:selected {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG_SELECTED;
+}
+
+#CommonLargePanel {
+minimum-size:      $SIZE_LIST $SIZE_LIST;   
+preferred-size:    -1 -1;
+maximum-size:      -1 -1;
+background-tiles:  ;
+background-image:  ;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonLargePanel:pressed {
+background-tiles:  ;
+background-image:  $CP_BG_PRESSED;
+}
+#CommonLargePanel:selected {
+background-tiles:  ;
+background-image:  $CP_BG_SELECTED;
+}
+
+#CommonLargePanelInverted {
+minimum-size:      $SIZE_LIST $SIZE_LIST;   
+preferred-size:    -1 -1;
+maximum-size:      -1 -1;
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonLargePanelInverted:pressed {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG_PRESSED;
+}
+#CommonLargePanelInverted:selected {
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG_SELECTED;
+}
+
+/* Header panels */
+
+#CommonXLargeHeaderPanel { /* deprecated */
+minimum-size:      72 72;   
+preferred-size:    -1 72;   
+maximum-size:      -1 -1; 
+background-tiles:  ;
+background-image:  $CP_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonXLargeHeaderPanelInverted { /* deprecated */
+minimum-size:      72 72;   
+preferred-size:    -1 72;   
+maximum-size:      -1 -1; 
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonLargeHeaderPanel { /* deprecated */
+minimum-size:      56 56;
+preferred-size:    -1 56;   
+maximum-size:      -1 -1; 
+background-tiles:  ;
+background-image:  $CP_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonLargeHeaderPanelInverted { /* deprecated */
+minimum-size:      56 56;
+preferred-size:    -1 56;   
+maximum-size:      -1 -1; 
+background-tiles:  ;
+background-image:  $CP_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonHeaderPanel { /* UPDATED TO 1_5_9 */ 
+    background-tiles:  ;
+    background-image:  meegotouch-view-header-fixed 8px 8px 8px 8px;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+#CommonHeaderPanel.Portrait {  
+    minimum-size:      40 72;
+    preferred-size:    100% 72;
+    maximum-size:      100% -1;
+}
+#CommonHeaderPanel.Landscape {  
+    minimum-size:      40 64;
+    preferred-size:    100% 64;
+    maximum-size:      100% -1;
+}
+#CommonHeaderPanel:pressed { 
+    background-tiles:  ;
+    background-image:  meegotouch-view-header-fixed-pressed 8px 8px 8px 8px;
+}
+#CommonHeaderPanel:selected {
+    background-tiles:  ;
+    background-image:  meegotouch-view-header-fixed-pressed 8px 8px 8px 8px;
+}
+
+#CommonHeaderPanelInverted { /* UPDATED TO 1_5_9 */ 
+background-tiles:  ;
+background-image:  meegotouch-view-header-fixed-inverted 8px 8px 8px 8px;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonHeaderPanelInverted.Portrait {
+    minimum-size:      40 72;
+    preferred-size:    100% 72;
+    maximum-size:      100% -1;
+}
+#CommonHeaderPanelInverted.Landscape { 
+    minimum-size:      40 64;
+    preferred-size:    100% 64;
+    maximum-size:      100% -1;
+}
+#CommonHeaderPanelInverted:pressed { 
+    background-tiles:  ;
+background-image:  meegotouch-view-header-fixed-inverted-pressed 8px 8px 8px 8px;
+}
+#CommonHeaderPanelInverted:selected { 
+    background-tiles:  ;
+background-image:  meegotouch-view-header-fixed-inverted-pressed 8px 8px 8px 8px;
+}
+
+#CommonGroupHeaderPanel {
+minimum-size:      40 40;   
+preferred-size:    -1 40;   
+maximum-size:      -1 -1; 
+background-color:  ;
+background-tiles:  ;
+background-image:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonGroupHeaderPanelInverted {
+minimum-size:      40 40;   
+preferred-size:    -1 40;   
+maximum-size:      -1 -1; 
+background-color:  ;
+background-tiles:  ;
+background-image:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+
+/* View Header panels */
+
+#CommonViewHeaderPanel { /* deprecated */
+minimum-size:      40 40; 
+preferred-size:    100% 40;   
+maximum-size:      100% -1; 
+background-tiles:  ;
+background-image:  meegotouch-view-header-fixed 8px 8px 8px 8px;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+
+#CommonViewHeaderPanelInverted { /* deprecated */
+minimum-size:      40 40; 
+preferred-size:    100% 40;   
+maximum-size:      100% -1; 
+background-tiles:  ;
+background-image:  meegotouch-view-header-fixed-inverted 8px 8px 8px 8px;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+
+#CommonLargeViewHeaderPanel { /* deprecated */
+    minimum-size:      40 72;
+    preferred-size:    100% 72;
+    maximum-size:      100% -1;
+    background-tiles:  ;
+    background-image:  meegotouch-view-header-fixed 8px 8px 8px 8px;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+
+#CommonLargeViewHeaderPanel:pressed { /* deprecated */
+    background-tiles:  ;
+    background-image:  meegotouch-view-header-fixed-pressed 8px 8px 8px 8px;
+}
+
+#CommonLargeViewHeaderPanel:selected { /* deprecated */
+    background-tiles:  ;
+    background-image:  meegotouch-view-header-fixed-pressed 8px 8px 8px 8px;
+}
+
+#CommonLargeViewHeaderPanelInverted { /* deprecated */
+minimum-size:      40 72;
+preferred-size:    100% 72;
+maximum-size:      100% -1;
+background-tiles:  ;
+background-image:  meegotouch-view-header-fixed-inverted 8px 8px 8px 8px;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+
+#CommonLargeViewHeaderPanelInverted:pressed { /* deprecated */
+    background-tiles:  ;
+background-image:  meegotouch-view-header-fixed-inverted-pressed 8px 8px 8px 8px;
+}
+
+#CommonLargeViewHeaderPanelInverted:selected { /* deprecated */
+    background-tiles:  ;
+background-image:  meegotouch-view-header-fixed-inverted-pressed 8px 8px 8px 8px;
+}
+
+#CommonViewHeaderPanelColored { /* deprecated */
+minimum-size:      40 40; 
+preferred-size:    100% 40;   
+maximum-size:      100% -1; 
+background-tiles:  ;
+background-image:  meegotouch-view-header-colored 15px 15px 15px 15px;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+
+#CommonViewHeaderPanelColoredInverted { /* deprecated */
+minimum-size:      40 40; 
+preferred-size:    100% 40;   
+maximum-size:      100% -1; 
+background-tiles:  ;
+background-image:  meegotouch-view-header-colored-inverted 15px 15px 15px 15px;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+
+#CommonOverlayViewHeaderPanel { /* deprecated */
+minimum-size:      40 40; 
+preferred-size:    100% -1;   
+maximum-size:      100% -1; 
+background-tiles:  ;
+background-image:  meegotouch-view-header-overlay 15px 15px 15px 15px;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+
+/* Text frames */
+
+#CommonTextFrame {
+minimum-size:      -1 -1; 
+preferred-size:    100% -1;   
+maximum-size:      100% -1; 
+background-image:  meegotouch-text-frame-background 15px 15px 15px 15px;
+margin-top:        $MARGIN_XLARGE;
+margin-bottom:     $MARGIN_XLARGE;
+margin-left:       $INDENT_DEFAULT;
+margin-right:      $INDENT_DEFAULT;
+}
+#CommonTextFrameInverted {
+minimum-size:      -1 -1; 
+preferred-size:    100% -1;   
+maximum-size:      100% -1; 
+background-image:  meegotouch-text-frame-inverted-background 15px 15px 15px 15px;
+margin-top:        $MARGIN_XLARGE;
+margin-bottom:     $MARGIN_XLARGE;
+margin-left:       $INDENT_DEFAULT;
+margin-right:      $INDENT_DEFAULT;
+}

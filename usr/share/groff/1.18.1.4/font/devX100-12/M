@@ -1,0 +1,5 @@
+name M
+spacewidth 4
+charset
+u2E00..u9FFF 20 0
+uFF00..uFFEF 20 0

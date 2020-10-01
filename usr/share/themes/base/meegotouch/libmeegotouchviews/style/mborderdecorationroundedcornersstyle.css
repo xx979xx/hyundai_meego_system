@@ -1,0 +1,62 @@
+MBorderDecorationRoundedCornersStyle#TopBorderDecoration {
+
+    minimum-size: 100% 12px;
+    preferred-size: 100% 12px;
+    maximum-size: 100% 12px;
+
+    vertical-align: top;
+    horizontal-align: left;
+
+    left-corner-widget-style-name: "TopLeftCornerWidget";
+    right-corner-widget-style-name: "TopRightCornerWidget";
+
+
+    offset: 0 0;
+}
+
+MBorderDecorationRoundedCornersStyle#BottomBorderDecoration {
+
+    minimum-size: 100% 12px;
+    preferred-size: 100% 12px;
+    maximum-size: 100% 12px;
+
+    vertical-align: bottom;
+    horizontal-align: left;
+
+    left-corner-widget-style-name: "BottomLeftCornerWidget";
+    right-corner-widget-style-name: "BottomRightCornerWidget";
+
+    offset: 0 0;
+}
+
+#TopLeftCornerWidget {
+    minimum-size: 12px 12px;
+    preferred-size: 12px 12px;
+    maximum-size: 12px 12px;
+
+    background-image: meegotouch-applicationwindow-corner-top-left 0 0 0 0;
+}
+
+#TopRightCornerWidget {
+    minimum-size: 12px 12px;
+    preferred-size: 12px 12px;
+    maximum-size: 12px 12px;
+
+    background-image: meegotouch-applicationwindow-corner-top-right 0 0 0 0;
+}
+
+#BottomLeftCornerWidget {
+    minimum-size: 12px 12px;
+    preferred-size: 12px 12px;
+    maximum-size: 12px 12px;
+
+    background-image: meegotouch-applicationwindow-corner-bottom-left 0 0 0 0;
+}
+
+#BottomRightCornerWidget {
+    minimum-size: 12px 12px;
+    preferred-size: 12px 12px;
+    maximum-size: 12px 12px;
+
+    background-image: meegotouch-applicationwindow-corner-bottom-right 0 0 0 0;
+}

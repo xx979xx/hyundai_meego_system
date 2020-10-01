@@ -1,0 +1,873 @@
+@const CTITLE_FONT:    $FONT_FAMILY bold 26;
+@const CSUBTITLE_FONT: $FONT_FAMILY light 22;
+@const CTITLE_M_TOP:    1.5mm;
+@const CSUBTITLE_M_TOP: 0.2mm;
+@const CTITLE_COLOR:          $COLOR_FOREGROUND;
+@const CTITLE_COLOR_DISABLED: #797979;
+@const CTITLE_COLOR_PRESSED:  #797979;
+@const CTITLE_COLOR_SELECTED: #FFFFFF;
+@const CSUBTITLE_COLOR:       $COLOR_SECONDARY_FOREGROUND;
+@const CSUBTITLE_COLOR_DISABLED: #797979;
+@const CSUBTITLE_COLOR_PRESSED:  #797979;
+@const CSUBTITLE_COLOR_SELECTED: #FFFFFF;
+@const CTITLE_COLOR_INVERTED:          $COLOR_INVERTED_FOREGROUND;
+@const CTITLE_COLOR_DISABLED_INVERTED: #797979;
+@const CTITLE_COLOR_PRESSED_INVERTED:  #797979;
+@const CTITLE_COLOR_SELECTED_INVERTED: #FFFFFF;
+@const CSUBTITLE_COLOR_INVERTED:       $COLOR_INVERTED_SECONDARY_FOREGROUND;
+@const CSUBTITLE_COLOR_DISABLED_INVERTED: #797979;
+@const CSUBTITLE_COLOR_PRESSED_INVERTED:  #797979;
+@const CSUBTITLE_COLOR_SELECTED_INVERTED: #FFFFFF;
+
+/* labels for default application background color */
+#CommonSingleTitle {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSingleTitle:pressed {
+color:         $CTITLE_COLOR_PRESSED;
+}
+#CommonSingleTitle:selected {
+color:         $CTITLE_COLOR_SELECTED;
+}
+#CommonSingleTitle:disabled {
+color:         $CTITLE_COLOR_DISABLED;
+}
+
+#CommonSingleTitleAccented {
+font:          $CTITLE_FONT;
+color:         $COLOR_ACCENT1;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonTitle {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonTitle:pressed {
+color:         $CTITLE_COLOR_PRESSED;
+}
+#CommonTitle:selected {
+color:         $CTITLE_COLOR_SELECTED;
+}
+#CommonTitle:disabled {
+color:         $CTITLE_COLOR_DISABLED;
+}
+
+#CommonTitleAccented {
+font:          $CTITLE_FONT;
+color:         $COLOR_ACCENT1;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonTitleBottom {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR;
+margin-top:    0.1mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonTitleBottom:pressed {
+color:         $CTITLE_COLOR_PRESSED;
+}
+#CommonTitleBottom:selected {
+color:         $CTITLE_COLOR_SELECTED;
+}
+#CommonTitleBottom:disabled {
+color:         $CTITLE_COLOR_DISABLED;
+}
+
+#CommonSubTitle {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleAccented {
+font:          $CSUBTITLE_FONT;
+color:         $COLOR_ACCENT1;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitle:pressed {
+color:         $CSUBTITLE_COLOR_PRESSED;
+}
+#CommonSubTitle:selected {
+color:         $CSUBTITLE_COLOR_SELECTED;
+}
+#CommonSubTitle:disabled {
+color:         $CSUBTITLE_COLOR_DISABLED;
+}
+
+#CommonSubTitleWithIcon {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleWithIcon:pressed {
+color:         $CSUBTITLE_COLOR_PRESSED;
+}
+#CommonSubTitleWithIcon:selected {
+color:         $CSUBTITLE_COLOR_SELECTED;
+}
+#CommonSubTitleWithIcon:disabled {
+color:         $CSUBTITLE_COLOR_DISABLED;
+}
+
+#CommonSubTitleTop {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    1.6mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleTop:pressed {
+color:         $CSUBTITLE_COLOR_PRESSED;
+}
+#CommonSubTitleTop:selected {
+color:         $CSUBTITLE_COLOR_SELECTED;
+}
+#CommonSubTitleTop:disabled {
+color:         $CSUBTITLE_COLOR_DISABLED;
+}
+
+#CommonSubText {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    0.2mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonBodyText {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_FOREGROUND;
+margin-top:    2.4mm;
+margin-bottom: 2.4mm;
+margin-left:   2.4mm;
+margin-right:  2.4mm;
+}
+#CommonBodyTextLight {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_SECONDARY_FOREGROUND;
+margin-top:    2.4mm;
+margin-bottom: 2.4mm;
+margin-left:   2.4mm;
+margin-right:  2.4mm;
+}
+#CommonXLargeHeader { /* deprecated */
+font:          $FONT_FAMILY light 56;
+color:         $COLOR_FOREGROUND;
+margin-top:    0.8mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonLargeHeader { /* deprecated */
+font:          $FONT_FAMILY light 40;
+color:         $COLOR_FOREGROUND;
+margin-top:    0.6mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonHeader { /* Updated according to 1_5_9 but contains temporary values */
+font:          $FONT_FAMILY light 32;
+color:         $COLOR_FOREGROUND;
+margin-top:    $MARGIN_XLARGE; /* temporary value due to font issues FIX ME */ 
+margin-bottom: $MARGIN_XLARGE; /* temporary value due to font issues FIX ME */ 
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonGroupHeader { /* Updated according to 1_5_9 but contains temporary values */
+font:          $FONT_FAMILY bold 18;
+color:         #3C3C3C;
+margin-top:    $MARGIN_XLARGE; /* temporary value due to font issues FIX ME */ 
+margin-bottom: $MARGIN_XSMALL; /* temporary value due to font issues FIX ME */
+margin-left:   $MARGIN_LARGE;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonApplicationHeader { /* deprecated */
+font:          $FONT_FAMILY light 40;
+color:         $COLOR_FOREGROUND;
+margin-top:    2.2mm;
+margin-bottom: 1.5mm;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonViewHeader { /* deprecated */
+font:          $FONT_FAMILY bold 22;
+color:         $COLOR_FOREGROUND;
+margin-top:    0.9mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonLargeViewHeader { /* deprecated */
+    font:              $FONT_FAMILY light 32;
+    color:             $COLOR_FOREGROUND;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       $INDENT_DEFAULT;
+    margin-right:      $INDENT_DEFAULT;
+}
+#CommonViewHeaderWithIcon { /* deprecated */
+font:          $FONT_FAMILY bold 22;
+color:         $COLOR_FOREGROUND;
+margin-top:    0.9mm;
+margin-bottom: 0;
+margin-left:   0.8mm;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonOverlayViewHeader { /* deprecated */
+font:          $FONT_FAMILY bold 22;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0.9mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonLargeOverlayViewHeader { /* deprecated */
+font:          $CTITLE_FONT;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    1.6mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonOverlaySubHeader { /* deprecated */
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    0.2mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonOverlayRightSubHeader { /* deprecated */
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    0.2mm;
+margin-bottom: 0;
+margin-left:   0;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonInputFieldText {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_FOREGROUND;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonInputFieldTextActive {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_FOREGROUND;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonInputFieldTextHint {
+font:          $FONT_FAMILY light 24;
+color:         #C0C0C0;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonFieldLabel { /* same as field header, needs update */
+font:          $FONT_FAMILY light 22;
+color:         $COLOR_FOREGROUND;
+margin-top:    0.8mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+} 
+
+MLabelStyle#CommonButtonLabel {
+font:          $CB_FONT;
+color:         $CB_FONT_COLOR;
+}
+MLabelStyle#CommonButtonLabel:pressed {
+color:         $COLOR_INVERTED_FOREGROUND;
+}
+MLabelStyle#CommonButtonLabel:disabled {
+color:         $COLOR_INVERTED_DISABLED;
+}
+MLabelStyle#CommonButtonLabelInverted {
+font:          $CB_FONT;
+color:         $CB_FONT_COLOR_INVERTED;
+}
+MLabelStyle#CommonButtonLabelInverted:pressed {
+color:         $CB_FONT_COLOR_INVERTED_PRESSED;
+}
+MLabelStyle#CommonButtonLabelInverted:disabled {
+color:         $CB_FONT_COLOR_INVERTED_DISABLED;
+}
+
+#CommonQueryTitle {
+font:          $FONT_FAMILY bold 32;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    28px;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonQueryText {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    17px;
+margin-bottom: 26px;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+
+/* labels for inverted application background color */
+#CommonSingleTitleInverted {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR_INVERTED;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSingleTitleInverted:pressed {
+color:         $CTITLE_COLOR_PRESSED_INVERTED;
+}
+#CommonSingleTitleInverted:selected {
+color:         $CTITLE_COLOR_SELECTED_INVERTED;
+}
+#CommonSingleTitleInverted:disabled {
+color:         $CTITLE_COLOR_DISABLED_INVERTED;
+}
+
+#CommonTitleInverted {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR_INVERTED;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonTitleInverted:pressed {
+color:         $CTITLE_COLOR_PRESSED_INVERTED;
+}
+#CommonTitleInverted:selected {
+color:         $CTITLE_COLOR_SELECTED_INVERTED;
+}
+#CommonTitleInverted:disabled {
+color:         $CTITLE_COLOR_DISABLED_INVERTED;
+}
+#CommonTitleBottomInverted {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR_INVERTED;
+margin-top:    0.1mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonTitleBottomInverted:pressed {
+color:         $CTITLE_COLOR_PRESSED_INVERTED;
+}
+#CommonTitleBottomInverted:selected {
+color:         $CTITLE_COLOR_SELECTED_INVERTED;
+}
+#CommonTitleBottomInverted:disabled {
+color:         $CTITLE_COLOR_DISABLED_INVERTED;
+}
+
+#CommonSubTitleInverted {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR_INVERTED;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleInverted:pressed {
+color:         $CSUBTITLE_COLOR_PRESSED_INVERTED;
+}
+#CommonSubTitleInverted:selected {
+color:         $CSUBTITLE_COLOR_SELECTED_INVERTED;
+}
+#CommonSubTitleInverted:disabled {
+color:         $CSUBTITLE_COLOR_DISABLED_INVERTED;
+}
+
+#CommonSubTitleWithIconInverted {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR_INVERTED;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleWithIconInverted:pressed {
+color:         $CSUBTITLE_COLOR_PRESSED_INVERTED;
+}
+#CommonSubTitleWithIconInverted:selected {
+color:         $CSUBTITLE_COLOR_SELECTED_INVERTED;
+}
+#CommonSubTitleWithIconInverted:disabled {
+color:         $CSUBTITLE_COLOR_DISABLED_INVERTED;
+}
+
+#CommonSubTitleTopInverted {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR_INVERTED;
+margin-top:    1.6mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleTopInverted:pressed {
+color:         $CSUBTITLE_COLOR_PRESSED_INVERTED;
+}
+#CommonSubTitleTopInverted:selected {
+color:         $CSUBTITLE_COLOR_SELECTED_INVERTED;
+}
+#CommonSubTitleTopInverted:disabled {
+color:         $CSUBTITLE_COLOR_DISABLED_INVERTED;
+}
+
+#CommonSubTextInverted {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR_INVERTED;
+margin-top:    0.2mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonBodyTextInverted {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    2.4mm;
+margin-bottom: 2.4mm;
+margin-left:   2.4mm;
+margin-right:  2.4mm;
+}
+#CommonBodyTextLightInverted {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_INVERTED_SECONDARY_FOREGROUND;
+margin-top:    2.4mm;
+margin-bottom: 2.4mm;
+margin-left:   2.4mm;
+margin-right:  2.4mm;
+}
+#CommonXLargeHeaderInverted { /* deprecated */
+font:          $FONT_FAMILY light 56;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0.8mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonLargeHeaderInverted { /* deprecated */
+font:          $FONT_FAMILY light 40;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0.6mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonHeaderInverted { /* Updated according to 1_5_9 but contains temporary values */
+font:          $FONT_FAMILY light 32;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    $MARGIN_XLARGE; /* temporary value due to font issues FIX ME */ 
+margin-bottom: $MARGIN_XLARGE; /* temporary value due to font issues FIX ME */ 
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonGroupHeaderInverted { /* Updated according to 1_5_9 but contains temporary values */
+font:          $FONT_FAMILY bold 18;
+color:         #4D4D4D;
+margin-top:    $MARGIN_XLARGE; /* temporary value due to font issues FIX ME */ 
+margin-bottom: $MARGIN_XSMALL; /* temporary value due to font issues FIX ME */
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonApplicationHeaderInverted { /* deprecated */
+font:          $FONT_FAMILY light 40;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    2.2mm;
+margin-bottom: 1.5mm;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonViewHeaderInverted { /* deprecated */
+font:          $FONT_FAMILY bold 22;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0.9mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonLargeViewHeaderInverted { /* deprecated */
+font:          $FONT_FAMILY light 32;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonViewHeaderWithIconInverted { /* deprecated */
+font:          $FONT_FAMILY bold 22;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0.9mm;
+margin-bottom: 0;
+margin-left:   0.8mm;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonOverlayViewHeaderInverted { /* deprecated */
+font:          $FONT_FAMILY bold 22;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0.9mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonLargeOverlayViewHeaderInverted { /* deprecated */
+font:          $CTITLE_FONT;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    1.6mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonOverlaySubHeaderInverted { /* deprecated */
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR_INVERTED;
+margin-top:    0.2mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonOverlayRightSubHeaderInverted { /* deprecated */
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR_INVERTED;
+margin-top:    0.2mm;
+margin-bottom: 0;
+margin-left:   0;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonInputFieldTextInverted {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonInputFieldTextActiveInverted {
+font:          $FONT_FAMILY light 24;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonInputFieldTextHintInverted {
+font:          $FONT_FAMILY light 24;
+color:         #C0C0C0;
+margin-top:    0;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonFieldLabelInverted { /* same as field header, needs update */
+font:          $FONT_FAMILY light 22;
+color:         $COLOR_INVERTED_FOREGROUND;
+margin-top:    0.8mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+} 
+#CommonButtonLabelInverted {
+font:          $CB_FONT;
+color:         $CB_FONT_COLOR_INVERTED;
+}
+/* Other Labels */
+
+#CommonItemInfo {
+font:          $FONT_SMALL;
+color:         $COLOR_SECONDARY_FOREGROUND;
+margin-top:    $MARGIN_XSMALL;
+margin-bottom: 0;
+margin-right:  $INDENT_DEFAULT;
+}
+
+#CommonItemInfo:selected {
+color:         $COLOR_INVERTED_FOREGROUND;
+}
+
+#CommonItemInfoInverted {
+font:          $FONT_SMALL;
+color:         $COLOR_INVERTED_SECONDARY_FOREGROUND;
+margin-top:    $MARGIN_XSMALL;
+margin-bottom: 0;
+margin-right:  $INDENT_DEFAULT;
+}
+
+#CommonItemInfoInverted:selected {
+color:         $COLOR_INVERTED_FOREGROUND;
+}
+
+#CommonAvatarInitials {
+    font: $FONT_XLARGE_BOLD;
+    color: $COLOR_INVERTED_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 0;
+    margin-left:   0;
+    margin-right:  0;
+} 
+
+#CommonLargeAvatarInitials {
+    font: $FONT_FAMILY bold 4.0mm;
+    color: $COLOR_INVERTED_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 0;
+    margin-left:   0;
+    margin-right:  0;
+} 
+
+/* Empty state labels */
+
+#CommonEmptyStateTitle {
+    font: $FONT_FAMILY light 6.2mm;
+    color: $COLOR_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 0;
+    margin-left:   0;
+    margin-right:  0;
+    text-opacity: 0.5;
+}
+
+#CommonEmptyStateTitleKeyword {
+    font: $FONT_FAMILY light 6.2mm;
+    color: $COLOR_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 0;
+    margin-left:   0;
+    margin-right:  0;
+    text-opacity: 1.0;
+}
+
+#CommonEmptyStateButtonGroupHeader {
+    font: $FONT_FAMILY light 2.4mm;
+    color: $COLOR_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 1.8mm;
+    margin-left:   0;
+    margin-right:  0;
+}
+
+#CommonEmptyStateTitleInverted {
+    font: $FONT_FAMILY light 6.2mm;
+    color: $COLOR_INVERTED_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 0;
+    margin-left:   0;
+    margin-right:  0;
+    text-opacity: 0.5;
+}
+
+#CommonEmptyStateTitleKeywordInverted {
+    font: $FONT_FAMILY light 6.2mm;
+    color: $COLOR_INVERTED_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 0;
+    margin-left:   0;
+    margin-right:  0;
+    text-opacity: 1.0;
+}
+
+#CommonEmptyStateButtonGroupHeaderInverted {
+    font: $FONT_FAMILY light 2.4mm;
+    color: $COLOR_INVERTED_FOREGROUND;
+    margin-top:    0;
+    margin-bottom: 1.8mm;
+    margin-left:   0;
+    margin-right:  0;
+}
+
+/* temporary styles */
+
+#CommonTitleLeftMargin {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  0;
+}
+#CommonTitleRightMargin {
+font:          $FONT_FAMILY light 2.6mm;
+color:         $CTITLE_COLOR;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   0;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonTitleWithoutMargin {
+font:          $CTITLE_FONT;
+color:         $CTITLE_COLOR;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   0;
+margin-right:  0;
+}
+#CommonTitleAccentedLeftMargin {
+font:          $CTITLE_FONT;
+color:         $COLOR_ACCENT1;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  0;
+}
+#CommonTitleAccentedRightMargin {
+font:          $FONT_FAMILY light 2.6mm;
+color:         $COLOR_ACCENT1;
+margin-top:    $CTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   0;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleLeftMargin {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  0;
+}
+#CommonSubTitleRightMargin {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   0;
+margin-right:  $INDENT_DEFAULT;
+}
+#CommonSubTitleWithoutMargin {
+font:          $CSUBTITLE_FONT;
+color:         $CSUBTITLE_COLOR;
+margin-top:    $CSUBTITLE_M_TOP;
+margin-bottom: 0;
+margin-left:   0;
+margin-right:  0;
+}
+
+/* For dialog */
+
+#CommonDialogHeader {
+font:          $FONT_FAMILY light 32;
+color:         $COLOR_ACCENT1;
+margin-top:    0.8mm;
+margin-bottom: 0;
+margin-left:   $INDENT_DEFAULT;
+margin-right:  $INDENT_DEFAULT;
+}
+
+/* Count bubbles are labels */
+
+#CommonLargeCountBubble {
+font: $FONT_FAMILY 22;
+color: $COLOR_INVERTED_FOREGROUND;
+padding-top: 2px;
+padding-left: 10px;
+padding-right: 10px;
+margin-right: $INDENT_DEFAULT;
+background-image: "meegotouch-countbubble-background-large" 16px 16px 0 0;
+minimum-size: 32px 32px;
+preferred-size: -1 32px;
+maximum-size: -1 32px;
+}
+
+#CommonCountBubble {
+font: $FONT_FAMILY bold 18;
+color: $COLOR_FOREGROUND;
+padding-top: 1px;
+padding-left: 7px;
+padding-right: 7px;
+margin-right: $INDENT_DEFAULT;
+background-image: "meegotouch-inbox-subicon-background" 12px 12px 0 0;
+minimum-size: 24px 24px;
+preferred-size: -1 24px;
+maximum-size: -1 24px;
+}
+
+#CommonCountBubbleTop {
+font: $FONT_FAMILY bold 18;
+color: $COLOR_FOREGROUND;
+padding-top: 1px;
+padding-left: 7px;
+padding-right: 7px;
+margin-right: $INDENT_DEFAULT;
+margin-top: $MARGIN_DOUBLE;
+background-image: "meegotouch-inbox-subicon-background" 12px 12px 0 0;
+minimum-size: 24px 24px;
+preferred-size: -1 24px;
+maximum-size: -1 24px;
+}
+
+
+#CommonLargeCountBubbleInverted {
+font: $FONT_FAMILY 22;
+color: $COLOR_INVERTED_FOREGROUND;
+padding-top: 2px;
+padding-left: 10px;
+padding-right: 10px;
+margin-right: $INDENT_DEFAULT;
+background-image: "meegotouch-countbubble-inverted-background-large" 16px 16px 0 0;
+minimum-size: 32px 32px;
+preferred-size: -1 32px;
+maximum-size: -1 32px;
+}
+
+#CommonCountBubbleInverted {
+font: $FONT_FAMILY bold 18;
+color: $COLOR_FOREGROUND;
+padding-top: 1px;
+padding-left: 7px;
+padding-right: 7px;
+margin-right: $INDENT_DEFAULT;
+background-image: "meegotouch-inbox-subicon-inverted-background" 12px 12px 0 0;
+minimum-size: 24px 24px;
+preferred-size: -1 24px;
+maximum-size: -1 24px;
+}
+
+#CommonCountBubbleTopInverted {
+font: $FONT_FAMILY bold 18;
+color: $COLOR_FOREGROUND;
+padding-top: 1px;
+padding-left: 7px;
+padding-right: 7px;
+margin-right: $INDENT_DEFAULT;
+margin-top: $MARGIN_DOUBLE;
+background-image: "meegotouch-inbox-subicon-inverted-background" 12px 12px 0 0;
+minimum-size: 24px 24px;
+preferred-size: -1 24px;
+maximum-size: -1 24px;
+}

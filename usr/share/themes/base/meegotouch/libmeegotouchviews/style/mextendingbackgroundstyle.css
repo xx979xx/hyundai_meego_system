@@ -1,0 +1,4 @@
+MExtendingBackgroundStyle {
+    /* The direction where to extend the background beyond the screen edges (left/right/top/bottom) */
+    extend-direction: "top";
+}

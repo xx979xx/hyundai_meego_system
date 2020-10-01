@@ -1,0 +1,13 @@
+/* there is probably a way to specify this better */
+#ConfirmRemoveText {
+    font: "Droid Sans" 16;
+    preferred-size: 100% 25%;
+}
+
+#CancelButton {
+    margin-right: 50;
+}
+
+#ConfirmButton {
+    margin-left: 50;
+}

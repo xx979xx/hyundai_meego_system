@@ -1,0 +1,11 @@
+/* MListStyle : MWidgetStyle */
+MListStyle {
+    group-header-object-name: "";
+    horizontal-separator-object-name: "emptySeparator"; 
+    vertical-separator-object-name: "emptySeparator";
+
+}
+
+#emptySeparator {
+    span: 0.0mm;
+}

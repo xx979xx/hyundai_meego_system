@@ -1,0 +1,6 @@
+[Specialized Thumbnailer]
+Name=com.nokia.video.Thumbnailer1
+ObjectPath=/com/nokia/video/Thumbnailer1
+UriSchemes=file;
+MimeTypes=video/3gpp;video/mp4;video/mpeg;video/quicktime;video/x-ms-asf;video/x-msvideo;video/x-ms-wmv;video/x-flv;video/x-matroska;video/fli;video/x-flv;video/mp4v-es;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-wmx;video/x-ms-wvx;video/x-nsv;video/x-ogm+ogg;video/x-theora+ogg;
+Comment=A gstreamer based video thumbnailer for maemo

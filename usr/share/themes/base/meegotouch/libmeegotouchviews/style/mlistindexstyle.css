@@ -1,0 +1,96 @@
+/* MListIndexStyle : MWidgetStyle */
+MListIndexStyle {
+    shortcut-object-name: "whiteFont";
+
+    background-opacity: 0.5;
+    background-image: meegotouch-fastscroll-background 12px 12px 12px 12px;
+    preferred-size: 7mm  100%;
+
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+
+    appear-delay: 500;
+    appear-duration: 300;
+    fade-out-delay: 2000;
+
+    floating-index-offset: 50;
+    floating-index-count: 3;
+    floating-snap-distance: 20;
+    floating-style-name: "";
+}
+
+#whiteFont {
+    color: $COLOR_INVERTED_FOREGROUND;
+
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+MListIndexStyle[floating] {
+    margin-top: 2.0mm;
+    margin-bottom: 2.0mm;
+}
+
+MListIndexStyle#Inverted {
+    floating-style-name: "Inverted";
+}
+
+MListIndexTooltipStyle {
+    background-image: meegotouch-scroll-bubble-background $CORNER_MARGINS;
+    arrow-pixmap: meegotouch-scroll-bubble-arrow;
+
+    minimum-size: 64px -1;
+
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+}
+
+MListIndexTooltip MLabelStyle#IndexLabel {
+    color: $COLOR_INVERTED_SECONDARY_FOREGROUND;
+    font: $FONT_FAMILY bold 26;
+
+    minimum-size: -1 58px;
+    preferred-size: -1 58px;
+    maximum-size: -1 58px;
+
+    margin-top: 6px;
+    margin-left: 16px;
+    margin-bottom: 0;
+    margin-right: 16px;
+
+    horizontal-alignment: center;
+    vertical-alignment: vcenter;
+}
+
+MListIndexTooltip MLabelStyle#IndexLabel:selected {
+    color: $COLOR_INVERTED_FOREGROUND;
+}
+
+MListIndexTooltip MSeparatorStyle#IndexSeparator {
+    span: 0.1mm;
+    background-image: meegotouch-scroll-bubble-divider 0px 0px 0px 0px;
+}
+
+MListIndexTooltipStyle#Inverted {
+    background-image: meegotouch-scroll-bubble-background-inverted $CORNER_MARGINS;
+    arrow-pixmap: meegotouch-scroll-bubble-arrow-inverted;
+}
+
+MListIndexTooltip#Inverted MLabelStyle#IndexLabel {
+    color: $COLOR_SECONDARY_FOREGROUND;
+}
+
+MListIndexTooltip#Inverted MLabelStyle#IndexLabel:selected {
+    color: $COLOR_FOREGROUND;
+}
+
+MListIndexTooltip#Inverted MSeparatorStyle#IndexSeparator {
+    background-image: meegotouch-scroll-bubble-divider-inverted 0px 0px 0px 0px;
+}
+

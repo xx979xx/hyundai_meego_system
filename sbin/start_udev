@@ -1,0 +1,196 @@
+#! /bin/sh
+#
+# Streamlined udev initialization
+#
+# Based on the start_udev script by Greg KH:
+#
+#    Copyright (C) 2004 Greg Kroah-Hartman <greg@kroah.com>
+#   
+#    Released under the GPL v2 only.
+#   
+#    This needs to be run at the earliest possible point in the boot 
+#    process.
+#   
+#    Based on the udev init.d script
+#   
+#    Thanks go out to the Gentoo developers for proving 
+#    that this is possible to do.
+#   
+#    Yes, it's very verbose, feel free to turn off all of the echo calls,
+#    they were there to make me feel better that everything was working
+#
+# Copyright (C) 2008 Intel Corporation <inaky.perez-gonzalez@intel.com>
+#
+# Just do the same stuff, but make the folling assumptions: 
+#
+#  - called from system boot, /dev, /dev/pts, etc not mounted
+#  - kernel command line options named udev* all belong to us
+#  - udev is not running
+#  - /etc/udev/devices and /lib/udev/devices are deprecated and not allowed
+#  - needed binaries / stuff is where it should be
+#    + /sbin/udevd exists
+#    + /sbin/MAKEDEV
+#    + /proc, /sys are mounted
+#
+# As well, use the program mkdevnodes to create the nodes and
+# directories, instead of MAKEDEV.
+#
+
+set -eu
+
+sysconfdir=${sysconfdir:-/etc/udev}
+devdir=${devdir:-/dev}
+progname=${0/#*\//}
+
+on_exit() {
+    local code=${1:-$?}
+    if [ $code != 0 ]
+    then
+        echo "$progname: FAILED ($code)"
+    fi
+}
+
+# $1 code
+# $2 message
+die() {
+    local code=$1
+    shift 1
+    echo "$@" 1>&2
+    exit $code
+}
+
+if [ -f /dev/.in_sysinit ]; then
+    exec >/dev/console 2>/dev/console </dev/console
+fi
+
+trap on_exit EXIT
+trap "on_exit 1" SIGHUP SIGABRT SIGQUIT SIGINT SIGKILL
+
+# Options to start udev
+UDEV_OPTS=""
+# Options to run udevcontrol after starting udev
+udev_ctl_options=""
+# Options to udevsettle
+udevtimeout=""
+modprobedebug=0
+# Bring in udev* options from the kernel command line
+for option in $(cat /proc/cmdline)
+do
+    case $option in
+        udevtimeout=*)
+            udevtimeout="--timeout=${option/#*=/}"
+            ;;
+        udevdebug)
+            udev_ctl_options="$udev_ctl_options --log-priority=debug"
+            ;;
+        udevinfo)
+            udev_ctl_options="$udev_ctl_options --log-priority=info"
+            ;;
+        udevtrace)
+            UDEV_OPTS="$UDEV_OPTS --debug-trace"
+            ;;
+        udevnopersist)
+            udev_ctl_options="$udev_ctl_options --env UDEV_NO_PERSISTENT_STORAGE=1"
+            ;;
+        udevchilds=*)
+            udev_ctl_options="$udev_ctl_options --max-childs-running=${option/#*=/}"
+            ;;
+        modprobedebug|udevmodprobedebug)
+            modrobedebug=1
+            udev_ctl_options="$udev_ctl_options --env MODPROBE_OPTIONS=\"-s -v -q\""
+            ;;
+        udev*)
+            echo "$progname: ignoring unknown udev command option '$option' in kernel command line" 1>&2
+            ;;
+    esac
+done
+
+# Parse config coming from /etc
+[ -f $sysconfdir/udev.conf ] && . $sysconfdir/udev.conf
+[ -f /etc/sysconfig/udev ] && . /etc/sysconfig/udev
+
+if [ "$UDEV_PERSISTENT_STORAGE" == "no" ]
+then
+    udev_ctl_options="$udev_ctl_options --env UDEV_NO_PERSISTENT_STORAGE=1"
+fi
+
+# This will be needed for configuring base devices
+[ -x $sysconfdir/selinux.conf ] && . $sysconfdir/selinux.conf
+
+# make sure we have /dev/console always
+[ ! -e /dev/console ] && mknod /dev/console c 5 1
+
+# FIXME: needed to get udev working on Meego 1.20 ... directory should be
+# created by %post in the rpm
+mount -n -t tmpfs none /run
+
+# Not needed now we have devtmpfs
+# Mount the base directories we need
+#mount -n -o mode=0755 -t tmpfs none $devdir
+#mkdir /dev/shm
+
+# Create dirs|links|nodes with mkdevnodes
+/sbin/mkdevnodes
+
+# create /dev/pts
+mkdir -p /dev/pts
+
+# create /dev/shm
+mkdir -p /dev/shm
+
+# mount /dev/pts
+mount -n -o mode=0755 -t devpts none $devdir/pts
+
+# Create nodes with the MAKEDEV method (this is OBSOLETE,
+# and should be REMOVED)
+for i in $sysconfdir/makedev.d/*.nodes; do
+	if [ -f "$i" ]; then 			   
+	    ( sed -e 's,#.*,,g' "$i" | \
+		xargs -n 100 MAKEDEV -x )
+	fi
+done 
+
+# Now start udev proper
+[ -f "/sys/class/tty/console/uevent" ] \
+    || die 1 "$progname: can't find /sys/class/tty/console/uevent! can't start udev" 1>&2
+
+# trigger the sorted events
+echo -e '\000\000\000\000' > /proc/sys/kernel/hotplug
+
+rm -fr $devdir/.udev > "$devdir/null" 2>&1
+/lib/udev/udevd -d \
+    || die 1 "$progname: can't start udev" 1>&2
+
+# Now tweak udev's config according to the options
+/usr/bin/udevadm control $udev_ctl_options --env STARTUP=1
+
+findalias () {
+	local n
+	for n in "$1"/* ; do
+		[ -h "$n" ] && continue
+		[ -d "$n" ] && { findalias "$n" ; continue; }
+		[ "${n##*/}" == "modalias" ] && echo $(cat $n)
+	done
+}
+
+if [ $modprobedebug = 1 ]
+then
+    findalias /sys | while read modules ; do
+	if [ -n "$modules" ]; then
+	    /sbin/modprobe -a -v -q $modules
+	    wait_for_queue $udevtimeout
+	fi
+    done
+fi
+
+(
+/usr/bin/udevadm trigger --subsystem-match=input
+
+/usr/bin/udevadm trigger \
+    || die 1 "$progname: udevtrigger failed to start" 1>&2
+    /usr/bin/udevadm settle $udevtimeout \
+        || echo "$progname: failed waiting for queue, backgrounding" 1>&2
+    /usr/bin/udevadm trigger --action=add --subsystem-match="rtc"
+    /usr/bin/udevadm control --env STARTUP=
+) &
+exit 0

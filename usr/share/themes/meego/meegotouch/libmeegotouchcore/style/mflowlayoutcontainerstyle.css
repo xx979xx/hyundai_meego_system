@@ -1,0 +1,24 @@
+MFlowLayoutContainerStyle {
+    background-image: "C1-container-background" 20 20 20 20;
+    font: $FONT_DEFAULT;
+    text-color: #FFFFFF;
+    /* Top-right corner of action button in pixels from top-right corner of screen. */
+    button-position: 0 0;
+    title-image: "LightTopGradientCategory";
+    margin-left: 12;
+    margin-right: 12;
+    margin-top: 12;
+    margin-bottom: 12;
+    title-height: 72;
+    title-margin: 16;
+    title-icon-margin: 16;
+    title-text-align: left;
+    title-vertical-align: center;
+}
+
+MButtonStyle#FlowLayoutContainerButton {
+    icon-size: 40 40;
+    preferred-size: 64 64;
+    minimum-size: 64 64;
+    maximum-size: 64 64;
+}

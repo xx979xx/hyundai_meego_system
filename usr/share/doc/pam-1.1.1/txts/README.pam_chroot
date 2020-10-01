@@ -1,0 +1,30 @@
+This pam_chroot module provides session support only.  It is based
+almost entirely on Matthew Kirkwood's original version obtained from
+ftp://ferret.lmh.ox.ac.uk/users/weejock/pam_chroot/.
+
+Operation:
+When the calling application attempts to open a session, pam_chroot
+opens /etc/security/chroot.conf and searches for a line of the form:
+user directory
+where the "user" listed is actually a regular expression.  If the
+PAM_USER for whom the session is being opened matches the regular
+expression, the module will attempt to chroot() to the given directory.
+
+Optional arguments:
+"debug"		Log debug messages to syslog.
+"onerr="	Values can be "succeed" or "fail".  The action to take if
+		the configuration file can not be opened, the chroot()
+		fails, or the user does not match any of the expressions
+		listed in the configuration file.  Default is "succeed".
+
+Other Notes:
+The calling application must be executing with root privileges in order to
+be able to chroot() at all.  If the application needs to exec() other programs
+(such as a server process or spawning a shell), you will need to duplicate
+some portions of an actual root environment under the chroot()ed directory
+in order for it to work at all.  (This includes configuration and logging
+files.)  If configured incorrectly, this module may potentially render the
+service unusable and, under some circumstances, pose a security risk.
+
+In particular, the new root directory and all of its parent directories must
+not be writable by anyone but root.

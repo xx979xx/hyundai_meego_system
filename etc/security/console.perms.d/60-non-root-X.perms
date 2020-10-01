@@ -1,0 +1,4 @@
+# device classes -- these are shell-style globs
+<input>=/dev/input/*
+# permission definitions
+<console>  0660 <input>      0660 root.root

@@ -1,0 +1,519 @@
+0.7.2 - 2010-06-22
+  - new API call aug_setm to set/create multiple nodes simultaneously
+  - record expression used in a defvar underneath /augeas/variables
+  - Lens changes/additions
+    * Group: add test for disabled account (Raphael Pinson)
+    * Grub: handle comments within a boot stanza
+    * Iptables: also look for /etc/iptables-save (Nicolas Valcarcel)
+    * Modules_conf: new lens for /etc/modules.conf (Matt Booth)
+    * Securetty: added handling of emtpy lines/comments (Frederik Wagner)
+    * Shellvars: added SuSE sysconfig puppet files (Frederik Wagner),
+      process /etc/environment (seph)
+    * Shellvars_list: Shellvars-like lens that treats strings of
+      space-separated words as lists (Frederik Wagner)
+
+0.7.1 - 2010-04-21
+  - new primitive lens 'value' to set value of a node to a constant,
+    similar to 'label' for the key (see http://augeas.net/docs/lenses.html)
+  - new builtins for printing and getting the types of a lens (see
+    http://augeas.net/docs/builtins.html)
+  - add unit type to lens language; allow '_' as an identifier in let's to
+    force evaluation for side effect only
+  - Various fixes for Solaris. Augeas now builds cleanly on Solaris 5.10,
+    and most of the tests pass. The three tests that fail all fail because
+    the test scripts have Linux idiosyncrasies. This needs to be addressed
+    in a future release. Much thanks to Dagobert Michelsen and the OpenCSW
+    project (http://www.opencsw.org/) for providing me with access to their
+    build farm.
+  - fix crash when recursive lens was used in a nonrecursive lens (bug #100)
+  - context free parser/recursive lenses: handle 'l?' properly (bug #119);
+    distinguish between successful parse and parse with an error at end of
+    input; do caller filtering to avoid spurious ambiguous parses with
+    grammars containing epsilon productions
+  - aug_get: return -1 when multiple nodes match (bug #121)
+  - much better error message when iteration stops prematurely during
+    put/create than the dreaded 'Short iteration'
+  - augtool: ignore empty lines from stdin; report error when get fails
+  - fix memory leak in file_info (transform.c); this was leaking a file
+    name every time we loaded a file (Laine Stump)
+  - nicer error message when typechecker spots ambiguity in atype
+  - libfa: handle '(a|)' and 'r{min,}' properly
+  - locale independence: handle a literal '|' properly on systems that lack
+    use_locale
+  - bootstrap: pull in isblank explicitly (needed on Solaris)
+  - src/lens.c (lns_check_rec): fix refcounting mistake on error path (bug #120)
+  - fix SEGV when loading empty files
+  - improvements in handling some OOM's
+  - Lens changes/additions
+    * Approx: lens and test for the approx proxy server (Tim Stoop)
+    * Cgconfig: lens and tests for libcgroup config (Ivana Hutarova Varekova)
+    * Cgrules: new lens and test (Ivana Hutarova Varekova)
+    * Cobblermodules: lens + tests for cobbler's modules.conf (Shannon Hughes)
+    * Debctrl: new lens and test (Dominique Dumont)
+    * Dput: add 'allow_dcut' parameter (bug #105) (Raphael Pinson)
+    * Dhclient: add rfc code parsing (bug #107) (Raphael Pinson)
+    * Group: handle disabled passwords
+    * Grub: support empty kernel parameters, Suse incl.s (Frederik Wagner)
+    * Inittab: allow ':' in the process field (bug #109)
+    * Logrotate: tolerate whitespace at the end of a line (bug #101); files
+      can be separated by newlines (bug #104) (Raphael Pinson)
+    * Modprobe: Suse includes (Frederik Wagner)
+    * Nagisocfg: lens and test for /etc/nagios3/nagios.cfg (Tim Stoop)
+    * Ntp: add 'tinker' directive (bug #103)
+    * Passwd: parse NIS entries on Solaris
+    * Securetty: new lens and test for /etc/securetty (Simon Josi)
+    * Shellvars: handle a bare 'export VAR'; Suse includes (Frederik
+      Wagner); allow spaces after/before opening/closing parens for array
+    * Sshd: allow optional arguments in subsystem commands (Matt Palmer)
+    * Sudoers: allow del_negate even if no negate_node is found (bug #106)
+               (Raphael Pinson); accept 'secure_path' (BZ 566134) (Stuart
+               Sears)
+
+0.7.0 - 2010-01-14
+  - Support for context-free lenses via the 'let rec' keyword. The syntax
+    is experimental, though the feature is here to stay. See
+    lenses/json.aug for an example of what's possible with that.
+  - Support for case-insensitive regular expressions. Simply append 'i' to
+    a regexp literal to make it case-insensitive, e.g. /hello/i will match
+    all variations of hello, regardless of case.
+  - Major revamp of augtool. In particular, path expressions don't need to
+    be quoted anymore. The online help has been greatly improved.
+  - Check during load/save that each file is only matched by one transform
+    under /augeas/load. If there are multiple transforms for a file, the
+    file is skipped.
+  - New error codes AUG_ENOLENS and AUG_EMXFM
+  - Do not choke on non-existing lens during save
+  - Change the metadata for files under /augeas/files slightly: the node
+    /augeas/files/$PATH/lens now has the name of the lens used to load the
+    file; the source location of that lens has moved to
+    /augeas/files/$PATH/lens/info
+  - New public functions fa_nocase, fa_is_nocase, and fa_expand_nocase in
+    libfa
+  - Various smaller bug fixes, performance improvements and improved error
+    messages
+  - Lens changes/additions
+    * Cobblersettings: new lens and test (Bryan Kearney)
+    * Iptables: allow quoted strings as arguments; handle both negation
+      syntaxes
+    * Json: lens and tests for generic Json files
+    * Lokkit: allow '-' in arguments
+    * Samba: accept entry keys with ':' (Partha Aji)
+    * Shellvars: allow arrays that span multiple lines
+    * Xinetd (name): fix bad '-' in character class
+
+0.6.0 - 2009-11-30
+  - Add error reporting API (aug_error and related calls); use to report
+    error details in a variety of places
+  - Path expressions: add regexp matching; add operator '|' to form union
+    of nodesets (ticket #89)
+  - Tolerate non-C locales from the environment (ticket #35); it is no
+    longer necessary to set the locale to C from the outside
+  - use stpcpy/stpncpy from gnulib (needed for building on Solaris)
+  - Properly check regexp literals for syntax errors (ticket #93)
+  - Distribute and install vim syntax files (ticket #97)
+  - many more bugfixes
+  - Lens changes/additions
+    * Apt_preferences: support version pin; filter out empty lines (Matt
+      Palmer)
+    * Cron: variables can contain '_' etc. (ticket #94)
+    * Ethers: new lens for /etc/ethers (Satoru SATOH)
+    * Fstab: allow '#' in spec (ticket #95)
+    * Group: allow empty password field (ticket #95)
+    * Inittab: parse end-of-line comments into a #comment
+    * Krb5: support kdc section; add v4_name_convert subsection to
+      libdefaults (ticket #95)
+    * Lokkit: add mising eol to forward_port; make argument for --trust
+      more permissive
+    * Pam: allow '-' before type
+    * Postfix_access: new lens for /etc/postfix/access (Partha Aji)
+    * Rx: allow '!' in device_name
+    * Sudoers: allow certain backslash-quoted characters in a command (Matt
+      Palmer)
+    * Wine: new lens to read Windows registry files
+
+0.5.3 - 2009-09-14
+  - Match trees on label + value, not just label; see
+    tests/modules/pass_strip_quotes.aug for how that enables stripping
+    quotes
+  - Do not trip over symlinks to files on a different device during save;
+    fixes problems with writing to /etc/grub.conf on Fedora/RHEL
+  - API (defnode): always add the newly created node into the resulting
+    nodeset
+  - Add preceding-sibling and following-sibling axes to path expressions
+  - augtool, augparse: add --version option (bug #88)
+  - Change file info recorded under /augeas/files/FILE/*: remove lens/id
+    and move lens/info to lens
+  - Properly record new files under /augeas/files (bug #78)
+  - aug_load: clean up variables to avoid dangling references (bug #79)
+  - Make Augeas work on AIX
+  - Ignore anything but regular files when globbing
+  - Add 'clear' function to language for use in unit tests
+  - typechecker: print example trees in tree format
+  - libfa: properly support regexps with embedded NUL's
+  - Lens changes/additions
+    * Xorg: revamped, fixes various parse failures (Matt Booth)
+    * Inetd: new lens and test (Matt Palmer)
+    * Multipath: new lens and test
+    * Slapd: also read /etc/openldap.slapd.conf (bug #85)
+
+0.5.2 - 2009-07-13
+  - Make Augeas work on Mac OS/X (bug #66) (Anders Bjoerklund)
+  - reduce symbols exported from libfa with linker script
+  - add --echo option to augtool
+  - require Automake 1.11 (Jim Meyering)
+  - avoid spurious save attempts for freshly read files
+  - Lens changes/additions
+    * Inittab: schema change: use 'id' field as name of subtree for a line,
+      instead of a generated number. Map comments as '#comment' (Matt Palmer)
+    * Logrotate: make owner/group in create statement optional, allow
+      filenames to be indented
+    * Ntp: allow additional options for server etc. (bug #72)
+    * Shellvars: allow backticks as quote characters (bug #74)
+    * Yum: also read files in /etc/yum/pluginconf.d (Marc Fournier)
+
+0.5.1 - 2009-06-09
+  - augeas.h: flag AUG_NO_MODL_AUTOLOAD suppresses initial loading
+              of modules; exposed as --noautoload in augtool
+  - augtool: don't prompt when input is not from tty (Raphael Pinson)
+  - augparse: add --notypecheck option
+  - path expressions: allow things like '/foo and /bar[3]' in predicates
+  - Lens changes/additions
+    * Aliases: map comments as #comment (Raphael Pinson)
+    * Build, Rx, Sep: new utility modules (Raphael Pinson)
+    * Cron: new lens (Raphael Pinson)
+    * Dnsmasq: process files in /etc/dnsmasq.d/* (ticket #65)
+    * Grub: parse kernel and module args into separate nodes; parse
+            arguments for 'serial', 'terminal', and 'chainloader'; allow
+            optional argument for 'savedefault'
+    * Interfaces: make compliant with actual Debian spec (Matt Palmer)
+    * Iptables: relax regexp for chain names; allow comment lines mixed
+                in with chains and rules (ticket #51)
+    * Logrotate: allow '=' as separator (ticket #61); make newline at end
+                 of scriptlet optional
+    * Modprobe: handle comments at end of line
+    * Ntp: parse fudge record (Raphael Pinson); parse all directives in
+           default Fedora ntp.conf; process 'broadcastdelay', 'leapfile',
+           and enable/disable flags (ticket #62)
+    * Pbuilder: new lens for Debian's personal builder (Raphael Pinson)
+    * Php: add default path on Fedora/RHEL (Marc Fournier)
+    * Squid: handle indented entries (Raphael Pinson)
+    * Shellvars: map 'export' and 'unset'; map comments as #comment
+                 (Raphael Pinson)
+    * Sudoers: allow backslashes inside values (ticket #60) (Raphael Pinson)
+    * Vsftpd: map comments as #comment; handle empty lines; find
+              vsftpd.conf on Fedora/RHEL
+    * Xinetd: map comments as #comment (Raphael Pinson)
+
+0.5.0 - 2009-03-27
+  - Clean up interface for libfa; the interface is now considered stable
+  - New aug_load API call; allows controlling which files to load by
+    modifying /augeas/load and then calling aug_load; on startup, the
+    transforms marked with autoload are reported under /augeas/load
+  - New flag AUG_NO_LOAD for aug_init to keep it from loading files on
+    startup; add --noload option to augtool
+  - New API calls aug_defvar and aug_defnode to define variables for
+    path expressions; exposed as 'defvar' and 'defnode' in augtool
+  - Lenses distributed with Augeas are now installed in
+    /usr/share/augeas/lenses/dist, which is searched after
+    /usr/share/augeas/lenses, so that lenses installed by other packages
+    take precedence
+  - New program examples/fadot to draw various finite automata (Francis
+    Giraldeau)
+  - Report line number and character offset in the tree when parsing a
+    file with a lens fails
+  - Fix error in propagation of dirty flag, which could lead to only
+    parts of a tree being saved when multiple files were modified
+  - Flush files to disk before moving them
+  - Fix a number of memory corruptions in the XPath evaluator
+  - Several performance improvements in libfa
+  - Lens changes/additions
+    * Grub: process embedded comments for update-grub (Raphael Pinson)
+    * Iptables: new lens for /etc/sysconfig/iptables
+    * Krb5: new lens for /etc/krb5.conf
+    * Limits: map dpmain as value of 'domain' node, not as label
+              (Raphael Pinson)
+    * Lokkit: new lens for /etc/sysconfig/system-config-firewall
+    * Modprobe: new lens for /etc/modprobe.d/*
+    * Sudoers: more finegrained parsing (ticket #48) (Raphael Pinson)
+
+0.4.2 - 2009-03-09
+  - Do not delete files that had an error upon parsing
+  - For Fedora/EPEL RPM's, BuildRequire libselinux-devel (bug #26)
+  - Bug fixes in path expressions
+    * for numbers, the meaning of '<' and '<=' was reversed
+  - Always create an entry /files in aug_init
+  - New builtin 'Sys' module with functions 'getenv' and 'read_file',
+    the latter reads a the contents of a file into a string
+  - Lens changes/additions
+    * Postfix_main: handle continuation lines
+    * Bbhosts, Hosts, Logrotate, Sudoers: label comment nodes as '#comment'
+    * Sshd: map comments as '#comment' nodes
+    * Squid: add all keywords from squid 2.7 and 3 (Francois Deppierraz)
+    * Logrotate: process unit suffixes for 'size' and 'minsize'
+
+0.4.1 - 2009-03-02
+  - Remove files when their entire subtree under /files is deleted
+  - Various bug fixes and syntax enhancements for path expressions
+    (see tests/xpath.tests for details)
+  - Evaluate path expressions with multiple predicates correctly
+  - Fix incorrect setting of /augeas/events/saved
+  - Major cleanup of matching during get; drastically improves
+    performance for very large (on the order of 10k lines) config files
+  - Small performance improvement in the typechecker
+  - Reject invalid character sets like [x-u] during typecheck
+  - Build with compile warnings set to 'maximum' instead of 'error', so
+    that builds on platforms with broken headers will work out of the box
+  - Lens changes/additions
+    * Util.stdexcl now excludes .augsave and .augnew files
+    * Logrotate: allow 'yearly' schedule, spaces around braces
+    * Ntp: fix so that it processes ntp.conf on Fedora 10
+    * Services: lens for /etc/services (Raphael Pinson)
+    * Xorg: new lens and tests (Raphael Pinson)
+
+0.4.0 - 2009-02-06
+  - Much improved and expanded support for path expressions in the public
+    API. See doc/xpath.txt and tests/xpath.tests for details.
+  - Solaris support: builds at least on OpenSolaris 2008.11
+  - Lens changes/additions
+    * Grub: support color and savedefault
+    * DarkIce: new lens for http://darkice.tyrell.hu/ (Free Ekanayaka)
+
+0.3.6 - 2009-01-26
+  - report version in /augeas/version, report legal save modes in
+    /augeas/version/save/mode for feature tests/version checking
+  - dynamically change behavior of aug_save; add noop save mode
+    (Bryan Kearney)
+  - plug memory leak, more portable SELinux test (Jim Meyering)
+  - fix bz #478619 - do not use abspath (Arnaud Gomes-do-Vale)
+  - fix segfault when branch in a union does not have a ktype
+  - Lens changes/additions
+    * Dpkg: new lens for Debian's dpkg.cfg (Robin Lee Powell)
+    * Limits: new lens for /etc/security/limits.conf (Free Ekanayaka)
+    * Soma: new lens for http://www.somasuite.org/ config
+      (Free Ekanayaka)
+    * Php, Gdm: fix minor regexp error (Marc Fournier)
+      expand filter for Php config files (Robin Lee Powell)
+    * Phpvars: whitspace fixes (Free Ekanayaka)
+    * Puppet: accept indented puppet.conf (ticket #25)
+
+0.3.5 - 2008-12-23
+  - add an option to rewrite files by overwriting their contents instead of
+    putting the new file in place atomically with rename(2); file contents
+    are only copied after rename fails with EXDEV or EBUSY, and only if the
+    node /augeas/save/copy_if_rename_fails (fix #32)
+  - saving of backup (.augsave) files now works even if the original and
+    backup files are on different devices
+  - major refactoring of how path expressions are handled internally. Fixes
+    a number of bugs and oddities (e.g. tickets #7 and #23)
+  - fix a bug in fa_as_regexp: a '.' wasn't escaped, ultimately leading to
+    spurious errors from the typechecker
+  - Lens changes/additions
+    * Group: process /etc/group (Free Ekanayaka)
+    * Passwd: process /etc/passwd (Free Ekanayaka)
+    * Phpvars: process files that set PHP variables, in particular
+      /etc/squirrelmail/config.php (Free Ekanayaka)
+    * Rsyncd: process /etc/rsyncd.conf (Marc Fournier)
+    * Shellvars: process /etc/arno-iptables-firewall/debconf.cfg and
+      /etc/cron-apt/config (Free Ekanayaka), load /etc/sysconfig/sendmail
+    * Postfix: process postfix's main.cf and master.cf (Free Ekanayaka)
+    * Squid: new lens for squid.conf (Free Ekanayaka)
+    * Webmin: new lens (Free Ekanayaka)
+    * Xinetd: make sure equal sign is surrounded by spaces (#30)
+    * Sshd: change the structure of Condition subtrees (Dominique Dumont)
+
+0.3.4 - 2008-11-05
+  - fix saving of backup files; in 0.3.3, when AUG_SAVE_BACKUP was passed
+    to aug_init, aug_save would always fail
+
+0.3.3 - 2008-10-24
+  - restore the behavior of aug_save; in 0.3.2, aug_save broke API by
+    returning the number of files changed on success instead of 0
+
+0.3.2 - 2008-10-21
+  - saving now reports which files were actually changed in
+    /augeas/events/saved; aug_save also returns the number of files
+    that were changed
+  - preserve file owner, permissions and SELinux context when changing a file.
+  - make saving idempotent, i.e. when a change to the tree does not result
+    in changes to the actual file's content, do not touch the original file
+  - report an error if there are nodes in the tree with a label that
+    is not allowed by the lens
+  - quietly append a newline to files that do not have one
+  - generate lens documentation using NaturalDocs and publish those
+    on the Auegas website (Raphael Pinson)
+  - Lens changes/additions
+    * Grub: support the 'password' directive (Joel Nimety)
+    * Grub: support 'serial' and 'terminal' directives (Sean E. Millichamp)
+    * Samba: change default indentation and separators (Free Ekanayaka)
+    * Logrotate: process tabooext, add dateext flag (Sean E. Millichamp)
+    * Sshd: Cleaner handling of 'Match' blocks (Dominique Dumont)
+    * Monit: new lens (Free Ekanayaka)
+    * Ldap: merge with Spacevars (Free Ekanayaka)
+    * Shellvars: support /etc/default (Free Ekanayaka)
+    * Shellvars: handle space at the end of a line
+
+0.3.1 - 2008-09-04
+  - Major performance improvement when processing huge files, reducing some
+    O(n^2) behavior to O(n) behavior. It's now entirely feasible to
+    manipulate for example /etc/hosts files with 65k lines
+  - Handle character escapes '\x' in regular expressions in compliance with
+    Posix ERE
+  - aug_mv: fix bug when moving at the root level
+  - Fix endless loop when using a mixed-case module name like MyMod.lns
+  - Typecheck del lens: for 'del RE STR', STR must match RE
+  - Properly typecheck the '?' operator, especially the atype; also allow
+    '?' to be applied to lenses that contain only 'store', and do not
+    produce tree nodes.
+  - Many new/improved lenses
+    * many lenses now map comments as '#comment' nodes instead of just
+      deleting them
+    * Sudoers: added (Raphael Pinson)
+    * Hosts: map comments into tree, handle whitespace and comments
+             at the end of a line (Kjetil Homme)
+    * Xinetd: allow indented comments and spaces around "}" (Raphael Pinson)
+    * Pam: allow comments at the end of lines and leading spaces
+           (Raphael Pinson)
+    * Fstab: map comments and support empty lines (Raphael Pinson)
+    * Inifile: major revamp (Raphael Pinson)
+    * Puppet: new lens for /etc/puppet.conf (Raphael Pinson)
+    * Shellvars: handle quoted strings and arrays (Nahum Shalman)
+    * Php: map entries outside of sections to a '.anon' section
+           (Raphael Pinson)
+    * Ldap: new lens for /etc/ldap.conf (Free Ekanayaka)
+    * Dput: add allowed_distributions entry (Free Ekanayaka)
+    * OpenVPN: new lens for /etc/openvpn/{client,server}.conf (Raphael Pinson)
+    * Dhclient: new lens for /etc/dhcp3/dhclient.conf (Free Ekanayaka)
+    * Samba: new lens for /etc/samba/smb.conf (Free Ekanayaka)
+    * Slapd: new lens for /etc/ldap/slapd.conf (Free Ekanayaka)
+    * Dnsmasq: new lens for /etc/dnsmasq.conf (Free Ekanayaka)
+    * Sysctl: new lens for /etc/sysctl.conf (Sean Millichamp)
+
+0.3.0 - 2008-08-07
+  - Add aug_mv call to public API
+  - Do not clobber symlinks, instead write new files to target of symlink
+  - Fail 'put' when tree has invalid entries
+  - Set exit status of augtool
+  - Avoid picking special characters, in particular '\0', in examples (libfa)
+  - Store system errors, using strerror, in the tree during writing of files
+  - New lenses
+    * Generic inifile module (Raphael Pinson)
+    * logrotate (Raphael Pinson)
+    * /etc/ntp.conf (Raphael Pinson)
+    * /etc/apt/preferences (Raphael Pinson)
+    * bbhosts for Big Brother [http://www.bb4.org/] (Raphael Pinson)
+    * php.ini (Raphael Pinson)
+
+0.2.2 - 2008-07-18
+  - Fix segfault in store.put on NULL values
+  - Properly move default lens dir with DATADIR (Jim Meyering)
+  - Fix 'short iteration' error on get/parse of empty string; this bug
+    made it impossible to save into a new file
+  - Add 'insa' and 'insb' primitives to allow insertion from
+    put unit tests
+  - aug_insert: handle insertion before first child properly
+  - New lenses
+    * /etc/exports: NFS exports
+    * /etc/dput.cf: Debian's dput (Raphael Pinson)
+    * /etc/aliases: don't require whitespace after comma (Greg Swift)
+
+0.2.1 - 2008-07-01
+  - Address some compilation issues found on Ubuntu/Debian unstable
+  - Fix segfault when aug_init/close are called multiple times
+  - Man page for augparse
+  - New lenses
+    * /etc/sysconfig/selinux
+    * Bugfixes for grub.conf
+
+0.2.0 - 2008-06-05
+  - Augeas is now much more portable
+    * Pull in gnulib on non-glibc systems
+    * Augeas now builds and runs on FreeBSD (possibly others, too)
+  - Various fixes for memory corruption and the like
+    (Jim Meyering, James Antill)
+  - New lenses
+    * vsftpd.conf
+    * various bugfixes in existing lenses
+
+0.1.1 - 2008-05-16
+  - Add subtraction of regexps to the language, for example
+      let re = /[a-z]+/ - /(Allow|Deny)Users/
+  - Report errors during get/put in the tree; added subnodes to
+    /augeas/files/PATH/error for that purpose
+  - Many many bugfixes:
+    * plugged all known memory leaks
+    * fixed typecheck for lens union (l1 | l2) which was plain wrong
+    * reduce overall memory usage by releasing unused compiled regexps
+    * further performance improvements in libfa
+    * check that values match the regexps in STORE when saving
+  - libfa can now convert an automaton back to a regular expression
+    (FA_AS_REGEXP)
+  - New lenses
+    * /etc/fstab
+    * /etc/xinetd.conf and /etc/xinetd.d/*
+
+0.1.0 - 2008-05-01
+  - Various changes to public API:
+    * Remove aug_exists from public API, and merge functionality into aug_get
+    * Do not hide pointer behind typedef; instead Augeas 'handle' type is now
+      struct augeas, typedef'd to augeas (Jim Meyering)
+    * Const-correctness of public API, return error indication
+      from aug_print (Jim Meyering)
+    * Make buildable on Debian Etch (remove -fstack-protector from compiler
+      switches)
+  - Public API is now stable, and existing calls will be supported without
+    further changes
+  - New schema:
+    * /etc/sysconfig/network-scripts/ifcfg-* (Alan Pevec)
+    * Assorted other files from /etc/sysconfig (the ones that just set
+      shell variables)
+    * /etc/apt/sources.list and /etc/apt/sources.list.d/* (Dean Wilson)
+  - Man page for augtool (Dean Wilson)
+
+0.0.8 - 2008-04-16
+  - Complete rewrite of the language for schema descriptions
+
+0.0.7 - 2008-03-14
+  - Typecheck lenses; in particular, discover and complain about ambiguous
+    concatenation and iteration
+  - Enable typechecking for augparse by default, and for augtool via the
+    '-c' flag
+  - Fixed lens definitions in spec/ to pass typechecking. They contained
+    quite a few stupid and subtle problems
+  - Greatly improved libfa performance to make typechecking reasonably
+    fast. Typechecking cmfm.aug went from more than two hours to under two
+    seconds
+
+0.0.6 - 2008-03-05
+  - Make it possible to overwrite files when saving with and without
+    backups
+  - Take the filesystem root as an optional argument to aug_init
+  - Expose these two things as command line options in augtool
+
+0.0.5 - 2008-03-05
+  - Changed public API to contain explicit reference to augeas_t
+    structure. This makes it easier to write threadsafe code using Augeas
+  - Added libfa, finite automata library, though it's not yet used by
+    Augeas
+
+0.0.4 - 2008-02-25
+  - package as RPM and make sure Augeas can be build on Fedora/RHEL
+
+0.0.3 - 2008-02-25
+  - further rework; file processing now resembles Boomerang lenses much
+    more closely
+  - major revamp of the internal tree representation (ordered tree where
+    multiple children can have the same label, including NULL labels)
+  - move away from LL(1) parsing in favor of regular languages, since they
+    enable much better ahead-of-time checks (which are not implemented yet)
+
+0.0.2 - 2008-01-29:
+  - completely reworked
+  - processing of files is now based on a textual description of the
+    structure of the files (basically a LL(1) grammar)
+
+0.0.1 - 2007-12-01:
+  - First release.
+  - Public API and basic tree data structure.
+  - Record scanning works.
+  - Providers for pam.d, inittab and /etc/hosts
+  - Simple tests and test driver

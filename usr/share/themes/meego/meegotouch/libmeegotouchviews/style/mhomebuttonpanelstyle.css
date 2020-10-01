@@ -1,0 +1,33 @@
+/* MHomeButtonPanelStyle : MSceneWindowStyle */
+MHomeButtonPanelStyle {
+
+    minimum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    maximum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    preferred-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+
+    vertical-align: top;
+    horizontal-align: left;
+    offset: 0 0;
+
+    home-button-object-name: "HomeButton";
+    home-button-icon-id: "icon-m-framework-home";
+
+    background-image: meegotouch-button-navigationbar-home-background $CORNER_MARGINS;
+}
+
+MHomeButtonPanelStyle:pressed {
+    background-image: meegotouch-button-navigationbar-home-background-pressed $CORNER_MARGINS;
+}
+
+MButtonIconStyle#HomeButton {
+
+    icon-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+
+    minimum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    maximum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    preferred-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+
+    reactive-margin-left: $MARGIN_XLARGE;
+    reactive-margin-right: $MARGIN_XLARGE;
+    reactive-margin-bottom: $MARGIN_XLARGE;
+}

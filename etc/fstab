@@ -1,0 +1,16 @@
+# Created by installer-shell
+/dev/sda1    /boot   ext3    defaults,noatime,ro                     1 2
+/dev/sda2    /       ext4    defaults,noatime,ro                         1 1
+/dev/sda3    swap    swap    defaults                                    0 0
+/dev/sda7	  /rw_data     ext4   defaults,data=journal,noatime       1 2
+/dev/sda8     /log_data    ext4   defaults,noatime,barrier=0          1 2
+/dev/sda9  /backup      ext4   defaults,noatime                    1 2
+/dev/sda10     /usr_data    ext4   defaults,noatime                    1 2
+/dev/sda11      /vr          ext4   defaults,noatime,ro                 1 2
+/dev/sda12   /gracenote   ext4   defaults,noatime,ro                 1 2
+/dev/sda13    /common_data ext4   defaults,noatime                    1 2
+tmpfs                   /dev/shm                tmpfs   defaults,size=16M        0 0
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+sysfs                   /sys                    sysfs   defaults        0 0
+proc                    /proc                   proc    defaults        0 0
+/dev/mmcblk0p1          /navi                   vfat    defaults,ro,fmask=000,umask=000,codepage=949,iocharset=euc-kr 0 0

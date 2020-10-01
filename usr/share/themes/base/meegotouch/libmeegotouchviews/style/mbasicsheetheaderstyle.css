@@ -1,0 +1,28 @@
+/* MBasicSheetHeaderStyle : MWidgetStyle */
+MBasicSheetHeaderStyle {
+    positive-action-style-name: "CommonSheetHeaderButtonAccent";
+    negative-action-style-name: "CommonSheetHeaderButton";
+    progress-indicator-style-name: "";
+}
+
+MBasicSheetHeaderStyle#Inverted {
+    positive-action-style-name: "CommonSheetHeaderButtonAccentInverted";
+    negative-action-style-name: "CommonSheetHeaderButtonInverted";
+}
+
+MBasicSheetHeader > MSpinnerStyle
+{
+    base-image-size: $SIZE_SPINNER_SMALL;
+    minimum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    preferred-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    maximum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+}
+
+MBasicSheetHeader#Inverted MSpinnerStyle
+{
+    base-image-name: "spinnerinverted";
+    base-image-size: $SIZE_SPINNER_SMALL;
+    minimum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    preferred-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    maximum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+}

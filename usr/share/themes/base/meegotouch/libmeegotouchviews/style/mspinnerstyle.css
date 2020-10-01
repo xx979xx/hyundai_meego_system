@@ -1,0 +1,30 @@
+/* MSpinnerStyle : MWidgetStyle */
+MSpinnerStyle {
+    base-image-name: "spinner";
+    base-image-size: $SIZE_SPINNER_LARGE;
+    period: 2000;
+    number-of-frames: 10;
+
+    maximum-size: $SIZE_SPINNER_LARGE $SIZE_SPINNER_LARGE;
+    preferred-size: $SIZE_SPINNER_LARGE $SIZE_SPINNER_LARGE;
+    minimum-size: $SIZE_SPINNER_LARGE $SIZE_SPINNER_LARGE;
+}
+
+MApplicationMenuButton > MSpinnerStyle {
+    base-image-size: $SIZE_SPINNER_MENU;
+    margin-left: $MARGIN_DOUBLE;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    minimum-size: $SIZE_SPINNER_MENU $SIZE_SPINNER_MENU;
+    preferred-size: $SIZE_SPINNER_MENU $SIZE_SPINNER_MENU;
+    maximum-size: $SIZE_SPINNER_MENU $SIZE_SPINNER_MENU;
+}
+
+

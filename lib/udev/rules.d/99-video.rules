@@ -1,0 +1,12 @@
+ACTION=="remove", GOTO="persistent_video_end"
+
+SUBSYSTEM!="video4linux", GOTO="persistent_video_end"
+
+ENV{ID_V4L_PRODUCT}=="ioh_vin", SYMLINK+="video/dvd"
+ENV{ID_V4L_PRODUCT}=="iohub_camif_a", SYMLINK+="video/pgscam"
+ENV{ID_V4L_PRODUCT}=="iohub_camif_b", SYMLINK+="video/aux"
+ENV{ID_V4L_PRODUCT}=="iohub_camif_c", SYMLINK+="video/dmb"
+ENV{ID_V4L_PRODUCT}=="iohub_camif_d", SYMLINK+="video/ibox"
+
+LABEL="persistent_video_end"
+

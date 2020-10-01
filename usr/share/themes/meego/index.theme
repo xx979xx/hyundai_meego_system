@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=X-MeeGoTouch-Metatheme
+Name=MeeGo Reference Theme
+Encoding=UTF-8
+
+; Left for libdui compatability. Remove once libdui is fully depricated
+[X-DUI-Metatheme]
+X-Inherits=base
+X-Icon="icon-l-theme-meego"
+X-Visible=true
+
+[X-MeeGoTouch-Metatheme]
+X-Inherits=base
+X-Icon="icon-l-theme-meego"
+X-Visible=true

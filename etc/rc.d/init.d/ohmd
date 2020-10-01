@@ -1,0 +1,89 @@
+#!/bin/sh
+#
+# ohm:   ohm daemon
+#
+# chkconfig: - 98 02
+# description:  Open Hardware Manager
+#
+# processname: ohm
+# pidfile: /var/run/ohm.pid
+#
+### BEGIN INIT INFO
+# Provides:          ohmd
+# Required-Start:    haldaemon
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Loads OHM Open Hardware Manager
+# Description:       Loads Open Hardware Manager to enforce power policy on
+#                    embedded and small form factor devices.
+### END INIT INFO
+
+# Sanity check
+if [ ! -x /usr/sbin/ohmd ]; then
+	echo "Cannot find ohmd!"
+	exit 1
+	fi
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# so we can rearrange this easily
+processname=ohmd
+servicename=ohmd
+pidfile=/var/run/ohmd.pid
+
+RETVAL=0
+
+start()
+{
+	echo -n $"Starting Open Hardware Manager: "
+	daemon --check $servicename $processname
+	RETVAL=$?
+	echo
+	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/$servicename && echo `/sbin/pidof $processname` > $pidfile
+}
+
+stop()
+{
+	echo -n $"Stopping Open Hardware Manager: "
+
+	killproc $servicename -TERM
+	RETVAL=$?
+	echo
+	if [ $RETVAL -eq 0 ]; then
+		rm -f /var/lock/subsys/$servicename
+		rm -f $pidfile
+	fi
+}
+
+# See how we were called.
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	status)
+		status $processname
+		RETVAL=$?
+		;;
+	restart)
+		stop
+		start
+		;;
+	reload)
+		stop
+		start
+		;;
+	condrestart)
+		if [ -f /var/lock/subsys/$servicename ]; then
+			stop
+			start
+		fi
+		;;
+	*)
+		echo $"Usage: $0 {start|stop|status|restart|condrestart}"
+		;;
+esac
+exit $RETVAL

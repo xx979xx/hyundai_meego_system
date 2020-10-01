@@ -1,0 +1,29 @@
+# Logging much else clutters up the screen.
+#kern.*                                                 /dev/console
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none;local0.none                -/log_data/log/messages
+
+# The authpriv file has restricted access.
+authpriv.*                                              /log_data/log/secure
+
+# Log all the mail messages in one place.
+mail.*                                                  -/log_data/log/maillog
+
+
+# Log cron stuff
+cron.*                                                  /log_data/log/cron
+
+# Everybody gets emergency messages
+*.emerg                                                 *
+
+# Save news errors of level crit and higher in a special file.
+uucp,news.crit                                          /log_data/log/spooler
+
+# Save boot messages also to boot.log
+local7.*                                                /log_data/log/boot.log
+
+# Save log utils logs to log.log
+local0.*                                                /log_data/log/log.log
+

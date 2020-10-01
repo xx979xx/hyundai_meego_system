@@ -1,0 +1,108 @@
+#!/usr/bin/python
+#
+# Chris Lumens <clumens@redhat.com>
+#
+# Copyright 2005, 2006, 2007 Red Hat, Inc.
+#
+# This copyrighted material is made available to anyone wishing to use, modify,
+# copy, or redistribute it subject to the terms and conditions of the GNU
+# General Public License v.2.  This program is distributed in the hope that it
+# will be useful, but WITHOUT ANY WARRANTY expressed or implied, including the
+# implied warranties of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51
+# Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  Any Red Hat
+# trademarks that are incorporated in the source code or documentation are not
+# subject to the GNU General Public License and may only be used or replicated
+# with the express permission of Red Hat, Inc. 
+#
+
+import optparse
+import os
+import sys
+import warnings
+import tempfile
+import urlgrabber
+import shutil
+from pykickstart.errors import *
+from pykickstart.parser import *
+from pykickstart.version import *
+
+import gettext
+gettext.install("pykickstart", unicode=True)
+
+def cleanup(destdir, file=None, exitval=1):
+    shutil.rmtree(destdir)
+
+    # Don't care if this file doesn't exist.
+    if file is not None:
+       try:
+           os.remove(file)
+       except:
+           pass
+
+    os._exit(exitval)
+
+op = OptionParser(usage="usage: %prog [options] ksfile|url")
+op.add_option("-e", "--firsterror", dest="firsterror", action="store_true",
+              default=False, help=_("halt after the first error or warning"))
+op.add_option("-i", "--followincludes", dest="followincludes",
+              action="store_true", default=False,
+              help=_("parse include files when %include is seen"))
+op.add_option("-l", "--listversions", dest="listversions", action="store_true",
+              default=False,
+              help=_("list the available versions of kickstart syntax"))
+op.add_option("-v", "--version", dest="version", default=DEVEL,
+              help=_("version of kickstart syntax to validate against"))
+
+(opts, extra) = op.parse_args(sys.argv[1:])
+
+if opts.listversions:
+    for key in sorted(versionMap.keys()):
+        print key
+
+    os._exit(1)
+
+if len(extra) != 1:
+    op.print_help()
+    os._exit(1)
+else:
+    destdir = tempfile.mkdtemp("", "ksvalidator-tmp-", "/tmp")
+    try:
+        f = urlgrabber.urlgrab(extra[0], filename="%s/ks.cfg" % destdir)
+    except urlgrabber.grabber.URLGrabError, e:
+        print _("Error reading %s:\n%s" % (extra[0],e))
+        cleanup(destdir)
+
+try:
+    handler = makeVersion(opts.version)
+except KickstartVersionError:
+    print _("The version %s is not supported by pykickstart" % opts.version)
+    cleanup(destdir)
+
+ksparser = KickstartParser(handler, followIncludes=opts.followincludes,
+                           errorsAreFatal=opts.firsterror)
+
+# turn DeprecationWarnings into errors
+warnings.filterwarnings("error")
+
+processedFile = None
+
+try:
+    processedFile = preprocessKickstart(f)
+    ksparser.readKickstart(processedFile)
+    cleanup(destdir, processedFile, exitval=0)
+except DeprecationWarning, msg:
+    print _("File uses a deprecated option or command.\n%s") % msg
+    cleanup(destdir, processedFile, exitval=0)
+except (KickstartParseError, KickstartValueError), msg:
+    print msg
+    cleanup(destdir, processedFile, exitval=0)
+except KickstartError:
+    print _("General kickstart error in input file")
+    cleanup(destdir, processedFile, exitval=0)
+except Exception, e:
+    print _("General error in input file:  %s") % e
+    cleanup(destdir, processedFile)

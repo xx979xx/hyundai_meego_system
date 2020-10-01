@@ -1,0 +1,9 @@
+#%PAM-1.0
+auth       include      system-auth
+account    required     pam_nologin.so
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth
+session    required     pam_loginuid.so
+# pam_selinux.so open should only be followed by sessions to be executed in the user context
+session    optional     pam_keyinit.so force revoke

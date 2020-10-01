@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name=Connections
+Name-logical-id=qtn_sett_main_connections
+
+Value="Internet, Bluetooth, Network"
+Value-logical-id=qtn_sett_main_connections_label2
+
+Icon=icon-m-common-wlan
+
+Aliases=
+Translation-catalogs=
+
+Order=10
+

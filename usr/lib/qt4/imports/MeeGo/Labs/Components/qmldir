@@ -1,0 +1,9 @@
+plugin Components
+ContactsPicker 0.1 ContactsPicker.qml
+GestureMouseArea 0.1 GestureMouseArea.qml
+GestureMouseEvent 0.1 GestureMouseEvent.qml
+Crumb 0.1 Crumb.qml
+VolumeController 0.1 VolumeController.qml
+VolumeSettings 0.1 VolumeSettings.qml
+DocumentPicker 0.1 DocumentPicker.qml
+RelativeTimeText 0.1 RelativeTimeText.qml

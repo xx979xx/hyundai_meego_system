@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.freedesktop.Telepathy.ConnectionManager.sofiasip
+Exec=/usr/lib/telepathy/telepathy-sofiasip
+

@@ -1,0 +1,69 @@
+/* BASE - this is the master file that includes everything else.. */
+
+/* common layouts for content items etc... */
+@import "./commonlayouts/commonlayouts.css";
+
+/* "master style" that most things inherit from */
+@import "../../libmeegotouchcore/style/mwidgetstyle.css";
+
+/* past "best before"-date.. */
+@import "../../libmeegotouchcore/style/deprecated.css";
+
+/* default style attribute values for common components */
+/* widget styles are imported in alphabetical order */
+
+@import "mapplicationpagestyle.css";
+@import "mbuttonstyle.css";
+@import "mbuttoniconstyle.css";
+@import "mbuttonswitchstyle.css";
+@import "mcheckboxstyle.css";
+@import "mcontainerstyle.css";
+@import "mcomboboxstyle.css";
+@import "mescapebuttonpanelstyle.css";
+@import "mextendingbackgroundstyle.css";
+@import "mhomebuttonpanelstyle.css";
+@import "mimagewidgetstyle.css";
+@import "minfobannerstyle.css";
+@import "mlabelstyle.css";
+@import "mliststyle.css";
+@import "mapplicationmenustyle.css";
+@import "mmodalscenewindowstyle.css";
+@import "mobjectmenustyle.css";
+@import "mpannablewidgetstyle.css";
+@import "mpopupliststyle.css";
+@import "mpositionindicatorstyle.css";
+@import "mprogressindicatorstyle.css";
+@import "mdialogstyle.css";
+@import "mdockwidgetstyle.css";
+@import "mmessageboxstyle.css";
+@import "mnavigationbarstyle.css";
+@import "moverlaystyle.css";
+@import "mscenelayereffectstyle.css";
+@import "mscenelayereffectdimstyle.css";
+@import "mscenewindowanimatorstyle.css";
+@import "mscenewindowstyle.css";
+@import "mseparatorstyle.css";
+@import "msliderstyle.css";
+@import "mspinnerstyle.css";
+@import "mstatusbarstyle.css";
+@import "mtexteditstyle.css";
+@import "mtextmagnifierstyle.css";
+@import "mcompleterstyle.css";
+@import "meditortoolbarstyle.css";
+@import "mtimestyle.css";
+@import "mtoolbartabstyle.css";
+@import "mtoolbarstyle.css";
+@import "mcontentitemstyle.css";
+@import "mbubbleitemstyle.css";
+@import "mlistindexstyle.css";
+@import "mwarpanimationstyle.css";
+@import "mlistitemstyle.css";
+@import "mlistheaderstyle.css";
+@import "mbannerstyle.css";
+@import "mgraphicshighlighteffectstyle.css";
+@import "mbasiclistitemdeletionanimationstyle.css";
+@import "msheetstyle.css";
+@import "mbasicsheetheaderstyle.css";
+@import "mborderdecorationroundedcornersstyle.css";
+@import "mcolorliststyle.css";
+@import "mcolorcomboboxstyle.css";

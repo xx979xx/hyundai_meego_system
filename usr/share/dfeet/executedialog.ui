@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<interface>
+  <object class="GtkDialog" id="executedialog1">
+    <property name="allow_shrink">True</property>
+    <property name="default_height">400</property>
+    <property name="default_width">320</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="title" context="yes" translatable="yes">Execute D-Bus Method</property>
+    <!--<property name="type_hint">normal</property>-->
+    <signal handler="execute_dialog_close_cb" name="close"/>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog1-vbox">
+        <property name="border_width">2</property>
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkVBox" id="vbox3">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkLabel" id="commandlabel1">
+                <property name="label" context="yes" translatable="yes">Execute i.c on object path o</property>
+                <property name="visible">True</property>
+                <property name="xalign">0.0</property>
+                <property name="ypad">5</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFrame" id="frame1">
+                <property name="label" context="yes" translatable="yes">Parameters (in python syntax)</property>
+                <property name="shadow">none</property>
+                <property name="shadow_type">none</property>
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkScrolledWindow" id="scrolledwindow1">
+                    <property name="hscrollbar_policy">never</property>
+                    <property name="shadow_type">in</property>
+                    <property name="visible">True</property>
+                    <property name="vscrollbar_policy">automatic</property>
+                    <child>
+                      <object class="GtkTextView" id="parametertextview1">
+                        <property name="is_focus">True</property>
+                        <property name="visible">True</property>
+                        <property name="wrap_mode">word</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFrame" id="frame2">
+                <property name="label" context="yes" translatable="yes">Output</property>
+                <property name="shadow">none</property>
+                <property name="shadow_type">none</property>
+                <property name="visible">True</property>
+                <child>
+                  <object class="GtkNotebook" id="notebook1">
+                    <property name="tab_pos">bottom</property>
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkScrolledWindow" id="scrolledwindow2">
+                        <property name="hscrollbar_policy">never</property>
+                        <property name="visible">True</property>
+                        <property name="vscrollbar_policy">automatic</property>
+                        <child>
+                          <object class="GtkTextView" id="prettyprinttextview1">
+                            <property name="editable">False</property>
+                            <property name="visible">True</property>
+                            <property name="wrap_mode">word</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkScrolledWindow" id="scrolledwindow3">
+                        <property name="hscrollbar_policy">never</property>
+                        <property name="visible">True</property>
+                        <property name="vscrollbar_policy">automatic</property>
+                        <child>
+                          <object class="GtkTextView" id="sourcetextview1">
+                            <property name="editable">False</property>
+                            <property name="visible">True</property>
+                            <property name="wrap_mode">word</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="position">1</property>
+                        <property name="tab_label" context="yes" translatable="yes">Page 2</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog1-action_area">
+            <property name="border_width">5</property>
+            <property name="layout_style">end</property>
+            <property name="spacing">6</property>
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkButton" id="closebutton1">
+                <property name="label" context="yes" translatable="yes">Close</property>
+                <property name="visible">True</property>
+                <signal handler="execute_dialog_close_cb" name="clicked"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="executebutton1">
+                <property name="is_focus">True</property>
+                <property name="label" context="yes" translatable="yes">Execute</property>
+                <property name="visible">True</property>
+                <signal handler="execute_dbus_method_cb" name="clicked"/>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,165 @@
+Version 0.8.1
+-------------
+
+Fixes:
+* Ensure directories exist before reading them - bug #15755
+* Close files and clean up behind us - bug #15654
+* Fix potential crash when no info page exists - bug #15274 (Saleem Abdulrasool)
+* Remove longopts to make non-linux work properly - bug #11839
+  - These options should be unused in normal operation
+* If $USERNAME isn't set (MacOS), use a default name - bug #14872
+* Fix potential crasher on mangled info dir file - bug #12515
+
+Version 0.8.0
+-------------
+
+Fixes:
+* Remove debug output that got left in
+* Slightly better categorisation
+
+
+Version 0.7.1
+-------------
+
+Fixes:
+* Improve parsing of omf categories
+
+* Add LZMA support - bug #13255 
+  - Per Øyvind Karlsen
+* Make attributes insensitive to ordering
+
+
+Version 0.7.0
+-------------
+Please note: The 0.7 / 0.8 branch is backwards-incompatible with
+       	     version 0.6 and previous.
+
+New features:
+
+* Add new attributes for hidden (NoDisplay) and default 
+  section (DocDefaultSection) to the .document file parsing
+* Increase scrictness of parsing in line with the spec.
+* omf files now return (approximate) fd.o categories
+* Add new requirement to define I_KNOW_RARIAN_0_8_IS_UNSTABLE before
+  use
+* rarian.h is now a general inclusion guard and main functions have
+  moved to rarian-main.h
+* Update example program to use new features
+
+Bug fixed:
+* #13201 - Compiler warnings
+* #12279 - _new functions don't return new structs [1]
+           Iterators take the wrong argument type
+* Many other minor errors and warnings
+
+Version 0.6.0
+-------------
+
+ * Only export required symbols - based on patch from Daniel Macks
+  - bug #12147 and #11969
+ * Fix build on OSX and Solaris
+  - bugs #12359 and #12043
+ * Various crash fixes in .document files - Hans Petter Jansson
+  - bugs #12226 and #12131
+ * Make sk-config return decent results when OMF reading is enabled
+  - bug #12212
+ * Fix silly spelling errors
+  - bug #12008
+ * Fix copyright headers
+ * Fallback languages now work correctly
+  - GNOME bug #474556
+ * Fix potential off-by-one issue in sk-preinstall - Ghee Teo
+  -bug #12052
+
+Version 0.5.8
+-------------
+
+ * Fix build on FreeBSD and Solaris (mostly) - Damien Carbury
+ * rarian-example now goes through man and info pages again
+ * Add MAINTAINER file, since someone asked for it
+
+Bug fixed:
+ * Missing argument to sprintf added (bug #11976 and #11957)
+ * Fix crashes on invalid info files (bug #11896)
+ * Fix crashes on man pages with no section (bug #11901)
+ * Fix update script when not reading OMF's directly
+ * Don't free environment variables - they don't belong to us 
+   - Jan de Groot (bug #11799)
+ * Fix categoried with omf files (the one everyone complained
+   about)
+
+Version 0.5.6
+-------------
+ 
+ * By default, we now read omf files directly
+   and don't do translations when update script is
+   run.  This fixes everyone's install (hopefully)
+   and helps out packagers
+
+Version 0.5.4
+-------------
+
+ * Fix README to not display version stuff
+ * Write the rarian-update-mtimes file to $statedir
+   - Fixes FHS compliance
+ * Remove some uneccessary memory allocations (Jens Granseuer)
+ * Fix infinite loop bug in update script --help
+ * Store configure.ac in SVN as executable
+ * Fix install when no prefix is specified (as autofoo insists on 
+   specifying to prefix variable as NONE instead of not defining it)
+ * Reenable the rebuild script and fix it when the mtimes file 
+   doesn't exist
+ 
+Version 0.5.2
+-------------
+
+New stuff since 0.5.0:
+* Moved to new home at rarian.freedesktop.org
+* Added documentation
+
+Fixes:
+* Fix template naming error (that stopped yelp working)
+* Make scrollkeeper-update optional at install time
+  - Florian Steinel
+* Make build work in chroot
+  - based on patch from Florian Steinel
+* Fix #include's for potentially non-included files
+* Fix man pages to not repase all man pages on every single call
+* Only check for xsltproc instead of libxslt (as that's what we 
+actually use)
+* Only install / link sk-extract if it's actually possible (ENABLE_EXTRACT is set)
+* Fix stupid, broken omf parsing when no seriesid is available
+* Make failing omf conversion errors slightly less cryptic
+* Override default dest dir for omf translation when asked
+  (fixes things for packagers)
+* Fix older autoconf datarootdir issue
+  - Shaun McCance
+* Don't do scrollkeeper-rebuilddb when distchecking
+* Make update script work correctly with dash (Daniel Holbach)
+* Fix symlinks for packagers (Daniel Holbach)
+* Fix silly error in rarian-man that caused a warning in linked programs
+* Make distcheck pass properly
+
+
+Version 0.5.0
+-------------
+
+New stuff since 0.4 release:
+* Add new pkg-config file
+* install headers correctly
+* add lots of useful functions for getting info out of rarian
+* Add info page support
+* Add man page support
+* Add scripts and programs to emulate all scrollkeeper scripts
+* (optionally) depend on libxslt for scrollkeeper-extract
+* Add all necessary stuff so installing in place of scrollkeeper in 
+  jhbuild works fully
+* Add proper COPYING attribution files for utils and lib
+* Remove autogen dependance on gnome-autogen
+* Oh, and change package name to Rarian (from Spoon)
+* turn on installed mode by default
+* Turn on scrollkeeper compatibility by default
+* When scrollkeeper files exist, move them out the way and symlink 
+  appropriately
+* Fix loads of compiler errors
+* Oh, and change package name to Rarian (from Spoon)

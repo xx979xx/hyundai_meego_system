@@ -1,0 +1,4 @@
+MTapStateMachineStyle {
+ initial-wait-time: 150;
+ blink-duration: 300;
+}

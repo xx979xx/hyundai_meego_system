@@ -1,0 +1,9 @@
+name M
+internalname Ryumin-Light-EUC-H
+spacewidth 250
+encodingname EUC-JP
+charset
+u2E00..u9FFF 1000 3
+uFF00..uFF5F 1000 3
+uFF60..uFF9F 500 3
+uFFA0..uFFEF 1000 3

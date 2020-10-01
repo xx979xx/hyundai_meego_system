@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="en">
+<context>
+    <name>DHAVN_QwertyKeypad_Screen</name>
+    <message>
+        <source>A00</source>
+        <translation>a</translation>
+    </message>
+    <message>
+        <source>A01</source>
+        <translation>z</translation>
+    </message>
+    <message>
+        <source>A02</source>
+        <translation>e</translation>
+    </message>
+    <message>
+        <source>A03</source>
+        <translation>r</translation>
+    </message>
+    <message>
+        <source>A04</source>
+        <translation>t</translation>
+    </message>
+    <message>
+        <source>A05</source>
+        <translation>y</translation>
+    </message>
+    <message>
+        <source>A06</source>
+        <translation>u</translation>
+    </message>
+    <message>
+        <source>A07</source>
+        <translation>i</translation>
+    </message>
+    <message>
+        <source>A08</source>
+        <translation>o</translation>
+    </message>
+    <message>
+        <source>A09</source>
+        <translation>p</translation>
+    </message>
+    <message>
+        <source>B00</source>
+        <translation>q</translation>
+    </message>
+    <message>
+        <source>B01</source>
+        <translation>s</translation>
+    </message>
+    <message>
+        <source>B02</source>
+        <translation>d</translation>
+    </message>
+    <message>
+        <source>B03</source>
+        <translation>f</translation>
+    </message>
+    <message>
+        <source>B04</source>
+        <translation>g</translation>
+    </message>
+    <message>
+        <source>B05</source>
+        <translation>h</translation>
+    </message>
+    <message>
+        <source>B06</source>
+        <translation>j</translation>
+    </message>
+    <message>
+        <source>B07</source>
+        <translation>k</translation>
+    </message>
+    <message>
+        <source>B08</source>
+        <translation>l</translation>
+    </message>
+    <message>
+        <source>C00</source>
+        <translation>w</translation>
+    </message>
+    <message>
+        <source>C01</source>
+        <translation>x</translation>
+    </message>
+    <message>
+        <source>C02</source>
+        <translation>c</translation>
+    </message>
+    <message>
+        <source>C03</source>
+        <translation>v</translation>
+    </message>
+    <message>
+        <source>C04</source>
+        <translation>b</translation>
+    </message>
+    <message>
+        <source>C05</source>
+        <translation>n</translation>
+    </message>
+    <message>
+        <source>C06</source>
+        <translation>m</translation>
+    </message>
+</context>
+<context>
+    <name>DHAVN_QwertyKeypad_ScreenNumbers</name>
+    <message>
+        <source>A00</source>
+        <translation type="unfinished">a</translation>
+    </message>
+</context>
+<context>
+    <name>DHAVN_QwertyKeypad_ScreenSymbols</name>
+    <message>
+        <source>A00</source>
+        <translation type="unfinished">a</translation>
+    </message>
+</context>
+</TS>

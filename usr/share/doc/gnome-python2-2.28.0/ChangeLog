@@ -1,0 +1,3169 @@
+2009-09-21  Gustavo Carneiro <gjc@inescporto.pt>
+
+  * NEWS: update news for relase
+
+  * configure.ac, wscript: Bump to version 2.28.0
+
+  * autogen.sh: Upgrade to automake 1.11
+
+2009-07-20  Gustavo Carneiro <gjc@inescporto.pt>
+
+  * wscript: Create html dirs, to preemtively avoid Bug 589012.
+
+2009-05-02  Gustavo Carneiro <gjc@inescporto.pt>
+
+  * NEWS: update NEWS
+
+  * configure.ac, wscript: bump version
+
+  * generate-ChangeLog, gitlog2changelog.py: Add ChangeLog generation support
+  from GIT
+
+2009-04-29  Gustavo Carneiro <gjc@inescporto.pt>
+
+  * configure.ac: typo
+
+2009-04-26  Tristan Hill <stan@saticed.me.uk>
+
+  * Makefile.am, configure.ac, examples/popt/goption.py, gnome/gnome.override,
+  wscript: Bug 507174 – Convert from popt to GOption
+
+2009-04-24  Gustavo Carneiro <gjc@inescporto.pt>
+
+  * : Add placeholder file to make sure the html dir is created.
+
+2009-04-23  Olav Vitters <olav@bkor.dhs.org>
+
+  * gnome-python.doap: Add DOAP file
+
+2009-04-12  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * NEWS, configure.ac, wscript: 2.26.1  svn path=/trunk/; revision=664
+
+  * bzrplugins/gnulog.py: Update bzr gnulog plugin  svn path=/trunk/;
+  revision=663
+
+2009-04-05  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * gconf/gconf.defs: Bug 575823 – GConfEntry.get_value should accept None as
+  parameter for the locale  svn path=/trunk/; revision=662
+
+2009-03-31  Tobias Mueller <tobiasmue@src.gnome.org>
+
+  * bonobo/activationmodule.c, bzrplugins/gnulog.py, gconf/gconf-fixes.c,
+  gconf/gconf-types.c, gconf/gconf-types.h, gnomevfs/gnome-vfs-python-method.c,
+  tests/ltihooks.py: Update the address of the FSF by replacingold bits with
+  new ones. Fixes bug 577379.  svn path=/trunk/; revision=661
+
+2009-03-14  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * NEWS, configure.ac, wscript: Version 2.26.0  svn path=/trunk/; revision=659
+
+2009-02-01  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * NEWS, configure.ac, wscript: Preparing 2.25.90 release  svn path=/trunk/;
+  revision=657
+
+  * gconf/gconf.override: Bug 541088 – gconf set_value should take unicode
+  string as value.  svn path=/trunk/; revision=656
+
+2009-01-31  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * configure.ac: Bug 564550 – gnome-python libtool-2.2 patch  svn
+  path=/trunk/; revision=655
+
+  * acinclude.m4: (from Funda Wang) Use distutils to detect the value of
+  Py_ENABLE_SHARED, not grep; closes #569832.  svn path=/trunk/; revision=654
+
+  * waf: Upgrade to WAF 1.5.3  svn path=/trunk/; revision=653
+
+2009-01-17  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * Makefile.am: automake distcheck fixes  svn path=/trunk/; revision=651
+
+  * NEWS: Update NEWS for release  svn path=/trunk/; revision=650
+
+  * configure.ac, wscript: Bump version to 2.25.1  svn path=/trunk/;
+  revision=649
+
+  * waf, wscript: Update to newer WAF  svn path=/trunk/; revision=648
+
+2009-01-03  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * wscript: Use the gnu_dirs waf tool, so that --libdir configure option works
+   svn path=/trunk/; revision=647
+
+  * waf: Add a ready-made waf script, for easier deployment in jhbuild  svn
+  path=/trunk/; revision=646
+
+  * .bzrignore: ignore  svn path=/trunk/; revision=645
+
+  * .bzrignore, ChangeLog, ChangeLog.pre-2.25, Makefile.am, autogen.sh,
+  bzrplugins/gnulog.py, generate-ChangeLog, wscript: Auto-generate the
+  ChangeLog via bazaar log plugin  svn path=/trunk/; revision=644
+
+  * wscript: WAF: fix autoconfig and dist_hook  svn path=/trunk/; revision=643
+
+  * README, bonobo/wscript, docs/gnomevfs/wscript, gconf/wscript,
+  gnome/wscript, gnomecanvas/wscript, gnomevfs/wscript, wscript: Experimental
+  support for waf 1.5.x  svn path=/trunk/; revision=642
+
+2008-12-25  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * tests/runtests.py: fix typo  svn path=/trunk/; revision=640
+
+  * ChangeLog, gnomevfs/wscript, tests/common.py, tests/runtests.py, wscript:
+  Run unit tests in the WAF build system  svn path=/trunk/; revision=639
+
+2008-09-22  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac, wscript: 2.22.3  svn path=/trunk/;
+  revision=637
+
+2008-09-22  Mart Raudsepp <mraudsepp@src.gnome.org>
+
+  * ChangeLog, configure.ac: Bug 548535 – configure broken with old
+  pygtk-codegen-2.0 on system instead of pygobject-codegen-2.0  * configure.ac:
+  Restore compatibility with pygtk-codegen-2.0 by considering with autoconf
+  caching mechanics.  svn path=/trunk/; revision=636
+
+2008-09-21  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac, wscript: 2.22.2  svn path=/trunk/;
+  revision=634
+
+2008-08-23  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/wscript, gconf/wscript, gnome/wscript,
+  gnomecanvas/wscript, wscript: Bug 548535, WAF part.  svn path=/trunk/;
+  revision=633
+
+2008-08-23  Björn Lindqvist <bjourne@gmail.com>
+
+  * ChangeLog, bonobo/Makefile.am, configure.ac, gconf/Makefile.am,
+  gnome/Makefile.am, gnomecanvas/Makefile.am: Bug 548535 – pygtk-codegen-2.0
+  -> pygobject-codegen-2.0  2008-08-23  Björn Lindqvist  <bjourne@gmail.com> 
+  Bug 548535 – pygtk-codegen-2.0 -> pygobject-codegen-2.0  * configure.ac:
+  Check for pygobject-codegen-2.0 instead. Fallback on pygtk-codegen-2.0 if not
+  found.  svn path=/trunk/; revision=632
+
+2008-08-22  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/wscript: waf 1.4.x compat.  svn path=/trunk/;
+  revision=631
+
+2008-06-15  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac, wscript: Releasing version 2.22.1  svn
+  path=/trunk/; revision=629
+
+2008-05-31  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/wscript, gconf/wscript, gnome/wscript,
+  gnomecanvas/wscript, gnomevfs/wscript, wscript: Add --enable-modules option
+  to the WAF build  svn path=/trunk/; revision=628
+
+2008-05-24  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, Makefile.am, configure.ac, docs/Makefile.am: Bug 534307 –
+  configure script could really use the ability to select particular modules 
+  svn path=/trunk/; revision=627
+
+2008-05-04  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * bonobo/wscript, gconf/wscript, gnome/wscript, gnomecanvas/wscript,
+  gnomevfs/wscript, wscript: This time it should really work with WAF 1.4.1...
+  (API change)  svn path=/trunk/; revision=626
+
+  * ChangeLog, bonobo/wscript, docs/gnomevfs/wscript, gconf/wscript,
+  gnome/wscript, gnomecanvas/wscript, gnomevfs/wscript, wscript: Fixes for the
+  upcoming WAF 1.4.1 (but still also works with WAF 1.3.2)  svn path=/trunk/;
+  revision=625
+
+2008-03-09  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, Makefile.am, NEWS, configure.ac, wscript: 2.22.0  svn
+  path=/trunk/; revision=623
+
+2008-03-01  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: Bug 519014 –
+  pass PYTHON_LDFLAGS consistently with common_ldflags  svn path=/trunk/;
+  revision=622
+
+2008-02-23  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, wscript: wscript typo  svn path=/trunk/; revision=621
+
+  * ChangeLog: 2.21.1  svn path=/trunk/; revision=619
+
+  * INSTALL.WAF, Makefile.am, configure.ac: Add autotools deprecation warning
+  and WAF build instructions.  svn path=/trunk/; revision=618
+
+  * configure.ac, wscript: Bump version to 2.21.1  svn path=/trunk/;
+  revision=617
+
+  * ChangeLog, NEWS: Update NEWS  svn path=/trunk/; revision=616
+
+2008-02-16  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/wscript, gconf/wscript, gnome/wscript,
+  gnomecanvas/wscript, gnomevfs/wscript: Fix Mac OS X build with WAF.  svn
+  path=/trunk/; revision=615
+
+2008-02-03  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, wscript: WAF: allow python tool to use libdir (with waf trunk) 
+  svn path=/trunk/; revision=614
+
+2008-01-07  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/wscript, gconf/wscript, gnome/wscript,
+  gnomecanvas/wscript: WAF: set priority of codegen tasks  svn path=/trunk/;
+  revision=613
+
+2007-12-15  Gian Mario Tagliaretti <gianmt@src.gnome.org>
+
+  * ChangeLog, examples/gconf/basic-gconf-app.py,
+  examples/gconf/simple-view.py: remove depracation warnings in gconf examples,
+  fixes #503603 based on a patch by Nishio Futoshi.  svn path=/trunk/;
+  revision=612
+
+2007-12-04  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS: 2.21.0  svn path=/trunk/; revision=610
+
+  * ChangeLog, docs/gnomevfs/Makefile.am, docs/pygtk-ref-docs.make: Make it
+  pass distcheck  svn path=/trunk/; revision=609
+
+2007-12-03  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, Makefile.am, bonobo/Makefile.am, docs/gnomevfs/Makefile.am,
+  docs/pygtk-ref-docs.make, gconf/Makefile.am, gnome/Makefile.am,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am: misc  svn path=/trunk/;
+  revision=608
+
+2007-12-02  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.ac, docs/pygtk-ref-docs.make: bump version; ship the
+  docs  svn path=/trunk/; revision=607
+
+  * wscript: add missing html dir  svn path=/trunk/; revision=606
+
+  * ChangeLog, docs/gnomevfs/wscript, wscript: Install and ship the docs  svn
+  path=/trunk/; revision=605
+
+  * ChangeLog, bonobo/wscript, docs/gnomevfs/wscript, gconf/wscript,
+  gnome/wscript, gnomecanvas/wscript, gnomevfs/wscript, wscript: Add wscript
+  files for building with WAF  svn path=/trunk/; revision=604
+
+  * ChangeLog, gnomevfs/vfsbonobomodule.c: missing include  svn path=/trunk/;
+  revision=603
+
+  * ChangeLog, bonobo/pybonobo.c: fix bonobo include  svn path=/trunk/;
+  revision=602
+
+2007-11-24  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomecanvas/canvas.override, gnomecanvas/canvasmodule.c: Bug
+  494500 – gnomecanvas.path_def_new() doesn't provide a way to build a closed
+  path  svn path=/trunk/; revision=601
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Bug 467688 – Binding for
+  gnome_vfs_create_symbolic_link  svn path=/trunk/; revision=600
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Bug 462884 – Add support for
+  get_file_mime_type  svn path=/trunk/; revision=599
+
+  * ChangeLog, NEWS, configure.ac: 2.20.1  svn path=/trunk/; revision=596
+
+  * gnome/gnome.override: Fix possible use of unitialized variable dict_key 
+  svn path=/trunk/; revision=595
+
+  * ChangeLog, gnome/gnome.override, tests/testgnome.py: Bug 497178 –
+  Segfault when using a popt argument with an empty short name  svn
+  path=/trunk/; revision=594
+
+  * ChangeLog, gnomevfs/vfs-drive.c: Bug 477740 – Unmounting problems with
+  gnome-vfs python binding  svn path=/trunk/; revision=593
+
+2007-09-16  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac: 2.20.0  svn path=/trunk/; revision=591
+
+2007-09-01  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * MAINTAINERS: Add a MAINTAINERS file.  svn path=/trunk/; revision=590
+
+2007-08-26  Jonathan Matthew <notverysmart@gmail.com>
+
+  * ChangeLog, gnomevfs/vfs-file-info.c: Fix typo in the error message for
+  missing mtime values. Fixes bug #465404.  2007-08-26  Jonathan Matthew 
+  <notverysmart@gmail.com>  * gnomevfs/vfs-file-info.c: (pygvfinfo_getattr):
+  Fix typo in the error message for missing mtime values. Fixes bug #465404. 
+  svn path=/trunk/; revision=589
+
+2007-08-07  Johan Dahlin <jdahlin@async.com.br>
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c: Change header to LGPL,
+  thanks to Matthias Clasen for pointing out.  2007-08-07  Johan Dahlin 
+  <jdahlin@async.com.br>  * gnomevfs/gnome-vfs-python-method.c: Change header
+  to LGPL, thanks to Matthias Clasen for pointing out.   svn path=/trunk/;
+  revision=588
+
+2007-07-30  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac: 2.19.2  svn path=/trunk/; revision=586
+
+2007-07-28  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gconf/gconf.override: Bug 461278 – gconf crashes with
+  gtk.main() when value.get_car  svn path=/trunk/; revision=585
+
+2007-07-08  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.override, bonobo/bonoboui.override,
+  gconf/gconf.override, gnome/gnome.override, gnome/ui.override,
+  gnomecanvas/canvas.override: #include "config.h" to get a __version__
+  attribute on the module when compiling with newer (pygtk trunk) codegen.  svn
+  path=/trunk/; revision=584
+
+2007-07-07  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac: 2.19.1  svn path=/trunk/; revision=582
+
+2007-07-04  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Bug 453517 – mime_equivalence problem 
+  svn path=/trunk/; revision=581
+
+2007-06-18  Sebastien Bacher <seb128@ubuntu.com>
+
+  * ChangeLog, acinclude.m4: use python-config to get python includes (Closes
+  #448179)  2007-06-18  Sebastien Bacher  <seb128@ubuntu.com>  * acinclude.m4:
+  use python-config to get python includes (Closes #448179)  svn path=/trunk/;
+  revision=580
+
+2007-05-13  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/uimodule.c: Bug 438129 – Cannot load gnome.ui at run
+  time without a warning  svn path=/trunk/; revision=579
+
+2007-04-30  Gian Mario Tagliaretti <gianmt@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfs-drive.c: wrap gnome_vfs_drive_needs_eject  svn
+  path=/trunk/; revision=578
+
+2007-04-20  Johan Dahlin <johan@src.gnome.org>
+
+  * PKG-INFO.in: Update Summary in PKG-INFO  svn path=/trunk/; revision=577
+
+2007-04-09  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac: 2.18.2  svn path=/trunk/; revision=574
+
+  * gnome/ui.override: Bug 418926 – gnome.ui.icon_lookup and thumbnails  svn
+  path=/trunk/; revision=573
+
+  * ChangeLog, NEWS, configure.ac: 2.18.1  svn path=/trunk/; revision=571
+
+2007-03-28  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * acinclude.m4: postfix  svn path=/trunk/; revision=570
+
+  * ChangeLog, acinclude.m4: Don't link python modules with libpython on
+  Darwin.  Fixes #417004.  svn path=/trunk/; revision=569
+
+2007-03-12  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac: 2.18.0  svn path=/trunk/; revision=567
+
+2007-03-10  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.ac: Bug 416792 – wrong dep for gnome-vfs version 
+  svn path=/trunk/; revision=566
+
+2007-03-03  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gconf/gconf.override: Bug 309016 – passing VALUE_LIST or
+  VALUE_PAIR to value_new_from_string causes abort  svn path=/trunk/;
+  revision=565
+
+2007-02-25  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac: release 2.17.92  svn path=/trunk/;
+  revision=563
+
+  * ChangeLog, tests/runtests.py, tests/testbonobo.py: tweak tests  svn
+  path=/trunk/; revision=562
+
+2007-02-24  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Bug 411560 – pygvfs_mime_application_new
+  mishandles mimeapp->expects_uris  svn path=/trunk/; revision=561
+
+2007-02-23  Johan Dahlin <johan@src.gnome.org>
+
+  * ChangeLog, gconf/gconf.override: Do not ignore all get_type functions, add
+  a blacklist instead, so  * gconf/gconf.override: Do not ignore all get_type
+  functions, add a blacklist instead, so gconf.Schema.get_type is generated.
+  Fixes #411340 (Havoc Pennington)   svn path=/trunk/; revision=560
+
+2007-02-11  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfs-async-handle.c: Bug 402255 –
+  gnomevfs.async.find_directory: assertion failed when iterating results  svn
+  path=/trunk/; revision=559
+
+  * ChangeLog, bonobo/__init__.py: Bug 405266 – inconsistent use of tabs and
+  spaces in bonobo/__init__.py  svn path=/trunk/; revision=558
+
+2007-02-07  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/Makefile.am: Bug 405312 – bonobo/Makefile.am
+  _bonobo_la_LIBADD contains malformed PYTHON_LIBS env  svn path=/trunk/;
+  revision=557
+
+2007-01-08  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.ac, gnome-python-2.0.pc.in: 2.17.2  svn
+  path=/trunk/; revision=555
+
+2007-01-07  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog: 2.17.1  svn path=/trunk/; revision=553
+
+  * ChangeLog, NEWS: update NEWS  svn path=/trunk/; revision=552
+
+  * ChangeLog, gconf/gconf.override: Bug 392841 – python gconf bindings
+  should not by type specific  svn path=/trunk/; revision=551
+
+  * ChangeLog, gnome-python-2.0.pc.in: define datarootdir  svn path=/trunk/;
+  revision=550
+
+  * ChangeLog, configure.ac: bump version  svn path=/trunk/; revision=549
+
+  * ChangeLog, autogen.sh, configure.ac, configure.in: Rename configure.in to
+  configure.ac  svn path=/trunk/; revision=548
+
+2007-01-06  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomecanvas/canvas.defs, gnomecanvas/canvas.override: Bug 386844
+  – Rich text buffer support in gnomecanvas would be nice  svn path=/trunk/;
+  revision=547
+
+  * ChangeLog, acinclude.m4, configure.in: Bug 387177 – gnome-python
+  configure test needs to link to pthread  svn path=/trunk/; revision=545
+
+2006-11-05  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: 2.16.2
+
+  * ChangeLog, NEWS, configure.in: 2.16.1
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo.override, gnome/Makefile.am,
+  gnomecanvas/Makefile.am, gnomecanvas/canvas.override, gnomevfs/Makefile.am,
+  gnomevfs/pygnomevfs-private.h, gnomevfs/vfs-handle.c, gnomevfs/vfsmodule.c:
+  python 2.5 + 64-bit fixes
+
+  * ChangeLog: python 2.5 + 64-bit fixes
+
+  * ChangeLog: python 2.5 + 64-bit fixes
+
+  * ChangeLog, gconf/gconf.override: fix gconf compilation warnings
+
+  * ChangeLog, configure.in, gconf/Makefile.am: support python 2.5 + 64 bits
+  (start)
+
+  * ChangeLog, gconf/gconf.override: Bug 365565 – segfault just trying to
+  read a gconf key
+
+  * ChangeLog, acinclude.m4: fix detection of python libs; closes #363374
+
+2006-10-06  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, tests/Makefile.am: Fix running 'make check' when builddir !=
+  srcdir.
+
+2006-09-04  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: 2.16.0
+
+  * gnomevfs/.cvsignore: ignore *.pyc
+
+2006-08-21  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: 2.15.91
+
+2006-08-17  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, acinclude.m4: Bug 351675 – gnome-python doesn't detect the
+  python instalation libraries
+
+2006-08-09  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.defs: bonobo.main_level
+
+  * ChangeLog, bonobo/bonobo.defs: bonobo.main_level
+
+  * ChangeLog, bonobo/bonobo.override: check main level in bonobo.main_quit
+
+  * ChangeLog, bonobo/bonobo.override: Allow KeyboardInterrupt in bonobo.main()
+
+2006-07-24  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS: 2.15.90
+
+  * ChangeLog, Makefile.am, configure.in, examples/bug-buddy-integration.py:
+  bug-buddy integration example (#346106)
+
+2006-07-18  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in, gnomevfs/Makefile.am, gnomevfs/__init__.py,
+  gnomevfs/pygnomevfs.h, gnomevfs/pygnomevfsbonobo.h,
+  gnomevfs/vfsbonobomodule.c, gnomevfs/vfsmodule.c: make gnomevfs lazy load
+  bonobo part
+
+2006-07-12  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in, gnomevfs/Makefile.am, tests/common.py:
+  gnomevfs fixes; release 2.15.4
+
+  * ChangeLog, configure.in, gnomevfs/Makefile.am: compile with latest
+  gnome-vfs with optional bonobo
+
+2006-07-11  Johan Dahlin <johan@src.gnome.org>
+
+  * bonobo/bonoboui.override: Fix import statements, do not use gtk._gtk
+
+2006-07-10  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: version 2.15.3
+
+2006-07-05  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in, gnome/gnome.override: Bug 344619 – Add
+  setproctitle() support to the gnome module
+
+  * ChangeLog, configure.in: Blacklist pygtk 2.9.[01].
+
+2006-06-25  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, acinclude.m4, bonobo/Makefile.am, configure.in,
+  gconf/Makefile.am, gnome/Makefile.am, gnomecanvas/Makefile.am,
+  gnomevfs/Makefile.am: improve detection of python libraries; link extensions
+  to libpython when needed
+
+2006-06-11  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: release 2.15.2
+
+2006-05-20  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfs-handle.c: Bug 338920 – Non-async 'control' method
+
+2006-05-17  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: Bug 342180 – PR_SET_NAME not always
+  defined
+
+  * ChangeLog, configure.in, gnome/gnome.override: Call prctl in
+  gnome.program_init().
+
+2006-05-15  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * docs/.cvsignore, docs/gnomevfs/.cvsignore: _
+
+2006-05-08  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, docs/pygtk-ref-docs.make: force utf-8 encoding on reference docs
+
+2006-05-01  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfs-file-info.c, gnomevfs/vfsmodule.c: Bug 338916 –
+  Missing constants, implementing FILE_INFO_ACCESS and a typo
+
+2006-04-23  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: 2.15.1
+
+2006-04-15  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c: Bug 336681 – Load
+  gnome-vfs python extensions from user's home directory
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Bug 335951 – Missing Access Permission
+  Constants in GNOMEVFS
+
+  * ChangeLog, gnome/ui.defs, gnome/ui.override: Bug 334836 – gnome.ui.AppBar
+  constructor broken
+
+2006-02-19  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, acinclude.m4, configure.in, gnomevfs/Makefile.am: Fix linking
+  with python lib
+
+2006-01-02  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, docs/gnomevfs/Makefile.am: rename gnomevfs docs to pygnomevfs
+
+2005-12-22  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c: Eitan Isaacson.  Fixes
+  #324453.
+
+2005-12-22  David Trowbridge <trowbrds@gmail.com>
+
+  * ChangeLog, docs/gnomevfs/gnomevfs-constants.xml,
+  docs/gnomevfs/gnomevfs-functions.xml: Document a couple more functions 
+  2005-12-22  David Trowbridge <trowbrds@gmail.com>  *
+  docs/gnomevfs/gnomevfs-constants.xml: * docs/gnomevfs/gnomevfs-functions.xml:
+  Document a couple more functions
+
+2005-12-19  David Trowbridge <trowbrds@gmail.com>
+
+  * ChangeLog, configure.in, docs/Makefile.am, docs/gnome-python-ref.xml,
+  docs/gnomevfs-classes.xml, docs/gnomevfs-constants.xml,
+  docs/gnomevfs-context.xml, docs/gnomevfs-directoryhandle.xml,
+  docs/gnomevfs-drive.xml, docs/gnomevfs-fileinfo.xml,
+  docs/gnomevfs-functions.xml, docs/gnomevfs-handle.xml, docs/gnomevfs-uri.xml,
+  docs/gnomevfs-volume.xml, docs/gnomevfs/Makefile.am,
+  docs/gnomevfs/gnomevfs-classes.xml, docs/gnomevfs/gnomevfs-constants.xml,
+  docs/gnomevfs/gnomevfs-context.xml,
+  docs/gnomevfs/gnomevfs-directoryhandle.xml, docs/gnomevfs/gnomevfs-drive.xml,
+  docs/gnomevfs/gnomevfs-fileinfo.xml, docs/gnomevfs/gnomevfs-functions.xml,
+  docs/gnomevfs/gnomevfs-handle.xml, docs/gnomevfs/gnomevfs-uri.xml,
+  docs/gnomevfs/gnomevfs-volume.xml: Move gnomevfs manual into its own
+  directory  2005-12-18  David Trowbridge <trowbrds@gmail.com> * configure.in:
+  * docs/Makefile.am: * docs/gnomevfs/*: Move gnomevfs manual into its own
+  directory
+
+2005-12-18  David Trowbridge <trowbrds@src.gnome.org>
+
+  * ChangeLog, Makefile.am, configure.in, docs/Makefile.am, docs/common.xsl,
+  docs/devhelp.xsl, docs/gnome-python-ref.xml, docs/gnomevfs-classes.xml,
+  docs/gnomevfs-constants.xml, docs/gnomevfs-context.xml,
+  docs/gnomevfs-directoryhandle.xml, docs/gnomevfs-drive.xml,
+  docs/gnomevfs-fileinfo.xml, docs/gnomevfs-functions.xml,
+  docs/gnomevfs-handle.xml, docs/gnomevfs-uri.xml, docs/gnomevfs-volume.xml,
+  docs/html.xsl, docs/pdf-style.xsl, docs/pdf.xsl, docs/pygtk-ref-docs.make,
+  docs/ref-html-style.xsl, docs/tut-html-style.xsl: Add partial documentation
+  for the gnomevfs module
+
+2005-12-13  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: gnome.program_init error path crash fixed
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c: Bug 323948: the
+  check_same_fs function uses move_func instead of check_same_fs_func
+
+2005-12-01  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: version 2.12.2
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c: vfs method fix by Eitan
+  Isaacson
+
+2005-11-14  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomecanvas/canvas.override: canvas item grab() fix; thanks
+  xordoquy
+
+2005-10-19  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/ui.override: gnome.icon_lookup minor fix
+
+2005-10-03  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, bonobo/pybonobo.c, configure.in,
+  gnomevfs/vfs-async-handle.c: more #315382 fixes; release 2.12.1
+
+2005-09-15  Raphael Slinckx <rslinckx@cvs.gnome.org>
+
+  * ChangeLog, gnome/ui.override: Remove a very useful g_message("foo") 
+  2005-09-15  Raphael Slinckx  <rslinckx@cvs.gnome.org>  * gnome/ui.override:
+  Remove a very useful g_message("foo")
+
+2005-09-03  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS: NEWS update
+
+2005-08-26  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, examples/canvas/canvas-example.py: Activate AA in canvas example
+
+2005-08-25  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in, gnome-python-2.0.pc.in, gnomevfs/Makefile.am:
+  install pygnomevfs.h header
+
+2005-08-22  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, examples/vfs/pygvfsmethod/README: add more info explaining
+  python vfs modules
+
+2005-08-21  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, Makefile.am, examples/vfs/pygvfsmethod/README,
+  examples/vfs/pygvfsmethod/pyfs.conf, examples/vfs/pygvfsmethod/pyfs.py,
+  gnomevfs/gnome-vfs-python-method.c: new gnomevfs python method example
+
+2005-08-16  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfs-async-handle.c: fix invalid read on
+  gnomevfs.async.xfer
+
+2005-07-11  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: preparing 2.11.3 release
+
+2005-07-10  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, Makefile.am, examples/canvas/canvas-curve.py: canvas-curve.py
+  example
+
+  * ChangeLog, gnomevfs/vfsmodule.c: some dns-sd wrappers
+
+2005-06-25  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gconf/gconf.override, gnome/canvas.py: Bug 308998: passing the
+  wrong number of arguments to client.get_pair causes segfault
+
+2005-05-28  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomecanvas/canvas.override: tolerate conflict with new
+  libgnomecanvas API
+
+2005-05-17  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog: 2.11.2 release
+
+2005-05-16  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * NEWS: minor correction
+
+  * ChangeLog, NEWS, configure.in, gnomevfs/gnome-vfs-python-method.c: bump
+  version, update NEWS, fix debug spew
+
+2005-05-15  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, Makefile.am, examples/vfs/cancellation.py,
+  gnomevfs/vfs-context.c, gnomevfs/vfsmodule.c: add vfs cancellation stuff
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c,
+  gnomevfs/pygnomevfs-private.h, gnomevfs/pygnomevfs.h,
+  gnomevfs/vfs-async-handle.c: pass arbitrary python objects to vfs python
+  backends through file_control
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c: python vfs method fixes
+
+2005-05-14  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in, gnomevfs/Makefile.am,
+  gnomevfs/gnome-vfs-python-method.c, gnomevfs/pygnomevfs.h: python vfs method
+
+2005-05-10  Sidnei da Silva <sidnei@awkly.org>
+
+  * ChangeLog, Makefile.am, configure.in: reviewed by: Johan Dahlin
+  <johan@gnome.org>  2005-05-09  Sidnei da Silva  <sidnei@awkly.org>  reviewed
+  by: Johan Dahlin <johan@gnome.org>  * configure.in: * Makefile.am: Make GConf
+  build conditional
+
+2005-05-09  Johan Dahlin <johan@gnome.org>
+
+  * ChangeLog, configure.in, gnomevfs/vfsmodule.c: Add GNOME_VFS_OPEN_TRUNCATE.
+   2005-05-02  Johan Dahlin  <johan@gnome.org>  * gnomevfs/vfsmodule.c: Add
+  GNOME_VFS_OPEN_TRUNCATE.  * configure.in: Bump required gnome-vfs version to
+  2.9.3
+
+2005-05-04  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * examples/canvas/canvas-example.py: missing import
+
+2005-05-03  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, examples/canvas/canvas-example.py: fix canvas example
+  deprecation warnings
+
+2005-05-02  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c, gnomevfs/vfsmodule.c:
+  Improved exception handling, make it compile again, Allow boolean return  *
+  gnomevfs/gnome-vfs-python-method.c: Improved exception handling, make it
+  compile again, Allow boolean return values, fix path.  *
+  gnomevfs/vfsmodule.c: Add context_new/context_type to API
+
+2005-05-01  Johan Dahlin <zilch@src.gnome.org>
+
+  * gnomevfs/gnome-vfs-python-method.c: Unbreak a little bit
+
+2005-04-25  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in, gconf/gconf.defs: #167072
+
+2005-04-18  Benoît Dejean <bdejean@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Add wrapper for gnome_vfs_resolve. Closes
+  #165090.  * gnomevfs/vfsmodule.c (pygvfs_resolve): Add wrapper for
+  gnome_vfs_resolve. Closes #165090.
+
+2005-04-15  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, setup.py: put a warning for anyone that tries to run setup.py
+
+  * ChangeLog, gnomecanvas/canvas.defs: Bug 167901: gnome canvas
+  (g|s)et_center_scroll_region wrapping
+
+  * ChangeLog, gconf/gconf-types.c, gconf/gconfmodule.c:
+  gconf.Engine.associate_schema
+
+2005-04-12  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in, gconf/gconf.override: Fix #170822
+
+2005-03-07  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: minor fix before 2.10.0 release
+
+  * ChangeLog, NEWS, configure.in: 2.10.0 release
+
+2005-02-27  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: 2.9.5 release
+
+2005-02-12  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomecanvas/canvas.override: canvas bpath fix
+
+2005-02-09  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/ui.defs: fix accidental API break
+
+2005-01-28  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.override, configure.in: better type checking in
+  bonobo.AppClient; simplify configure.in a bit
+
+2005-01-27  Benoît Dejean <bdejean@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Fixed exception value. Exception value was
+  formerly set to NULL by error.  * gnomevfs/vfsmodule.c:
+  (pygnome_vfs_result_check): Fixed exception value. Exception value was
+  formerly set to NULL by error.
+
+2005-01-18  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: [Bug 164451] Need to avoid changing
+  LC_NUMERIC on Python 2.4
+
+2005-01-17  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in: 2.9.4 release
+
+2005-01-17  Mark McLoughlin <mark@skynet.ie>
+
+  * ChangeLog, gconf/Makefile.am, gconf/gconf-arg-types.py,
+  gconf/gconf-types.c, gconf/gconf-types.h, gconf/gconf.defs,
+  gconf/gconf.override, gconf/gconfmodule.c: Adding wrapping for GConfEngine.
+  bug #164059  2005-01-17  Mark McLoughlin  <mark@skynet.ie>  Adding wrapping
+  for GConfEngine. bug #164059  * gconf/gconf-arg-types.py: add GConfEngine
+  ArgType.  * gconf/gconf-types.[ch]: impl. GConfEngine PyObject.  *
+  gconf/Makefile.am: build gconf-types.[ch], use gconf-arg-types.py.  *
+  gconf/gconf.defs: remove some GConfEngine methods which are internal to
+  GConf.  * gconf/gconf.override: include gconf-types.h  * gconf/gconfmodule.c:
+  (initgconf): call pygconf_register_engine_type()
+
+2005-01-16  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/ui.defs: fix typo that prevented gnome.ui.HRef constructor
+  from being generated
+
+2005-01-15  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gconf/gconf.override, gnomevfs/vfsmodule.c: minor fixes
+
+2004-12-26  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS: 2.9.2 release
+
+  * ChangeLog, examples/vfs/async.py, gnomevfs/vfs-async-handle.c: file
+  control; fixes
+
+  * ChangeLog, examples/vfs/async.py, gnomevfs/vfs-async-handle.c,
+  gnomevfs/vfsmodule.c: more async fixes
+
+  * ChangeLog, gnomevfs/vfs-async-handle.c: gnomevfs.async.find_directory
+
+2004-12-25  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, Makefile.am, examples/vfs/async-xfer.py,
+  gnomevfs/vfs-async-handle.c, gnomevfs/vfsmodule.c: async xfer fixes and
+  example
+
+  * ChangeLog, Makefile.am, examples/vfs/sync-xfer.py: add gnomevfs.xfer_uri
+  example
+
+2004-12-24  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfsmodule.c: wrap remaining gnome-vfs-utils.h
+  functions..
+
+  * ChangeLog, gnomevfs/vfsmodule.c: wrappers for a bunch of gnome-vfs-utils.h
+  functions
+
+  * ChangeLog, gnomevfs/vfs-async-handle.c, gnomevfs/vfsmodule.c: misc fixes;
+  gnomevfs.async.xfer
+
+2004-12-21  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfsmodule.c: Bug 161738: gnome.vfs.xfer_uri() requires
+  a callback in Python (but the C API doesn't)
+
+2004-12-18  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, examples/vfs/async.py: improve vfs async example
+
+  * ChangeLog, gnomevfs/vfsmodule.c: fix vfs thread blocking in some places
+
+2004-12-14  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.override: bonobo_get_object_async
+
+  * bonobo/bonobo.override: bonobo_get_object_async
+
+2004-12-13  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, bonobo/activationmodule.c: bonobo activation async
+
+2004-12-12  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in, gconf/gconf.defs, gconf/gconf.override: wrap some
+  new gconf APIs
+
+2004-12-04  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: gnome.Program.locate_file & some minor
+  warnings fixes
+
+2004-11-29  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, NEWS: prepare release
+
+  * ChangeLog, configure.in: version bump
+
+2004-11-28  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnomevfs/vfs-volume-monitor.c: gnome_vfs_get_volume_monitor fix
+
+  * gnomevfs/vfs-drive.c, gnomevfs/vfs-volume.c: postfix
+
+  * ChangeLog, gnomevfs/pygnomevfs-private.h, gnomevfs/vfs-drive.c,
+  gnomevfs/vfs-volume.c, gnomevfs/vfsmodule.c: add remaining drive/volume
+  methods (mount, unmount, eject)
+
+  * gnomevfs/vfs-drive.c, gnomevfs/vfs-volume-monitor.c, gnomevfs/vfs-volume.c:
+  missing Py_TPFLAGS_BASETYPE
+
+  * ChangeLog, gnomevfs/pygnomevfs-private.h, gnomevfs/vfs-drive.c,
+  gnomevfs/vfs-volume-monitor.c, gnomevfs/vfs-volume.c: vfs volume/drive fixes
+
+  * ChangeLog, gnomevfs/Makefile.am, gnomevfs/pygnomevfs-private.h,
+  gnomevfs/vfs-drive.c, gnomevfs/vfs-volume-monitor.c, gnomevfs/vfsmodule.c:
+  volume monitor
+
+  * ChangeLog, gnomevfs/Makefile.am, gnomevfs/pygnomevfs-private.h,
+  gnomevfs/vfs-drive.c, gnomevfs/vfs-volume.c, gnomevfs/vfsmodule.c:
+  gnomevfs.Drive
+
+  * gnomevfs/vfsmodule.c: init volume type
+
+  * ChangeLog, gnomevfs/Makefile.am, gnomevfs/pygnomevfs-private.h,
+  gnomevfs/pygnomevfs.h, gnomevfs/vfs-volume.c, gnomevfs/vfsmodule.c: vfs
+  volume
+
+2004-11-24  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/ui.override, gnome/uimodule.c, gnomevfs/pygnomevfs.h: Fix
+  argument parsing of gnome.ui.icon_lookup
+
+2004-11-23  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, gnome/Makefile.am, gnome/applet.py: move applet.py dummy module
+  to gnome-python-extras
+
+  * .cvsignore: ignore some more generated auto* stuff
+
+  * ChangeLog, gnomevfs/gnome-vfs-python-method.c, gnomevfs/vfs-async-handle.c,
+  gnomevfs/vfs-context.c, gnomevfs/vfs-dir-handle.c, gnomevfs/vfs-file-info.c,
+  gnomevfs/vfs-handle.c, gnomevfs/vfs-uri.c, gnomevfs/vfs-xfer-progress-info.c:
+  s/gnome\.vfs/gnomevfs/
+
+2004-11-22  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, configure.in: updt libgnome version
+
+  * ChangeLog, NEWS: update NEWS
+
+2004-11-21  Gustavo J. A. M. Carneiro <gjc@src.gnome.org>
+
+  * ChangeLog, autogen.sh: update autogen and required autotools
+
+  * ChangeLog, Makefile.am, examples/canvas/canvas-example.py,
+  examples/vfs/async.py, examples/vfs/shell.py, ltihooks.py, tests/Makefile.am,
+  tests/ltihooks.py: 1 more distcheck fix
+
+  * ChangeLog, Makefile.am, examples/applet/GNOME_PythonAppletSample.server,
+  examples/applet/README, examples/applet/applet.py,
+  examples/gnomeprint/README, examples/gnomeprint/example_01.py,
+  examples/gnomeprint/example_02.py, examples/gnomeprint/example_03.py,
+  examples/gnomeprint/example_04.py, examples/gnomeprint/example_05.py,
+  examples/gnomeprint/example_06.py, examples/gnomeprint/example_08.py,
+  examples/gnomeprint/example_09.py, examples/gnomeprint/example_10.glade,
+  examples/gnomeprint/example_10.py, examples/gnomeprint/example_11.py,
+  examples/gnomeprint/sample-image.png, examples/gnomeprint/test-print.py,
+  examples/gtkhtml2/simple-browser.py,
+  examples/nautilus/Nautilus_View_pysample.server, examples/nautilus/README,
+  examples/nautilus/sample.py, examples/zvt/zvt-demo.py, gnome/Makefile.am,
+  gnome/applet.py: add gnome.applet dummy module; remove unwanted examples
+
+  * tests/Makefile.am: remove debug print of PYTHONPATH
+
+  * ChangeLog, tests/Makefile.am: distcheck fix
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonoboui.override, gnome/__init__.py,
+  gnome/ui.override, gnomecanvas/canvas.override, tests/Makefile.am,
+  tests/common.py, tests/testvfs.py: cleanup some bugs left due to
+  reorganization
+
+2004-11-20  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, configure.in: print correct module names
+
+  * ChangeLog, gnome/Makefile.am, gnome/canvas.py, gnome/vfs.py: dummy modules
+
+2004-11-19  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/Makefile.am, gnomecanvas/.cvsignore, gnomevfs/.cvsignore:
+  fix build of gnome.ui
+
+  * ChangeLog, Makefile.am, configure.in, gnome/Makefile.am, gnome/canvas.defs,
+  gnome/canvas.override, gnome/canvasmodule.c, gnome/gnome-vfs-python-method.c,
+  gnome/pygnomevfs-private.h, gnome/pygnomevfs.h, gnome/vfs-async-handle.c,
+  gnome/vfs-context.c, gnome/vfs-dir-handle.c, gnome/vfs-file-info.c,
+  gnome/vfs-handle.c, gnome/vfs-uri.c, gnome/vfs-xfer-progress-info.c,
+  gnome/vfsmodule.c, gnomecanvas/Makefile.am, gnomecanvas/canvasmodule.c,
+  gnomevfs/Makefile.am, gnomevfs/vfsmodule.c: axe/rename canvas and vfs modules
+
+2004-11-18  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, configure.in: remove stuff related to moved modules
+
+  * ChangeLog, Makefile.am, gtkhtml2/.cvsignore, gtkhtml2/Makefile.am,
+  gtkhtml2/gtkhtml2.defs, gtkhtml2/gtkhtml2.override,
+  gtkhtml2/gtkhtml2module.c: remove gtkhtml2 module
+
+  * ChangeLog, Makefile.am, gnomeprint/.cvsignore, gnomeprint/Makefile.am,
+  gnomeprint/__init__.py, gnomeprint/art-gtype.c, gnomeprint/art-gtype.h,
+  gnomeprint/art.defs, gnomeprint/print-arg-types.py, gnomeprint/print.defs,
+  gnomeprint/print.override, gnomeprint/printmodule.c, gnomeprint/printui.defs,
+  gnomeprint/printui.override, gnomeprint/printuimodule.c: remove gnomeprint
+  module
+
+  * ChangeLog, gnome/Makefile.am, gnome/applet.defs, gnome/applet.override,
+  gnome/appletmodule.c, gnome/nautilus.defs, gnome/nautilus.override,
+  gnome/nautilusmodule.c, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: prune
+  applet and nautilus modules moved away
+
+2004-11-16  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/Makefile.am, gnome-python-2.0.pc.in: some changes to
+  support upcoming gnome-python-extras module
+
+2004-11-16  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog: ChangeLog entry
+
+2004-11-15  Johan Dahlin <zilch@src.gnome.org>
+
+  * gnome/canvas.defs, gnome/canvas.override, gnomecanvas/canvas.defs,
+  gnomecanvas/canvas.override: add CanvasItem.grab
+
+2004-11-14  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, NEWS, configure.in, gnome/vfs-async-handle.c,
+  gnome/vfs-handle.c, gnomevfs/vfs-async-handle.c, gnomevfs/vfs-handle.c: merge
+  in fixes from 2.6 branch; change version to 2.9.0
+
+2004-11-13  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gconf/gconf.defs: rescan gconf defs
+
+2004-11-12  Benoît Dejean <bdejean@src.gnome.org>
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c: Added wrapper form
+  gnome_vfs_format_file_size_for_display. Closes #157927.  * gnome/vfsmodule.c:
+  (pyvfs_format_file_size_for_display): Added wrapper form
+  gnome_vfs_format_file_size_for_display. Closes #157927. Reviewed by Gustavo
+  Carneiro.
+
+2004-11-11  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.defs, gnome/gnome.override: rescan libgnome; new
+  functions wrapped
+
+  * ChangeLog, gnome/gnome.override, tests/Makefile.am, tests/testgnome.py: fix
+  gnome.program_init
+
+2004-11-10  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: gnome.program_init generic properties
+
+2004-11-07  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/ui.override: gnome_icon_lookup
+
+2004-11-06  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/ui.defs, gnome/ui.override: gnome/ui.defs update for gnome
+  2.8
+
+  * ChangeLog, gnome/canvas.override, gnomecanvas/canvas.override: fix
+  gnome.Canvas constructor
+
+2004-10-25  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gconf/gconf.defs: Add some missing methods
+
+2004-10-17  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, configure.in: bump version
+
+  * ChangeLog, Makefile.am: Bug 155326: Some examples are missing in tarball
+
+2004-10-04  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gtkhtml2/gtkhtml2module.c: Bug 147404: Crash after parsing
+  simple web page
+
+  * ChangeLog, configure.in, gnome/gnomemodule.c: #154452: Add runtime check
+  for pygtk version
+
+2004-10-03  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * NEWS: fix version in NEWS
+
+  * ChangeLog: mark release
+
+  * ChangeLog, tests/Makefile.am: fixes
+
+  * ChangeLog, NEWS, configure.in: version updates
+
+2004-09-30  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/vfs-async-handle.c, gnome/vfs-context.c,
+  gnome/vfs-dir-handle.c, gnome/vfs-file-info.c, gnomevfs/vfs-async-handle.c,
+  gnomevfs/vfs-context.c, gnomevfs/vfs-dir-handle.c, gnomevfs/vfs-file-info.c:
+  Remove Py_TPFLAGS_BASETYPE from vfs types
+
+  * ChangeLog, gnome/vfs-uri.c, gnomevfs/vfs-uri.c: Bug 154001: Subclassing
+  gnome.vfs.URI causes segfault
+
+2004-09-26  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * NEWS: NEWS update
+
+  * ChangeLog, bonobo/bonobo.override, bonobo/pybonobo.c: Make GC traverse
+  bonobo closures; Fix bonobo.generic_factory_main()
+
+2004-09-25  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, NEWS: NEWS update
+
+  * ChangeLog, bonobo/bonoboui.override, gnome/appletmodule.c,
+  gnome/gnome.override, gnome/ui.override: misc. fixes
+
+  * ChangeLog, configure.in, gnome/gnomemodule.c: add gnome_python_version to
+  gnome module
+
+2004-08-28  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, examples/vfs/async.py, gnome/vfs-async-handle.c,
+  gnomevfs/vfs-async-handle.c: vfs async missing param
+
+2004-08-27  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/ui.defs: convert some constructors to property-based
+
+2004-08-23  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * configure.in: gnomeprint pango
+
+2004-08-22  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnomeprint/Makefile.am, gnomeprint/print.defs,
+  gnomeprint/print.override: gnomeprint pango
+
+2004-08-16  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, configure.in: require pygtk 2.3.97
+
+2004-08-15  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/Makefile.am, tests/bonobo.py, tests/testbonobo.py,
+  tests/testvfs.py, tests/vfs.py: fixes
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo.override, bonobo/pybonobo.c,
+  bonobo/pybonobo.h, configure.in, tests/bonobo.py: pybonobo_closure_new
+
+2004-08-14  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/applet.override: pannel applet fix
+
+2004-08-11  Jonathan Blandford <jrb@redhat.com>
+
+  * ChangeLog, bonobo/Makefile.am, gconf/Makefile.am, gnome/Makefile.am,
+  gnomecanvas/Makefile.am, gnomeprint/Makefile.am, gnomevfs/Makefile.am,
+  gtkhtml2/Makefile.am: use $(pyexecdir) instead of $(pythondir) as the module
+  as a whole should  Wed Aug 11 11:40:18 2004  Jonathan Blandford 
+  <jrb@redhat.com>  * gconf/Makefile.am: * gnome/Makefile.am: *
+  bonobo/Makefile.am: * gtkhtml2/Makefile.am: * gnomeprint/Makefile.am: use
+  $(pyexecdir) instead of $(pythondir) as the module as a whole should be
+  installed in the same place, #149850
+
+2004-08-07  Johan Dahlin <zilch@src.gnome.org>
+
+  * setup.py: disable building of gnome-vfs python method
+
+2004-08-07  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo-types.defs: BonoboAppClient is not a  BonoboObject
+
+  * ChangeLog, bonobo/bonobo.override: use
+  bonobo_event_source_client_add_listener_full instead of
+  bonobo_event_source_client_add_listener_closure
+
+2004-08-07  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, configure.in, setup.py: Post release version bump  * setup.py
+  (MICRO_VERSION): Post release version bump  * configure.in:
+
+2004-08-05  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/activationmodule.c:
+  bonobo.activation.active_server_register fix
+
+2004-08-04  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.override, ltihooks.py: bonobo factory main
+  threading fixes
+
+  * ChangeLog, tests/vfs.py: test gnome.vfs.read_entire_file
+
+  * tests/Makefile.am, tests/vfs.py: fix tests
+
+  * ChangeLog, Makefile.am, bonobo/bonobo.override, configure.in,
+  gconf/gconf.override, gnome/vfs-async-handle.c, gnome/vfsmodule.c,
+  gnomevfs/vfs-async-handle.c, gnomevfs/vfsmodule.c, tests/.cvsignore,
+  tests/Makefile.am, tests/common.py, tests/runtests.py, tests/vfs.py:
+  threading and tests
+
+2004-08-03  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.override, gconf/gconf.override,
+  gnome/vfs-async-handle.c, gnome/vfsmodule.c, gnomevfs/vfs-async-handle.c,
+  gnomevfs/vfsmodule.c: Use Python 2.3's GIL
+
+2004-08-02  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, NEWS: update
+
+  * ChangeLog, bonobo/bonobo.override: bonobo_stream_client_read
+
+2004-08-01  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.defs: Remove bonobo_ prefix from all functions in
+  bonobo module
+
+2004-07-30  Xavier Ordoquy <xordoquy@linovia.com>
+
+  * ChangeLog, gnome/gnomemodule.c: Avoids the double libgnome registration. 
+  2004-07-30  Xavier Ordoquy  <xordoquy@linovia.com>  * gnome/gnomemodule.c:
+  (init_gnome): Avoids the double libgnome registration.
+
+  * ChangeLog, bonobo/activationmodule.c, bonobo/bonobomodule.c: Fixes embedded
+  interpreter import. (Done by Johan Dahlin).  2004-07-30  Xavier Ordoquy 
+  <xordoquy@linovia.com>  * bonobo/activationmodule.c: * bonobo/bonobomodule.c:
+  Fixes embedded interpreter import. (Done by Johan Dahlin).
+
+2004-07-20  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.override: Remove _closure from name of function
+  bonobo.event_source_client_add_listener_closure
+
+  * ChangeLog, bonobo/bonobo.override: Fix argument parsing in
+  _wrap_bonobo_event_source_client_add_listener_closure
+
+2004-06-27  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, Makefile.am, examples/vfs/async.py, gnome/Makefile.am,
+  gnome/pygnomevfs-private.h, gnome/vfs-async-handle.c, gnome/vfsmodule.c,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am, gnomevfs/pygnomevfs-private.h,
+  gnomevfs/vfs-async-handle.c, gnomevfs/vfsmodule.c: Bug 121629: Wrapper for
+  gnome-vfs async API
+
+  * ChangeLog, gnome/ui.defs: Bug 139392: python-gnome lacks gnome_thumbnail_*
+  wrappers
+
+2004-06-26  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: Bug 144976: None doesn't work as the
+  second argument of gnome.help_display()
+
+  * ChangeLog, gtkhtml2/gtkhtml2.override: Bug 117470:
+  gtkhtml2.Stream.set_cancel_func() missing
+
+2004-06-24  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, examples/popt/popt.py, gnome/gnome.override,
+  gnome/gnomemodule.c: In popt parsing, [] as default value allows collecting
+  multiple values for the same command line option
+
+2004-06-20  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c: Fix bug 141336:
+  pygvfs_monitor_cancel leak and monitor_id type mismatch
+
+  * ChangeLog, gnome/gnome.override: Fix Bug 140035: Unable to find the
+  GNOME_FILE_DOMAIN_APP_HELP domain error
+
+2004-06-13  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo-arg.c, gconf/gconf.override,
+  gnome/applet.override, gnome/nautilus.override: Fix Mac OS 10.3 linking bug
+
+2004-04-17  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: postfix popt function
+
+  * ChangeLog, examples/popt/popt.py, gnome/gnome.defs, gnome/gnome.override:
+  more popt stuff: new gnome.popt_parse function
+
+2004-04-11  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog: mention popt bug number in changelog
+
+2004-04-10  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/gnome.override: Fix gnome.init segfault with no popt table
+
+  * ChangeLog, gnome/gnome.override: Fix LC_NUMERIC after gnome_program_init
+
+  * ChangeLog, configure.in: pygtk version check; new gnome-python version
+
+  * ChangeLog, gnome/vfs-file-info.c, gnome/vfsmodule.c,
+  gnomevfs/vfs-file-info.c, gnomevfs/vfsmodule.c: gnome.vfs.set_file_info()
+
+  * ChangeLog, examples/vfs/shell.py: Fix bug 139315: examples/vfs/shell.py
+  should pass vfs.FILE_INFO_GET_MIME_TYPE to get_file_info
+
+2004-04-09  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobomodule.c: moved G_TYPE_STRV code to pygtk
+
+  * ChangeLog, gnome/gnome.override: use g_strdup instead of strdup
+
+  * ChangeLog, Makefile.am, bonobo/Makefile.am, bonobo/bonoboui.defs,
+  examples/popt/popt.py, gnome/Makefile.am, gnome/gnome-types.defs,
+  gnome/gnome.defs, gnome/gnome.override, gnome/gnomemodule.c, gnome/ui.defs,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am: Fix bug 136953 (Can we have
+  support for popt?)
+
+2004-04-04  Alex Duggan <aldug@astrolinux.com>
+
+  * ChangeLog, configure.in: Fix the PyOrbit download URL.  2004-04-04  Alex
+  Duggan  <aldug@astrolinux.com>  * configure.in: Fix the PyOrbit download URL.
+
+2004-04-04  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c: Fix #138992
+  (gnome.vfs.mime_get_default_application segfaults on an unknown type)
+
+2004-03-31  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnome/Makefile.am, gnomecanvas/Makefile.am,
+  gnomevfs/Makefile.am: Add vfs-context.c here  * gnome/Makefile.am
+  (vfs_la_SOURCES): Add vfs-context.c here
+
+2004-03-30  Xavier Ordoquy <xordoquy@april.org>
+
+  * ChangeLog, gnome/ui.override: Commited patch for bug #138474 (thanks to
+  scottt for the patch).  2004-03-30  Xavier Ordoquy  <xordoquy@april.org>  *
+  gnome/ui.override: Commited patch for bug #138474 (thanks to scottt for the
+  patch).
+
+2004-03-20  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, NEWS, gnome/canvas.override, gnomecanvas/canvas.override: Canvas
+  bpath fix, by Gabor Bereczki; Merge in changes in NEWS from stable branch
+
+2004-03-15  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override, gnome/canvasmodule.c,
+  gnomecanvas/canvas.defs, gnomecanvas/canvas.override,
+  gnomecanvas/canvasmodule.c: Fix (again) #136617 (Gnome CanvasBpath object
+  cannot be used from python.)
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c:
+  pygvfs_get_mime_type_for_data fix
+
+2004-03-14  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override, gnome/canvasmodule.c,
+  gnomecanvas/canvas.defs, gnomecanvas/canvas.override,
+  gnomecanvas/canvasmodule.c: temporary hack to fix for #136617 (Gnome
+  CanvasBpath object cannot be used from python.)
+
+  * ChangeLog, gnome/applet.defs, gnome/appletmodule.c:
+  PannelApplet.get|set_flags, Fixes #137085 (Missing wrapper for
+  gnome.applet.Applet's flags)
+
+  * ChangeLog, configure.in, gnome/vfsmodule.c, gnomevfs/vfsmodule.c: gnome.vfs
+  requires pyorbit; added a bunch o gnome.vfs.mime_* wrappers; a few still
+  remain to be wrapped, though
+
+2004-03-13  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/Makefile.am, gnome/pygnomevfs-private.h,
+  gnome/pygnomevfs.h, gnome/vfs-xfer-progress-info.c, gnome/vfsmodule.c,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am, gnomevfs/pygnomevfs-private.h,
+  gnomevfs/pygnomevfs.h, gnomevfs/vfs-xfer-progress-info.c,
+  gnomevfs/vfsmodule.c: wrappers for gnome_vfs_xfer functions -> bug #134785
+
+2004-03-08  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, configure.in, gtkhtml2/gtkhtml2.defs: wrap
+  html_selection_get_text in gtkhtml2
+
+2004-02-29  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override,
+  gnomecanvas/canvas.defs, gnomecanvas/canvas.override:
+  gnome.canvas.Group.item_list getter
+
+  * ChangeLog, gconf/gconf.override: check gconf value type on
+  gconf.Value.get_xxx()
+
+2004-02-28  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c: fix
+  gnome.vfs.mime_get_description segfault on invalid mime type
+
+  * ChangeLog, gnome/ui.override: session management functions (#130164)
+
+2004-02-21  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobouimodule.c: register bonobo.ui constants
+
+2004-02-04  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobomodule.c, configure.in: fix bonobo-application
+  wrapper code; up required module versions
+
+2004-01-14  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, examples/gconf/simple-view.py: fix gconf example
+
+2003-12-31  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.defs, bonobo/bonobo.override,
+  examples/bonobo/bonobo-application.py: update to changes in
+  bonobo-application api
+
+2003-12-26  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/nautilus.defs, gnome/nautilus.override,
+  gnome/nautilusmodule.c: nautilus view fixes
+
+2003-12-25  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobomodule.c, examples/bonobo/bonobo-application.py:
+  final bonobo application touches to make it work well
+
+  * ChangeLog, examples/bonobo/bonobo-application.py: BonoboApplication
+  example/test
+
+  * ChangeLog, bonobo/bonobo.override:
+  _wrap_bonobo_application_register_message_v fix
+
+  * ChangeLog, bonobo/bonobo.override:
+  _wrap_bonobo_application_register_message_v fix
+
+2003-12-24  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo-types.defs, bonobo/bonobo.defs,
+  bonobo/bonobo.override: wrap BonoboApplication
+
+2003-12-20  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/ui.defs, gnome/ui.override: gnome.ui.IconList fixes
+
+  * ChangeLog, gconf/gconf.override: _wrap_gconf_value_get_list fix
+
+  * ChangeLog, gnomeprint/printui.defs, gnomeprint/printui.override: gnomeprint
+  api fix
+
+2003-12-19  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c:
+  gnome.vfs.mime_get_default_application
+
+  * ChangeLog, bonobo/bonobo.defs, bonobo/bonobo.override,
+  bonobo/bonoboui.defs, bonobo/bonoboui.override: fix gobject refcount in
+  bonobo object constructors
+
+2003-12-17  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, acinclude.m4, configure.in: GtkTextSearchFlags is a flags value,
+  rather than an enum.  2003-12-17  James Henstridge  <james@daa.com.au>  *
+  gtk/gtk-types.defs (TextSearchFlags): GtkTextSearchFlags is a flags value,
+  rather than an enum.  2003-12-16  James Henstridge  <james@daa.com.au>  *
+  configure.in (CFLAGS): add -fno-strict-aliasing to CFLAGS if the compiler
+  supports it.  The Python API breaks some of the strict aliasing rules.  *
+  acinclude.m4 (JH_ADD_CFLAG): new macro to check whether the compiler supports
+  a particular cflag.  * codegen/codegen.py
+  (GInterface.get_initial_class_substdict): GInterface wrappers should be
+  sizeof(PyObject), since they are mixins.
+
+2003-12-06  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnomeprint/printui.defs, gnomeprint/printui.override: update to
+  new libgnomeprintui 2.5.1 API
+
+2003-12-01  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, examples/gnomeprint/example_10.py: example program typo
+
+  * ChangeLog, gnomeprint/print.defs, gnomeprint/print.override:
+  gnomeprint.convert_distance
+
+2003-11-26  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in, gnome-python.spec.in, gnome/Makefile.am,
+  gnome/zvt.defs, gnome/zvt.override, gnome/zvtmodule.c,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am: remove zvt files.  2003-11-26 
+  James Henstridge  <james@daa.com.au>  * gnome/zvt*: remove zvt files.  *
+  gnome-python.spec.in: remove zvt references.  * configure.in: remove zvt
+  references.  * gnome/Makefile.am: remove zvt references.
+
+2003-11-25  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/__init__.py, bonobo/bonobo-types.defs,
+  bonobo/bonobo.defs, bonobo/bonobo.override, examples/bonobo/unknown.py:
+  BonoboForeignObject
+
+2003-11-20  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gconf/gconf.defs, gconf/gconf.override: ignore the
+  set_car/cdr_nocopy variants.  2003-11-20  James Henstridge 
+  <james@daa.com.au>  * gconf/gconf.override: ignore the set_car/cdr_nocopy
+  variants.  * gconf/gconf.defs (client_get_default): caller owns return.
+  (client_get_for_engine): caller owns return. (get): caller owns return.
+  (get_without_default): caller owns return. (get_entry): caller owns return.
+  (get_default_from_schema): caller owns return. (get_string): caller owns
+  return. (get_schema): caller owns return. (get_list): caller owns return.
+  (gconf_engine_get_for_address): caller owns return. (get_without_default):
+  caller owns return. (get_entry): caller owns return. (get_with_locale):
+  caller owns return. (get_default_from_schema): caller owns return.
+  (get_string): caller owns return. (get_schema): caller owns return.
+  (get_list): caller owns return.
+
+2003-11-14  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/applet.override, gnome/canvas.override,
+  gnome/nautilus.override, gnome/ui.override, gnomecanvas/canvas.override,
+  gnomeprint/print.override, gnomeprint/printui.override: define
+  NO_IMPORT_PYGOBJECT.  2003-11-12  James Henstridge  <james@daa.com.au>  *
+  gnomeprint/printui.override: define NO_IMPORT_PYGOBJECT.  *
+  gnomeprint/print.override: define NO_IMPORT_PYGOBJECT.  *
+  gnome/nautilus.override: define NO_IMPORT_PYGOBJECT and NO_IMPORT_PYORBIT.  *
+  gnome/applet.override: define NO_IMPORT_PYGOBJECT.
+
+2003-11-12  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gconf/gconf.override, gnome/gnome.override, gnome/ui.override:
+  define NO_IMPORT_PYGOBJECT.  2003-11-12  James Henstridge  <james@daa.com.au>
+   * gnome/gnome.override: define NO_IMPORT_PYGOBJECT.  * gnome/ui.override:
+  define NO_IMPORT_PYGOBJECT.  * gconf/gconf.override: define
+  NO_IMPORT_PYGOBJECT here.
+
+2003-10-14  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, Makefile.am, examples/gnomeprint/README,
+  examples/gnomeprint/example_01.py, examples/gnomeprint/example_02.py,
+  examples/gnomeprint/example_03.py, examples/gnomeprint/example_04.py,
+  examples/gnomeprint/example_05.py, examples/gnomeprint/example_06.py,
+  examples/gnomeprint/example_08.py, examples/gnomeprint/example_09.py,
+  examples/gnomeprint/example_10.glade, examples/gnomeprint/example_10.py,
+  examples/gnomeprint/example_11.py, examples/gnomeprint/sample-image.png:
+  gnomeprint examples
+
+2003-10-13  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnomeprint/printui.defs: gnomeprint.ui.FontDialog fix
+
+  * ChangeLog, gnomeprint/print.defs: wrap gnome_print_gsave()
+
+2003-10-02  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/ui.override: make sure that translator_credits is not NULL
+  before checking to see if it  2003-10-02  Matt Wilson  <msw@redhat.com>  *
+  gnome/ui.override (_wrap_gnome_about_new): make sure that translator_credits
+  is not NULL before checking to see if it is "translator_credits"  Fixes the
+  fix for bug #120901.
+
+2003-09-02  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, ChangeLog.pre-2-0, Makefile.am: move old change log out of the
+  way.  2003-09-02  James Henstridge  <james@daa.com.au>  * ChangeLog.pre-2-0:
+  move old change log out of the way.
+
+2003-09-01  James Henstridge <james@daa.com.au>
+
+  * .cvsignore, ChangeLog, Makefile.am, PKG-INFO.in, configure.in,
+  gtkhtml2/gtkhtml2module.c, setup.py: add PKG-INFO file.  2003-09-01  James
+  Henstridge  <james@daa.com.au>  * PKG-INFO.in: add PKG-INFO file.  *
+  gtkhtml2/gtkhtml2module.c: add missing prototype.  * setup.py: increment
+  version number.  * configure.in: increment version number.
+
+2003-08-29  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/ui.override: if translator_credits is
+  "translator_credits", set it to NULL. Fixes bug  2003-08-29  James Henstridge
+   <james@daa.com.au>  * gnome/ui.override (_wrap_gnome_about_new): if
+  translator_credits is "translator_credits", set it to NULL.  Fixes bug
+  #120901.
+
+2003-08-28  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/ui.override: allow passing None for translator_credits.
+  Default to None. Fixes bug  2003-08-28  James Henstridge  <james@daa.com.au> 
+  * gnome/ui.override (_wrap_gnome_about_new): allow passing None for
+  translator_credits.  Default to None.  Fixes bug #120901.
+
+2003-08-24  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, Makefile.am, bonobo/activationmodule.c, bonobo/bonobomodule.c,
+  bonobo/bonobouimodule.c, configure.in, gconf/gconfmodule.c,
+  gnome/Makefile.am, gnome/appletmodule.c, gnome/canvasmodule.c,
+  gnome/gnomemodule.c, gnome/nautilusmodule.c, gnome/uimodule.c,
+  gnome/vfsmodule.c, gnome/zvtmodule.c, gnomecanvas/Makefile.am,
+  gnomecanvas/canvasmodule.c, gnomeprint/printmodule.c,
+  gnomeprint/printuimodule.c, gnomevfs/Makefile.am, gnomevfs/vfsmodule.c,
+  gtkhtml2/gtkhtml2module.c, setup.py: increment version number to 1.99.18. 
+  2003-08-24  James Henstridge  <james@daa.com.au>  * configure.in, setup.py:
+  increment version number to 1.99.18.  * gtkhtml2/gtkhtml2module.c
+  (initgtkhtml2): same here.  * gnome/zvtmodule.c (initzvt): same here.  *
+  gnome/vfsmodule.c (initvfs): same here.  * gnome/uimodule.c (initui): same
+  here.  * gnomeprint/printuimodule.c (initui): same here.  *
+  gnomeprint/printmodule.c (init_print): same here.  * gnome/nautilusmodule.c
+  (initnautilus): same here.  * gnome/gnomemodule.c (init_gnome): same here.  *
+  gnome/canvasmodule.c (initcanvas): same here.  * gnome/appletmodule.c
+  (initapplet): same here.  * gconf/gconfmodule.c (initgconf): same here.  *
+  bonobo/bonobouimodule.c (initui): same here.  * bonobo/bonobomodule.c
+  (init_bonobo): same here.  * bonobo/activationmodule.c (initactivation):
+  don't convert exceptions to fatal errors.
+
+  * ChangeLog, gnome/ui.defs: rename connect to connect_to_session_manager, to
+  get rid of conflict with  2003-08-24  James Henstridge  <james@daa.com.au>  *
+  gnome/ui.defs (connect_to_session_manager): rename connect to
+  connect_to_session_manager, to get rid of conflict with GObject.connect. 
+  This is incompatible, but needs to be done. Fixes bug #119420.
+
+2003-08-24  James Henstridge <jamesh@src.gnome.org>
+
+  * ChangeLog, setup.py: (py_modules): install gnome.__init__ if libgnome or
+  libgnomecanvas can build.  (fixes bug #120483).
+
+2003-08-24  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, setup.py: import getoutput from dsextras.py, which has a win32
+  fix.  2003-08-24  James Henstridge  <james@daa.com.au>  * setup.py: import
+  getoutput from dsextras.py, which has a win32 fix.
+
+2003-08-23  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/activationmodule.c, bonobo/bonobomodule.c,
+  gnome/gnome.override: Possible fix for bug #104581:  2003-08-23  James
+  Henstridge  <james@daa.com.au>  Possible fix for bug #104581:  *
+  bonobo/activationmodule.c (initactivation): and here.  *
+  bonobo/bonobomodule.c (init_bonobo): save and restore the SIGCHLD handler
+  here too.  * gnome/gnome.override (_wrap_gnome_program_init): save and
+  restore the SIGCHLD handler around this call.
+
+2003-08-22  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnomeprint/print.override: fix object names imported from pango
+  module.  2003-08-22  James Henstridge  <james@daa.com.au>  *
+  gnomeprint/print.override: fix object names imported from pango module.
+
+2003-08-17  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/applet.defs, gnome/appletmodule.c: add constants. 
+  2003-08-17  James Henstridge  <james@daa.com.au>  * gnome/appletmodule.c
+  (initapplet): add constants.  * gnome/applet.defs (get_background): change
+  return type to int, since the applet library doesn't register enums.
+  (get_orient): similar here.
+
+2003-08-12  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonoboui.defs: rename from bonobo_canvas_new.  2003-08-12
+   James Henstridge  <james@daa.com.au>  * bonobo/bonoboui.defs (canvas_new):
+  rename from bonobo_canvas_new.
+
+  * ChangeLog, gnome/ui.defs, gnome/ui.override: rename from
+  gnome_master_client. (accelerators_sync): rename from  2003-08-12  James
+  Henstridge  <james@daa.com.au>  * gnome/ui.defs (master_client): rename from
+  gnome_master_client. (accelerators_sync): rename from
+  gnome_accelerators_sync. (app_setup_toolbar): rename from
+  gnome_app_setup_toolbar. (app_fill_menu): rename from gnome_app_fill_menu.
+  (app_fill_menu_with_data): rename from gnome_app_fill_menu_with_data.
+  (app_fill_menu_custom): rename from gnome_app_fill_menu_custom.
+  (app_ui_configure_configurable): rename from
+  gnome_app_configure_configurable. (app_fill_toolbar): rename from
+  gnome_app_fill_toolbar. (app_fill_toolbar_with_data): rename from
+  gnome_app_fill_toolbar_with_data. (app_fill_toolbar_custom): rename from
+  gnome_app_fill_toolbar_custom. (app_find_menu_pos): rename from
+  gnome_app_find_menu_pos. (app_install_appbar_menu_hints): rename from
+  gnome_app_install_appbar_menu_hints. (app_install_statusbar_menu_hints):
+  rename from gnome_app_install_statusbar_menu_hints. (app_set_progress):
+  rename from gnome_app_set_progress. (app_progress_done): rename from
+  gnome_app_progress_done. (client_disable_master_connection): rename from
+  gnome_client_disable_master_connection. (interaction_key_return): rename from
+  gnome_interaction_key_return. (mdi_get_app_from_view): rename from
+  gnome_mdi_get_app_from_view. (mdi_get_child_from_view): rename from
+  gnome_mdi_get_child_from_view. (mdi_get_menubar_info): rename from
+  gnome_mdi_get_menubar_info. (mdi_get_toolbar_info): rename from
+  gnome_mdi_get_toolbar_info. (mdi_get_child_menu_info): rename from
+  gnome_mdi_get_child_menu_info. (popup_menu_get_accel_group): rename from
+  gnome_popup_menu_get_accel_group. (popup_menu_attach): rename from
+  gnome_popup_menu_attach. (popup_menu_do_popup): rename from
+  gnome_popup_menu_do_popup. (popup_menu_do_popup_modal): rename from
+  gnome_popup_menu_do_popup_modal. (popup_menu_append): rename from
+  gnome_popup_menu_append. (scores_display): rename from gnome_scores_display.
+  (scores_display_with_pixmap): rename from gnome_scores_display_with_pixmap.
+  (GnomeScores.*): fix bad defs for methods.  * gnome/ui.override:
+  s/ignore_glob/ignore-glob/, so that the _get_type functions don't get
+  included.
+
+2003-08-05  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * bonobo/bonobo.override, bonobo/bonobomodule.c: bonobo stream memory wrap;
+  flags
+
+2003-08-03  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.defs: misc bonobo fixes
+
+2003-08-03  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, autogen.sh, bonobo/Makefile.am, bonobo/bonoboui.defs,
+  gconf/Makefile.am, gnome/Makefile.am, gnomecanvas/Makefile.am,
+  gnomeprint/Makefile.am, gnomevfs/Makefile.am, gtkhtml2/Makefile.am: add
+  missing definition. (bug #118031).  2003-08-03  James Henstridge 
+  <james@daa.com.au>  * bonobo/bonoboui.defs (ui_util_pixbuf_to_xml): add
+  missing definition. (bug #118031).
+
+2003-07-21  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo.override, gconf/Makefile.am,
+  gnome/Makefile.am, gnomecanvas/Makefile.am, gnomeprint/Makefile.am,
+  gnomevfs/Makefile.am, gtkhtml2/Makefile.am: add a custom wrapper for
+  bonobo_main() that unblocks threads. (fixes bug  2003-07-21  James Henstridge
+   <james@daa.com.au>  * bonobo/bonobo.override (_wrap_bonobo_main): add a
+  custom wrapper for bonobo_main() that unblocks threads.  (fixes bug #112102).
+   * gtkhtml2/Makefile.am: same here.  * gnomeprint/Makefile.am: same here.  *
+  gconf/Makefile.am: same here.  * bonobo/Makefile.am: same here.  *
+  gnome/Makefile.am: change module.so suffixes to .so.
+
+2003-07-16  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonobo.defs, bonobo/bonobo.override: bonobo generic
+  factory
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c:
+  gnome_vfs_read_entire_file()
+
+2003-07-14  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, bonobo/bonoboui.override: bonobo.ui.Component constructor
+  enhancement
+
+2003-07-09  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog: forgotten CL entry :/
+
+  * ChangeLog, examples/gnomeprint/test-print.py, gnomeprint/printui.defs:
+  GnomePrintDialog fixes
+
+2003-04-29  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, dsextras.py, gnome/gnome-vfs-python-method.c,
+  gnome/pygnomevfs-private.h, gnome/pygnomevfs.h, gnome/vfs-context.c,
+  gnome/vfs-dir-handle.c, gnome/vfs-file-info.c, gnome/vfs-handle.c,
+  gnome/vfs-uri.c, gnome/vfsmodule.c, gnomevfs/gnome-vfs-python-method.c,
+  gnomevfs/pygnomevfs-private.h, gnomevfs/pygnomevfs.h, gnomevfs/vfs-context.c,
+  gnomevfs/vfs-dir-handle.c, gnomevfs/vfs-file-info.c, gnomevfs/vfs-handle.c,
+  gnomevfs/vfs-uri.c, gnomevfs/vfsmodule.c, setup.py: Add exceptions
+  (pygnome_vfs_result_check): New function.  * gnome/vfsmodule.c: Add
+  exceptions (pygnome_vfs_result_check): New function.
+  (pygnome_vfs_exception_check): New function.  * gnome/vfs-context.c: New
+  file, wraps GnomeVFSContext.  * setup.py: Update for the gnome-vfs method and
+  dsextras from pygtk.  * dsextras.py: Remove, use the one from pygtk instead. 
+  * gnome/pygnomevfs.h: Split in two.  * gnome/pygnomevfs-private.h: New file. 
+  * gnome/gnome-vfs-python-method.c: New file
+
+2003-03-23  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in, gnomeprint/Makefile.am, setup.py: same here. 
+  2003-03-23  James Henstridge  <james@daa.com.au>  * setup.py (MICRO_VERSION):
+  same here.  * configure.in: increment version number.
+
+2003-03-06  Johan Dahlin <zilch@src.gnome.org>
+
+  * .cvsignore: *** empty log message ***
+
+  * ChangeLog, Makefile.am, gnome/appletmodule.c: Add applet stuff here.  *
+  Makefile.am (EXTRA_DIST): Add applet stuff here.  * gnome/appletmodule.c
+  (initapplet): Call bonobo_init before gnome_program_module_register to avoid
+  segfault when calling gnome.applet.Applet().
+
+2003-03-05  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnomeprint/printmodule.c: foo
+
+2003-02-26  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnomeprint/Makefile.am, gnomeprint/print-arg-types.py,
+  gnomeprint/print-types.c, gnomeprint/print-types.h, gnomeprint/print.defs,
+  gnomeprint/print.override, gnomeprint/printmodule.c: foo
+
+2003-02-25  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnome/Makefile.am, gnomecanvas/Makefile.am,
+  gnomevfs/Makefile.am: 1morefix
+
+  * ChangeLog, bonobo/Makefile.am, gnomeprint/Makefile.am: compilation fix
+
+2003-02-13  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, Makefile.am, examples/gnomeprint/test-print.py: new gnomeprint
+  example
+
+2003-02-11  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnomeprint/Makefile.am: Doh. Rename back to uimodule, (from
+  printui). This should build  * gnomeprint/Makefile.am (gnomeprintui_la): Doh.
+  Rename back to uimodule, (from printui). This should build gnomeprint.ui
+  instead of gnomeprint.printui
+
+  * configure.in: Change  check to make frb happy
+
+2003-02-10  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog: *** empty log message ***
+
+  * configure.in: Fix the status output. Should be right now.  * configure.in:
+  Fix the status output. Should be right now.
+
+2003-02-10  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonobo-arg.c: remove "STATIC" from the type names.
+  (_pybonobo_register_boxed_types): add  2003-02-10  James Henstridge 
+  <james@daa.com.au>  * bonobo/bonobo-arg.c (_pybonobo_register_boxed_types):
+  remove "STATIC" from the type names. (_pybonobo_register_boxed_types): add
+  special handler for CORBA::Object types. (_pybonobo_register_boxed_types):
+  handler for Bonobo::Unknown.
+
+2003-02-10  Gustavo J. A. M. Carneiro <gcarneiro@src.gnome.org>
+
+  * ChangeLog, gnomeprint/print.override: warnings fix
+
+2003-02-09  Johan Dahlin <jdahlin@async.com.br>
+
+  * ChangeLog, configure.in, setup.py: === gnome-python 1.99.15 === 2003-02-08 
+  Johan Dahlin  <jdahlin@async.com.br>  * configure.in: increment version
+  number (and pygtk requirement)  * setup.py: Ditto.
+
+2003-02-08  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, Makefile.am, dsextras.py, gnome/ui.override,
+  gnomeprint/Makefile.am, gnomeprint/uimodule.c, setup.py: Add setup.py and
+  dsextras.py  * Makefile.am (EXTRA_DIST): Add setup.py and dsextras.py  *
+  dsextras.py, setup.py: New files. (for distutils)  * gnomeprint/uimodule.c:
+  Removed, It was a dup.  * gnomeprint/Makefile.am: s/uimodule/printuimodule/ 
+  * gnome/ui.override (_wrap_gnome_icon_list_set_icon_data): Cast return value
+  to avoid warning.
+
+2003-02-08  Gustavo J. A. M. Carneiro <gustavo@users.sourceforge.net>
+
+  * ChangeLog, gnomeprint/print.defs, gnomeprint/print.override: Made both
+  arguments optional.  2003-02-05  Gustavo J. A. M. Carneiro 
+  <gustavo@users.sourceforge.net>  * gnomeprint/print.override
+  (_wrap_gnome_glyphlist_bbox): Made both arguments optional.  *
+  gnomeprint/print.defs (gnome_glyphlist_new): Make it a constructor of
+  GnomeGlyphList.
+
+2003-01-30  James Henstridge <jamesh@src.gnome.org>
+
+  * configure.in: fix up the problem when "$export_dynamic" is empty
+
+2003-01-30  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonoboui.override: make the second argument optional and
+  accept None.  2003-01-04  James Henstridge  <james@daa.com.au>  *
+  bonobo/bonoboui.override (_wrap_bonobo_widget_new_control): make the second
+  argument optional and accept None.
+
+2003-01-29  Johan Dahlin <zilch@src.gnome.org>
+
+  * bonobo/bonoboui.defs: Remove bonobo_zoomable_corba_object_create, since
+  it's not in the library any longer
+
+2003-01-28  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, bonobo/bonoboui.override: Add propertybag import here  *
+  bonobo/bonoboui.override: Add propertybag import here
+
+2003-01-26  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo-types.defs,
+  bonobo/bonobo.defs, bonobo/bonobo.override, gnome/pygnomevfs.h,
+  gnome/vfsmodule.c, gnomevfs/pygnomevfs.h, gnomevfs/vfsmodule.c: Register
+  bonobo-types here too.  * bonobo/Makefile.am (.defs.c): Register bonobo-types
+  here too.  * bonobo/bonobo-types.defs (EventSource): Add.  *
+  bonobo/bonobo.defs (bonobo_event_source_new): Fix typo.  *
+  bonobo/bonobo.override: Don't ignore event_source_new
+  (_wrap_bonobo_event_source_client_add_listener_closure): Correct format args
+  to PyArg_ParseTupleAndKeywords. Fixes #102190.  * gnome/vfsmodule.c
+  (pygvfs_monitor_add, pygvfs_monitor_cancel): Impl.  VS:
+  ----------------------------------------------------------------------
+
+2003-01-21  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnome/ui.override: Impl. Fixes #102557  * gnome/ui.override
+  (_wrap_gnome_icon_list_get_icon_data): (_wrap_gnome_icon_list_set_icon_data):
+  Impl. Fixes #102557
+
+  * ChangeLog, gconf/gconf.override: Return an empty list instead of None to
+  make the return value always  * gconf/gconf.override
+  (_wrap_gconf_client_get_list): Return an empty list instead of None to make
+  the return value always iterable.
+
+2003-01-15  Johan Dahlin <jdahlin@async.com.br>
+
+  * ChangeLog, Makefile.am, configure.in, gnomeprint/Makefile.am: Remove bogus
+  include, make it buildable without libgnomeprintui. Register  2003-01-15 
+  Johan Dahlin  <jdahlin@async.com.br>  * gnomeprint/Makefile.am: Remove bogus
+  include, make it buildable without libgnomeprintui. Register canvas from the
+  correct directory  * configure.in: Upped required gnomeprint and gnomeprintui
+  version to 2.1.9  * Makefile.am: protect gnomeprint sub directory bu defines
+
+2003-01-14  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, configure.in: output status about what modules that will be
+  built or not.  * configure.in: output status about what modules that will be
+  built or not.
+
+  * gnomeprint/.cvsignore: forgot the .cvsignore
+
+  * .cvsignore, ChangeLog, configure.in, gnomeprint/Makefile.am,
+  gnomeprint/__init__.py, gnomeprint/art-gtype.c, gnomeprint/art-gtype.h,
+  gnomeprint/art.defs, gnomeprint/print-types.c, gnomeprint/print-types.h,
+  gnomeprint/print.defs, gnomeprint/print.override, gnomeprint/printmodule.c,
+  gnomeprint/printui.defs, gnomeprint/printui.override,
+  gnomeprint/printuimodule.c, gnomeprint/uimodule.c: Checked in complete
+  libgnomeprint and libgnomeprintui bindings from  * gnomeprint/*: Checked in
+  complete libgnomeprint and libgnomeprintui bindings from Gustavo Carneiro.
+  Fixes #102226  * configure.in: Added necessary configure checks.
+
+2003-01-13  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnome/nautilus.defs, gnome/nautilus.override,
+  gnome/nautilusmodule.c: Added constants.  * gnome/nautilusmodule.c
+  (initnautilus): Added constants.  * gnome/nautilus.defs (close_window):
+  Added. (set_listener_mask): Change mask from NautilusViewListenerMask to int.
+   * gnome/nautilus.override
+  (_wrap_nautilus_view_open_location_force_new_window)
+  (_wrap_nautilus_view_report_location_change)
+  (_wrap_nautilus_view_report_redirect)
+  (_wrap_nautilus_view_report_selection_change):
+
+2003-01-11  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo-arg-types.py,
+  bonobo/bonobo-arg.c, bonobo/bonobomodule.c: Add bonobo-arg.c  *
+  bonobo/Makefile.am (_bonobomodule_la_SOURCES): Add bonobo-arg.c  *
+  bonobo/bonobo-arg-types.py (arg): Register BonoboArg as a CORBA_any type and
+  BonoboArgType as a CORBA_TypeCode.  * bonobo/bonobomodule.c (init_bonobo):
+  Call _pybonobo_register_boxed_types.  * bonobo/bonobo-arg.c
+  (PyBonoboArg_from_value): New file for handling of boxed types
+  (BonoboArg/BonoboArgType)
+
+2003-01-01  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnome/uimodule.c: Add PAD/PAD_SMALL/PAD_BIG, fixes #102098.  *
+  gnome/uimodule.c (initui): Add PAD/PAD_SMALL/PAD_BIG, fixes #102098.
+
+2002-12-30  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnome/pygnomevfs.h, gnome/vfsmodule.c, gnomevfs/pygnomevfs.h,
+  gnomevfs/vfsmodule.c: Impl.  * gnome/vfsmodule.c (pygvfs_mime_get_icon,
+  pygvfs_mime_set_icon) (pygvfs_mime_get_description,
+  pygvfs_mime_set_description) (pygvfs_mime_can_be_executable)
+  (pygvfs_mime_set_can_be_executable): Impl.
+
+2002-12-28  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonoboui.override: add implementation, from Arjan J.
+  Molenaar <arjanmolenaar@hetnet.nl> (bug  2002-12-28  James Henstridge 
+  <james@daa.com.au>  * bonobo/bonoboui.override
+  (_wrap_bonobo_ui_component_add_listener): add implementation, from Arjan J.
+  Molenaar <arjanmolenaar@hetnet.nl> (bug #102091).
+
+2002-12-27  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in: increment version number, and require
+  pygtk-1.99.14 and pyorbit-1.99.3  2002-12-27  James Henstridge 
+  <james@daa.com.au>  * configure.in: increment version number, and require
+  pygtk-1.99.14 and pyorbit-1.99.3
+
+2002-12-24  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, autogen.sh, configure.in: use automake-1.7 in preference to 1.6.
+   2002-12-23  James Henstridge  <james@daa.com.au>  * autogen.sh (AUTOMAKE):
+  use automake-1.7 in preference to 1.6.  * configure.in (GLIB_LIBS): remove
+  -export-dynamic from flags.  2002-12-23  James Henstridge  <james@daa.com.au>
+   * configure.in (PYORBIT_LIBS): add code to get rid of the "-export-dynamic"
+  from the link flags, since we want to limit the number of exported symbols. 
+  * autogen.sh (AUTOMAKE): allow building with automake 1.7 or 1.6.  *
+  src/ORBitmodule.c (add_tc_constants): new function to add CORBA.TC_*
+  constants.  2002-12-23  James Henstridge  <james@daa.com.au>  * configure.in
+  (PYORBIT_LIBS): add code to get rid of the "-export-dynamic" from the link
+  flags, since we want to limit the number of exported symbols.  * autogen.sh
+  (AUTOMAKE): allow building with automake 1.7 or 1.6.  * src/ORBitmodule.c
+  (add_tc_constants): new function to add CORBA.TC_* constants.
+
+2002-12-23  Johan Dahlin <jdahlin@async.com.br>
+
+  * ChangeLog, examples/applet/GNOME_PythonAppletSample.server,
+  examples/applet/README, examples/applet/applet.py: Added applet example by
+  frb, fixes #101722.  2002-12-22  Johan Dahlin  <jdahlin@async.com.br>  *
+  example/applet: Added applet example by frb, fixes #101722.
+
+2002-12-13  Jon K Hellan <hellan@acm.org>
+
+  * ChangeLog, bonobo/bonoboui.override: Accept string as well as
+  PyCORBA_Object as first argument. Fixes  2002-12-13  Jon K Hellan 
+  <hellan@acm.org>  * bonobo/bonoboui.override
+  (_wrap_bonobo_widget_new_control): Accept string as well as PyCORBA_Object as
+  first argument. Fixes http://bugzilla.gnome.org/show_bug.cgi?id=101052
+
+2002-12-08  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c: Added wrappers for
+  pygvfs_get_mime_type and pygvfs_get_mime_type_for_data.  * gnome/vfsmodule.c:
+  Added wrappers for pygvfs_get_mime_type and pygvfs_get_mime_type_for_data.
+
+2002-12-05  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog, gnome/ui.defs: Add more fields to GnomeDruidPageStandard.  *
+  gnome/ui.defs: Add more fields to GnomeDruidPageStandard.
+
+2002-11-20  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonobo.override, configure.in, gnome/ui.defs: error out
+  if the factory could not be created.  2002-11-20  James Henstridge 
+  <james@daa.com.au>  * bonobo/bonobo.override
+  (_wrap_bonobo_generic_factory_new_closure): error out if the factory could
+  not be created. (_wrap_bonobo_moniker_simple_new_closure): and here.
+  (_wrap_bonobo_listener_new_closure): and here.
+  (_wrap_bonobo_property_bag_new_closure): and here.
+  (_wrap_bonobo_item_handler_new_closure): and here.  * gnome/ui.defs
+  (gnome_href_new): fix typo (bug #98137).
+
+2002-11-06  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/ui.override: ref the about box, since it is a window (so
+  the initial reference does not  2002-11-06  James Henstridge 
+  <james@daa.com.au>  * gnome/ui.override (_wrap_gnome_about_new): ref the
+  about box, since it is a window (so the initial reference does not belong to
+  us).  Fixes bug 92926, from Arjan.
+
+2002-11-04  Johan Dahlin <jdahlin@async.com.br>
+
+  * ChangeLog, gconf/gconf.defs, gconf/gconf.override: Patch from Ha Shao
+  <hashao@hashao.hypermart.net>, fixes #97567: Added.  2002-11-04  Johan Dahlin
+   <jdahlin@async.com.br>  Patch from Ha Shao <hashao@hashao.hypermart.net>,
+  fixes #97567: * gconf/gconf.defs (get_car, get_cdr, get_list_type, get_list):
+  Added. * gconf/gconf.override (_wrap_gconf_value_get_car,
+  _wrap_gconf_value_get_cdr) (_wrap_gconf_value_get_list): Impl.
+
+  * ChangeLog, gconf/gconf.override: Wrap the whole file to be readable when
+  terminal width = 80. Use the same  2002-11-04  Johan Dahlin 
+  <jdahlin@async.com.br>  * gconf/gconf.override: Wrap the whole file to be
+  readable when terminal width = 80. Use the same coding style in the whole
+  file. (_wrap_gconf_client_all_entries): Remove bogus Py_INCREF on the return
+  value. (_wrap_gconf_client_all_dirs): Dito.
+
+2002-11-04  Ross Burton <ross@burtonini.com>
+
+  * ChangeLog, gnome/ui.defs: Add the vbox and title fields in the
+  GnomeDruidPageStandard object.  2002-08-28  Ross Burton  <ross@burtonini.com>
+   * gnome/ui.defs: Add the vbox and title fields in the GnomeDruidPageStandard
+  object.
+
+2002-11-03  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, gconf/gconf.override: Suggested by Ha Shao Return a list instead
+  of tuple, to make things  2002-11-03  Johan Dahlin  <jdahlin@telia.com> 
+  Suggested by Ha Shao * gconf/gconf.override (_wrap_gconf_client_get_list):
+  Return a list instead of tuple, to make things easier. (get_list; modify;
+  set_list, instead of get_list; convert to list, modify; set_list)
+
+2002-11-02  Johan Dahlin <jdahlin@async.com.br>
+
+  * ChangeLog, gconf/gconf.override: Patch from Ha Shao
+  hashao@hashao.hypermart.net, fixes #97476 New helper  2002-11-02  Johan
+  Dahlin  <jdahlin@async.com.br>  Patch from Ha Shao
+  hashao@hashao.hypermart.net, fixes #97476 * gconf/gconf.override
+  (pygconf_parse_gvalue) (pygconf_parse_gvalue, pygconf_parse_pygvalue,
+  pygconf_new_type): New helper functions. (_wrap_gconf_client_get_pair,
+  _wrap_gconf_client_set_pair) (pygconf_parse_listvalue,
+  _wrap_gconf_client_get_list) (_wrap_gconf_client_set_list): Impl.
+
+2002-11-01  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, examples/bonobo/echo/README,
+  examples/bonobo/echo/echo-client.py, gnome/Makefile.am,
+  gnome/nautilus.override, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: make
+  necessary changes.  2002-11-01  James Henstridge  <james@daa.com.au>  *
+  examples/bonobo/echo/echo-client.py: make necessary changes.
+
+  * ChangeLog, bonobo/__init__.py, bonobo/activationmodule.c: load the "Bonobo"
+  typelib on import.  2002-11-01  James Henstridge  <james@daa.com.au>  *
+  bonobo/__init__.py: load the "Bonobo" typelib on import.  *
+  bonobo/activationmodule.c: initial conversion of bonobo activation module.
+
+2002-10-31  James Henstridge <jamesh@src.gnome.org>
+
+  * bonobo/__init__.py, bonobo/activationmodule.c: fix up small typo.
+
+2002-10-31  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/activationmodule.c: initial conversion of bonobo
+  activation module.  2002-11-01  James Henstridge  <james@daa.com.au>  *
+  bonobo/activationmodule.c: initial conversion of bonobo activation module.
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo-arg-types.py,
+  bonobo/bonobo.override, bonobo/bonoboui.override, configure.in: convert to
+  pyorbit.  2002-11-01  James Henstridge  <james@daa.com.au>  *
+  bonobo/bonoboui.override: convert to pyorbit.  2002-10-31  James Henstridge 
+  <james@daa.com.au>  * bonobo/bonobo.override: convert to pyorbit.  *
+  bonobo/bonobo-arg-types.py: update for use with pyorbit.  *
+  bonobo/Makefile.am (INCLUDES): get pyorbit includes.  * configure.in: require
+  pyorbit instead of orbit-python.
+
+  * ChangeLog, bonobo/bonobo.defs, bonobo/bonoboui.defs: add caller-owns-return
+  changes from patch by Arjan (bug 93312).  2002-10-31  James Henstridge 
+  <james@daa.com.au>  * bonobo/bonobo.defs, bonobo/bonoboui.defs: add
+  caller-owns-return changes from patch by Arjan (bug 93312).
+
+2002-08-25  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in, examples/nautilus/README: increase version number.
+   2002-08-25  James Henstridge  <james@daa.com.au>  * configure.in: increase
+  version number.
+
+2002-08-18  James Henstridge <jamesh@src.gnome.org>
+
+  * Makefile.am, gnome-python.spec.in: update spec files.
+
+2002-08-18  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/Makefile.am, gconf/Makefile.am, gnome-python.spec.in,
+  gnome/Makefile.am, gnomecanvas/Makefile.am, gnomevfs/Makefile.am,
+  gtkhtml2/Makefile.am: update spec file to reflect new install location. 
+  2002-08-18  James Henstridge  <james@daa.com.au>  * gnome-python.spec.in:
+  update spec file to reflect new install location.  * gtkhtml2/Makefile.am:
+  install into the gtk-2.0 directory.  * gconf/Makefile.am: install into the
+  gtk-2.0 directory.  * bonobo/Makefile.am: install into the gtk-2.0 directory.
+   * gnome/Makefile.am: install into the gtk-2.0 directory.
+
+  * ChangeLog, bonobo/bonoboui.defs, examples/vfs/shell.py,
+  gnome/nautilus.override, gnome/ui.override: change return value to
+  BonoboObject.  2002-08-18  James Henstridge  <james@daa.com.au>  *
+  gnome/nautilus.override (nautilus_view_create_function): change return value
+  to BonoboObject.  * bonobo/bonoboui.defs (widget_new_control_from_objref):
+  caller owns return value. (new_child): same here.  * gnome/ui.override
+  (_wrap_gnome_about_new): get rid of the gtk_object_sink() call.  This is now
+  handled automatically.
+
+2002-08-18  Jonathan Blandford <jrb@gnome.org>
+
+  * ChangeLog, gnome/ui.defs: Add a time_t parameter type.  Sat Aug 17 20:02:43
+  2002  Jonathan Blandford  <jrb@gnome.org>  * codegen/argtypes.py
+  (TimeTArg.write_param): Add a time_t parameter type.  Sat Aug 17 19:59:02
+  2002  Jonathan Blandford  <jrb@gnome.org>  * gnome/ui.defs:
+  s/GnomeDataEdit/GnomeDateEdit
+
+2002-08-01  Jonathan Blandford <jrb@redhat.com>
+
+  * ChangeLog, gnome/ui.defs: add fields  Thu Aug  1 02:05:26 2002  Jonathan
+  Blandford  <jrb@redhat.com>  * gnome/ui.defs (Druid): add fields
+
+2002-07-23  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/vfs-dir-handle.c, gnomevfs/vfs-dir-handle.c: add trailing
+  NULL to keyword list. Fixes bug found by micampe.  2002-07-23  James
+  Henstridge  <james@daa.com.au>  * gnome/vfs-dir-handle.c (pygvdir_init): add
+  trailing NULL to keyword list.  Fixes bug found by micampe.
+
+2002-07-18  Matt Wilson <msw@src.gnome.org>
+
+  * gtkhtml2/gtkhtml2.defs: add field
+
+2002-07-10  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in: update version number.  2002-07-10  James
+  Henstridge  <james@daa.com.au>  * configure.in: update version number.
+
+2002-06-22  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, gconf/gconf.defs, gconf/gconf.override: Impl
+  (_wrap_gconf_client_all_entries): Impl  2002-06-22  Johan Dahlin 
+  <jdahlin@telia.com>  * gconf/gconf.override (_wrap_gconf_client_all_dirs):
+  Impl (_wrap_gconf_client_all_entries): Impl  * gconf/gconf.defs: Clean up
+
+2002-06-16  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, Makefile.am, examples/vfs/shell.py, gnome/vfsmodule.c,
+  gnomevfs/vfsmodule.c: add example gnome-vfs program.  2002-06-16  James
+  Henstridge  <james@daa.com.au>  * examples/vfs/shell.py: add example
+  gnome-vfs program.
+
+  * ChangeLog, gnome/vfsmodule.c, gnomevfs/vfsmodule.c: add some extra
+  functions.  2002-06-16  James Henstridge  <james@daa.com.au>  *
+  gnome/vfsmodule.c (pygnomevfs_functions): add some extra functions.
+
+2002-06-15  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/Makefile.am, gnome/pygnomevfs.h, gnome/vfs-handle.c,
+  gnome/vfsmodule.c, gnomecanvas/Makefile.am, gnomevfs/Makefile.am,
+  gnomevfs/pygnomevfs.h, gnomevfs/vfs-handle.c, gnomevfs/vfsmodule.c: add file
+  handle object support.  2002-06-15  James Henstridge  <james@daa.com.au>  *
+  gnome/vfs-handle.c: add file handle object support.
+
+2002-06-15  James Henstridge <jamesh@src.gnome.org>
+
+  * gnome/pygnomevfs.h, gnomevfs/pygnomevfs.h: add header
+
+2002-06-15  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/Makefile.am, gnome/vfs-dir-handle.c,
+  gnome/vfs-file-info.c, gnome/vfs-uri.c, gnome/vfsmodule.c,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am, gnomevfs/vfs-dir-handle.c,
+  gnomevfs/vfs-file-info.c, gnomevfs/vfs-uri.c, gnomevfs/vfsmodule.c: add
+  GnomeVFSFileInfo and GnomeVFSDirectoryHandle wrappers.  2002-06-15  James
+  Henstridge  <james@daa.com.au>  * gnome/vfs-file-info.c,
+  gnome/vfs-dir-handle.c: add GnomeVFSFileInfo and GnomeVFSDirectoryHandle
+  wrappers.  * gnome/vfsmodule.c, gnome/vfs-uri.c, gnome/pygnomevfs.h: start of
+  gnome-vfs wrapper. (pygnome_vfs_result_check): function to set an exception
+  based on the result of a GnomeVFSResult code.
+
+2002-06-14  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in, gnome/Makefile.am, gnome/vfs-uri.c,
+  gnome/vfsmodule.c, gnomecanvas/Makefile.am, gnomevfs/Makefile.am,
+  gnomevfs/vfs-uri.c, gnomevfs/vfsmodule.c: start of gnome-vfs wrapper. 
+  2002-06-15  James Henstridge  <james@daa.com.au>  * gnome/vfsmodule.c,
+  gnome/vfs-uri.c, gnome/pygnomevfs.h: start of gnome-vfs wrapper.
+
+2002-05-30  Matt Wilson <msw@src.gnome.org>
+
+  * examples/canvas/canvas-example.py: fixups for the example
+
+2002-05-30  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in, gnome-python.spec.in: more AC_SUBST for required
+  versions  2002-05-30  Matt Wilson  <msw@redhat.com>  * configure.in: more
+  AC_SUBST for required versions  * gnome-python.spec.in: more subpackages,
+  defattrs.
+
+2002-05-28  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in, gnome-python.spec.in: AC_SUBST more required
+  versions for use in the spec file.  2002-05-28  Matt Wilson  <msw@redhat.com>
+   * configure.in: AC_SUBST more required versions for use in the spec file.  *
+  gnome-python.spec.in: added bonobo, nautilus subpackages. re-enabled applet
+  subpackage
+
+2002-05-24  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, autogen.sh, gconf/gconf.defs: use $AUTOHEADER and $AUTOCONF 
+  2002-05-24  Matt Wilson  <msw@redhat.com>  * autogen.sh: use $AUTOHEADER and
+  $AUTOCONF  * gconf/gconf.defs (GConfEntry.get_key, GConfEntry.get_value,
+  GConfEntry.get_schema_name, GConfEntry.get_is_default,
+  GConfEntry.get_is_writable): added
+
+2002-05-19  James Henstridge <jamesh@src.gnome.org>
+
+  * Makefile.am: add missing files to EXTRA_DIST
+
+2002-05-13  James Henstridge <jamesh@src.gnome.org>
+
+  * configure.in: increment version number.
+
+2002-05-09  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonobo-arg-types.py: get rid of gtk_gl and gdk_gl prefix
+  on some functions.  2002-05-09  James Henstridge  <james@daa.com.au>  *
+  gtk/gtkgl.defs: get rid of gtk_gl and gdk_gl prefix on some functions.  *
+  codegen/codegen.py (Wrapper.write_function_wrapper): pass caller_owns_return
+  as argument to write_return. (Wrapper.write_getsets): add extra arg to
+  write_return() call.  * codegen/argtypes.py (*.write_return): add an extra
+  "ownsreturn" argument to all write_return functions.  *
+  codegen/definitions.py (MethodDef.__init__): read a caller_owns_return
+  variable.  It defaults to false if ommitted, unless we have a string return.
+  (FunctionDef.__init__): same here, but also make caller_owns_return true for
+  constructors.  2002-05-09  James Henstridge  <james@daa.com.au>  *
+  bonobo/bonobo-arg-types.py (CorbaOrbArg.write_return): add ownsreturn method
+  argument. (CorbaAnyArg.write_return): and here as well.
+  (CorbaTypeCodeArg.write_return): and here. (CorbaPoaArg.write_return): and
+  here. (CorbaPoaManagerArg.write_return): and here.
+  (CorbaObjectArg.write_return): and here.
+
+2002-05-05  James Henstridge <jamesh@src.gnome.org>
+
+  * gconf/Makefile.am: fix up small typo that resulted in recursive var
+  expansion
+
+  * .cvsignore, ChangeLog, gconf/Makefile.am: some stuff I forgot to save
+
+  * gnome/Makefile.am, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: small
+  typo fix
+
+2002-05-05  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/Makefile.am, gconf/Makefile.am, gnome/Makefile.am,
+  gnome/uimodule.c, gnomecanvas/Makefile.am, gnomevfs/Makefile.am,
+  gtkhtml2/Makefile.am: same here.  2002-05-05  James Henstridge 
+  <james@daa.com.au>  * gtkhtml2/Makefile.am (defsdir): same here.  *
+  gnome/Makefile.am (defs_DATA): same here.  * gconf/Makefile.am (defs_DATA):
+  same here.  * bonobo/Makefile.am: install defs files.
+
+2002-05-04  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gconf/gconf.defs: remove fields that have been privatised. 
+  2002-05-04  James Henstridge  <james@daa.com.au>  * gconf/gconf.defs (Entry):
+  remove fields that have been privatised.  * gnome/uimodule.c (initui):
+  register gnomeui module so that it gets initialised when you call
+  gnome.init().
+
+2002-04-30  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, Makefile.am, configure.in, examples/gtkhtml2/simple-browser.py,
+  gtkhtml2/.cvsignore, gtkhtml2/Makefile.am, gtkhtml2/gtkhtml2.defs,
+  gtkhtml2/gtkhtml2.override, gtkhtml2/gtkhtml2module.c: small example for
+  gtkhtml2  2002-04-29  Matt Wilson  <msw@redhat.com>  *
+  examples/gtkhtml2/simple-browser.py: small example for gtkhtml2  *
+  Makefile.am (SUBDIRS): add gtkhtml2  * configure.in (AC_CONFIG_FILES): add
+  gtkhtml/Makefile to output files (PKG_CHECK_MODULES): add conditional check
+  for gtkhtml2  * gtkhtml2/gtkhtml2.defs: new file  *
+  gtkhtml2/gtkhtml2module.c: new file  * gtkhtml2/gtkhtml2.override: new file 
+  * gtkhtml2/Makefile.am: new file, implement gtkhtml2 bindings
+
+2002-04-05  Johan Dahlin <jdahlin@telia.com>
+
+  * .cvsignore, ChangeLog, configure.in, gnome-python-2.0.pc.in,
+  gnome/applet.override: Add gnome-python-2.0.pc  2002-04-05  Johan Dahlin 
+  <jdahlin@telia.com>  * .cvsignore: Add gnome-python-2.0.pc  *
+  gnome-python-2.0.pc.in (exec_prefix): New file  2002-04-04  Johan Dahlin 
+  <jdahlin@telia.com>  * gnome/applet.override
+  (_wrap_panel__applet_bonobo_factory): This is a function of type kwargs 
+  (_wrap_panel_applet_setup_menu_from_file): Impl.
+
+2002-03-28  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, gconf/gconf.defs: add
+  GConfValue.get_int/get_bool/get_float/get_string  2002-03-28  Johan Dahlin 
+  <jdahlin@telia.com>  * gconf/gconf.defs: add
+  GConfValue.get_int/get_bool/get_float/get_string
+
+2002-03-18  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonobo.override, bonobo/bonoboui.override, configure.in,
+  gconf/gconf.override, gnome/applet.override, gnome/canvas.override,
+  gnome/gnome.override, gnome/nautilus.override, gnome/ui.override,
+  gnome/zvt.override, gnomecanvas/canvas.override: set modulename.  2002-03-18 
+  James Henstridge  <james@daa.com.au>  * bonobo/bonoboui.override: set
+  modulename.  * bonobo/bonobo.override: set modulename.  *
+  gconf/gconf.override: set modulename.  * gnome/nautilus.override: set
+  modulename.  * gnome/zvt.override: set modulename.  * gnome/canvas.override:
+  set modulename.  * gnome/ui.override: set modulename.  *
+  gnome/gnome.override: set modulename.  * configure.in: increase required
+  version numbers.
+
+2002-03-10  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/canvasmodule.c, gnomecanvas/canvasmodule.c: if points is
+  NULL, leave the list empty.  2002-03-10  James Henstridge  <james@daa.com.au>
+   * gnome/canvasmodule.c (gnomecanvaspoints_from_value): if points is NULL,
+  leave the list empty.
+
+2002-03-06  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, configure.in, gnome/applet.defs, gnome/applet.override,
+  gnome/canvas.defs, gnome/canvas.override, gnome/ui.defs, gnome/ui.override,
+  gnomecanvas/canvas.defs, gnomecanvas/canvas.override: Make translators and
+  documenters argument to GnomeAbout.__init__ optional.  2002-03-06  Johan
+  Dahlin  <jdahlin@telia.com>  * gnome/ui.override: Make translators and
+  documenters argument to GnomeAbout.__init__ optional.  * gnome/ui.defs:
+  Remove private gconf functions, and change GNOME_TYPE_APP_BAR to
+  GNOME_TYPE_APPBAR.  * gnome/applet.defs: Regenerate against latest
+  libpanel-applet  * gnome/applet.override (panel_applet_factory_main_closure):
+  impl. (panel_applet_setup_menu): impl  * gnome/canvas.defs: Add
+  GnomeCanvas.set_pixels_per_unit.  * gnome/canvas.override: Use noargs on
+  functions that doesn't require any arguments. Remove kwargs and
+  ParseTupleAndKeyword from the same functions.  2002-02-27  Johan Dahlin 
+  <jdahlin@telia.com>  * gnome/ui.defs: gnome_appbar_get_progress returns a
+  GtkProgressBar now.  * gnome/canvas.defs: Added.
+
+2002-02-27  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/activationmodule.c: Impl. Based on patch by Artem Popov. 
+  2002-02-27  Johan Dahlin  <jdahlin@telia.com>  * bonobo/activationmodule.c
+  (wrap_ba_active_server_register): Impl. Based on patch by Artem Popov.
+
+2002-02-25  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/bonobo-types.defs, bonobo/bonobo.defs,
+  bonobo/bonobo.override, bonobo/bonoboui-types.defs, bonobo/bonoboui.defs: Add
+  object.  2002-02-25  Johan Dahlin  <jdahlin@telia.com>  *
+  bonobo/bonoboui-types.defs (Engine): Add object.  * bonobo/bonobo.override:
+  include bonobo-item-handler.h Fix order of set/get_prop args to
+  BonoboPropertyBag.__init__
+  (_wrap_bonobo_event_source_client_add_listener_closure): Impl
+  (_wrap_bonobo_item_handler_new_closure): Impl  * bonobo/bonobo.defs: remove
+  leading bonobo_ from a few functions add bonobo_item_handler_* functions  *
+  bonobo/bonobo-types.defs (ItemHandler): Add object  * configure.in: bump
+  libbonoboui version to 1.112.0
+
+2002-02-19  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonoboui-types.defs, bonobo/bonoboui.defs: remove
+  functions and types that have been marked internal.  2002-02-19  James
+  Henstridge  <james@daa.com.au>  * bonobo/bonoboui-types.defs,
+  bonobo/bonoboui.defs: remove functions and types that have been marked
+  internal.
+
+2002-02-09  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/activationmodule.c, bonobo/bonobo-types.defs,
+  bonobo/bonobo.override, bonobo/bonobomodule.c, bonobo/bonoboui-types.defs,
+  bonobo/bonoboui.defs, bonobo/bonobouimodule.c,
+  examples/bonobo/bonoboui/hello.py, gconf/gconf-fixes.h, gconf/gconfmodule.c,
+  gnome/gnomemodule.c, gnome/uimodule.c: include bonobo/bonobo-ui-main.h 
+  2002-02-09  Johan Dahlin  <jdahlin@telia.com>  * bonobo/bonobouimodule.c:
+  include bonobo/bonobo-ui-main.h  * bonobo/bonobo.defs: remove
+  bonobo_ui_preferences*  * bonobo/bonoboui-types.defs: UI* -> UI, eg
+  bonobo.ui.UIComponent -> bonobo.ui.Component.  * bonobo/bonobomodule.c:
+  include bonobo/bonobo-main.h  * bonobo/bonobo.override
+  (_wrap_bonobo_generic_factory_new_closure): return int, and initialize params
+  to NULL (_wrap_bonobo_moniker_simple_new_closure): New function.
+  (_wrap_bonobo_listener_new_closure): New function.
+  (_wrap_bonobo_property_bag_new_closure): New function  *
+  bonobo/bonobo-types.defs (Listener): Add object.  * bonobo/activationmodule.c
+  (wrap_ba_query): Comment out unused variables.  * gnome/gnomemodule.c: Add a
+  prototype for pygnome_add_constants  * gnome/uimodule.c: Add a prototype for
+  pyui_add_constants  * gconf/gconfmodule.c: Add a prototype for
+  pygconf_add_constants  * gconf/gconf-fixes.h: Add prototypes
+
+2002-01-31  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in, gconf/Makefile.am: include gconf-fixes.h 
+  2002-01-31  James Henstridge  <james@daa.com.au>  * gconf/Makefile.am
+  (gconfmodule_la_SOURCES): include gconf-fixes.h  * gnome/__init__.py: make
+  gnome.init() an alias for gnome.program_init().
+
+  * ChangeLog, configure.in, gnome/nautilusmodule.c: increment version number
+  of package and requirements. Change -ansi to  2002-01-31  James Henstridge 
+  <james@daa.com.au>  * configure.in: increment version number of package and
+  requirements.  Change -ansi to -std=c9x to work arround potential problems
+  with gcc 2.95.x.  * gtk/libglade.override (connect_one): fix up signature on
+  function. (connect_many): same here.  2002-01-31  James Henstridge 
+  <james@daa.com.au>  * gnome/nautilusmodule.c (initnautilus): get rid of //
+  comment  * configure.in: increment version number of package and
+  requirements.
+
+2002-01-31  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, configure.in: Replace -ansi with -std=c9x  2002-01-31  Johan
+  Dahlin  <jdahlin@telia.com>  * configure.in: Replace -ansi with -std=c9x
+
+2002-01-23  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, gconf/Makefile.am, gconf/enum/.cvsignore,
+  gconf/enum/Makefile.am, gconf/enum/gconftypeutils.c, gconf/enum/makeenums.h,
+  gconf/enum/maketypes.awk, gconf/gconf.override, gconf/gconfmodule.c: include
+  gconf/gconf-enum-types.h.  2002-01-23  Johan Dahlin  <jdahlin@telia.com>  *
+  gconf/gconf.override: include gconf/gconf-enum-types.h.  *
+  gconf/gconfmodule.c (initgconf): Remove glib debug and gconf_type_init.  *
+  gconf/enum/*: Remove.  * gconf/Makefile.am: Remove enum from SUBDIRS and
+  enum/gconftypebuiltins_ids.c from gconfmodule_la_SOURCES.
+
+2002-01-22  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/activationmodule.c: make ansi C safe (no // comments). 
+  2002-01-22  James Henstridge  <james@daa.com.au>  * bonobo/activationmodule.c
+  (initactivation): make ansi C safe (no // comments).
+
+2002-01-22  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/activationmodule.c: Perhaps we should call
+  bonobo_activation_init AFTER we created argc and  2002-01-22  Johan Dahlin 
+  <jdahlin@telia.com>  * bonobo/activationmodule.c (initactivation): Perhaps we
+  should call bonobo_activation_init AFTER we created argc and argv. CVS:
+  ----------------------------------------------------------------------
+
+2002-01-22  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonoboui.defs, configure.in: add extra argument. 
+  2002-01-22  James Henstridge  <james@daa.com.au>  * bonobo/bonoboui.defs
+  (xml_set_prop): add extra argument.
+
+2002-01-22  Johan Dahlin <zilch@src.gnome.org>
+
+  * bonobo/__init__.py: import activation by default
+
+2002-01-21  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, gnome/gnome.override, gnome/gnomemodule.c: Add a GNOME_PARAM*
+  defines.  2002-01-21  Johan Dahlin  <jdahlin@telia.com>  *
+  gnome/gnomemodule.c (pygnome_add_defined_constants): Add a GNOME_PARAM*
+  defines.  * gnome/gnome.override (_wrap_gnome_program_init): Make it work.
+
+2002-01-19  Johan Dahlin <zilch@src.gnome.org>
+
+  * gnome/.cvsignore: Added applet.c
+
+2002-01-19  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, Makefile.am, configure.in, examples/gconf/basic-gconf-app.py,
+  examples/gconf/simple-controller.py, examples/gconf/simple-view.py,
+  gconf/.cvsignore, gconf/Makefile.am, gconf/enum/.cvsignore,
+  gconf/enum/Makefile.am, gconf/enum/gconftypeutils.c, gconf/enum/makeenums.h,
+  gconf/enum/maketypes.awk, gconf/gconf-fixes.c, gconf/gconf-fixes.h,
+  gconf/gconf.defs, gconf/gconf.override, gconf/gconfmodule.c,
+  gnome/Makefile.am, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: Added 3
+  examples.  2002-01-19  Johan Dahlin  <jdahlin@telia.com>  * examples/gconf/:
+  Added 3 examples.  * gconf/: Lots of files: Initial checkin.  *
+  gnome/.cvsignore: Add applet.c  * configure.in: Add check for glib (for
+  glib-mkenums) and check for gconf.  * gnome/Makefile.am (appletmodule_la):
+  Build applet by default.
+
+2002-01-18  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/bonobo.override, bonobo/bonoboui.defs,
+  bonobo/bonoboui.override, examples/nautilus/README,
+  examples/nautilus/sample.py, gnome/Makefile.am, gnome/applet.defs,
+  gnome/applet.override, gnome/appletmodule.c, gnome/nautilus.override,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am: Add applet bindnings. 
+  2002-01-19  Johan Dahlin  <jdahlin@telia.com>  * gnome/applet*: Add applet
+  bindnings.  * bonobo/bonobo.override
+  (_wrap_bonobo_generic_factory_new_closure): * bonobo/bonoboui.override
+  (_wrap_bonobo_widget_new_control): Wrapped, needs more testing.  *
+  bonobo/bonoboui.defs (bonobo_widget_new_control): This is the constructor of
+  BonoboWidget.  * gnome/Makefile.am (nautilusmodule_la_CFLAGS): Add
+  orbit-python's CFLAGS.  * examples/nautilus/sample.py: Rewrite, make it a
+  nice class instead of ugly functions. It's now a complete conversion of
+  nautilus-sample-content-view.  * examples/nautilus/README: Some additions  *
+  gnome/nautilus.override (nautilus_view_create_function): Check execption
+  after PyObject_CallFunction, so they'll be catched and printed. Include
+  <orbit-python.h>.
+
+2002-01-17  Johan Dahlin <zilch@src.gnome.org>
+
+  * AUTHORS: And now, the moment you've all been waiting for. Hang on for a few
+  more seconds and you'll see me update... my... ehum... *grin* .... email
+  address.
+
+2002-01-17  James Henstridge <james@daa.com.au>
+
+  * AUTHORS, ChangeLog, bonobo/bonobouimodule.c: call
+  bonobo_setup_x_error_handler().  2002-01-17  James Henstridge 
+  <james@daa.com.au>  * bonobo/bonobouimodule.c (initui): call
+  bonobo_setup_x_error_handler().  * AUTHORS: add msw to the authors list.
+
+2002-01-17  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/bonoboui-types.defs, bonobo/bonoboui.defs,
+  bonobo/bonoboui.override, examples/bonobo/bonoboui/Bonobo_Sample_Hello.xml,
+  examples/bonobo/bonoboui/hello.py, examples/bonobo/echo/README,
+  examples/bonobo/echo/echo-client.py: convert libbonobo/samples/hello.c to
+  python  2002-01-17  Johan Dahlin  <jdahlin@telia.com>  *
+  examples/bonobo/bonoboui/hello.py: convert libbonobo/samples/hello.c to
+  python  * examples/bonobo/bonoboui/Bonobo_Sample_Hello.xml: Needed by
+  hello.py  * examples/bonobo/echo/echo-client.py: add simple example  *
+  bonobo/bonoboui.override (_wrap_bonobo_ui_component_add_verb): wrap.
+  (_wrap_bonobo_ui_component_add_verb_list): wrap.  * bonobo/bonoboui.defs:
+  Remove bonobo_control_set_control_frame,
+  bonobo_ui_preferences_get_toolbar_relief,
+  bonobo_uipreferences_get_menubar_relief.  2002-01-16  Johan Dahlin 
+  <jdahlin@telia.com>  * bonobo/bonoboui-types.defs (Window): My parent is
+  GtkWindow, not GtkBin
+
+2002-01-16  Johan Dahlin <zilch@src.gnome.org>
+
+  * ChangeLog: doh. update the ChangeLog
+
+2002-01-16  Johan Dahlin <jdahlin@telia.com>
+
+  * bonobo/Makefile.am, bonobo/__init__.py, bonobo/activationmodule.c,
+  bonobo/bonobo-arg-types.py, bonobo/bonobo.override, configure.in: Remove try
+  except clause until it's a bit more stable and tested.  2002-01-16  Johan
+  Dahlin  <jdahlin@telia.com>  * bonobo/__init__.py: Remove try except clause
+  until it's a bit more stable and tested.  * bonobo/bonobo-arg-types.py
+  (CorbaObjectArg.write_return): s/append/write/ to make it work. Change it
+  slightly to avoid warnings, We don't need to cast to the corba object type,
+  just CORBA_Object will do just fine.  * bonobo/bonobo.override: include
+  bonobo-presist-client.h and ignore bonobo_config_*.  * bonobo/Makefile.am:
+  Add activationmodule.  * configure.in: check for bonobo-activation.
+
+2002-01-16  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo-arg-types.py,
+  bonobo/bonobo.override, bonobo/bonoboui.override, configure.in,
+  gnome/Makefile.am, gnome/nautilus.defs, gnome/nautilus.override,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am: also import BonoboControl 
+  2002-01-16  James Henstridge  <james@daa.com.au>  * gnome/nautilus.override:
+  also import BonoboControl  * bonobo/bonobo-arg-types.py: plug in ORBit
+  argument types.  * bonobo/bonoboui.override: include and initialise
+  orbit-python.  * bonobo/bonobo.override: include and initialise orbit-python.
+   * gnome/nautilus.override: import BonoboObject type from bonobo module.  *
+  gnome/nautilus.defs: get rid of BonoboObject def.  * configure.in
+  (have_orbit_python): check for orbit-python. (BUILD_GNOMEUI): conditionalise
+  building of gnome.ui on whether we have orbit-python. (BUILD_BONOBO): and
+  bonobo (BUILD_BONOBOUI): and bonobo.ui (BUILD_NAUTILUS): and gnome.nautilus
+
+2002-01-15  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/bonobo-types.defs, bonobo/bonobo.defs,
+  bonobo/bonobo.override, bonobo/bonoboui-types.defs, bonobo/bonoboui.defs,
+  bonobo/bonoboui.override: Add header so emacs understands that this is a
+  scheme file and highlights  2002-01-15  Johan Dahlin  <jdahlin@telia.com>  *
+  bonobo/bonobo-types.defs: Add header so emacs understands that this is a
+  scheme file and highlights it correctly.  * bonobo/bonoboui-types.defs: Add a
+  few extra objects. Now we require bonobo cvs.  * bonobo/bonoboui.defs,
+  bonobo/bonobo.defs: Set constructors, add some new functions, fix function
+  names, so they don't start with bonobo_  * bonobo/bonobo.override: ignore
+  functions when it exists similar functions with closures.  *
+  bonobo/bonoboui.override: Ignore bonobo_ui_node_* import more types from gtk
+  and canvas
+
+2002-01-15  James Henstridge <jamesh@src.gnome.org>
+
+  * bonobo/bonobo-arg-types.py: small change to Corba object handling.
+
+2002-01-15  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/Makefile.am, gnome/ui.override, gnomecanvas/Makefile.am,
+  gnomevfs/Makefile.am: import DockItem type.  2002-01-15  James Henstridge 
+  <james@daa.com.au>  * gnome/ui.override: import DockItem type.  *
+  gnome/Makefile.am (.defs.c): pull in type defs from bonobo.
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo-arg-types.py,
+  bonobo/bonobo.override, bonobo/bonobomodule.c: don't initialise pygtk. 
+  2002-01-15  James Henstridge  <james@daa.com.au>  * bonobo/bonobomodule.c
+  (init_bonobo): don't initialise pygtk.  * bonobo/bonobo.override: this module
+  doesn't require pygtk.  * bonobo/bonobo-arg-types.py (arg): add CORBA_long,
+  CORBA_char* and CORBA_float handlers. (CorbaEnvArg.write_param): stub handler
+  for CORBA_Objects (just a stub at the moment).
+
+2002-01-14  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, bonobo/.cvsignore, bonobo/Makefile.am,
+  bonobo/bonoboui-types.defs: Add BonoboWindow.  2002-1-14  Johan Dahlin 
+  <jdahlin@telia.com>  * bonobo/bonoboui-types.defs: Add BonoboWindow.  *
+  bonobo/Makefile.am: s/CLEAN_FILES/CLEANFILES/  * bonobo/.cvsignore: Add
+  __init__.pyc
+
+2002-01-14  Johan Dahlin <zilch@src.gnome.org>
+
+  * bonobo/.cvsignore: New file
+
+2002-01-14  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo-arg-types.py,
+  gnome/Makefile.am, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: add a
+  --load-types argument that runs a python script before commencing  2002-01-14
+   James Henstridge  <james@daa.com.au>  * codegen/codegen.py (main): add a
+  --load-types argument that runs a python script before commencing code
+  generation.  The idea is to allow loading of extra argument type handlers.  *
+  gtk/libglade.override (connect_one): s/ignore_glob/ignore-glob/  2002-01-14 
+  James Henstridge  <james@daa.com.au>  * bonobo/Makefile.am (.defs.c): load
+  the bonobo-arg-types.py arg handler file when generating C code, in order to
+  handle CORBA environments.  * bonobo/bonobo-arg-types.py: new file containing
+  arg type code for handling CORBA environments and exception catching.
+
+2002-01-14  Johan Dahlin <zilch@src.gnome.org>
+
+  * bonobo/Makefile.am: initialize pybonoboexec_LTLIBRARIES before using it
+
+2002-01-13  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, gnome/gnome.defs, gnome/gnome.override, gnome/gnomemodule.c:
+  call gnome_program_module_register.  2002-01-13  Johan Dahlin 
+  <jdahlin@telia.com>  * gnome/gnomemodule.c (init_gnome): call
+  gnome_program_module_register.  * gnome/gnome.override
+  (_wrap_gnome_program_init): Add, but it's still broken.  * gnome/gnome.defs
+  (program_init): Add GnomeProgram.__init__
+
+2002-01-12  Matt Wilson <msw@src.gnome.org>
+
+  * examples/zvt/zvt-demo.py: s/mainloop/main/
+
+2002-01-12  Johan Dahlin <jdahlin@telia.com>
+
+  * bonobo/__init__.py: Add.  2002-01-12  Johan Dahlin  <jdahlin@telia.com>  *
+  bonobo/__init__.py: Add.
+
+2002-01-12  Johan Dahlin <zilch@src.gnome.org>
+
+  * examples/zvt/zvt-demo.py: Small update
+
+  * configure.in: and configure.in too :)
+
+2002-01-12  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, examples/nautilus/Nautilus_View_pysample.server,
+  examples/nautilus/README, examples/nautilus/sample.py, gnome/.cvsignore,
+  gnome/Makefile.am, gnome/nautilus.defs, gnome/nautilus.override,
+  gnome/nautilusmodule.c, gnome/ui.override, gnomecanvas/Makefile.am,
+  gnomevfs/Makefile.am: Initial import of nautilus module.  2002-01-12  Johan
+  Dahlin  <jdahlin@telia.com>  * examples/nautilus/README: *
+  examples/nautilus/Nautilus_View_pysample.server: *
+  examples/nautilus/sample.py: * configure.in: * gnome/Makefile.am: *
+  gnome/nautilus.defs: * gnome/nautilus.override: * gnome/nautilusmodule.c:
+  Initial import of nautilus module.
+
+2002-01-12  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonobouimodule.c: remember to init pygobject.  2002-01-12
+   James Henstridge  <james@daa.com.au>  * bonobo/bonobouimodule.c (initui):
+  remember to init pygobject.
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo.override: list the right
+  source file (duh).  2002-01-12  James Henstridge  <james@daa.com.au>  *
+  bonobo/Makefile.am (uimodule_la_SOURCES): list the right source file (duh). 
+  * bonobo/bonobo.override (ignore): ignore bonobo_setup_x_error_handler, as it
+  isn't in libbonobo.
+
+2002-01-12  James Henstridge <jamesh@src.gnome.org>
+
+  * bonobo/Makefile.am, bonobo/bonobo-types.defs, bonobo/bonobo.defs,
+  bonobo/bonobo.override, bonobo/bonobomodule.c, bonobo/bonoboui.override,
+  bonobo/bonobouimodule.c: small fixes to make it compile/run (almost)
+
+2002-01-12  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/Makefile.am, bonobo/bonobo.override,
+  bonobo/bonobomodule.c, bonobo/bonoboui-types.defs, bonobo/bonoboui.defs,
+  bonobo/bonoboui.override, bonobo/bonobouimodule.c, configure.in: update
+  makefile.  2002-01-12  James Henstridge  <james@daa.com.au>  *
+  bonobo/Makefile.am (uimodule_la_LIBADD): update makefile.  *
+  bonobo/bonobouimodule.c, bonobo/bonoboui.override: same here.  *
+  bonobo/bonobomodule.c, bonobo/bonobo.override: fill in skels.
+
+2002-01-11  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, bonobo/bonobo-types.defs, bonobo/bonobo.defs,
+  bonobo/bonoboui-types.defs, bonobo/bonoboui.defs: add defs.  2002-01-11 
+  James Henstridge  <james@daa.com.au>  * bonobo/*.defs: add defs.  2002-01-11 
+  James Henstridge  <james@daa.com.au>  * codegen/h2def.py (find_obj_defs):
+  handle typedef struct { ... } style type defs, as used in bonobo.
+
+2002-01-11  James Henstridge <jamesh@src.gnome.org>
+
+  * Makefile.am, configure.in: add bonobo directory (empty for now)
+
+2002-01-03  Johan Dahlin <jdahlin@telia.com>
+
+  * ChangeLog, configure.in, gnome/.cvsignore, gnome/Makefile.am,
+  gnome/canvasmodule.c, gnome/gnomemodule.c, gnome/ui.defs, gnome/ui.override,
+  gnome/uimodule.c, gnomecanvas/Makefile.am, gnomecanvas/canvasmodule.c,
+  gnomevfs/Makefile.am: Add constants.  2002-01-03  Johan Dahlin 
+  <jdahlin@telia.com>  * gnome/gnomemodule.c (init_gnome): Add constants.  *
+  gnome/ui.override, gnome/ui.defs, gnome/Makefile.am gnome/uimodule.c,
+  gnome/__init__.py gnome/.cvsignore, configure.in: Initial libgnomeui support.
+
+2001-12-24  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in: define pygtk version and required package versions
+  as m4 macros at the top  2001-12-24  James Henstridge  <james@daa.com.au>  *
+  configure.in: define pygtk version and required package versions as m4 macros
+  at the top of the file rather than shell variables. These can be put before
+  the AC_INIT macro without problems. (AM_PATH_PYTHON): require python 2.2
+  final.  2001-12-24  James Henstridge  <james@daa.com.au>  * configure.in:
+  increment version number, and put version numbers at the top of the file as
+  m4 defines. Require python 2.2 final
+
+2001-11-30  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome-python.spec.in: added zvt submodule  2001-11-30  Matt
+  Wilson  <msw@redhat.com>  * gnome-python.spec.in: added zvt submodule
+
+2001-11-29  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/Makefile.am, gnomecanvas/Makefile.am,
+  gnomevfs/Makefile.am: rework to use an old style suffix rule instead of a
+  pattern rule to be  2001-11-28  Matt Wilson  <msw@redhat.com>  *
+  gnome/Makefile.am: rework to use an old style suffix rule instead of a
+  pattern rule to be more compatible.  Removed the disthook that removed
+  generated .c files and marked those files as nodist instead.
+
+  * gnome/Makefile.am, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: rework
+  the generic .c rule to place generated files into builddir  2001-11-28  Matt
+  Wilson  <msw@redhat.com>  * gnome/Makefile.am (%.c): rework the generic .c
+  rule to place generated files into builddir (DISTCLEANFILES): added generated
+  files to clean up
+
+2001-11-29  Matt Wilson <msw@src.gnome.org>
+
+  * Makefile.am: missing \
+
+2001-11-29  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, Makefile.am, configure.in, examples/zvt/zvt-demo.py,
+  gnome/.cvsignore, gnome/Makefile.am, gnome/zvt.defs, gnome/zvt.override,
+  gnome/zvtmodule.c, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: check for
+  libzvt, build zvt binding if it exists.  2001-11-28  Matt Wilson 
+  <msw@redhat.com>  * configure.in: check for libzvt, build zvt binding if it
+  exists.  * gnome/Makefile.am, zvt.defs, zvt.override, zvtmodule.c: add start
+  of new zvt binding.  * examples/zvt/zvt-demo.py: zvt demo.  * Makefile.am
+  (EXTRA_DIST): add zvt-demo.py
+
+2001-11-27  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in, gnome-python.spec.in, gnome/gnome.defs: require
+  libgnome-devel  2001-11-27  Matt Wilson  <msw@redhat.com>  *
+  gnome-python.spec.in (BuildRequires): require libgnome-devel  *
+  gnome/gnome.defs (help_display, help_display_with_doc_id,
+  help_display_desktop): modified to use new API.  * configure.in
+  (LIBGNOME_VERSION): grab version, increase libgnome2 requirement to 1.107.0.
+
+2001-11-26  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in: 1.99.5  2001-11-26  Matt Wilson  <msw@redhat.com> 
+  * configure.in: 1.99.5
+
+  * ChangeLog, gnome-python.spec.in, gnome/__init__.py: include __init__.py so
+  that we don't need to require the gnome-python base  2001-11-26  Matt Wilson 
+  <msw@redhat.com>  * gnome-python.spec.in (%files canvas): include __init__.py
+  so that we don't need to require the gnome-python base package.  *
+  gnome/__init__.py: catch import errors for the base gnome module.  This will
+  allow one to use libgnomecanvas without using libgnome.
+
+2001-10-31  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, configure.in, gnome/Makefile.am, gnomecanvas/Makefile.am,
+  gnomevfs/Makefile.am: adjust makefile rule so that it gets triggered
+  correctly. Is the %.c  2001-10-31  James Henstridge  <james@daa.com.au>  *
+  gnome/Makefile.am (%.c): adjust makefile rule so that it gets triggered
+  correctly.  Is the %.c syntax a GNU make'ism?  * configure.in (minver):
+  require python 2.2b1.
+
+2001-10-29  Matt Wilson <msw@src.gnome.org>
+
+  * gnome-python.spec.in: reset rel number
+
+2001-10-29  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/gnome.defs: nuke all functions from gnome-preferences.h,
+  they are no more.  2001-10-29  Matt Wilson  <msw@redhat.com>  *
+  gnome/gnome.defs: nuke all functions from gnome-preferences.h, they are no
+  more.
+
+2001-10-26  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in: change version to 1.99.4 (PKG_CHECK_PROG): change
+  pygtk requirement to  2001-10-26  Matt Wilson  <msw@redhat.com>  *
+  configure.in (AC_INIT): change version to 1.99.4 (PKG_CHECK_PROG): change
+  pygtk requirement to 1.99.4 (AM_PATH_GTK_2_0): bump to 1.3.10
+
+2001-10-18  Matt Wilson <msw@src.gnome.org>
+
+  * gnome-python.spec.in: bump rev
+
+2001-10-18  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome-python.spec.in, gnome/Makefile.am,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am: no longer obsoletes pygnome. 
+  2001-10-18  Matt Wilson  <msw@redhat.com>  * gnome-python.spec.in: no longer
+  obsoletes pygnome.  * gnome/Makefile.am (EXTRA_DIST): fix EXTRA_DIST for new
+  filenames too...
+
+2001-10-17  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/Makefile.am, gnome/gnomecanvas.defs,
+  gnome/gnomecanvas.override, gnomecanvas/Makefile.am, gnomevfs/Makefile.am:
+  renamed from gnomecanvas.override to be consistent with naming  2001-10-17 
+  Matt Wilson  <msw@redhat.com>  * gnome/canvas.override: renamed from
+  gnomecanvas.override to be consistent with naming  * gnome/canvas.defs:
+  likewise  * gnome/Makefile.am (canvasmodule_la_SOURCES): modify deps to match
+
+2001-10-16  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in, gnome/.cvsignore, gnome/Makefile.am,
+  gnome/__init__.py, gnome/gnome.defs, gnome/gnome.override,
+  gnome/gnomemodule.c, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: start of
+  gnome binding. (needs lots of work, things are not where they  2001-10-16 
+  Matt Wilson  <msw@redhat.com>  * gnome/gnomemodule.c: start of gnome binding.
+  (needs lots of work, things are not where they were in old pygnome, etc...) 
+  * gnome/gnome.override: start of gnome binding.  * gnome/gnome.defs: start of
+  gnome binding.  * gnome/__init__.py: import the toplevel gnome binding into
+  here.  * configure.in: check for gnome-2.0  * gnome/Makefile.am
+  (pygnomeexec_LTLIBRARIES): add the start of the gnome binding, write a
+  generic rule for generated .c files.
+
+2001-10-16  Matt Wilson <msw@src.gnome.org>
+
+  * gnome-python.spec.in: fix requires
+
+2001-10-15  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome-python.spec.in: added __init__ files to gnome-python main
+  package  2001-10-15  Matt Wilson  <msw@redhat.com>  * gnome-python.spec.in
+  (%files): added __init__ files to gnome-python main package
+
+2001-10-11  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in, gnome-python.spec.in: renamed to gnome-python2,
+  added defattr  2001-10-11  Matt Wilson  <msw@redhat.com>  *
+  gnome-python.spec.in (Name): renamed to gnome-python2, added defattr  *
+  configure.in (AC_INIT): bump to 1.99.3
+
+2001-10-10  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override,
+  gnome/gnomecanvas.defs, gnome/gnomecanvas.override, gnomecanvas/canvas.defs,
+  gnomecanvas/canvas.override: added functions to go to/from affines
+  (_wrap_gnome_canvas_new): override  2001-10-10  Matt Wilson  <msw@redhat.com>
+   * gnome/gnomecanvas.override (gnomecanvasaffine_to_value)
+  (gnomecanvasaffine_from_value): added functions to go to/from affines
+  (_wrap_gnome_canvas_new): override canvas constructor to take an optional
+  'aa' parameter to create antialiased canvases. (_wrap_gnome_canvas_w2c):
+  implemented (_wrap_gnome_canvas_w2c_d): implemented (_wrap_gnome_canvas_c2w):
+  implemented (_wrap_gnome_canvas_window_to_world): implemented
+  (_wrap_gnome_canvas_world_to_window): implemented
+  (_wrap_gnome_canvas_item_affine_absolute): implemented
+  (_wrap_gnome_canvas_item_affine_relative): implemented
+  (_wrap_gnome_canvas_item_i2c_affine): implemented
+  (_wrap_gnome_canvas_item_i2w_affine): implemented
+  (_wrap_gnome_canvas_w2c_affine): implemented  * gnome/gnomecanvas.defs
+  (GnomeCanvasItem.affine_relative): bound (GnomeCanvasItem.affine_absolute):
+  bound (GnomeCanvasItem.scale): defined (not used) (GnomeCanvasItem.rotate):
+  defined (not used) (GnomeCanvasItem.raise): bound (GnomeCanvasItem.lower):
+  bound (GnomeCanvasItem.i2w_affine): bound (GnomeCanvasItem.i2c_affine): bound
+  (GnomeCanvasItem.reparent): bound (GnomeCanvasItem.grab_focus): bound
+  (GnomeCanvasItem.request_update): defined (not used) (gnome_canvas_new_aa):
+  bound (GnomeCanvas.w2c_affine): bound (GnomeCanvas.w2c) bound
+  (GnomeCanvas.w2c_d): bound (GnomeCanvas.c2w): bound
+  (GnomeCanvas.window_to_world): bound (GnomeCanvas.world_to_window): bound
+  (GnomeCanvas.get_color): bound (GnomeCanvas.get_color_pixel): bound
+  (GnomeCanvas.set_dither): bound (GnomeCanvas.get_dither): bound
+
+2001-10-09  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, Makefile.am, configure.in, gnome-python.spec.in,
+  gnome/Makefile.am, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: increase
+  required pygtk version to 1.99.3  2001-10-09  James Henstridge 
+  <james@daa.com.au>  * configure.in (minver): increase required pygtk version
+  to 1.99.3  * gnome-python.spec.in: few small changes.  There won't be a
+  libglade module in gnome-python, as libglade2 autoloads support for things
+  like gnome or bonobo.  * gnome/Makefile.am (gnomecanvas.c): call --register
+  on the -types.defs files, to reduce code generation time.
+
+2001-10-08  Matt Wilson <msw@src.gnome.org>
+
+  * configure.in: use automake 2.50 style
+
+2001-10-08  Matt Wilson <msw@redhat.com>
+
+  * .cvsignore, ChangeLog, Makefile.am, configure.in, gnome-python.spec.in,
+  gnome/Makefile.am, gnomecanvas/Makefile.am, gnomevfs/Makefile.am: added the
+  example and spec file to EXTRA_DIST (dist-hook): added a  2001-10-08  Matt
+  Wilson  <msw@redhat.com>  * Makefile.am (EXTRA_DIST): added the example and
+  spec file to EXTRA_DIST (dist-hook): added a dist-hook to copy the spec file
+  into the dist  * .cvsignore: add gnome-python.spec  * gnome/Makefile.am: use
+  the defsdir in the pkgconfig, not hardcoded to the way things are in CVS. 
+  Caveat: you must install the defs file before building, but that's OK as we
+  needed codegen from pygtk anyway.  * gnome-python.spec.in: added spec file
+  based off the old pygtk one.  * configure.in: note the versions of gtk,
+  libgnomecanvas, and pygtk for use in the spec file.  Renamed the defsdir
+  variable PYGTK_DEFSDIR.  Added gnome-python.spec to AC_OUTPUT.
+
+2001-10-08  Matt Wilson <msw@src.gnome.org>
+
+  * gnome/canvas.override, gnome/gnomecanvas.override,
+  gnomecanvas/canvas.override: type what I meant to type
+
+2001-10-08  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, examples/canvas/canvas-example.py, gnome/canvas.override,
+  gnome/gnomecanvas.override, gnomecanvas/canvas.override: use the new type
+  import functionality of codegen to get the types we need.  2001-10-08  Matt
+  Wilson  <msw@redhat.com>  * gnome/gnomecanvas.override (init): use the new
+  type import functionality of codegen to get the types we need.
+
+2001-10-05  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/canvas.override, gnome/gnomecanvas.override,
+  gnomecanvas/canvas.override: convert to PyTypeObject for the objects we're
+  importing from gobject and  2001-10-04  Matt Wilson  <msw@redhat.com>  *
+  gnome/gnomecanvas.override (init): convert to PyTypeObject for the objects
+  we're importing from gobject and gtk.
+
+2001-10-01  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, configure.in: copy version check for alpha versions of python
+  from pygtk  2001-10-01  Matt Wilson  <msw@redhat.com>  * configure.in: copy
+  version check for alpha versions of python from pygtk
+
+2001-09-25  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override,
+  gnome/gnomecanvas.defs, gnome/gnomecanvas.override, gnomecanvas/canvas.defs,
+  gnomecanvas/canvas.override: implemented GnomeCanvasItem.i2w
+  (_wrap_gnome_canvas_item_w2i): implemented  2001-09-25  Matt Wilson 
+  <msw@redhat.com>  * gnome/gnomecanvas.override (_wrap_gnome_canvas_item_i2w):
+  implemented GnomeCanvasItem.i2w (_wrap_gnome_canvas_item_w2i): implemented
+  GnomeCanvasItem.w2i  * gnome/gnomecanvas.defs (GnomeCanvasItem.i2w): bound
+  (GnomeCanvasItem.w2i): bound
+
+2001-09-24  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override,
+  gnome/gnomecanvas.defs, gnome/gnomecanvas.override, gnomecanvas/canvas.defs,
+  gnomecanvas/canvas.override: implemented GnomeCanvas::get_scroll_offsets 
+  2001-09-24  Matt Wilson  <msw@redhat.com>  * gnome/gnomecanvas.override
+  (_wrap_gnome_canvas_get_scroll_offsets): implemented
+  GnomeCanvas::get_scroll_offsets (_wrap_gnome_canvas_get_scroll_region):
+  implemented GnomeCanvas::get_scroll_region  * gnome/gnomecanvas.defs
+  (GnomeCanvas::get_item_at): bound (GnomeCanvas::update_now): bound
+  (GnomeCanvas::get_scroll_offsets): bound (GnomeCanvas::scroll_to): bound
+  (GnomeCanvas::set_pixels_per_unit): bound (GnomeCanvas::get_scroll_region):
+  bound (GnomeCanvas::set_scroll_region): bound (GnomeCanvasItem::show): bound
+  (GnomeCanvasItem::hide) bound
+
+2001-09-22  Matt Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override,
+  gnome/gnomecanvas.defs, gnome/gnomecanvas.override, gnomecanvas/canvas.defs,
+  gnomecanvas/canvas.override: :raise_to_top): added binding
+  (GnomeCanvasItem::lower_to_bottom): added  2001-09-22  Matt Wilson 
+  <msw@redhat.com>  * gnome/gnomecanvas.defs (GnomeCanvasItem::raise_to_top):
+  added binding (GnomeCanvasItem::lower_to_bottom): added binding
+  (GnomeCanvasItem::get_bounds): added binding  * gnome/gnomecanvas.override
+  (_wrap_gnome_canvas_item_set): verify that kwargs isn't NULL before iterating
+  over them (_wrap_gnome_canvas_item_new): likewise
+  (_wrap_gnome_canvas_item_get_bounds): implemented GnomeCanvasItem::get_bounds
+
+2001-09-22  Matthew Wilson <msw@redhat.com>
+
+  * ChangeLog, gnome/canvas.override, gnome/gnomecanvas.override,
+  gnomecanvas/canvas.override: verify that kwargs isn't NULL before iterating
+  over them  2001-09-22  Matthew Wilson  <msw@redhat.com>  *
+  gnome/gnomecanvas.override (_wrap_gnome_canvas_item_set): verify that kwargs
+  isn't NULL before iterating over them (_wrap_gnome_canvas_item_new): likewise
+
+2001-09-21  Matthew Wilson <msw@redhat.com>
+
+  * ChangeLog, examples/canvas/canvas-example.py, gnome/canvas.defs,
+  gnome/canvas.override, gnome/gnomecanvas.defs, gnome/gnomecanvas.override,
+  gnomecanvas/canvas.defs, gnomecanvas/canvas.override: ported canvas-example
+  to new binding, added it to new examples directory  2001-09-21  Matthew
+  Wilson  <msw@redhat.com>  * examples/canvas/canvas-example.py: ported
+  canvas-example to new binding, added it to new examples directory  *
+  gnome/gnomecanvas.override (_wrap_gnome_canvas_item_set): created new binding
+  to set properties of items (init): get the short names of the parent classes
+  from gtk._gtk  * gnome/gnomecanvas.defs (add_item): change name of method to
+  "add" to match old bindings (set_scroll_region): added binding (set): added
+  binding (move): added binding
+
+2001-09-21  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/canvasmodule.c, gnomecanvas/canvasmodule.c: function to
+  convert a value holding a GnomeCanvasPoints struct to a python  2001-09-21 
+  James Henstridge  <james@daa.com.au>  * gnome/canvasmodule.c
+  (gnomecanvaspoints_from_value): function to convert a value holding a
+  GnomeCanvasPoints struct to a python object. (gnomecanvaspoints_to_value):
+  the other direction. (initcanvas): register functions as handlers for
+  GNOME_TYPE_CANVAS_POINTS boxed type.
+
+2001-09-21  James Henstridge <jamesh@src.gnome.org>
+
+  * .cvsignore: change ignore glob
+
+  * gnome/.cvsignore: add ignore file
+
+2001-09-21  James Henstridge <james@daa.com.au>
+
+  * ChangeLog, gnome/canvas.defs, gnome/canvas.override,
+  gnome/gnomecanvas.defs, gnome/gnomecanvas.override, gnomecanvas/canvas.defs,
+  gnomecanvas/canvas.override: change gnome_canvas_item_new to
+  GnomeCanvasGroup.add_item(). Add more  2001-09-21  James Henstridge 
+  <james@daa.com.au>  * gnome/gnomecanvas.defs: change gnome_canvas_item_new to
+  GnomeCanvasGroup.add_item(). Add more object defs.  *
+  gnome/gnomecanvas.override (_wrap_gnome_canvas_item_new): get
+  gnome_canvas_item_new to use the GParamSpecs.
+
+2001-09-20  Johan Dahlin <zilch.am@home.se>
+
+  * ChangeLog, autogen.sh, gnome/Makefile.am, gnome/canvas.defs,
+  gnome/canvas.override, gnome/canvasmodule.c, gnome/gnomecanvas.defs,
+  gnome/gnomecanvas.override, gnomecanvas/Makefile.am, gnomecanvas/canvas.defs,
+  gnomecanvas/canvas.override, gnomecanvas/canvasmodule.c,
+  gnomevfs/Makefile.am: Updated  2001-09-20  Johan Dahlin  <zilch.am@home.se> 
+  * autogen.sh: * gnome/Makefile.am: * gnome/canvasmodule.c: *
+  gnome/gnomecanvas.defs: * gnome/gnomecanvas.override: Updated
+
+2001-09-14  James Henstridge <james@daa.com.au>
+
+  * AUTHORS: add test use of add_constants.  2001-09-15  James Henstridge 
+  <james@daa.com.au>  * gtk/gtkmodule.c (init_gtk): add test use of
+  add_constants.  * pygobject.h (_PyGObject_Functions): add new functions to
+  header.  * gobjectmodule.c (pyg_enum_add_constants): new function for adding
+  constants to a module dictionary from a particular GType.
+  (pyg_flags_add_constants): similar for flag types. (functions): add to export
+  function vtable.
+
+  * .cvsignore, ChangeLog, acinclude.m4, configure.in, gnome/Makefile.am,
+  gnome/canvas.defs, gnome/canvas.override, gnome/canvasmodule.c,
+  gnome/gnomecanvas.defs, gnome/gnomecanvas.override, gnomecanvas/Makefile.am,
+  gnomecanvas/canvas.defs, gnomecanvas/canvas.override,
+  gnomecanvas/canvasmodule.c, gnomevfs/Makefile.am: fix up defsdir definition. 
+  2001-09-14  James Henstridge  <james@daa.com.au>  * pygtk-2.0.pc.in
+  (defsdir): fix up defsdir definition.  * Makefile.am (pkginclude_HEADERS):
+  install ExtensionClass.h header (this can go when we switch over to python2.2
+  type/class stuff.  2001-09-14  James Henstridge  <james@daa.com.au>  *
+  gnome/*: integrate Zilch's gnome.canvas module.
+
+2001-09-14  James Henstridge <jamesh@src.gnome.org>
+
+  * ChangeLog, Makefile.am, configure.in, gnome/Makefile.am,
+  gnomecanvas/Makefile.am, gnomevfs/Makefile.am: some of the infrastructure for
+  new module.
+
+  * configure.in: add gnome-python directory where the gnome bindings will be
+  held.  They will be a separate package to the pygtk bindings, rather than
+  containing them.

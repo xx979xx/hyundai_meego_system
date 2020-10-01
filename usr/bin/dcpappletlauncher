@@ -1,0 +1,5 @@
+#! /bin/sh
+
+# exec /usr/bin/duicontrolpanel.launch -appletloader "$@" 
+exec /usr/bin/invoker --type=m /usr/bin/duicontrolpanel.launch -appletloader "$@" 
+

@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name=Personalize
+Name-logical-id=qtn_sett_main_personalize
+
+Value="Wallpaper, Theme, Sounds"
+Value-logical-id=qtn_sett_main_presonalize_label2
+
+Icon=icon-m-settings-personalize
+
+Aliases=
+Translation-catalogs=
+
+Order=50
+

@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.nokia.mad_developer
+Exec=/usr/bin/mad-developer

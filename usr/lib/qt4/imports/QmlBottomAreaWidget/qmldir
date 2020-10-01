@@ -1,0 +1,5 @@
+CmdButtonAreaWidget 1.0 qml/DHAVN_BottomArea_CmdButtonArea.qml
+IndepthBtnAreaWidget 1.0 qml/DHAVN_BottomArea_IndepthBtnArea.qml
+TabButtonAreaWidget 1.0 qml/DHAVN_BottomArea_TabButtonArea.qml
+RightCmdButtonAreaWidget 1.0 qml/DHAVN_BottomArea_RightCmdButtonArea.qml
+QmlBottomAreaWidget 1.0 qml/*

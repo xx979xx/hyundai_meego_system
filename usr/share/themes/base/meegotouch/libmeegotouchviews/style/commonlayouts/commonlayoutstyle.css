@@ -1,0 +1,256 @@
+/* ApplicationPage */
+
+MApplicationPageStyle#CommonApplicationPageInverted.Portrait {
+background-image: $BACKGROUND_INVERTED_PORTRAIT;
+background-color: $COLOR_INVERTED_BACKGROUND;
+}
+MApplicationPageStyle#CommonApplicationPageInverted.Landscape {
+background-image: $BACKGROUND_INVERTED_LANDSCAPE;
+background-color: $COLOR_INVERTED_BACKGROUND;
+}
+
+/* Divider */
+
+#CommonItemDivider {
+background-image: meegotouch-separator-background-horizontal 0px 0px 0px 0px;
+minimum-size:  -1 0.1mm;
+maximum-size:  -1 0.1mm;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    $MARGIN_LARGE;
+margin-right:   $MARGIN_LARGE;
+}
+
+#CommonHeaderDivider {
+background-image: meegotouch-groupheader-background 0px 0px 0px 0px;
+span:           0.2mm;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    $INDENT_DEFAULT;
+margin-right:   $INDENT_DEFAULT;
+}
+
+#CommonGroupHeaderDivider {
+background-image: meegotouch-groupheader-background 0px 0px 0px 0px;
+span:           0.2mm;
+margin-top:     25px;
+margin-bottom:  13px;
+margin-left:    $INDENT_DEFAULT;
+margin-right:   $INDENT_DEFAULT;
+}
+
+#CommonHorizontalSeparator {
+background-image: meegotouch-separator-background-horizontal 0px 0px 0px 0px;
+minimum-size:  -1 0.1mm;
+maximum-size:  -1 0.1mm;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+#CommonVerticalSeparator {
+background-image: meegotouch-separator-background-vertical 0px 0px 0px 0px;
+minimum-size:   0.1mm -1;
+maximum-size:   0.1mm -1;
+margin-right:   0;
+margin-left:    0;
+margin-bottom:  0;
+margin-top:     0;
+}
+
+
+#CommonItemDividerInverted {
+background-image: meegotouch-separator-inverted-background-horizontal 0px 0px 0px 0px;
+minimum-size:  -1 0.1mm;
+maximum-size:  -1 0.1mm;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    $MARGIN_LARGE;
+margin-right:   $MARGIN_LARGE;
+}
+
+#CommonHeaderDividerInverted {
+background-image: meegotouch-groupheader-inverted-background 0px 0px 0px 0px;
+span:           0.2mm;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    $INDENT_DEFAULT;
+margin-right:   $INDENT_DEFAULT;
+}
+
+#CommonGroupHeaderDividerInverted {
+background-image: meegotouch-groupheader-inverted-background 0px 0px 0px 0px;
+span:           0.2mm;
+margin-top:     25px;
+margin-bottom:  13px;
+margin-left:    $INDENT_DEFAULT;
+margin-right:   $INDENT_DEFAULT;
+}
+
+#CommonHorizontalSeparatorInverted {
+background-image: meegotouch-separator-inverted-background-horizontal 0px 0px 0px 0px;
+minimum-size:  -1 0.1mm;
+maximum-size:  -1 0.1mm;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+#CommonVerticalSeparatorInverted {
+background-image: meegotouch-separator-inverted-background-vertical 0px 0px 0px 0px;
+minimum-size:   0.1mm -1;
+maximum-size:   0.1mm -1;
+margin-right:   0;
+margin-left:    0;
+margin-bottom:  0;
+margin-top:     0;
+}
+
+/* Spacer */
+
+#CommonSpacer {
+minimum-size:   0 0;
+preferred-size: 100% 0;
+maximum-size:   100% 0;
+margin-top:     $MARGIN_LARGE;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+#CommonSmallSpacer {
+minimum-size:   0 0;
+preferred-size: 100% 0;
+maximum-size:   100% 0;
+margin-top:     $MARGIN_SMALL;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+#CommonLargeSpacer {
+minimum-size:   0 0;
+preferred-size: 100% 0;
+maximum-size:   100% 0;
+margin-top:     $MARGIN_XLARGE;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+#CommonXLargeSpacer {
+minimum-size:   0 0;
+preferred-size: 100% 0;
+maximum-size:   100% 0;
+margin-top:     $MARGIN_XXLARGE;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+/* Groups */
+
+#CommonTitleIconGroup {
+margin-left:    $INDENT_DEFAULT;
+}
+
+#CommonSubIconGroup {
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   $INDENT_DEFAULT;
+}
+
+#CommonButtonGroup {
+margin-top:     $MARGIN_DOUBLE;
+margin-bottom:  $MARGIN_DOUBLE;
+margin-left:    $INDENT_DEFAULT;
+margin-right:   $INDENT_DEFAULT;
+}
+
+#CommonInputFieldGroup {
+margin-top:     $MARGIN_DOUBLE;
+margin-bottom:  $MARGIN_DOUBLE;
+margin-left:    $INDENT_DEFAULT;
+margin-right:   $INDENT_DEFAULT;
+}
+
+/* Items for regulating even columns in full width views and dialogs */
+
+#CommonLeftDialogItem {
+minimum-size:   10mm -1;
+preferred-size: 50mm 8.8mm;
+maximum-size:   50mm -1;
+}
+
+#CommonRightDialogItem {
+minimum-size:   10mm -1;
+preferred-size: 50mm 8.8mm;
+maximum-size:   50mm -1;
+}
+
+#CommonLeftColumn {
+minimum-size:   50% $SIZE_ONE;
+preferred-size: 100% $SIZE_ONE;
+maximum-size:   100% $SIZE_ONE;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+#CommonLeftColumn.Portrait {
+minimum-size:   -1 -1;
+preferred-size: 100% $SIZE_ONE;
+maximum-size:   -1 -1;
+}
+
+#CommonRightColumn {
+minimum-size:   50% $SIZE_ONE;
+preferred-size: 50% $SIZE_ONE;
+maximum-size:   -1 -1;
+margin-top:     0;
+margin-bottom:  0;
+margin-left:    0;
+margin-right:   0;
+}
+
+#CommonRightColumn.Portrait {
+minimum-size:   -1 -1;
+preferred-size: 100% $SIZE_ONE;
+maximum-size:   -1 -1;
+}
+
+/* (inverted) Position indicators */
+
+#CommonPositionIndicatorInverted {
+    indicator-image: "meegotouch-positionindicator-inverted-indicator" 2px 2px 2px 2px;
+    background-image: ;
+    background-color: ;
+    indicator-image-horizontal: "meegotouch-positionindicator-inverted-indicator-horizontal" 2px 2px 2px 2px;
+    background-image-horizontal: ;
+}
+
+/* List styles */
+
+MListStyle#CommonListInverted {
+    group-separator-object-name: "CommonGroupHeaderDividerInverted";
+    group-header-object-name: "CommonGroupHeaderPanelInverted";
+    list-index-style-name: "Inverted";
+}
+
+MListHeaderStyle#CommonGroupHeaderPanel {
+    title-style-name: "CommonGroupHeader";
+    separator-style-name: "CommonGroupHeaderDivider";
+}
+
+MListHeaderStyle#CommonGroupHeaderPanelInverted {
+    title-style-name: "CommonGroupHeaderInverted";
+    separator-style-name: "CommonGroupHeaderDividerInverted";
+}
+
+
+
+

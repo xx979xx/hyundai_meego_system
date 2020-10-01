@@ -1,0 +1,32 @@
+%!
+% Copyright (C) 2001 Taiji Yamada and gs-cjk project
+%
+% This file is part of GNU Ghostscript.
+% 
+% GNU Ghostscript is distributed in the hope that it will be useful, but
+% WITHOUT ANY WARRANTY.  No author or distributor accepts responsibility
+% to anyone for the consequences of using it or for whether it serves any
+% particular purpose or works at all, unless he says so in writing. Refer
+% to the GNU General Public License for full details.
+% 
+% Everyone is granted permission to copy, modify and redistribute GNU
+% Ghostscript, but only under the conditions described in the GNU General
+% Public License.  A copy of this license is supposed to have been given
+% to you along with GNU Ghostscript so you can know your rights and
+% responsibilities.  It should be in a file named COPYING.  Among other
+% things, the copyright notice and this notice must be preserved on all
+% copies.
+
+% $Id: CIDFnmap.zh_TW,v 1.1 2003/03/31 15:44:38 tagoh Exp $
+% CID fontmap for the Arphic trutype fonts
+
+% See ftp://ftp.gnu.org/pub/non-gnu/chinese-fonts-truetype/LICENSE
+% for license information regarding these fonts.
+
+% Adobe-CNS1
+
+/ZenKai-Medium		(/usr/share/fonts/cjkuni/ukai.ttc)	;
+/ShanHeiSun-Light	(/usr/share/fonts/cjkuni/uming.ttc)	;
+
+/Adobe-CNS1		/ShanHeiSun-Light	;
+

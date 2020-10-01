@@ -1,0 +1,30 @@
+[Desktop Entry]
+Type=ControlPanelApplet
+Name=Personalize
+Name[zh_TW]=個人化
+Name[zh_CN]=个性化
+Name[tr]=Kişiselleştirme
+Name[sv]=Anpassa
+Name[ru]=Персонализация
+Name[pt_PT]=Personalizar
+Name[pt_BR]=Personalizar
+Name[pl]=Personalizuj
+Name[no]=Egendefiner
+Name[nl]=Persoonlijke instellingen
+Name[ko]=개인화
+Name[ja]=パーソナル化
+Name[it]=Personalizza
+Name[hu]=Személyre szabás
+Name[fr]=Personnaliser
+Name[fi]=Mukauta
+Name[es]=Personalizar
+Name[en_US]=Personalize
+Name[en_GB]=Personalize
+Name[el]=Εξατομίκευση
+Name[de]=Personalisieren
+Name[da]=Personliggøre
+Name[cs]=Přizpůsobení
+Icon=personalize
+
+[MTS]
+Part=/usr/share/meego-ux-settings/Personalize/Personalize.qml

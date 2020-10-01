@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.meego.app.music
+Exec=/usr/bin/meego-qml-launcher --opengl --fullscreen  --noraise --app meego-app-music

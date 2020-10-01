@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# This script will be executed *after* all the other init scripts.
+# You can put your own initialization stuff in here if you don't
+# want to do the full Sys V style init stuff.
+
+touch /var/lock/subsys/local
+
+#Start can0 interface
+ip link set can0 type can bitrate 1000000
+ip link set can0 up
+
+#/usr/bin/monit -c /etc/monitrc > /dev/null 2>&1 &
+
+# Settings for IP Configuration in EngineerMode
+chmod 766 /etc/inittab
+/home/meego/myip.sh
+
+# set owner for user application
+chown meego.root /sbin/micom_fw_updater
+
+# set Line out power state to D0
+amixer -c 0 sset Master,0 100% unmute
+amixer -c 0 sset PCM,0 100% unmute
+amixer -c 0 sset Line-Out,0 100% unmute
+amixer -c 0 IEC958 cap
+amixer -c 0 sset IEC958,0 unmute
+amixer -c 0 sset 'IEC958 Default PCM',0 mute
+
+/usr/sbin/hda-checker
+
+# for DMI code
+if [ ! -d /app/data/bios_fw_updater ]; then
+	mkdir /app/data/bios_fw_updater
+fi
+rm -f /app/data/bios_fw_updater/mem_info
+dd if=/dev/mem of=/app/data/bios_fw_updater/mem_info &
+

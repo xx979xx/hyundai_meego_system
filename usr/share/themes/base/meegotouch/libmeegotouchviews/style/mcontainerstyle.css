@@ -1,0 +1,51 @@
+
+MContainerStyle { /* settings for the whole container */
+    minimum-size: $SIZE_ONE $SIZE_ONE; /* inherited from duiwidgetstyle */
+
+    margin-left: 0; /* inherited from duiwidgetstyle */
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    /* this affects the whole content including header and central widget, see also internal-margins */
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    background-image: none;
+    background-color: none;
+
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    internal-margins: 0;
+    internal-item-spacing: 0;
+
+    separator-style-name: "CommonGroupHeaderDivider";
+    header-style-name: "CommonGroupHeaderPanel";
+    title-style-name: "CommonGroupHeader";
+    progress-indicator-style-name: "ContainerHeaderSpinner";
+}
+
+#CommonContainerInverted {
+    separator-style-name: "CommonGroupHeaderDividerInverted";
+    header-style-name: "CommonGroupHeaderPanelInverted";
+    title-style-name: "CommonGroupHeaderInverted";
+    progress-indicator-style-name: "ContainerHeaderSpinnerInverted";
+}
+
+#ContainerHeaderSpinner {
+    base-image-size: $SIZE_SPINNER_SMALL;
+    minimum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    preferred-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    maximum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    margin-top: $MARGIN_DOUBLE;
+}
+
+#ContainerHeaderSpinnerInverted {
+    base-image-name: "spinnerinverted";
+    base-image-size: $SIZE_SPINNER_SMALL;
+    minimum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    preferred-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    maximum-size: $SIZE_SPINNER_SMALL $SIZE_SPINNER_SMALL;
+    margin-top: $MARGIN_DOUBLE;
+}

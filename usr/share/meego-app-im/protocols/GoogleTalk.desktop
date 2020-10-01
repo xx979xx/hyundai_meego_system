@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=IMProtocol
+Name=Google Talk
+
+[MTI]
+Id=im-google-talk
+Content=GoogleTalkAccountContent
+ConnectionManager=gabble
+Protocol=jabber
+Icon=image://themedimage/icons/services/gtalk

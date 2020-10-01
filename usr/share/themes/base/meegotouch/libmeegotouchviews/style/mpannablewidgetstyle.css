@@ -1,0 +1,28 @@
+/* MPannableWidgetStyle : MWidgetStyle */
+MPannableWidgetStyle {
+    pan-threshold: 0;  /* unused */
+    pan-click-threshold: 0; /* unused */
+    pointer-spring-k: 0; /* unused */
+    friction-c: 0; /* unused */
+
+    sliding-friction-c: 0.95; 
+    border-spring-k: 0.06;
+    border-friction-c: 0.66;
+
+    /* inherited from MWidgetStyle */
+    preferred-size: 1 1;
+    minimum-size: 0 0;
+    maximum-size: 10000 10000;
+
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+   
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+    maximum-velocity: 100;
+}

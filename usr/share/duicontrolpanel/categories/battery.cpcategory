@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name=Battery
+Name-logical-id=qtn_sett_main_battery
+
+Value="Display, battery"
+Value-logical-id=qtn_sett_main_batterylabel2
+
+Icon=icon-m-settings-battery
+
+Aliases=
+Translation-catalogs=
+
+Order=60
+

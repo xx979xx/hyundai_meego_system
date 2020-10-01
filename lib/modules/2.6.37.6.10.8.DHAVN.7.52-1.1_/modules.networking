@@ -1,0 +1,6 @@
+cdc_ether.ko
+mccicdcncm_net.ko
+mcs7830.ko
+rndis_host.ko
+smsc95xx.ko
+usbnet.ko

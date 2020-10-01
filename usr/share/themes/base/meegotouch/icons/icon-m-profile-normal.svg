@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-profile-normal-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-profile-normal">
+	<rect style="fill:none;" width="48" height="48"/>
+	<g>
+		<path style="fill:#333333;" d="M27.239,23.792H47.25C46.732,12.99,38.039,4.298,27.239,3.781V23.792z"/>
+	</g>
+	<path style="fill:#333333;" d="M18.511,3.261v15.251H3.26c0.666-3.773,2.477-7.27,5.23-10.021S14.737,3.926,18.511,3.261
+		 M20.761,0.75C9.96,1.268,1.268,9.959,0.75,20.762h20.011V0.75L20.761,0.75z"/>
+	<g>
+		<path style="fill:#333333;" d="M23.791,27.238H3.78c0.518,10.801,9.211,19.494,20.01,20.012V27.238z"/>
+	</g>
+	<g>
+		<path style="fill:#333333;" d="M27.239,27.238V47.25c10.8-0.518,19.493-9.211,20.011-20.012H27.239z"/>
+	</g>
+</g>
+</svg>

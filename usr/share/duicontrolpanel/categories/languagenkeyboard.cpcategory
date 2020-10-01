@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name="Language & Keyboard"
+Name-logical-id=qtn_sett_main_language
+
+Value="Language, Text input"
+Value-logical-id=qtn_sett_main_language_label2
+
+Icon=icon-m-common-keyboard
+
+Aliases=
+Translation-catalogs=
+
+Order=90
+

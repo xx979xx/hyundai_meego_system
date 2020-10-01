@@ -1,0 +1,927 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>XEP-proto-tubes: Tubes over XMPP</title><link rel="stylesheet" type="text/css" href="../xmpp.css" /><link href="../prettify.css" type="text/css" rel="stylesheet" /><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /><script type="text/javascript" src="../prettify.js"></script><meta name="DC.Title" content="Tubes over XMPP" /><meta name="DC.Creator" content="Simon McVittie" /><meta name="DC.Creator" content="Alban Crequy" /><meta name="DC.Creator" content="Robert McQueen" /><meta name="DC.Description" content="A protocol for extensible collaboration over XMPP, designed&#10;    specifically to implement Telepathy Tubes." /><meta name="DC.Publisher" content="XMPP Standards Foundation" /><meta name="DC.Contributor" content="XMPP Extensions Editor" /><meta name="DC.Date" content="2008-12-14" /><meta name="DC.Type" content="XMPP Extension Protocol" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="XEP-proto-tubes" /><meta name="DC.Language" content="en" /><meta name="DC.Rights" content="" /></head><body onload="prettyPrint()"><h1>XEP-proto-tubes: Tubes over XMPP</h1><table><tr valign="top"><td><strong>Abstract:</strong></td><td>A protocol for extensible collaboration over XMPP, designed
+    specifically to implement Telepathy Tubes.</td></tr><tr valign="top"><td><strong>Authors:</strong></td><td>Simon McVittie, Alban Crequy, Robert McQueen</td></tr><tr valign="top"><td><strong>Copyright:</strong></td><td>© 1999 - 2009 XMPP Standards Foundation. <a href="#appendix-legal">SEE LEGAL NOTICES</a>.</td></tr><tr valign="top"><td><strong>Status:</strong></td><td>ProtoXEP</td></tr><tr valign="top"><td><strong>Type:</strong></td><td>External extension</td></tr><tr valign="top"><td><strong>Version:</strong></td><td>Gabble 0.7.17</td></tr><tr valign="top"><td><strong>Last Updated:</strong></td><td>2008-12-14</td></tr></table><hr /><p style="color:red">WARNING: This document has not yet been accepted for consideration or approved in any official manner by the XMPP Standards Foundation, and this document is not yet an XMPP Extension Protocol (XEP). If this document is accepted as a XEP by the XMPP Council, it will be published at &lt;<a href="http://xmpp.org/extensions/">http://xmpp.org/extensions/</a>&gt; and announced on the &lt;standards@xmpp.org&gt; mailing list.</p><hr /><h2>Table of Contents</h2><div class="indent"><p><br />1.  <a href="#intro">Introduction</a><br />2.  <a href="#reqs">Requirements</a><br />3.  <a href="#usecases">Use Cases</a><br />   
+      3.1.  <a href="#usecases-muc">In a multi-user chat</a><br />   
+      3.2.  <a href="#usecases-p2p">Peer to peer</a><br />   
+      3.3.  <a href="#usecases-llmuc">In a link-local multi-user chat</a><br />4.  <a href="#caps">Tube capability</a><br />   
+      4.1.  <a href="#caps-general">Global tube capability</a><br />   
+      4.2.  <a href="#caps-specific">Specific tube capability</a><br />5.  <a href="#rules">Business Rules</a><br />   
+      5.1.  <a href="#sect-id2253191">D-Bus unique names in a MUC context</a><br />   
+      5.2.  <a href="#sect-id2253274">D-Bus unique names in a link-local MUC context</a><br />   
+      5.3.  <a href="#sect-id2253293">Definition of the tubes SI profile</a><br />   
+      5.4.  <a href="#sect-id2253339">Parameter types</a><br />   
+      5.5.  <a href="#sect-id2253390">TODO</a><br />6.  <a href="#security">Security Considerations</a><br />7.  <a href="#iana">IANA Considerations</a><br />8.  <a href="#registrar">XMPP Registrar Considerations</a><br />9.  <a href="#schema">XML Schema</a><br />10.  <a href="#sect-id2253449">Appendix: test data for D-Bus unique name algorithm</a></p><p><a href="#appendices">Appendices</a><br />    <a href="#appendix-docinfo">A: Document Information</a><br />    <a href="#appendix-authorinfo">B: Author Information</a><br />    <a href="#appendix-legal">C: Legal Notices</a><br />    <a href="#appendix-xmpp">D: Relation to XMPP</a><br />    <a href="#appendix-discuss">E: Discussion Venue</a><br />    <a href="#appendix-conformance">F: Requirements Conformance</a><br />    <a href="#appendix-notes">G: Notes</a><br />    <a href="#appendix-revs">H: Revision History</a></p></div><hr /><h2>1.
+       <a name="intro" id="intro">Introduction</a></h2>
+  <p>The XML namespace defined here is http://telepathy.freedesktop.org/xmpp/tubes (NS_TUBES in the
+    telepathy-gabble source code).</p>
+<h2>2.
+       <a name="reqs" id="reqs">Requirements</a></h2>
+  <p>The Telepathy project defines an API called Tubes to be used by
+    arbitrary collaborative applications to communicate with instant
+    messaging contacts. This API is intended to be the same for several
+    IM protocols.</p>
+
+  <p>Tubes can be used in two types of context, referred to in Telepathy
+    as Tubes channels:</p>
+
+  <ul>
+    <li>In a multi-user chat room (on XMPP this means XEP-0045) - each
+      MUC may have a tubes channel</li>
+    <li>On a peer-to-peer basis - each pair of contacts may have a Tubes
+      channel</li>
+  </ul>
+
+  <p>Each tube has a service name, used to dispatch it to an appropriate
+    client application, and some essentially arbitrary parameters understood
+    by that client application. The tube's initiator (the contact who
+    started it) must also be tracked.</p>
+
+  <p>The following tube types are currently supported:</p>
+
+  <ul>
+
+    <li>D-Bus - a D-Bus message stream. In a MUC context this behaves like
+      the D-Bus bus daemon, so participants can send each other private
+      messages, or can send broadcast messages which are received by everyone
+      in the MUC (including themselves). Each MUC participant has a D-Bus
+      unique name. In a 1-1 context this behaves like a peer-to-peer
+      D-Bus connection - arbitrary D-Bus messages can be sent by each
+      participant and are received by the other participant.</li>
+
+    <li>Stream - a TCP-like bytestream. The initiator exports a service
+      using a listening socket. The other participant(s) can open one or more
+      reliable stream connections which are forwarded through the instant
+      messaging protocol as (possibly out-of-band) bytestreams.</li>
+  </ul>
+
+  <p>As well as sending and receiving data, the following operations are
+    supported:</p>
+
+  <ul>
+    <li>List the tubes available in this Tubes channel, including their
+      initiator, type, service, parameters and state</li>
+    <li>List the unique-names corresponding to the contacts (JIDs) in a
+      D-Bus tube, if it's in a MUC channel</li>
+  </ul>
+<h2>3.
+       <a name="usecases" id="usecases">Use Cases</a></h2>
+  <div class="indent"><h3>3.1 <a name="usecases-muc" id="usecases-muc">In a multi-user chat</a></h3>
+    <p class="caption"><a name="example-1" id="example-1"></a>Example 1. Offering a new D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- The first witch offers a D-Bus tube to the service
+      lit.macbeth.BubblingCauldron.
+
+      The tube parameters provided via the Telepathy API are (in dbus-python
+      notation):
+
+      {
+        's': 'hello',                     # string
+        'ay': dbus.ByteArray('hello'),    # byte-array
+        'u': dbus.UInt32(123),            # unsigned Int32
+        'i': dbus.Int32(-123),            # signed Int32
+      }
+
+      See below for how the dbus-name is generated.
+      --&gt;
+      &lt;presence to='darkcave@conf.macbeth.lit'
+          from='darkcave@conf.macbeth.lit/FirstWitch'&gt;
+        &lt;x xmlns='http://jabber.org/protocol/muc'&gt;
+        &lt;/x&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube type='dbus' initiator='darkcave@conf.macbeth.lit/FirstWitch'
+            service='lit.macbeth.BubblingCauldron' stream-id='12345'
+            id='54321' dbus-name=':2.Rmlyc3RXaXRjaAAA'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='s' type='str'&gt;hello&lt;/parameter&gt;
+              &lt;parameter name='ay' type='bytes'&gt;aGVsbG8=&lt;/parameter&gt;
+              &lt;parameter name='u' type='uint'&gt;123&lt;/parameter&gt;
+              &lt;parameter name='i' type='int'&gt;-123&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/presence&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-2" id="example-2"></a>Example 2. Accepting (joining) a D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- The second witch accepts the tube by copying it into her own
+      MUC presence, changing the dbus-name to an arbitrary value
+      that nobody else is using. --&gt;
+      &lt;presence to='darkcave@conf.macbeth.lit'
+          from='darkcave@conf.macbeth.lit/Second witch'&gt;
+        &lt;x xmlns='http://jabber.org/protocol/muc'&gt;
+        &lt;/x&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube type='dbus' initiator='darkcave@conf.macbeth.lit/FirstWitch'
+            service='lit.macbeth.BubblingCauldron' stream-id='12345'
+            id='54321' dbus-name=':2.U2Vjb25kIHdpdGNo'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='s' type='str'&gt;hello&lt;/parameter&gt;
+              &lt;parameter name='ay' type='bytes'&gt;aGVsbG8=&lt;/parameter&gt;
+              &lt;parameter name='u' type='uint'&gt;123&lt;/parameter&gt;
+              &lt;parameter name='i' type='int'&gt;-123&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/presence&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-3" id="example-3"></a>Example 3. Sending data in a MUC D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- The second witch sends a D-Bus signal to everyone.
+      MUC D-Bus tubes always use MUC Bytestreams (XEP-proto-muc-bytestream).
+
+      Messages can also go to a particular participant (for method calls and
+      replies), and can be split up if too big - see the MUC Bytestreams
+      document for details.
+
+      In the serialized D-Bus message, the sender field will be
+      ":2.U2Vjb25kIHdpdGNo". If the message was being sent to the first witch only
+      rather than to all participants, its destination field would be
+      ":2.Rmlyc3RXaXRjaAAA".
+
+      The 'sid' here is the same as the 'stream-id' in the &lt;tube&gt; announcement.
+      --&gt;
+      &lt;message to='darkcave@conf.macbeth.lit'
+          from='darkcave@conf.macbeth.lit/Second witch'&gt;
+          &lt;data xmlns='http://telepathy.freedesktop.org/xmpp/protocol/muc-bytestreams'
+            sid="12345"&gt;base64base64...&lt;/data&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-4" id="example-4"></a>Example 4. Offering a new stream tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- The second witch also offers a stream tube to her WebDAV server. --&gt;
+      &lt;presence to='darkcave@conf.macbeth.lit'
+          from='darkcave@conf.macbeth.lit/Second witch'&gt;
+        &lt;x xmlns='http://jabber.org/protocol/muc'&gt;
+        &lt;/x&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;!-- This D-Bus tube is still here from the first example -
+            it's not part of the stream tube --&gt;
+          &lt;tube type='dbus' initiator='darkcave@conf.macbeth.lit/FirstWitch'
+            service='lit.macbeth.BubblingCauldron' stream-id='12345'
+            id='54321' dbus-name=':2.U2Vjb25kIHdpdGNo'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='s' type='str'&gt;hello&lt;/parameter&gt;
+              &lt;parameter name='ay' type='bytes'&gt;aGVsbG8=&lt;/parameter&gt;
+              &lt;parameter name='u' type='uint'&gt;123&lt;/parameter&gt;
+              &lt;parameter name='i' type='int'&gt;-123&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+
+          &lt;!-- This is the new stream tube. There is no initiator attribute
+          because the initiator is implicitly the participant whose presence
+          it's seen in --&gt;
+          &lt;tube type='stream' service='webdav' id='666'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='u' type='str'&gt;anonymous&lt;/parameter&gt;
+              &lt;parameter name='p' type='str'&gt;password&lt;/parameter&gt;
+              &lt;parameter name='path' type='str'&gt;/plots/macbeth&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/presence&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-5" id="example-5"></a>Example 5. Accepting (joining) a stream tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- The first witch makes a connection to the second witch to
+      open the stream. Data transfer proceeds as usual according to
+      Stream Initiation - in this case, they'll use IBB.
+
+      The child element is &lt;muc-stream&gt; and not &lt;stream&gt; in order to
+      disambiguate between SI-based streams in a MUC Tubes channel, and
+      SI-based streams in a 1-1 channel between two members of a MUC.
+
+      The first witch MUST NOT copy the tube into her own presence
+      in this case - only the initiator should put stream tubes in their
+      presence, since stream tubes cannot continue after the initiator leaves.
+      --&gt;
+      &lt;iq from='darkcave@conf.macbeth.lit/FirstWitch'
+          to='darkcave@conf.macbeth.lit/Second witch' type='set'&gt;
+        &lt;si xmlns='http://jabber.org/protocol/si' id='55555'
+          profile='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;muc-stream
+            xmlns='http://telepathy.freedesktop.org/xmpp/tubes'
+            tube='666' /&gt;
+          &lt;feature xmlns='http://jabber.org/protocol/feature-neg'&gt;
+            &lt;x xmlns="jabber:x:data" type="form"&gt;
+              &lt;field var='stream-method' type='list-single'&gt;
+                &lt;option&gt;
+                  &lt;value&gt;http://jabber.org/protocol/ibb&lt;/value&gt;
+                &lt;/option&gt;
+              &lt;/field&gt;
+            &lt;/x&gt;
+          &lt;/feature&gt;
+        &lt;/si&gt;
+      &lt;/iq&gt;
+
+      &lt;!-- The second witch acknowledges the IQ and data transfer proceeds
+      using stream ID 55555 (not shown here, but it's the same as for normal
+      IBB-over-SI). --&gt;
+      
+    </pre></div>
+    <p class="caption"><a name="example-6" id="example-6"></a>Example 6. Leaving a tube explicitly</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- The second witch stops offering the stream tube.
+      She SHOULD close the stream first, if possible - assume this has
+      already been done. --&gt;
+      &lt;presence to='darkcave@conf.macbeth.lit'
+          from='darkcave@conf.macbeth.lit/Second witch'&gt;
+        &lt;x xmlns='http://jabber.org/protocol/muc'&gt;
+        &lt;/x&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube type='dbus' initiator='darkcave@conf.macbeth.lit/FirstWitch'
+            service='lit.macbeth.BubblingCauldron' stream-id='12345'
+            id='54321' dbus-name=':2.Rmlyc3RXaXRjaAAA'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='s' type='str'&gt;hello&lt;/parameter&gt;
+              &lt;parameter name='ay' type='bytes'&gt;aGVsbG8=&lt;/parameter&gt;
+              &lt;parameter name='u' type='uint'&gt;123&lt;/parameter&gt;
+              &lt;parameter name='i' type='int'&gt;-123&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/presence&gt;
+      
+    </pre></div>
+    <p>Leaving the MUC also implicitly implies leaving all tubes.</p>
+  </div>
+  <div class="indent"><h3>3.2 <a name="usecases-p2p" id="usecases-p2p">Peer to peer</a></h3>
+    <p class="caption"><a name="example-7" id="example-7"></a>Example 7. Offering a new D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Romeo offers Tybalt a D-Bus tube to the (hypothetical) service
+      com.example.Chess.
+
+      The tube parameters provided via the Telepathy API are (in dbus-python
+      notation):
+
+      {
+        'theme': 'montagues-vs-capulets.conf'   # string
+      }
+      --&gt;
+      &lt;iq to='tybalt@capulet.lit/Work'
+          from='romeo@montague.lit/Home' type='set'&gt;
+        &lt;si xmlns='http://jabber.org/protocol/si' id='chess-stream-1'
+            profile='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+              type='dbus' service='com.example.Chess' id='333'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='theme'
+                type='str'&gt;montagues-vs-capulets.conf&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+          &lt;feature xmlns='http://jabber.org/protocol/feature-neg'&gt;
+            &lt;x xmlns="jabber:x:data" type="form"&gt;
+              &lt;field var='stream-method' type='list-single'&gt;
+                &lt;option&gt;
+                  &lt;value&gt;http://jabber.org/protocol/ibb&lt;/value&gt;
+                &lt;/option&gt;
+              &lt;/field&gt;
+            &lt;/x&gt;
+          &lt;/feature&gt;
+        &lt;/si&gt;
+      &lt;/iq&gt;
+      
+    </pre></div>
+    <p class="caption"><a name="example-8" id="example-8"></a>Example 8. Accepting (joining) a D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Tybalt accepts the tube by accepting the SI --&gt;
+      &lt;iq to='romeo@montague.lit/Home'
+          from='tybalt@capulet.lit/Work' type='result'&gt;
+        &lt;si xmlns='http://jabber.org/protocol/si'&gt;
+          &lt;feature xmlns='http://jabber.org/protocol/feature-neg'&gt;
+            &lt;x xmlns='jabber:x:data' type='submit'&gt;
+              &lt;field var='stream=method'&gt;
+                &lt;value&gt;http://jabber.org/protocol/ibb&lt;/value&gt;
+              &lt;/field&gt;
+            &lt;/x&gt;
+          &lt;/feature&gt;
+        &lt;/si&gt;
+      &lt;/iq&gt;
+
+      &lt;!-- Messages are now sent using whatever stream protocol was
+      negotiated, in this case IBB. Implementations MUST NOT assume that
+      message boundaries are preserved. Implementations MAY preserve message
+      boundaries.
+      --&gt;
+      
+    </pre></div>
+    <p class="caption"><a name="example-9" id="example-9"></a>Example 9. Offering a new stream tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Romeo offers Juliet a D-Bus tube to a private web server
+
+      The tube parameters provided via the Telepathy API are (in dbus-python
+      notation):
+
+      {
+        'path': '/poetry/for-juliet/'   # string
+      }
+      --&gt;
+      &lt;message to='juliet@capulet.lit/Balcony'
+          from='romeo@montague.lit/Home'&gt;
+        &lt;tube xmlns='http://telepathy.freedesktop.org/xmpp/tubes'
+            type='stream' service='http' id='1402'&gt;
+          &lt;parameters&gt;
+            &lt;parameter name='path' type='str'&gt;/poetry/for-juliet/&lt;/parameter&gt;
+          &lt;/parameters&gt;
+        &lt;/tube&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+    <p class="caption"><a name="example-10" id="example-10"></a>Example 10. Accepting (joining) a stream tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Juliet's web browser connects to Juliet's XMPP implementation,
+      causing a stream to be opened --&gt;
+      &lt;iq to='romeo@montague.lit/Home'
+          from='juliet@capulet.lit/Balcony' type='set'&gt;
+        &lt;si xmlns='http://jabber.org/protocol/si' id='http-stream-1a'
+            profile='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;stream xmlns='http://telepathy.freedesktop.org/xmpp/tubes'
+            tube='1402'/&gt;
+          &lt;feature xmlns='http://jabber.org/protocol/feature-neg'&gt;
+            &lt;x xmlns="jabber:x:data" type="form"&gt;
+              &lt;field var='stream-method' type='list-single'&gt;
+                &lt;option&gt;
+                  &lt;value&gt;http://jabber.org/protocol/ibb&lt;/value&gt;
+                &lt;/option&gt;
+              &lt;/field&gt;
+            &lt;/x&gt;
+          &lt;/feature&gt;
+        &lt;/si&gt;
+      &lt;/iq&gt;
+      &lt;!-- Romeo's XMPP implementation accepts the incoming connection
+      and routes it to his web server --&gt;
+      &lt;iq to='juliet@capulet.lit/Balcony'
+          from='romeo@montague.lit/Home' type='result'&gt;
+          &lt;si xmlns='http://jabber.org/protocol/si'&gt;
+            &lt;feature xmlns='http://jabber.org/protocol/feature-neg'&gt;
+              &lt;x xmlns='jabber:x:data' type='submit'&gt;
+                &lt;field var='stream=method'&gt;
+                  &lt;value&gt;http://jabber.org/protocol/ibb&lt;/value&gt;
+                &lt;/field&gt;
+              &lt;/x&gt;
+            &lt;/feature&gt;
+        &lt;/si&gt;
+      &lt;/iq&gt;
+
+      &lt;!-- Messages are now sent using whatever stream protocol was
+      negotiated, in this case IBB. --&gt;
+      
+    </pre></div>
+    <p>If Juliet's web browser opens multiple parallel connections to her
+      XMPP implementation, the implementation will open multiple parallel
+      SI streams as shown above, and Romeo's XMPP implementation will open
+      multiple parallel connections to his web server. This MUST be
+      supported by implementations.</p>
+    <p class="caption"><a name="example-11" id="example-11"></a>Example 11. Leaving a tube (initiator)</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Romeo stops offering the stream tube.
+      He SHOULD close all streams first. If not, Juliet SHOULD
+      close all streams when this message is received. --&gt;
+      &lt;message to='juliet@capulet.lit/Balcony'
+          from='romeo@montague.lit/Home'&gt;
+        &lt;close xmlns='http://telepathy.freedesktop.org/xmpp/tubes'
+          tube='1402'/&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+    <p class="caption"><a name="example-12" id="example-12"></a>Example 12. Leaving a tube (non-initiator)</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Alternatively, Juliet could reject the stream tube.
+      She SHOULD close all streams first. If not, Romeo SHOULD close all
+      streams in response to this message. --&gt;
+      &lt;message from='juliet@capulet.lit/Balcony'
+          to='romeo@montague.lit/Home'&gt;
+        &lt;close xmlns='http://telepathy.freedesktop.org/xmpp/tubes'
+          tube='1402'/&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+    <p>Only stream tubes use a message stanza to be closed. D-Bus tubes are
+       closed implicitly when the underlying bytestream is closed and thus do
+       not need an explicit message stanza.</p>
+  </div>
+  <div class="indent"><h3>3.3 <a name="usecases-llmuc" id="usecases-llmuc">In a link-local multi-user chat</a></h3>
+    <p class="caption"><a name="example-13" id="example-13"></a>Example 13. Offering a new D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Suppose Mercutio and Tybalt are in a link-local chatroom,
+      with their mDNS presence records being
+      mercutio@mab._presence._tcp.local. and
+      Tybalt@feline._presence._tcp.local.
+
+      Mercutio offers a D-Bus tube to the service lit.verona.Duel.
+
+      This time one Tube parameter was provided by the Telepathy API,
+      a string called 'weapon' with value "swords".
+
+      See below for how the dbus-name is generated.
+      --&gt;
+      &lt;!-- Sent by mercutio@mab --&gt;
+      &lt;message type='groupchat'&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube type='dbus' initiator='mercutio@mab'
+            service='lit.verona.Duel' stream-id='8'
+            id='54321' dbus-name=':2.bWVyY3V0aW9AbWFi'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='weapon' type='str'&gt;swords&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-14" id="example-14"></a>Example 14. Accepting (joining) a D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Tybalt joins the D-Bus tube, changing the dbus-name appropriately.
+      In the implementation of Tubes on link-local MUC he may also have a
+      different stream-id. --&gt;
+      &lt;!-- Sent by Tybalt@feline --&gt;
+      &lt;message type='groupchat'&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube type='dbus' initiator='mercutio@mab'
+            service='lit.macbeth.BubblingCauldron' stream-id='6'
+            id='54321' dbus-name=':2.VHliYWx0QGZlbGluZQAA'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='weapon' type='str'&gt;swords&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-15" id="example-15"></a>Example 15. Sending data in a link-local MUC D-Bus tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Tybalt sends a D-Bus message and Mercutio responds.
+
+      Link-local MUC D-Bus tubes always use the rMulticast streams 1 to 255;
+      in this case, because Tybalt has stream-id='6' in his announcement
+      message, all messages from Tybalt in stream 6 MUST be interpreted as
+      part of tube 54321. Similarly, all messages from Mercutio in stream 8
+      MUST be interpreted as part of tube 54321. Messages from Tybalt in
+      stream 8 are NOT part of tube 54321.
+      --&gt;
+      &lt;!-- (a binary rMulticast message is sent by Tybalt with stream ID 6;
+      its payload is a raw D-Bus message) --&gt;
+      &lt;!-- (a binary rMulticast message is sent by Mercutio with stream ID 8;
+      its payload is also a raw D-Bus message) --&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-16" id="example-16"></a>Example 16. Joining and being notified about link-local MUC tubes</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- An rMulticast join event occurs, in which Romeo and Benvolio
+      join the chatroom. Their mDNS presence records are:
+
+      romeo@angstbook._presence._tcp.local.
+      benvolio@peacemaker._presence._tcp.local.
+
+      Mercutio and Tybalt must both respond by re-sending
+      their tube announcements to the chatroom, once. They SHOULD NOT
+      send their tube announcements twice when two participants join
+      in a single join event. --&gt;
+
+      &lt;!-- rMulticast protocol indicates that romeo@angstbook and
+      benvolio@peacemaker have joined the room --&gt;
+
+      &lt;!-- Sent by mercutio@mab --&gt;
+      &lt;message type='groupchat'&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube type='dbus' initiator='mercutio@mab'
+            service='lit.verona.Duel' stream-id='8'
+            id='54321' dbus-name=':2.bWVyY3V0aW9AbWFi'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='weapon' type='str'&gt;swords&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/message&gt;
+
+      &lt;!-- Sent by Tybalt@feline --&gt;
+      &lt;message type='groupchat'&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;tube type='dbus' initiator='mercutio@mab'
+            service='lit.verona.Duel' stream-id='6'
+            id='54321' dbus-name=':2.VHliYWx0QGZlbGluZQAA'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='weapon' type='str'&gt;swords&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-17" id="example-17"></a>Example 17. Offering a new stream tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Mercutio offers a stream tube to his WebDAV server. This message
+      would also be re-sent if another rMulticast join event occurred. --&gt;
+      &lt;message type='groupchat'&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;!-- This D-Bus tube is still here from the first example -
+            it's not part of the stream tube --&gt;
+          &lt;tube type='dbus' initiator='mercutio@mab'
+            service='lit.verona.Duel' stream-id='8'
+            id='54321' dbus-name=':2.bWVyY3V0aW9AbWFi'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='weapon' type='str'&gt;swords&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+
+          &lt;!-- This is the new stream tube. There is no initiator attribute
+          because the initiator is implicitly the participant whose message
+          it's seen in --&gt;
+          &lt;tube type='stream' service='webdav' id='666'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='path' type='str'&gt;/warez&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/presence&gt;
+      
+    </pre></div>
+
+    <p class="caption"><a name="example-18" id="example-18"></a>Example 18. Accepting (joining) a stream tube</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Romeo joins the stream tube to download some MP3s from
+      Mercutio's server.
+
+      The child element is, again, &lt;muc-stream&gt; and not &lt;stream&gt;.
+
+      Romeo MUST NOT copy the tube into his own tube announcements
+      in this case - only the initiator should announce stream tubes,
+      since stream tubes cannot continue after the initiator leaves.
+      --&gt;
+      &lt;!-- Sent by romeo@angstbook --&gt;
+      &lt;iq to='mercutio@mab' type='set'&gt;
+        &lt;si xmlns='http://jabber.org/protocol/si' id='55555'
+          profile='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;muc-stream
+            xmlns='http://telepathy.freedesktop.org/xmpp/tubes'
+            tube='666' /&gt;
+          &lt;feature xmlns='http://jabber.org/protocol/feature-neg'&gt;
+            &lt;x xmlns="jabber:x:data" type="form"&gt;
+              &lt;field var='stream-method' type='list-single'&gt;
+                &lt;option&gt;
+                  &lt;value&gt;jabber:iq:oob&lt;/value&gt;
+                &lt;/option&gt;
+              &lt;/field&gt;
+            &lt;/x&gt;
+          &lt;/feature&gt;
+        &lt;/si&gt;
+      &lt;/iq&gt;
+
+      &lt;!-- Sent by mercutio@mab --&gt;
+      &lt;iq to='romeo@angstbook' type='result'&gt;
+        &lt;si xmlns='http://jabber.org/protocol/si' id='55555'
+          profile='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;muc-stream xmlns='http://telepathy.freedesktop.org/xmpp/tubes'
+            tube='666'/&gt;
+          &lt;feature xmlns='http://jabber.org/protocol/feature-neg'&gt;
+            &lt;x xmlns='jabber:x:data' type='submit'&gt;
+              &lt;field var='stream-method'&gt;
+                &lt;value&gt;jabber:iq:oob&lt;/value&gt;
+              &lt;/field&gt;
+            &lt;/x&gt;
+          &lt;/feature&gt;
+        &lt;/si&gt;
+      &lt;/iq&gt;
+
+      &lt;!-- Sent by romeo@angstbook --&gt;
+      &lt;iq to='mercutio@mab' type='set'&gt;
+        &lt;query xmlns='jabber:iq:oob' sid='55555'&gt;
+          &lt;url&gt;x-tcp://angstbook.local:1234&lt;/url&gt;
+        &lt;/query&gt;
+      &lt;/iq&gt;
+
+      &lt;!-- Mercutio resolves the IP address of angstbook.local and connects
+      to port 1234, and out-of-band transfer proceeds --&gt;
+
+      &lt;!-- FIXME: this has too many steps and it ends up with a TCP
+      connection flowing "the wrong way" --&gt;
+      
+    </pre></div>
+    <p class="caption"><a name="example-19" id="example-19"></a>Example 19. Leaving a tube explicitly</p><div class="indent"><pre class="prettyprint">
+      
+      &lt;!-- Mercutio stops offering the stream tube.
+      He SHOULD close the OOB stream first, if possible - assume this has
+      already been done. --&gt;
+      &lt;message type='groupchat'&gt;
+        &lt;tubes xmlns='http://telepathy.freedesktop.org/xmpp/tubes'&gt;
+          &lt;!-- This D-Bus tube is still here from the first example -
+            it's now the only one, because the stream tube has been
+            removed --&gt;
+          &lt;tube type='dbus' initiator='mercutio@mab'
+            service='lit.verona.Duel' stream-id='8'
+            id='54321' dbus-name=':2.bWVyY3V0aW9AbWFi'&gt;
+            &lt;parameters&gt;
+              &lt;parameter name='weapon' type='str'&gt;swords&lt;/parameter&gt;
+            &lt;/parameters&gt;
+          &lt;/tube&gt;
+        &lt;/tubes&gt;
+      &lt;/message&gt;
+      
+    </pre></div>
+    <p>Leaving the link-local MUC (a leave or split event from rMulticast)
+      also implicitly implies leaving all tubes.</p>
+  </div>
+<h2>4.
+       <a name="caps" id="caps">Tube capability</a></h2>
+  <div class="indent"><h3>4.1 <a name="caps-general" id="caps-general">Global tube capability</a></h3>
+    <p>The tube feature is advertised with XEP-0115 Entity Capabilities using
+    this string:</p>
+    <p class="caption"></p><div class="indent"><pre class="prettyprint">http://telepathy.freedesktop.org/xmpp/tubes</pre></div>
+  </div>
+  <div class="indent"><h3>4.2 <a name="caps-specific" id="caps-specific">Specific tube capability</a></h3>
+    <p>We want to know which tube the contacts can handle. There is two
+    different kind of tube capabilities:</p>
+    <ul>
+      <li>Can my contact receive a tube offer of a specific service?</li>
+      <li>Can my contact offer a tube of a specific service?</li>
+    </ul>
+    <p>Only the first kind is considered. The second is out of scope of this
+    specification. Each specific service is advertised with XEP-0115 Entity
+    Capabilities with this string:</p>
+    <p class="caption"></p><div class="indent"><pre class="prettyprint">http://telepathy.freedesktop.org/xmpp/tubes/$type#$service</pre></div>
+    <p>where $type is the tube type (either "dbus" or "stream") and $service is
+    the service name (e.g. "vnc" or "TicTacTube").</p>
+  </div>
+<h2>5.
+       <a name="rules" id="rules">Business Rules</a></h2>
+  <div class="indent"><h3>5.1 <a name="sect-id2253191" id="sect-id2253191">D-Bus unique names in a MUC context</a></h3>
+    <p>The D-Bus unique names used in the MUC SHOULD be ":2." followed by the
+      MUC nick (i.e. the resource part of the MUC JID) processed with the
+      following algorithm:</p>
+
+    <ul>
+      <li>Let utf8nick be the MUC nick encoded using UTF-8</li>
+      <li>If utf8nick has 186 octets or fewer, encode it using
+        Base64; otherwise encode a string consisting of the first 169
+        octets of utf8nick, followed by the 20 octets of the
+        SHA-1 of utf8nick (note that this is the whole of the raw
+        binary SHA-1, and not the first half of the SHA-1 written in
+        hexadecimal).</li>
+      <li>Remove all whitespace</li>
+      <li>Replace "+" with "_", "/" with "-" and "=" with "A"</li>
+    </ul>
+
+    <p>This produces collision-free unique names of length no more than 251
+      octets (4/3 * 186 + 3) for nicknames no longer than 186 UTF-8 octets
+      (replacing "=" with "A" is harmless here because XMPP resources cannot
+      contain U+0000).</p>
+
+    <p>For longer nicknames it makes collisions highly unlikely, and produces
+      255-octet unique names (4/3 * 189 + 3), which still fit into D-Bus'
+      255-octet limit.</p>
+
+    <p>The choice of 186 and 169 for the magic numbers ensures that these long
+      nicknames can only have unique-name collisions with other long
+      nicknames, and that the Base64 encoding step when applied to long
+      nicknames does not leave any trailing "=" characters.</p>
+
+    <p>Implementations MUST NOT use unique names that start with ":2." but are
+      not formed according to the above rules, and SHOULD treat tube elements
+      containing such a dbus-name as if they were invalid.</p>
+
+    <p>For backwards compatibility with earlier implementations, the dbus-name
+      MAY also be ":1." followed by an arbitrary unique string of up to 252
+      characters chosen from A-Z, a-z, 0-9, "-" or "_".</p>
+  </div>
+  <div class="indent"><h3>5.2 <a name="sect-id2253274" id="sect-id2253274">D-Bus unique names in a link-local MUC context</a></h3>
+    <p>The D-Bus unique names used in a link-local MUC SHOULD be ":2."
+      followed by the _presence._tcp instance name (e.g. mercutio@mab)
+      processed with the algorithm above.</p>
+    <p>Again, implementations MUST NOT use unique names that start with ":2."
+      but are not formed according to the above rules, and SHOULD treat tube
+      elements containing such a dbus-name as if they were invalid.</p>
+  </div>
+  <div class="indent"><h3>5.3 <a name="sect-id2253293" id="sect-id2253293">Definition of the tubes SI profile</a></h3>
+    <p>The Tubes SI profile is indicated by the profile string http://telepathy.freedesktop.org/xmpp/tubes.
+      A Tubes SI IQ can be classified as follows:</p>
+    <ul>
+      <li>If the IQ contains a &lt;tube&gt; element with the namespace
+        http://telepathy.freedesktop.org/xmpp/tubes, then the IQ represents a new tube being offered.</li>
+
+      <li>If the IQ contains a &lt;stream&gt; element with the namespace
+        http://telepathy.freedesktop.org/xmpp/tubes, then the IQ represents a new connection to an existing
+        stream tube in a 1-1 Tubes channel.</li>
+
+      <li>If the IQ contains a &lt;muc-stream&gt; element with the namespace
+        http://telepathy.freedesktop.org/xmpp/tubes, then the IQ represents a new connection to an existing
+        stream tube in a MUC Tubes channel - this message type is invalid
+        and must be rejected unless received via a MUC.</li>
+
+      <li>Otherwise, the SI is invalid and MUST be rejected.</li>
+    </ul>
+  </div>
+  <div class="indent"><h3>5.4 <a name="sect-id2253339" id="sect-id2253339">Parameter types</a></h3>
+    <p>The allowed parameter types are:</p>
+    <ul>
+      <li>"str": A Unicode string containing no zero bytes '\0'. In this
+          implementation it cannot contain any other character forbidden
+          by XML either. The &lt;parameter&gt; character content is the
+          string itself. The corresponding D-Bus signature is 's'.
+          This corresponds to xs:string in XML Schema Part 2.</li>
+      <li>"bytes": An array of bytes, represented in Base64. The corresponding
+          D-Bus signature is 'ay'. This corresponds to xs:base64Binary in
+          XML Schema Part 2.</li>
+      <li>"uint": An unsigned integer representable in 32 bits. The
+          corresponding D-Bus signature is 'u' or 'q' on input, 'u' on output.
+          The element's character content is an ASCII unsigned
+          decimal integer. This corresponds to xs:unsignedInt in XML
+          Schema Part 2.</li>
+      <li>"int": A signed integer representable in 32 bits using two's
+          complement. The corresponding D-Bus signature is 'i' or 'n' on input,
+          'i' on output, and the element's character content is an ASCII
+          decimal integer, possibly starting with '-' or '+'. This corresponds
+          to xs:int in XML Schema Part 2.</li>
+        <li>"bool": A boolean value represented as one of the strings "false",
+          "true", "0" or "1", as per xs:boolean in XML Schema Part 2.
+          The corresponding D-Bus signature is 'b'. (Implementation note:
+          early versions of Tubes in Gabble only accepted "0" or "1", so
+          implementations that care about backwards compatibility SHOULD emit
+          those representations).</li>
+    </ul>
+  </div>
+  <div class="indent"><h3>5.5 <a name="sect-id2253390" id="sect-id2253390">TODO</a></h3>
+    <p>FIXME: how big do we want to allow a message to be? In the D-Bus
+      specification the limit is 2**27 bytes, in the default dbus-daemon
+      configuration (as used on the system bus) it's 32M.</p>
+    <p>FIXME: limit how many messages are queued up somehow (the system bus
+      limits it to 127M in total)</p>
+  </div>
+<h2>6.
+       <a name="security" id="security">Security Considerations</a></h2>
+  <p>FIXME</p>
+<h2>7.
+       <a name="iana" id="iana">IANA Considerations</a></h2>
+  <p>None.</p>
+<h2>8.
+       <a name="registrar" id="registrar">XMPP Registrar Considerations</a></h2>
+  <p>None, this isn't a real XEP (yet?).</p>
+<h2>9.
+       <a name="schema" id="schema">XML Schema</a></h2>
+  <p class="caption"></p><div class="indent"><pre class="prettyprint">
+    &lt;xs:schema
+      xmlns:xs='http://www.w3.org/2001/XMLSchema'
+      targetNamespace='http://telepathy.freedesktop.org/xmpp/protocol/tubes'
+      xmlns='http://telepathy.freedesktop.org/xmpp/protocol/tubes'
+      elementFormDefault='qualified'&gt;
+
+      &lt;!-- Container for &lt;tube&gt; elements in MUC &lt;presence&gt; --&gt;
+      &lt;xs:element name='tubes'&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence minOccurs='0'&gt;
+            &lt;xs:element ref='tube' minOccurs='0' maxOccurs='unbounded'/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+
+      &lt;!-- A tube offer --&gt;
+      &lt;xs:element name='tube'&gt;
+        &lt;xs:complexType&gt;
+          &lt;!-- Required attributes --&gt;
+          &lt;xs:attribute name='id' type='xs:unsignedInt' use='required'/&gt;
+          &lt;xs:attribute name='type' use='required'&gt;
+            &lt;xs:simpleType&gt;
+              &lt;xs:restriction base='xs:NCName'&gt;
+                &lt;xs:enumeration value='dbus'/&gt;
+                &lt;xs:enumeration value='stream'/&gt;
+              &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+          &lt;/xs:attribute&gt;
+          &lt;xs:attribute name='service' type='xs:string' use='required'/&gt;
+
+          &lt;!-- MUC D-Bus tube attributes --&gt;
+          &lt;!-- MUST be present for MUC D-Bus tubes, SHOULD NOT be
+          emitted for other types of tube, MUST be ignored for other types
+          of tube --&gt;
+          &lt;xs:attribute name='initiator' type='xs:string' use='optional'/&gt;
+          &lt;xs:attribute name='dbus-name' type='xs:string' use='optional'/&gt;
+          &lt;xs:attribute name='stream-id' type='xs:string' use='optional'/&gt;
+
+          &lt;!-- Parameters --&gt;
+          &lt;xs:element name='parameters'&gt;
+            &lt;xs:sequence minOccurs='0'&gt;
+              &lt;xs:element name='parameter' minOccurs='0'
+                maxOccurs='unbounded' type='name-value-pair'/&gt;
+              &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+
+      &lt;!-- A name-value pair --&gt;
+      &lt;xs:complexType name='name-value-pair'&gt;
+        &lt;xs:simpleContent&gt;
+          &lt;xs:extension base='xs:string'&gt;
+            &lt;xs:attribute name='name' type='xs:string'/&gt;
+            &lt;xs:attribute name='type'&gt;
+              &lt;xs:simpleType&gt;
+                &lt;xs:restriction base='xs:NCName'&gt;
+                  &lt;xs:enumeration value='bool'/&gt;
+                  &lt;xs:enumeration value='str'/&gt;
+                  &lt;xs:enumeration value='bytes'/&gt;
+                  &lt;xs:enumeration value='int'/&gt;
+                  &lt;xs:enumeration value='uint'/&gt;
+                &lt;/xs:restriction&gt;
+              &lt;/xs:simpleType&gt;
+            &lt;/xs:attribute&gt;
+          &lt;/xs:extension&gt;
+        &lt;/xs:simpleContent&gt;
+      &lt;/xs:complexType&gt;
+
+      &lt;xs:complexType name='tube-reference'&gt;
+        &lt;xs:simpleContent&gt;
+          &lt;xs:extension base='empty'&gt;
+            &lt;xs:attribute name='tube' use='required' type='xs:unsignedInt'/&gt;
+          &lt;/xs:extension&gt;
+        &lt;/xs:simpleContent&gt;
+      &lt;/xs:complexType&gt;
+
+      &lt;xs:element name='close' type='tube-reference'/&gt;
+
+      &lt;xs:element name='stream' type='tube-reference'/&gt;
+
+      &lt;!-- only valid in a MUC --&gt;
+      &lt;xs:element name='muc-stream' type='tube-reference'/&gt;
+
+      &lt;xs:simpleType name='empty'&gt;
+        &lt;xs:restriction base='xs:string'&gt;
+          &lt;xs:enumeration value=''/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:schema&gt;
+  </pre></div>
+<h2>10.
+       <a name="sect-id2253449" id="sect-id2253449">Appendix: test data for D-Bus unique name algorithm</a></h2>
+  <p>The string "short" produces the unique name ":2.c2hvcnQA".</p>
+  <p>The string "FirstWitch", as used in the examples, produces the
+    unique name ":2.Rmlyc3RXaXRjaAAA".</p>
+  <p>The string "Second witch", as used in the examples, produces the
+    unique name ":2.U2Vjb25kIHdpdGNo".</p>
+
+  <p>The string consisting of 18 repetitions of "0123456789" followed by
+    "012345" (186 characters) produces a unique name consisting of ":2.",
+    followed by 6 repetitions of the 40-character string
+    "MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5", followed by "MDEyMzQ1".</p>
+
+  <p>The string consisting of 18 repetitions of "0123456789" followed by
+    "0123456" (187 characters) produces a unique name consisting of ":2.",
+    followed by 5 repetitions of the 40-character string above, followed by
+    "MDEyMzQ1Njc4OTAxMjM0NTY3OEVd9C5NgmmRD6jp1ftG6XUEc11x".</p>
+
+  <p>The string consisting of 20 repetitions of "0123456789" (200 characters)
+    produces a unique name consisting of ":2.", followed by 5 repetitions of
+    the 40-character string above, followed by
+    "MDEyMzQ1Njc4OTAxMjM0NTY3OO-utwRnwcoUFhnJVMKg5pm9Hxal".</p>
+<hr /><a name="appendices" id="appendices"></a><h2>Appendices</h2><hr /><a name="appendix-docinfo" id="appendix-docinfo"></a><h3>Appendix A: Document Information</h3><p class="indent">
+            Series: <a href="http://xmpp.org/extensions/">XEP</a><br />
+            Number: proto-tubes<br />
+            Publisher: <a href="/xsf/">XMPP Standards Foundation</a><br />
+            Status: 
+            <a href="http://xmpp.org/extensions/xep-0001.html#states-ProtoXEP">ProtoXEP</a><br />
+            Type:
+            <a href="http://xmpp.org/extensions/xep-0001.html#types-External extension">External extension</a><br />
+            Version: Gabble 0.7.17<br />
+            Last Updated: 2008-12-14<br />
+                Approving Body: <a href="http://xmpp.org/council/">XMPP Council</a><br />Dependencies: XMPP Core, XEP-0045, XEP-0047, XEP-0095, XEP-proto-muc-bytestream<br />
+                Supersedes: None<br />
+                Superseded By: None<br />
+            Short Name: NOT YET ASSIGNED<br /></p><hr /><a name="appendix-authorinfo" id="appendix-authorinfo"></a><h3>Appendix B: Author Information</h3><div class="indent"><h3>Simon McVittie</h3><p class="indent">
+        Email:
+        <a href="mailto:simon.mcvittie@collabora.co.uk">simon.mcvittie@collabora.co.uk</a><br />
+        JabberID: 
+        <a href="xmpp:simon.mcvittie@collabora.co.uk">simon.mcvittie@collabora.co.uk</a><br /></p><h3>Alban Crequy</h3><p class="indent">
+        Email:
+        <a href="mailto:alban.crequy@collabora.co.uk">alban.crequy@collabora.co.uk</a><br />
+        JabberID: 
+        <a href="xmpp:alban.crequy@collabora.co.uk">alban.crequy@collabora.co.uk</a><br /></p><h3>Robert McQueen</h3><p class="indent">
+        Email:
+        <a href="mailto:robert.mcqueen@collabora.co.uk">robert.mcqueen@collabora.co.uk</a><br />
+        JabberID: 
+        <a href="xmpp:robert.mcqueen@collabora.co.uk">robert.mcqueen@collabora.co.uk</a><br /></p></div><hr /><a name="appendix-legal" id="appendix-legal"></a><h3>Appendix C: Legal Notices</h3><div class="indent"><h4>Copyright</h4><h4>Permissions</h4><h4>Disclaimer of Warranty</h4><span style="font-weight: bold"></span><h4>Limitation of Liability</h4><h4>IPR Conformance</h4></div><hr /><a name="appendix-xmpp" id="appendix-xmpp"></a><h3>Appendix D: Relation to XMPP</h3><p class="indent">The Extensible Messaging and Presence Protocol (XMPP) is defined in the XMPP Core (RFC 3920) and XMPP IM (RFC 3921) specifications contributed by the XMPP Standards Foundation to the Internet Standards Process, which is managed by the Internet Engineering Task Force in accordance with RFC 2026. Any protocol defined in this document has been developed outside the Internet Standards Process and is to be understood as an extension to XMPP rather than as an evolution, development, or modification of XMPP itself.</p><hr /><a name="appendix-discuss" id="appendix-discuss"></a><h3>Appendix E: Discussion Venue</h3><p class="indent">The primary venue for discussion of XMPP Extension Protocols is the &lt;<a href="http://mail.jabber.org/mailman/listinfo/standards">standards@xmpp.org</a>&gt; discussion list.</p><p class="indent">Discussion on other xmpp.org discussion lists might also be appropriate; see &lt;<a href="http://xmpp.org/about/discuss.shtml">http://xmpp.org/about/discuss.shtml</a>&gt; for a complete list.</p><p class="indent">Errata can be sent to &lt;<a href="mailto:editor@xmpp.org">editor@xmpp.org</a>&gt;.</p><hr /><a name="appendix-conformance" id="appendix-conformance"></a><h3>Appendix F: Requirements Conformance</h3><p class="indent">The following requirements keywords as used in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>: "MUST", "SHALL", "REQUIRED"; "MUST NOT", "SHALL NOT"; "SHOULD", "RECOMMENDED"; "SHOULD NOT", "NOT RECOMMENDED"; "MAY", "OPTIONAL".</p><hr /><a name="appendix-notes" id="appendix-notes"></a><h3>Appendix G: Notes</h3><div class="indent"></div><hr /><a name="appendix-revs" id="appendix-revs"></a><h3>Appendix H: Revision History</h3><p>Note: Older versions of this specification might be available at <a href="http://xmpp.org/extensions/attic/">http://xmpp.org/extensions/attic/</a></p><div class="indent"><h4>Version Gabble 0.7.17 (2008-12-14)</h4><div class="indent">
+      <p>Define Tube capabilities.</p>
+     (ac/ram)
+    </div><h4>Version Gabble 0.7.0 (2007-09-27)</h4><div class="indent">
+      <ul>
+        <li>Don't copy stream tubes into MUC presence</li>
+        <li>Tube IDs must be numeric (uint32)</li>
+        <li>Don't put initiator in MUC stream tube info</li>
+        <li>Use a mesage-based protocol to offer 1-1 stream tubes, rather
+          than the weird default bytestream thing</li>
+        <li>Non-initiator can close 1-1 stream tubes too</li>
+        <li>Remove /protocol/ from namespace URI</li>
+      </ul>
+     (smcv)
+    </div><h4>Version 0.0.1 (2007-09-25)</h4><div class="indent"><p>First draft. Only protocol changes are listed in subsequent
+      proto-XEP versions.</p> (smcv)
+    </div></div><hr /><p>END</p></body></html>

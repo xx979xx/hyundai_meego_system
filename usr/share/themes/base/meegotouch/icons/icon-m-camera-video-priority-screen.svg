@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-camera-video-priority-screen-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<g id="icon-m-camera-video-priority-screen">
+	<rect style="fill:none;" width="32" height="32"/>
+	
+		<rect x="14.999" y="1.827" transform="matrix(0.7069 -0.7074 0.7074 0.7069 -6.6277 16.0071)" style="fill:#FFFFFF;" width="1.999" height="28.346"/>
+	<path style="fill:#FFFFFF;" d="M18.693,8.258c-3.03,1.422-9.05,6.711-10.479,10.461c-0.627,1.643,0.655,4.238,1.667,5.043
+		c0,0.006,0.521,0.438,0.912-0.006l2.727-3.674c0.186-0.238,0.37-0.549-0.006-0.922c0,0-1.89-1.357-1.342-2.227
+		c0.382-0.6,4.135-4.35,4.736-4.729c0.871-0.548,2.234,1.336,2.234,1.336c0.376,0.375,0.688,0.188,0.926,0.006l3.684-2.727
+		c0.445-0.395,0.009-0.912,0.006-0.912C22.946,8.906,20.291,7.508,18.693,8.258z"/>
+	<path style="fill:#FFFFFF;" d="M16,2c7.72,0,14,6.28,14,14c0,7.721-6.28,14-14,14S2,23.721,2,16C2,8.28,8.28,2,16,2 M16,0
+		C7.163,0,0,7.164,0,16s7.163,16,16,16s16-7.164,16-16S24.837,0,16,0L16,0z"/>
+</g>
+</svg>

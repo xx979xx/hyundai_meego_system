@@ -1,0 +1,17 @@
+/* MListIndexStyle : MWidgetStyle */
+MListIndexStyle {
+    shortcut-object-name: "whiteFont";
+
+    background-opacity: 1;
+    background-image: meegotouch-fastscroll-background $CORNER_MARGINS;
+    preferred-size: 7mm  100%;
+
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+#whiteFont {
+    color: $COLOR_INVERTED_FOREGROUND;
+}

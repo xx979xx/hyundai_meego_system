@@ -1,0 +1,13 @@
+MStatusBarStyle
+{
+    minimum-size: 100% $HEIGHT_STATUSBAR;
+    preferred-size: 100% $HEIGHT_STATUSBAR;
+    maximum-size: 100% $HEIGHT_STATUSBAR;
+    background-color: none;
+    reactive-margin-bottom: 1.5mm;
+    use-swipe-gesture: true;
+    swipe-threshold: 30;
+    press-feedback : press;
+    press-dim-factor: 0.6;
+    enable-status-indicator-menu: true;
+}

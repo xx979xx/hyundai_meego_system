@@ -1,0 +1,1 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>Forbidden</title></head><body><h1>Forbidden</h1><p>Raw pages must be accessed through the primary script entry point.</p></body></html>

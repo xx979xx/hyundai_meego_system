@@ -1,0 +1,30 @@
+[Desktop Entry]
+Type=ControlPanelApplet
+Name=Language Settings
+Name[zh_TW]=語言設定
+Name[zh_CN]=语言设置
+Name[tr]=Dil Ayarları
+Name[sv]=Språkinställningar
+Name[ru]=Языковые параметры
+Name[pt_PT]=Definições de Idioma
+Name[pt_BR]=Configurações de idioma
+Name[pl]=Ustawienia języka
+Name[no]=Språkinnstillinger
+Name[nl]=Taalinstellingen
+Name[ko]=언어 설정
+Name[ja]=言語設定
+Name[it]=Impostazioni lingua
+Name[hu]=Nyelvi beállítások
+Name[fr]=Paramètres de langue
+Name[fi]=Kieliasetukset
+Name[es]=Configuración de idioma
+Name[en_US]=Language Settings
+Name[en_GB]=Language Settings
+Name[el]=Ρυθμίσεις γλώσσας
+Name[de]=Spracheinstellungen
+Name[da]=Sprogindstillinger
+Name[cs]=Nastavení jazyka
+Icon=datetime
+
+[MTS]
+Part=/usr/share/meego-ux-settings/Language/LanguageSettings.qml

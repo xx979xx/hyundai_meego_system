@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=ControlPanelApplet
+Name=Notifications
+Icon=icn_everyday_setting
+
+[MTS]
+Part=/usr/share/meego-ux-settings/Notifications/NotificationSettings.qml

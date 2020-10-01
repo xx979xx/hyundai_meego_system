@@ -1,0 +1,79 @@
+<?xml version="1.0" standalone="no"?>
+
+<interface>
+  <object class="GtkUIManager" id="default-uiman">
+    <child>
+      <object class="GtkActionGroup" id="DefaultActions">
+        <child>
+          <object class="GtkAction" id="file_toplevel">
+            <property name="label" translatable="yes">_File</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="add_bus_address">
+            <property name="name">add_bus_address</property>
+            <property name="label" translatable="yes">Connect to _Other Bus...</property>
+            <property name="short_label" translatable="yes">Bus...</property>
+            <property name="tooltip" translatable="yes">Add a bus tab using an address</property>
+            <property name="stock_id">gtk-connect</property>
+            <signal handler="add_bus_address" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="add_session_bus">
+            <property name="name">add_session_bus</property>
+            <property name="label" translatable="yes">Connect to S_ession Bus</property>
+            <property name="short_label" translatable="yes">Session</property>
+            <property name="tooltip" translatable="yes">Add a session bus tab</property>
+            <signal handler="add_session_bus" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="add_system_bus">
+            <property name="name">add_system_bus</property>
+            <property name="label" translatable="yes">Connect to S_ystem Bus</property>
+            <property name="short_label" translatable="yes">System</property>
+            <property name="tooltip" translatable="yes">Add a system bus tab</property>
+            <signal handler="add_system_bus" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="execute_method">
+            <property name="name">execute_method</property>
+            <property name="label" translatable="yes">E_xecute Method</property>
+            <property name="short_label" translatable="yes">Execute</property>
+            <property name="tooltip" translatable="yes">Execute the selected method</property>
+            <property name="sensitive">False</property>
+            <property name="enabled">False</property>
+            <property name="stock_id">gtk-execute</property>
+            <signal handler="execute_method" name="activate"/>
+          </object>
+        </child>
+
+      </object>
+    </child>
+    <ui>
+      <menubar name="menubar1">
+        <menu action="file_toplevel">
+          <menuitem name="ConnSessionMenu" action="add_session_bus" />
+          <menuitem name="ConnSystemMenu" action="add_system_bus" />
+          <menuitem name="ConnOtherMenu" action="add_bus_address" />
+        </menu>
+      </menubar>
+      <toolbar name="toolbar1">
+        <toolitem name="ConnOtherTool" action="add_bus_address">
+         <!-- FIXME: This doesn't work and needs to be fixed in Gtk
+                     so that the GtkAction can specify using GtkToolMenuButton
+                     instead of just a regular GtkToolButton
+          <menu action="file_toplevel">
+            <menuitem name="ConnSessionMenu" action="add_session_bus" />
+            <menuitem name="ConnSystemMenu" action="add_system_bus" />
+          </menu>
+         -->
+        </toolitem>
+        <separator/>
+        <toolitem name="ExecuteMethod" action="execute_method"/>
+      </toolbar>
+    </ui>
+  </object>
+</interface>

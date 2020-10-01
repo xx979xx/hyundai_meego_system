@@ -1,0 +1,416 @@
+# Per-platform rpm configuration file.
+
+#==============================================================================
+# ---- per-platform macros.
+#
+%_vendor		meego
+%_os			linux
+%_target_platform	%{_target_cpu}-%{_vendor}-%{_target_os}%{?_gnu}
+
+#==============================================================================
+# ---- configure macros.  note that most of these are inherited
+#      from the defaults.
+#
+%_prefix		/usr
+%_sysconfdir		/etc
+%_localstatedir		/var
+%_infodir		%{_datadir}/info
+%_mandir		%{_datadir}/man
+%_initrddir		%{_sysconfdir}/rc.d/init.d
+%_defaultdocdir		%{_usr}/share/doc
+%_fmoddir		%{_libdir}/gfortran/modules
+%_enable_debug_packages 1
+
+#       Default fuzz level for %patch in spec file.
+%_default_patch_fuzz    2
+
+#==============================================================================
+# ---- configure and makeinstall.
+#
+%configure \
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
+  CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
+  FFLAGS="${FFLAGS:-%optflags -I%_fmoddir}" ; export FFLAGS ; \
+  ./configure --build=%{_build} --host=%{_host} \\\
+	--target=%{_target_platform} \\\
+	--program-prefix=%{?_program_prefix} \\\
+	--prefix=%{_prefix} \\\
+	--exec-prefix=%{_exec_prefix} \\\
+	--bindir=%{_bindir} \\\
+	--sbindir=%{_sbindir} \\\
+	--sysconfdir=%{_sysconfdir} \\\
+	--datadir=%{_datadir} \\\
+	--includedir=%{_includedir} \\\
+	--libdir=%{_libdir} \\\
+	--libexecdir=%{_libexecdir} \\\
+	--localstatedir=%{_localstatedir} \\\
+	--sharedstatedir=%{_sharedstatedir} \\\
+	--mandir=%{_mandir} \\\
+	--infodir=%{_infodir}
+
+
+%reconfigure \
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
+  CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
+  FFLAGS="${FFLAGS:-%optflags -I%_fmoddir}" ; export FFLAGS ; \
+  autoreconf -v --install --force || exit 1 \
+  ./configure --build=%{_build} --host=%{_host} \\\
+	--target=%{_target_platform} \\\
+	--program-prefix=%{?_program_prefix} \\\
+	--prefix=%{_prefix} \\\
+	--exec-prefix=%{_exec_prefix} \\\
+	--bindir=%{_bindir} \\\
+	--sbindir=%{_sbindir} \\\
+	--sysconfdir=%{_sysconfdir} \\\
+	--datadir=%{_datadir} \\\
+	--includedir=%{_includedir} \\\
+	--libdir=%{_libdir} \\\
+	--libexecdir=%{_libexecdir} \\\
+	--localstatedir=%{_localstatedir} \\\
+	--sharedstatedir=%{_sharedstatedir} \\\
+	--mandir=%{_mandir} \\\
+	--infodir=%{_infodir}
+
+%autogen \
+  CFLAGS="${CFLAGS:-%optflags}" ; export CFLAGS ; \
+  CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
+  FFLAGS="${FFLAGS:-%optflags -I%_fmoddir}" ; export FFLAGS ; \
+  ./autogen.sh --build=%{_build} --host=%{_host} \\\
+	--target=%{_target_platform} \\\
+	--program-prefix=%{?_program_prefix} \\\
+	--prefix=%{_prefix} \\\
+	--exec-prefix=%{_exec_prefix} \\\
+	--bindir=%{_bindir} \\\
+	--sbindir=%{_sbindir} \\\
+	--sysconfdir=%{_sysconfdir} \\\
+	--datadir=%{_datadir} \\\
+	--includedir=%{_includedir} \\\
+	--libdir=%{_libdir} \\\
+	--libexecdir=%{_libexecdir} \\\
+	--localstatedir=%{_localstatedir} \\\
+	--sharedstatedir=%{_sharedstatedir} \\\
+	--mandir=%{_mandir} \\\
+	--infodir=%{_infodir}
+
+
+%makeinstall \
+  %{__make} \\\
+	prefix=%{?buildroot:%{buildroot}}%{_prefix} \\\
+	exec_prefix=%{?buildroot:%{buildroot}}%{_exec_prefix} \\\
+	bindir=%{?buildroot:%{buildroot}}%{_bindir} \\\
+	sbindir=%{?buildroot:%{buildroot}}%{_sbindir} \\\
+	sysconfdir=%{?buildroot:%{buildroot}}%{_sysconfdir} \\\
+	datadir=%{?buildroot:%{buildroot}}%{_datadir} \\\
+	includedir=%{?buildroot:%{buildroot}}%{_includedir} \\\
+	libdir=%{?buildroot:%{buildroot}}%{_libdir} \\\
+	libexecdir=%{?buildroot:%{buildroot}}%{_libexecdir} \\\
+	localstatedir=%{?buildroot:%{buildroot}}%{_localstatedir} \\\
+	sharedstatedir=%{?buildroot:%{buildroot}}%{_sharedstatedir} \\\
+	mandir=%{?buildroot:%{buildroot}}%{_mandir} \\\
+	infodir=%{?buildroot:%{buildroot}}%{_infodir} \\\
+  install
+
+%make_install \
+  %{__make} \\\
+	DESTDIR=%{?buildroot:%{buildroot}} \\\
+	INSTALL_ROOT=%{?buildroot:%{buildroot}} \\\
+  install \
+  rm -f %{?buildroot:%{buildroot}}%{_infodir}/dir \
+  find %{?buildroot:%{buildroot}} -regex ".*\\.la$" | xargs rm -f -- \
+  %{!?keepstatic:find %{?buildroot:%{buildroot}} -regex ".*\\.a$" | xargs rm -f --}  
+
+%_smp_mflags %([ -z "$RPM_BUILD_NCPUS" ] \\\
+	&& RPM_BUILD_NCPUS="`/usr/bin/getconf _NPROCESSORS_ONLN`"; \\\
+	[ "$RPM_BUILD_NCPUS" -gt 1 ] && echo "-j$RPM_BUILD_NCPUS")
+
+
+%install_info(:-:) \
+        ALL_ARGS=(%{**}) \
+        NUM_ARGS=${#ALL_ARGS[@]} \
+        if test -x sbin/install-info ; then \
+            if test -e "${ALL_ARGS[$((NUM_ARGS-1))]}" ; then \
+                sbin/install-info "${ALL_ARGS[@]}" \
+            fi \
+        fi ;
+
+%install_info_delete(:-:) \
+        ALL_ARGS=(%{**}) \
+        NUM_ARGS=${#ALL_ARGS[@]} \
+        if test -x sbin/install-info ; then \
+           if ! test -e "${ALL_ARGS[$((NUM_ARGS-1))]}" ; then \
+                sbin/install-info --quiet --delete "${ALL_ARGS[@]}" \
+           fi ; \
+        fi ;
+
+#==============================================================================
+# ---- Build policy macros.
+#
+#---------------------------------------------------------------------
+#	Expanded at end of %install scriptlet.
+#
+
+%__arch_install_post   /usr/lib/rpm/check-buildroot
+
+%__os_install_post    \
+    /usr/lib/rpm/meego/brp-compress \
+    %{!?__debug_package:/usr/lib/rpm/meego/brp-strip %{__strip}} \
+    /usr/lib/rpm/meego/brp-strip-static-archive %{__strip} \
+    /usr/lib/rpm/meego/brp-strip-comment-note %{__strip} %{__objdump} \
+    /usr/lib/rpm/brp-python-bytecompile \
+    /usr/lib/rpm/meego/brp-python-hardlink \
+    %{!?__jar_repack:/usr/lib/rpm/meego/brp-java-repack-jars} \
+%{nil}
+
+#    /usr/lib/rpm/meego/brp-implant-ident-static
+
+%__spec_install_post\
+    %{?__debug_package:%{__debug_install_post}}\
+    %{__arch_install_post}\
+    %{__os_install_post}\
+%{nil}
+
+
+#	Template for debug information sub-package.
+# NOTE: This is a copy from rpm to get the ifnarch noarch fix, it can be removed later
+%debug_package \
+%ifnarch noarch\
+%global __debug_package 1\
+%package debuginfo \
+Summary: Debug information for package %{name}\
+Group: Development/Debug\
+AutoReqProv: 0\
+%description debuginfo\
+This package provides debug information for package %{name}.\
+Debug information is useful when developing applications that use this\
+package or when debugging this package.\
+%files debuginfo -f debugfiles.list\
+%defattr(-,root,root)\
+%endif\
+%{nil}
+
+# Bad hack to set $LANG to C during all RPM builds
+%prep \
+%%prep\
+LANG=C\
+export LANG\
+unset DISPLAY\
+%{nil}
+
+%build %%build\
+LANG=C\
+export LANG\
+unset DISPLAY\
+CFLAGS="%optflags" ; export CFLAGS ; \
+CXXFLAGS="${CXXFLAGS:-%optflags}" ; export CXXFLAGS ; \
+FFLAGS="${FFLAGS:-%optflags -I%_fmoddir}" ; export FFLAGS ; \
+LD_AS_NEEDED=1; export LD_AS_NEEDED ; \
+%{nil}
+
+%install %{?_enable_debug_packages:%{?buildsubdir:%{debug_package}}}\
+%%install\
+LANG=C\
+export LANG\
+unset DISPLAY\
+rm -rf %{?buildroot:%{buildroot}} \
+mkdir -p %{?buildroot:%{buildroot}} \
+%{nil}
+
+%check %%check\
+unset DISPLAY\
+%{nil}
+
+%clean %%clean\
+rm -rf %{?buildroot:%{buildroot}} \
+%{nil}
+
+%find_lang      /usr/lib/rpm/find-lang.sh %{buildroot}
+
+#
+# use internal dep generator?
+%_use_internal_dependency_generator 1
+
+#
+# Should missing %doc files terminate a build?
+%_missing_doc_files_terminate_build    1
+#
+# Should missing buildids terminate a build?
+%_missing_build_ids_terminate_build    1
+
+#
+# Should unpackaged files in a build root terminate a build?
+%_unpackaged_files_terminate_build    1
+
+#
+# Path to scripts to autogenerate package dependencies,
+#
+%__set_helper_env %{lua:
+posix.setenv("RPMBUILD_SPECFILE",rpm.expand("%?_specfile"));
+posix.setenv("RPMBUILD_SOURCEDIR",rpm.expand("%?_sourcedir"));
+}
+# Note: Used iff _use_internal_dependency_generator is zero.
+#%__find_provides       %{_rpmconfigdir}/rpmdeps --provides
+#%__find_requires       %{_rpmconfigdir}/rpmdeps --requires
+#%__find_provides        %{__set_helper_env}%{_rpmconfigdir}/meego/find-provides %name
+#%__find_requires        %{__set_helper_env}%{_rpmconfigdir}/meego/find-requires %name
+
+%__find_provides        /usr/lib/rpm/meego/find-provides
+%__find_requires        /usr/lib/rpm/meego/find-requires
+
+%__global_cflags	-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security
+
+# Disable lookups
+%_hkp_keyserver  %{nil}
+
+#
+# RPM macros for Java applications.
+#
+# JPackage Project  <http://www.jpackage.org/>
+#   David Walluck   <david@jpackage.org>
+#   Ville Skyttä    <scop at jpackage.org>
+#   Nicolas Mailhot <Nicolas.Mailhot@laPoste.net>
+#
+
+#==============================================================================
+# ---- default Java directories
+
+#
+# Root directory where all Java VMs/SDK/JREs are installed.
+#
+# already in /usr/lib/macros on SUSE:
+%_jvmdir	 %{_prefix}/lib/jvm
+
+#
+# Root directory where all Java VMs/SDK/JREs expose their jars
+#
+# already in /usr/lib/macros on SUSE:
+%_jvmjardir	%{_prefix}/lib/jvm-exports
+
+#
+# Root directory for all Java VM/SDK/JRE's private things.
+#
+# already in /usr/lib/macros on SUSE:
+%_jvmprivdir	%{_prefix}/lib/jvm-private
+
+#
+# Root directory for all architecture dependent parts of Java VM/SDK/JRE's
+#
+%_jvmlibdir	%{_prefix}/lib/jvm
+
+#
+# Root directory for all architecture independent parts of Java VM/SDK/JRE's
+#
+%_jvmdatadir	%{_datadir}/jvm
+
+#
+# Root directory for all configurations parts of Java VM/SDK/JRE's
+#
+%_jvmsysconfdir	%{_sysconfdir}/jvm
+
+#
+# Root directory for all common architecture dependent parts of Java VM/SDK/JRE's
+#
+%_jvmcommonlibdir	%{_prefix}/lib/jvm-commmon
+
+#
+# Root directory for all common architecture independent parts of Java VM/SDK/JRE's
+#
+%_jvmcommondatadir	%{_datadir}/jvm-commmon
+
+#
+# Root directory for all common configurations parts of Java VM/SDK/JRE's
+#
+%_jvmcommonsysconfdir	%{_sysconfdir}/jvm-commmon
+
+#
+# Directory where arch and version independent jars are installed.
+# This has already been integrated in RH macros following our request.
+#
+# By extension:
+# %{_javadir}-ext:
+#   - version dependent jars
+# %{_javadir}-x.y.z:
+#   - jars for Java standard x.y.z (usually symlinks to  %{_javadir}-ext)
+# %{_javadir}-utils:
+#   - Java-related scripts
+#
+# To simplify things only %{_javadir} is defined.
+#
+# already in /usr/lib/macros on SUSE:
+# %_javadir        %{_datadir}/java
+
+#
+# Directory where arch-specific (JNI) version-independent jars are installed.
+#
+# By extension:
+# %{_jnidir}-ext:
+#   - version dependent jars
+# %{_jnidir}-x.y.z:
+#   - jars for Java standard x.y.z (usually symlinks to  %{_jnidir}-ext)
+# To simplify things only %{_jnidir} is defined.
+#
+# already in /usr/lib/macros on SUSE:
+%_jnidir        %{_prefix}/lib/java
+
+#
+# Root directory where all javadoc is installed. Also already in RH macros.
+#
+# already in /usr/lib/macros on SUSE:
+# %_javadocdir     %{_datadir}/javadoc
+
+#
+# Directory for maven depmaps
+#
+%_mavendepmapdir /etc/maven
+%_mavendepmapfragdir /etc/maven/fragments
+
+#
+# Current default JVM home.
+#
+# already in /usr/lib/macros on SUSE:
+%java_home      %(. %{_javadir}-utils/java-functions; set_jvm; echo $JAVA_HOME)
+
+#==============================================================================
+# ---- default Java commands
+
+%ant            ant
+%jar            %{java_home}/bin/jar
+%java           %(. %{_javadir}-utils/java-functions; set_javacmd; echo $JAVACMD)
+%javac          %{java_home}/bin/javac
+%javadoc        %{java_home}/bin/javadoc
+
+
+#==============================================================================
+# ---- default icons directories as per the icon theme freedesktop spec
+
+%_iconstheme    hicolor
+%_iconsbasedir  %{_datadir}/icons/%{_iconstheme}
+
+#
+# The following is a bit heavy and will be removed
+#
+%_icons16dir    %{_iconsbasedir}/16x16/apps
+%_icons22dir    %{_iconsbasedir}/22x22/apps
+%_icons48dir    %{_iconsbasedir}/48x48/apps
+%_icons64dir    %{_iconsbasedir}/64x64/apps
+%_icons96dir    %{_iconsbasedir}/96x96/apps
+%_icons192dir   %{_iconsbasedir}/192x192/apps
+%_iconsscaldir  %{_iconsbasedir}/scalable/apps
+
+
+#
+# MeeGo icons
+#
+# %1	the name of the icon (typically the name of the package). RedHat
+#	requires 3 icons sizes (48, 32, 16), all should be present.
+%meego_icons() \
+install -D -m 644 %1-48.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps/%{name}.png\
+install -D -m 644 %1-32.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/32x32/apps/%{name}.png\
+install -D -m 644 %1-16.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/16x16/apps/%{name}.png\
+%{nil}
+
+
+#==============================================================================
+# ---- default .desktop directories per the desktop-entry freedesktop.org spec
+
+%_desktopdir    %{_datadir}/applications
+

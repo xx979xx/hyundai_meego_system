@@ -1,0 +1,4 @@
+MTapAndHoldRecognizerStyle {
+    timeout: 500;
+    movement-threshold: 1.95mm;
+}

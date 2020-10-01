@@ -1,0 +1,2 @@
+QmlStatusBar 1.0 qml/StatusBar.qml
+plugin qmlstatusbarplugin 

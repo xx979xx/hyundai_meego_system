@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-s-invitation-pending-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="27px" height="18px"
+	 viewBox="0 0 27 18" style="enable-background:new 0 0 27 18;" xml:space="preserve">
+<g id="icon-s-invitation-pending">
+	<rect style="fill:none;" width="27" height="18"/>
+	<path style="fill:#333333;" d="M0,8.189l0,9.016C0,17.643,0.358,18,0.796,18h12c0.438,0,0.795-0.357,0.795-0.795V8.189
+		l-6.415,5.395l-0.378,0.162"/>
+	<polygon style="fill:#333333;" points="13.59,7.812 13.591,5.572 6.794,0 0,5.572 0,7.812 	"/>
+	<path style="fill:#333333;" d="M23.535,14.156C24.744,15.111,25.5,15.97,25.5,18h-7.495c0-1.904,0.683-2.693,1.789-3.689v-0.004
+		l0.058-0.055c0.457-0.387,0.688-0.793,0.689-1.205c0.002-0.584-0.446-1.096-0.823-1.424C18.644,10.598,18.005,9.871,18.005,8H25.5
+		c0,2.029-0.755,2.889-1.972,3.852c-0.262,0.271-0.588,0.715-0.576,1.213C22.96,13.436,23.155,13.803,23.535,14.156z"/>
+</g>
+</svg>

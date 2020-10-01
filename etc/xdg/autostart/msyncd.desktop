@@ -1,0 +1,4 @@
+[Desktop Entry]
+Exec=/usr/bin/msyncd
+Name=Synchronization daemon
+Type=Application

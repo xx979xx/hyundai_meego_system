@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/tracker/fts/" id="org.freedesktop.Tracker.FTS">
+
+    <key type="i" name="min-word-length">
+      <default>3</default>
+      <range min="0" max="30"/>
+      <summary>Minimum length of a word to be indexed</summary>
+      <description>Words with less characters than this will be ignored by the indexer.</description>
+    </key>
+
+    <key type="i" name="max-word-length">
+      <default>30</default>
+      <range min="0" max="200"/>
+      <summary>Maximum length of a word to be indexed</summary>
+      <description>Words with more characters than this length will be ignored by the indexer.</description>
+    </key>
+
+    <key type="i" name="max-words-to-index">
+      <default>10000</default>
+      <summary>Maximum number of words to index in a document</summary>
+      <description>Indexer will read only this maximum number of words from a single document.</description>
+    </key>
+
+    <key type="b" name="enable-stemmer">
+      <summary>Enable stemmer</summary>
+      <description>Simplify the words to their root to provide more results. E.g. 'shelves' and 'shelf' to 'shel'</description>
+      <default>false</default>
+    </key>
+
+    <key type="b" name="enable-unaccent">
+      <summary>Enable unaccent</summary>
+      <description>Translate accented characters to the equivalent unaccented. E.g. 'Idéa' to 'Idea' for improved matching.</description>
+      <default>true</default>
+    </key>
+
+    <key type="b" name="ignore-numbers">
+      <summary>Ignore numbers</summary>
+      <description>If enabled, numbers will not be indexed.</description>
+      <default>true</default>
+    </key>
+
+    <key type="b" name="ignore-stop-words">
+      <summary>Ignore stop words</summary>
+      <description>If enabled, the words listed in the stop-words list are ignored. E.g. common words like 'the', 'yes', 'no', etc.</description>
+      <default>true</default>
+    </key>
+
+  </schema>
+</schemalist>

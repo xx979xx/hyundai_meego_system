@@ -1,0 +1,14 @@
+MAppletHandleStyle {
+}
+
+MWidgetStyle#MAppletHandleSettingsWidget {
+    background-image: "meegotouch-container-content-background" 20 20 20 20;
+    padding-left: 6;
+    padding-right: 6;
+    padding-top: 6;
+    padding-bottom: 6;
+    margin-left: 6;
+    margin-right: 6;
+    margin-top: 6;
+    margin-bottom: 6;
+}

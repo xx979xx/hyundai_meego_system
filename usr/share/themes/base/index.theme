@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=X-MeeGoTouch-Metatheme
+Name=Development
+Encoding=UTF-8
+
+[X-MeeGoTouch-Metatheme]
+X-Visible=true
+X-Icon="icon-l-meegotouchtheme-devel"
+X-Libraries=meegotouchviews
+
+# this is here for control panel until it gets fixed
+[X-DUI-Metatheme]
+X-Icon="icon-l-meegotouchtheme-devel"

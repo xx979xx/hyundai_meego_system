@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Automounter
+Comment=UDisks based automouting service
+TryExec=DHAVN-automounter
+Exec=DHAVN-automounter
+X-Meego-Priority=highest

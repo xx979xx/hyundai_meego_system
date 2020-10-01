@@ -1,0 +1,24 @@
+/* MWidgetRectangularClipAnimationStyle : MAbstractWidgetAnimationStyle */
+MWidgetRectangularClipAnimationStyle#In {
+    duration: 500;
+    easing-curve: insine;
+    clip-margin: 1.0mm;
+}
+
+MWidgetRectangularClipAnimationStyle#Out {
+    duration: 500;
+    easing-curve: outsine;
+    clip-margin: 1.0mm;
+}
+
+MObjectMenu MWidgetRectangularClipAnimationStyle#In {
+    duration: 1500;
+    easing-curve: inoutexpo;
+    clip-margin: 1.2mm;
+}
+
+MObjectMenu MWidgetRectangularClipAnimationStyle#Out {
+    duration: 700;
+    easing-curve: inoutexpo;
+    clip-margin: 1.2mm;
+}

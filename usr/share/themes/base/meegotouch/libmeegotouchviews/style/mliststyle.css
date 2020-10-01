@@ -1,0 +1,14 @@
+/* MListStyle : MWidgetStyle */
+MListStyle {
+    group-header-object-name: "CommonGroupHeaderPanel";
+    horizontal-separator-object-name: "emptySeparator"; 
+    vertical-separator-object-name: "emptySeparator";
+    group-separator-object-name: "emptySeparator";
+    separator-style-name: "";
+    list-index-style-name: "";
+    delete-item-animation: "MBasicListItemDeletionAnimation";
+}
+
+#emptySeparator {
+    span: 0;
+}

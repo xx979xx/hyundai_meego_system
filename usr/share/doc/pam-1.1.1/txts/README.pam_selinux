@@ -1,0 +1,77 @@
+pam_selinux — PAM module to set the default security context
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DESCRIPTION
+
+In a nutshell, pam_selinux sets up the default security context for the next
+execed shell.
+
+When an application opens a session using pam_selinux, the shell that gets
+executed will be run in the default security context, or if the user chooses
+and the pam file allows the selected security context. Also the controlling tty
+will have it's security context modified to match the users.
+
+Adding pam_selinux into a pam file could cause other pam modules to change
+their behavior if the exec another application. The close and open option help
+mitigate this problem. close option will only cause the close portion of the
+pam_selinux to execute, and open will only cause the open portion to run. You
+can add pam_selinux to the config file twice. Add the pam_selinux close as the
+executes the open pass through the modules, pam_selinux open_session will
+happen last. When PAM executes the close pass through the modules pam_selinux
+close_session will happen first.
+
+OPTIONS
+
+close
+
+    Only execute the close_session portion of the module.
+
+debug
+
+    Turns on debugging via syslog(3).
+
+open
+
+    Only execute the open_session portion of the module.
+
+nottys
+
+    Do not try to setup the ttys security context.
+
+verbose
+
+    attempt to inform the user when security context is set.
+
+select_context
+
+    Attempt to ask the user for a custom security context role. If MLS is on
+    ask also for sensitivity level.
+
+env_params
+
+    Attempt to obtain a custom security context role from PAM environment. If
+    MLS is on obtain also sensitivity level. This option and the select_context
+    option are mutually exclusive. The respective PAM environment variables are
+    SELINUX_ROLE_REQUESTED, SELINUX_LEVEL_REQUESTED, and
+    SELINUX_USE_CURRENT_RANGE. The first two variables are self describing and
+    the last one if set to 1 makes the PAM module behave as if the
+    use_current_range was specified on the command line of the module.
+
+use_current_range
+
+    Use the sensitivity level of the current process for the user context
+    instead of the default level. Also suppresses asking of the sensitivity
+    level from the user or obtaining it from PAM environment.
+
+EXAMPLES
+
+auth     required  pam_unix.so
+session  required  pam_permit.so
+session  optional  pam_selinux.so
+
+
+AUTHOR
+
+pam_selinux was written by Dan Walsh <dwalsh@redhat.com>.
+

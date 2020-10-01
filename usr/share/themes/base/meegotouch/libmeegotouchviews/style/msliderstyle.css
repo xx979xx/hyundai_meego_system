@@ -1,0 +1,100 @@
+/* MSliderStyle : MWidgetStyle */
+MSliderStyle {
+    handle-pixmap: "meegotouch-slider-handle-background-horizontal" 6.4mm 6.4mm;
+    handle-pressed-pixmap: "meegotouch-slider-handle-background-pressed-horizontal" 6.4mm 6.4mm;
+    handle-vertical-pixmap: "meegotouch-slider-handle-background-vertical" 6.4mm 6.4mm;
+    handle-vertical-pressed-pixmap: "meegotouch-slider-handle-background-pressed-vertical" 6.4mm 6.4mm;
+
+    handle-label-arrow-left-pixmap: "meegotouch-slider-handle-label-arrow-left" 0mm 0mm;
+    handle-label-arrow-right-pixmap: "meegotouch-slider-handle-label-arrow-right" 0mm 0mm;
+    handle-label-arrow-up-pixmap: "meegotouch-slider-handle-label-arrow-up" 0mm 0mm;
+    handle-label-arrow-down-pixmap: "meegotouch-slider-handle-label-arrow-down" 0mm 0mm;
+
+    background-base-image: "meegotouch-slider-background-horizontal" 4px 4px 4px 4px;
+    background-elapsed-image: "meegotouch-slider-elapsed-background-horizontal" 4px 4px 4px 4px;
+    background-received-image: "meegotouch-slider-received-background-horizontal" 4px 4px 4px 4px;
+
+    background-vertical-base-image: "meegotouch-slider-background-vertical" 4px 4px 4px 4px;
+    background-vertical-elapsed-image: "meegotouch-slider-elapsed-background-vertical" 4px 4px 4px 4px;
+    background-vertical-received-image: "meegotouch-slider-received-background-vertical" 4px 4px 4px 4px;
+
+    indicator-style-name: "MSliderHandleIndicator";
+
+    groove-thickness: 1.0mm;
+    groove-margin: 2.7mm;
+    groove-preferred-length: 30mm;
+    groove-minimum-length: 20mm;
+    groove-maximum-length: 200mm;
+
+    elapsed-offset: 0.5mm;
+    indicator-offset: 3.8mm;
+
+    steps-per-feedback: 1;
+    minimum-feedback-interval: 70;
+    feedback-speed-limit: 8;
+    press-feedback: move;
+    move-feedback: move;
+
+    handle-label-margin: 0px;
+    handle-label-arrow-margin: 11px;
+
+    min-label-fixed-width: 0;
+    max-label-fixed-width: 0;
+}
+
+#MSliderMinMaxLabel {
+    margin-left: $MARGIN_XSMALL;
+    margin-right: $MARGIN_XSMALL;
+    margin-top:  $MARGIN_XSMALL;
+    margin-bottom: $MARGIN_XSMALL;
+
+    color: $COLOR_SECONDARY_FOREGROUND;
+    font: $FONT_FAMILY light 2.2mm;
+}
+
+#MSliderHandleIndicator {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-left: 1.0mm;
+    padding-right: 1.0mm;
+    padding-top:  0.3mm;
+    padding-bottom: 0.5mm;
+
+    color: $COLOR_INVERTED_FOREGROUND;
+    font: $FONT_DEFAULT;
+    background-image: meegotouch-slider-handle-value-background 11px 11px 11px 11px;
+}
+
+#MSliderHandleIndicatorInverted {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-left: 1.0mm;
+    padding-right: 1.0mm;
+    padding-top:  0.3mm;
+    padding-bottom: 0.5mm;
+
+    color: $COLOR_FOREGROUND;
+    font: $FONT_DEFAULT;
+    background-image: meegotouch-slider-handle-value-inverted-background 11px 11px 11px 11px;
+}
+
+#MSliderImage {
+    margin-left:   $MARGIN_XSMALL;
+    margin-top:    $MARGIN_XSMALL;
+    margin-right:  $MARGIN_XSMALL;
+    margin-bottom: $MARGIN_XSMALL;
+
+    padding-left:   $PADDING_XSMALL;
+    padding-top:    $PADDING_XSMALL;
+    padding-right:  $PADDING_XSMALL;
+    padding-bottom: $PADDING_XSMALL;
+
+    border-opacity: 0.0;
+    background-opacity: 0.0;
+}

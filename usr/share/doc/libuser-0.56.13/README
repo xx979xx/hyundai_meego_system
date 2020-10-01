@@ -1,0 +1,17 @@
+About
+=====
+The libuser library implements a standardized interface for manipulating and
+administering user and group accounts.  The library uses pluggable back-ends to
+interface to its data sources.
+
+Sample applications modeled after those included with the shadow password suite
+are included.
+
+New releases will be available at https://fedorahosted.org/libuser/ .
+
+Bugs
+====
+Please consider reporting the bug to your distribution's bug tracking system.
+
+Otherwise, report bugs at https://fedorahosted.org/libuser/ .  Bug reports
+with patches are especially welcome.

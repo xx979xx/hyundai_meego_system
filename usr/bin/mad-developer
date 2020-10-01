@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /usr/lib/mad-developer/mad-withhome.sh /usr/lib/mad-developer/mad-developer

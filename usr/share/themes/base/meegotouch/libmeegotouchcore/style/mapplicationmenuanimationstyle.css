@@ -1,0 +1,63 @@
+MApplicationMenuAnimationStyle {
+    title-bar-object-name: "MApplicationMenuTopArea";
+    contents-viewport-object-name: "MApplicationMenuActionViewport";
+    button-box-object-name: "";
+
+    title-bar-animation-delay: 0;
+    contents-viewport-animation-delay: 0;
+    button-box-animation-delay: 0;
+
+    title-bar-has-custom-easing-curve: false;
+    title-bar-animation-easing-curve: inquint;
+    title-bar-animation-duration: 0;
+    title-bar-animation-distance: 0;
+
+    contents-viewport-opacity-animation-duration: 0;
+    contents-viewport-opacity-animation-easing-curve: outexpo;
+
+    contents-viewport-position-animation-duration: 0;
+    contents-viewport-position-animation-easing-curve: outexpo;
+    contents-viewport-position-animation-distance: 0;
+
+    contents-viewport-scale-animation-duration: 0;
+    contents-viewport-scale-animation-easing-curve: outexpo;
+
+    button-box-animation-duration: 0;
+    button-box-animation-distance: 0;
+    button-box-animation-easing-curve: outexpo;
+
+    scale: 1;
+    opacity: 1;
+}
+
+MApplicationMenuAnimationStyle#In {
+    title-bar-animation-delay: 200;
+    contents-viewport-animation-delay: 250;
+
+    title-bar-has-custom-easing-curve: true;
+    title-bar-animation-duration: 450;
+    title-bar-animation-distance: 50;
+
+    contents-viewport-opacity-animation-duration: 250;
+    contents-viewport-opacity-animation-easing-curve: outexpo;
+
+    contents-viewport-position-animation-duration: 250;
+    contents-viewport-position-animation-easing-curve: outexpo;
+    contents-viewport-position-animation-distance: 20;
+}
+
+MApplicationMenuAnimationStyle#Out {
+    title-bar-animation-delay: 0;
+    contents-viewport-animation-delay: 0;
+
+    title-bar-animation-duration: 150;
+    title-bar-animation-distance: 200;
+
+    contents-viewport-opacity-animation-duration: 150;
+    contents-viewport-opacity-animation-easing-curve: inquint;
+
+    contents-viewport-position-animation-duration: 150;
+    contents-viewport-position-animation-easing-curve: inquint;
+    contents-viewport-position-animation-distance: 200;
+}
+

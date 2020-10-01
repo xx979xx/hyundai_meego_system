@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Mad Developer
+Exec=/usr/bin/mad-developer
+Icon=mad-developer
+X-Window-Icon=mad-developer
+X-Window-Icon-Dimmed=mad-developer
+X-Osso-Service=com.nokia.mad_developer
+X-Osso-Type=application/x-executable

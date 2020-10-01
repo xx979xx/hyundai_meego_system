@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+
+<interface>
+  <object class="GtkWindow" id="main-window">
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <child>
+          <object class="GtkMenuBar" id="menubar1" constructor="default-uiman"/>
+        </child>
+        <child>
+          <object class="GtkToolbar" id="toolbar1" constructor="default-uiman"/>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

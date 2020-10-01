@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=MeeGo Photo Viewer
+Comment=View Photos
+GenericName=Photo Viewer
+Exec=meego-qml-launcher --opengl --cmd showAlbum --cdata %f --fullscreen --app meego-app-photos
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=meego-app-photos
+Categories=Graphics;2DGraphics;
+MimeType=image/bmp;image/g3fax;image/gif;image/x-fits;image/pcx;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-psd;image/x-sgi;image/x-tga;image/x-xbitmap;image/x-xwindowdump;image/x-xcf;image/x-compressed-xcf;image/tiff;image/jpeg;image/x-psp;image/png;image/x-icon;image/x-xpixmap;image/svg+xml;image/x-wmf;
+X-Desktop-File-Install-Version=0.16

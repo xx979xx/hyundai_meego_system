@@ -1,0 +1,8 @@
+MGraphicsHighlightEffectStyle {
+    color: #000000;
+
+    start-strength: 0.2;
+    end-strength: 0.9;
+    duration: 250;
+    delay: 0;
+}

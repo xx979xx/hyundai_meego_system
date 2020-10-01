@@ -1,0 +1,45 @@
+README for pam_console
+======================
+
+NOTE: This software is very powerful.  Incautious use could leave your
+system open to attack, or difficult to use.
+
+pam_console is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Because pam_console integrates GPL-licensed code, all of pam_console
+is licensed only under the GPL, unlike most PAM modules.  See the
+file COPYING for the license terms under which this software is
+licensed.
+
+(If this software breaks your system, you get to keep all the pieces.)
+
+The pam_console module exists to change file permissions when users
+log on at the console, and to change them back when they log out of
+the console.  It also cooperates with the pam_listfile module to
+make it possible to allow users who are at the console to run
+various programs that would otherwise be restricted to root only.
+
+The pam_console.8 and pam_console_apply.8 man pages explain this
+software in more detail.
+
+Please note: the current version depends on too many external tools
+and libraries, making it big and hard to evaluate for security.
+This is only a bootstrap stage; I'll be fixing it later.  I'm using
+lex/yacc right now so that it is trivial to change the grammar, and
+I'm using glib because I didn't want to write my own hashtables
+while I was busy thinking about file locking.  Don't report those
+as bugs, I'll fix them later once I've ironed out the important
+details...
+
+Michael K. Johnson
+Red Hat Software, Inc.
+
+Additional note: the current version is improved so that the functionality
+of changing the ownership and permissions of the devices is split out
+of the pam_console.so module to the pam_console_apply executable,
+which is called from the pam_console module when the lock is obtained.
+Thus the module doesn't depend on the glib.
+
+Copyright 1999, 2005 Red Hat, Inc.

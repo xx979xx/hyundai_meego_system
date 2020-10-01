@@ -1,0 +1,14 @@
+/* MImageWidgetStyle : MWidgetStyle */
+MImageWidgetStyle {
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-color: #FFFFFF;
+    border-opacity: 1.0;
+
+    /* inherited from MWidgetStyle */
+    background-color: ;
+    background-opacity: 0.1;
+}
+

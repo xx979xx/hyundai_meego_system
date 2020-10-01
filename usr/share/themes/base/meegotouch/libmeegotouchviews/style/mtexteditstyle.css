@@ -1,0 +1,43 @@
+/* MTextEditStyle : MWidgetStyle */
+MTextEditStyle {
+    background-image: meegotouch-textedit-background $CORNER_MARGINS;
+
+    font: $FONT_FAMILY light 24px;
+    text-color: $COLOR_FOREGROUND;
+    selection-text-color: $COLOR_INVERTED_FOREGROUND;
+    selection-background-color: $COLOR_SELECT;
+    selection-threshold: 15.0;
+    allow-view-reposition: true;
+    disable-magnifier: false;
+    mask-string: "*";
+    prompt-font: $FONT_FAMILY light 24px;
+    prompt-color: $COLOR_SECONDARY_FOREGROUND;
+    paste-failed-icon: "icon-m-framework-close";
+    paste-failed-duration: 3000;
+    masking-delay: 1000;
+    cursor-width: 2;
+
+    /* inherited from MWidgetStyle */
+    minimum-size: -1 52px;
+    preferred-size: -1 -1;
+    maximum-size: -1 -1;
+
+    press-word-feedback: press-textedit-word;
+    release-word-feedback: release-textedit-word;
+    press-boundary-feedback: press;
+    release-boundary-feedback: release;
+    change-selection-feedback: press-textedit-selection;
+
+    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+MTextEditStyle:selected {
+    background-image: meegotouch-textedit-background-selected $CORNER_MARGINS;
+}
+
+MTextEditStyle:error {
+    background-image: meegotouch-textedit-background-error $CORNER_MARGINS;
+}

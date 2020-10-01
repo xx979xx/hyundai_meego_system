@@ -1,0 +1,79 @@
+1.102:
+* Add more man pages for consolehelper-gtk and pam-panel-icon.
+* Minor fixes in other man pages.
+* Update translations.
+
+1.101
+* Use GtkBuilder instead of libglade.
+* Avoid some obsolete GTK+ interfaces.
+* Update translations.
+
+1.100
+* Don't use interfaces deprecated in GTK+ 2.14.
+
+1.99
+* Support multi-line prompts.
+
+1.98.1
+* Update translations
+
+1.98
+* Support dialogs with no text entries.
+* Left-justify prompts.
+* Remove /usr/X11R6/bin from default path.
+
+1.97
+* Fix display of '_' in prompts.
+
+1.96.1
+* Update translations
+
+1.96
+* Remove code that overrides SELinux contexts of processes started by
+  userhelper.
+
+1.95
+* New home page at https://fedoraproject.org/usermode/ .
+* Correctly preserve exit code when SESSION=yes
+* Fix minor errors in the .desktop files
+
+1.94
+* Add support for including files from wrapper configuration files.  Original
+  patch by Carlo de Wolf <cdewolf@redhat.com>.
+
+1.93.1
+* Allow building with startup notification support without libwnck
+* Update translations
+
+1.93
+* Fix handling of PAM conversations with no questions
+
+1.92
+* Fix userhelper hangs in non-UTF8 locales.
+* Fix unexpanded {prefix} strings embedded in executables if some directory
+  variables were not explicitly passed to configure.
+* Add menu categories to desktop files
+* Minor clean-ups and optimizations.
+
+1.91.2
+* Show the user we're authenticating as in an i18n-safe way.
+
+1.91.1
+* Update translations
+
+1.91
+* Preserve environment variables in consolehelper specified in the service
+  config file.
+* Fix handling of empty pw_shell.
+* Minor clean-ups and optimizations.
+
+1.90
+* Support LABEL= and UUID= in usermount and userformat.
+* Fix an use of PAM data after free.
+* Add a dialog caption when changing user password.
+* Use less memory in pam-panel-icon until the icon is actually displayed.
+* Don't use deprecated GTK+ widgets.
+* Other minor bug fixes, clean-ups and optimizations.
+
+1.89
+* Preserve the exit status of processes executed by consolehelper.

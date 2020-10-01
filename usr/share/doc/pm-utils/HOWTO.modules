@@ -1,0 +1,49 @@
+How to write a sleep module:
+
+OVERVIEW:
+Sleep modules are POSIX-compatible shell scripts designed to be sourced by
+the pm-utils machinery in order to check that the machine supports a sleep
+method and to actually enter that method. Sleep modules can be stacked, which
+means that some care must be taken to write a sleep module.  The basic rules 
+are as follows:
+
+1: Check to see if someone else has already implemented your sleep method.
+   If they have, you should do nothing.
+
+2: Check to see if your sleep method is applicable to this system.  If it
+   is not, you should do nothing.
+
+3: If no other module has claimed your sleep method and this system is capable
+   of performing your sleep method, then go ahead and define the function that
+   implements your sleep method.
+
+As an example of how to do things, take a look at pm/module.d/uswsusp, which
+implements all three sleep methods and shows how to use the module helper 
+functions add_before_hooks and add_module_help.
+ 
+Currently, three sleep methods are supported:
+
+SUSPEND:
+	Suspend (also known as suspend-to-ram) is the sleep mode equivalent
+to ACPI S3 -- state is saved in system memory, and all other hardware is either
+powered off or in power-saving mode.  
+
+Your sleep module must implement do_suspend if you support suspend to ram.
+
+HIBERNATE:
+	Hibernate (also know as suspend-to-disk) is the sleep mode equivalent
+to ACPI S4 -- the system state is saved to permanent media (like a hard drive),
+and the system is either in a very low-power use mode or completly powered off.
+
+Your sleep module must implement do_hibernate if you support suspend to disk.
+
+SUSPEND_HYBRID:
+	suspend_hybrid is a blend of suspend and hibernate.  It performs all
+the tasks needed to put the system into hibernate mode (including writing the
+memory image to disk), and then puts the system into suspend mode.  If
+implemented porperly, this should provide the convienence of the resume speed
+of suspend with the assurance that your state is saved to the hard drive if
+you run out of power.  If your sleep module supports suspend_hybrid, it MUST
+define 2 functions:
+
+Your sleep module must implement do_suspend_hybrid if you support hybrid suspend.

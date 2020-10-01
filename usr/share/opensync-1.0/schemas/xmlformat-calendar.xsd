@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0">
+
+  <xsd:simpleType name="AlarmAction">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="AUDIO"/>
+	<xsd:enumeration value="DISPLAY"/>
+	<xsd:enumeration value="EMAIL"/>
+	<xsd:enumeration value="PROCEDURE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="TriggerType">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="DATE-TIME"/>
+	<xsd:enumeration value="DURATION"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="TriggerValue">
+    <xsd:restriction base="xsd:string">
+    <!-- TODO: regular expression to check for DURATION or DATE-TIME -->
+      <xsd:minLength value="3"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- FIXME -->
+  <xsd:complexType name="Alarm">
+    <xsd:sequence>
+      <!-- Action was already set by renaming the xmlfield to e.g. AlarmAudio -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmAction" type="AlarmAction"/>
+      <!-- TODO only allow Attachment element if Action is SOUND or PROCEDURE --> 
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmAttach" type="Attachment"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmAttendee" type="xsd:string"/>
+      <!-- TODO only allow Descritption element if Action is DISPLAY or EMAIL --> 
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmDescription" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmRepeat" type="xsd:integer"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmRepeatDuration" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmSummary" type="xsd:string"/>
+      <xsd:element minOccurs="1" maxOccurs="1" name="AlarmTrigger" type="TriggerValue"/>
+    </xsd:sequence>
+    <xsd:attribute name="Value" type="TriggerType"/>
+    <!-- Following fields are required for AlarmDescription -->
+    <xsd:attribute name="AlternativeTextRep" type="xsd:string"/>
+    <xsd:attribute name="Language" type="xsd:string"/>
+  </xsd:complexType>
+
+  <!-- Use AlarmRelatedEnd if the alarm got triggered related to the end point of the appointment.
+       Example:  5 minutes before or after the _end_ of the appointment.
+       If the alarm got triggered related to start use <Alarm>
+  -->
+  <xsd:complexType name="AlarmRelatedEnd">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="AlarmAction" type="AlarmAction"/>
+      <!-- TODO only allow Attachment element if Action is SOUND or PROCEDURE --> 
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmAttach" type="Attachment"/>
+      <!-- TODO only allow Descritption element if Action is DISPLAY or EMAIL --> 
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmDescription" type="MultiText"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="AlarmRepeat" type="xsd:integer"/>
+      <xsd:element minOccurs="1" maxOccurs="1" name="AlarmTrigger" type="TriggerValue"/>
+    </xsd:sequence>
+    <xsd:attribute name="Value" type="TriggerType"/>
+  </xsd:complexType>
+
+ 
+  <xsd:complexType name="Duration">
+    <xsd:sequence>
+      <!--
+      	     TODO: Evalute if this duration values are compatible to vcalendar as well. 
+		cstender: Why vcalendar ???
+
+	     dur-value  = (["+"] / "-") "P" (dur-date / dur-time / dur-week)
+
+	     dur-date   = dur-day [dur-time]
+	     dur-time   = "T" (dur-hour / dur-minute / dur-second)
+	     dur-week   = 1*DIGIT "W"
+	     dur-hour   = 1*DIGIT "H" [dur-minute]
+	     dur-minute = 1*DIGIT "M" [dur-second]
+	     dur-second = 1*DIGIT "S"
+	     dur-day    = 1*DIGIT "D"
+      -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="InAdvance" type="Bool"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Weeks" type="xsd:integer"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Days" type="PositiveInteger"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Hours" type="hourInt"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Minutes" type="minuteInt"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Seconds" type="secondInt"/>
+
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="AttachmentType">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="URI"/>
+	<xsd:enumeration value="BINARY"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+   
+  <xsd:complexType name="Attachment">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:anyURI"/>
+    </xsd:sequence>
+    <xsd:attribute name="Value" type="AttachmentType"/>
+    <xsd:attribute name="FormatType" type="xsd:string"/>
+    <xsd:attribute name="Encoding" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="CalendarUserType">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="INDIVIDUAL"/>
+	<xsd:enumeration value="GROUP"/>
+	<xsd:enumeration value="RESOURCE"/>
+	<xsd:enumeration value="ROOM"/>
+	<xsd:enumeration value="UNKNOWN"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="CalAddress">
+    <xsd:restriction base="xsd:anyURI"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="CalAddressList">
+      <xsd:list itemType="CalAddress"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="RoleType">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="CHAIR"/>
+	<xsd:enumeration value="REQ-PARTICIPANT"/>
+	<xsd:enumeration value="OPT-PARTICIPANT"/>
+	<xsd:enumeration value="NON-PARTICIPANT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="ParticipationStatusType">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="NEEDS-ACTION"/>
+	<xsd:enumeration value="ACCEPTED"/>
+	<xsd:enumeration value="DECLINED"/>
+	<xsd:enumeration value="TENTATIVE"/>
+	<xsd:enumeration value="DELEGATED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="Attendee">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:anyURI"/>
+    </xsd:sequence>
+    <xsd:attribute name="CUType" type="CalendarUserType"/>
+    <xsd:attribute name="Member" type="CalAddressList"/>
+    <xsd:attribute name="Role" type="RoleType"/>
+    <xsd:attribute name="PartStat" type="ParticipationStatusType"/>
+    <xsd:attribute name="Rsvp" type="Bool"/>
+    <xsd:attribute name="DelegatedTo" type="CalAddressList"/>
+    <xsd:attribute name="DelegatedFrom" type="CalAddressList"/>
+    <xsd:attribute name="SentBy" type="xsd:string"/>
+    <xsd:attribute name="CommonName" type="xsd:string"/>
+    <xsd:attribute name="Directory" type="xsd:string"/>
+    <xsd:attribute name="Language" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="Organizer">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="CalAddress"/>
+    </xsd:sequence>
+    <xsd:attribute name="CommonName" type="xsd:string"/>
+    <xsd:attribute name="Directory" type="xsd:string"/>
+    <xsd:attribute name="SentBy" type="xsd:string"/>
+    <xsd:attribute name="Language" type="xsd:string"/>
+  </xsd:complexType>
+ 
+  <xsd:complexType name="IntegerContent">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+ 
+  <xsd:complexType name="UrlContent">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:anyURI"/>
+    </xsd:sequence>
+    <!-- is this right? -->
+    <xsd:attribute name="Value" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="Bool">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="TRUE"/>
+      <xsd:enumeration value="FALSE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="BasicRecurrenceFreq">
+    <xsd:restriction base="xsd:string">
+	<xsd:enumeration value="DAILY"/>
+	<xsd:enumeration value="WEEKLY"/>
+	<xsd:enumeration value="MONTHLY"/>
+	<xsd:enumeration value="YEARLY"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="RecurrenceFreq">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="SECONDLY"/>
+	<xsd:enumeration value="MINUTELY"/>
+	<xsd:enumeration value="HOURLY"/>
+	<xsd:enumeration value="DAILY"/>
+	<xsd:enumeration value="WEEKLY"/>
+	<xsd:enumeration value="MONTHLY"/>
+	<xsd:enumeration value="YEARLY"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="monthInt">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="1"/>
+      <xsd:maxInclusive value="12"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="monthDayInt">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="1"/>
+      <xsd:maxInclusive value="31"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="yearDayInt">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="-366"/>
+      <!-- FIXME: -366..-1 and 1..366 .. NOT 0 -->
+      <xsd:maxInclusive value="366"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="setPosDayList">
+    <xsd:list itemType="yearDayInt"/>
+  </xsd:simpleType>  
+
+  <xsd:simpleType name="secondInt">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="59"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="minuteInt">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="59"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="hourInt">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="23"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="weekNum">
+    <xsd:restriction base="xsd:integer">
+    <!-- FIXME: -53..-1 and 1..53 .. NOT 0 -->
+      <xsd:minInclusive value="-53"/>
+      <xsd:maxInclusive value="53"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="OneDigitPositiveInteger">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:totalDigits value="1"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="PositiveInteger">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="366"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="Weekday">
+    <xsd:restriction base="xsd:string">
+    	<xsd:enumeration value="SU"/>
+	<xsd:enumeration value="MO"/>
+	<xsd:enumeration value="TU"/>
+	<xsd:enumeration value="WE"/>
+	<xsd:enumeration value="TH"/>
+	<xsd:enumeration value="FR"/>
+	<xsd:enumeration value="SA"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Basic vCalendar Recurence Rule -->
+  <xsd:complexType name="RecurrenceRule">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Frequency" type="BasicRecurrenceFreq"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Until" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Count" type="PositiveInteger"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Interval" type="PositiveInteger"/>
+      <!-- the By* fields are a list of ,-separated values, as in the corresponding ical/vcal fields -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByDay" type="xsd:string"/> <!-- equal to MP/W in vcal -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByMonthDay" type="xsd:string"/> <!-- equal to MD in vcal -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByYearDay" type="xsd:string"/> <!-- equal to YD in vcal -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByMonth" type="xsd:string"/> <!-- equal to YM in vcal -->
+    </xsd:sequence>
+     <!-- needed by TimezoneRule -->
+     <xsd:attribute name="TimezoneID" type="xsd:string"/>
+     <xsd:attribute name="TZComponent" type="xsd:string"/>
+  </xsd:complexType>
+
+  <!-- iCalendar implementation of Recurrence Rule Grammer -->
+  <xsd:complexType name="RecurrenceRuleExtended">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Frequency" type="RecurrenceFreq"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Until" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Count" type="PositiveInteger"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Interval" type="PositiveInteger"/>
+      <!-- the By* fields are a list of ,-separated values, as in the corresponding ical/vcal fields -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="BySecond" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByMinute" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByHour" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByDay" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByMonthDay" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByYearDay" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByWeekNo" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ByMonth" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="BySetPos" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="WKST" type="Weekday"/>
+    </xsd:sequence>  
+  </xsd:complexType>
+
+  <xsd:simpleType name="Preferred">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="TRUE"/>
+      <xsd:enumeration value="FALSE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="PriorityValue">
+    <xsd:restriction base="xsd:integer">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="9"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="Priority">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="PriorityValue"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="LatitudeType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="-90"/>
+      <xsd:maxInclusive value="90"/>
+      <xsd:fractionDigits value="6"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="LongitudeType">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="-180"/>
+      <xsd:maxInclusive value="180"/>
+      <xsd:fractionDigits value="6"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="GeoValue">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Latitude" type="LatitudeType"/>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Longitude" type="LongitudeType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="RecurrenceIdRange">
+    <xsd:restriction base="xsd:string">
+	<xsd:enumeration value="THISANDPRIOR"/>
+	<xsd:enumeration value="THISANDFUTURE"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="RecurrenceId">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="TimezoneID" type="xsd:string"/>
+    <xsd:attribute name="Range" type="RecurrenceIdRange"/>
+    <xsd:attribute name="Value" type="DateValueType"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="RecurrenceDateTimeValue">
+    <xsd:restriction base="xsd:string">
+	<xsd:enumeration value="DATE-TIME"/>
+	<xsd:enumeration value="DATE"/>
+	<xsd:enumeration value="PERIOD"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="RecurrenceDateTimeList">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="TimezoneID" type="xsd:string"/>
+    <xsd:attribute name="Value" type="RecurrenceDateTimeValue"/>
+  </xsd:complexType>
+
+  <!-- 4.2.15 Relationship Type -->
+  <xsd:simpleType name="RelationshipType">
+    <xsd:restriction base="xsd:string">
+	<xsd:enumeration value="PARENT"/>
+	<xsd:enumeration value="CHILD"/>
+	<xsd:enumeration value="SIBLING"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RFC2445: 4.8.4.5 Related To -->
+  <xsd:complexType name="RelatedTo">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="TimezoneID" type="xsd:string"/>
+    <xsd:attribute name="RelationshipType" type="RelationshipType"/>
+  </xsd:complexType>
+
+  <!-- RFC2445: 4.8.8.2 Request Status -->
+  <xsd:complexType name="RequestStatus">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="StatusCode" type="xsd:string"/> <!-- limit StatusCode to a max length -->
+      <xsd:element minOccurs="1" maxOccurs="1" name="StatusDescription" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExceptionData" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="TimezoneID" type="xsd:string"/>
+    <xsd:attribute name="RelationshipType" type="RelationshipType"/>
+  </xsd:complexType>
+
+  <!-- RFC2445: 4.8.1.11 Status - statvalue -->
+  <xsd:simpleType name="StatusValue">
+    <xsd:restriction base="xsd:string">
+	<xsd:enumeration value="TENTATIVE"/>
+	<xsd:enumeration value="CONFIRMED"/>
+	<xsd:enumeration value="CANCELLED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RFC2445: 4.8.1.11 Status -->
+  <xsd:complexType name="Status">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="StatusValue"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="TimeTransparentValue">
+    <xsd:restriction base="xsd:string">
+	<xsd:enumeration value="OPAQUE"/>
+	<xsd:enumeration value="TRANSPARENT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="TimeTransparency">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Content" type="TimeTransparentValue"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="UtcOffset">
+    <xsd:restriction base="xsd:string">
+    <!-- TODO: Check for pattern:  (+|-)HHMM -->
+      <xsd:minLength value="5"/>
+      <xsd:maxLength value="5"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- RFC2445: 4.6.5 Time Zone Component - standardc / daylightc -->
+  <xsd:complexType name="TimezoneComponent">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Comment" type="MultiText"/>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="RecurrenceDateTime" type="RecurrenceDateTimeList"/>
+      <xsd:element minOccurs="1" maxOccurs="1" name="DateTimeStart" type="xsd:string"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="TZName" type="xsd:string"/>
+      <xsd:element minOccurs="1" maxOccurs="1" name="TZOffsetFrom" type="UtcOffset"/>
+      <xsd:element minOccurs="1" maxOccurs="1" name="TZOffsetTo" type="UtcOffset"/>
+    </xsd:sequence>
+    <xsd:attribute name="TimezoneID" type="xsd:string"/>
+    <xsd:attribute name="TZComponent" type="xsd:string"/>
+    <xsd:attribute name="Language" type="xsd:string"/> <!-- needed by TZName -->
+  </xsd:complexType>
+
+  <!-- RFC2445: 4.6.5 Time Zone Component -->
+  <xsd:complexType name="Timezone">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LastModified" type="DateTimeContent"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="TZUrl" type="xsd:anyURI"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="X-Location" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="TimezoneID" type="xsd:string"/>
+    <xsd:attribute name="TZComponent" type="xsd:string"/>
+  </xsd:complexType>
+
+  <!-- RFC2445: 4.3.9 Period of Time -->
+  <xsd:complexType name="Period">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Start" type="DateTimeContent"/>
+      <!-- TODO: eihter Duration or End .. but not both at the same time! -->
+      <xsd:element minOccurs="0" maxOccurs="1" name="Duration" type="Duration"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="End" type="DateTimeContent"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- RFC2445: 4.8.2.6 Free/Busy Time -->
+  <xsd:complexType name="FreeBusyElement">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Type" type="RequestStatus"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Period" type="Period"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- RFC2445: 4.6.4 Free/Busy Component -->
+  <xsd:complexType name="FreeBusy">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Attendee" type="Attendee"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Contact" type="MultiText"/>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Comment" type="MultiText"/>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Content" type="FreeBusyElement"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DateEnd" type="DateTimeContent"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DateStamp" type="DateTimeContent"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DateStarted" type="DateTimeContent"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Duration" type="Duration"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Organizer" type="Organizer"/>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="RStatus" type="RequestStatus"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Uid" type="StringContent"/>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Url" type="UrlContent"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

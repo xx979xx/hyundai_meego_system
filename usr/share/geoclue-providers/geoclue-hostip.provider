@@ -1,0 +1,8 @@
+[Geoclue Provider]
+Name=Hostip
+Service=org.freedesktop.Geoclue.Providers.Hostip
+Path=/org/freedesktop/Geoclue/Providers/Hostip
+Accuracy=Locality
+Requires=RequiresNetwork
+Provides=ProvidesCacheableOnConnection
+Interfaces=org.freedesktop.Geoclue.Position;org.freedesktop.Geoclue.Address

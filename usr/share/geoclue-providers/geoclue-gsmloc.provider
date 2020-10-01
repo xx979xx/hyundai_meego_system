@@ -1,0 +1,8 @@
+[Geoclue Provider]
+Name=Gsmloc
+Service=org.freedesktop.Geoclue.Providers.Gsmloc
+Path=/org/freedesktop/Geoclue/Providers/Gsmloc
+Accuracy=Postalcode
+Requires=RequiresNetwork, RequiresCell
+Provides=ProvidesUpdates
+Interfaces=org.freedesktop.Geoclue.Position, org.freedesktop.Geoclue.Address

@@ -1,0 +1,184 @@
+SeasideLabelStyle {
+    color: #667786;
+    pressed-color: black;
+    font: "Droid Sans" 18;
+    font-weight: "bold";
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    vertical-align: "top";
+    text-align: "left";
+}
+
+SeasideLabel MAbstractLayoutPolicyStyle {
+    horizontal-spacing: 0;
+    vertical-spacing: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+SeasideLabel MLabelStyle {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+#SeasideListItem {
+    background-color: white;
+    preferred-size: 80%  -1;
+    minimum-size:   50%  10mm;
+    maximum-size:   100% 15mm;
+    margin-bottom: 0;
+    margin-bottom: 1;
+    padding-top:   1mm;
+    padding-right: 1mm;
+    padding-bottom:1mm;
+    padding-left:  1mm;
+}
+
+#SeasideListItem.Landscape {
+    preferred-size: 80%  -1;
+    minimum-size:   50%  10mm;
+    maximum-size:   100% 20mm;
+}
+
+#SeasideListItem:pressed {
+    background-color: $COLOR_SELECT;
+}
+
+#SeasideListItem:selected {
+    background-color: $COLOR_SELECT;
+}
+
+#SeasideListItemThumbnail {
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+    margin-left:   0;
+    padding-top:   0;
+    padding-right: 0;
+    padding-bottom:0;
+    padding-left:  0;
+    border-color:  gray;
+    border-top:    2;
+    border-right:  2;
+    border-bottom: 2;
+    border-left:   2;
+    preferred-size: 32 32;
+    minimum-size:   24 24;
+    maximum-size:   48 48;
+}
+
+#SeasideListItemName {
+    font: "Droid Sans" 20;
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+    margin-left:   0;
+    padding-top:   0;
+    padding-right: 0;
+    padding-bottom:0;
+    padding-left:  0;
+    preferred-size: -1 -1;
+    minimum-size:   -1 3mm;
+    maximum-size:   -1 -1;
+}
+
+#SeasideListItemButton {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    preferred-size: 32 32;
+    minimum-size:   24 24;
+    maximum-size:   48 48;
+}
+
+#SeasideListItemDetail {
+    font: "Droid Sans" 20;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    preferred-size: -1 -1;
+    minimum-size:   -1 3mm;
+    maximum-size:   -1 -1;
+}
+
+#SeasideListItemStatus {
+    color: red;
+    pressed-color: red;
+    preferred-size: -1 -1;
+    minimum-size:   -1 3mm;
+    maximum-size:   -1 -1;
+}
+
+#SeasideListItemFavorite {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#SeasideListItemPresence {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#SeasideListItemIM {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#SeasideListItemSMS {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#SeasideListItemEmail {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#SeasideListItemCall {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-right: 1mm;
+    padding-bottom: 0;
+    padding-left: 0;
+}

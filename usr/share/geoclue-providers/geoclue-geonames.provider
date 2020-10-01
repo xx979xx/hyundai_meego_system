@@ -1,0 +1,7 @@
+[Geoclue Provider]
+Name=Geonames Provider
+Service=org.freedesktop.Geoclue.Providers.Geonames
+Path=/org/freedesktop/Geoclue/Providers/Geonames
+Requires=RequiresNetwork
+Accuracy=Postalcode
+Interfaces=org.freedesktop.Geoclue.Geocode;org.freedesktop.Geoclue.ReverseGeocode

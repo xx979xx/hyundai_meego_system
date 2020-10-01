@@ -1,0 +1,190 @@
+License
+-------
+
+Rarian is distributed under the GPL v2.0 (or later) license.  Please see the
+COPYING file for full details.
+
+In addition, this package contains source code from the tinyxml project
+(www.sourceforge.net/projects/tinyxml).  These files can be found in
+the util directory and have names beginning with "tiny".  For their license
+terms, please refer to the indivual files.
+
+About Rarian
+-----------
+
+Rarian is designed to be a replacement for scrollkeeper.  It is
+currently undergoing heavy development.  As of writing, rarian can be
+installed in place of scrollkeeper and everything will work okay (as
+far as my testing indicates)
+
+The package consists of several things:
+
+* The librarian library
+  - This builds a list of available meta data files and allows access to these.
+
+* The rarian-sk-update script
+  - This is compatible with the scrollkeeper-update script that's required to
+    be run when installing new omf files.  It converts the omf files into new-
+    style scrolls
+
+* The rarian-sk-migrate program
+  - Takes in a directory full of omf's, reads and parses them and spews out
+    an equivalent scroll file.  You probably don't want to use this directly.
+    Instead, copy the omf directory to you're standard omf dir and run the
+    update script.
+
+* The rarian-example program
+  - Shows off what librarian is capable of.  Prints a nice list of all
+    available documents found by the library.
+
+* Misc. rarian-sk-* scripts
+  - These emulate various functions of scrollkeeper as needed to
+    maintain backwards-compatibility.
+
+This package (the library part, at least) is based on the proposed Freedesktop
+Help System spec.  The latest version of this spec can be found in the "help"
+subdirectory of this package.
+
+For major changes in 0.5 and above, please see the NEWS file.
+
+Major Changes in 0.4
+--------------------
+
+Lots of changes in this version.  I'll try and list as many as I can:
+* Change most things to support the spec.
+  - Use $XDG_DATA_DIRS and $XDG_DATA_HOME to find scroll files
+  - Use $LANGUAGE to decide which language to use
+  - Scan recursively through subdirs to pick up scrolls
+  - Allow locale-specific files to reside in $DIR/LOCALE/LC.  Prioritise them
+  - Handle document sections.  Allow docs to have as many sections as they want
+  - Remove the rubbish config file stuff
+  - Rename lots of key types
+  - Add support for lots more key types
+  - Handle URI and file paths properly
+* Remove previous migration script
+* Replace with update script which tracks changes (in
+  $OUTPUT_DIR/.rarian-update-mtimes)
+* Remove limit of 1024 chars per line
+* make calls to init implicit in operations
+* Add example of a Mallard Meta Data file, defining several sections, which
+  are spread across 1 document file and 1 section file
+* Fix a boatload of memory leaks
+* Added TODO to see what needs done
+* Add copy of spec to compare against
+
+Major Changes in 0.3
+--------------------
+
+Only 1 really: Rarian can now be installed.  If the right configure
+options are used.  By default, it doesn't use the installation code
+stuff, it still relies on the uninstalled version.  Look in the
+"Running it" section for how to get it installed etc.  A config file
+is also generated which tells Rarian where to look for scrolls.  It
+has a magic variable, HOME, which makes rarian look in the current
+user's home directory.  Each path takes precedence over the older
+ones.  If a scroll file is found in two paths, the one later in the
+config will replace the version found previously.
+
+Or better explanation:
+Config file specifies: /usr/share/rarian HOME/share/rarian
+Both have copies of beanstalk manual scroll.  The only version that'll be
+reported is the one in HOME/share/rarian
+
+
+Major Changes in 0.2
+--------------------
+
+* Scrolls are now translated in-file
+* All scrolls in data/sk-import are handled in the library init (but not
+recursively)
+* Add support for series_id and type in the Scroll struct
+* New and improved migration script - faster, cope with translations.  It works
+ on the assumption that all files of the form <entry>-<lang>.omf are
+ translations and any other <entry>s are from different docs.
+
+Running it
+----------
+
+In uninstalled (safe) mode
+--------------------------
+
+To try it out, run
+./configure && make
+from the command line, in the top-level directory.  Then:
+chmod u+x utils/rarian-sk-update
+./util/rarian-sk-update -o /usr/share/omf -r ./data/sk-import
+
+will make a temporary migration of all scrollkeeper omf files in
+/usr/share/omf.  The scrolls can be found in data/sk-import.  If you're omf
+files are not stored in /usr/share/omf, you need to edit the -o option to the
+correct path.
+
+If this step fails for some reason, fix the problem (if possible), let me know
+what went wrong and re-run the script.
+
+Once that's done, you can run:
+./util/rarian-example
+to build the in-memory index and iterate through, printing out each manuals
+filename.
+
+You can change the language used by changing the LANGUAGE environment variable:
+LANGUAGE=es ./util/rarian-example
+will print out the Spanish manuals.  If a document doesn't have a translation,
+the default is to fall back to the C locale and use that (the same as
+scrollkeeper works), hence you'll see a lot of English in that list.
+
+You can also specify multiple fallback languages by specifying them in $LANGUAGE
+using colon seperation:
+LANGUAGE=es:de:en_GB
+("C" locale will always be used as a final fallback).
+
+In installed (unsafe) mode
+--------------------------
+
+To get Rarian in an installed mode, the configure flag '--enable-installed' must
+be used.  On top of this, there are the usual options (prefix etc.)
+that can be used.  By default, when installed, it'll try converting the
+<prefix>/share/omf directory to scrolls stored in <prefix>/share/rarian.  This
+can be changed using
+--with-convert-dir=/path/to/current/omfs
+
+All the programs / scripts get installed (rarian-example,
+rarian-sk-migrate and rarian-sk-update).  To test, run the rarian-example with
+(or without) the LANGUAGE environmental variable set.  The update script can
+also be used at any point using:
+rarian-sk-update
+Without any options, this will convert the covnert-dir specified during
+configuration.  To convert a different directory, use
+rarian-sk-update -o <path/to/omfs>
+You can also regenerate all scroll files using the
+--clean-index
+parameter for the update script.
+To put the resulting scroll files in a different location (i.e. not
+<prefix>/share/help), use the parameter:
+-r <path/to/resultant/dir>
+
+Timings
+-------
+
+The following times are from my test-runs.  They are all run with warm cache.
+I've not run them with cold cache for various reasons.
+
+Running update script to create a new, clean index:
+real    0m9.302s
+real    0m6.003s
+real    0m6.076s
+
+Running update script when nothing has changed:
+real    0m3.757s
+real    0m3.688s
+
+Running rarian-example:
+(between 0 and 6 languages specified in LANGUAGES)
+real    0m0.040s
+real    0m0.039s
+real    0m0.035s
+
+What's next?
+-----------
+
+Please see the TODO file.

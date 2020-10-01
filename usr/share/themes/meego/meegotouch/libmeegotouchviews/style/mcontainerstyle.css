@@ -1,0 +1,41 @@
+
+MContainerStyle { /* settings for the whole container */
+
+    minimum-size: $SIZE_ONE, $SIZE_ONE; /* inherited from duiwidgetstyle */
+
+    margin-left: 0; /* inherited from duiwidgetstyle */
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    /* this affects the whole content including header and central widget, see also internal-margins */
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    background-image: meegotouch-container-content-background 4px 4px 4px 4px;
+
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    internal-margins: 0;
+    internal-item-spacing: 0;
+}
+
+MContainerHeaderStyle {
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-left: $PADDING_MEDIUM; /* inherited from duiwidgetstyle */
+    padding-right: $PADDING_MEDIUM; /* this would set the internal padding around the text */
+    padding-top: 0;
+    padding-bottom: 0;
+
+    background-image: meegotouch-container-header-background 4px 4px 4px 4px;
+}
+
+MContainerHeader MLabelStyle {
+   color: $COLOR_BUTTON_FOREGROUND;
+}

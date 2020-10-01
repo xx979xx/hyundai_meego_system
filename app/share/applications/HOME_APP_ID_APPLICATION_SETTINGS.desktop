@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=STR_APP_SETTINGS
+Comment=STR_APP_SETTINGS
+GenericName=STR_APP_SETTINGS
+Exec=44
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=
+Categories=
+MimeType=
+X-Desktop-File-Install-Version=0.16

@@ -1,0 +1,58 @@
+/* MSliderStyle : MWidgetStyle */
+MSliderStyle {
+
+    background-base-image: "meegotouch-slider-background-horizontal" 9px 9px 9px 9px;
+    background-elapsed-image: "meegotouch-slider-elapsed-background-horizontal" 9px 9px 9px 9px;
+    background-received-image: "meegotouch-slider-received-background-horizontal" 9px 9px 9px 9px;
+
+    background-vertical-base-image: "meegotouch-slider-background-vertical" 9px 9px 9px 9px;
+    background-vertical-elapsed-image: "meegotouch-slider-elapsed-background-vertical" 9px 9px 9px 9px;
+    background-vertical-received-image: "meegotouch-slider-received-background-vertical" 9px 9px 9px 9px;
+
+    groove-thickness: 2mm;
+
+    groove-preferred-length: 30mm;
+    groove-minimum-length: 20mm;
+    groove-maximum-length: 200mm; 
+}
+
+#MSliderMinMaxLabel {
+    margin-left: $MARGIN_XSMALL;
+    margin-right: $MARGIN_XSMALL;
+    margin-top:  $MARGIN_XSMALL;
+    margin-bottom: $MARGIN_XSMALL;
+
+    text-color: $COLOR_FOREGROUND;
+    font: $FONT_DEFAULT;
+}
+
+#MSliderHandleLabel {
+    margin-left: $MARGIN_MEDIUM;
+    margin-right: $MARGIN_MEDIUM;
+    margin-top:  $MARGIN_MEDIUM;
+    margin-bottom: $MARGIN_MEDIUM;
+
+    padding-left: $PADDING_LARGE;
+    padding-right: $PADDING_LARGE;
+    padding-top:  $PADDING_MEDIUM;
+    padding-bottom: $PADDING_MEDIUM;
+
+    text-color: $COLOR_FOREGROUND;
+    font: $FONT_DEFAULT;
+    background-image: meegotouch-slider-handle-value-background 4px 4px 4px 4px;
+}
+
+#MSliderImage {
+    margin-left:   $MARGIN_XSMALL;
+    margin-top:    $MARGIN_XSMALL;
+    margin-right:  $MARGIN_XSMALL;
+    margin-bottom: $MARGIN_XSMALL;
+
+    padding-left:   $PADDING_XSMALL;
+    padding-top:    $PADDING_XSMALL;
+    padding-right:  $PADDING_XSMALL;
+    padding-bottom: $PADDING_XSMALL;
+
+    border-opacity: 0.0;
+    background-opacity: 0.0;
+}

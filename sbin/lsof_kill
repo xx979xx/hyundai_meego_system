@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ $# -ne 1 ]
+then
+        exit 0;
+fi
+
+TARGET_PID=`lsof $1 | grep $1 | awk '{print $2}' | sort -u`
+for i in $TARGET_PID; do
+        kill -9 $i
+done

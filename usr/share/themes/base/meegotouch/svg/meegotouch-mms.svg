@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="MMS-layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="590px" height="800px" viewBox="0 0 590 800" style="enable-background:new 0 0 590 800;" xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+@font-face{font-family:'NokiaSansWide-Regular';src:url("data:;base64,\
+T1RUTwACACAAAQAAQ0ZGIPeTnloAAABgAAABkWNtYXAAaACGAAAALAAAADQAAAABAAAAAwAAAAwA\
+BAAoAAAABgAEAAEAAgBNAFP//wAAAE0AU////7T/rwABAAAAAAAAAQAEAgABAQEWTm9raWFTYW5z\
+V2lkZS1SZWd1bGFyAAEBATj4GwH4GAT4HAwV/Cf8QxwKRhwIHwUeoABIgoEl/4uLHqAASIKBJf+L\
+iwwH9yYPjBD3KxGL+CUSAAIBASQxTm9raWEgU2FucyBpcyBhIHRyYWRlbWFyayBvZiBOb2tpYS4v\
+RlNUeXBlIDggZGVmAAAAAC4ANAADAQEcTvT6lL4WHAYA+i4c+gAH/a73FBX5LhwFAP0uBg4cBhQc\
+BW8cBdMVHPot+2362Af77/zcBSEG++743AX+2PtlHAXT9zgH+FD9jvhV+Y4FDvqi+Eh7FfsO+wib\
+rPsCH/cvB2b3DfcHefcAG/Xbn7LAH8CypcbaGr56u2i4Hmi4NsT7GtD7HNAuz1rPCFrPctXcGt6g\
+0rTGHrTGxrjYqgiq2OKb7Bvt8IB08x/7LAekJi2XNRsqQHloVx9WaHFXRhpdlmSgbB6ga6ZwrHWs\
+dbpwyWviXtBiwGjAZ7heslQIsVSeS0Ia+y1b+wMqRh5FKvsVaPs2Gw4AAAA=")}
+]]>
+</style>
+<g id="MMS">
+	<g id="MMSThemeTemplateHelper">
+		<g id="helperBackground">
+			<g>
+				<path style="fill:#B2B2B2;" d="M16,799c-8.271,0-15-6.729-15-15V16C1,7.729,7.729,1,16,1h558c8.271,0,15,6.729,15,15v768
+					c0,8.271-6.729,15-15,15H16z"/>
+				<g>
+					<path d="M574,2c7.72,0,14,6.28,14,14v768c0,7.72-6.28,14-14,14H16c-7.72,0-14-6.28-14-14V16C2,8.28,8.28,2,16,2H574 M574,0H16
+						C7.2,0,0,7.2,0,16v768c0,8.8,7.2,16,16,16h558c8.8,0,16-7.2,16-16V16C590,7.2,582.8,0,574,0L574,0z"/>
+				</g>
+			</g>
+			
+				<text transform="matrix(1 0 0 1 262.4761 43.5962)" style="fill:#010101; font-family:'NokiaSansWide-Regular'; font-size:27.1658;">MMS</text>
+		</g>
+	</g>
+	<g id="meegotouch-mms-image-background">
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="290.0005" y1="433.4688" x2="290.0005" y2="181.4692">
+			<stop  offset="0" style="stop-color:#CCCCCC"/>
+			<stop  offset="1" style="stop-color:#010101"/>
+		</linearGradient>
+		<path style="fill:url(#SVGID_1_);" d="M514,423.483c0,5.492-4.5,9.985-10,9.985H76c-5.5,0-10-4.493-10-9.985V191.455
+			c0-5.492,4.5-9.986,10-9.986h428c5.5,0,10,4.494,10,9.986V423.483z"/>
+		<path style="fill:#989898;" d="M514,421.643c0,5.404-4.5,9.826-10,9.826H76c-5.5,0-10-4.422-10-9.826V193.297
+			c0-5.406,4.5-9.828,10-9.828h428c5.5,0,10,4.422,10,9.828V421.643z"/>
+	</g>
+	<g id="meegotouch-mms-image-mask">
+		<path style="fill:#010101;" d="M514,709.174c0,5.404-4.5,9.826-10,9.826H76c-5.5,0-10-4.422-10-9.826V480.827
+			c0-5.405,4.5-9.827,10-9.827h428c5.5,0,10,4.422,10,9.827V709.174z"/>
+	</g>
+	<g id="meegotouch-mms-slide-divider">
+		<path style="fill:#CDCCCC;" d="M70,123c-11,0-20-9-20-20v20H70z"/>
+		<path style="fill:#CDCCCC;" d="M510,123h20v-20C530,114,521,123,510,123z"/>
+		<path style="fill:#CDCCCC;" d="M510,125c11,0,20,9,20,20v-20.002L510,125z"/>
+		<path style="fill:#CDCCCC;" d="M70,125l-20-0.002V145C50,134,59,125,70,125z"/>
+		<rect x="50" y="123" style="fill:#CDCCCC;" width="480" height="2"/>
+	</g>
+</g>
+</svg>

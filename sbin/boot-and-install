@@ -1,0 +1,52 @@
+#!/bin/sh
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+
+
+if [ ! -e /proc/mounts ]; then 
+	mount -n -t proc /proc /proc
+	mount -n -t sysfs /sys /sys >/dev/null 2>&1
+fi
+. /etc/init.d/functions
+
+echo "Waiting for system to settle before starting installation..."
+sleep 5
+
+cmdline=$(cat /proc/cmdline)
+
+if strstr "$cmdline" recover; then
+    /bin/mount /dev/live /mnt/live
+    if [ -f /mnt/live/moblin-recovery.ks ] ; then
+        kickstart="/mnt/live/moblin-recovery.ks"
+    elif [ -f /root/moblin-ks.cfg ]; then
+        kickstart="/root/moblin-ks.cfg"
+    else
+        kickstart=""
+    fi
+
+    if [ -z $kickstart ] ; then
+        echo "You missed a moblin system recovery kickstart file"
+        echo "So you can't recover your system."
+    else
+        /usr/sbin/anaconda --liveinst --method=livecd:///dev/live-osimg  -G --kickstart=$kickstart
+    fi
+    echo "Please hit ctrl-alt-delete to reboot!"
+    exit 0
+elif strstr "$cmdline" basicinst; then
+    if [ -x /usr/sbin/moblin-installer-basic ]; then
+        /usr/sbin/moblin-installer-basic
+        echo "You can now reboot your system. Please remove the boot media (usb stick)"
+        echo "and hit ctrl-alt-delete when ready!"
+        exit 0
+    fi
+elif strstr "$cmdline" autoinst; then
+    if [ -f /root/moblin-ks.cfg ]; then
+        /usr/sbin/anaconda --liveinst --method=livecd:///dev/live-osimg  -C --kickstart=/root/moblin-ks.cfg
+        echo "You can now reboot your system. Please remove the boot media (usb stick)"
+        echo "and hit ctrl-alt-delete when ready!"
+        exit 0
+    fi
+fi
+
+/usr/sbin/liveinst
+

@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Mad Developer Help</title>
+</head>
+<body>
+<h3>Mad Developer Help</h3>
+<p>Mad Developer provides developer access to this device and works
+in stateless mode. When you restart Mad Developer, all
+configuration information is set to default values. In this case
+the system state is not changed, the current IP addresses are
+preserved and DHCP server for usb0 keeps running.</p>
+<h3>Connecting using USB</h3>
+<p>To connect your device to your computer using <b>USB</b>:</p>
+<ol>
+<li>Plug in USB cable to device and computer.</li>
+<li>Close <b>Ovi Suite/Mass Storage</b> popup by tapping outside
+it.</li>
+<li>In Mad Developer window, tap <b>USB Networking</b>.</li>
+<li>Tap <b>Windows Network</b>. This is relevant for all supported
+platforms.<br>
+The network address of the device is displayed on the usb0
+line.</li>
+<li>Tap <b>Close</b>.</li>
+<li>Generate a password for the connection by tapping <b>Developer
+Password</b>. Use this temporary password to set up SSH RSA/DSA
+public key authentication.<br>
+<b>Note:</b> Tap Developer Password <i>before</i> configuring an
+SSH connection on your computer.</li>
+<li>Add device IP address and the generated password when
+configuring device access in your development environment.</li>
+</ol>
+<h3>Connecting using WLAN</h3>
+<p>When connecting the device to the computer using WLAN,
+configuration is automatic when a network is available.</p>
+<p>To connect your device to your computer using <b>WLAN</b>:</p>
+<ol>
+<li>Make sure the device and the computer are on the same
+subnet.<br>
+The network address of the device is displayed on the wlan0
+line.</li>
+<li>Generate a password for the connection by tapping <b>Developer
+Password</b>. Use this temporary password to set up SSH RSA/DSA
+public key authentication.<br>
+<b>Note:</b> Tap Developer Password <i>before</i> configuring an
+SSH connection on your computer.</li>
+<li>Add device IP address and the generated password when
+configuring device access in your development environment.</li>
+</ol>
+<p><b>Note:</b> On the GPRS line, you can check if the device is
+using the GPRS interface and if the interface is set as default route
+(R).</p>
+<h3>Configuration information</h3>
+<p>The top part the screen shows network configuration
+information:</p>
+<ul>
+<li><b>Interface</b> type (usb0, wlan0, and gprs0)</li>
+<li><b>IP address</b> of the device</li>
+<li><b>Netmask</b> address of the device</li>
+<li><b>Flags</b></li>
+<li style="list-style: none; display: inline">
+<ul>
+<li><b>S</b> when DHCP server mode is in use</li>
+<li><b>D</b> when DHCP client mode is in use</li>
+<li><b>R</b> when the default route is set using this
+interface</li>
+</ul>
+</li>
+</ul>
+<h3>Editing USB connection configuration</h3>
+<p>To edit the USB connection configuration, tap <b>Edit</b> on
+<b>usb0</b> line. To change the configuration mode, tap <b>DHCP
+server</b>:</p>
+<ul>
+<li><b>DHCP server</b> is the default mode:
+<ul>
+<li>DHCP server is in use.</li>
+<li>Host IP address (192.168.2.15) and netmask (255.255.255.0) are
+set.</li>
+<li>Peer IP address (192.168.2.14) is set for DHCP server to
+use.</li>
+</ul>
+</li>
+<li><b>DHCP client</b> mode: You cannot edit the network
+configuration settings. Use this mode if your host computer is
+specially set up as DHCP server for this device.</li>
+<li><b>Static</b> mode: Use this mode if:
+<ul>
+<li>You want to control the interface configuration to, for
+example, configure a default route.</li>
+<li>The host computer is not set up as DHCP server for your device
+but possibly provides routing.</li>
+</ul>
+</li>
+</ul>
+<p>To take your configuration into use, tap <b>Configure</b>. To
+leave your configuration unchanged, tap <b>Cancel</b>.</p>
+<h3>Using the device terminal</h3>
+<p>To use the device terminal, tap <b>Developer Terminal</b>. When
+the terminal opens, you are logged in as a developer user. This
+user has the same credentials as normal users, but a different home
+directory.</p>
+<h3>Using the device as mass storage</h3>
+<p>To use the device as mass storage, tap <b>USB Networking</b>
+&gt; <b>Mass Storage</b>.</p>
+</body>
+</html>

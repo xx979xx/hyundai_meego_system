@@ -1,0 +1,68 @@
+qmlog (0.10) unstable; urgency=low
+
+  * take library version from changelog
+  * using qmake-qt4 explicitly
+  * more flexible file opening/closing
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 17 Feb 2011 11:36:26 +0200
+
+qmlog (0.0.9) unstable; urgency=low
+
+  * removed memory leaks
+  * Fixes: NB#202297 - memory leaks
+  * Fixes: NB#203298 - memory leaks
+  * Fixes: NB#202849 - qmlog needs to be improved
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 10 Nov 2010 07:37:59 +0200
+
+qmlog (0.0.8) unstable; urgency=low
+
+  * Added destructors
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 03 Nov 2010 22:10:10 +0200
+
+qmlog (0.0.7) unstable; urgency=low
+
+  * usging new API (api2.*)
+  * Fixes: NB#187227
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Sun, 31 Oct 2010 23:48:53 +0200
+
+qmlog (0.0.6) unstable; urgency=low
+
+  * Fixes: NB#199057 - tests.xml missing in qmlog-tests package
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 19 Oct 2010 14:02:27 +0300
+
+qmlog (0.0.5) unstable; urgency=low
+
+  * copyright files
+  * meego+gitorious
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 20 Aug 2010 16:27:29 +0300
+
+qmlog (0.0.4) unstable; urgency=low
+
+  * Fixes: NB#184518 - libqmlog0 forces everything using them to link Qt UI and X libraries
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 10 Aug 2010 14:15:23 +0300
+
+qmlog (0.0.3) unstable; urgency=low
+
+  * Fixes: NB#179497 - clock crashes when tap on back from alarm view
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 12 Jul 2010 16:45:36 +0300
+
+qmlog (0.0.2) unstable; urgency=low
+
+  * prining abbreviation
+  * prining /etc/localtime symlink
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 15 Jun 2010 19:54:58 +0300
+
+qmlog (0.0.1) unstable; urgency=low
+
+  * first version, just the stuff taken from timed
+  * API is pretty trivial
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 01 Jun 2010 13:36:00 +0300

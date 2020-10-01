@@ -1,0 +1,39 @@
+MContentFadeAndSlideAnimationStyle
+{
+    content-object-name: ;
+
+    fade-out-opacity: 0.0;
+    fade-out-duration: 250;
+    fade-out-easing-curve: incubic;
+
+    slide-out-displacement: 30 0;
+    slide-out-duration: 250;
+    slide-out-easing-curve: incubic;
+
+    delay: 250;
+
+    fade-in-opacity: 0.0;
+    fade-in-duration: 250;
+    fade-in-easing-curve:  outcubic;
+
+    slide-in-displacement: -30 0;
+    slide-in-duration: 250;
+    slide-in-easing-curve: outcubic;
+}
+
+MNavigationBar MContentFadeAndSlideAnimationStyle
+{
+    content-object-name: "ContentToAnimate";
+}
+
+MNavigationBar MContentFadeAndSlideAnimationStyle#In
+{
+    slide-out-displacement: 30 0;
+    slide-in-displacement: -30 0;
+}
+
+MNavigationBar MContentFadeAndSlideAnimationStyle#Out
+{
+    slide-out-displacement:-30 0;
+    slide-in-displacement:  30 0;
+}

@@ -1,0 +1,48 @@
+#!/usr/bin/python
+#
+#    THIS FILE IS PART OF THE D-Feet PROJECT AND LICENSED UNDER THE GPL. SEE
+#    THE 'COPYING' FILE FOR DETAILS
+#    
+#    This script will try to import D-Feet from somewhere in the 
+#    PYTHONPATH,    and use DFEET_DATA_PATH, DFEET_IMAGE_PATH, 
+#    and DFEET_LOCALE_PATH environment variables to find the other files it needs.
+#    If those variables are not set, they will be set from their values in the ENV_PATHS
+#    dictionary, which is defined below.
+#    This script is also responsible for parsing comment line arguments.
+#
+#-------------------------------------------------------------------------------
+
+import os, sys
+import optparse
+
+parser = optparse.OptionParser(usage="%prog [options] [project-file]")
+
+parser.add_option("-l", "--local-dirs", action="store_true", dest="use_local_dirs",
+                help="Use files from the local directory tree")
+
+(options, args) = parser.parse_args()
+if options.use_local_dirs:
+    ENV_PATHS = {"DFEET_DATA_PATH" : "ui/",
+                 "DFEET_IMAGE_PATH" : "ui/",
+                 "DFEET_LOCALE_PATH" : "locale/",
+                 "DFEET_HELP_PATH" : "/usr/share/gnome/dfeet/"
+                }
+    
+
+else:
+    ENV_PATHS = {"DFEET_DATA_PATH" : "/usr/share/dfeet/",
+                 "DFEET_IMAGE_PATH" : "/usr/share/dfeet/pixmaps/",
+                 "DFEET_LOCALE_PATH" : "/usr/share/locale/",
+                 "DFEET_HELP_PATH" : "/usr/share/gnome/dfeet/"
+                }
+
+#must set variables before importing Globals because it requires them
+for var, path in ENV_PATHS.iteritems():
+    #if it is not already set, set the enviroment variable.
+    os.environ.setdefault(var, path)
+
+import dfeet.DFeetApp as DFeetApp
+
+#Launch the program
+app = DFeetApp.DFeetApp()
+DFeetApp.gtk.main()

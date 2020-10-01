@@ -1,0 +1,21 @@
+styles R I B BI
+fonts 8 0 0 0 0 0 S M G
+fontset B G 2E00..9FFF
+fontset CB G 2E00..9FFF
+fontset HB G 2E00..9FFF
+fontset NB G 2E00..9FFF
+fontset TB G 2E00..9FFF
+fontset - M 2E00..9FFF
+fontset B G FF00..FFEF
+fontset CB G FF00..FFEF
+fontset HB G FF00..FFEF
+fontset NB G FF00..FFEF
+fontset TB G FF00..FFEF
+fontset - M FF00..FFEF
+sizes 8 10 12 14 18 24 0
+res 100
+X11
+hor 1
+vert 1
+unitwidth 10
+postpro gxditview

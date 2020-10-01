@@ -1,0 +1,133 @@
+How to write a pm-utils hook:
+
+PARAMETERS
+
+A pm-utils hook is simply an executable file that accepts at least one 
+parameter. 
+
+For hooks in sleep.d, the potential values of the first parameter are:
+suspend -- The hook MUST perform whatever action is appropriate when the
+	   system is preparing for memory sleep (or its equivalent).
+resume -- The hook MUST perform whatever action is appropriate when the 
+	system is coming out of suspend.
+
+hibernate -- The hook MUST perform whatever action is appropriate when 
+	the system is preparing for suspend-to-disk.
+thaw -- The hook MUST perform whatever action is appropriate when the system
+	is coming out of suspend-to-disk.
+
+help -- If your hook parses the PM_CMDLINE environment variable for switches, 
+	this function SHOULD output text describing the parameters it parses
+	in a format easily understandable by an end-user.
+
+The actual sleep method being used will be passed as the second parameter -- 
+if your hook needs to handle suspend-hybrid (or any other platform-specific
+sleep method), it should examine the second parameter.
+
+For hooks in power.d, the potential values of that parameter are:
+true -- the hook MUST perform whatever action is appropriate when the system 
+	transitions TO battery power.
+false -- The hook MUST perform whatever action is appropriate when the system
+	transitions FROM battery power.
+
+NAMING SCHEME
+
+All hooks are run in lexical sort order according to the C locale.
+
+HOOK EXIT CODES
+
+In normal operation, hooks should only return either 0 or 254 as exit codes.
+0 indicates that the hook performed its task normally.
+254 indicates that the hook is not applicable to this system.
+
+Any other return code is interpreted by the pm-utils machinery as a signal 
+from the hook that it should abort whatever it is doing. When running sleep.d
+hooks, that means that pm-utils stops running hooks, aborts the suspend/resume
+process, calls any hooks that ran successfully prior to this one with the 
+appropriate wakeup options, and exits with a non-zero exit code. When running
+power.d hooks, any hooks after this one will be skipped.
+
+SLEEP.D SPECIFIC NOTES
+
+For any given sleep/wakeup cycle, the hooks in sleep.d are run twice:
+* Once in C lexical sort order before the system goes to sleep, and
+* Once in reverse C lexical sort order when the system wakes up.
+
+SLEEP HOOK ORDERING CONVENTION
+
+00 - 49: user and (most) package supplied hooks.
+If your hook assumes that all of the usual services and userspace 
+infrastructure is still running, it should be here.
+
+50 - 74: service-handling hooks. 
+If you need to stop or start a service, you should have a hook in this range.
+
+75 - 89: module and non-core hardware handling.
+If you need to load/unload a module, or mess with some non-video related 
+hardware that would otherwise break suspend or hibernate, the hook that
+does that should be in this range.
+
+90 - 99: reserved for critical suspend hooks. 
+The hooks in this range should not be messed with unless you know what
+you are doing.  They start with 90chvt and end with 99video
+
+At or before 50, you can assume that all services are still enabled.
+
+At or before 75, you can assume that all modules are still loaded.
+
+SUSPEND FAST PATH
+
+When suspending the system to memory, most of the time is used to synchronize
+the disks and perform the actual sleep process in kernel space.
+On modern systems, these steps generally only take 1 - 3 seconds.  Since
+just about every laptop user wants their system to sleep and wake up as fast
+as possible, you should minimize the amount of work done during suspend and
+during resume before we switch vts back to the original vt. 
+
+If you have something to do that will take lots of time, try to run it during
+resume after the 90chvt hook runs -- that will minimize the impact we have on
+resume time.
+
+CONVENIENCE FUNCTIONS
+
+If your hook is a shell script that supports POSIX/SuS compatible syntax, you
+MAY source "${PM_FUNCTIONS}". The variable will be set in the environment of
+the hook. This will make the following convenience functions available:
+1:  try_lock
+	try_lock expects a single parameter -- the name of the lock to 
+	try to acquire.  Exit code denotes success.
+2:  spin_lock
+	Wrapper around try_lock.  Second parameter is the number of seconds 
+	to wait for the lock before giving up.  If no second parameter
+	is passed, this function will wait for 60 seconds.
+3:  release_lock
+	Release a previously acquired lock.  First parameter is the name of the
+	lock.
+4:  get_power_status
+	Outputs our power source on stdout.
+5:  modunload
+	Unload a module.  Exit code denotes success.
+6:  modreload
+	Reload all the modules unloaded by modunload.
+7:  stopservice
+	Stop a service.  First parameter is the name of the service to stop.
+8:  restartservice
+	Restart a service.  Service must have been stopped by stopservice.
+9:  savestate
+	Save state piped into this function on stdin.  First parameter is the 
+	name of the state being saved.  If a second parameter is passed, this
+	function will use it instead of stdin.
+10: restorestate
+	Outputs state saved by savestate on stdout.  The first parameter is the
+	name of the state to restore.
+11: disablehook
+	Prevent a hook from running.  The exact name of the hook (including
+	numberic prefix) must be passed.
+12: inhibit
+	Inhibit the suspend/hibernate process.  pm-utils will not try to
+	hibernate the system after this function is called.
+13: inhibited
+	Test to see if inhibit has been called.
+14: dbus_send
+	Just like regular dbus-send, but return $NA if the command fails for
+	any reason.

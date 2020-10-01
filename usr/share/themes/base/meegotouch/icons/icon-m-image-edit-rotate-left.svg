@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-image-edit-rotate-left-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-image-edit-rotate-left">
+	<rect style="fill:none;" width="48" height="48"/>
+	
+		<ellipse transform="matrix(-0.7073 -0.7069 0.7069 -0.7073 36.5548 87.7517)" style="fill:#333333;" cx="36.445" cy="36.308" rx="2.935" ry="2.952"/>
+	
+		<ellipse transform="matrix(-0.7072 -0.707 0.707 -0.7072 16.4966 88.3515)" style="fill:#333333;" cx="26.543" cy="40.76" rx="2.936" ry="2.952"/>
+	
+		<ellipse transform="matrix(-0.7072 -0.707 0.707 -0.7072 0.2155 77.1488)" style="fill:#333333;" cx="16.082" cy="38.53" rx="2.936" ry="2.953"/>
+	<path style="fill:#333333;" d="M12.084,9.296L7.23,4.441C6.977,4.188,6.722,4.273,6.66,4.629L3.75,21.8
+		c-0.062,0.356,0.18,0.598,0.538,0.538l17.17-2.912c0.357-0.061,0.44-0.316,0.188-0.57l-6.435-6.434
+		c5.904-4.988,14.744-4.734,20.275,0.797c4.619,4.62,5.55,11.545,2.831,17.142l4.108,1.657c3.363-7.199,2.098-16.024-3.809-21.931
+		C31.368,2.838,19.724,2.586,12.084,9.296z"/>
+</g>
+</svg>

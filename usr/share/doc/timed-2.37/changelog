@@ -1,0 +1,629 @@
+timed (2.37) unstable; urgency=low
+
+  * compiling .type files into the timed binary
+  * NTP client is working, no interface yet
+  * Changing log level on the fly
+  * Logging in unmountable directory
+  * Fixes: NB#225485 - cancel_events()
+  * some minor stuff
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 17 Feb 2011 11:31:02 +0200
+
+timed (2.36) unstable; urgency=low
+
+  * new csd layer, better cellular stuff logging
+  * new methods: fake_csd_time_signal, fake_csd_time_signal_now
+  * new tzdata layer (needs only 3 data base files)
+  * peer information asked from dbus daemon for logging
+  * a better algorithm for time zone guessing by cellular info
+  * ticker tool: working in background
+  * two new packages: invalid-time, timed-log
+  * many small fixes
+  * Fixes: NB#212572 - workaround for nitz signal coming before operator
+  * Fixes: NB#219005 - timezone guess doesn't work in America
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 20 Jan 2011 18:12:56 +0200
+
+timed (2.35) unstable; urgency=low
+
+  * Fixes: NB#208557 - sleeping in shutdown / reboot modes
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 11 Jan 2011 11:51:29 +0200
+
+timed (2.34) unstable; urgency=low
+
+  * Fixes: NB#211609 - timed is using too much memory for clock alarms
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 10 Jan 2011 17:42:46 +0200
+
+timed (2.33) unstable; urgency=low
+
+  * extract version number from debian/changelog
+  * Fixes: NB#205616 - get rid of timehd and timehd-dbg
+  * Even more printing in case of inconsistent user/actdead state
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 04 Jan 2011 14:11:34 +0200
+
+timed (2.32) unstable; urgency=low
+
+  * fake method to test operator change
+  * don't terminate daemon if can't fork for action
+  * Fixes: NB#213888 - snoozed events reshuffled 2 seconds back if operator changed
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 28 Dec 2010 20:31:47 +0200
+
+timed (2.31) unstable; urgency=low
+
+  * Fixes: NB-210287 - timed doesn't have CAP_SYS_TIME
+  * More printing in case of inconsistent user/actdead state
+  * removed dependency of the old timehd package
+  * Fixes: NB#210336 - pc files
+  * Fixes: NB#209981 - less log_info, more log_debug
+  * Fixes: NB#208557 - new act-dead / user detection
+  * a memory leak fixed
+  * refactored event flow and some structures
+  * Fixes: NB#214062 - libtimed triggers dbus introspection even if it is not needed
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 27 Dec 2010 12:33:17 +0200
+
+timed (2.30) unstable; urgency=low
+
+  * Fixes: NB#208737 - setting clock alarm to skipped hour is making timed unusable
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 03 Dec 2010 16:34:14 +0200
+
+timed (2.29) unstable; urgency=low
+
+  * making time zone handling more strict
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 02 Dec 2010 14:08:28 +0200
+
+timed (2.28) unstable; urgency=low
+
+  * Fixes: NB#208018 - vesioned dependency on libtimed0
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 29 Nov 2010 14:21:43 +0200
+
+timed (2.27) unstable; urgency=low
+
+  * Fixed: NB#206854 - timed using qDebug() printing messages to stderr
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 24 Nov 2010 13:24:39 +0200
+
+timed (2.26) unstable; urgency=low
+
+  * minor fix, timezone setting
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 18 Nov 2010 23:29:57 +0200
+
+timed (2.25) unstable; urgency=low
+
+  * three more client methods
+  * Fixes: NB#203614 - compile headers with QT_NO_CAST_FROM_ASCII
+  * less strict security
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 11 Nov 2010 15:53:57 +0200
+
+timed (2.24) unstable; urgency=low
+
+  * minor fixes, mostly about logging
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 10 Nov 2010 10:03:03 +0200
+
+timed (2.23) unstable; urgency=low
+
+  * Fixes: NB#202276 - removed bogus token request
+  * Script grepping and demangling binaries
+  * reporting isatty(2) value
+  * suppress stderr logging if started by startup
+  * suppress mangling warning
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 08 Nov 2010 14:51:48 +0200
+
+timed (2.22) unstable; urgency=low
+
+  * using new qmlog API
+  * Fixes: NB#178813 - syslog verbose logging
+  * Fixes: NB#186446 - logging in pr image
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 01 Nov 2010 00:05:09 +0200
+
+timed (2.21) unstable; urgency=low
+
+  * logging test
+  * Fixes: NB#199815 - Alarm notifications are not displayed when the time and date is changed to the previous date
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 27 Oct 2010 17:07:24 +0300
+
+timed (2.20) unstable; urgency=low
+
+  * dst change signal
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 25 Oct 2010 17:01:55 +0300
+
+timed (2.19) unstable; urgency=low
+
+  * new timed-voland interface triggereing many events at once
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 19 Oct 2010 14:21:11 +0300
+
+timed (2.18) unstable; urgency=low
+
+  * Backup/restore
+  * Customization
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 01 Oct 2010 10:03:49 +0300
+
+timed (2.17) unstable; urgency=low
+
+  * More credentials and security stuff
+  * Fixes: NB#165606 - invalid read in nanotime arithmetics
+  * Removed plenty of not used code
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 01 Oct 2010 00:34:25 +0300
+
+timed (2.16) unstable; urgency=low
+
+  * Dummy function Event::setBackupFlag() added to library
+  * Skipped 2.15 version due to dashboard mess
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 23 Sep 2010 13:31:03 +0300
+
+timed (2.14+nmu2) unstable; urgency=low
+
+  * When timed is performing execute or dbus actions, the credentials
+    of the process that added the event are used.
+
+ -- Simo Piiroinen <simo.piiroinen@nokia.com>  Thu, 16 Sep 2010 11:14:03 +0300
+
+timed (2.14+nmu1) unstable; urgency=low
+
+  * Fixes: NB#187991 - In Clock application the backed up alarms are
+    not restored back after a successful Restore operation
+
+ -- Simo Piiroinen <simo.piiroinen@nokia.com>  Fri, 10 Sep 2010 10:12:39 +0300
+
+timed (2.14) unstable; urgency=low
+
+  * Fixes: NB#189766 - alarm notification doesn't come up when the system time reaches the time set for the alarm during device is power-off
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 03 Sep 2010 14:55:31 +0300
+
+timed (2.13) unstable; urgency=low
+
+  * Fixes: NB#187551 - Timed is listening to all serviceOwnerChanged messages on DBus
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 02 Sep 2010 23:40:00 +0300
+
+timed (2.12) unstable; urgency=low
+
+  * Fixes: NB#172092 - Maemo::Timed::WallClock::Settings::setOffsetManual() documentation needs clarification
+  * Fixes: NB#179906 - Wrong Timezone is displayed in System settings after Automatic Time update
+  * Fixes: NB#182400 - Time doesnt get updated on UE when Auto Update is kept on
+  * Fixes: NB#189551 - Alarm status in Status menu is displaying a date 6 days ahead of the actual alarm date, when a Repeat alarm is set with an elapsed alarm time
+  * nitz offset handling
+  * small but important fix in recurrence calculation
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 02 Sep 2010 23:12:55 +0300
+
+timed (2.11) unstable; urgency=low
+
+  * fixed qmake call (conditional on MEEGO option)
+  * fixed lost settings
+  * Fixes: NB#186119 - alarms were deleted after doing restore original settings
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 24 Aug 2010 12:31:53 +0300
+
+timed (2.10) unstable; urgency=low
+
+  * removed dependency on libcellular-qt, if compiling for meego
+  * removed alte sachen
+  * removed pdf documentation
+  * gitorious+meego stuff done
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 20 Aug 2010 16:23:36 +0300
+
+timed (2.9) unstable; urgency=low
+
+  * Fixes: NB#186459 - Timed does not exit after critical failure
+  * copyright stuff
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 19 Aug 2010 17:36:31 +0300
+
+timed (2.8) unstable; urgency=low
+
+  * Fixes: NB#168831 - issues with timed debian packaging
+  * Fixes: NB#185657 - timed api file has some errors
+  * Fixes: NB#184550 - timed has a log file in the root directory
+  * Added LGPL license
+  * copyright notice as a prefix for every file
+  * script "prepend" inserting and updating the copyright notice to every file
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 17 Aug 2010 17:36:37 +0300
+
+timed (2.7) unstable; urgency=low
+
+  * Fixes: NB#184152 - random crash from timed in state_dlg_requ::abort()
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 06 Aug 2010 23:18:49 +0300
+
+timed (2.6) unstable; urgency=low
+
+  * minor changes
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 05 Aug 2010 12:31:04 +0300
+
+timed (2.5) unstable; urgency=low
+
+  * two forgotten .install files
+  * Fixes: NB#168831 - issues with timed debian packaging
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 04 Aug 2010 17:04:28 +0300
+
+timed (2.4) unstable; urgency=low
+
+  * Fixes: NB#181824 - Timezone value doesn't reset to the default on doing Reset settings
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 03 Aug 2010 09:19:54 +0300
+
+timed (2.3) unstable; urgency=low
+
+  * Fixes: NB#182341 - [Feature Request] Batch API for adding timed events
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 29 Jul 2010 23:31:57 +0300
+
+timed (2.2) unstable; urgency=low
+
+  * minor fix
+  * Fixes: NB#181755 - alarm notification is not getting triggered for a repeat alarm after date and time is changed
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 28 Jul 2010 12:53:59 +0300
+
+timed (2.1) unstable; urgency=low
+
+  * Introduced Maemo::Timed::Event::setMaximalTimeoutSnoozeCounter()
+  * Fixes: NB#181295 - client application should be capable to set a maximal amount of consecutive timeout snoozes for an event
+  * Introduced Maemo::Timed::Event::setTimeoutSnooze()
+  * Fixes: NB#181478 - client application should be able to set the snooze length for timeout-snooze of an event.
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 22 Jul 2010 22:51:59 +0300
+
+timed (2.0) unstable; urgency=low
+
+  * Packaging refactored
+  * Getting rid of legacy stuff
+  * Version number 2.* is used now
+  * Fixes: NB#168831 - issues with timed debian packaging
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 21 Jul 2010 18:17:32 +0300
+
+timed (1.3.35) unstable; urgency=low
+
+  * Fixes: NB#179695  -  SSU Fails: Packaging conflict between timed_1.3.31+0m6_armel.deb and timehd 1.3.28+0m6
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 20 Jul 2010 12:53:50 +0300
+
+timed (1.3.34) unstable; urgency=low
+
+  * Fixes: NB#176534 - libalarm2 and libtime0 should be removed from product configuration
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 19 Jul 2010 23:00:20 +0300
+
+timed (1.3.33) unstable; urgency=low
+
+  * Fixes: NB#179695  -  SSU Fails... again
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 16 Jul 2010 09:14:08 +0300
+
+timed (1.3.32) unstable; urgency=low
+
+  * Fixes: NB#179695  -  SSU Fails: Packaging conflict between timed_1.3.31+0m6_armel.deb and timehd 1.3.28+0m6
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 14 Jul 2010 16:02:55 +0300
+
+timed (1.3.31) unstable; urgency=low
+
+  * fixed issue described in bug 177670
+  * minor packaging fixes
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 07 Jul 2010 17:04:31 +0300
+
+timed (1.3.30) unstable; urgency=low
+
+  * voland activation interface not used by timed anymore, let's see...
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 06 Jul 2010 12:31:13 +0300
+
+timed (1.3.29) unstable; urgency=low
+
+  * Fixes: NB#172553 - The condition "clock is wrong" (due to battery failure) should be exposed to UI applications
+  * Fixes: NB#168911 - Timed updates time config and alarm queue files in unsafe manner
+  * Fixes: NB#176224 - Context property Alarm.Triggers is not updated after the system time is changed
+  * Fixes: NB#176039 - Immediately after rebooting the device, subscription to "Alarm.Trigger" property fails.
+  * SWP#MaSSW-1899 - Platform security support: TimeControl
+  * Fixed a by-one error of week day naming in event queue
+  * Fake-dialog-ui improved very much
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 24 Jun 2010 17:08:41 +0300
+
+timed (1.3.28) unstable; urgency=low
+
+  * timezone oracle quality via context framwork
+  * Fixes: NB#168698 - The condition "timezone is unknown or uncertain" should be exposed to UI applications
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 17 Jun 2010 17:26:04 +0300
+
+timed (1.3.27) unstable; urgency=low
+
+  * maemo debian/api file
+  * Fixes: NB#174681 - Timed is not calling tzset() after setting /etc/localtime symlink
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 16 Jun 2010 19:59:23 +0300
+
+timed (1.3.26) unstable; urgency=low
+
+  * fixed the log issue, using the qmlog library now
+  * timezone based on mcc
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 15 Jun 2010 19:44:15 +0300
+
+timed (1.3.25) unstable; urgency=low
+
+  * Implemented: SWP#MaSSW-1584 - timed: backup support
+  * Implemented: SWP#MaSSW-1844 - Clock format customization
+  * Implemented: SWP#MaSSW-1843 - Clock needs default time customization
+  * missed events reported to voland as such
+  * reporting all the event attributes to voland in one shot
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 04 Jun 2010 14:47:15 +0300
+
+timed (1.3.24) unstable; urgency=low
+
+  * using new cellular interface to update system time by NITZ
+  * fixed internal error in method reshuffling the event queue (170159)
+  * refactored the event queue sleep, using nanoseconds now
+  * added check for event attributes, more events are rejected now
+  * setting /etc/localtime symlink syncronously now
+  * made prototyping for Voland activation, seems to work
+  * made prototyping for getting all the attributes on one shot on Voland side
+  * removed log.h and log.c++, created an extra qmlog package
+  * using monotonic clock for logging time stamps
+  * X2 documentation
+  * changed ifndef/define names in exported headers
+  * using new iodata::storage class to read/write files
+  * fixed default values in *.type descriptions
+  * some minor context framework fixes
+  * Fixed many bugs filed by Simo
+  * Fixes: NB#171640 - cute-timed is not running due to API/ABI breakage
+  * Fixes: NB#171635 - Device reboots in RD mode if "no-lifeguard-reset" flag is not set
+  * Fixes: NB#171184 - clockDiff() and clockDiffNano() do not work as documented
+  * Fixes: NB#170159 - Non reproducible-Cute timed crash found while editing clock alarm
+  * Fixes: NB#169301 - cute-timed does not require setting application identifier for alarm events
+  * Fixes: NB#168897 - Header files in libtime development package use reserved names
+  * Fixes: NB#167455 - Timezone is not yet updated when wall_clock_settings_sync() method returns(?)
+  * Fixes: NB#160253 - Automatic time update does not update time and date
+  * Fixes: NB#169281 - cute-timed overwrites queue file even if the contents do not change
+  * Fixes: NB#168911 - Timed updates time config and alarm queue files in unsafe manner
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 01 Jun 2010 14:07:42 +0300
+
+timed (1.3.23) unstable; urgency=low
+
+  * Fixes NB#169171 - cute-timed does not initialize default_snooze_value
+  * Fixes NB#160253 - utomatic time update does not update time and date
+  * simple-client accept trigger time and some flags on command line
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 17 May 2010 18:04:13 +0300
+
+timed (1.3.22) unstable; urgency=low
+
+  * Fixes: NB#167714 - Device does not boot up when clock alarm is triggered
+  * Fixes: NB#167617 - timed is not getting rid of zombies
+  * Implemented: SWP#MaSSW-1748 - next_bootup_event signal for dsme
+  * current time is now saved in a file (restored by some boot up script)
+  * arch document build diabled
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 12 May 2010 15:05:30 +0300
+
+timed (1.3.21) unstable; urgency=low
+
+  * orphan watcher leak and crash fixed
+  * arch document by bifh
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 16 Apr 2010 23:39:01 +0200
+
+timed (1.3.20) unstable; urgency=low
+
+  * human readable recurrence bit patterns
+  * interface for button amount
+  * replace_event method
+  * save/load alarms-enabled flag
+  * some context properties
+  * notion of 'state cluster' introduced
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 16 Apr 2010 09:49:40 +0200
+
+timed (1.3.19) unstable; urgency=low
+
+  * recurrence loop fixed
+  * simple-client a is using pattern now
+  * time difference delivered by D-Bus signal
+  * event queue is being reshuffled after settings change
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 08 Apr 2010 20:23:17 +0200
+
+timed (1.3.18) unstable; urgency=low
+
+  * 'Single_Shot' flag
+  * 'Keep_Alive' flag
+  * 'TRANQUIL' event state
+  * query attributed D-Bus method
+  * minor fixes
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 07 Apr 2010 20:20:20 +0200
+
+timed (1.3.17) unstable; urgency=low
+
+  * time settings
+  * client application for time settings
+  * signalling of time setting change
+  * client application printing time
+  * plenty of small fixes
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 06 Apr 2010 17:53:22 +0200
+
+timed (1.3.16) unstable; urgency=low
+
+  * manual pages
+  * new Maemo::Timed API
+  * now using std:: instead of Q-classes internaly
+  * using pcre instead of QRegExp
+  * separated client interface from voland interface
+  * couple of new dbus methods
+  * plenty of small fixes
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 08 Mar 2010 10:53:22 +0200
+
+timed (1.3.15) unstable; urgency=low
+
+  * executing command implemented in proper way
+  * crash inside of dbus lib caused by empty arg fixed
+  * fixed -L/usr/lib issue by using QMAKE_LIBDIR_FLAG
+  * implemented enable/disable/query user alarms flag
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Sun, 14 Feb 2010 19:54:01 +0200
+
+timed (1.3.14) unstable; urgency=low
+
+  * a pinging penguin class starting notification added
+  * improved notification service detection
+  * month sign error fixed
+  * Fixes: NB#156277 - File /etc/event.d/time-daemon is obsolete and should be removed
+  * detection of device mode (USER/ACT_DEAD)
+  * enable_user_alarms(bool enable)
+  * handling of missed events
+  * pid() method
+  * more state flags for acitions
+  * rc file, default values
+  * permanent storage saving and loading
+  * type definitions
+  * library version is now 0.1.3, soname is 0
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 09 Feb 2010 18:25:36 +0200
+
+timed (1.3.13) unstable; urgency=low
+
+  * added test definition xml
+  * some changes on packaging
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 22 Jan 2010 14:39:20 +0200
+
+timed (1.3.12) unstable; urgency=low
+
+  * created a parser for structured input
+  * added parse option to simple-client
+  * moved all that parsing to the new library
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 19 Jan 2010 18:23:56 +0200
+
+timed (1.3.11) unstable; urgency=low
+
+  * queue output to terminal via "simple-client ping"
+  * big renaming of states
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 12 Jan 2010 18:42:25 +0200
+
+timed (1.3.10) unstable; urgency=low
+
+  * put initialization code into a singleton constructor
+  * iodata simple printing
+  * saving stuff to iodata started
+  * cancel an avent
+  * filtering states
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 11 Jan 2010 21:17:01 +0200
+
+timed (1.3.9) unstable; urgency=low
+
+  * fixed packaging of -dev package
+  * named bit fields
+  * started iodata implementation
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 07 Jan 2010 14:42:28 +0200
+
+timed (1.3.8) unstable; urgency=low
+
+  * libtimed packaging
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Sun, 27 Dec 2009 13:17:02 +0200
+
+timed (1.3.7) unstable; urgency=low
+
+  * added '#include' needed by new toolchain
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 22 Dec 2009 17:13:43 +0200
+
+timed (1.3.6) unstable; urgency=low
+
+  * fixed a bug in legacy daemon. Fixes: NB#149357
+  * added a lot of stuff to the cute implementation
+  * fixed debug symbols packaging
+  * beginning the new implementation of the daemon
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Fri, 18 Dec 2009 00:50:06 +0200
+
+timed (1.3.5) unstable; urgency=low
+
+  * fixed debian/control
+  * removed debugging option from starting script
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 30 Jun 2009 10:37:27 +0300
+
+timed (1.3.4) unstable; urgency=low
+
+  * fixed debian/control
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 24 Jun 2009 16:49:17 +0300
+
+timed (1.3.3) unstable; urgency=low
+
+  * the daemon doesn't use connection the session bus anymore
+  * the sending messages via sesson bus is still possible
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 16 Jun 2009 13:33:23 +0300
+
+timed (1.3.2) unstable; urgency=low
+
+  * fixed conflicting names in alarm vs. clock namespaces
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Mon, 01 Jun 2009 16:59:42 +0300
+
+timed (1.3.1) unstable; urgency=low
+
+  * Packaging fixed
+  * Compilation flags of clockd fixed
+  * Test are passed now
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Thu, 28 May 2009 09:48:37 +0300
+
+timed (1.3.0) unstable; urgency=low
+
+  * Fixed sonames
+  * Updated version number, it should be greater than that of alarmd
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Tue, 26 May 2009 09:48:03 +0300
+
+
+timed (0.0.1) unstable; urgency=low
+
+  * First working version of the daemon
+
+ -- Ilya Dogolazky <ilya.dogolazky@nokia.com>  Wed, 20 May 2009 16:43:51 +0300
+
+timed (0.0.0) unstable; urgency=low
+
+  * Initial version of the "timed" daemon,
+  * which is combined of "alarmd" and "clockd"
+
+ -- Raimo Vuonnala <raimo.vuonnala@nokia.com>  Wed, 15 Apr 2009 15:20:51 +0300
+

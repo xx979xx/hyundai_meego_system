@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "0.1">
+<!ENTITY manrevision "0.1">
+<!ENTITY date "June 2008">
+<!ENTITY app "<application>Palimpsest Disk Utility</application>">
+<!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file. 
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->]>
+<article id="index" lang="sv">
+  <articleinfo>
+    <title><application>Palimpsest Disk Utility</application> Manual</title>
+    <abstract role="description">
+      <para> 
+        This document describes the Palimpsest Disk Utility application.
+      </para>
+    </abstract>
+    <copyright> 
+      <year>2008</year> 
+      <holder>David Zeuthen</holder> 
+    </copyright><copyright><year>2009</year><holder>Daniel Nylander (po@danielnylander.se)</holder></copyright> 
+    <publisher> 
+      <publishername>Dokumentationsprojekt för GNOME</publishername> 
+    </publisher> 
+      <legalnotice id="legalnotice">
+	<para>Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller senare, utgivet av Free Software Foundation utan standardavsnitt och omslagstexter.  En kopia av GFDL finns att hämta på denna <ulink type="help" url="ghelp:fdl">länk</ulink> eller i filen COPYING-DOCS som medföljer denna handbok.</para>
+         <para>Denna handbok utgör en av flera GNOME-handböcker som distribueras under villkoren i GFDL.  Om du vill distribuera denna handbok separat från övriga handböcker kan du göra detta genom att lägga till en kopia av licensavtalet i handboken enligt instruktionerna i avsnitt 6 i licensavtalet.</para>
+
+	<para>Flera namn på produkter och tjänster är registrerade varumärken. I de fall dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med versaler eller med inledande versal.</para>
+
+	<para>DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <orderedlist>
+		<listitem>
+		  <para>DOKUMENTET TILLHANDAHÅLLS I "BEFINTLIGT SKICK" UTAN NÅGRA SOM HELST GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST UNDER DENNA ANSVARSFRISKRIVNING;</para>
+		</listitem>
+		<listitem>
+		  <para>UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA SKADOR.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+    <authorgroup>
+      <author role="maintainer">
+	<firstname>David</firstname> <surname>Zeuthen</surname>
+	<affiliation>
+	  <address>
+	    <email>davidz@redhat.com</email>
+	  </address>
+	</affiliation>
+      </author>
+    </authorgroup>
+    <revhistory>
+      <revision>
+	<revnumber>Palimpsest Disk Utility Manual V 0.1</revnumber>
+	<date>2008</date>
+	<revdescription>
+	  <para role="author">David Zeuthen <email>davidz@redhat.com</email></para>
+	</revdescription>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>This manual describes version 0.1 of Palimpsest Disk Utility.
+    </releaseinfo> 
+      <legalnotice> 
+      <title>Återkoppling</title> 
+      <para>To report a bug or make a suggestion regarding the <application>Palimpsest Disk Utility</application> application or
+      this manual, follow the directions in the <ulink url="ghelp:gnome-feedback" type="help">GNOME Feedback Page</ulink>. 
+      </para>
+      </legalnotice>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Introduktion.</title>
+      <para>This is the <application>Palimpsest Disk Utility</application> user's guide.</para>
+    <figure id="mainwindow-fig"> 
+	<title><application>Palimpsest Disk Utility</application> Window</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/main-app.png" format="PNG"/> 
+	    </imageobject>
+	    
+	    <textobject> 
+	      <phrase>Shows <application>Palimpsest Disk Utility</application> main window.</phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+    </figure>
+  </sect1>
+ 
+   <sect1 id="advanced">
+      <title>Advanced Palimpsest Disk Utility.</title> 
+      <para>Palimpsest Disk Utility is a complex program, with many advanced
+      features.</para>
+
+   </sect1>
+
+</article>

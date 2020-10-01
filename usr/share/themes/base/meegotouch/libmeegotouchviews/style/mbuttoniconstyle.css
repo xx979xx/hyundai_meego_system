@@ -1,0 +1,47 @@
+/* MButtonIconStyle : MButtonStyle */
+MButtonIconStyle {
+    background-image:;
+    background-color:;
+
+    /* those attributes are deprecated and have no effect anymore.
+       remove them once their corresponding definitions are removed
+       from the style class. */
+    glow-color: #FFFFFF;
+    glow-duration: 800;
+    glow-radius: 8;
+    shrink-duration: 100;
+    shrink-factor: 0.2;
+
+    content-opacity: 1;
+
+    /* inherited from MButtonStyle */
+    icon-align: center;
+
+    /* inherited from MWidgetStyle */
+
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+
+    minimum-size: $SIZE_ICON_SMALL $SIZE_ICON_SMALL;
+    preferred-size: $HEIGHT_NAVIGATIONBAR $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 12mm 12mm; /* set here for now, since app grid breaks if this changes! */
+
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    
+    text-wrap-mode: nowrap;
+    text-eliding: true;
+}
+
+MButtonIconStyle:pressed {
+    background-image:;
+    background-color:;
+
+    content-opacity: 0.5;
+}
+
+MButtonIconStyle:disabled {
+    background-image:;
+    background-color:;
+}

@@ -1,0 +1,161 @@
+0.7.2
+=====
+
+- Provide gobject-introspection GIR and typelib.
+- Use silent build rules.
+- Fix issues with version-independence magic in SSDP code.
+- Fix build issues in jhbuild environment.
+
+Bugs fixed in this release:
+
+2025 - autogen.sh fails to find autoconf macros when they're installed in a
+       non-standard location
+1927 - gssdp fails to answer M-SEARCH sometimes
+1921 - GObject Introspection Makefile for GSSDP
+
+All Contributors:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Zach Goldberg <zach@zachgoldberg.com>
+Jens Georg <mail@jensge.org>
+Neil Roberts <neil@linux.intel.com>
+Ross Burton <ross@linux.intel.com>
+
+0.7.1
+=====
+
+- Don't leak target regex.
+- Make GSSDPClient ignore Point to Point interfaces.
+- Use SO_REUSEPORT if present. Darwin and some BSDs don't have SO_REUSEADDR, but
+  SO_REUSEPORT.
+- If we can't create a request socket don't try to create a multicast socket.
+- Have specific GError code for interfaces without an IP address.
+- Actually remove gssdp_client_new_full().
+
+Bugs fixed:
+
+1898 - GSSDPClient keeps autoselecting my VPN
+1810 - Not possible to run multiple ssdp clients on darwin
+1800 - leak of a gregex in gssdp-resource-browser
+1796 - gssdp_client_new_full is declared in header but not implemented
+
+All contributors:
+
+Olivier Crête <olivier.crete@collabora.co.uk>
+Ross Burton <ross@linux.intel.com>
+Iain Holmes <iain@linux.intel.com>
+Mattias Wadman <mattias.wadman@gmail.com>
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+
+0.7
+===
+
+- Join the multicast group on the specified interface.
+- Put the message src timeout in the specified GMainContext.
+- "host-ip" property moved from GUPnPContext to parent GSSDPClient.
+- Use inet_aton instead of inet_addr and handle the error from it.
+- gssdp-device-sniffer ported to GtkBuilder.
+- Version-independent target match. This makes client forward and backward
+  compatible with resources that implement different version of the specs than
+  the client.
+- Version-independent M-SEARCH response. This has the same effect as above but
+  only the other way around.
+- GSSDPClient now binds to interface rather than IP.
+- No need to find the default route.
+- Add "active" property to GSSDPClient.
+- Fix pkg-config paths.
+- Add basic .gitignore.
+- Other minor/internal changes.
+
+Bugs fixed:
+
+1621 - new gssdp timeout not added to the specific maincontext
+1570 - gupnp doesn't set the pkgconfig lib dir correctly in 64 bit env
+
+Dependencies dropped:
+
+- libglade
+
+All contributors:
+
+Zeeshan Ali (Khattak) <zeeshanak@gnome.org>
+Ross Burton <ross@linux.intel.com>
+Jens Georg <mail@jensge.org>
+Olivier Crête <olivier.crete@collabora.co.uk>
+
+WARNING: This release is API and ABI incompatible with previous releases.
+
+0.6.4
+=====
+
+- Send ssdp:byebye before sending the first ssdp:alive. [Jussi Kukkonen]
+- Moderate the outbound SSDP messages. [Jussi Kukkonen]
+- Documentation fixes. [Jussi Kukkonen]
+- Send byebyes in dispose without sleep. [Jussi Kukkonen]
+- Use g_set_error_literal(). [Jorn Baayen]
+- Depend on glib 2.18. [Jorn Baayen]
+- Do not byebye unavailable resources. [Jorn Baayen]
+- All resources must respond to "ssdp:all" messages. [Hugo Calleja, Jorn Baayen]
+
+0.6.3
+=====
+
+- Don't use NULL g_get_application_names [Ross Burton]
+- Use specified GMainContext for timeouts [Olivier Crete, Jorn Baayen]
+
+0.6.2
+=====
+
+- Reannounce resources after max_age / 2 - 1 instead of after max_age.
+  [Peter Christensen, Jorn Baayen]
+- Remove unnecessary call to g_thread_init(). [Zeeshan Ali]
+
+0.6.1
+=====
+
+- Bump soname.
+
+0.6
+===
+
+- Use libsoup 2.4. [Zeeshan Ali Khattak, Jorn Baayen]
+- Use g_timeout_add_seconds(). [Jorn Baayen]
+
+0.4.2
+=====
+
+- Add User-Agent header to discovery requests including the application name
+  as reported by g_get_application_name(). [Jorn Baayen]
+- Send messages from dynamic port. [Jorn Baayen]
+- Send responses to originating port (instead of to SSDP port). [Jorn Baayen]
+- Emit multiple discovery requests (because UDP is unreliable). [Zeeshan Ali]
+
+0.4.1
+=====
+
+- Pass the correct value to n_columns argument of gtk_list_store_new().
+  Fixes bug#501. [Zeeshan Ali]
+- Move libsoup requirement to Requires.Private. [Jorn Baayen]
+- Fix compiler warning. Fixes #421. [Priit Laes]
+
+0.4
+===
+
+- Minor fixes. [Jorn Baayen]
+
+0.3
+===
+
+- Handle "byebye" correctly. [Jorn Baayen]
+
+0.2
+===
+
+- New "Expires" header support. [Jorn Baayen]
+- Define own error code for use in GErrors. [Jorn Baayen]
+- Build fixes. [Ross Burton]
+
+0.1
+===
+
+Initial release. Should be fully functional.

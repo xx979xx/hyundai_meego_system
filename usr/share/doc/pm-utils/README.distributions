@@ -1,0 +1,34 @@
+Note for distro maintainers:
+
+When writing sleep hooks, please consider adding any needed hooks to the package
+that requires the hooks, rather than pm-utils.  
+
+An example would be if you distro wants anacrom to run on resume -- the optimal
+fix would be to have the anacron package install a hook in 
+/usr/lib/pm-utils/sleep.d that wakes anacron up on resume.
+
+This will also help package maintenance by allowing package maintainers to 
+keep track of what the best way to handle any suspend/resume functionality their
+package requires insteas of leaving it up to the pm-utils maintainers to guess
+at what functionality is needed.
+
+To make this easier, pm-utils supports pkg-config, which makes it easy for
+packages that use automake to detect the presence of pm-utils and the locations
+that hooks should be installed in.  The pm-utils pkgconfig file exports the 
+following variables:
+
+pm_libdir: This is the directory that the pm-utils infrastructure is installed
+	   in.  /usr/lib/pm-utils is the default value
+
+pm_sysconfdir: This is the directory that any package-specific pm-utils related
+	       config files should be installed in.  
+	       Defaults to /etc/pm/config.d
+
+pm_sleephooks: This is the directory that sleep hooks are installed in.  
+	       Defaults to ${pm_libdir}/sleep.d
+
+pm_powerhooks: This is the directory that power management hooks are installed
+	       in.  Defaults to ${pm_libdir}/power.d
+
+pm_sleepmodules: This is the directory that sleep modules are installed in.  
+		 Defaults to ${pm_libdir}/module.d

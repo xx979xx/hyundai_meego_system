@@ -1,0 +1,314 @@
+This is an attempt to document the Python API.  Anyone know a better way to
+format this stuff?
+
+libuser:
+	Fields:
+        	- USERNAME
+		- USERPASSWORD
+        	- UIDNUMBER
+        	- GIDNUMBER
+        	- GECOS
+        	- HOMEDIRECTORY
+        	- LOGINSHELL
+
+        	- GROUPNAME
+		- GROUPPASSWORD
+        	- GIDNUMBER
+        	- ADMINISTRATORUID
+        	- MEMBERUID
+
+		- SHADOWNAME
+		- SHADOWPASSWORD
+        	- SHADOWEXPIRE
+        	- SHADOWFLAG
+        	- SHADOWINACTIVE
+        	- SHADOWLASTCHANGE
+        	- SHADOWMAX
+        	- SHADOWMIN
+        	- SHADOWWARNING
+
+		- UT_NAMESIZE
+
+	Methods:
+		- getUserShells: Returns a list of valid shells for users on
+			the system.
+			Arguments:
+				None.
+			Returns: a list of strings.
+
+		- admin: Creates and returns a new libuser.Admin object.
+			Keyword Arguments:
+				name=	
+				type=	
+				info=	
+				auth=	
+			Returns: a libuser.Admin object.
+		
+		- PROMPT: Creates and returns a new libuser.Prompt object.
+			Arguments:
+				None.
+			Returns: a libuser.Prompt object.
+	Types:
+		- Admin - An administrative context.
+			Methods:
+				- lookupUserByName:
+				- lookupUserById:
+				- lookupGroupByName:
+				- lookupGroupById: Look up information about a
+					user or group using the
+					user or group's name or
+					UID/GID.
+					Arguments:
+						A name as a string or a
+						numeric ID.
+					Returns: A libuser.Entity object
+						containing information about the
+						user or group, or None if there
+						is no matching user or group.
+
+				- initUser:
+				- initGroup: Create a new libuser.Entity object,
+					initialized with information suitable
+					for creating a new user or group.
+					Arguments:
+						The new user or group's name as
+						a string (required).
+						A true/false value indicating
+						whether this is a system account
+						or not (optional, default no).
+					Returns: A libuser.Entity object
+						containing information for
+						the user or group to be
+						created.
+
+				- addUser: Add a new user to the system:
+					Arguments:
+						A libuser.Entity object with the
+						new user or group's information
+						(required).
+						A true/false object indicating
+						whether or not the home
+						directory for the user
+						should be created (optional,
+						defaults yes).
+						A true/false object indicating
+						whether or not the mail spool
+						for the user should be created
+						(optional, defaults yes).
+					Keyword Arguments:
+						skeleton=
+
+				- addGroup: Add a new group to the system:
+					Arguments:
+						A libuser.Entity object with the
+						new group's information
+						(required).
+
+				- modifyUser: Modify information about a user
+					on the system.
+					Arguments:
+						A libuser.Entity object with the
+						user or group's information
+						(required).
+						A true/false object indicating
+						whether or not the home
+						directory for the user should be
+						moved from its original location
+						to the location stored in the
+						entity's libuser.HOMEDIRECTORY
+						attribute (optional, default
+						no).
+
+				- modifyGroup: Modify information about a group
+					on the system.
+					Arguments:
+						A libuser.Entity object with the
+						group's information (required).
+
+				- deleteUser: Remove a user account.
+					Arguments:
+						A libuser.Entity object with the
+						user's information (required).
+						A true/false value indicating
+						whether or not this user's home
+						directory should be removed
+						(optional, default no).
+						A true/false value indicating
+						whether or not this user's mail
+						spool should be removed
+						(optional, default no).
+				- deleteGroup: Remove a group from the system.
+					Arguments:
+						A libuser.Entity object with the
+						group's information (required).
+
+				- lockUser:
+				- lockGroup:    Lock a user or group account.
+					Arguments:
+						A libuser.Entity object with the
+						user or group's information
+						(required).
+						A true/false object indicating
+						whether unlocking 
+
+				- unlockUser:
+				- unlockGroup:  Unlock a user or group account.
+					Arguments:
+						A libuser.Entity object with the
+						user or group's information
+						(required).
+						A true/false object indicating
+						whether unlocking that would
+						empty the password field should
+						fail (optional, default no).
+
+				- setpassUser:
+				- setpassGroup:
+					Arguments:
+						A libuser.Entity object with the
+						user or group's information
+						(required).
+						A string containing the new
+						password (required).  This is
+						preferably in plaintext.
+						An object indicating whether
+						or not the string is a value
+						returned by crypt.crypt():
+						a false value indicates that
+						the string is plaintext.
+
+				- removepassUser:
+				- removepassGroup:
+					Arguments:
+						A libuser.Entity object with the
+						user or group's information
+						(required).
+
+				- enumerateUsers:
+				- enumerateGroups: Get a list of users or groups
+					known to the library and its modules.
+					Arguments:
+						A pattern (wildcard-style) which
+						returned user or group names
+						should match (optional, default
+						is all ("*")).
+					Returns: a list of user or group names.
+
+				- enumerateUsersByGroup: Get a list of users who
+					belong to a particular group.
+					Arguments:
+						A group's name (required).
+					Returns: a list of user names.
+
+				- enumerateGroupsByUser: Get a list of groups to
+					which a user belongs.
+					Arguments:
+						A user's name (required).
+					Returns: a list of group names.
+
+				- enumerateUsersFull:
+				- enumerateGroupsFull: Get a list of users or
+					groups known to the library and its
+					modules, along with any data which can
+					be looked up about them.
+
+				- promptConsole: Prompt the user for
+					information, including for information
+					for which there is a supplied default.
+					Arguments:
+						A list of libuser.Prompt
+						objects.
+					Returns: a true/false value indicating
+						success or failure.
+				- promptConsoleQuiet: Prompt the user for
+					information, except for information for
+					which there is a supplied default.
+					Arguments:
+						A list of libuser.Prompt
+						objects.
+					Returns: a true/false value indicating
+						success or failure.
+				- getFirstUnusedUid: Search the system for
+					an unused UID.
+					Arguments:
+						An initial guess (numeric).
+					Returns: an unused UID.
+				- getFirstUnusedGid: Search the system for
+					an unused GID.
+					Arguments:
+						An initial guess (numeric).
+					Returns: an unused GID.
+			Fields:
+				- prompt(function): A method which can be used
+					to process lists of libuser.Prompt
+					objects.  Can be set to the object's
+					promptConsole or promptConsoleQuiet
+					methods, or a user-supplied function.
+				- prompt_args: Additional arguments which should
+					be passed to prompt().
+		- Entity - An entity.
+			Methods:
+				- getattrlist: Return a list of attributes this
+					entity possesses.
+					Arguments:
+						None.
+					Returns: a list of attribute names.
+				- modules: Return a list of the modules which
+					assisted in the creation or lookup of
+					this libuser.Entity object.
+					Arguments:
+						None.
+					Returns: a list of module names.
+				- has_key: Check if this entity possesses a
+					given attribute.
+					Arguments:
+						An attribute name (required).
+					Returns: a true/false value.
+				- get: Return a list of the values for one
+					attribute this entity possesses.
+					Arguments:
+						An attribute name (required).
+					Returns: a list of values.
+				- set: Set a list of the values for one
+					attribute this entity possesses.
+					Arguments:
+						An attribute name (required).
+						A value or a list of values for
+						that attribute (required).
+					Returns: nothing.
+				- add: Add a single value to the list of the
+					values for one attribute this entity
+					possesses.
+					Arguments:
+						An attribute name (required).
+						A value for that attribute
+						(required).
+					Returns: nothing.
+				- clear: Remove all values for one attribute
+					this entity possesses.
+					Arguments:
+						An attribute name (required).
+					Returns: nothing.
+				- revert: Reset all values for one attribute
+					this entity possesses to the values
+					which it had when it was created.
+					Arguments:
+						None.
+					Returns: nothing.
+			Fields:
+				All get()table and set()table attributes are
+				also implemented using mapping conventions.
+		- Prompt - A prompt record.
+			Methods:
+				None.
+			Fields:
+				- prompt(string): The text of the request
+					which is given to the user.
+				- domain(string): A gettext domain which may
+					be able to provide translations of the
+					prompt.
+				- visible(true/false): Whether or not the user
+					should be able to see a response while
+					typing it.
+				- default_value(string): A default answer.
+				- value(string): The user's answer.

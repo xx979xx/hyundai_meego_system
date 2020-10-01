@@ -1,0 +1,9 @@
+#! /bin/sh
+
+IFS=$'\n'
+
+for module in $(grep -E '/lib/modules/.+\.ko$'); do
+    nm $module \
+    | sed -r -ne 's:^0*([0-9a-f]+) A __crc_(.+):ksym(\2) = \1:p'
+done \
+| sort -u

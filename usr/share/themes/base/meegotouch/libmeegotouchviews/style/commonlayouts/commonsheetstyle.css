@@ -1,0 +1,382 @@
+@const CSB_WIDTH:    130px;
+@const CSB_HEIGHT:   42px;
+@const CSB_M_TOP:    15px;
+@const CSB_M_BOTTOM: 15px;
+@const CSB_M_LEFT:   $INDENT_DEFAULT;
+@const CSB_M_RIGHT:  $INDENT_DEFAULT;
+@const CSB_BORDER_VALUES: 20px 20px 20px 20px;
+@const CSB_FONT:     $FONT_FAMILY bold 22;
+@const CSB_FONT_COLOR_INVERTED: #FFFFFF;
+@const CSB_FONT_COLOR_INVERTED_PRESSED: #797979;
+@const CSB_FONT_COLOR_INVERTED_SELECTED: #FFFFFF;
+@const CSB_FONT_COLOR_INVERTED_DISABLED: #4E4E4E;
+@const CSB_FONT_COLOR_ACCENT: #FFFFFF;
+@const COLOR_EDITOR_PROMPT: #CCCCCC;
+
+@const CEP_BG:  ;
+@const CEP_BG_SELECTED: meegotouch-editor-inputfield-panel-background-selected 20px 0 40px 0;
+@const CEP_BG_PRESSED: meegotouch-editor-inputfield-panel-background-pressed 20px 0 40px 0;
+
+
+#CommonSheetHeaderPanel {
+    minimum-size:      40 72;
+    preferred-size:    100% 72;
+    maximum-size:      100% -1;
+    background-tiles:  ;
+    background-image:  meegotouch-sheet-header-background 15px 15px 15px 15px;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+
+#CommonSheetHeaderPanel:pressed {
+    background-tiles:  ;
+    background-image:  meegotouch-sheet-header-background-pressed 15px 15px 15px 15px;
+}
+
+#CommonSheetHeaderPanelInverted {
+    minimum-size:      40 72;
+    preferred-size:    100% 72;
+    maximum-size:      100% -1;
+    background-tiles:  ;
+    background-image:  meegotouch-sheet-header-inverted-background 15px 15px 15px 15px;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+
+#CommonSheetHeaderPanelInverted:pressed {
+    background-tiles: ;
+    background-image: meegotouch-sheet-header-inverted-background-pressed 15px 15px 15px 15px;
+}
+
+#CommonOverlaySheetHeaderPanel {
+    minimum-size:      40 72;
+    preferred-size:    100% 72;
+    maximum-size:      100% -1;
+    background-tiles:  ;
+    background-image:  meegotouch-sheet-overlay-header-background 15px 15px 15px 15px;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+
+#CommonSheetHeaderButton {
+    background-image: meegotouch-sheet-button-background $CSB_BORDER_VALUES;
+    minimum-size:     $CSB_WIDTH $CSB_HEIGHT;
+    preferred-size:   $CSB_WIDTH $CSB_HEIGHT;
+    maximum-size:     -1 $CSB_HEIGHT;
+    margin-top:       $CSB_M_TOP;
+    margin-bottom:    $CSB_M_BOTTOM;
+    margin-left:      $CSB_M_LEFT;
+    margin-right:     $CSB_M_RIGHT;
+}
+
+#CommonSheetHeaderButton:pressed {
+    background-image: meegotouch-sheet-button-background-pressed $CSB_BORDER_VALUES;
+}
+
+#CommonSheetHeaderButton:selected {
+    background-image: meegotouch-sheet-button-background-selected $CSB_BORDER_VALUES;
+}
+
+#CommonSheetHeaderButton:disabled {
+    background-image: meegotouch-sheet-button-background-disabled $CSB_BORDER_VALUES;
+}
+
+#CommonSheetHeaderButtonInverted {
+    background-image: meegotouch-sheet-button-inverted-background $CSB_BORDER_VALUES;
+    minimum-size:     $CSB_WIDTH $CSB_HEIGHT;
+    preferred-size:   $CSB_WIDTH $CSB_HEIGHT;
+    maximum-size:     -1 $CSB_HEIGHT;
+    margin-top:       $CSB_M_TOP;
+    margin-bottom:    $CSB_M_BOTTOM;
+    margin-left:      $CSB_M_LEFT;
+    margin-right:     $CSB_M_RIGHT;
+    text-color:       $CSB_FONT_COLOR_INVERTED;
+}
+
+#CommonSheetHeaderButtonInverted:pressed {
+    background-image: meegotouch-sheet-button-inverted-background-pressed $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_PRESSED;
+}
+
+#CommonSheetHeaderButtonInverted:selected {
+    background-image: meegotouch-sheet-button-inverted-background-selected $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_SELECTED;
+}
+
+#CommonSheetHeaderButtonInverted:disabled {
+    background-image: meegotouch-sheet-button-inverted-background-disabled $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_DISABLED;
+}
+
+#CommonSheetHeaderButtonAccent {
+    background-image: meegotouch-sheet-button-accent-background $CSB_BORDER_VALUES;
+    minimum-size:     $CSB_WIDTH $CSB_HEIGHT;
+    preferred-size:   $CSB_WIDTH $CSB_HEIGHT;
+    maximum-size:     -1 $CSB_HEIGHT;
+    margin-top:       $CSB_M_TOP;
+    margin-bottom:    $CSB_M_BOTTOM;
+    margin-left:      $CSB_M_LEFT;
+    margin-right:     $CSB_M_RIGHT;
+    text-color:       $CSB_FONT_COLOR_INVERTED;
+}
+
+#CommonSheetHeaderButtonAccent:pressed {
+    background-image: meegotouch-sheet-button-accent-background-pressed $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_PRESSED;
+}
+
+#CommonSheetHeaderButtonAccent:disabled {
+    background-image: meegotouch-sheet-button-accent-background-disabled $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_DISABLED;
+}
+
+#CommonSheetHeaderButtonAccentInverted {
+    background-image: meegotouch-sheet-button-accent-inverted-background $CSB_BORDER_VALUES;
+    minimum-size:     $CSB_WIDTH $CSB_HEIGHT;	
+    preferred-size:   $CSB_WIDTH $CSB_HEIGHT;
+    maximum-size:     -1 $CSB_HEIGHT;
+    margin-top:       $CSB_M_TOP;
+    margin-bottom:    $CSB_M_BOTTOM;
+    margin-left:      $CSB_M_LEFT;
+    margin-right:     $CSB_M_RIGHT;
+    text-color:       $CSB_FONT_COLOR_INVERTED;
+}
+
+#CommonSheetHeaderButtonAccentInverted:pressed {
+    background-image: meegotouch-sheet-button-accent-inverted-background-pressed $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_PRESSED;
+}
+
+#CommonSheetHeaderButtonAccentInverted:selected {
+    background-image: meegotouch-sheet-button-accent-inverted-background-selected $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_SELECTED;
+}
+
+#CommonSheetHeaderButtonAccentInverted:disabled {
+    background-image: meegotouch-sheet-button-accent-inverted-background-disabled $CSB_BORDER_VALUES;
+    text-color:       $CSB_FONT_COLOR_INVERTED_DISABLED;
+}
+
+/* Common Editor */
+
+#CommonEditorInputFieldPanel {
+    minimum-size:      56 56;
+    preferred-size:    100% -1;
+    maximum-size:      100% 100%;
+    background-tiles:  ;
+    background-image:  ;
+    background-color:  ;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+
+#CommonEditorInputFieldPanel:pressed {
+    background-tiles: ;
+    background-image: $CEP_BG_PRESSED;
+}
+#CommonEditorInputFieldPanel:selected {
+    background-tiles: ;
+    background-image: $CEP_BG_SELECTED;
+}
+
+MLabelStyle#CommonEditorInputFieldLabel {
+    font: $FONT_FAMILY light 26;
+    color: $COLOR_SECONDARY_FOREGROUND;
+    margin-top: 15;
+    margin-bottom: 11;
+    margin-right: 0;
+    margin-left: $INDENT_DEFAULT;
+    vertical-alignment: top;
+}
+
+MLabelStyle#CommonEditorInputFieldLabel:selected {
+    color: $COLOR_ACCENT1;
+}
+
+#CommonEditorExpandButton {
+    background-image: meegotouch-editor-expand-button-background;
+    minimum-size:     58px 25px;
+    preferred-size:   58px 25px;
+    maximum-size:     58px 25px;
+    margin-top:       0;
+    margin-bottom:    0;
+    margin-left:      0;
+    margin-right:     $INDENT_DEFAULT;
+}
+
+#CommonEditorExpandButton:pressed {
+    background-image: meegotouch-editor-expand-button-background-pressed;
+}
+
+#CommonEditorExpandButtonPanel {
+    minimum-size:      56 25;
+    preferred-size:    100% 25;
+    maximum-size:      100% 25;
+    background-tiles:  ;
+    background-image:  meegotouch-sheet-editor-collapsed-background;
+    background-color:  ;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+#CommonEditorExpandButtonPanel:selected {
+    background-image:  meegotouch-sheet-editor-expanded-background;
+}
+
+#CommonEditorNoteAreaExpandButtonPanel {
+    minimum-size:      56 25;
+    preferred-size:    100% 25;
+    maximum-size:      100% 25;
+    background-tiles:  ;
+    background-image:  meegotouch-sheet-editor-note-expanded-background;
+    background-color:  ;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+
+#CommonEditorExpandArea {
+    minimum-size:      -1 -1;
+    preferred-size:    100% -1;
+    maximum-size:      100% -1;
+    background-tiles:  ;
+    background-image:  meegotouch-sheet-editor-expand-area-background;
+    background-color:  ;
+    margin-top:        0;
+    margin-bottom:     0;
+    margin-left:       0;
+    margin-right:      0;
+}
+
+MSeparator#CommonEditorItemDivider {
+    background-image: meegotouch-separator-background-horizontal 0px 0px 0px 0px;
+    minimum-size:  -1 0.1mm;
+    maximum-size:  -1 0.1mm;
+    margin-top:     $MARGIN_LARGE;
+    margin-bottom:  $MARGIN_LARGE;
+    margin-left:    $MARGIN_LARGE;
+    margin-right:   $MARGIN_LARGE;
+}
+
+MTextEditStyle#CommonEditorInputField {
+    background-image: ;
+    font: $FONT_FAMILY bold 26;
+    prompt-font: $FONT_FAMILY 26;
+    prompt-color: $COLOR_EDITOR_PROMPT;
+    minimum-size: 56 56;
+    preferred-size: 100% -1;
+    maximum-size: 100% 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 15;
+    padding-bottom: 11;
+    padding-left: $PADDING_LARGE;
+    padding-right: $INDENT_DEFAULT;
+}
+
+MTextEditStyle#CommonEditorInputFieldMultiline {
+    background-image: ;
+    font: $FONT_FAMILY bold 26;
+
+    minimum-size: 56 56;
+    preferred-size: 100% -1;
+    maximum-size: 100% 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: $MARGIN_LARGE;
+    margin-right: 0;
+    padding-top: 15;
+    padding-bottom: 11;
+    padding-left: $PADDING_LARGE;
+    padding-right: $INDENT_DEFAULT;
+}
+
+MTextEditStyle#CommonEditorInputField:selected {
+    background-image: ;
+}
+
+MLabelStyle#CommonEditorInputFieldValue {
+    font: $FONT_FAMILY bold 26;
+    margin-top: 15;
+    margin-bottom: 11;
+    margin-right: 0;
+    margin-left: $MARGIN_LARGE;
+    vertical-alignment: top;
+}
+
+MLabelStyle#CommonEditorInputFieldPrompt {
+    font: $FONT_FAMILY 26;
+    color: $COLOR_EDITOR_PROMPT;
+    margin-top: 15;
+    margin-bottom: 11;
+    margin-right: 0;
+    margin-left: $MARGIN_LARGE;
+    vertical-alignment: top;
+}
+
+MLabelStyle#CommonEditorComboBoxSubTitle {
+    font: $FONT_FAMILY bold 26;
+    margin-top: 12;
+    margin-bottom: 11;
+    margin-right: 0;
+    margin-left: $MARGIN_LARGE;
+    vertical-alignment: top;
+}
+
+MComboBoxStyle#CommonEditorComboBox {
+    background-tiles: ;
+    background-image: ;
+    title-object-name: "ComboBoxEmptyTitle";
+    separate-title: false;
+    indicator-image: ;
+    indicator-object-name: ;
+    sub-title-object-name: "CommonEditorComboBoxSubTitle";
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    minimum-size: 56 56;
+    preferred-size: 100% 56;
+    maximum-size: 100% -1;
+}
+
+MComboBox#CommonEditorComboBox MListItemStyle[labelButton] {
+    background-tiles: ;
+    background-image: ;
+    background-color: ;
+    minimum-size: 56 56;
+    preferred-size: 100% 56;
+    maximum-size: 100% 56;
+}
+MComboBox#CommonEditorComboBox MListItemStyle[labelButton]:pressed {
+    background-tiles: ;
+    background-image: ;
+    background-color: ;
+    minimum-size: 56 56;
+    preferred-size: 100% 56;
+    maximum-size: 100% 56;
+}
+
+
+MTextEditStyle#CommonEditorNoteArea {
+    background-image: meegotouch-sheet-inputfield-background 15px 15px 15px 15px;
+    font: $FONT_FAMILY light 26;
+    padding-top: 24;
+}
+
+MTextEditStyle#CommonEditorNoteArea:selected {
+    background-image: meegotouch-sheet-inputfield-background 15px 15px 15px 15px;
+}
+

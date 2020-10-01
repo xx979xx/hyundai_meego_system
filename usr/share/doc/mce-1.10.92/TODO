@@ -1,0 +1,107 @@
+GENERIC:
+	- stay-on doesn't seem to work?!
+
+	- Handle display type = 0 properly!
+
+	- Make ALS setup a 0-timeout read instead of using
+	  als_read_value_filtered()
+
+	- Replace use of *_submode_int32() with datapipe if feasible
+
+	- Merge ALS and proximity sensor into modules/sensors.c
+
+	- Fix event-input.c to use
+	  /dev/input/{ts,keypad,jack,gpio-keys,pwr_button,mice}
+	  where possible
+
+	- Use g_try_malloc() instead of g_malloc()
+
+	- Add support for new functionality to mcetorture
+	  | power save mode
+
+	- Add function to mce-hal to enumerate features for different
+	  products (flicker key, home key, keyboard, etc.)
+
+	- Add code to datapipe.c to ensure that datapipes never end up
+	  called recursively
+
+	- Audit the code to ensure that no datapipe triggers or filters
+	  execute datapipes directly; if this cannot be avoided, it needs
+	  to be verified to be safe
+
+	- Use string pointer comparisons instead of strcmp() wherever
+	  possible; be sure to internalise strings to enable this
+
+	- Add option for proximity sensor policy both for incoming calls
+	  and calls in progress
+
+	- Add option to not use systemui tklock if kp + ts irqs are
+	  disabled and immediate blanking is enabled
+
+	- Before ALS is fully tuned or if brightness setting isn't
+	  available, use 40%
+
+	- Turn powerkey.c, tklock.c into proper modules
+
+	- Unify lens cover and camera popout code
+	  | Move camera popout detection to event-switches,
+	  | and overload the lens cover pipe for this, thereby
+	  | ensuring consistent behaviour across hardware.
+	  | Also rename the configuration option CameraPopoutUnlock
+	  | in mce.ini to something more sensible, and enable it
+	  | by default
+	  | keep the camera active code in the camera module
+
+	- Update mce manual for GConf keys
+
+	- Fix maximum_display_brightness in the filters
+	  | Make it possible to use range 1-<max brightness>
+	  | if the ALS has been disabled
+	  || Get brightness range from GConf, convert to percentage,
+	  || use in filter_brightness_simple
+	  || Non-linearity can then be achieved simply by using a 1-100%
+	  || range and only providing discrete steps in the app
+
+	- Make minimum brightness for RX34 2% of maximum?
+
+	- Add option to allow the keyboard/keypad backlight stay on as
+	  long as the keyboard is open and the display is on
+
+	- Find some way to make sure audio etc. is disabled
+	  | maybe save old profile and request silent profile,
+	  | then restore?
+
+
+FIXME:
+	- mce-modules needs to make use of the module_info
+
+
+ACTIVITY:
+	- Make activity sources configurable with path + values
+	  instead of hardcoding them
+
+
+HACKS:
+	- "Silent" tklock; no tklock UI, only disable touchscreen
+	  and keypad (to allow mediaplayer to continue playing)
+
+
+CONFIGURABILITY:
+	- Check ranges for return values
+
+
+RELIABILITY:
+	- Check for superfluous D-Bus arguments
+	- Return proper D-Bus errors
+
+
+DOCUMENTATION:
+	- Manual page for mce.ini
+
+
+CLEANUP:
+
+OPEN ISSUES:
+	- Should we unref dbus-messages or not after an OOM?
+
+	- Failure cases for D-Bus, GConf, etc.?

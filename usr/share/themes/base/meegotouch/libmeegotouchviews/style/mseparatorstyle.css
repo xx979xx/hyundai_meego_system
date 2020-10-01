@@ -1,0 +1,17 @@
+/* MSeparatorStyle : MWidgetStyle */
+
+MSeparatorStyle {
+    span: 0.1mm;
+}
+
+MSeparatorStyle:horizontal {
+    background-image: "meegotouch-separator-background-horizontal" 0px 0px 0px 0px;
+    minimum-size: -1 0.1mm;
+}
+
+MSeparatorStyle:vertical {
+    background-image: "meegotouch-separator-background-vertical" 0px 0px 0px 0px;
+    minimum-size: 0.1mm -1;
+}
+
+

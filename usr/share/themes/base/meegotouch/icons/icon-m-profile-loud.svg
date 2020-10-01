@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-profile-loud-layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-profile-loud">
+	<rect style="fill:none;" width="48" height="48"/>
+	<rect x="32.25" y="22.721" style="fill:#333333;" width="15.75" height="2.625"/>
+	
+		<rect x="32.561" y="12.221" transform="matrix(0.8394 -0.5435 0.5435 0.8394 -1.102 23.3372)" style="fill:#333333;" width="12.749" height="2.625"/>
+	
+		<rect x="32.561" y="33.221" transform="matrix(-0.8394 -0.5435 0.5435 -0.8394 52.8466 84.683)" style="fill:#333333;" width="12.749" height="2.625"/>
+	<path style="fill:#333333;" d="M25.432,7.356h-0.645c-0.15,0-0.368,0.081-0.487,0.179l-11.162,9.243H0v14.417h13.025l11.302,9.338
+		c0.119,0.102,0.337,0.178,0.487,0.178h0.645c0.144,0,0.266-0.143,0.266-0.314L25.697,7.673C25.697,7.498,25.574,7.356,25.432,7.356
+		z"/>
+</g>
+</svg>

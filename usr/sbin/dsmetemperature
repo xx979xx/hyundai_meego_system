@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export PERIOD=5
+
+echo Displaying elapsed time and estimated surface temperature every $PERIOD seconds
+
+export STARTTIME=$(date +"%s")
+while true; do
+dbus-send --system --print-reply --dest=com.nokia.thermalmanager /com/nokia/thermalmanager com.nokia.thermalmanager.estimate_surface_temperature | grep int32 | while read HABA TEMPERATURE; do echo $(expr $(date +"%s") - $STARTTIME) $TEMPERATURE; done
+sleep 5
+done

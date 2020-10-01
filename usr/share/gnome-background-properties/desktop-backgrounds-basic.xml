@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper>
+    <name>Blast of Red</name>
+    <name xml:lang="ar">زهور نارية</name>
+    <name xml:lang="bg">Червена експлозия</name>
+    <name xml:lang="bn">কৃষ্ণচূড়া</name>
+    <name xml:lang="bn_IN">কৃষ্ণচূড়া</name>
+    <name xml:lang="ca">Explosió vermella</name>
+    <name xml:lang="cs">Smršť červeně</name>
+    <name xml:lang="da">Rød eksplosion</name>
+    <name xml:lang="de">Strahlendes Rot</name>
+    <name xml:lang="el">Κόκκινη Έκρηξη</name>
+    <name xml:lang="en_GB">Blast of Red</name>
+    <name xml:lang="es">Explosión de rojo</name>
+    <name xml:lang="et">Punaste puhang</name>
+    <name xml:lang="fa">انفجار سرخ</name>
+    <name xml:lang="fi">Tuulahdus punaista</name>
+    <name xml:lang="fr">Explosion de Rouge</name>
+    <name xml:lang="gl">Explosión de Vermello</name>
+    <name xml:lang="gu">ઝગમગાટ લાલ</name>
+    <name xml:lang="hi">लाल प्रवाह</name>
+    <name xml:lang="hr">Udar crvene</name>
+    <name xml:lang="hu">Kirobbanó vörös</name>
+    <name xml:lang="id">Ledakan Merah</name>
+    <name xml:lang="is">Rauð sprenging</name>
+    <name xml:lang="it">Esplosione di rosso</name>
+    <name xml:lang="ja">赤い衝風</name>
+    <name xml:lang="ka">წითელი აფეთქება</name>
+    <name xml:lang="ko">꽃 돌풍</name>
+    <name xml:lang="lv">Sarkanā straume</name>
+    <name xml:lang="mk">Расфрлано црвена</name>
+    <name xml:lang="ml">രക്താബരം</name>
+    <name xml:lang="mr">गुलमोहर</name>
+    <name xml:lang="ms">Blast of Red</name>
+    <name xml:lang="nb">Rød utblåsning</name>
+    <name xml:lang="nl">Rode uitbarsting</name>
+    <name xml:lang="or">ଗାଢ୍ ଲାଲ</name>
+    <name xml:lang="pa">ਲਾਲ ਦੀ ਚਮਕ</name>
+    <name xml:lang="pl">Podmuch czerwieni</name>
+    <name xml:lang="pt">Choque Vermelho</name>
+    <name xml:lang="pt_BR">Explosão de Vermelho</name>
+    <name xml:lang="ru">Взрыв красного</name>
+    <name xml:lang="sk">Explózia červenej</name>
+    <name xml:lang="sr">Експлозија црвеног</name>
+    <name xml:lang="sr@Latn">Eksplozija crvenog</name>
+    <name xml:lang="sv">Röd explosion</name>
+    <name xml:lang="ta">சிவப்பு சிதறல்</name>
+    <name xml:lang="tr">Kırmızı Patlaması</name>
+    <name xml:lang="uk">Вибух червоного</name>
+    <name xml:lang="zh_CN">红色冲击</name>
+    <name xml:lang="zh_TW">爆炸紅</name>
+    <filename>/usr/share/backgrounds/images/tiny_blast_of_red.jpg</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Ladybugs</name>
+    <name xml:lang="ar">دعاسيق</name>
+    <name xml:lang="bg">Калинки</name>
+    <name xml:lang="bn">লেডিবাগ</name>
+    <name xml:lang="bn_IN">লেডিবাগ পরিবার</name>
+    <name xml:lang="ca">Marietes</name>
+    <name xml:lang="cs">Slunéčka sedmitečná</name>
+    <name xml:lang="da">Mariehøner</name>
+    <name xml:lang="de">Marienkäfer</name>
+    <name xml:lang="el">Πασχαλίτσες</name>
+    <name xml:lang="en_GB">Ladybugs</name>
+    <name xml:lang="es">Mariquitas</name>
+    <name xml:lang="et">Lepatriinud</name>
+    <name xml:lang="fa">کفشدوزک</name>
+    <name xml:lang="fi">Leppäkertut</name>
+    <name xml:lang="fr">Coccinelles</name>
+    <name xml:lang="gl">Xoaniñas</name>
+    <name xml:lang="gu">જીવડાંઓ</name>
+    <name xml:lang="hi">लेडीबग</name>
+    <name xml:lang="hr">Bubamare</name>
+    <name xml:lang="hu">Katicák</name>
+    <name xml:lang="id">Kepik</name>
+    <name xml:lang="is">Pöddur</name>
+    <name xml:lang="it">Coccinella</name>
+    <name xml:lang="ja">てんとう虫</name>
+    <name xml:lang="ka">ჭია-მაიები</name>
+    <name xml:lang="ko">무당벌레</name>
+    <name xml:lang="lv">Bizbizmārītes</name>
+    <name xml:lang="mk">Бубачки</name>
+    <name xml:lang="ml">വണ്‍ട്</name>
+    <name xml:lang="mr">लाल रंगाचे किडे</name>
+    <name xml:lang="ms">Ladybugs</name>
+    <name xml:lang="nb">Jenteinsekter</name>
+    <name xml:lang="nl">Lieveheersbeestjes</name>
+    <name xml:lang="or">ସାଧବ ପୋକ</name>
+    <name xml:lang="pa">ਲੇਡੀਬੱਗ</name>
+    <name xml:lang="pl">Biedronki</name>
+    <name xml:lang="pt">Bichos</name>
+    <name xml:lang="pt_BR">Joaninhas</name>
+    <name xml:lang="ru">Божьи коровки</name>
+    <name xml:lang="sk">Lienky</name>
+    <name xml:lang="sr">Бубамаре</name>
+    <name xml:lang="sr@Latn">Bubamare</name>
+    <name xml:lang="sv">Nyckelpigor</name>
+    <name xml:lang="ta">லேடிபக்</name>
+    <name xml:lang="tr">Uğurböcekleri</name>
+    <name xml:lang="uk">Божі корівки</name>
+    <name xml:lang="zh_CN">瓢虫</name>
+    <name xml:lang="zh_TW">瓢蟲</name>
+    <filename>/usr/share/backgrounds/images/ladybugs.jpg</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Stone Bird</name>
+    <name xml:lang="ar">طائر حجري</name>
+    <name xml:lang="bg">Каменна птица</name>
+    <name xml:lang="bn">নির্দয় পাখি</name>
+    <name xml:lang="bn_IN">পাষাণ পক্ষী</name>
+    <name xml:lang="ca">Ocell de pedra</name>
+    <name xml:lang="cs">Kamenný pták</name>
+    <name xml:lang="da">Sten Fugl</name>
+    <name xml:lang="de">Steinerner Vogel</name>
+    <name xml:lang="el">Πέτρινο Πουλί</name>
+    <name xml:lang="en_GB">Stone Bird</name>
+    <name xml:lang="es">Ave de piedra</name>
+    <name xml:lang="et">Kivilind</name>
+    <name xml:lang="fa">پرنده‌ی سنگی</name>
+    <name xml:lang="fi">Kivilintu</name>
+    <name xml:lang="fr">Oiseau de Pierre</name>
+    <name xml:lang="gu">મૂળભૂતયું પંખી</name>
+    <name xml:lang="hi">प्रस्तर पक्षी</name>
+    <name xml:lang="hr">Kamena ptica</name>
+    <name xml:lang="hu">Kőmadár</name>
+    <name xml:lang="id">Burung Batu</name>
+    <name xml:lang="is">Steinfugl</name>
+    <name xml:lang="it">Smeriglio</name>
+    <name xml:lang="ja">ストーンバード</name>
+    <name xml:lang="ka">ქვის ჩიტი</name>
+    <name xml:lang="ko">스톤 버드</name>
+    <name xml:lang="lv">Akmens putns</name>
+    <name xml:lang="mk">Камена птица</name>
+    <name xml:lang="ml">സ്റ്റോണ്‍ ബേഡ്</name>
+    <name xml:lang="mr">दगडी पक्षी</name>
+    <name xml:lang="ms">Stone Bird</name>
+    <name xml:lang="nb">Steinfugl</name>
+    <name xml:lang="nl">Stenen vogel</name>
+    <name xml:lang="or">ପଥର ପକ୍ଷୀ</name>
+    <name xml:lang="pa">ਪੱਥਰ ਦਾ ਪੰਛੀ</name>
+    <name xml:lang="pl">Kamienny ptak</name>
+    <name xml:lang="pt">Pássaro de Pedra</name>
+    <name xml:lang="pt_BR">Pássaro de Pedra</name>
+    <name xml:lang="ru">Каменная птичка</name>
+    <name xml:lang="sk">Kamenný vtáčik</name>
+    <name xml:lang="sr">Камена птица</name>
+    <name xml:lang="sr@Latn">Kamena ptica</name>
+    <name xml:lang="sv">Stenfågel</name>
+    <name xml:lang="ta">கல் பறவை</name>
+    <name xml:lang="tr">Kuş Heykeli</name>
+    <name xml:lang="uk">Кам'яна пташка</name>
+    <name xml:lang="zh_CN">石鸟</name>
+    <name xml:lang="zh_TW">石頭鳥</name>
+    <filename>/usr/share/backgrounds/images/stone_bird.jpg</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Flower Garden</name>
+    <name xml:lang="ar">حديقة الزهور</name>
+    <name xml:lang="bg">Цветна градина</name>
+    <name xml:lang="bn">ফুল বাগান</name>
+    <name xml:lang="bn_IN">ফুলের মেলা</name>
+    <name xml:lang="ca">Jardí de flors</name>
+    <name xml:lang="cs">Květinová zahrada</name>
+    <name xml:lang="da">Blomster Haven </name>
+    <name xml:lang="de">Blumengarten</name>
+    <name xml:lang="el">Κήπος Λουλουδιών</name>
+    <name xml:lang="en_GB">Flower Garden</name>
+    <name xml:lang="es">Jardín de flores</name>
+    <name xml:lang="et">Lilleaed</name>
+    <name xml:lang="fa">باغ گل</name>
+    <name xml:lang="fi">Kukkatarha</name>
+    <name xml:lang="fr">Jardin de fleurs</name>
+    <name xml:lang="gl">Xardín de Flores</name>
+    <name xml:lang="gu">ફૂલોનો બગીચો</name>
+    <name xml:lang="hi">फूलों का बागीचा</name>
+    <name xml:lang="hr">Cvijetni vrt</name>
+    <name xml:lang="hu">Virágoskert</name>
+    <name xml:lang="id">Kebun Bunga</name>
+    <name xml:lang="is">Blómagarður</name>
+    <name xml:lang="it">Giardino in fiore</name>
+    <name xml:lang="ja">花壇</name>
+    <name xml:lang="ka">ყვავილების ბაღი</name>
+    <name xml:lang="ko">꽃 정원</name>
+    <name xml:lang="lv">Ziedu dārzs</name>
+    <name xml:lang="mk">Градина со цвеќе</name>
+    <name xml:lang="ml">ഉദ്യാനം</name>
+    <name xml:lang="mr">फुलांचा बगीचा </name>
+    <name xml:lang="ms">Flower Garden</name>
+    <name xml:lang="nb">Blomsterhage</name>
+    <name xml:lang="nl">Bloementuin</name>
+    <name xml:lang="or">ଫୁଲ ବଗିଚା</name>
+    <name xml:lang="pa">ਫੁੱਲਾਂ ਦਾ ਬਗੀਚਾ</name>
+    <name xml:lang="pl">Kwiatowy ogród</name>
+    <name xml:lang="pt">Jardim de Flores</name>
+    <name xml:lang="pt_BR">Jardim Florido</name>
+    <name xml:lang="ru">Цветочный сад</name>
+    <name xml:lang="sk">Kvetinová záhrada</name>
+    <name xml:lang="sr">Цветна башта</name>
+    <name xml:lang="sr@Latn">Cvetna bašta</name>
+    <name xml:lang="sv">Blomsterträdgård</name>
+    <name xml:lang="ta">பூத்தோட்டம்</name>
+    <name xml:lang="tr">Çiçek Bahçesi</name>
+    <name xml:lang="uk">Квітковий сад</name>
+    <name xml:lang="zh_CN">花园</name>
+    <name xml:lang="zh_TW">花園</name>
+    <filename>/usr/share/backgrounds/images/flowers_and_leaves.jpg</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Earth from Space</name>
+    <name xml:lang="ar">الكرةالأرضية من الفضاء</name>
+    <name xml:lang="bg">Земята от космоса</name>
+    <name xml:lang="bn">মহাশূন্যে পৃথিবী</name>
+    <name xml:lang="bn_IN">সুদূর পৃথিবী</name>
+    <name xml:lang="ca">La terra des de l'espai</name>
+    <name xml:lang="cs">Země z vesmíru</name>
+    <name xml:lang="da">Jorden Fra Rummet</name>
+    <name xml:lang="de">Erde aus dem All</name>
+    <name xml:lang="el">Η Γη από το Διάστημα</name>
+    <name xml:lang="en_GB">Earth from Space</name>
+    <name xml:lang="es">Tierra desde el espacio</name>
+    <name xml:lang="et">Maakera kosmosest</name>
+    <name xml:lang="fa">منظره‌ی زمین از فضا</name>
+    <name xml:lang="fi">Maapallo</name>
+    <name xml:lang="fr">Terre vue de l'espace</name>
+    <name xml:lang="gl">Terra dende o Espacio</name>
+    <name xml:lang="gu">અવકાશમાં પૃથ્વી</name>
+    <name xml:lang="hi">आकाश से पृथ्वी</name>
+    <name xml:lang="hr">Iz Svemira na Zemlju</name>
+    <name xml:lang="hu">Bolygónk madártávlatból�</name>
+    <name xml:lang="id">Bumi dari Ruang Angkasa</name>
+    <name xml:lang="is">Jörðin séð úr geimnum</name>
+    <name xml:lang="it">Il pianeta Terra visto dallo spazio</name>
+    <name xml:lang="ja">宇宙からの地球</name>
+    <name xml:lang="ka">დედამიწა კოსმოსიდან</name>
+    <name xml:lang="ko">우주 속 지구</name>
+    <name xml:lang="lv">Zeme no kosmosa</name>
+    <name xml:lang="mk">Земјата од вселената</name>
+    <name xml:lang="ml">ഭൂമിയുടെ ഉപഗ്രഹചിത്രം</name>
+    <name xml:lang="mr">अवकाशापासून पृथ्वी</name>
+    <name xml:lang="ms">Earth from Space</name>
+    <name xml:lang="nb">Jorda fra rommet</name>
+    <name xml:lang="nl">Aarde vanuit de ruimte</name>
+    <name xml:lang="or">ଶୂନ୍ଯ ରୁ ପ୍ରୁଥିବୀ</name>
+    <name xml:lang="pa">ਧਰਤੀ ਤੋਂ ਪੁਲਾੜ</name>
+    <name xml:lang="pl">Ziemia z kosmosu</name>
+    <name xml:lang="pt">Terra do Espaço</name>
+    <name xml:lang="pt_BR">Terra vista do Espaço</name>
+    <name xml:lang="ru">Земля из Космоса</name>
+    <name xml:lang="sk">Zem z vesmíru</name>
+    <name xml:lang="sr">Земља из космоса</name>
+    <name xml:lang="sr@Latn">Zemlja iz kosmosa</name>
+    <name xml:lang="sv">Jorden från rymden</name>
+    <name xml:lang="ta">வான்வெளியில் உலகம்</name>
+    <name xml:lang="tr">Uzaydan Dünya</name>
+    <name xml:lang="uk">Земля з космосу</name>
+    <name xml:lang="zh_CN">太空中的地球</name>
+    <name xml:lang="zh_TW">由太空看地球</name>
+    <filename>/usr/share/backgrounds/images/earth_from_space.jpg</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Blue Type</name>
+    <name xml:lang="ar">حروف زرقاء</name>
+    <name xml:lang="bg">Сини букви</name>
+    <name xml:lang="bn">নীলাভ বস্তু</name>
+    <name xml:lang="bn_IN">নীল কালির হরফ</name>
+    <name xml:lang="ca">Tipus blau</name>
+    <name xml:lang="cs">Modré písmo</name>
+    <name xml:lang="da">Blå type</name>
+    <name xml:lang="de">Blaue Lettern</name>
+    <name xml:lang="el">Μπλε Γραφή</name>
+    <name xml:lang="en_GB">Blue Type</name>
+    <name xml:lang="es">Modelo azul</name>
+    <name xml:lang="et">Sinine kiri</name>
+    <name xml:lang="fa">تایپ آبی</name>
+    <name xml:lang="fi">Sininen teksti</name>
+    <name xml:lang="fr">Type Bleu</name>
+    <name xml:lang="gu">ભૂરા પ્રકાર</name>
+    <name xml:lang="hi">नीला प्रकार</name>
+    <name xml:lang="hr">Plava</name>
+    <name xml:lang="hu">Kékség</name>
+    <name xml:lang="id">Golongan Biru</name>
+    <name xml:lang="is">Blá gerð</name>
+    <name xml:lang="it">Blue Type</name>
+    <name xml:lang="ja">ブルータイプ</name>
+    <name xml:lang="ko">블루 타입</name>
+    <name xml:lang="lv">Zilie veidojumi</name>
+    <name xml:lang="mk">Син тип</name>
+    <name xml:lang="ml">ബലൂ ടൈപ്</name>
+    <name xml:lang="mr">निळा प्रकाश</name>
+    <name xml:lang="ms">Blue Type</name>
+    <name xml:lang="nb">Blå type</name>
+    <name xml:lang="nl">Blauwe letters</name>
+    <name xml:lang="or">ନୀଳ ଅକ୍ଷର</name>
+    <name xml:lang="pa">ਨੀਲੀ ਕਿਸਮ</name>
+    <name xml:lang="pl">Niebieskie znaki</name>
+    <name xml:lang="pt">Tipo Azul</name>
+    <name xml:lang="pt_BR">Letras em Azul</name>
+    <name xml:lang="ru">Синие литеры</name>
+    <name xml:lang="sk">Modrý vzor</name>
+    <name xml:lang="sr">Плава штампа</name>
+    <name xml:lang="sr@Latn">Plava štampa</name>
+    <name xml:lang="sv">Blå typ</name>
+    <name xml:lang="ta">நீல வகை</name>
+    <name xml:lang="tr">Mavi Yazı</name>
+    <name xml:lang="uk">Сині літери</name>
+    <name xml:lang="zh_CN">蓝色风格</name>
+    <name xml:lang="zh_TW">藍色型態</name>
+    <filename>/usr/share/backgrounds/tiles/blue_type.png</filename> 
+    <options>wallpaper</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Blue Swirl</name>
+    <name xml:lang="ar">زوبعة زرقاء</name>
+    <name xml:lang="bg">Синя вихрушка</name>
+    <name xml:lang="bn">নীলাভ ঘূর্ণি</name>
+    <name xml:lang="bn_IN">নীলাভ ঘূর্ণি</name>
+    <name xml:lang="ca">Remolí blau</name>
+    <name xml:lang="cs">Modrý vír</name>
+    <name xml:lang="da">Blå hvirvel</name>
+    <name xml:lang="de">Blauer Wirbel</name>
+    <name xml:lang="el">Μπλε Στροβιλισμός</name>
+    <name xml:lang="en_GB">Blue Swirl</name>
+    <name xml:lang="es">Remolino azul</name>
+    <name xml:lang="et">Sinine keeris</name>
+    <name xml:lang="fa">چرخش آبی</name>
+    <name xml:lang="fi">Sininen pyörre</name>
+    <name xml:lang="fr">Remous Bleu</name>
+    <name xml:lang="gl">Remuíño Azul</name>
+    <name xml:lang="gu">ભૂરી વમળ</name>
+    <name xml:lang="hi">नीला घुमाव</name>
+    <name xml:lang="hr">Plavi vrtlog</name>
+    <name xml:lang="hu">Kék örvény</name>
+    <name xml:lang="id">Lingkar Biru</name>
+    <name xml:lang="is">Blár svelgur</name>
+    <name xml:lang="it">Vortice blu</name>
+    <name xml:lang="ja">青い渦</name>
+    <name xml:lang="ko">파란 소용돌이</name>
+    <name xml:lang="lv">Zilais virpulis</name>
+    <name xml:lang="mk">Сина вртлог</name>
+    <name xml:lang="ml">നീല ചുഴി</name>
+    <name xml:lang="mr">निळा भोवरा</name>
+    <name xml:lang="ms">Blue Swirl</name>
+    <name xml:lang="nb">Blå virvel</name>
+    <name xml:lang="nl">Blauwe werveling</name>
+    <name xml:lang="or">ନୀଳ ଚକ୍ରି</name>
+    <name xml:lang="pa">ਨੀਲੇ ਵਲ</name>
+    <name xml:lang="pl">Niebieskie spirale</name>
+    <name xml:lang="pt">Remoínho Azul</name>
+    <name xml:lang="pt_BR">Redemoinho Azul</name>
+    <name xml:lang="ru">Голубые завитки</name>
+    <name xml:lang="sk">Modrý vír</name>
+    <name xml:lang="sr">Плави вртлог</name>
+    <name xml:lang="sr@Latn">Plavi vrtlog</name>
+    <name xml:lang="sv">Blå virvel</name>
+    <name xml:lang="ta">நீல சுருள்</name>
+    <name xml:lang="tr">Mavi Gridabı</name>
+    <name xml:lang="uk">Блакитний вир</name>
+    <name xml:lang="zh_CN">蓝色漩涡</name>
+    <name xml:lang="zh_TW">旋轉藍</name>
+    <filename>/usr/share/backgrounds/tiles/default_blue.jpg</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Default</name>
+    <name xml:lang="ar">الخلفية الافتراصية</name>
+    <name xml:lang="bg">По подразбиране</name>
+    <name xml:lang="bn">ডিফল্ট</name>
+    <name xml:lang="bn_IN">ডিফল্ট</name>
+    <name xml:lang="ca">Predeterminat</name>
+    <name xml:lang="cs">Implicitní</name>
+    <name xml:lang="da">Standart</name>
+    <name xml:lang="de">Standard</name>
+    <name xml:lang="el">Προεπιλογή</name>
+    <name xml:lang="en_GB">Default</name>
+    <name xml:lang="es">Predeterminado</name>
+    <name xml:lang="et">Vaike</name>
+    <name xml:lang="fa">پیش‌فرض</name>
+    <name xml:lang="fi">Oletus</name>
+    <name xml:lang="fr">Par défaut</name>
+    <name xml:lang="gl">Predeterminado</name>
+    <name xml:lang="gu">મૂળભૂત</name>
+    <name xml:lang="hi">मूलभूत</name>
+    <name xml:lang="hr">Izvorno</name>
+    <name xml:lang="hu">Alapételmezett</name>
+    <name xml:lang="id">Default</name>
+    <name xml:lang="is">Sjálfgefinn</name>
+    <name xml:lang="it">Default</name>
+    <name xml:lang="ja">デフォルト</name>
+    <name xml:lang="ka">ნაგულისხმევი</name>
+    <name xml:lang="ko">기본</name>
+    <name xml:lang="lv">Noklusētais</name>
+    <name xml:lang="mk">Стандардно</name>
+    <name xml:lang="ml">സാധാരണ പശ്ചാത്തലം</name>
+    <name xml:lang="mr">मूलभूत</name>
+    <name xml:lang="ms">Default</name>
+    <name xml:lang="nb">Forvalgt</name>
+    <name xml:lang="nl">Standaard</name>
+    <name xml:lang="or">ପୂର୍ବନିର୍ଦ୍ଧାରିତ</name>
+    <name xml:lang="pa">ਮੂਲ</name>
+    <name xml:lang="pl">Domyślna</name>
+    <name xml:lang="pt">Por Omissão</name>
+    <name xml:lang="pt_BR">Padrão</name>
+    <name xml:lang="ru">По умолчанию</name>
+    <name xml:lang="sk">Štandardné</name>
+    <name xml:lang="sr">Подразумевано</name>
+    <name xml:lang="sr@Latn">Podrazumevano</name>
+    <name xml:lang="sv">Standard</name>
+    <name xml:lang="ta">இயல்பான</name>
+    <name xml:lang="tr">Ön Tanımlı</name>
+    <name xml:lang="uk">Типове</name>
+    <name xml:lang="zh_CN">默认</name>
+    <name xml:lang="zh_TW">預設</name>
+    <filename>/usr/share/backgrounds/images/default.png</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Default at 4:3 Aspect Ratio</name>
+    <filename>/usr/share/backgrounds/images/default-4_3.png</filename>
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Default Wide</name>
+    <filename>/usr/share/backgrounds/images/default-wide.png</filename> 
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Default Dual Screen</name>
+    <filename>/usr/share/backgrounds/images/default-dual.png</filename>
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+  <wallpaper>
+    <name>Default Dual Screen Wide</name>
+    <filename>/usr/share/backgrounds/images/default-dual-wide.png</filename>
+    <options>stretched</options>
+    <shade_type>solid</shade_type>
+    <pcolor>#FFFFFF</pcolor>
+    <scolor>#000000</scolor>
+  </wallpaper>
+
+</wallpapers>

@@ -1,0 +1,54 @@
+
+MButtonSwitchStyle {
+    background-color: ;
+    background-tiles: ;
+    background-image: none;
+    /* thumb is the sliding part, should slide accross the whole area */
+    thumb-image: "meegotouch-switch-thumb" 14px 14px 14px 14px;
+    thumb-image-shadow: "meegotouch-switch-shadow" 14px 14px 14px 14px;
+    thumb-shadow-offset: 0 0.3mm;
+    
+    /* slider is behind thumb, but above background */
+    slider-image: "meegotouch-switch-off" 32px 32px 20px 20px;
+    slider-image-selected: "meegotouch-switch-on" 32px 32px 20px 20px;
+
+    minimum-size: 7.2mm 4.4mm;
+    maximum-size: 7.2mm 4.4mm;
+    preferred-size: 7.2mm 4.4mm;
+
+    thumb-margin: 0.7mm;
+
+    reactive-margin-left: $MARGIN_XLARGE;
+    reactive-margin-right: $MARGIN_XLARGE;
+    reactive-margin-top: $MARGIN_XLARGE;
+    reactive-margin-bottom: $MARGIN_XLARGE;
+
+    press-feedback: ;
+    release-feedback: ;
+    press-on-feedback: press-on;
+    press-off-feedback: press-off;
+    release-on-feedback: release-on;
+    release-off-feedback: release-off;
+}
+
+MButtonSwitchStyle:pressed {
+    background-color: ;
+    background-tiles: ;
+    background-image: none;
+
+    thumb-image: "meegotouch-switch-thumb-pressed" 14px 14px 14px 14px;
+}
+
+MButtonSwitchStyle:selected {
+    background-color: ;
+    background-tiles: ;
+    background-image: none;
+}
+
+MButtonSwitchStyle:disabled {
+    background-color: ;
+    background-tiles: ;
+    background-image: none;
+
+    thumb-image: "meegotouch-switch-thumb-disabled" 14px 14px 14px 14px;
+}

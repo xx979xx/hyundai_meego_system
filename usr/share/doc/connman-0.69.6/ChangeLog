@@ -1,0 +1,166 @@
+ver 0.69.6
+	service: Fix Manager.ConnectService D-Bus reply (Fixes BMC#14841)
+	tethering: Use tether device IP as DNS server (Fixes BMC#16847)
+	ntp: Fix ntpd_running return TRUE most of the time (Fixes BMC#16145)
+
+ver 0.69.5
+	core: Clock and timezone implementation
+
+ver 0.69.4
+	tethering: Use /proc/sys/net/bridge to detect bridge support.
+	tethering: Add wifi interface to bridge after carrier on.
+	tethering: Fix tethering scripts.
+	main: Initial configuration support.
+	dhcp: Reset IP settings upon changes.
+
+ver 0.69.3
+	Initial TI shared transport plugin implementation
+
+ver 0.69.2
+	Initial scan delays exponential backoff (Fixes BMC#13698)
+	Fix infinite recursion in oFono network disconnect
+	Do not add NULL domains to the domain list
+
+ver 0.69.1
+	ConnMan 0.69 code merge
+
+ver 0.68.2
+	dnsproxy: Fallback to resolv.conf if dnsproxy fails
+	stats: Fix double free error
+
+ver 0.68.1
+	ConnMan 0.68 code merge
+
+ver 0.67.1
+	ConnMan 0.67 code merge
+
+ver 0.66.1
+	ConnMan 0.66 code merge
+
+ver 0.64.2
+	Already powered devices fix (Fixes BMC#10397).
+	gdhcp socket initialisation fix.
+	gresolv UDP socket error handling.
+	oFono signal strength proper reporting.
+
+ver 0.64.1
+	ConnMan 0.64 code merge
+
+ver 0.62.5
+	DNS proxy fix (Fixes BMC#9960)
+	Openconnect plugin security fix
+
+ver 0.62.4
+	DNS proxy fix (Fixes BMC#9834)
+	Technology disabling fix (Fixes BMC#8074)
+	get-proxy-autoconfig fix (Fixes BMC#9178)
+	WiFi plugin build fix.
+
+ver 0.62.3
+	gsupplicant fixes (Fixes BMC#8750, #8792, #8324, #8363)
+	supplicant fix for autoconnecting after a failure.
+	Autoconnection of previously failed networks (Partly fixes BMC #8946).
+	udev rfkill list traversal fix (Fixes BMC #7915).
+	device fix (Fixes BMC #8075).
+
+ver 0.62.2
+	Fix a session and counter memory corruption (double free).
+	Create less stats file and less often.
+	Initialize stats file sze properly.
+
+ver 0.62.1
+	ConnMan 0.62 code merge
+
+ver 0.60.5
+	Remove EDNS0 option (Fixes BMC #4818)
+	Implement DNS over TCP for dnsproxy
+
+ver 0.60.4
+	Do not remove wifi network upon disconnection (Fixes BMC #7730, #7734)
+	Set WiFi task scanning flag when receiving a Scanning event
+	Implement WiFi network driver remove hook
+	RemoveProvider argument is an object path
+	Remove providers based on their VPN service path
+
+ver 0.60.3
+	Fix bug to remove vpn services if offline mode is on (Fixes BMC # 6591)
+	Schedule delayed scan if disconnected from an AP (Fixes BMC #6831)
+	Use proper definition for finding device structure
+	Use __connman_device_get_service_type for getting service type
+	Call remove_network() on unsolicited disconnect
+	Fix ConnMan crash while disable wifi device (Fixes BMC #6772)
+
+ver 0.60.2
+	Ignore Bluetooth adapter if its MAC is zeroed (Fixes BMC #6211, #6906,
+	#5796)
+	Handle potential NULL pointer with DHCP options
+	Fix a crash when doing PEAP/TTLS authentication (Fixes BMC #6970)
+
+ver 0.60.1
+	ConnMan 0.60 code merge
+
+ver 0.59.1
+	ConnMan 0.59 code merge
+
+ver 0.57.3
+	Save profile when enabling device while offline (Fixes BMC #5286)
+
+ver 0.57.2
+	Bluetooth network removal when adapter is unplugged (Fixes BMC #5119)
+	Disable technology when removing device
+
+ver 0.57.1
+	ConnMan 0.57 code merge
+
+ver 0.54.4
+	Always create a default profile (Fixes BMC #5024)
+	Disable offline devices upon device_set_connected(TRUE) calls
+	Set powered_pending from device_set_powered (Fixes BMC #3398)
+	Forward device_enable() error from enable_technolgy()
+	Do not try to enable a device if it's rfkill blocked (Fixes BMC #3719)
+	Toggle the powered_pending device flag if op succeeds (Fixes BMC #2640)
+	Use __connman_device_[enable|disable] from set_powered
+	Toggle offline mode only if device enablement succeeds
+	Disable offline mode when enabling a technology from offline mode
+
+ver 0.54.3
+	Return html fetching error when recv returns 0 (Fixes BCM #3697)
+	Fix PATH of adapter_watch in bluetooth plugin (Fixes BCM #3897)
+
+ver 0.54.2
+	Fix SEGV at first startup
+	Fix connman_wifi_load_ssid
+	Fix crash in dhclient release
+	Create service ipconfig only when it's NULL
+
+ver 0.54.1:
+	ConnMan 0.54 code merge
+
+ver 0.52.1:
+	Remove supplicant and device scanning state cleaning
+	ofono API refactoring: Rename netreg Operator property to Name
+	ConnMan 0.52 code merge
+
+ver 0.50.4:
+	Remove erroneous DHCP method setting from bluetooth plugin
+	Load ipconfig setting from __connman_service_create_ipconfig()
+	Reset ipconfig index
+	Add __connman_ipconfig_set_index() helper
+	Reference PAN network before disconnecting
+	Reset connman_network device pointer when it is no longer referenced
+	Do not set network index from PAN disconnect reply
+	ONLINE and LOGIN are also "connected" states
+	Use psk for building hidden WPA SSID group
+
+ver 0.50.3:
+	Enable/Disable device when toggling the powered state
+	Use udev_device_get_devtype before __connman_inet_get_device_type
+	Set network->device as NULL when the device is removed
+
+ver 0.50.2:
+	Handle the case that MobileNetworkCodeLength is not provided.
+	Correct the modem properties key name.
+	Fix convert_wifi_security for psk string.
+
+ver 0.50.1:
+	Export MCC and MNC for cellular services.

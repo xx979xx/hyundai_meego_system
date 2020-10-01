@@ -1,0 +1,14 @@
+MSceneManagerStyle {
+  page-switch-animation: "MPageSwitchSlideAnimation";
+  object-menu-animation: "MWidgetRectangularClipAnimation";
+  dialog-animation: "MWidgetSlideAnimation";
+  notification-information-animation: "MWidgetSlideAnimation";
+  notification-event-animation: "MWidgetSlideAnimation";
+  application-menu-animation: "MWidgetSlideAnimation";
+  status-bar-animation: "MWidgetSlideAnimation";
+  popup-list-animation: "MWidgetZoomAnimation";
+  message-box-animation: "MWidgetZoomAnimation";
+  system-banner-animation: "MWidgetScaleFadeAnimation";
+  navigation-bar-animation: "MWidgetSlideAnimation";
+  sheet-animation: "MWidgetSlideAnimation";
+}

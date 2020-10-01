@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Rarian Scrollkeeper Compatibility</title>
+</head>
+<body>
+<p><a href="index.xhtml">return to index</a></p>
+
+<h1>Rarian Scrollkeeper Compatibility</h1>
+
+<p>In addition to its new (and better) meta-data format, Rarian also
+provides backwards compatibility for scrollkeeper.  This section
+outlines the basics of scrollkeeper files and how to use them.  Don't
+expect too much though.</p>
+
+<p><strong>Note</strong>: If you are using GNOME, it is strongly
+recommended that you use <em>gnome-doc-utils</em>, which is described
+on <a
+href="http://live.gnome.org/GnomeDocUtilsCreateNew">live.gnome.org</a>.</p>
+
+<h2>Scrollkeeper Meta-data files</h2>
+
+<p>Scrollkeeper uses <em>omf</em> files, which are XML based.  The
+main text elements that are of interest are:</p>
+<dl>
+<dt>title</dt>
+<dd>The title of the document</dd>
+<dt>description</dt>
+<dd>The description of the document (the blurb that appears in table
+of contents)</dd>
+<dt>creator</dt>
+<dd>The creator of the documentation</dd>
+<dt>maintainer</dt>
+<dd>The person that currently looks after the documentation</dd>
+<dt>type</dt>
+<dd>The type of the documentation ("user's guide" etc.)</dd>
+<dt>date</dt>
+<dd>The last revision date of the documentation</dd>
+</dl>
+
+<p>Other fields that have attributes:</p>
+<dl>
+<dt><em>node</em></dt>
+<dd><em>attributes</em>: what is does</dd>
+<dt>version</dt>
+<dd>identifier: Who knows?,<em> date</em>: As the date field</dd>
+<dt>subject</dt>
+<dd><em>category</em>: Which category the document belongs to.  A list of
+categories can be found on <a
+href="http://scrollkeeper.sourceforge.net/documentation/categories.html">
+the scrollkeeper website</a></dd>
+<dt>format</dt>
+<dd><em>mime</em>: the mime type of the document, <em>dtd</em>: the dtd of the document
+(like "-//OASIS//DTD DocBook XML V4.3//EN")</dd>
+<dt>identifier</dt>
+<dd><em>url</em>: The URI of the actual documentation (bet you were wondering
+where that was, weren't you?)</dd>
+<dt>language</dt>
+<dd><em>code</em>: The language code describing the language the document
+described by the meta-data is in..</dd>
+<dt>relation</dt>
+<dd><em>seriesid</em>: The unique scrollkeeper seriesid.  Can be generated
+using the <em>scrollkeeper-gen-seriesid</em> program.</dd>
+<dt>rights</dt>
+<dd><em>type</em>: The license the documentation is available under,
+<em>license.version</em>: The specific version of the license, <em>holder</em>: Who
+actually holds the license.</dd> 
+</dl>
+
+<h2>Example scrollkeeper file</h2>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;omf&gt;
+  &lt;resource&gt;
+    &lt;creator&gt;The Professor &lt;theprof@example.com&gt;&lt;/creator&gt;
+    &lt;maintainer&gt;The Professor &lt;theprof@example.com&gt;&lt;/maintainer&gt;
+    &lt;title&gt;The Beanstalk User Guide&lt;/title&gt;
+    &lt;date&gt;June 2021&lt;/date&gt;
+    &lt;version identifier="The Beanstalk User Guide v1.0" date="June 2021"/&gt;
+    &lt;subject category="GNOME|Desktop"/&gt;
+    &lt;description&gt;
+      Beanstalks are big and may, if you're very, very lucky, lead to
+      golden eggs.
+    &lt;/description&gt;
+    &lt;type&gt;user's guide&lt;/type&gt;
+    &lt;format mime="application/xhtml+xml" dtd="-//W3C//DTD XHTML 1.0 Strict//EN"/&gt;
+    &lt;identifier url="beanstalk.xhtml"/&gt;
+    &lt;language code="C"/&gt;
+    &lt;relation seriesid="ceae33be-2a60-11dc-9e02-e1e3ec1cb44f"/&gt;
+    &lt;rights type="GNU FDL" license.version="1.1" holder="The Professor"/&gt;
+  &lt;/resource&gt;
+&lt;/omf&gt;
+</pre>
+
+<p>Basically, it's easier to copy this example and modify it to suit
+your needs than to try and write your own.</p>
+
+<p>Normally, the name of your omf files (after installation) should
+be &lt;package name&gt;-&lt;langcode&gt;.omf.  Before installation,
+you can name it whatever you want.  However, I'd recommend:</p>
+<pre>&lt;package name&gt;-&lt;langcode&gt;.omf.in</pre>
+
+<p>So for the beanstalk example, the distributed file (in source
+archives, i.e. to allow people to install it anywhere) would be:</p>
+<pre>beanstalk-C.omf.in</pre>
+
+<p>Which is then converted using <em>scrollkeeper-preinstall</em>,
+described below.</p>
+
+<h2>Installing documentation</h2>
+
+<p>Scrollkeeper installation is a little ... quirky.  First, copy
+your actual documentation to where you want.  To install the
+meta-data, fist run <em>scrollkeeper-preinstall</em> using the
+arguments like:</p>
+<pre>scrollkeeper-preinstall &lt;installed doc name&gt; &lt;current omf name&gt; &lt;new omf name&gt;</pre>
+
+<p>For example, for the beanstalk manual, this might look like:</p>
+
+<pre>scrollkeeper-preinstall /usr/share/beanstalk/manual/C/beanstalk.xhtml beanstalk-pre-C.omf beanstalk-C.omf</pre>
+
+<p>After that, you can now copy the newly generated omf file into
+&lt;prefix&gt;/share/omf/&lt;name&gt;/ where &lt;name&gt; is generally
+the name of your package.  Repeat this procedure for each language.</p>
+
+<p>Afterward, you can now run <em>scrollkeeper-update</em>.  This has
+a few options you must specify to get the correct behaviour.  This
+will need some tweaking, but in general:</p>
+
+<pre>scrollkeeper-update -o &lt;prefix&gt;/share/omf</pre>
+
+<p>Should get you reasonably close.  (If using Rarian, this will be
+sufficient).</p>
+
+<p>And that's it.  You'll probably want to put this stuff in your
+makefiles.  I have no idea how to do all this.  I'd recommend looking
+for other packages that use scrollkeeper and adapt their stuff.  (It's
+like the old autoconf joke - only 2 people have ever written a
+configure.in, everyone else just copies them)</p>
+
+</body>
+</html>
+

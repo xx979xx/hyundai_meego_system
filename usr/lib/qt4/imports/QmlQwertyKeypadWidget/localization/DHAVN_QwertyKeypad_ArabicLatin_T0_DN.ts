@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="en">
+<context>
+    <name>DHAVN_QwertyKeypad_Screen</name>
+    <message>
+        <source>STR_KEYPAD_TYPE_A00</source>
+        <translation>à</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A01</source>
+        <translation>â</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A02</source>
+        <translation>æ</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A03</source>
+        <translation>ç</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A04</source>
+        <translation>è</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A05</source>
+        <translation>é</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A06</source>
+        <translation>ê</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A07</source>
+        <translation>ë</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A08</source>
+        <translation>î</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_A09</source>
+        <translation>ï</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_B00</source>
+        <translation>ô</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_B01</source>
+        <translation>œ</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_B02</source>
+        <translation>ù</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_B03</source>
+        <translation>û</translation>
+    </message>
+    <message>
+        <source>STR_KEYPAD_TYPE_B04</source>
+        <translation>ü</translation>
+    </message>
+</context>
+</TS>

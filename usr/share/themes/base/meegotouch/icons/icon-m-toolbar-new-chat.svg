@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-toolbar-new-chat-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<g id="icon-m-toolbar-new-chat_1_">
+	<rect style="fill:none;" width="32" height="32"/>
+	<path style="fill:#FFFFFF;" d="M12.494,14.791h-9.93v-2.436h8.917C11.17,11.29,11,10.165,11,9c0-0.156,0.006-0.31,0.012-0.464H1.47
+		C0.662,8.536,0,9.197,0,10.007v15.362c0,0.805,0.662,1.467,1.47,1.467h1.979v4.518c0,0-0.012,0.491,0.448,0.627
+		c0.41,0.125,0.723-0.407,0.723-0.407l2.898-4.737h15.605c0.81,0,1.468-0.662,1.468-1.467v-4.479C24.07,20.96,23.54,21,23,21
+		C18.481,21,14.541,18.49,12.494,14.791z M11.491,19.695H2.564v-2.435h8.927V19.695z"/>
+	<path style="fill:#FFFFFF;" d="M23,0c-4.971,0-9,4.029-9,9c0,4.97,4.029,9,9,9s9-4.03,9-9C32,4.029,27.971,0,23,0z M28.75,11.062
+		l-1.342,2.168l-3.134-1.94v3.685h-2.549V11.29l-3.134,1.94l-1.342-2.168L20.58,9l-3.33-2.063l1.342-2.168l3.134,1.942V3.025h2.549
+		v3.686l3.134-1.941l1.342,2.167L25.421,9L28.75,11.062z"/>
+</g>
+</svg>

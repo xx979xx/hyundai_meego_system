@@ -1,0 +1,46 @@
+MColorComboBoxStyle {
+    margin-left: $MARGIN_DEFAULT;
+    margin-right: $MARGIN_DEFAULT;
+    margin-top: $MARGIN_DEFAULT;
+    margin-bottom: $MARGIN_DEFAULT;
+
+    padding-left:   $PADDING_DEFAULT;
+    padding-top:    $PADDING_DEFAULT;
+    padding-right:  $PADDING_DEFAULT;
+    padding-bottom: $PADDING_DEFAULT;
+
+    preferred-size: -1 $SIZE_LIST;
+    minimum-size: $SIZE_LIST $SIZE_LIST;
+    maximum-size: 100% $SIZE_LIST;
+
+    button-style-name: "ColorPickerListItem";
+    title-style-name: "CommonTitle";
+    color-style-name: "ColorIndicator";
+}
+
+MColorComboBox MListItemStyle#ColorPickerListItem {
+    background-tiles: ;
+    background-image: ;
+    background-color: ;
+    preferred-size: -1 $SIZE_LIST;
+    minimum-size: $SIZE_LIST $SIZE_LIST;
+    maximum-size: 100% $SIZE_LIST;
+}
+
+MColorComboBox MListItemStyle#ColorPickerListItem:pressed {
+    background-tiles: ;
+    background-image: "meegotouch-panel-background-pressed" $CORNER_MARGINS;
+    background-color: ;
+}
+
+MColorComboBox MColorWidgetStyle#ColorIndicator {
+    margin-right: $MARGIN_XLARGE;
+
+    minimum-size: 2.8mm 2.8mm;
+    preferred-size: 2.8mm 2.8mm;
+    maximum-size: 2.8mm 2.8mm;
+
+    x-radius: 2.0;
+    y-radius: 2.0;
+    opacity: 1.0;
+}

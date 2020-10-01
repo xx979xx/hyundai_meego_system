@@ -1,0 +1,27 @@
+PopUp 1.0 qml/DHAVN_PopUp_PopUps.qml
+PopUpText 1.0 qml/DHAVN_PopUp_Text.qml
+PopUpTextGuideLine 1.0 qml/DHAVN_PopUp_TextGuideLine.qml
+PopUpTextRadioBtn 1.0 qml/DHAVN_PopUp_TextRadioBtn.qml
+PopUpTextProgressBar 1.0 qml/DHAVN_PopUp_TextProgressBar.qml
+PopUpTextSlider 1.0 qml/DHAVN_PopUp_TextSlider.qml
+PopUpDimmed 1.0 qml/DHAVN_PopUp_Dimmed.qml
+PopUpThumbnail 1.0 qml/DHAVN_PopUp_Thumbnail.qml
+PopUpList 1.0 qml/DHAVN_PopUp_List.qml
+PopUpRadioList 1.0 qml/DHAVN_PopUp_RadioList.qml
+PopUpCheckboxList 1.0 qml/DHAVN_PopUp_CheckBoxList.qml
+PopUpListAndButtons 1.0 qml/DHAVN_PopUp_ListAndButtons.qml
+PopUpGrid 1.0 qml/DHAVN_PopUp_Grid.qml
+PopUpPropertyTable 1.0 qml/DHAVN_PopUp_PropertyTable.qml
+Types 1.0 qml/DHAVN_PopUp_Import.js
+PopUpTwoButtonListAndButtons 1.0 qml/DHAVN_PopUp_TwoButtonListAndButtons.qml
+PopUpASListAndButtons 1.0 qml/DHAVN_PopUp_ASListAndButtons.qml
+PopUpWait 1.0 qml/DHAVN_PopUp_Wait.qml
+PopUp_Loading 1.0 qml/DHAVN_PopUp_Loading.qml
+Zoom_Photo 1.0 qml/DHAVN_PopUp_Zoom_Photo.qml
+PopUpTimePicker 1.0 qml/DHAVN_PopUp_TimePicker.qml
+PopUpToast 1.0 qml/DHAVN_PopUp_Toast.qml
+PopUpProgress 1.0 qml/DHAVN_PopUp_Progress.qml
+PopUpXmAlert 1.0 qml/DHAVN_PopUp_XM_Alert.qml
+NaviPopupText 1.0 qml/DHAVN_PopUp_NaviText.qml
+plugin QmlPopUpPlugin
+

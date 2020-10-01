@@ -1,0 +1,42 @@
+MDeviceStyle {
+    resolution: 864 480;
+    pixels-per-inch: 261 261;
+}
+
+MDeviceStyle#N900 {
+    resolution: 800 480;
+    pixels-per-inch: 261 261;
+}
+
+MDeviceStyle#N95 {
+    resolution: 240 320;
+    pixels-per-inch: 153 153;
+}
+
+MDeviceStyle#Pineapple {
+    resolution: 480 320;
+    pixels-per-inch: 163 163;
+}
+
+MDeviceStyle#N95i {
+    resolution: 240 800;
+    pixels-per-inch: 152 152;
+}
+
+MDeviceStyle#QVGAL {
+    resolution: 320 240;
+    pixels-per-inch: 152 152;
+}
+
+MDeviceStyle#N97 {
+    resolution: 640 360;
+    pixels-per-inch: 209 209;
+}
+
+/* To test these: */
+/* outside scratchbox: */
+/* Xephyr :2 -host-cursor -screen 240x320x24 -ac -extension Composite */
+/* inside sbox: */
+/* DISPLAY=:2 widgetsgallery -fullscreen -software -target N95 */
+
+/* http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density */

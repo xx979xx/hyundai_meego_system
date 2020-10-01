@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0">
+
+  <xsd:simpleType name="PluginNameType">
+    <xsd:restriction base="xsd:string">
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="PluginVersionType">
+    <xsd:restriction base="xsd:string">
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="PluginDescriptionType">
+    <xsd:restriction base="xsd:string">
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="PluginConfigurationType" />
+
+  <xsd:complexType name="DirectoryPath">
+     <xsd:restriction base="xsd:string">
+     </xsd:restriction>
+  </xsd:complexType>
+
+  <xsd:complexType name="FilePath">
+     <xsd:restriction base="xsd:string">
+     </xsd:restriction>
+  </xsd:complexType>
+
+  <xsd:complexType name="Boolean">
+    <xsd:restriction base="xsd:boolean">
+    </xsd:restriction>
+  </xsd:complexType>
+
+  <xsd:complexType name="String">
+    <xsd:restriction base="xsd:string">
+    </xsd:restriction>
+  </xsd:complexType>
+
+  <xsd:complexType name="Password">
+    <xsd:restriction base="xsd:string">
+    </xsd:restriction>
+  </xsd:complexType>
+
+  <xsd:complexType name="Numeric">
+     <xsd:restriction base="xsd:integer">
+     </xsd:restriction>
+  </xsd:complexType>
+
+  <xsd:complexType name="Enumeration">
+  </xsd:complexType>
+
+  <xsd:complexType name="PluginType">
+    <xsd:sequence>
+      <xsd:element name="Name" type="PluginNameType" />
+      <xsd:element name="Version" type="PluginVersionType" />
+      <xsd:element name="Description" type="PluginDescriptionType" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

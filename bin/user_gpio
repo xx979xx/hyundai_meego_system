@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ $# == 0 ]
+then 
+	exit 0
+fi
+
+find $1 -maxdepth 1 -type f  | xargs chmod 666
+
+

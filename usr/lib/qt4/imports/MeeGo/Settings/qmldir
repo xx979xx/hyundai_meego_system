@@ -1,0 +1,4 @@
+plugin Settings
+SettingsModel 0.1 SettingsModel.qml
+DeclarativeComponent 0.1 DeclarativeComponent.qml
+

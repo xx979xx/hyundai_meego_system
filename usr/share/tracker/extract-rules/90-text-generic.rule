@@ -1,0 +1,3 @@
+[ExtractorRule]
+ModulePath=/usr/lib/tracker-0.14/extract-modules/libextract-text.so
+MimeTypes=text/*

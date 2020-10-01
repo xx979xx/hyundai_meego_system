@@ -1,0 +1,19 @@
+@import "networkitemstyle.css";
+@import "listpagestyle.css";
+@import "passwordpagestyle.css";
+@import "confirmremovepagestyle.css";
+@import "looknfeelpagestyle.css";
+
+DuiApplicationPageStyle {
+    background-image: ;
+    background-color: white;
+    background-opacity: 1.0;
+}
+
+#advanceSettingsReadOnly {
+  background-color: #CCCCCC;
+}
+
+#advancedSettingsEditable {
+ background-color: #ff00ff;
+}

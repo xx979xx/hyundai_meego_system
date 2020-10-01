@@ -1,0 +1,38 @@
+/* MTextEditStyle : MWidgetStyle */
+MTextEditStyle {
+    background-image: "meegotouch-textedit-background" 3px 3px 3px 3px;
+
+    font: $FONT_DEFAULT;
+    text-color: $COLOR_FOREGROUND;
+    selection-text-color: $COLOR_FOREGROUND;
+    selection-background-color: $COLOR_SELECT;
+    selection-threshold: 15.0;
+    allowViewReposition: true;
+    mask-string: "*";
+    prompt-color: $COLOR_INVERTED_SECONDARY_FOREGROUND;
+    paste-failed-icon: "icon-m-framework-close-alt";
+    paste-failed-duration: 3000;
+    masking-delay: 1000;
+
+    /* inherited from MWidgetStyle */
+    /* preferred-size: size(150, 90%); */
+    minimum-size: $SIZE_BUTTON $SIZE_BUTTON;
+    /*    maximum-size: size(90%, 90%); */
+
+    press-feedback: press;
+    release-feedback: release;
+
+    margin-top: $MARGIN_MEDIUM;
+    margin-bottom: $MARGIN_MEDIUM;
+    margin-left: $MARGIN_MEDIUM;
+    margin-right: $MARGIN_MEDIUM;
+
+    padding-top: $PADDING_LARGE;
+    padding-bottom: $PADDING_LARGE;
+    padding-left: $PADDING_XLARGE;
+    padding-right: $PADDING_XLARGE;
+}
+
+MTextEditStyle:selected {
+ background-image: "meegotouch-textedit-background-selected" 4px 4px 4px 4px;
+}

@@ -1,0 +1,109 @@
+/* MNavigationBarStyle : MWidgetStyle */
+MNavigationBarStyle {
+    vertical-align: top;
+    horizontal-align: left;
+
+    item-spacing: 0;
+    button-animation-length: 500;
+
+    /* inherited from MWidgetStyle */
+    background-image: "meegotouch-navigationbar-toolbar-portrait-background" 12px 12px 12px 12px;
+    margin-left:   0;
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+
+    padding-left:   $WIDTH_HOMECLOSEBUTTON; /* space for square button */
+    padding-top:    0;
+    padding-right:  $WIDTH_HOMECLOSEBUTTON; /* space for square button */
+    padding-bottom: 0;
+
+    minimum-size: 100% $HEIGHT_NAVIGATIONBAR;
+    preferred-size: 100% $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 100% $HEIGHT_NAVIGATIONBAR;
+}
+
+#NavigationBarMenuButton
+{
+    text-color: $COLOR_INVERTED_FOREGROUND;
+    horizontal-text-align: left;
+
+    arrow-icon: "icon-m-framework-viewmenu-arrow";
+    arrow-icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+
+    background-color:;
+    background-image: "meegotouch-button-navigationbar-viewmenu-background" 12px 12px 12px 12px;
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-left:   $PADDING_LARGE;
+    padding-top:    0;
+    padding-right:  $PADDING_LARGE;
+    padding-bottom: 0;
+
+    icon-size : $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    font: $FONT_DEFAULT;
+
+    preferred-size: -1 $HEIGHT_NAVIGATIONBAR;
+    minimum-size: 100 $HEIGHT_NAVIGATIONBAR;
+    maximum-size: -1 $HEIGHT_NAVIGATIONBAR;
+}
+
+#NavigationBarMenuButton:pressed
+{
+    background-image: "meegotouch-button-navigationbar-viewmenu-background-pressed" 12px 12px 12px 12px;
+    }
+
+#NavigationBarMenuButtonLabel {
+
+    text-color: $COLOR_INVERTED_FOREGROUND;
+    
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    
+    preferred-size: -1 -1;
+    minimum-size: 0 0;
+    maximum-size: 100% 100%;
+}
+
+#NavigationBarMenuButtonIconImage {
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: $MARGIN_DOUBLE;
+    margin-bottom: 0;
+
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    minimum-size: 3.2mm 3.2mm;
+    preferred-size: 3.2mm 3.2mm;
+    maximum-size: 3.2mm 3.2mm;
+}
+
+#NavigationBarMenuButtonArrowImage {
+    margin-left: $MARGIN_DOUBLE;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    minimum-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    preferred-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    maximum-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+}

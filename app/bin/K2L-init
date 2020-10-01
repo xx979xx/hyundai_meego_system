@@ -1,0 +1,52 @@
+#!/bin/sh
+
+if [ "$1" = "start" ]; then
+	#echo "ACSTCPConnectorServer $PID1 killed"
+	PID=`ps -ef | grep ACSTCPConnectorServer | grep -v grep | awk '{print$2}'` 
+	if [ "$PID" ]; then
+	    kill -9 $PID
+	fi
+
+	#echo "k2lacsdaemon $PID2 killed"
+	PID=`ps -ef | grep k2lacsdaemon | grep -v grep | awk '{print$2}'` 
+	if [ "$PID" ]; then
+	    kill -9 $PID
+	fi
+
+	rm -f /tmp/k2lacsdaemon.*	
+
+	sudo ifconfig mn0 hw ether 00:11:22:33:44:55
+
+	#echo "start k2lacsdaemon"
+	/app/bin/k2lacsdaemon
+
+	sleep 1
+
+	chmod 666 /tmp/k2lacsdaemon.info	
+	chmod 666 /tmp/k2lacsdaemon.pid	
+	chmod 777 /tmp/k2lacsdaemon.socket
+
+	sudo ifconfig mn0 172.16.0.100 up
+	/app/bin/ACSTCPConnectorServer 172.16.0.100 5287 /tmp/k2lacsdaemon.socket 0
+
+	exit 0
+fi
+
+if [ "$1" = "kill" ]; then
+	#echo "ACSTCPConnectorServer $PID1 killed"
+	PID=`ps -ef | grep ACSTCPConnectorServer | grep -v grep | awk '{print$2}'` 
+	if [ "$PID" ]; then
+	    kill -9 $PID
+	fi
+
+	#echo "k2lacsdaemon $PID2 killed"
+	PID=`ps -ef | grep k2lacsdaemon | grep -v grep | awk '{print$2}'` 
+	if [ "$PID" ]; then
+	    kill -9 $PID
+	fi
+
+	rm -f /tmp/k2lacsdaemon.*	
+
+	exit 0
+fi
+

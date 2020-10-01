@@ -1,0 +1,5 @@
+KERNEL=="event*", SUBSYSTEM=="input", IMPORT{program}="/lib/udev/is_micom %p"
+
+ENV{IS_MICOM_TOUCHSCREEN}=="1", SYMLINK+="input/micom/touchscreen", ENV{ID_INPUT.tags}="micom_touchscreen"
+ENV{IS_MICOM_KEYS}=="1", SYMLINK+="input/micom/buttons", ENV{ID_INPUT.tags}="micom_buttons"
+ENV{IS_MICOM_ENCODERS}=="1", SYMLINK+="input/micom/rotary_encoders", ENV{ID_INPUT.tags}="micom_encoders", GROUP="meego"

@@ -1,0 +1,67 @@
+/* MWidgetFadeInAnimationStyle : MAbstractWidgetAnimationStyle */
+MWidgetFadeAnimationStyle {
+    delay: 0;
+    duration: 300;
+    easing-curve: insine;
+    opacity: 1.0;
+}
+
+MWidgetFadeAnimationStyle#In {
+    delay: 0;
+    duration: 300;
+    easing-curve: insine;
+    opacity: 1.0;
+}
+
+MWidgetFadeAnimationStyle#Out {
+    delay: 0;
+    duration: 300;
+    easing-curve: outsine;
+    opacity: 1.0;
+}
+
+MHomeButtonPanel MWidgetFadeAnimationStyle#In {
+    delay: 300;
+}
+
+MEscapeButtonPanel MWidgetFadeAnimationStyle#In {
+    delay: 300;
+}
+
+MSceneLayerEffect MWidgetFadeAnimationStyle#In {
+    delay: 0;
+    duration: 400;
+    easing-curve: inoutcubic;
+    opacity: 0.87;
+}
+
+MSceneLayerEffect MWidgetFadeAnimationStyle#Out {
+    delay: 300;
+    duration: 400;
+    easing-curve: outcubic;
+    opacity: 0.87;
+}
+
+MNavigationBar MWidgetFadeAnimationStyle#In {
+    delay: 300;
+    duration: 300;
+}
+
+MNavigationBar MWidgetFadeAnimationStyle#Out {
+    delay: 0;
+    duration: 300;
+}
+
+MSheet MWidgetFadeAnimationStyle#In {
+    delay: 0;
+    duration: 350;
+    easing-curve: inoutexpo;
+    opacity: 1.0;
+}
+
+MSheet MWidgetFadeAnimationStyle#Out {
+    delay: 0;
+    duration: 350;
+    easing-curve: inoutexpo;
+    opacity: 1.0;
+}

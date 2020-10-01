@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<omf>
+  <resource>
+    <creator>(David Zeuthen)</creator>
+    <maintainer>(David Zeuthen)</maintainer>
+    <title>Palimpsest Disk Utility Manual</title>
+    <date>2008</date>
+    <version identifier="Palimpsest Disk Utility Manual V 0.1" date="2008"/>
+    <subject category="GNOME|System"/>
+    <description>
+       
+        This document describes the Palimpsest Disk Utility application.
+      
+    </description>
+    <type>user's guide</type>
+    <format mime="text/xml" dtd="-//OASIS//DTD DocBook XML V4.1.2//EN"/>
+    <identifier url="file:///usr/share/gnome/help/palimpsest/C/palimpsest.xml"/>
+    <language code="C"/>
+    <relation seriesid="01234567-a670-11d9-9d16-8c554140c753"/>
+    <rights type="GNU FDL" license.version="1.1" holder="David Zeuthen"/>
+  </resource>
+</omf>

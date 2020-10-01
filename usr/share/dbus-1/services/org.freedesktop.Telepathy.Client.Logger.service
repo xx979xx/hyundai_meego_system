@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.freedesktop.Telepathy.Client.Logger
+Exec=/usr/lib/telepathy/telepathy-logger

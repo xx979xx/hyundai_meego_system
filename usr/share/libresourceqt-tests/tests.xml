@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<testdefinition version="0.1">
+  <suite name="libresourceqt-tests" domain="Multimedia Middleware">
+    <set name="libresourceqt-tests" feature="Resource policy">
+
+      <case name="test-resource" type="Functional" level="Component" subfeature="libresource Qt API" description="Unit tests for libresourceqt" timeout="15">
+        <step expected_result="0">/usr/lib/libresourceqt-tests/test-resource</step>
+      </case>
+
+      <case name="test-resource-set" type="Functional" level="Component" subfeature="libresource Qt API" description="Unit tests for libresourceqt" timeout="15">
+        <step expected_result="0">/usr/lib/libresourceqt-tests/test-resource-set</step>
+      </case>
+
+      <case name="test-resource-engine" type="Functional" level="Component" subfeature="libresource Qt API" description="Unit tests for libresourceqt" timeout="15">
+        <step expected_result="0">/usr/lib/libresourceqt-tests/test-resource-engine-wrapper</step>
+      </case>
+
+      <case name="test-security-with-token" type="Functional" level="Component" subfeature="libresource Qt API" description="Unit tests for libresourceqt" timeout="15">
+        <step expected_result="0">/usr/lib/libresourceqt-tests/test-security-with-aegis-token</step>
+      </case>
+      <case name="test-security-without-token" type="Functional" level="Component" subfeature="libresource Qt API" description="Unit tests for libresourceqt" timeout="15">
+        <step expected_result="1">/usr/lib/libresourceqt-tests/test-security-without-aegis-token</step>
+      </case>
+
+      <environments>
+        <scratchbox>false</scratchbox>
+        <hardware>true</hardware>
+      </environments>
+
+    </set>
+  </suite>
+
+  <suite name="libdbus-qeventloop-tests" domain="Multimedia Middleware">
+    <set name="libdbus-qeventloop-tests" feature="Resource policy">
+
+      <case name="DBusQEventLoop functional test" type="Functional" level="Component" subfeature="libresource Qt API" description="Functional tests for libdbus-qeventloop" timeout="25">
+        <step expected_result="0">/usr/lib/libresourceqt-tests/test-dbus-qeventloop-runner.sh</step>
+      </case>
+
+      <environments>
+        <scratchbox>false</scratchbox>
+        <hardware>true</hardware>
+      </environments>
+
+    </set>
+  </suite>
+</testdefinition>

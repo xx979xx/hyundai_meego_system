@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="ShowPanelsAsHome" mtime="1441167185" type="bool" value="false"/>
+	<entry name="HomeScreenDirectoryName" mtime="1441167185" type="string">
+		<stringvalue>meego-ux-ivi</stringvalue>
+	</entry>
+	<entry name="theme" mtime="1441167185" type="string">
+		<stringvalue>1024-600-10</stringvalue>
+	</entry>
+</gconf>

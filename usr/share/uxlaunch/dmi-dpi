@@ -1,0 +1,1 @@
+# dmi-dpi table: format is "dmi-string dpi-string". dmi names are board_name values from sysfs.

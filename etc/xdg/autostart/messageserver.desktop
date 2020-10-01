@@ -1,0 +1,4 @@
+[Desktop Entry]
+Exec=/usr/bin/messageserver
+X-Meego-Priority=Low
+OnlyShowIn=X-MEEGO-HS;

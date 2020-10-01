@@ -1,0 +1,60 @@
+#!/usr/bin/pulseaudio -nF
+.fail
+
+### Automatically restore the volume of streams and devices
+load-module module-device-restore
+#load-module module-stream-restore
+load-module module-card-restore
+
+load-module module-native-protocol-unix
+
+### Automatically suspend sinks/sources that become idle for too long
+load-module module-suspend-on-idle
+
+### Automatically move streams to the default sink if the sink they are
+### connected to dies, similar for sources
+load-module module-rescue-streams
+
+load-module module-dbus-protocol
+
+### Load policy enforcement point
+.ifexists module-policy-enforcement.so
+.nofail
+load-module module-policy-enforcement config_file="policy.conf"
+.fail
+.endif
+
+### Publish connection data in the X11 root window
+.ifexists module-x11-publish.so
+.nofail
+load-module module-x11-publish
+.fail
+.endif
+
+load-module module-udev-detect tsched=0
+
+
+### If tablet bluetooth route exists, load it instead of bluetooth-discover
+.ifexists module-tablet-btroute.so
+.nofail
+load-module module-tablet-btroute
+.fail
+.else
+.nofail
+load-module module-bluetooth-discover
+.fail
+.endif
+
+### Load Jack Detect
+.ifexists module-tablet-jackdetect.so
+.nofail
+load-module module-tablet-jackdetect
+.fail
+.endif
+
+### load mainvolume if exiss
+.ifexists module-meego-mainvolume.so
+.nofail
+load-module module-meego-mainvolume
+.fail
+.endif

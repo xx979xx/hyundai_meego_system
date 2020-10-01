@@ -1,0 +1,79 @@
+/* MInfoBannerStyle : MWidgetStyle */
+MInfoBannerStyle {
+    color: $COLOR_FOREGROUND;
+    font: $FONT_DEFAULT;
+    image-size: $SIZE_THUMBNAIL $SIZE_THUMBNAIL;
+    icon-size: $SIZE_ICON $SIZE_ICON;
+    
+    margin-top: $HEIGHT_TOPBARS;
+
+    padding-left:   $PADDING_XLARGE;
+    padding-right:  $PADDING_XLARGE;
+    padding-top:    $PADDING_XLARGE;
+    padding-bottom: $PADDING_XLARGE;
+
+    /* for some reason information and system banners use minimum-size!?? */
+    minimum-size: 80% $HEIGHT_ONE;
+    preferred-size: -1 -1;
+    maximum-size: 100% 100%;
+
+    disappear-timeout: 3000;
+}
+
+MInfoBannerStyle[event] {
+    background-image : "meegotouch-notification-event-background" 10px 10px 10px 10px;
+}
+
+MInfoBannerStyle[event]:pressed {
+    background-image : "meegotouch-notification-event-background-pressed" 10px 10px 10px 10px;
+}
+
+#EventInfoBannerImage {
+    minimum-size: $SIZE_THUMBNAIL $SIZE_THUMBNAIL;
+    preferred-size: $SIZE_THUMBNAIL $SIZE_THUMBNAIL;
+    maximum-size: $SIZE_THUMBNAIL $SIZE_THUMBNAIL;
+}
+
+#EventInfoBannerIcon {
+    minimum-size: $SIZE_ICON $SIZE_ICON;
+    preferred-size: $SIZE_ICON $SIZE_ICON;
+    maximum-size: $SIZE_ICON $SIZE_ICON;
+}
+
+#EventInfoBannerBody {
+    margin-left: $MARGIN_LARGE;
+    margin-right: $MARGIN_LARGE;
+
+}
+
+MInfoBannerStyle[information] {
+    background-image : "meegotouch-notification-information-background" 10px 10px 10px 10px;
+}
+
+MInfoBannerStyle[information]:pressed {
+    background-image : "meegotouch-notification-information-background-pressed" 10px 10px 10px 10px;
+}
+
+MInfoBannerStyle[system] {
+    background-image : "meegotouch-notification-system-background" 10px 10px 10px 10px;
+}
+
+MInfoBannerStyle[system]:pressed {
+    background-image : "meegotouch-notification-system-background-pressed" 10px 10px 10px 10px;
+}
+
+
+#SystemInfoBannerImage {
+    minimum-size: $SIZE_THUMBNAIL $SIZE_THUMBNAIL;
+    preferred-size: $SIZE_THUMBNAIL $SIZE_THUMBNAIL;
+    maximum-size: $SIZE_THUMBNAIL $SIZE_THUMBNAIL;
+}
+
+#SystemInfoBannerBody {
+    margin-left: $MARGIN_LARGE;
+    margin-right: $MARGIN_LARGE;
+}
+
+#SystemInfoBannerButton
+{
+}

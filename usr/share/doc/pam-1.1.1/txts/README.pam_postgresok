@@ -1,0 +1,13 @@
+pam_postgresok:
+	Similar to pam_rootok, this module checks that the current real
+	user ID is 26 (per /usr/share/doc/setup-*/uidgid on Red Hat
+	Linux) and belongs to a user named "postgres".
+
+RECOGNIZED ARGUMENTS:
+	debug		write debugging messages to syslog
+
+MODULE SERVICES PROVIDED:
+	authentication
+
+AUTHOR:
+	Fernando Nasser <fnasser@redhat.com>

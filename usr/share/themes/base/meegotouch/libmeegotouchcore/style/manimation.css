@@ -1,0 +1,19 @@
+MSceneWindowAnimationStyle {
+    show-duration: 250;
+    hide-duration: 250;
+    move-duration: 0;
+
+    //show-curve: 500;
+    //hide-curve: 500;
+    //move-curve: 500;
+}
+
+#pageTransitionAnimation {
+    show-duration: 250;
+    hide-duration: 0;
+    move-duration: 0;
+
+    //show-curve: 500;
+    //hide-curve: 500;
+    //move-curve: 500;
+}

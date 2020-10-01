@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "0.1">
+<!ENTITY manrevision "0.1">
+<!ENTITY date "June 2008">
+<!ENTITY app "<application>Palimpsest Disk Utility</application>">
+<!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file. 
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->]>
+<article id="index" lang="de">
+  <articleinfo>
+    <title><application>Palimpsest Disk Utility</application>-Handbuch</title>
+    <abstract role="description">
+      <para>Dieses Dokument beschreibt die Anwendung Palimpsest Disk Utility.</para>
+    </abstract>
+    <copyright> 
+      <year>2008</year> 
+      <holder>David Zeuthen</holder> 
+    </copyright><copyright><year>2009</year><holder>Mario Blättermann (mariobl@gnome.org)</holder></copyright> 
+    <publisher> 
+      <publishername>GNOME-Dokumentationsprojekt</publishername> 
+    </publisher> 
+      <legalnotice id="legalnotice">
+	<para>Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt und/oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem <ulink type="help" url="ghelp:fdl">Link</ulink> oder in der mit diesem Handbuch gelieferten Datei COPYING-DOCS.</para>
+         <para>Dieses Handbuch ist Teil einer Sammlung von GNOME-Handbüchern, die unter der GFDL veröffentlicht werden. Wenn Sie dieses Handbuch getrennt von der Sammlung weiterverbreiten möchten, können Sie das tun, indem Sie eine Kopie der Lizenz zum Handbuch hinzufügen, wie es in Abschnitt 6 der Lizenz beschrieben ist.</para>
+
+	<para>Viele der Namen, die von Unternehmen verwendet werden, um ihre Produkte und Dienstleistungen von anderen zu unterscheiden, sind eingetragene Warenzeichen. An den Stellen, an denen diese Namen in einer GNOME-Dokumentation erscheinen, werden die Namen in Großbuchstaben oder mit einem großen Anfangsbuchstaben geschrieben, wenn das GNOME-Dokumentationsprojekt auf diese Warenzeichen hingewiesen wird.</para>
+
+	<para>DAS DOKUMENT UND VERÄNDERTE FASSUNGEN DES DOKUMENTS WERDEN UNTER DEN BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT DEM WEITERGEHENDEN VERSTÄNDNIS, DASS: <orderedlist>
+		<listitem>
+		  <para>DIESES DOKUMENT WIRD »WIE VORLIEGEND« GELIEFERT, OHNE GARANTIEN IRGENDEINER ART, SOWOHL AUSDRÜCKLICH GENANNTE ALS AUCH ANGEDEUTETE. DIES BEZIEHT SICH AUCH OHNE EINSCHRÄNKUNG AUF GARANTIEN, DASS DIESES DOKUMENT ODER VERÄNDERTE FASSUNGEN DIESES DOKUMENTS FREI VON HANDELSDEFEKTEN, FÜR EINEN BESTIMMTEN ZWECK GEEIGNET IST ODER DASS ES KEINE RECHTE DRITTER VERLETZT. DAS VOLLE RISIKO WAS QUALITÄT, GENAUIGKEIT UND LEISTUNG DES DOKUMENTS ODER VERÄNDERTE FASSUNGEN DES DOKUMENTS LIEGT BEI IHNEN. SOLLTE EIN DOKUMENT ODER EINE VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART BEINHALTEN, TRAGEN SIE (NICHT DER URSPRUNGSAUTOR, DER AUTOR ODER EIN MITWIRKENDER) DIE KOSTEN FÜR NOTWENDIGE DIENSTLEISTUNGEN, REPARATUREN ODER FEHLERKORREKTUREN. DIESER HAFTUNGSAUSSCHLUSS IST EIN ESSENZIELLER TEIL DIESER LIZENZ. DIE VERWENDUNG EINES DOKUMENTS ODER EINER VERÄNDERTEN VERSION DES DOKUMENTS IST NICHT GESTATTET AUßER UNTER BEACHTUNG DIESES HAFTUNGSAUSSCHLUSSES UND</para>
+		</listitem>
+		<listitem>
+		  <para>UNTER KEINEN UMSTÄNDEN UND AUF BASIS KEINER RECHTSGRUNDLAGE, EGAL OB DURCH UNERLAUBTEN HANDLUNGEN (EINSCHLIEßLICH FAHRLÄSSIGKEIT), VERTRAG ODER ANDERWEITIG KANN DER AUTOR, URSPRUNGSAUTOR, EIN MITWIRKENDER ODER EIN VERTRIEBSPARTNER DIESES DOKUMENTS ODER EINER VERÄNDERTEN FASSUNG DES DOKUMENTS ODER EIN ZULIEFERER EINER DIESER PARTEIEN, HAFTBAR GEMACHT WERDEN FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER FOLGESCHÄDEN JEGLICHER ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN SCHÄDEN DURCH VERLUST VON KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER COMPUTERFEHLFUNKTIONEN ODER ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH AUS ODER IN VERBINDUNG MIT DER VERWENDUNG DES DOKUMENTS UND VERÄNDERTER FASSUNGEN DES DOKUMENTS ERGEBEN, AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER SCHÄDEN INFORMIERT WAREN.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+    <authorgroup>
+      <author role="maintainer">
+	<firstname>David</firstname> <surname>Zeuthen</surname>
+	<affiliation>
+	  <address>
+	    <email>davidz@redhat.com</email>
+	  </address>
+	</affiliation>
+      </author>
+    </authorgroup>
+    <revhistory>
+      <revision>
+	<revnumber>»Palimpsest Disk Utility«-Handbuch V 0.1</revnumber>
+	<date>2008</date>
+	<revdescription>
+	  <para role="author">David Zeuthen <email>davidz@redhat.com</email></para>
+	</revdescription>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>Dieses Handbuch beschreibt Version 0.1 von Palimpsest Disk Utility.</releaseinfo> 
+      <legalnotice> 
+      <title>Rückmeldungen</title> 
+      <para>Um einen Fehler zu melden oder einen Vorschlag zur Anwendung <application>Palimpsest Disk Utility</application> oder zu diesem Handbuch zu machen, folgen Sie den Anweisungen auf der <ulink url="ghelp:gnome-feedback" type="help">GNOME-Seite für Rückmeldungen</ulink>.</para>
+      </legalnotice>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Einführung</title>
+      <para>Dies ist das Benutzerhandbuch von <application>Palimpsest Disk Utility</application>.</para>
+    <figure id="mainwindow-fig"> 
+	<title><application>Palimpsest Disk Utility</application>-Fenster</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/main-app.png" format="PNG"/> 
+	    </imageobject>
+	    
+	    <textobject> 
+	      <phrase>Zeigt das <application>Palimpsest Disk Utility</application>-Hauptfenster.</phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+    </figure>
+  </sect1>
+ 
+   <sect1 id="advanced">
+      <title>Erweitertes Palimpsest Disk Utility.</title> 
+      <para>Palimpsest Disk Utility ist ein komplexes Programm mit vielen fortgeschrittenen Funktionsmerkmalen.</para>
+
+   </sect1>
+
+</article>

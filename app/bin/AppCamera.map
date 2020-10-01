@@ -1,0 +1,2879 @@
+Archive member included because of file (symbol)
+
+/usr/lib/libc_nonshared.a(elf-init.oS)
+                              /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o (__libc_csu_init)
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .group         0x0000000000000000        0x8 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ .group         0x0000000000000000        0x8 main.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ _ZN10QByteArrayD5Ev
+                0x0000000000000000        0x8 main.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ _ZN5QListI7QStringED5Ev
+                0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ _ZN19TransparencyPainterD5Ev
+                0x0000000000000000        0xc main.o
+ _ZN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterED5Ev
+                0x0000000000000000        0xc main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ _ZN12GstLibThreadD5Ev
+                0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .group         0x0000000000000000        0x8 main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 main.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 CameraAppEngine.o
+ .group         0x0000000000000000        0x8 CameraAppEngine.o
+ .group         0x0000000000000000        0x8 CameraAppEngine.o
+ _ZN10QByteArrayD5Ev
+                0x0000000000000000        0x8 CameraAppEngine.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 CameraAppEngine.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 CameraAppEngine.o
+ .group         0x0000000000000000        0x8 CameraAppEngine.o
+ _ZN5QListI8QVariantED5Ev
+                0x0000000000000000        0x8 CameraAppEngine.o
+ .group         0x0000000000000000        0x8 CameraAppEngine.o
+ .group         0x0000000000000000        0x8 CameraAppEngine.o
+ .group         0x0000000000000000        0x8 CameraAppEngine.o
+ .group         0x0000000000000000        0x8 CameraAppEngine.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 CameraAppEngine.o
+ .text._ZN10QByteArrayD2Ev
+                0x0000000000000000       0x23 CameraAppEngine.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 CameraAppEngine.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 CameraAppEngine.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CameraAppEngine.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 CCanProvider.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 CCanProvider.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 CCanProvider.o
+ _ZN5QListI8QVariantED5Ev
+                0x0000000000000000        0x8 CCanProvider.o
+ _ZN5QListIjED5Ev
+                0x0000000000000000        0x8 CCanProvider.o
+ .group         0x0000000000000000        0x8 CCanProvider.o
+ .group         0x0000000000000000        0x8 CCanProvider.o
+ .group         0x0000000000000000        0x8 CCanProvider.o
+ .group         0x0000000000000000        0x8 CCanProvider.o
+ .group         0x0000000000000000        0x8 CCanProvider.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 CCanProvider.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 CCanProvider.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 CCanProvider.o
+ .text._ZN5QListI8QVariantED2Ev
+                0x0000000000000000       0xa5 CCanProvider.o
+ .text._ZN5QListI8QVariantE18detach_helper_growEii
+                0x0000000000000000      0x17f CCanProvider.o
+ .text._ZN5QListI8QVariantE6appendERKS0_
+                0x0000000000000000       0xaa CCanProvider.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CCanProvider.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CANInitProxy.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 CInitalData.o
+ _ZN5QListI8QVariantED5Ev
+                0x0000000000000000        0x8 CInitalData.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 CInitalData.o
+ .text._ZN5QListI8QVariantED2Ev
+                0x0000000000000000       0xa5 CInitalData.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CInitalData.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 TTSPlayer.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 TTSPlayer.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 TTSPlayer.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 TTSPlayer.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 TTSPlayer.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 TTSPlayer.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 TTSPlayer.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CRGearProxy.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 EngModeServProxy.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 GstOverlayItem.o
+ _ZN10QByteArrayD5Ev
+                0x0000000000000000        0x8 GstOverlayItem.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 GstOverlayItem.o
+ _ZN6QDebugD5Ev
+                0x0000000000000000        0x8 GstOverlayItem.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 GstOverlayItem.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 GstOverlayItem.o
+ .text._ZN10QByteArrayD2Ev
+                0x0000000000000000       0x23 GstOverlayItem.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 GstOverlayItem.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 GstOverlayItem.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 GstOverlayItem.o
+ _ZN10QByteArrayD5Ev
+                0x0000000000000000        0x8 TransparencyPainter.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 TransparencyPainter.o
+ _ZN6QDebugD5Ev
+                0x0000000000000000        0x8 TransparencyPainter.o
+ .text._ZN10QByteArrayD2Ev
+                0x0000000000000000       0x23 TransparencyPainter.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 TransparencyPainter.o
+ .text._ZN6QDebugD2Ev
+                0x0000000000000000      0x118 TransparencyPainter.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 TransparencyPainter.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 PowerManagementProxy.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 GuideLineImgFinder.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 GuideLineImgFinder.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 GuideLineImgFinder.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 CameraVideoSetting.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 CameraVideoSetting.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 CameraVideoSetting.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 CameraVideoSetting.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 CameraVideoSetting.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 CameraVideoSetting.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CameraVideoSetting.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 tw9912_register.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CameraLogger.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 GstLibThread.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 CameraUtils.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 moc_CameraAppEngine.o
+ _ZN15LocalizeTriggerD5Ev
+                0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 moc_CameraAppEngine.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .group         0x0000000000000000        0x8 moc_CameraAppEngine.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 moc_CameraAppEngine.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 moc_CameraAppEngine.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 moc_CameraAppEngine.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_CameraAppEngine.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 moc_CCanProvider.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 moc_CCanProvider.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 moc_CCanProvider.o
+ .group         0x0000000000000000        0x8 moc_CCanProvider.o
+ .group         0x0000000000000000        0x8 moc_CCanProvider.o
+ .group         0x0000000000000000        0x8 moc_CCanProvider.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 moc_CCanProvider.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 moc_CCanProvider.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 moc_CCanProvider.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_CCanProvider.o
+ _ZN12CANInitProxyD5Ev
+                0x0000000000000000        0x8 moc_CANInitProxy.o
+ .group         0x0000000000000000        0x8 moc_CANInitProxy.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 moc_CANInitProxy.o
+ _ZN5QListI8QVariantED5Ev
+                0x0000000000000000        0x8 moc_CANInitProxy.o
+ .group         0x0000000000000000        0x8 moc_CANInitProxy.o
+ .group         0x0000000000000000        0x8 moc_CANInitProxy.o
+ .group         0x0000000000000000        0x8 moc_CANInitProxy.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 moc_CANInitProxy.o
+ .text._ZN5QListI8QVariantED2Ev
+                0x0000000000000000       0xa5 moc_CANInitProxy.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_CANInitProxy.o
+ _ZN11CInitalDataD5Ev
+                0x0000000000000000        0x8 moc_CInitalData.o
+ .group         0x0000000000000000        0x8 moc_CInitalData.o
+ .group         0x0000000000000000        0x8 moc_CInitalData.o
+ .group         0x0000000000000000        0x8 moc_CInitalData.o
+ .group         0x0000000000000000        0x8 moc_CInitalData.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_CInitalData.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 moc_TTSPlayer.o
+ _ZN9TTSPlayerD5Ev
+                0x0000000000000000        0x8 moc_TTSPlayer.o
+ .group         0x0000000000000000        0x8 moc_TTSPlayer.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 moc_TTSPlayer.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 moc_TTSPlayer.o
+ .group         0x0000000000000000        0x8 moc_TTSPlayer.o
+ .group         0x0000000000000000        0x8 moc_TTSPlayer.o
+ .group         0x0000000000000000        0x8 moc_TTSPlayer.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 moc_TTSPlayer.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 moc_TTSPlayer.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 moc_TTSPlayer.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_TTSPlayer.o
+ _ZN11CRGearProxyD5Ev
+                0x0000000000000000        0x8 moc_CRGearProxy.o
+ .group         0x0000000000000000        0x8 moc_CRGearProxy.o
+ _ZN5QListI8QVariantED5Ev
+                0x0000000000000000        0x8 moc_CRGearProxy.o
+ .group         0x0000000000000000        0x8 moc_CRGearProxy.o
+ .group         0x0000000000000000        0x8 moc_CRGearProxy.o
+ .group         0x0000000000000000        0x8 moc_CRGearProxy.o
+ .text._ZN5QListI8QVariantED2Ev
+                0x0000000000000000       0xa5 moc_CRGearProxy.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_CRGearProxy.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 moc_EngModeServProxy.o
+ _ZN5QListI8QVariantED5Ev
+                0x0000000000000000        0x8 moc_EngModeServProxy.o
+ .group         0x0000000000000000        0x8 moc_EngModeServProxy.o
+ .group         0x0000000000000000        0x8 moc_EngModeServProxy.o
+ .group         0x0000000000000000        0x8 moc_EngModeServProxy.o
+ .group         0x0000000000000000        0x8 moc_EngModeServProxy.o
+ .group         0x0000000000000000        0x8 moc_EngModeServProxy.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 moc_EngModeServProxy.o
+ .text._ZN5QListI8QVariantED2Ev
+                0x0000000000000000       0xa5 moc_EngModeServProxy.o
+ .text._ZN5QListI8QVariantE18detach_helper_growEii
+                0x0000000000000000      0x17f moc_EngModeServProxy.o
+ .text._ZN5QListI8QVariantE6appendERKS0_
+                0x0000000000000000       0xaa moc_EngModeServProxy.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_EngModeServProxy.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 moc_GstOverlayItem.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 moc_GstOverlayItem.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 moc_GstOverlayItem.o
+ .group         0x0000000000000000        0x8 moc_GstOverlayItem.o
+ .group         0x0000000000000000        0x8 moc_GstOverlayItem.o
+ .group         0x0000000000000000        0x8 moc_GstOverlayItem.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 moc_GstOverlayItem.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 moc_GstOverlayItem.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 moc_GstOverlayItem.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_GstOverlayItem.o
+ _ZN19TransparencyPainterD5Ev
+                0x0000000000000000        0xc moc_TransparencyPainter.o
+ .group         0x0000000000000000        0x8 moc_TransparencyPainter.o
+ .group         0x0000000000000000        0x8 moc_TransparencyPainter.o
+ .group         0x0000000000000000        0x8 moc_TransparencyPainter.o
+ .group         0x0000000000000000        0x8 moc_TransparencyPainter.o
+ .text._ZN19TransparencyPainterD2Ev
+                0x0000000000000000       0x1d moc_TransparencyPainter.o
+ .text._ZN19TransparencyPainterD1Ev
+                0x0000000000000000       0x1a moc_TransparencyPainter.o
+ .text._ZN19TransparencyPainterD0Ev
+                0x0000000000000000       0x57 moc_TransparencyPainter.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_TransparencyPainter.o
+ _ZN5QListI8QVariantED5Ev
+                0x0000000000000000        0x8 moc_PowerManagementProxy.o
+ .group         0x0000000000000000        0x8 moc_PowerManagementProxy.o
+ .group         0x0000000000000000        0x8 moc_PowerManagementProxy.o
+ .group         0x0000000000000000        0x8 moc_PowerManagementProxy.o
+ .group         0x0000000000000000        0x8 moc_PowerManagementProxy.o
+ .text._ZN5QListI8QVariantED2Ev
+                0x0000000000000000       0xa5 moc_PowerManagementProxy.o
+ .text._ZN5QListI8QVariantE18detach_helper_growEii
+                0x0000000000000000      0x17f moc_PowerManagementProxy.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_PowerManagementProxy.o
+ _ZN18GuideLineImgFinderD5Ev
+                0x0000000000000000        0x8 moc_GuideLineImgFinder.o
+ .group         0x0000000000000000        0x8 moc_GuideLineImgFinder.o
+ .group         0x0000000000000000        0x8 moc_GuideLineImgFinder.o
+ .group         0x0000000000000000        0x8 moc_GuideLineImgFinder.o
+ .group         0x0000000000000000        0x8 moc_GuideLineImgFinder.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_GuideLineImgFinder.o
+ _ZN7QStringD5Ev
+                0x0000000000000000        0x8 moc_CameraVideoSetting.o
+ _ZN7QStringC5EPKc
+                0x0000000000000000        0x8 moc_CameraVideoSetting.o
+ _ZN18__stVARIANT_STRINGD5Ev
+                0x0000000000000000        0x8 moc_CameraVideoSetting.o
+ .group         0x0000000000000000        0x8 moc_CameraVideoSetting.o
+ .group         0x0000000000000000        0x8 moc_CameraVideoSetting.o
+ .group         0x0000000000000000        0x8 moc_CameraVideoSetting.o
+ .text._ZN7QStringD2Ev
+                0x0000000000000000       0x23 moc_CameraVideoSetting.o
+ .text._ZN7QStringC2EPKc
+                0x0000000000000000       0x21 moc_CameraVideoSetting.o
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000       0x74 moc_CameraVideoSetting.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_CameraVideoSetting.o
+ .group         0x0000000000000000        0x8 moc_CameraLogger.o
+ .group         0x0000000000000000        0x8 moc_CameraLogger.o
+ .group         0x0000000000000000        0x8 moc_CameraLogger.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_CameraLogger.o
+ _ZN12GstLibThreadD5Ev
+                0x0000000000000000        0x8 moc_GstLibThread.o
+ .group         0x0000000000000000        0x8 moc_GstLibThread.o
+ .group         0x0000000000000000        0x8 moc_GstLibThread.o
+ .group         0x0000000000000000        0x8 moc_GstLibThread.o
+ .group         0x0000000000000000        0x8 moc_GstLibThread.o
+ .text._ZN12GstLibThreadD2Ev
+                0x0000000000000000       0x60 moc_GstLibThread.o
+ .text._ZN12GstLibThreadD0Ev
+                0x0000000000000000       0x68 moc_GstLibThread.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 moc_GstLibThread.o
+ .group         0x0000000000000000        0x8 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0xc /usr/lib/libc_nonshared.a(elf-init.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+ .group         0x0000000000000000        0x8 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+LOAD /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+LOAD /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+LOAD main.o
+LOAD CameraAppEngine.o
+LOAD CCanProvider.o
+LOAD CANInitProxy.o
+LOAD CInitalData.o
+LOAD TTSPlayer.o
+LOAD CRGearProxy.o
+LOAD EngModeServProxy.o
+LOAD GstOverlayItem.o
+LOAD TransparencyPainter.o
+LOAD PowerManagementProxy.o
+LOAD GuideLineImgFinder.o
+LOAD CameraVideoSetting.o
+LOAD tw9912_register.o
+LOAD CameraLogger.o
+LOAD GstLibThread.o
+LOAD CameraUtils.o
+LOAD moc_CameraAppEngine.o
+LOAD moc_CCanProvider.o
+LOAD moc_CANInitProxy.o
+LOAD moc_CInitalData.o
+LOAD moc_TTSPlayer.o
+LOAD moc_CRGearProxy.o
+LOAD moc_EngModeServProxy.o
+LOAD moc_GstOverlayItem.o
+LOAD moc_TransparencyPainter.o
+LOAD moc_PowerManagementProxy.o
+LOAD moc_GuideLineImgFinder.o
+LOAD moc_CameraVideoSetting.o
+LOAD moc_CameraLogger.o
+LOAD moc_GstLibThread.o
+LOAD /app/lib/libappframework.so
+LOAD /app/lib/libDHAVN_LogUtil.so
+LOAD /app/lib/libDHAVN_LogEnabler.so
+LOAD /app/lib/libDHAVN_QCANController.so
+LOAD /app/lib/libathena.so
+LOAD /usr/lib/libasound.so
+LOAD /app/lib/libDualDisplayHelper.so
+LOAD /usr/lib/libgstinterfaces-0.10.so
+LOAD /usr/lib/libgstreamer-0.10.so
+LOAD /usr/lib/libgobject-2.0.so
+LOAD /usr/lib/libgmodule-2.0.so
+LOAD /usr/lib/libxml2.so
+LOAD /usr/lib/libgthread-2.0.so
+LOAD /usr/lib/librt.so
+LOAD /usr/lib/libglib-2.0.so
+LOAD /usr/lib/libQtDeclarative.so
+LOAD /usr/lib/libQtDBus.so
+LOAD /usr/lib/libQtOpenGL.so
+LOAD /usr/lib/libQtGui.so
+LOAD /usr/lib/libQtCore.so
+LOAD /usr/lib/libGLESv2.so
+LOAD /usr/lib/libpthread.so
+START GROUP
+LOAD /lib/libpthread.so.0
+LOAD /usr/lib/libpthread_nonshared.a
+END GROUP
+LOAD /usr/lib/libstdc++.so
+LOAD /usr/lib/libm.so
+LOAD /usr/lib/libgcc_s.so
+LOAD /usr/lib/gcc/i586-meego-linux/4.7.2/libgcc.a
+LOAD /usr/lib/libpthread.so
+START GROUP
+LOAD /lib/libpthread.so.0
+LOAD /usr/lib/libpthread_nonshared.a
+END GROUP
+LOAD /usr/lib/libc.so
+START GROUP
+LOAD /lib/libc.so.6
+LOAD /usr/lib/libc_nonshared.a
+LOAD /lib/ld-linux.so.2
+END GROUP
+LOAD /usr/lib/libgcc_s.so
+LOAD /usr/lib/gcc/i586-meego-linux/4.7.2/libgcc.a
+LOAD /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+LOAD /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+                0x0000000008048000                PROVIDE (__executable_start, 0x8048000)
+                0x0000000008048134                . = (0x8048000 + SIZEOF_HEADERS)
+
+.interp         0x0000000008048134       0x13
+ *(.interp)
+ .interp        0x0000000008048134       0x13 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.note.ABI-tag   0x0000000008048148       0x20
+ .note.ABI-tag  0x0000000008048148       0x20 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.note.gnu.build-id
+                0x0000000008048168       0x24
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000008048168       0x24 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.hash           0x000000000804818c     0x126c
+ *(.hash)
+ .hash          0x000000000804818c     0x126c /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym         0x00000000080493f8     0x1940
+ *(.dynsym)
+ .dynsym        0x00000000080493f8     0x1940 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.dynstr         0x000000000804ad38     0x34a5
+ *(.dynstr)
+ .dynstr        0x000000000804ad38     0x34a5 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.gnu.version    0x000000000804e1de      0x328
+ *(.gnu.version)
+ .gnu.version   0x000000000804e1de      0x328 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.gnu.version_d  0x000000000804e508        0x0 load address 0x000000000804e506
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.gnu.version_r  0x000000000804e508      0x100
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x000000000804e508      0x100 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.rel.dyn        0x000000000804e608       0xa0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN7QStringD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z21qMetaTypeDeleteHelperIP19TransparencyPainterEvPT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z21qMetaTypeDeleteHelperI24QDeclarativeListPropertyI19TransparencyPainterEEvPT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z24qMetaTypeConstructHelperI5EventEPvPKT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z19qMetaTypeLoadHelperI5EventEvR11QDataStreamPT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z19qMetaTypeSaveHelperI5EventEvR11QDataStreamPKT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z21qDBusDemarshallHelperI5EventEvRK13QDBusArgumentPT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z19qDBusMarshallHelperI5EventEvR13QDBusArgumentPKT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z24qMetaTypeConstructHelperIP19TransparencyPainterEPvPKT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z24qMetaTypeConstructHelperI24QDeclarativeListPropertyI19TransparencyPainterEEPvPKT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN19QDeclarativePrivate10createIntoI19TransparencyPainterEEvPv
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN10QByteArrayD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN7QStringC2EPKc
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN7QStringaSEPKc
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN18__stVARIANT_STRINGD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN11QMetaTypeIdI5EventE14qt_metatype_idEv
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListI7QStringED2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z15qmlRegisterTypeI19TransparencyPainterEiPKciiS2_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListI7QStringE18detach_helper_growEii
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListI7QStringE6appendERKS0_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN19TransparencyPainterD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterED2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterED0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN19TransparencyPainterD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN12GstLibThreadD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text.startup
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN12GstLibThreadD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z21qMetaTypeDeleteHelperI13QDBusArgumentEvPT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z24qMetaTypeConstructHelperI13QDBusArgumentEPvPKT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._Z17qRegisterMetaTypeI13QDBusArgumentEiPKcPT_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListI8QVariantE18detach_helper_growEii
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListI8QVariantE6appendERKS0_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListI8QVariantE13detach_helperEi
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListIjED2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListIjE18detach_helper_growEii
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListIjE6appendERKj
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN5QListIjEpLERKS0_
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN6QDebugD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN15LocalizeTriggerD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN15LocalizeTriggerD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN12CANInitProxyD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN12CANInitProxyD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN11CInitalDataD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN11CInitalDataD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN9TTSPlayerD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN9TTSPlayerD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN11CRGearProxyD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN11CRGearProxyD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN18GuideLineImgFinderD2Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.text._ZN18GuideLineImgFinderD0Ev
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ .rel.rodata._ZTVN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterEE
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTIN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterEE
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata    0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI15CameraAppEngine
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI15LocalizeTrigger
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV15CameraAppEngine
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV15LocalizeTrigger
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI12CCANProvider
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV12CCANProvider
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI12CANInitProxy
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV12CANInitProxy
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI11CInitalData
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV11CInitalData
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI9TTSPlayer
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV9TTSPlayer
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI11CRGearProxy
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV11CRGearProxy
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI21ComLgeCarEngInterface
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV21ComLgeCarEngInterface
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI14GstOverlayItem
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV14GstOverlayItem
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI19TransparencyPainter
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV19TransparencyPainter
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI20PowerManagementProxy
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV20PowerManagementProxy
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI18GuideLineImgFinder
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV18GuideLineImgFinder
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI18CameraVideoSetting
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV18CameraVideoSetting
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI12CameraLogger
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV12CameraLogger
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTI12GstLibThread
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .rel.rodata._ZTV12GstLibThread
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x000000000804e608        0x8 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ *(.rel.sharable_data .rel.sharable_data.* .rel.gnu.linkonce.shrd.*)
+ *(.rel.sharable_bss .rel.sharable_bss.* .rel.gnu.linkonce.shrb.*)
+ .rel.sharable_bss
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ .rel.bss       0x000000000804e610       0x98 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ *(.rel.ifunc)
+ .rel.eh_frame  0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.rel.plt        0x000000000804e6a8      0xb18
+ *(.rel.plt)
+ .rel.plt       0x000000000804e6a8      0xb18 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x000000000804f1c0                PROVIDE (__rel_iplt_start, .)
+ *(.rel.iplt)
+ .rel.iplt      0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x000000000804f1c0                PROVIDE (__rel_iplt_end, .)
+
+.init           0x000000000804f1c0       0x2d
+ *(.init)
+ .init          0x000000000804f1c0       0x1e /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+                0x000000000804f1c0                _init
+ .init          0x000000000804f1de        0x5 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ .init          0x000000000804f1e3        0x5 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+ .init          0x000000000804f1e8        0x5 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+
+.plt            0x000000000804f1f0     0x1640
+ *(.plt)
+ .plt           0x000000000804f1f0     0x1640 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x000000000804f200                snd_pcm_writei@@ALSA_0.9
+                0x000000000804f210                QByteArray::append(char)
+                0x000000000804f220                QGraphicsItem::mouseDoubleClickEvent(QGraphicsSceneMouseEvent*)
+                0x000000000804f230                QColor::operator=(QColor const&)
+                0x000000000804f240                QMutex::QMutex(QMutex::RecursionMode)
+                0x000000000804f250                QDeclarativeView::setSource(QUrl const&)
+                0x000000000804f260                QVariant::constData() const
+                0x000000000804f270                __libc_start_main@@GLIBC_2.0
+                0x000000000804f280                g_value_set_boolean
+                0x000000000804f290                Event::Event()
+                0x000000000804f2a0                Logger::Instance()
+                0x000000000804f2b0                DualDisplayHelper::SetDirectTint(unsigned int, DualDisplayHelper::MEDIA_DISPLAY)
+                0x000000000804f2c0                operator<<(QDataStream&, Event const&)
+                0x000000000804f2d0                QDeclarativeItem::componentComplete()
+                0x000000000804f2e0                snd_pcm_close@@ALSA_0.9
+                0x000000000804f2f0                QDBusConnection::sessionBus()
+                0x000000000804f300                g_type_check_instance_cast
+                0x000000000804f310                QWaitCondition::wakeAll()
+                0x000000000804f320                QTimer::setInterval(int)
+                0x000000000804f330                QSharedMemory::attach(QSharedMemory::AccessMode)
+                0x000000000804f340                sigemptyset@@GLIBC_2.0
+                0x000000000804f350                QFont::insertSubstitutions(QString const&, QStringList const&)
+                0x000000000804f360                QGraphicsItem::focusOutEvent(QFocusEvent*)
+                0x000000000804f370                QTextStream::operator<<(QString const&)
+                0x000000000804f380                QByteArray::realloc(int)
+                0x000000000804f390                glClearColor
+                0x000000000804f3a0                operator<<(QDebug, QColor const&)
+                0x000000000804f3b0                QGraphicsItem::mouseReleaseEvent(QGraphicsSceneMouseEvent*)
+                0x000000000804f3c0                QDeclarativeView::QDeclarativeView(QWidget*)
+                0x000000000804f3d0                qInstallMsgHandler(void (*)(QtMsgType, char const*))
+                0x000000000804f3e0                non-virtual thunk to QDeclarativeItem::inputMethodEvent(QInputMethodEvent*)
+                0x000000000804f3f0                QTimer::start()
+                0x000000000804f400                QWidget::setAutoFillBackground(bool)
+                0x000000000804f410                QThread::usleep(unsigned long)
+                0x000000000804f420                QDBusMessage::arguments() const
+                0x000000000804f430                exit@@GLIBC_2.0
+                0x000000000804f440                gst_caps_from_string
+                0x000000000804f450                QGraphicsItem::wheelEvent(QGraphicsSceneWheelEvent*)
+                0x000000000804f460                AppEngineQML::HandleEvent(Event&)
+                0x000000000804f470                AppEngineBase::SetAutoScreenVisibility(bool)
+                0x000000000804f480                close@@GLIBC_2.0
+                0x000000000804f490                g_signal_connect_data
+                0x000000000804f4a0                memcpy@@GLIBC_2.0
+                0x000000000804f4b0                QGraphicsItem::supportsExtension(QGraphicsItem::Extension) const
+                0x000000000804f4c0                snd_pcm_hw_params_set_channels@@ALSA_0.9
+                0x000000000804f4d0                AppEngineQML::AppEngineQML(QDeclarativeView*, QString, QObject*, AppEngineBase::APP_ENGINE_TYPE)
+                0x000000000804f4e0                AppEngineQML::Reserved_1()
+                0x000000000804f4f0                QSharedMemory::lock()
+                0x000000000804f500                QObject::childEvent(QChildEvent*)
+                0x000000000804f510                operator<<(QDBusArgument&, Event const&)
+                0x000000000804f520                QGLFormat::~QGLFormat()
+                0x000000000804f530                snd_pcm_hw_params_sizeof@@ALSA_0.9
+                0x000000000804f540                g_value_get_boolean
+                0x000000000804f550                QTextStream::QTextStream(QString*, QFlags<QIODevice::OpenModeFlag>)
+                0x000000000804f560                QGLWidget::QGLWidget(QGLFormat const&, QWidget*, QGLWidget const*, QFlags<Qt::WindowType>)
+                0x000000000804f570                QSharedMemory::isAttached() const
+                0x000000000804f580                open@@GLIBC_2.0
+                0x000000000804f590                QGraphicsItem::hoverEnterEvent(QGraphicsSceneHoverEvent*)
+                0x000000000804f5a0                QColor::greenF() const
+                0x000000000804f5b0                _gst_debug_bin_to_dot_file
+                0x000000000804f5c0                QThread::qt_metacast(char const*)
+                0x000000000804f5d0                QDBusPendingReplyData::argumentAt(int) const
+                0x000000000804f5e0                usleep@@GLIBC_2.0
+                0x000000000804f5f0                QTranslator::~QTranslator()
+                0x000000000804f600                QGraphicsItem::type() const
+                0x000000000804f610                QVariant::toString() const
+                0x000000000804f620                raise@@GLIBC_2.0
+                0x000000000804f630                gst_bin_get_type
+                0x000000000804f640                QDBusAbstractInterface::QDBusAbstractInterface(QString const&, QString const&, char const*, QDBusConnection const&, QObject*)
+                0x000000000804f650                ioctl@@GLIBC_2.0
+                0x000000000804f660                QObject::timerEvent(QTimerEvent*)
+                0x000000000804f670                gst_message_parse_state_changed
+                0x000000000804f680                QTextStream::operator<<(char)
+                0x000000000804f690                QGraphicsItem::shape() const
+                0x000000000804f6a0                QDBusMessage::QDBusMessage()
+                0x000000000804f6b0                AppEngineQML::Reserved_2()
+                0x000000000804f6c0                QUrl::QUrl(QString const&)
+                0x000000000804f6d0                QDeclarativeItem::QDeclarativeItem(QDeclarativeItem*)
+                0x000000000804f6e0                AppEngineBase::SetAppArgs(int, char**)
+                0x000000000804f6f0                QDBusMessage::QDBusMessage(QDBusMessage const&)
+                0x000000000804f700                gst_x_overlay_set_window_handle
+                0x000000000804f710                QObject::customEvent(QEvent*)
+                0x000000000804f720                CQCANController_ApplnTxRx::Init()
+                0x000000000804f740                AppEngineBase::SetGstPipelinesStatus(int, bool)
+                0x000000000804f750                QGraphicsItem::setFlag(QGraphicsItem::GraphicsItemFlag, bool)
+                0x000000000804f760                QTranslator::QTranslator(QObject*)
+                0x000000000804f770                gst_bin_add_many
+                0x000000000804f780                QGraphicsItem::setExtension(QGraphicsItem::Extension, QVariant const&)
+                0x000000000804f790                athenaClose
+                0x000000000804f7a0                gst_message_get_structure
+                0x000000000804f7b0                QTextStream::operator<<(unsigned short)
+                0x000000000804f7c0                QDeclarativeItem::keyReleaseEvent(QKeyEvent*)
+                0x000000000804f7d0                dlopen@@GLIBC_2.1
+                0x000000000804f7e0                QVariant::QVariant(bool)
+                0x000000000804f7f0                QColor::invalidate()
+                0x000000000804f800                Logger::Log(QString const&, Logger::LOG_PRIORITY)
+                0x000000000804f810                AppEngineQML::~AppEngineQML()
+                0x000000000804f820                QDeclarativeContext::setContextProperty(QString const&, QObject*)
+                0x000000000804f830                QDeclarativeItem::inputMethodQuery(Qt::InputMethodQuery) const
+                0x000000000804f840                gst_bus_add_signal_watch
+                0x000000000804f850                QString::number(int, int)
+                0x000000000804f860                strstr@@GLIBC_2.0
+                0x000000000804f870                snd_pcm_hw_params_any@@ALSA_0.9
+                0x000000000804f880                QDBusAbstractInterface::asyncCallWithArgumentList(QString const&, QList<QVariant> const&)
+                0x000000000804f890                sigaction@@GLIBC_2.0
+                0x000000000804f8a0                QPainter::endNativePainting()
+                0x000000000804f8b0                QString::fromAscii(char const*, int)
+                0x000000000804f8c0                QGraphicsItem::contains(QPointF const&) const
+                0x000000000804f8d0                DualDisplayHelper::BlendOverlayFb(int, DualDisplayHelper::EDisplayTarget)
+                0x000000000804f8e0                snd_pcm_hw_params_set_buffer_size_near@@ALSA_0.9.0rc4
+                0x000000000804f8f0                non-virtual thunk to QDeclarativeItem::classBegin()
+                0x000000000804f900                QGraphicsItem::update(QRectF const&)
+                0x000000000804f910                AppEngineBase::NotifyUISHCommon(Event&)
+                0x000000000804f920                QString::fromAscii_helper(char const*, int)
+                0x000000000804f930                QSharedMemory::setKey(QString const&)
+                0x000000000804f940                QDeclarativeItem::itemChange(QGraphicsItem::GraphicsItemChange, QVariant const&)
+                0x000000000804f950                printf@@GLIBC_2.0
+                0x000000000804f960                snd_pcm_hw_params@@ALSA_0.9
+                0x000000000804f970                non-virtual thunk to QDeclarativeItem::keyReleaseEvent(QKeyEvent*)
+                0x000000000804f980                operator delete(void*)@@GLIBCXX_3.4
+                0x000000000804f990                QDeclarativePropertyMap::value(QString const&) const
+                0x000000000804f9a0                QWidget::setStyleSheet(QString const&)
+                0x000000000804f9b0                QDateTime::toString(QString const&) const
+                0x000000000804f9c0                QDeclarativeItem::geometryChanged(QRectF const&, QRectF const&)
+                0x000000000804f9d0                gst_element_get_state
+                0x000000000804f9e0                QMetaType::registerTypedef(char const*, int)
+                0x000000000804f9f0                QDBusAbstractInterface::~QDBusAbstractInterface()
+                0x000000000804fa00                QDBusAbstractInterface::connectNotify(char const*)
+                0x000000000804fa10                glEnable
+                0x000000000804fa20                QGraphicsItem::setVisible(bool)
+                0x000000000804fa30                QObject::connectNotify(char const*)
+                0x000000000804fa40                glClear
+                0x000000000804fa50                QGraphicsItem::isVisible() const
+                0x000000000804fa60                snd_pcm_hw_params_get_period_size@@ALSA_0.9.0rc4
+                0x000000000804fa70                QVariant::~QVariant()
+                0x000000000804fa80                DualDisplayHelper::SetDirectHue(unsigned int, DualDisplayHelper::MEDIA_DISPLAY)
+                0x000000000804fa90                qt_message_output(QtMsgType, char const*)
+                0x000000000804faa0                QWidget::raise()
+                0x000000000804fab0                QTranslator::load(QString const&, QString const&, QString const&, QString const&)
+                0x000000000804fac0                operator new(unsigned int)@@GLIBCXX_3.4
+                0x000000000804fad0                QTimer::start(int)
+                0x000000000804fae0                QString::compare(QString const&) const
+                0x000000000804faf0                glScissor
+                0x000000000804fb00                __gxx_personality_v0@@CXXABI_1.3
+                0x000000000804fb10                QCoreApplication::setApplicationVersion(QString const&)
+                0x000000000804fb20                snprintf@@GLIBC_2.0
+                0x000000000804fb30                gst_element_link_many
+                0x000000000804fb40                CQCANController_ApplnTxRx::CQCANController_ApplnTxRx(QObject*)
+                0x000000000804fb50                QGraphicsView::setViewportUpdateMode(QGraphicsView::ViewportUpdateMode)
+                0x000000000804fb60                QObject::QObject(QObject*)
+                0x000000000804fb70                fputc@@GLIBC_2.0
+                0x000000000804fb80                Event::Event(int, APP_ID_T, APP_ID_T, QByteArray const&)
+                0x000000000804fb90                AppEngineQML::GetCurrentView()
+                0x000000000804fba0                QObject::~QObject()
+                0x000000000804fbb0                QColor::alphaF() const
+                0x000000000804fbc0                QColor::blueF() const
+                0x000000000804fbd0                QColor::setRgba(unsigned int)
+                0x000000000804fbe0                non-virtual thunk to QDeclarativeItem::itemChange(QGraphicsItem::GraphicsItemChange, QVariant const&)
+                0x000000000804fbf0                QVariant::QVariant(QString const&)
+                0x000000000804fc00                non-virtual thunk to QDeclarativeItem::componentComplete()
+                0x000000000804fc10                QDeclarativeView::rootContext() const
+                0x000000000804fc20                gst_pipeline_get_type
+                0x000000000804fc30                QWaitCondition::QWaitCondition()
+                0x000000000804fc40                unsetenv@@GLIBC_2.0
+                0x000000000804fc50                QString::operator==(QString const&) const
+                0x000000000804fc60                _Unwind_Resume@@GCC_3.0
+                0x000000000804fc70                QApplication::QApplication(int&, char**, int)
+                0x000000000804fc80                AppEngineBase::ConnectToUISH()
+                0x000000000804fc90                qFree(void*)
+                0x000000000804fca0                QTextStream::~QTextStream()
+                0x000000000804fcb0                QListData::detach_grow(int*, int)
+                0x000000000804fcc0                non-virtual thunk to QDeclarativeItem::boundingRect() const
+                0x000000000804fcd0                QDBusConnection::connect(QString const&, QString const&, QString const&, QString const&, QObject*, char const*)
+                0x000000000804fce0                QDBusArgument::operator>>(QByteArray&) const
+                0x000000000804fcf0                AppEngineBase::GetDisplayPlane(APP_ID_T)
+                0x000000000804fd00                gst_x_overlay_get_type
+                0x000000000804fd10                QObject::connect(QObject const*, char const*, QObject const*, char const*, Qt::ConnectionType)
+                0x000000000804fd20                memset@@GLIBC_2.0
+                0x000000000804fd30                QDBusArgument::QDBusArgument(QDBusArgument const&)
+                0x000000000804fd40                QDeclarativeItem::inputMethodEvent(QInputMethodEvent*)
+                0x000000000804fd50                gst_element_factory_make
+                0x000000000804fd60                QGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent*)
+                0x000000000804fd70                QDirIterator::QDirIterator(QString const&, QFlags<QDirIterator::IteratorFlag>)
+                0x000000000804fd80                snd_pcm_hw_params_set_rate_near@@ALSA_0.9.0rc4
+                0x000000000804fd90                QDeclarativePropertyMap::insert(QString const&, QVariant const&)
+                0x000000000804fda0                QDeclarativePrivate::qdeclarativeelement_destructor(QObject*)
+                0x000000000804fdb0                athenaSendObject
+                0x000000000804fdc0                QDeclarativeItem::qt_metacall(QMetaObject::Call, int, void**)
+                0x000000000804fdd0                QGLFormat::setSampleBuffers(bool)
+                0x000000000804fde0                QByteArray::QByteArray(char const*)
+                0x000000000804fdf0                QDBusPendingCall::~QDBusPendingCall()
+                0x000000000804fe00                QMutex::~QMutex()
+                0x000000000804fe10                QWidget::winId() const
+                0x000000000804fe20                QTime::elapsed() const
+                0x000000000804fe30                AppEngineQML::qt_metacall(QMetaObject::Call, int, void**)
+                0x000000000804fe40                QString::operator==(QLatin1String const&) const
+                0x000000000804fe50                Event::GetEventId() const
+                0x000000000804fe60                QTimer::QTimer(QObject*)
+                0x000000000804fe70                QDirIterator::next()
+                0x000000000804fe80                QString::split(QString const&, QString::SplitBehavior, Qt::CaseSensitivity) const
+                0x000000000804fe90                gst_implements_interface_cast
+                0x000000000804fea0                QKeyEvent::QKeyEvent(QEvent::Type, int, QFlags<Qt::KeyboardModifier>, QString const&, bool, unsigned short)
+                0x000000000804feb0                QGraphicsItem::advance(int)
+                0x000000000804fec0                QDBusAbstractInterface::qt_metacall(QMetaObject::Call, int, void**)
+                0x000000000804fed0                gst_pipeline_get_bus
+                0x000000000804fee0                QThread::qt_metacall(QMetaObject::Call, int, void**)
+                0x000000000804fef0                QDeclarativeItem::boundingRect() const
+                0x000000000804ff00                QDirIterator::~QDirIterator()
+                0x000000000804ff10                snd_pcm_open@@ALSA_0.9
+                0x000000000804ff20                gst_init
+                0x000000000804ff30                QSharedMemory::QSharedMemory(QObject*)
+                0x000000000804ff40                QDBusMessage::setArguments(QList<QVariant> const&)
+                0x000000000804ff50                setenv@@GLIBC_2.0
+                0x000000000804ff60                snd_strerror@@ALSA_0.9
+                0x000000000804ff70                QMetaType::registerType(char const*, void (*)(void*), void* (*)(void const*))
+                0x000000000804ff80                QDBusPendingReplyData::assign(QDBusPendingCall const&)
+                0x000000000804ff90                QObject::deleteLater()
+                0x000000000804ffa0                QCoreApplication::postEvent(QObject*, QEvent*)
+                0x000000000804ffb0                QCoreApplication::installTranslator(QTranslator*)
+                0x000000000804ffc0                QString::toUInt(bool*, int) const
+                0x000000000804ffd0                snd_pcm_hw_params_set_format@@ALSA_0.9
+                0x000000000804ffe0                QListData::detach(int)
+                0x000000000804fff0                g_value_init
+                0x0000000008050000                QTextStream::operator<<(int)
+                0x0000000008050010                QDBusPendingCall::isError() const
+                0x0000000008050020                QGraphicsItem::collidesWithPath(QPainterPath const&, Qt::ItemSelectionMode) const
+                0x0000000008050030                __cxa_atexit@@GLIBC_2.1.3
+                0x0000000008050040                free@@GLIBC_2.0
+                0x0000000008050050                QWaitCondition::wait(QMutex*, unsigned long)
+                0x0000000008050060                QDBusArgument::~QDBusArgument()
+                0x0000000008050070                QVariant::QVariant(char const*)
+                0x0000000008050080                QDeclarativeItem::event(QEvent*)
+                0x0000000008050090                QObject::qt_metacast(char const*)
+                0x00000000080500a0                AppEngineBase::NotifyWhenGstPipelinesAvailable(int)
+                0x00000000080500b0                QByteArray::QByteArray(char const*, int)
+                0x00000000080500c0                QPainter::beginNativePainting()
+                0x00000000080500d0                QDBusMessage::~QDBusMessage()
+                0x00000000080500e0                QGLFormat::defaultFormat()
+                0x00000000080500f0                QDeclarativeItem::sceneEvent(QEvent*)
+                0x0000000008050100                AppEngineQML::HandleEventRear(Event&)
+                0x0000000008050110                snd_pcm_hw_params_set_period_size_near@@ALSA_0.9.0rc4
+                0x0000000008050120                QTextStream::operator<<(char const*)
+                0x0000000008050130                QDBusMessage::createMethodCall(QString const&, QString const&, QString const&, QString const&)
+                0x0000000008050140                QTextStream::operator<<(unsigned int)
+                0x0000000008050150                non-virtual thunk to QDeclarativeItem::keyPressEvent(QKeyEvent*)
+                0x0000000008050160                fgetc@@GLIBC_2.0
+                0x0000000008050170                read@@GLIBC_2.0
+                0x0000000008050180                QGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent*)
+                0x0000000008050190                QByteArray::append(QByteArray const&)
+                0x00000000080501a0                QGraphicsItem::focusInEvent(QFocusEvent*)
+                0x00000000080501b0                fclose@@GLIBC_2.1
+                0x00000000080501c0                QApplication::exec()
+                0x00000000080501d0                DualDisplayHelper::SetDirectBrightness(unsigned int, DualDisplayHelper::MEDIA_DISPLAY)
+                0x00000000080501e0                QObject::disconnect(QObject const*, char const*, QObject const*, char const*)
+                0x00000000080501f0                Event::~Event()
+                0x0000000008050200                QDBusMessage::operator=(QDBusMessage const&)
+                0x0000000008050210                QDBusPendingReplyData::setMetaTypes(int, int const*)
+                0x0000000008050220                QMetaObject::activate(QObject*, QMetaObject const*, int, void**)
+                0x0000000008050230                QGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent*)
+                0x0000000008050240                Event::Event(Event const&)
+                0x0000000008050250                AppEngineBase::eventFilter(QObject*, QEvent*)
+                0x0000000008050260                QDBusPendingCallWatcher::QDBusPendingCallWatcher(QDBusPendingCall const&, QObject*)
+                0x0000000008050270                QObject::eventFilter(QObject*, QEvent*)
+                0x0000000008050280                QDateTime::currentDateTime()
+                0x0000000008050290                QThread::QThread(QObject*)
+                0x00000000080502a0                glDisable
+                0x00000000080502b0                QTimer::~QTimer()
+                0x00000000080502c0                QDirIterator::fileName() const
+                0x00000000080502d0                QVariant::QVariant(int)
+                0x00000000080502e0                QMutex::lock()
+                0x00000000080502f0                QUrl::~QUrl()
+                0x0000000008050300                fopen@@GLIBC_2.1
+                0x0000000008050310                QGraphicsItem::hoverLeaveEvent(QGraphicsSceneHoverEvent*)
+                0x0000000008050320                QDBusMetaType::registerMarshallOperators(int, void (*)(QDBusArgument&, void const*), void (*)(QDBusArgument const&, void*))
+                0x0000000008050330                QAbstractScrollArea::setViewport(QWidget*)
+                0x0000000008050340                QDBusPendingReplyData::QDBusPendingReplyData()
+                0x0000000008050350                QVariant::QVariant(QVariant const&)
+                0x0000000008050360                malloc@@GLIBC_2.0
+                0x0000000008050370                QByteArray::append(char const*)
+                0x0000000008050380                QSharedMemory::detach()
+                0x0000000008050390                QObject::event(QEvent*)
+                0x00000000080503a0                QDBusArgument::QDBusArgument()
+                0x00000000080503b0                QGraphicsItem::dragMoveEvent(QGraphicsSceneDragDropEvent*)
+                0x00000000080503c0                QCoreApplication::processEvents(QFlags<QEventLoop::ProcessEventsFlag>)
+                0x00000000080503d0                QString::append(QString const&)
+                0x00000000080503e0                AppEngineBase::NotifyUISH(Event&, DISPLAY_T)
+                0x00000000080503f0                QGraphicsItem::dragLeaveEvent(QGraphicsSceneDragDropEvent*)
+                0x0000000008050400                QWaitCondition::~QWaitCondition()
+                0x0000000008050410                QListData::append()
+                0x0000000008050420                QSharedMemory::data()
+                0x0000000008050430                QDeclarativeItem::keyPressEvent(QKeyEvent*)
+                0x0000000008050440                QDeclarativeItem::qt_metacast(char const*)
+                0x0000000008050450                QDateTime::~QDateTime()
+                0x0000000008050460                QMutex::unlock()
+                0x0000000008050470                QString::operator=(QString const&)
+                0x0000000008050480                AppEngineQML::qt_metacast(char const*)
+                0x0000000008050490                QDBusConnection::~QDBusConnection()
+                0x00000000080504a0                QColor::redF() const
+                0x00000000080504b0                QDeclarativePropertyMap::QDeclarativePropertyMap(QObject*)
+                0x00000000080504c0                QMetaType::registerStreamOperators(int, void (*)(QDataStream&, void const*), void (*)(QDataStream&, void*))
+                0x00000000080504d0                Event::GetCommand() const
+                0x00000000080504e0                QVariant::toInt(bool*) const
+                0x00000000080504f0                QGraphicsItem::isObscuredBy(QGraphicsItem const*) const
+                0x0000000008050500                QDeclarativeItem::classBegin()
+                0x0000000008050510                QSharedMemory::~QSharedMemory()
+                0x0000000008050520                QString::toAscii() const
+                0x0000000008050530                snd_pcm_drain@@ALSA_0.9
+                0x0000000008050540                QString::toLocal8Bit() const
+                0x0000000008050550                QString::free(QString::Data*)
+                0x0000000008050560                QDBusAbstractInterface::disconnectNotify(char const*)
+                0x0000000008050570                QObject::disconnectNotify(char const*)
+                0x0000000008050580                QGraphicsItem::dropEvent(QGraphicsSceneDragDropEvent*)
+                0x0000000008050590                snd_pcm_hw_params_set_access@@ALSA_0.9
+                0x00000000080505a0                QWidget::repaint()
+                0x00000000080505b0                QWidget::setAttribute(Qt::WidgetAttribute, bool)
+                0x00000000080505c0                DualDisplayHelper::SetDirectContrast(unsigned int, DualDisplayHelper::MEDIA_DISPLAY)
+                0x00000000080505d0                DualDisplayHelper::DualDisplayHelper()
+                0x00000000080505e0                QListData::append2(QListData const&)
+                0x00000000080505f0                QThread::start(QThread::Priority)
+                0x0000000008050600                snd_pcm_prepare@@ALSA_0.9
+                0x0000000008050610                QGraphicsItem::contextMenuEvent(QGraphicsSceneContextMenuEvent*)
+                0x0000000008050620                QThread::~QThread()
+                0x0000000008050630                QDBusAbstractInterface::qt_metacast(char const*)
+                0x0000000008050640                gst_element_set_state
+                0x0000000008050650                QSharedMemory::error() const
+                0x0000000008050660                QDeclarativePrivate::qmlregister(QDeclarativePrivate::RegistrationType, void*)
+                0x0000000008050670                QGraphicsItem::dragEnterEvent(QGraphicsSceneDragDropEvent*)
+                0x0000000008050680                QObject::qt_metacall(QMetaObject::Call, int, void**)
+                0x0000000008050690                non-virtual thunk to QDeclarativeItem::sceneEvent(QEvent*)
+                0x00000000080506a0                non-virtual thunk to QDeclarativeItem::inputMethodQuery(Qt::InputMethodQuery) const
+                0x00000000080506b0                QTimer::stop()
+                0x00000000080506c0                g_object_set_property
+                0x00000000080506d0                QTime::start()
+                0x00000000080506e0                g_object_set
+                0x00000000080506f0                operator>>(QDBusArgument const&, Event&)
+                0x0000000008050700                QDirIterator::hasNext() const
+                0x0000000008050710                QSharedMemory::unlock()
+                0x0000000008050720                QGraphicsItem::collidesWithItem(QGraphicsItem const*, Qt::ItemSelectionMode) const
+                0x0000000008050730                Event::Data() const
+                0x0000000008050740                QVariant::QVariant(int, void const*, unsigned int)
+                0x0000000008050750                AppEngineBase::SetAppDisplaySetting(AppEngineBase::APP_DISPLAY_SETTING_T, unsigned int, unsigned int, unsigned int, unsigned int)
+                0x0000000008050760                operator>>(QDataStream&, Event&)
+                0x0000000008050770                QDBusPendingReplyData::~QDBusPendingReplyData()
+                0x0000000008050780                QVariant::userType() const
+                0x0000000008050790                gst_pipeline_new
+                0x00000000080507a0                gst_object_unref
+                0x00000000080507b0                QString::fromLatin1_helper(char const*, int)
+                0x00000000080507c0                QGraphicsItem::opaqueArea() const
+                0x00000000080507d0                QGraphicsItem::extension(QVariant const&) const
+                0x00000000080507e0                QDeclarativeItem::~QDeclarativeItem()
+                0x00000000080507f0                QDeclarativePropertyMap::~QDeclarativePropertyMap()
+                0x0000000008050800                QGraphicsItem::sceneEventFilter(QGraphicsItem*, QEvent*)
+                0x0000000008050810                DualDisplayHelper::SetDisplayPlane(DualDisplayHelper::MEDIA_DISPLAY)
+                0x0000000008050820                Event::Event(int, APP_ID_T, APP_ID_T, int, QByteArray const&)
+ *(.iplt)
+ .iplt          0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.text           0x0000000008050830    0x245c4
+ *(.text.unlikely .text.*_unlikely)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000008050830       0x24 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x0000000008050830                _start
+ .text          0x0000000008050854        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+ .text.__x86.get_pc_thunk.bx
+                0x0000000008050854        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+                0x0000000008050854                __x86.get_pc_thunk.bx
+ *fill*         0x0000000008050858        0x8 90909090
+ .text          0x0000000008050860       0xfd /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ *fill*         0x000000000805095d        0x3 90909090
+ .text          0x0000000008050960      0x93b main.o
+                0x00000000080509d0                setTranslationRes(LANGUAGE_T)
+                0x00000000080509f0                ParsePstAndVehicleFromArg(int&, char**)
+                0x0000000008050ee0                MakeFontFamilyForCNME()
+ *fill*         0x000000000805129b        0x5 90909090
+ .text._Z21qMetaTypeDeleteHelperI5EventEvPT_
+                0x00000000080512a0       0x12 main.o
+                0x00000000080512a0                void qMetaTypeDeleteHelper<Event>(Event*)
+ *fill*         0x00000000080512b2        0xe 90909090
+ .text._ZN7QStringD2Ev
+                0x00000000080512c0       0x23 main.o
+                0x00000000080512c0                QString::~QString()
+                0x00000000080512c0                QString::~QString()
+ *fill*         0x00000000080512e3        0xd 90909090
+ .text._Z21qMetaTypeDeleteHelperIP19TransparencyPainterEvPT_
+                0x00000000080512f0        0x5 main.o
+                0x00000000080512f0                void qMetaTypeDeleteHelper<TransparencyPainter*>(TransparencyPainter**)
+ *fill*         0x00000000080512f5        0xb 90909090
+ .text._Z21qMetaTypeDeleteHelperI24QDeclarativeListPropertyI19TransparencyPainterEEvPT_
+                0x0000000008051300        0x5 main.o
+                0x0000000008051300                void qMetaTypeDeleteHelper<QDeclarativeListProperty<TransparencyPainter> >(QDeclarativeListProperty<TransparencyPainter>*)
+ *fill*         0x0000000008051305        0xb 90909090
+ .text._Z24qMetaTypeConstructHelperI5EventEPvPKT_
+                0x0000000008051310       0x71 main.o
+                0x0000000008051310                void* qMetaTypeConstructHelper<Event>(Event const*)
+ *fill*         0x0000000008051381        0xf 90909090
+ .text._Z19qMetaTypeLoadHelperI5EventEvR11QDataStreamPT_
+                0x0000000008051390        0x5 main.o
+                0x0000000008051390                void qMetaTypeLoadHelper<Event>(QDataStream&, Event*)
+ *fill*         0x0000000008051395        0xb 90909090
+ .text._Z19qMetaTypeSaveHelperI5EventEvR11QDataStreamPKT_
+                0x00000000080513a0        0x5 main.o
+                0x00000000080513a0                void qMetaTypeSaveHelper<Event>(QDataStream&, Event const*)
+ *fill*         0x00000000080513a5        0xb 90909090
+ .text._Z21qDBusDemarshallHelperI5EventEvRK13QDBusArgumentPT_
+                0x00000000080513b0        0x5 main.o
+                0x00000000080513b0                void qDBusDemarshallHelper<Event>(QDBusArgument const&, Event*)
+ *fill*         0x00000000080513b5        0xb 90909090
+ .text._Z19qDBusMarshallHelperI5EventEvR13QDBusArgumentPKT_
+                0x00000000080513c0        0x5 main.o
+                0x00000000080513c0                void qDBusMarshallHelper<Event>(QDBusArgument&, Event const*)
+ *fill*         0x00000000080513c5        0xb 90909090
+ .text._Z24qMetaTypeConstructHelperIP19TransparencyPainterEPvPKT_
+                0x00000000080513d0       0x38 main.o
+                0x00000000080513d0                void* qMetaTypeConstructHelper<TransparencyPainter*>(TransparencyPainter* const*)
+ *fill*         0x0000000008051408        0x8 90909090
+ .text._Z24qMetaTypeConstructHelperI24QDeclarativeListPropertyI19TransparencyPainterEEPvPKT_
+                0x0000000008051410       0x91 main.o
+                0x0000000008051410                void* qMetaTypeConstructHelper<QDeclarativeListProperty<TransparencyPainter> >(QDeclarativeListProperty<TransparencyPainter> const*)
+ *fill*         0x00000000080514a1        0xf 90909090
+ .text._ZN19QDeclarativePrivate10createIntoI19TransparencyPainterEEvPv
+                0x00000000080514b0       0x35 main.o
+                0x00000000080514b0                void QDeclarativePrivate::createInto<TransparencyPainter>(void*)
+ *fill*         0x00000000080514e5        0xb 90909090
+ .text._ZN10QByteArrayD2Ev
+                0x00000000080514f0       0x23 main.o
+                0x00000000080514f0                QByteArray::~QByteArray()
+                0x00000000080514f0                QByteArray::~QByteArray()
+ *fill*         0x0000000008051513        0xd 90909090
+ .text._ZN7QStringC2EPKc
+                0x0000000008051520       0x21 main.o
+                0x0000000008051520                QString::QString(char const*)
+                0x0000000008051520                QString::QString(char const*)
+ *fill*         0x0000000008051541        0xf 90909090
+ .text._ZN7QStringaSEPKc
+                0x0000000008051550       0x6e main.o
+                0x0000000008051550                QString::operator=(char const*)
+ *fill*         0x00000000080515be        0x2 90909090
+ .text._ZN18__stVARIANT_STRINGD2Ev
+                0x00000000080515c0       0x74 main.o
+                0x00000000080515c0                __stVARIANT_STRING::~__stVARIANT_STRING()
+                0x00000000080515c0                __stVARIANT_STRING::~__stVARIANT_STRING()
+ *fill*         0x0000000008051634        0xc 90909090
+ .text._ZN11QMetaTypeIdI5EventE14qt_metatype_idEv
+                0x0000000008051640       0x3d main.o
+                0x0000000008051640                QMetaTypeId<Event>::qt_metatype_id()
+ *fill*         0x000000000805167d        0x3 90909090
+ .text._ZN5QListI7QStringED2Ev
+                0x0000000008051680       0x9d main.o
+                0x0000000008051680                QList<QString>::~QList()
+                0x0000000008051680                QList<QString>::~QList()
+ *fill*         0x000000000805171d        0x3 90909090
+ .text._Z15qmlRegisterTypeI19TransparencyPainterEiPKciiS2_
+                0x0000000008051720      0x335 main.o
+                0x0000000008051720                int qmlRegisterType<TransparencyPainter>(char const*, int, int, char const*)
+ *fill*         0x0000000008051a55        0xb 90909090
+ .text._ZN5QListI7QStringE18detach_helper_growEii
+                0x0000000008051a60      0x143 main.o
+                0x0000000008051a60                QList<QString>::detach_helper_grow(int, int)
+ *fill*         0x0000000008051ba3        0xd 90909090
+ .text._ZN5QListI7QStringE6appendERKS0_
+                0x0000000008051bb0       0x5b main.o
+                0x0000000008051bb0                QList<QString>::append(QString const&)
+ *fill*         0x0000000008051c0b        0x5 90909090
+ .text._ZN19TransparencyPainterD2Ev
+                0x0000000008051c10       0x1d main.o
+                0x0000000008051c10                TransparencyPainter::~TransparencyPainter()
+                0x0000000008051c10                TransparencyPainter::~TransparencyPainter()
+ *fill*         0x0000000008051c2d        0x3 90909090
+ .text._ZN19TransparencyPainterD1Ev
+                0x0000000008051c30       0x1a main.o
+                0x0000000008051c30                non-virtual thunk to TransparencyPainter::~TransparencyPainter()
+                0x0000000008051c40                non-virtual thunk to TransparencyPainter::~TransparencyPainter()
+ *fill*         0x0000000008051c4a        0x6 90909090
+ .text._ZN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterED2Ev
+                0x0000000008051c50       0x65 main.o
+                0x0000000008051c50                QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>::~QDeclarativeElement()
+                0x0000000008051c50                QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>::~QDeclarativeElement()
+ *fill*         0x0000000008051cb5        0xb 90909090
+ .text._ZN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterED1Ev
+                0x0000000008051cc0       0x1a main.o
+                0x0000000008051cc0                non-virtual thunk to QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>::~QDeclarativeElement()
+                0x0000000008051cd0                non-virtual thunk to QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>::~QDeclarativeElement()
+ *fill*         0x0000000008051cda        0x6 90909090
+ .text._ZN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterED0Ev
+                0x0000000008051ce0       0x8a main.o
+                0x0000000008051ce0                QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>::~QDeclarativeElement()
+                0x0000000008051d50                non-virtual thunk to QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>::~QDeclarativeElement()
+                0x0000000008051d60                non-virtual thunk to QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>::~QDeclarativeElement()
+ *fill*         0x0000000008051d6a        0x6 90909090
+ .text._ZN19TransparencyPainterD0Ev
+                0x0000000008051d70       0x57 main.o
+                0x0000000008051d70                TransparencyPainter::~TransparencyPainter()
+                0x0000000008051db0                non-virtual thunk to TransparencyPainter::~TransparencyPainter()
+                0x0000000008051dc0                non-virtual thunk to TransparencyPainter::~TransparencyPainter()
+ *fill*         0x0000000008051dc7        0x9 90909090
+ .text._ZN12GstLibThreadD2Ev
+                0x0000000008051dd0       0x60 main.o
+                0x0000000008051dd0                GstLibThread::~GstLibThread()
+                0x0000000008051dd0                GstLibThread::~GstLibThread()
+ .text.startup  0x0000000008051e30     0x2527 main.o
+                0x0000000008051e30                main
+ *fill*         0x0000000008054357        0x9 90909090
+ .text._ZN12GstLibThreadD0Ev
+                0x0000000008054360       0x68 main.o
+                0x0000000008054360                GstLibThread::~GstLibThread()
+ *fill*         0x00000000080543c8        0x8 90909090
+ .text          0x00000000080543d0     0xc535 CameraAppEngine.o
+                0x00000000080544b0                CameraAppEngine::~CameraAppEngine()
+                0x00000000080544b0                CameraAppEngine::~CameraAppEngine()
+                0x0000000008054680                CameraAppEngine::~CameraAppEngine()
+                0x00000000080546a0                CameraAppEngine::GetSharedMemoryInfo(int, unsigned char*, int)
+                0x00000000080548c0                CameraAppEngine::SetAVMSettingGeneralLine(LANGUAGE_T)
+                0x0000000008054e30                CameraAppEngine::ConnectPowerManagement()
+                0x0000000008054ff0                CameraAppEngine::setIsPowerStateOn(bool)
+                0x0000000008055020                CameraAppEngine::SendResponseFG()
+                0x0000000008055250                CameraAppEngine::SendShowLogo()
+                0x00000000080553c0                CameraAppEngine::StartAgingTest()
+                0x0000000008055480                CameraAppEngine::PauseVideo()
+                0x0000000008055650                CameraAppEngine::syncPlayVideo()
+                0x00000000080557b0                CameraAppEngine::ProcessAppCameraVideoMode()
+                0x0000000008055a90                CameraAppEngine::ProcessEarlyCameraGUIMode()
+                0x0000000008055ed0                CameraAppEngine::SetBlackOrLogoScreen()
+                0x0000000008056330                CameraAppEngine::ChangePGSViewTextSize(LANGUAGE_T)
+                0x0000000008056380                CameraAppEngine::RetranslateUi()
+                0x00000000080563a0                CameraAppEngine::PlayAudioBeep()
+                0x00000000080563b0                CameraAppEngine::PostJogEvent(int)
+                0x0000000008056700                CameraAppEngine::ConnectRGearDetect()
+                0x0000000008056860                CameraAppEngine::SendAutoTestSignal()
+                0x0000000008056890                CameraAppEngine::SetCameraMode(CAM_TYPES_T)
+                0x00000000080568e0                CameraAppEngine::ConnectDbusDirectCamPower()
+                0x0000000008056a20                CameraAppEngine::SignalConnection()
+                0x0000000008056b80                CameraAppEngine::SetSignalHandlerObject(CameraAppEngine*)
+                0x0000000008056b90                CameraAppEngine::Restart(int)
+                0x0000000008056db0                CameraAppEngine::SignalHandler(int)
+                0x0000000008056ff0                CameraAppEngine::ReceiveInternalGLImg(bool)
+                0x0000000008057370                CameraAppEngine::ReceiveRCTALeftWarnOnoff(bool)
+                0x0000000008057470                CameraAppEngine::ReceiveRCTARightWarnOnoff(bool)
+                0x0000000008057570                CameraAppEngine::WriteAppBootFlag()
+                0x0000000008057800                CameraAppEngine::WriteUserGearStateOff()
+                0x0000000008057ab0                CameraAppEngine::CheckEarlyCamDaemonStatusIsOn()
+                0x0000000008057e00                CameraAppEngine::PlayVideo()
+                0x0000000008057e70                CameraAppEngine::HandleGstPipelinesAvailable(int)
+                0x0000000008058800                CameraAppEngine::HandlingCameraOnSignal(bool)
+                0x0000000008058e00                CameraAppEngine::agingTest_CamOn()
+                0x0000000008058e20                CameraAppEngine::OffEarlyCamByOffSignal()
+                0x0000000008059160                CameraAppEngine::OffEarlyCamera()
+                0x00000000080592f0                CameraAppEngine::HandlingCameraOffSignal(bool)
+                0x0000000008059930                CameraAppEngine::carIfStatusReceived(unsigned char, unsigned char)
+                0x000000000805a1b0                CameraAppEngine::agingTest_CamOff()
+                0x000000000805a1d0                CameraAppEngine::NotifyFromUIStateManagerGeneric(Event&, DISPLAY_T)
+                0x000000000805b070                CameraAppEngine::NotifyFromUIStateManagerRear(Event)
+                0x000000000805b0a0                CameraAppEngine::NotifyFromUIStateManager(Event)
+                0x000000000805b0d0                CameraAppEngine::WriteColorKeyFlag()
+                0x000000000805b310                CameraAppEngine::InitVideoDecoderSetting()
+                0x000000000805b410                CameraAppEngine::GetAllDecoderValues()
+                0x000000000805b500                CameraAppEngine::CheckIsArabOrEnglishLang(LANGUAGE_T)
+                0x000000000805b890                CameraAppEngine::NotifyFromUIStateManagerCommon(Event)
+                0x000000000805e870                CameraAppEngine::SetDisplayVideoSetting()
+                0x000000000805e900                CameraAppEngine::ReleaseRightOfMixAudioCH()
+                0x000000000805eb70                CameraAppEngine::RequestRightOfMixAudioCH()
+                0x000000000805efd0                CameraAppEngine::AskSysLastStatusResponse(QDBusPendingCallWatcher*)
+                0x000000000805f610                CameraAppEngine::AskSysLastStatus()
+                0x000000000805f7c0                CameraAppEngine::ConnectBeepAudio()
+                0x000000000805fa40                CameraAppEngine::CameraAppEngine(QDeclarativeView*, LANGUAGE_T, CameraLogger*, QObject*)
+                0x000000000805fa40                CameraAppEngine::CameraAppEngine(QDeclarativeView*, LANGUAGE_T, CameraLogger*, QObject*)
+                0x00000000080600d0                CameraAppEngine::ControlDirectCamPower(bool)
+                0x0000000008060250                CameraAppEngine::LoopOfDirectCamPower()
+                0x0000000008060270                CameraAppEngine::ChangedPowerState(QDBusMessage)
+ *fill*         0x0000000008060905        0xb 90909090
+ .text._Z21qMetaTypeDeleteHelperI13QDBusArgumentEvPT_
+                0x0000000008060910       0x2d CameraAppEngine.o
+                0x0000000008060910                void qMetaTypeDeleteHelper<QDBusArgument>(QDBusArgument*)
+ *fill*         0x000000000806093d        0x3 90909090
+ .text._Z24qMetaTypeConstructHelperI13QDBusArgumentEPvPKT_
+                0x0000000008060940       0x71 CameraAppEngine.o
+                0x0000000008060940                void* qMetaTypeConstructHelper<QDBusArgument>(QDBusArgument const*)
+ *fill*         0x00000000080609b1        0xf 90909090
+ .text._Z17qRegisterMetaTypeI13QDBusArgumentEiPKcPT_
+                0x00000000080609c0       0x73 CameraAppEngine.o
+                0x00000000080609c0                int qRegisterMetaType<QDBusArgument>(char const*, QDBusArgument*)
+ *fill*         0x0000000008060a33        0xd 90909090
+ .text._ZN5QListI8QVariantED2Ev
+                0x0000000008060a40       0x1f CameraAppEngine.o
+                0x0000000008060a40                QList<QVariant>::~QList()
+                0x0000000008060a40                QList<QVariant>::~QList()
+ *fill*         0x0000000008060a5f        0x1 90909090
+ .text._ZN5QListI8QVariantE18detach_helper_growEii
+                0x0000000008060a60      0x12d CameraAppEngine.o
+                0x0000000008060a60                QList<QVariant>::detach_helper_grow(int, int)
+ *fill*         0x0000000008060b8d        0x3 90909090
+ .text._ZN5QListI8QVariantE6appendERKS0_
+                0x0000000008060b90       0xaa CameraAppEngine.o
+                0x0000000008060b90                QList<QVariant>::append(QVariant const&)
+ *fill*         0x0000000008060c3a        0x6 90909090
+ .text._ZN5QListI8QVariantE13detach_helperEi
+                0x0000000008060c40       0xa0 CameraAppEngine.o
+                0x0000000008060c40                QList<QVariant>::detach_helper(int)
+ .text.startup  0x0000000008060ce0      0x497 CameraAppEngine.o
+ *fill*         0x0000000008061177        0x9 90909090
+ .text          0x0000000008061180     0x6b3b CCanProvider.o
+                0x00000000080611f0                CCANProvider::InitTTSPlayer()
+                0x0000000008061390                CCANProvider::PrintError(QString)
+                0x0000000008061480                CCANProvider::PrintTTSPlayerLog(QString)
+                0x0000000008061570                CCANProvider::SendAVMOffSignal()
+                0x00000000080616c0                CCANProvider::ConnectQCanController()
+                0x0000000008061750                CCANProvider::changePGSSet(int)
+                0x00000000080618b0                CCANProvider::changeAVMGeneralSet(int)
+                0x0000000008061b40                CCANProvider::RemoveUnusedAVMOptionBit()
+                0x0000000008061bb0                CCANProvider::changeAVMViewSettings(int)
+                0x0000000008061d90                CCANProvider::currentAVMState(int)
+                0x0000000008061e30                CCANProvider::ProcessAVMData(SQCanFrame const&)
+                0x0000000008062df0                CCANProvider::ProcessDDMData(SQCanFrame const&)
+                0x0000000008063630                CCANProvider::ProcessRCTAData(SQCanFrame const&)
+                0x0000000008063800                CCANProvider::Can_PGSselectedmenu_data_send(unsigned char)
+                0x0000000008063940                CCANProvider::changePGSMenu(int)
+                0x0000000008063ee0                CCANProvider::Can_AVMselectedmenu_data_send(unsigned char)
+                0x0000000008064010                CCANProvider::changeAVMMenu(int)
+                0x0000000008064860                CCANProvider::informParkingAssistBTNSelect()
+                0x0000000008064980                CCANProvider::selectAVMParkingAssist(int)
+                0x0000000008064ad0                CCANProvider::selectAVMCalCmd(int)
+                0x0000000008064c30                CCANProvider::sendPointXY(int, int)
+                0x0000000008064dd0                CCANProvider::PGSAbnormalStop()
+                0x0000000008064de0                CCANProvider::SetPGSTTS(int)
+                0x00000000080655e0                CCANProvider::ProcessPGSData(SQCanFrame const&)
+                0x0000000008066570                CCANProvider::CQCANController_Can_data_received(SQCanFrameList const&)
+                0x0000000008066610                CCANProvider::AudioChannelAccepted(bool)
+                0x0000000008066800                CCANProvider::StopTTSNow()
+                0x00000000080668f0                CCANProvider::EndTTSPlay()
+                0x00000000080669e0                CCANProvider::connectEngModeDBus()
+                0x0000000008066b80                CCANProvider::processEnableParkGuideLine(int)
+                0x0000000008066d00                CCANProvider::slotAppLaunchOverEngMode(int)
+                0x0000000008066e90                CCANProvider::event2BGForEngineerMode()
+                0x0000000008066f50                CCANProvider::receiveLangId(int)
+                0x0000000008066f60                CCANProvider::ConvertModuleVersionToStr(unsigned short)
+                0x0000000008067190                CCANProvider::sendReadySignalToAVM()
+                0x00000000080671e0                CCANProvider::RequestLastCANsignal(int)
+                0x00000000080673c0                CCANProvider::~CCANProvider()
+                0x00000000080673c0                CCANProvider::~CCANProvider()
+                0x0000000008067470                CCANProvider::~CCANProvider()
+                0x0000000008067490                CCANProvider::CCANProvider(QObject*)
+                0x0000000008067490                CCANProvider::CCANProvider(QObject*)
+                0x00000000080677b0                CCANProvider::sendVersionInfo(int)
+                0x0000000008067bf0                CCANProvider::CQCANController_Filter_can_id()
+ *fill*         0x0000000008067cbb        0x5 90909090
+ .text._ZN5QListIjED2Ev
+                0x0000000008067cc0       0x23 CCanProvider.o
+                0x0000000008067cc0                QList<unsigned int>::~QList()
+                0x0000000008067cc0                QList<unsigned int>::~QList()
+ *fill*         0x0000000008067ce3        0xd 90909090
+ .text._ZN5QListIjE18detach_helper_growEii
+                0x0000000008067cf0      0x105 CCanProvider.o
+                0x0000000008067cf0                QList<unsigned int>::detach_helper_grow(int, int)
+ *fill*         0x0000000008067df5        0xb 90909090
+ .text._ZN5QListIjE6appendERKj
+                0x0000000008067e00       0x51 CCanProvider.o
+                0x0000000008067e00                QList<unsigned int>::append(unsigned int const&)
+ *fill*         0x0000000008067e51        0xf 90909090
+ .text._ZN5QListIjEpLERKS0_
+                0x0000000008067e60      0x144 CCanProvider.o
+                0x0000000008067e60                QList<unsigned int>::operator+=(QList<unsigned int> const&)
+ *fill*         0x0000000008067fa4        0xc 90909090
+ .text.startup  0x0000000008067fb0      0x467 CCanProvider.o
+ *fill*         0x0000000008068417        0x9 90909090
+ .text          0x0000000008068420       0x43 CANInitProxy.o
+                0x0000000008068420                CANInitProxy::CANInitProxy(QString const&, QString const&, QDBusConnection const&, QObject*)
+                0x0000000008068420                CANInitProxy::CANInitProxy(QString const&, QString const&, QDBusConnection const&, QObject*)
+ *fill*         0x0000000008068463        0xd 90909090
+ .text          0x0000000008068470      0x3cc CInitalData.o
+                0x0000000008068470                CInitalData::CInitalData(QObject*)
+                0x0000000008068470                CInitalData::CInitalData(QObject*)
+                0x00000000080685e0                CInitalData::request_AVMInitialData()
+                0x0000000008068710                CInitalData::request_PGSInitialData()
+ *fill*         0x000000000806883c        0x4 90909090
+ .text          0x0000000008068840     0x1368 TTSPlayer.o
+                0x00000000080688b0                TTSPlayer::TTSPlayer(QObject*)
+                0x00000000080688b0                TTSPlayer::TTSPlayer(QObject*)
+                0x00000000080689f0                TTSPlayer::WakeThread()
+                0x0000000008068a60                TTSPlayer::Play(bool)
+                0x0000000008068a70                TTSPlayer::TTSChange(QString)
+                0x0000000008068a80                TTSPlayer::SetBitRate(unsigned int)
+                0x0000000008068a90                TTSPlayer::StartWait()
+                0x0000000008068ae0                TTSPlayer::EndWait()
+                0x0000000008068b20                TTSPlayer::run()
+ *fill*         0x0000000008069ba8        0x8 90909090
+ .text.startup  0x0000000008069bb0      0x2e7 TTSPlayer.o
+ *fill*         0x0000000008069e97        0x9 90909090
+ .text          0x0000000008069ea0       0x43 CRGearProxy.o
+                0x0000000008069ea0                CRGearProxy::CRGearProxy(QString const&, QString const&, QDBusConnection const&, QObject*)
+                0x0000000008069ea0                CRGearProxy::CRGearProxy(QString const&, QString const&, QDBusConnection const&, QObject*)
+ *fill*         0x0000000008069ee3        0xd 90909090
+ .text          0x0000000008069ef0       0x7d EngModeServProxy.o
+                0x0000000008069ef0                ComLgeCarEngInterface::ComLgeCarEngInterface(QString const&, QString const&, QDBusConnection const&, QObject*)
+                0x0000000008069ef0                ComLgeCarEngInterface::ComLgeCarEngInterface(QString const&, QString const&, QDBusConnection const&, QObject*)
+                0x0000000008069f40                ComLgeCarEngInterface::~ComLgeCarEngInterface()
+                0x0000000008069f40                ComLgeCarEngInterface::~ComLgeCarEngInterface()
+                0x0000000008069f50                ComLgeCarEngInterface::~ComLgeCarEngInterface()
+ *fill*         0x0000000008069f6d        0x3 90909090
+ .text          0x0000000008069f70     0x28d4 GstOverlayItem.o
+                0x0000000008069fe0                GstOverlayItem::GstOverlayItem(QDeclarativeView*, CameraVideoSetting*)
+                0x0000000008069fe0                GstOverlayItem::GstOverlayItem(QDeclarativeView*, CameraVideoSetting*)
+                0x000000000806a090                GstOverlayItem::~GstOverlayItem()
+                0x000000000806a090                GstOverlayItem::~GstOverlayItem()
+                0x000000000806a330                GstOverlayItem::~GstOverlayItem()
+                0x000000000806a350                GstOverlayItem::OpenVideo()
+                0x000000000806a7d0                GstOverlayItem::getStateString(GstState)
+                0x000000000806a880                GstOverlayItem::getState()
+                0x000000000806ab80                GstOverlayItem::printLogOnBusMsg(char const*)
+                0x000000000806acd0                GstOverlayItem::Play()
+                0x000000000806afa0                GstOverlayItem::Pause(bool)
+                0x000000000806b4e0                GstOverlayItem::CreatePipeline(bool)
+                0x000000000806b970                GstOverlayItem::Stop()
+                0x000000000806bc90                GstOverlayItem::clearDrawable(bool)
+                0x000000000806c050                GstOverlayItem::onVideoStateChanged(GstState)
+                0x000000000806c520                bus_message_cb(_GstBus*, _GstMessage*, GstOverlayItem*)
+                0x000000000806c730                GstOverlayItem::TestVideo()
+                0x000000000806c810                GstOverlayItem::SetVideoOffet(CAM_TYPES_T)
+ *fill*         0x000000000806c844        0xc 90909090
+ .text._ZN6QDebugD2Ev
+                0x000000000806c850      0x118 GstOverlayItem.o
+                0x000000000806c850                QDebug::~QDebug()
+                0x000000000806c850                QDebug::~QDebug()
+ *fill*         0x000000000806c968        0x8 90909090
+ .text.startup  0x000000000806c970      0x2e7 GstOverlayItem.o
+ *fill*         0x000000000806cc57        0x9 90909090
+ .text          0x000000000806cc60      0xd26 TransparencyPainter.o
+                0x000000000806cc60                TransparencyPainter::TransparencyPainter(QDeclarativeItem*)
+                0x000000000806cc60                TransparencyPainter::TransparencyPainter(QDeclarativeItem*)
+                0x000000000806ccf0                TransparencyPainter::paint(QPainter*, QStyleOptionGraphicsItem const*, QWidget*)
+                0x000000000806cfb0                non-virtual thunk to TransparencyPainter::paint(QPainter*, QStyleOptionGraphicsItem const*, QWidget*)
+                0x000000000806cfc0                TransparencyPainter::setColor(QColor)
+                0x000000000806d270                TransparencyPainter::color()
+                0x000000000806d2a0                TransparencyPainter::Update()
+                0x000000000806d2d0                TransparencyPainter::Show()
+                0x000000000806d780                TransparencyPainter::Hide()
+ *fill*         0x000000000806d986        0xa 90909090
+ .text          0x000000000806d990       0x7d PowerManagementProxy.o
+                0x000000000806d990                PowerManagementProxy::PowerManagementProxy(QString const&, QString const&, QDBusConnection const&, QObject*)
+                0x000000000806d990                PowerManagementProxy::PowerManagementProxy(QString const&, QString const&, QDBusConnection const&, QObject*)
+                0x000000000806d9e0                PowerManagementProxy::~PowerManagementProxy()
+                0x000000000806d9e0                PowerManagementProxy::~PowerManagementProxy()
+                0x000000000806d9f0                PowerManagementProxy::~PowerManagementProxy()
+ *fill*         0x000000000806da0d        0x3 90909090
+ .text          0x000000000806da10      0x2d0 GuideLineImgFinder.o
+                0x000000000806da10                GuideLineImgFinder::GuideLineImgFinder(QObject*)
+                0x000000000806da10                GuideLineImgFinder::GuideLineImgFinder(QObject*)
+                0x000000000806dae0                GuideLineImgFinder::findImg()
+ .text          0x000000000806dce0     0x162b CameraVideoSetting.o
+                0x000000000806dd50                CameraVideoSetting::~CameraVideoSetting()
+                0x000000000806dd50                CameraVideoSetting::~CameraVideoSetting()
+                0x000000000806ddb0                CameraVideoSetting::~CameraVideoSetting()
+                0x000000000806ddd0                CameraVideoSetting::SetVideoOptions(int)
+                0x000000000806dfc0                CameraVideoSetting::SetBlend(int, bool)
+                0x000000000806e110                CameraVideoSetting::OpenDecoderDevice()
+                0x000000000806e240                CameraVideoSetting::CameraVideoSetting(QObject*)
+                0x000000000806e240                CameraVideoSetting::CameraVideoSetting(QObject*)
+                0x000000000806e400                CameraVideoSetting::CloseDecoderDevice()
+                0x000000000806e550                CameraVideoSetting::SetDecoderRegister(int, int)
+                0x000000000806e770                CameraVideoSetting::InitDecoderSetting(CAM_TYPES_T)
+                0x000000000806e910                CameraVideoSetting::GetDecoderRegister(int)
+                0x000000000806ee80                CameraVideoSetting::LoadDecoderSettings()
+                0x000000000806eff0                CameraVideoSetting::SetCR(int)
+                0x000000000806f000                CameraVideoSetting::SetCB(int)
+                0x000000000806f010                CameraVideoSetting::SetBright(int)
+                0x000000000806f020                CameraVideoSetting::SetContra(int)
+                0x000000000806f030                CameraVideoSetting::SetSharp(int)
+                0x000000000806f040                CameraVideoSetting::SetContrast(unsigned int)
+                0x000000000806f050                CameraVideoSetting::SetSaturation(unsigned int)
+                0x000000000806f060                CameraVideoSetting::SetBrightness(unsigned int)
+                0x000000000806f070                CameraVideoSetting::SetHue(unsigned int)
+                0x000000000806f080                CameraVideoSetting::SetDisplaySetting(int, unsigned int)
+                0x000000000806f100                CameraVideoSetting::SetGammaLevel(int)
+ *fill*         0x000000000806f30b        0x5 90909090
+ .text.startup  0x000000000806f310      0x2e7 CameraVideoSetting.o
+ *fill*         0x000000000806f5f7        0x9 90909090
+ .text          0x000000000806f600      0x216 tw9912_register.o
+                0x000000000806f600                write_i2c(unsigned int, unsigned int, unsigned char, int)
+                0x000000000806f670                read_i2c(unsigned int, unsigned int, unsigned char*, int)
+                0x000000000806f700                change_register(int)
+ *fill*         0x000000000806f816        0xa 90909090
+ .text          0x000000000806f820       0x62 CameraLogger.o
+                0x000000000806f820                CameraLogger::CameraLogger(QObject*)
+                0x000000000806f820                CameraLogger::CameraLogger(QObject*)
+                0x000000000806f850                CameraLogger::~CameraLogger()
+                0x000000000806f850                CameraLogger::~CameraLogger()
+                0x000000000806f860                CameraLogger::~CameraLogger()
+                0x000000000806f880                CameraLogger::WriteLog(QString)
+ *fill*         0x000000000806f882        0xe 90909090
+ .text          0x000000000806f890      0x1eb GstLibThread.o
+                0x000000000806f890                GstLibThread::GstLibThread(QObject*)
+                0x000000000806f890                GstLibThread::GstLibThread(QObject*)
+                0x000000000806f920                GstLibThread::WakeThread()
+                0x000000000806f990                GstLibThread::StartWait()
+                0x000000000806f9e0                GstLibThread::EndWait()
+                0x000000000806fa20                GstLibThread::run()
+ *fill*         0x000000000806fa7b        0x5 90909090
+ .text          0x000000000806fa80       0xb6 CameraUtils.o
+                0x000000000806fa80                CameraUtils::CameraUtils()
+                0x000000000806fa80                CameraUtils::CameraUtils()
+                0x000000000806fa90                CameraUtils::PrintCurrentTime()
+ *fill*         0x000000000806fb36        0xa 90909090
+ .text          0x000000000806fb40      0xc3a moc_CameraAppEngine.o
+                0x000000000806fb40                CameraAppEngine::metaObject() const
+                0x000000000806fb60                LocalizeTrigger::metaObject() const
+                0x000000000806fb80                LocalizeTrigger::qt_metacast(char const*)
+                0x000000000806fbf0                CameraAppEngine::qt_metacast(char const*)
+                0x000000000806fcd0                CameraAppEngine::retranslateUi(int)
+                0x000000000806fd10                CameraAppEngine::jogEvent(int)
+                0x000000000806fd50                CameraAppEngine::signalShowShutter()
+                0x000000000806fd80                CameraAppEngine::signalBGFromUISH()
+                0x000000000806fdb0                CameraAppEngine::stopAnimation()
+                0x000000000806fde0                CameraAppEngine::signalUSBRemoved()
+                0x000000000806fe10                CameraAppEngine::videoStateChanged(GstState)
+                0x000000000806fe50                CameraAppEngine::keyCanceled()
+                0x000000000806fe80                CameraAppEngine::signalForStartPlayTTS(bool)
+                0x000000000806fed0                CameraAppEngine::signalForStopTTS()
+                0x000000000806ff00                CameraAppEngine::showLogo()
+                0x000000000806ff30                CameraAppEngine::hideLogo()
+                0x000000000806ff60                CameraAppEngine::hideUI()
+                0x000000000806ff90                CameraAppEngine::changePGSViewText(bool)
+                0x000000000806ffe0                CameraAppEngine::signalForHU2AVMOff()
+                0x0000000008070010                CameraAppEngine::signalForRCTALeftOn(bool)
+                0x0000000008070060                CameraAppEngine::signalForRCTARightOn(bool)
+                0x00000000080700b0                CameraAppEngine::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x00000000080705a0                CameraAppEngine::qt_metacall(QMetaObject::Call, int, void**)
+                0x0000000008070620                LocalizeTrigger::retrigger()
+                0x0000000008070650                LocalizeTrigger::qt_metacall(QMetaObject::Call, int, void**)
+                0x0000000008070760                LocalizeTrigger::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+ *fill*         0x000000000807077a        0x6 90909090
+ .text._ZNK15CameraAppEngine12GetThisAppIdEv
+                0x0000000008070780        0x6 moc_CameraAppEngine.o
+                0x0000000008070780                CameraAppEngine::GetThisAppId() const
+ *fill*         0x0000000008070786        0xa 90909090
+ .text._ZN15LocalizeTriggerD2Ev
+                0x0000000008070790        0xf moc_CameraAppEngine.o
+                0x0000000008070790                LocalizeTrigger::~LocalizeTrigger()
+                0x0000000008070790                LocalizeTrigger::~LocalizeTrigger()
+ *fill*         0x000000000807079f        0x1 90909090
+ .text._ZN15LocalizeTriggerD0Ev
+                0x00000000080707a0       0x23 moc_CameraAppEngine.o
+                0x00000000080707a0                LocalizeTrigger::~LocalizeTrigger()
+ *fill*         0x00000000080707c3        0xd 90909090
+ .text.startup  0x00000000080707d0      0x467 moc_CameraAppEngine.o
+ *fill*         0x0000000008070c37        0x9 90909090
+ .text          0x0000000008070c40      0xa9a moc_CCanProvider.o
+                0x0000000008070c40                CCANProvider::metaObject() const
+                0x0000000008070c60                CCANProvider::qt_metacast(char const*)
+                0x0000000008070d40                CCANProvider::Can_data_send(SQCanFrame const&)
+                0x0000000008070d80                CCANProvider::Can_filter_msg_id(SQCanIdList const&)
+                0x0000000008070dc0                CCANProvider::pGSPopupShow()
+                0x0000000008070df0                CCANProvider::parkGuideLineOnOff()
+                0x0000000008070e20                CCANProvider::reqVesion()
+                0x0000000008070e50                CCANProvider::rearCameraSignalOnOff()
+                0x0000000008070e80                CCANProvider::aVMViewModeChanged()
+                0x0000000008070eb0                CCANProvider::signalBG2Engine(bool)
+                0x0000000008070f00                CCANProvider::signalFG2Engine(bool)
+                0x0000000008070f50                CCANProvider::signalPGStoHUSettingView()
+                0x0000000008070f80                CCANProvider::signalOutOfSettingView(int)
+                0x0000000008070fc0                CCANProvider::signalEndOfTTS()
+                0x0000000008070ff0                CCANProvider::signalRequestAudioPath()
+                0x0000000008071020                CCANProvider::useInternalGLImg(bool)
+                0x0000000008071070                CCANProvider::signalFrontRearViewChanged(int)
+                0x00000000080710b0                CCANProvider::RequestToAppEngineEarlyCamOff()
+                0x00000000080710e0                CCANProvider::signalRCTALeftWarningOnOff(bool)
+                0x0000000008071130                CCANProvider::signalRCTARightWarningOnOff(bool)
+                0x0000000008071180                CCANProvider::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008071660                CCANProvider::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x00000000080716da        0x6 90909090
+ .text.startup  0x00000000080716e0      0x467 moc_CCanProvider.o
+ *fill*         0x0000000008071b47        0x9 90909090
+ .text          0x0000000008071b50      0x40a moc_CANInitProxy.o
+                0x0000000008071b50                CANInitProxy::metaObject() const
+                0x0000000008071b70                CANInitProxy::qt_metacast(char const*)
+                0x0000000008071be0                CANInitProxy::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008071ee0                CANInitProxy::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x0000000008071f5a        0x6 90909090
+ .text._ZN12CANInitProxyD2Ev
+                0x0000000008071f60        0xf moc_CANInitProxy.o
+                0x0000000008071f60                CANInitProxy::~CANInitProxy()
+                0x0000000008071f60                CANInitProxy::~CANInitProxy()
+ *fill*         0x0000000008071f6f        0x1 90909090
+ .text._ZN12CANInitProxyD0Ev
+                0x0000000008071f70       0x23 moc_CANInitProxy.o
+                0x0000000008071f70                CANInitProxy::~CANInitProxy()
+ *fill*         0x0000000008071f93        0xd 90909090
+ .text          0x0000000008071fa0      0x143 moc_CInitalData.o
+                0x0000000008071fa0                CInitalData::metaObject() const
+                0x0000000008071fc0                CInitalData::qt_metacast(char const*)
+                0x0000000008072060                CInitalData::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008072080                CInitalData::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x00000000080720e3        0xd 90909090
+ .text._ZN11CInitalDataD2Ev
+                0x00000000080720f0        0xf moc_CInitalData.o
+                0x00000000080720f0                CInitalData::~CInitalData()
+                0x00000000080720f0                CInitalData::~CInitalData()
+ *fill*         0x00000000080720ff        0x1 90909090
+ .text._ZN11CInitalDataD0Ev
+                0x0000000008072100       0x23 moc_CInitalData.o
+                0x0000000008072100                CInitalData::~CInitalData()
+ *fill*         0x0000000008072123        0xd 90909090
+ .text          0x0000000008072130      0x35a moc_TTSPlayer.o
+                0x0000000008072130                TTSPlayer::metaObject() const
+                0x0000000008072150                TTSPlayer::qt_metacast(char const*)
+                0x0000000008072230                TTSPlayer::signalTTSPlayFinished()
+                0x0000000008072260                TTSPlayer::signalForError(QString)
+                0x00000000080722a0                TTSPlayer::signalForPrintLog(QString)
+                0x00000000080722e0                TTSPlayer::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008072410                TTSPlayer::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x000000000807248a        0x6 90909090
+ .text._ZN9TTSPlayerD2Ev
+                0x0000000008072490       0x8d moc_TTSPlayer.o
+                0x0000000008072490                TTSPlayer::~TTSPlayer()
+                0x0000000008072490                TTSPlayer::~TTSPlayer()
+ *fill*         0x000000000807251d        0x3 90909090
+ .text._ZN9TTSPlayerD0Ev
+                0x0000000008072520       0x95 moc_TTSPlayer.o
+                0x0000000008072520                TTSPlayer::~TTSPlayer()
+ *fill*         0x00000000080725b5        0xb 90909090
+ .text.startup  0x00000000080725c0      0x2e7 moc_TTSPlayer.o
+ *fill*         0x00000000080728a7        0x9 90909090
+ .text          0x00000000080728b0      0x34a moc_CRGearProxy.o
+                0x00000000080728b0                CRGearProxy::metaObject() const
+                0x00000000080728d0                CRGearProxy::qt_metacast(char const*)
+                0x0000000008072940                CRGearProxy::LgeDBus_EventCarIFStatus(unsigned char, unsigned char)
+                0x00000000080729a0                CRGearProxy::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008072b80                CRGearProxy::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x0000000008072bfa        0x6 90909090
+ .text._ZN11CRGearProxyD2Ev
+                0x0000000008072c00        0xf moc_CRGearProxy.o
+                0x0000000008072c00                CRGearProxy::~CRGearProxy()
+                0x0000000008072c00                CRGearProxy::~CRGearProxy()
+ *fill*         0x0000000008072c0f        0x1 90909090
+ .text._ZN11CRGearProxyD0Ev
+                0x0000000008072c10       0x23 moc_CRGearProxy.o
+                0x0000000008072c10                CRGearProxy::~CRGearProxy()
+ *fill*         0x0000000008072c33        0xd 90909090
+ .text          0x0000000008072c40      0x92a moc_EngModeServProxy.o
+                0x0000000008072c40                ComLgeCarEngInterface::metaObject() const
+                0x0000000008072c60                ComLgeCarEngInterface::qt_metacast(char const*)
+                0x0000000008072cd0                ComLgeCarEngInterface::parkGuideLineOnOff(int)
+                0x0000000008072d10                ComLgeCarEngInterface::reqConnectivity(int)
+                0x0000000008072d50                ComLgeCarEngInterface::reqDiagnosis()
+                0x0000000008072d80                ComLgeCarEngInterface::reqVersion(int)
+                0x0000000008072dc0                ComLgeCarEngInterface::rearCameraSignalOnOff(int)
+                0x0000000008072e00                ComLgeCarEngInterface::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x00000000080734f0                ComLgeCarEngInterface::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x000000000807356a        0x6 90909090
+ .text          0x0000000008073570      0x24a moc_GstOverlayItem.o
+                0x0000000008073570                GstOverlayItem::metaObject() const
+                0x0000000008073590                GstOverlayItem::qt_metacast(char const*)
+                0x0000000008073670                GstOverlayItem::invokeAnimation()
+                0x00000000080736a0                GstOverlayItem::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008073740                GstOverlayItem::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x00000000080737ba        0x6 90909090
+ .text.startup  0x00000000080737c0      0x2e7 moc_GstOverlayItem.o
+ *fill*         0x0000000008073aa7        0x9 90909090
+ .text          0x0000000008073ab0      0x1ee moc_TransparencyPainter.o
+                0x0000000008073ab0                TransparencyPainter::metaObject() const
+                0x0000000008073ad0                TransparencyPainter::qt_metacast(char const*)
+                0x0000000008073b80                TransparencyPainter::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008073ba0                TransparencyPainter::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x0000000008073c9e        0x2 90909090
+ .text          0x0000000008073ca0      0x38e moc_PowerManagementProxy.o
+                0x0000000008073ca0                PowerManagementProxy::metaObject() const
+                0x0000000008073cc0                PowerManagementProxy::qt_metacast(char const*)
+                0x0000000008073d30                PowerManagementProxy::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008073fb0                PowerManagementProxy::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x000000000807402e        0x2 90909090
+ .text          0x0000000008074030      0x22a moc_GuideLineImgFinder.o
+                0x0000000008074030                GuideLineImgFinder::metaObject() const
+                0x0000000008074050                GuideLineImgFinder::qt_metacast(char const*)
+                0x00000000080740c0                GuideLineImgFinder::sendImgFullPath(QString)
+                0x0000000008074100                GuideLineImgFinder::thereIsNoFile()
+                0x0000000008074130                GuideLineImgFinder::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x00000000080741e0                GuideLineImgFinder::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x000000000807425a        0x6 90909090
+ .text._ZN18GuideLineImgFinderD2Ev
+                0x0000000008074260       0x57 moc_GuideLineImgFinder.o
+                0x0000000008074260                GuideLineImgFinder::~GuideLineImgFinder()
+                0x0000000008074260                GuideLineImgFinder::~GuideLineImgFinder()
+ *fill*         0x00000000080742b7        0x9 90909090
+ .text._ZN18GuideLineImgFinderD0Ev
+                0x00000000080742c0       0x5f moc_GuideLineImgFinder.o
+                0x00000000080742c0                GuideLineImgFinder::~GuideLineImgFinder()
+ *fill*         0x000000000807431f        0x1 90909090
+ .text          0x0000000008074320      0x5c8 moc_CameraVideoSetting.o
+                0x0000000008074320                CameraVideoSetting::metaObject() const
+                0x0000000008074340                CameraVideoSetting::qt_metacast(char const*)
+                0x0000000008074420                CameraVideoSetting::UpdateCB()
+                0x0000000008074450                CameraVideoSetting::UpdateCR()
+                0x0000000008074480                CameraVideoSetting::UpdateSharp()
+                0x00000000080744b0                CameraVideoSetting::UpdateBright()
+                0x00000000080744e0                CameraVideoSetting::UpdateContra()
+                0x0000000008074510                CameraVideoSetting::UpdateContrast()
+                0x0000000008074540                CameraVideoSetting::UpdateSaturation()
+                0x0000000008074570                CameraVideoSetting::UpdateHue()
+                0x00000000080745a0                CameraVideoSetting::UpdateBrightness()
+                0x00000000080745d0                CameraVideoSetting::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008074710                CameraVideoSetting::qt_metacall(QMetaObject::Call, int, void**)
+ *fill*         0x00000000080748e8        0x8 90909090
+ .text.startup  0x00000000080748f0      0x2e7 moc_CameraVideoSetting.o
+ *fill*         0x0000000008074bd7        0x9 90909090
+ .text          0x0000000008074be0       0xa4 moc_CameraLogger.o
+                0x0000000008074be0                CameraLogger::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008074bf0                CameraLogger::metaObject() const
+                0x0000000008074c10                CameraLogger::qt_metacall(QMetaObject::Call, int, void**)
+                0x0000000008074c20                CameraLogger::qt_metacast(char const*)
+ *fill*         0x0000000008074c84        0xc 90909090
+ .text          0x0000000008074c90       0xa4 moc_GstLibThread.o
+                0x0000000008074c90                GstLibThread::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+                0x0000000008074ca0                GstLibThread::metaObject() const
+                0x0000000008074cc0                GstLibThread::qt_metacall(QMetaObject::Call, int, void**)
+                0x0000000008074cd0                GstLibThread::qt_metacast(char const*)
+ *fill*         0x0000000008074d34        0xc 90909090
+ .text          0x0000000008074d40       0x79 /usr/lib/libc_nonshared.a(elf-init.oS)
+                0x0000000008074d40                __libc_csu_init
+                0x0000000008074db0                __libc_csu_fini
+ *fill*         0x0000000008074db9        0x7 90909090
+ .text          0x0000000008074dc0       0x33 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+ *fill*         0x0000000008074df3        0x1 90909090
+ .text          0x0000000008074df4        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+ *(.gnu.warning)
+
+.fini           0x0000000008074df4       0x19
+ *(.fini)
+ .fini          0x0000000008074df4        0xf /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+                0x0000000008074df4                _fini
+ .fini          0x0000000008074e03        0x5 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ .fini          0x0000000008074e08        0x5 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+                0x0000000008074e0d                PROVIDE (__etext, .)
+                0x0000000008074e0d                PROVIDE (_etext, .)
+                0x0000000008074e0d                PROVIDE (etext, .)
+
+.rodata         0x0000000008074e20     0x6e5c
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000000008074e20        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x0000000008074e20                _fp_hw
+ .rodata.cst4   0x0000000008074e24        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x0000000008074e24                _IO_stdin_used
+ .rodata.str1.1
+                0x0000000008074e28      0x44f main.o
+                                        0x457 (size before relaxing)
+ *fill*         0x0000000008075277        0x1 00
+ .rodata.str1.4
+                0x0000000008075278      0x657 main.o
+ *fill*         0x00000000080758cf       0x11 00
+ .rodata        0x00000000080758e0       0x73 main.o
+ *fill*         0x0000000008075953        0xd 00
+ .rodata._ZTVN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterEE
+                0x0000000008075960      0x118 main.o
+                0x0000000008075960                vtable for QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>
+ .rodata._ZTIN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterEE
+                0x0000000008075a78        0xc main.o
+                0x0000000008075a78                typeinfo for QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>
+ *fill*         0x0000000008075a84       0x1c 00
+ .rodata._ZTSN19QDeclarativePrivate19QDeclarativeElementI19TransparencyPainterEE
+                0x0000000008075aa0       0x44 main.o
+                0x0000000008075aa0                typeinfo name for QDeclarativePrivate::QDeclarativeElement<TransparencyPainter>
+ .rodata.str1.1
+                0x0000000008075ae4      0x466 CameraAppEngine.o
+                                        0x53d (size before relaxing)
+ *fill*         0x0000000008075f4a        0x2 00
+ .rodata.str1.4
+                0x0000000008075f4c     0x106f CameraAppEngine.o
+                                       0x13f3 (size before relaxing)
+ *fill*         0x0000000008076fbb        0x5 00
+ .rodata        0x0000000008076fc0      0x330 CameraAppEngine.o
+ .rodata.str1.1
+                0x00000000080772f0      0x46f CCanProvider.o
+                                        0x545 (size before relaxing)
+ *fill*         0x000000000807775f        0x1 00
+ .rodata.str1.4
+                0x0000000008077760      0xb62 CCanProvider.o
+ *fill*         0x00000000080782c2        0x2 00
+ .rodata        0x00000000080782c4      0x24a CCanProvider.o
+ .rodata.str1.1
+                0x000000000807850e       0x19 CANInitProxy.o
+ .rodata.str1.1
+                0x0000000008078527       0x3c CInitalData.o
+                                         0x4e (size before relaxing)
+ .rodata.str1.1
+                0x0000000008078563       0xb8 TTSPlayer.o
+                                        0x10f (size before relaxing)
+ *fill*         0x000000000807861b        0x1 00
+ .rodata.str1.4
+                0x000000000807861c      0x241 TTSPlayer.o
+ .rodata        0x000000000807885d        0x4 TTSPlayer.o
+ .rodata.str1.1
+                0x0000000008078861       0x1a CRGearProxy.o
+ .rodata.str1.1
+                0x000000000807887b       0x10 EngModeServProxy.o
+ .rodata.str1.1
+                0x000000000807888b      0x1ee GstOverlayItem.o
+                                        0x24c (size before relaxing)
+ *fill*         0x0000000008078a79        0x3 00
+ .rodata.str1.4
+                0x0000000008078a7c      0x3fd GstOverlayItem.o
+ *fill*         0x0000000008078e79        0x3 00
+ .rodata        0x0000000008078e7c       0x83 GstOverlayItem.o
+ .rodata.str1.1
+                0x0000000008078eff       0x20 TransparencyPainter.o
+ *fill*         0x0000000008078f1f        0x1 00
+ .rodata.str1.4
+                0x0000000008078f20       0x4f TransparencyPainter.o
+ .rodata.str1.4
+                0x0000000000000000       0x22 PowerManagementProxy.o
+ .rodata.str1.1
+                0x0000000008078f6f       0x18 GuideLineImgFinder.o
+                                         0x19 (size before relaxing)
+ .rodata.str1.1
+                0x0000000008078f87       0xb7 CameraVideoSetting.o
+                                        0x10e (size before relaxing)
+ *fill*         0x000000000807903e        0x2 00
+ .rodata.str1.4
+                0x0000000008079040      0x15f CameraVideoSetting.o
+ .rodata        0x000000000807919f       0x9e CameraVideoSetting.o
+ .rodata.str1.1
+                0x000000000807923d       0x26 tw9912_register.o
+ *fill*         0x0000000008079263        0x1 00
+ .rodata.str1.4
+                0x0000000008079264       0x5c GstLibThread.o
+                                         0x5a (size before relaxing)
+ .rodata.str1.1
+                0x00000000080792c0        0xd CameraUtils.o
+ *fill*         0x00000000080792cd       0x13 00
+ .rodata        0x00000000080792e0      0xa20 moc_CameraAppEngine.o
+                0x0000000008079394                LocalizeTrigger::staticMetaObject
+                0x00000000080793a4                LocalizeTrigger::staticMetaObjectExtraData
+                0x00000000080793ac                CameraAppEngine::staticMetaObject
+                0x00000000080793bc                CameraAppEngine::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x0000000000000000       0xb9 moc_CameraAppEngine.o
+ .rodata._ZTS15CameraAppEngine
+                0x0000000008079d00       0x12 moc_CameraAppEngine.o
+                0x0000000008079d00                typeinfo name for CameraAppEngine
+ *fill*         0x0000000008079d12        0x2 00
+ .rodata._ZTI15CameraAppEngine
+                0x0000000008079d14        0xc moc_CameraAppEngine.o
+                0x0000000008079d14                typeinfo for CameraAppEngine
+ .rodata._ZTS15LocalizeTrigger
+                0x0000000008079d20       0x12 moc_CameraAppEngine.o
+                0x0000000008079d20                typeinfo name for LocalizeTrigger
+ *fill*         0x0000000008079d32        0x2 00
+ .rodata._ZTI15LocalizeTrigger
+                0x0000000008079d34        0xc moc_CameraAppEngine.o
+                0x0000000008079d34                typeinfo for LocalizeTrigger
+ .rodata._ZTV15CameraAppEngine
+                0x0000000008079d40       0x5c moc_CameraAppEngine.o
+                0x0000000008079d40                vtable for CameraAppEngine
+ *fill*         0x0000000008079d9c        0x4 00
+ .rodata._ZTV15LocalizeTrigger
+                0x0000000008079da0       0x38 moc_CameraAppEngine.o
+                0x0000000008079da0                vtable for LocalizeTrigger
+ *fill*         0x0000000008079dd8        0x8 00
+ .rodata        0x0000000008079de0      0x918 moc_CCanProvider.o
+                0x0000000008079e8c                CCANProvider::staticMetaObject
+                0x0000000008079e9c                CCANProvider::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x0000000000000000       0xb9 moc_CCanProvider.o
+ .rodata._ZTS12CCANProvider
+                0x000000000807a6f8        0xf moc_CCanProvider.o
+                0x000000000807a6f8                typeinfo name for CCANProvider
+ *fill*         0x000000000807a707        0x1 00
+ .rodata._ZTI12CCANProvider
+                0x000000000807a708        0xc moc_CCanProvider.o
+                0x000000000807a708                typeinfo for CCANProvider
+ *fill*         0x000000000807a714        0xc 00
+ .rodata._ZTV12CCANProvider
+                0x000000000807a720       0x38 moc_CCanProvider.o
+                0x000000000807a720                vtable for CCANProvider
+ .rodata.str1.1
+                0x0000000000000000       0x34 moc_CANInitProxy.o
+ .rodata._ZTS12CANInitProxy
+                0x000000000807a758        0xf moc_CANInitProxy.o
+                0x000000000807a758                typeinfo name for CANInitProxy
+ *fill*         0x000000000807a767        0x1 00
+ .rodata._ZTI12CANInitProxy
+                0x000000000807a768        0xc moc_CANInitProxy.o
+                0x000000000807a768                typeinfo for CANInitProxy
+ *fill*         0x000000000807a774        0xc 00
+ .rodata._ZTV12CANInitProxy
+                0x000000000807a780       0x38 moc_CANInitProxy.o
+                0x000000000807a780                vtable for CANInitProxy
+ *fill*         0x000000000807a7b8        0x8 00
+ .rodata        0x000000000807a7c0       0xe4 moc_CANInitProxy.o
+                0x000000000807a7c0                CANInitProxy::staticMetaObject
+                0x000000000807a7d0                CANInitProxy::staticMetaObjectExtraData
+ .rodata._ZTS11CInitalData
+                0x000000000807a8a4        0xe moc_CInitalData.o
+                0x000000000807a8a4                typeinfo name for CInitalData
+ *fill*         0x000000000807a8b2        0x2 00
+ .rodata._ZTI11CInitalData
+                0x000000000807a8b4        0xc moc_CInitalData.o
+                0x000000000807a8b4                typeinfo for CInitalData
+ .rodata._ZTV11CInitalData
+                0x000000000807a8c0       0x38 moc_CInitalData.o
+                0x000000000807a8c0                vtable for CInitalData
+ *fill*         0x000000000807a8f8        0x8 00
+ .rodata        0x000000000807a900       0xc4 moc_CInitalData.o
+                0x000000000807a900                CInitalData::staticMetaObject
+                0x000000000807a910                CInitalData::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x0000000000000000       0x52 moc_TTSPlayer.o
+ .rodata._ZTS9TTSPlayer
+                0x000000000807a9c4        0xb moc_TTSPlayer.o
+                0x000000000807a9c4                typeinfo name for TTSPlayer
+ *fill*         0x000000000807a9cf        0x1 00
+ .rodata._ZTI9TTSPlayer
+                0x000000000807a9d0        0xc moc_TTSPlayer.o
+                0x000000000807a9d0                typeinfo for TTSPlayer
+ *fill*         0x000000000807a9dc        0x4 00
+ .rodata._ZTV9TTSPlayer
+                0x000000000807a9e0       0x3c moc_TTSPlayer.o
+                0x000000000807a9e0                vtable for TTSPlayer
+ *fill*         0x000000000807aa1c        0x4 00
+ .rodata        0x000000000807aa20      0x12c moc_TTSPlayer.o
+                0x000000000807aa20                TTSPlayer::staticMetaObject
+                0x000000000807aa30                TTSPlayer::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x0000000000000000       0x19 moc_CRGearProxy.o
+ .rodata._ZTS11CRGearProxy
+                0x000000000807ab4c        0xe moc_CRGearProxy.o
+                0x000000000807ab4c                typeinfo name for CRGearProxy
+ *fill*         0x000000000807ab5a        0x2 00
+ .rodata._ZTI11CRGearProxy
+                0x000000000807ab5c        0xc moc_CRGearProxy.o
+                0x000000000807ab5c                typeinfo for CRGearProxy
+ *fill*         0x000000000807ab68       0x18 00
+ .rodata._ZTV11CRGearProxy
+                0x000000000807ab80       0x38 moc_CRGearProxy.o
+                0x000000000807ab80                vtable for CRGearProxy
+ *fill*         0x000000000807abb8        0x8 00
+ .rodata        0x000000000807abc0      0x104 moc_CRGearProxy.o
+                0x000000000807abc0                CRGearProxy::staticMetaObject
+                0x000000000807abd0                CRGearProxy::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x000000000807acc4       0x21 moc_EngModeServProxy.o
+                                         0x2d (size before relaxing)
+ *fill*         0x000000000807ace5       0x1b 00
+ .rodata        0x000000000807ad00      0x21c moc_EngModeServProxy.o
+                0x000000000807ad20                ComLgeCarEngInterface::staticMetaObject
+                0x000000000807ad30                ComLgeCarEngInterface::staticMetaObjectExtraData
+ .rodata._ZTS21ComLgeCarEngInterface
+                0x000000000807af1c       0x18 moc_EngModeServProxy.o
+                0x000000000807af1c                typeinfo name for ComLgeCarEngInterface
+ .rodata._ZTI21ComLgeCarEngInterface
+                0x000000000807af34        0xc moc_EngModeServProxy.o
+                0x000000000807af34                typeinfo for ComLgeCarEngInterface
+ .rodata._ZTV21ComLgeCarEngInterface
+                0x000000000807af40       0x38 moc_EngModeServProxy.o
+                0x000000000807af40                vtable for ComLgeCarEngInterface
+ *fill*         0x000000000807af78        0x8 00
+ .rodata        0x000000000807af80      0x174 moc_GstOverlayItem.o
+                0x000000000807af98                GstOverlayItem::staticMetaObject
+                0x000000000807afa8                GstOverlayItem::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x0000000000000000       0x52 moc_GstOverlayItem.o
+ .rodata._ZTS14GstOverlayItem
+                0x000000000807b0f4       0x11 moc_GstOverlayItem.o
+                0x000000000807b0f4                typeinfo name for GstOverlayItem
+ *fill*         0x000000000807b105        0x3 00
+ .rodata._ZTI14GstOverlayItem
+                0x000000000807b108        0xc moc_GstOverlayItem.o
+                0x000000000807b108                typeinfo for GstOverlayItem
+ *fill*         0x000000000807b114        0xc 00
+ .rodata._ZTV14GstOverlayItem
+                0x000000000807b120       0x38 moc_GstOverlayItem.o
+                0x000000000807b120                vtable for GstOverlayItem
+ .rodata._ZTS19TransparencyPainter
+                0x000000000807b158       0x16 moc_TransparencyPainter.o
+                0x000000000807b158                typeinfo name for TransparencyPainter
+ *fill*         0x000000000807b16e        0x2 00
+ .rodata._ZTI19TransparencyPainter
+                0x000000000807b170        0xc moc_TransparencyPainter.o
+                0x000000000807b170                typeinfo for TransparencyPainter
+ *fill*         0x000000000807b17c        0x4 00
+ .rodata._ZTV19TransparencyPainter
+                0x000000000807b180      0x118 moc_TransparencyPainter.o
+                0x000000000807b180                vtable for TransparencyPainter
+ *fill*         0x000000000807b298        0x8 00
+ .rodata        0x000000000807b2a0       0xe4 moc_TransparencyPainter.o
+                0x000000000807b2a0                TransparencyPainter::staticMetaObject
+                0x000000000807b2b0                TransparencyPainter::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x0000000000000000       0x1d moc_PowerManagementProxy.o
+ .rodata._ZTS20PowerManagementProxy
+                0x000000000807b384       0x17 moc_PowerManagementProxy.o
+                0x000000000807b384                typeinfo name for PowerManagementProxy
+ *fill*         0x000000000807b39b        0x1 00
+ .rodata._ZTI20PowerManagementProxy
+                0x000000000807b39c        0xc moc_PowerManagementProxy.o
+                0x000000000807b39c                typeinfo for PowerManagementProxy
+ *fill*         0x000000000807b3a8       0x18 00
+ .rodata._ZTV20PowerManagementProxy
+                0x000000000807b3c0       0x38 moc_PowerManagementProxy.o
+                0x000000000807b3c0                vtable for PowerManagementProxy
+ *fill*         0x000000000807b3f8        0x8 00
+ .rodata        0x000000000807b400       0xd0 moc_PowerManagementProxy.o
+                0x000000000807b400                PowerManagementProxy::staticMetaObject
+                0x000000000807b410                PowerManagementProxy::staticMetaObjectExtraData
+ .rodata._ZTS18GuideLineImgFinder
+                0x000000000807b4d0       0x15 moc_GuideLineImgFinder.o
+                0x000000000807b4d0                typeinfo name for GuideLineImgFinder
+ *fill*         0x000000000807b4e5        0x3 00
+ .rodata._ZTI18GuideLineImgFinder
+                0x000000000807b4e8        0xc moc_GuideLineImgFinder.o
+                0x000000000807b4e8                typeinfo for GuideLineImgFinder
+ *fill*         0x000000000807b4f4        0xc 00
+ .rodata._ZTV18GuideLineImgFinder
+                0x000000000807b500       0x38 moc_GuideLineImgFinder.o
+                0x000000000807b500                vtable for GuideLineImgFinder
+ *fill*         0x000000000807b538        0x8 00
+ .rodata        0x000000000807b540       0xe4 moc_GuideLineImgFinder.o
+                0x000000000807b540                GuideLineImgFinder::staticMetaObject
+                0x000000000807b550                GuideLineImgFinder::staticMetaObjectExtraData
+ *fill*         0x000000000807b624       0x1c 00
+ .rodata        0x000000000807b640      0x404 moc_CameraVideoSetting.o
+                0x000000000807b6c0                CameraVideoSetting::staticMetaObject
+                0x000000000807b6d0                CameraVideoSetting::staticMetaObjectExtraData
+ .rodata.str1.1
+                0x0000000000000000       0x52 moc_CameraVideoSetting.o
+ .rodata._ZTS18CameraVideoSetting
+                0x000000000807ba44       0x15 moc_CameraVideoSetting.o
+                0x000000000807ba44                typeinfo name for CameraVideoSetting
+ *fill*         0x000000000807ba59        0x3 00
+ .rodata._ZTI18CameraVideoSetting
+                0x000000000807ba5c        0xc moc_CameraVideoSetting.o
+                0x000000000807ba5c                typeinfo for CameraVideoSetting
+ *fill*         0x000000000807ba68       0x18 00
+ .rodata._ZTV18CameraVideoSetting
+                0x000000000807ba80       0x38 moc_CameraVideoSetting.o
+                0x000000000807ba80                vtable for CameraVideoSetting
+ .rodata._ZTS12CameraLogger
+                0x000000000807bab8        0xf moc_CameraLogger.o
+                0x000000000807bab8                typeinfo name for CameraLogger
+ *fill*         0x000000000807bac7        0x1 00
+ .rodata._ZTI12CameraLogger
+                0x000000000807bac8        0xc moc_CameraLogger.o
+                0x000000000807bac8                typeinfo for CameraLogger
+ *fill*         0x000000000807bad4        0xc 00
+ .rodata._ZTV12CameraLogger
+                0x000000000807bae0       0x38 moc_CameraLogger.o
+                0x000000000807bae0                vtable for CameraLogger
+ *fill*         0x000000000807bb18        0x8 00
+ .rodata        0x000000000807bb20       0x7c moc_CameraLogger.o
+                0x000000000807bb20                CameraLogger::staticMetaObject
+                0x000000000807bb30                CameraLogger::staticMetaObjectExtraData
+ .rodata._ZTS12GstLibThread
+                0x000000000807bb9c        0xf moc_GstLibThread.o
+                0x000000000807bb9c                typeinfo name for GstLibThread
+ *fill*         0x000000000807bbab        0x1 00
+ .rodata._ZTI12GstLibThread
+                0x000000000807bbac        0xc moc_GstLibThread.o
+                0x000000000807bbac                typeinfo for GstLibThread
+ *fill*         0x000000000807bbb8        0x8 00
+ .rodata._ZTV12GstLibThread
+                0x000000000807bbc0       0x3c moc_GstLibThread.o
+                0x000000000807bbc0                vtable for GstLibThread
+ *fill*         0x000000000807bbfc        0x4 00
+ .rodata        0x000000000807bc00       0x7c moc_GstLibThread.o
+                0x000000000807bc00                GstLibThread::staticMetaObject
+                0x000000000807bc10                GstLibThread::staticMetaObjectExtraData
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr   0x000000000807bc7c      0xc34
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x000000000807bc7c      0xc34 main.o
+
+.eh_frame       0x000000000807c8b0     0x4284
+ *(.eh_frame)
+ .eh_frame      0x000000000807c8b0      0x5d0 main.o
+ .eh_frame      0x000000000807ce80     0x10b8 CameraAppEngine.o
+                                       0x1160 (size before relaxing)
+ .eh_frame      0x000000000807df38      0xa70 CCanProvider.o
+                                        0xba8 (size before relaxing)
+ .eh_frame      0x000000000807e9a8       0x20 CANInitProxy.o
+                                         0x38 (size before relaxing)
+ .eh_frame      0x000000000807e9c8       0x9c CInitalData.o
+                                        0x118 (size before relaxing)
+ .eh_frame      0x000000000807ea64      0x17c TTSPlayer.o
+                                        0x210 (size before relaxing)
+ .eh_frame      0x000000000807ebe0       0x20 CRGearProxy.o
+                                         0x38 (size before relaxing)
+ .eh_frame      0x000000000807ec00       0x54 EngModeServProxy.o
+                                         0x6c (size before relaxing)
+ .eh_frame      0x000000000807ec54      0x4d4 GstOverlayItem.o
+                                        0x57c (size before relaxing)
+ .eh_frame      0x000000000807f128      0x1c0 TransparencyPainter.o
+                                        0x25c (size before relaxing)
+ .eh_frame      0x000000000807f2e8       0x54 PowerManagementProxy.o
+                                         0x6c (size before relaxing)
+ .eh_frame      0x000000000807f33c       0x88 GuideLineImgFinder.o
+                                         0xd4 (size before relaxing)
+ .eh_frame      0x000000000807f3c4      0x3a8 CameraVideoSetting.o
+                                        0x43c (size before relaxing)
+ .eh_frame      0x000000000807f76c       0x6c tw9912_register.o
+                                         0x84 (size before relaxing)
+ .eh_frame      0x000000000807f7d8       0x68 CameraLogger.o
+                                         0x80 (size before relaxing)
+ .eh_frame      0x000000000807f840       0xcc GstLibThread.o
+                                        0x104 (size before relaxing)
+ .eh_frame      0x000000000807f90c       0x50 CameraUtils.o
+                                         0x88 (size before relaxing)
+ .eh_frame      0x000000000807f95c      0x374 moc_CameraAppEngine.o
+                                        0x408 (size before relaxing)
+ .eh_frame      0x000000000807fcd0      0x2a4 moc_CCanProvider.o
+                                        0x338 (size before relaxing)
+ .eh_frame      0x000000000807ff74       0xdc moc_CANInitProxy.o
+                                        0x158 (size before relaxing)
+ .eh_frame      0x0000000008080050       0xd4 moc_CInitalData.o
+                                         0xec (size before relaxing)
+ .eh_frame      0x0000000008080124      0x19c moc_TTSPlayer.o
+                                        0x230 (size before relaxing)
+ .eh_frame      0x00000000080802c0       0xec moc_CRGearProxy.o
+                                        0x154 (size before relaxing)
+ .eh_frame      0x00000000080803ac      0x130 moc_EngModeServProxy.o
+                                        0x220 (size before relaxing)
+ .eh_frame      0x00000000080804dc       0xf8 moc_GstOverlayItem.o
+                                        0x18c (size before relaxing)
+ .eh_frame      0x00000000080805d4       0xac moc_TransparencyPainter.o
+                                        0x148 (size before relaxing)
+ .eh_frame      0x0000000008080680       0xa0 moc_PowerManagementProxy.o
+                                        0x14c (size before relaxing)
+ .eh_frame      0x0000000008080720      0x120 moc_GuideLineImgFinder.o
+                                        0x158 (size before relaxing)
+ .eh_frame      0x0000000008080840      0x1c8 moc_CameraVideoSetting.o
+                                        0x25c (size before relaxing)
+ .eh_frame      0x0000000008080a08       0x6c moc_CameraLogger.o
+                                         0x84 (size before relaxing)
+ .eh_frame      0x0000000008080a74       0x6c moc_GstLibThread.o
+                                         0xf4 (size before relaxing)
+ .eh_frame      0x0000000008080ae0       0x50 /usr/lib/libc_nonshared.a(elf-init.oS)
+                                         0x7c (size before relaxing)
+ .eh_frame      0x0000000008080b30        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+
+.gcc_except_table
+                0x0000000008080b34     0x44c3
+ *(.gcc_except_table .gcc_except_table.*)
+ .gcc_except_table
+                0x0000000008080b34      0x6be main.o
+ .gcc_except_table
+                0x00000000080811f2     0x1b61 CameraAppEngine.o
+ .gcc_except_table
+                0x0000000008082d53      0xe38 CCanProvider.o
+ .gcc_except_table
+                0x0000000008083b8b       0x96 CInitalData.o
+ .gcc_except_table
+                0x0000000008083c21      0x302 TTSPlayer.o
+ .gcc_except_table
+                0x0000000008083f23      0x52a GstOverlayItem.o
+ .gcc_except_table
+                0x000000000808444d      0x1ab TransparencyPainter.o
+ .gcc_except_table
+                0x00000000080845f8       0x64 GuideLineImgFinder.o
+ .gcc_except_table
+                0x000000000808465c      0x28f CameraVideoSetting.o
+ .gcc_except_table
+                0x00000000080848eb       0x14 GstLibThread.o
+ .gcc_except_table
+                0x00000000080848ff       0x1f CameraUtils.o
+ .gcc_except_table
+                0x000000000808491e      0x105 moc_CameraAppEngine.o
+ .gcc_except_table
+                0x0000000008084a23       0xcd moc_CCanProvider.o
+ .gcc_except_table
+                0x0000000008084af0       0x7e moc_CANInitProxy.o
+ .gcc_except_table
+                0x0000000008084b6e       0xfa moc_TTSPlayer.o
+ .gcc_except_table
+                0x0000000008084c68       0x46 moc_CRGearProxy.o
+ .gcc_except_table
+                0x0000000008084cae      0x130 moc_EngModeServProxy.o
+ .gcc_except_table
+                0x0000000008084dde       0xa2 moc_GstOverlayItem.o
+ .gcc_except_table
+                0x0000000008084e80       0x7c moc_PowerManagementProxy.o
+ .gcc_except_table
+                0x0000000008084efc       0x31 moc_GuideLineImgFinder.o
+ .gcc_except_table
+                0x0000000008084f2d       0xa2 moc_CameraVideoSetting.o
+ .gcc_except_table
+                0x0000000008084fcf       0x28 moc_GstLibThread.o
+                0x0000000008084ff7                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x0000000008085000                . = (0x1000 DATA_SEGMENT_ALIGN 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000008085000        0x0
+                0x0000000008085000                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x0000000008085000                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x0000000008085000        0x0
+                0x0000000008085000                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x0000000008085000                PROVIDE (__init_array_end, .)
+
+.fini_array     0x0000000008085000        0x0
+                0x0000000008085000                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x0000000008085000                PROVIDE (__fini_array_end, .)
+
+.ctors          0x0000000008085000       0x34
+ *crtbegin.o(.ctors)
+ .ctors         0x0000000008085000        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ .ctors         0x0000000008085004        0x4 main.o
+ .ctors         0x0000000008085008        0x4 CameraAppEngine.o
+ .ctors         0x000000000808500c        0x4 CCanProvider.o
+ .ctors         0x0000000008085010        0x4 TTSPlayer.o
+ .ctors         0x0000000008085014        0x4 GstOverlayItem.o
+ .ctors         0x0000000008085018        0x4 CameraVideoSetting.o
+ .ctors         0x000000000808501c        0x4 moc_CameraAppEngine.o
+ .ctors         0x0000000008085020        0x4 moc_CCanProvider.o
+ .ctors         0x0000000008085024        0x4 moc_TTSPlayer.o
+ .ctors         0x0000000008085028        0x4 moc_GstOverlayItem.o
+ .ctors         0x000000000808502c        0x4 moc_CameraVideoSetting.o
+ *(SORT(.ctors.*))
+ *(.ctors)
+ .ctors         0x0000000008085030        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+
+.dtors          0x0000000008085034        0x8
+ *crtbegin.o(.dtors)
+ .dtors         0x0000000008085034        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ .dtors         0x0000000008085038        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+                0x0000000008085038                __DTOR_END__
+
+.jcr            0x000000000808503c        0x4
+ *(.jcr)
+ .jcr           0x000000000808503c        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ .jcr           0x000000000808503c        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x0000000008085040      0x160
+ *(.dynamic)
+ .dynamic       0x0000000008085040      0x160 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x0000000008085040                _DYNAMIC
+
+.got            0x00000000080851a0        0x4
+ *(.got)
+ .got           0x00000000080851a0        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ *(.igot)
+                0x00000000080851a4                . = (. DATA_SEGMENT_RELRO_END 0xc)
+
+.got.plt        0x00000000080851a4      0x598
+ *(.got.plt)
+ .got.plt       0x00000000080851a4      0x598 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x00000000080851a4                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ .igot.plt      0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+
+.data           0x000000000808573c       0x14
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x000000000808573c        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x000000000808573c                __data_start
+                0x000000000808573c                data_start
+ .data          0x0000000008085740        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+ .data          0x0000000008085740        0x4 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+                0x0000000008085740                __dso_handle
+ .data          0x0000000008085744        0xc main.o
+                0x0000000008085744                powerState
+                0x0000000008085748                languageId
+                0x000000000808574c                systemVariant
+ .data          0x0000000008085750        0x0 CameraAppEngine.o
+ .data          0x0000000008085750        0x0 CCanProvider.o
+ .data          0x0000000008085750        0x0 CANInitProxy.o
+ .data          0x0000000008085750        0x0 CInitalData.o
+ .data          0x0000000008085750        0x0 TTSPlayer.o
+ .data          0x0000000008085750        0x0 CRGearProxy.o
+ .data          0x0000000008085750        0x0 EngModeServProxy.o
+ .data          0x0000000008085750        0x0 GstOverlayItem.o
+ .data          0x0000000008085750        0x0 TransparencyPainter.o
+ .data          0x0000000008085750        0x0 PowerManagementProxy.o
+ .data          0x0000000008085750        0x0 GuideLineImgFinder.o
+ .data          0x0000000008085750        0x0 CameraVideoSetting.o
+ .data          0x0000000008085750        0x0 tw9912_register.o
+ .data          0x0000000008085750        0x0 CameraLogger.o
+ .data          0x0000000008085750        0x0 GstLibThread.o
+ .data          0x0000000008085750        0x0 CameraUtils.o
+ .data          0x0000000008085750        0x0 moc_CameraAppEngine.o
+ .data          0x0000000008085750        0x0 moc_CCanProvider.o
+ .data          0x0000000008085750        0x0 moc_CANInitProxy.o
+ .data          0x0000000008085750        0x0 moc_CInitalData.o
+ .data          0x0000000008085750        0x0 moc_TTSPlayer.o
+ .data          0x0000000008085750        0x0 moc_CRGearProxy.o
+ .data          0x0000000008085750        0x0 moc_EngModeServProxy.o
+ .data          0x0000000008085750        0x0 moc_GstOverlayItem.o
+ .data          0x0000000008085750        0x0 moc_TransparencyPainter.o
+ .data          0x0000000008085750        0x0 moc_PowerManagementProxy.o
+ .data          0x0000000008085750        0x0 moc_GuideLineImgFinder.o
+ .data          0x0000000008085750        0x0 moc_CameraVideoSetting.o
+ .data          0x0000000008085750        0x0 moc_CameraLogger.o
+ .data          0x0000000008085750        0x0 moc_GstLibThread.o
+ .data          0x0000000008085750        0x0 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .data          0x0000000008085750        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+ .data          0x0000000008085750        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+
+.tm_clone_table
+                0x0000000008085750        0x0
+ .tm_clone_table
+                0x0000000008085750        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ .tm_clone_table
+                0x0000000008085750        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+
+.data1
+ *(.data1)
+
+.sharable_data  0x0000000008086000        0x0
+                0x0000000008086000                PROVIDE (__sharable_data_start, .)
+ *(.sharable_data .sharable_data.* .gnu.linkonce.shrd.*)
+                0x0000000008086000                . = ALIGN ((. != 0x0)?0x1000:0x1)
+                0x0000000008086000                PROVIDE (__sharable_data_end, .)
+                0x0000000008086000                _edata = .
+                0x0000000008086000                PROVIDE (edata, .)
+                0x0000000008086000                __bss_start = .
+
+.bss            0x0000000008085760      0x7fc
+ *(.dynbss)
+ .dynbss        0x0000000008085760      0x13c /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                0x0000000008085760                QThread::staticMetaObject
+                0x0000000008085770                typeinfo for AppEngineQML
+                0x0000000008085780                QDBusAbstractInterface::staticMetaObject
+                0x0000000008085790                AppEngineQML::staticMetaObject
+                0x00000000080857a0                AppEngineBase::m_Language
+                0x00000000080857a4                AppEngineBase::m_SystemVariant
+                0x00000000080857a8                QObject::staticMetaObject
+                0x00000000080857b8                typeinfo for QObject
+                0x00000000080857c0                QDeclarativeItem::staticMetaObject
+                0x00000000080857d0                QVariant::handler
+                0x00000000080857e0                vtable for __cxxabiv1::__si_class_type_info@@CXXABI_1.3
+                0x000000000808580c                typeinfo for QThread
+                0x0000000008085820                QString::shared_null
+                0x0000000008085834                QByteArray::shared_null
+                0x0000000008085848                QString::codecForCStrings
+                0x0000000008085850                typeinfo for QDBusAbstractInterface
+                0x0000000008085860                typeinfo for QDeclarativeItem
+                0x0000000008085880                QListData::shared_null
+                0x0000000008085898                AppEngineBase::m_CountryVariant
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000000000808589c        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ .bss           0x000000000808589c        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+ .bss           0x000000000808589c        0x8 /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ *fill*         0x00000000080858a4       0x1c 00
+ .bss           0x00000000080858c0       0xbc main.o
+                0x00000000080858c0                CameraAppEngine::SigM
+                0x00000000080858c4                dhVehicleVariant
+                0x00000000080858c8                countryVariant
+ .bss._ZZN11QMetaTypeIdI5EventE14qt_metatype_idEvE11metatype_id
+                0x000000000808597c        0x4 main.o
+                0x000000000808597c                QMetaTypeId<Event>::qt_metatype_id()::metatype_id
+ .bss           0x0000000008085980       0xbc CameraAppEngine.o
+ .bss._ZZN11QMetaTypeIdI13QDBusArgumentE14qt_metatype_idEvE11metatype_id
+                0x0000000008085a3c        0x4 CameraAppEngine.o
+                0x0000000008085a3c                QMetaTypeId<QDBusArgument>::qt_metatype_id()::metatype_id
+ .bss           0x0000000008085a40       0xbc CCanProvider.o
+ .bss           0x0000000008085afc        0x0 CANInitProxy.o
+ .bss           0x0000000008085afc        0x0 CInitalData.o
+ *fill*         0x0000000008085afc        0x4 00
+ .bss           0x0000000008085b00       0x7c TTSPlayer.o
+ .bss           0x0000000008085b7c        0x0 CRGearProxy.o
+ .bss           0x0000000008085b7c        0x0 EngModeServProxy.o
+ *fill*         0x0000000008085b7c        0x4 00
+ .bss           0x0000000008085b80       0x9c GstOverlayItem.o
+ .bss           0x0000000008085c1c        0x0 TransparencyPainter.o
+ .bss           0x0000000008085c1c        0x0 PowerManagementProxy.o
+ .bss           0x0000000008085c1c        0x0 GuideLineImgFinder.o
+ *fill*         0x0000000008085c1c        0x4 00
+ .bss           0x0000000008085c20       0x7c CameraVideoSetting.o
+ .bss           0x0000000008085c9c        0x0 tw9912_register.o
+ .bss           0x0000000008085c9c        0x0 CameraLogger.o
+ .bss           0x0000000008085c9c        0x0 GstLibThread.o
+ .bss           0x0000000008085c9c        0x0 CameraUtils.o
+ *fill*         0x0000000008085c9c        0x4 00
+ .bss           0x0000000008085ca0       0x9c moc_CameraAppEngine.o
+ *fill*         0x0000000008085d3c        0x4 00
+ .bss           0x0000000008085d40       0x9c moc_CCanProvider.o
+ .bss           0x0000000008085ddc        0x0 moc_CANInitProxy.o
+ .bss           0x0000000008085ddc        0x0 moc_CInitalData.o
+ *fill*         0x0000000008085ddc        0x4 00
+ .bss           0x0000000008085de0       0x7c moc_TTSPlayer.o
+ .bss           0x0000000008085e5c        0x0 moc_CRGearProxy.o
+ .bss           0x0000000008085e5c        0x0 moc_EngModeServProxy.o
+ *fill*         0x0000000008085e5c        0x4 00
+ .bss           0x0000000008085e60       0x7c moc_GstOverlayItem.o
+ .bss           0x0000000008085edc        0x0 moc_TransparencyPainter.o
+ .bss           0x0000000008085edc        0x0 moc_PowerManagementProxy.o
+ .bss           0x0000000008085edc        0x0 moc_GuideLineImgFinder.o
+ *fill*         0x0000000008085edc        0x4 00
+ .bss           0x0000000008085ee0       0x7c moc_CameraVideoSetting.o
+ .bss           0x0000000008085f5c        0x0 moc_CameraLogger.o
+ .bss           0x0000000008085f5c        0x0 moc_GstLibThread.o
+ .bss           0x0000000008085f5c        0x0 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .bss           0x0000000008085f5c        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+ .bss           0x0000000008085f5c        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+ *(COMMON)
+                0x0000000008085f5c                . = ALIGN ((. != 0x0)?0x4:0x1)
+
+.sharable_bss   0x0000000008086000        0x0
+                0x0000000008086000                PROVIDE (__sharable_bss_start, .)
+ *(.dynsharablebss)
+ .dynsharablebss
+                0x0000000000000000        0x0 /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+ *(.sharable_bss .sharable_bss.* .gnu.linkonce.shrb.*)
+ *(SHARABLE_COMMON)
+                0x0000000008086000                . = ALIGN ((. != 0x0)?0x1000:0x1)
+                0x0000000008086000                PROVIDE (__sharable_bss_end, .)
+                0x0000000008086000                . = ALIGN (0x4)
+                0x0000000008086000                . = ALIGN (0x4)
+                0x0000000008086000                _end = .
+                0x0000000008086000                PROVIDE (end, .)
+                0x0000000008086000                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x3d
+ *(.comment)
+ .comment       0x0000000000000000       0x3d /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crt1.o
+                                         0x3e (size before relaxing)
+ .comment       0x0000000000000000       0x3e /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crti.o
+ .comment       0x0000000000000000       0x3e /usr/lib/gcc/i586-meego-linux/4.7.2/crtbegin.o
+ .comment       0x0000000000000000       0x3e main.o
+ .comment       0x0000000000000000       0x3e CameraAppEngine.o
+ .comment       0x0000000000000000       0x3e CCanProvider.o
+ .comment       0x0000000000000000       0x3e CANInitProxy.o
+ .comment       0x0000000000000000       0x3e CInitalData.o
+ .comment       0x0000000000000000       0x3e TTSPlayer.o
+ .comment       0x0000000000000000       0x3e CRGearProxy.o
+ .comment       0x0000000000000000       0x3e EngModeServProxy.o
+ .comment       0x0000000000000000       0x3e GstOverlayItem.o
+ .comment       0x0000000000000000       0x3e TransparencyPainter.o
+ .comment       0x0000000000000000       0x3e PowerManagementProxy.o
+ .comment       0x0000000000000000       0x3e GuideLineImgFinder.o
+ .comment       0x0000000000000000       0x3e CameraVideoSetting.o
+ .comment       0x0000000000000000       0x3e tw9912_register.o
+ .comment       0x0000000000000000       0x3e CameraLogger.o
+ .comment       0x0000000000000000       0x3e GstLibThread.o
+ .comment       0x0000000000000000       0x3e CameraUtils.o
+ .comment       0x0000000000000000       0x3e moc_CameraAppEngine.o
+ .comment       0x0000000000000000       0x3e moc_CCanProvider.o
+ .comment       0x0000000000000000       0x3e moc_CANInitProxy.o
+ .comment       0x0000000000000000       0x3e moc_CInitalData.o
+ .comment       0x0000000000000000       0x3e moc_TTSPlayer.o
+ .comment       0x0000000000000000       0x3e moc_CRGearProxy.o
+ .comment       0x0000000000000000       0x3e moc_EngModeServProxy.o
+ .comment       0x0000000000000000       0x3e moc_GstOverlayItem.o
+ .comment       0x0000000000000000       0x3e moc_TransparencyPainter.o
+ .comment       0x0000000000000000       0x3e moc_PowerManagementProxy.o
+ .comment       0x0000000000000000       0x3e moc_GuideLineImgFinder.o
+ .comment       0x0000000000000000       0x3e moc_CameraVideoSetting.o
+ .comment       0x0000000000000000       0x3e moc_CameraLogger.o
+ .comment       0x0000000000000000       0x3e moc_GstLibThread.o
+ .comment       0x0000000000000000       0x3e /usr/lib/gcc/i586-meego-linux/4.7.2/crtend.o
+ .comment       0x0000000000000000       0x3e /usr/lib/gcc/i586-meego-linux/4.7.2/../../../crtn.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x7f0
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000      0x148 main.o
+ .debug_aranges
+                0x0000000000000148       0x80 CameraAppEngine.o
+ .debug_aranges
+                0x00000000000001c8       0x78 CCanProvider.o
+ .debug_aranges
+                0x0000000000000240       0x20 CANInitProxy.o
+ .debug_aranges
+                0x0000000000000260       0x30 CInitalData.o
+ .debug_aranges
+                0x0000000000000290       0x40 TTSPlayer.o
+ .debug_aranges
+                0x00000000000002d0       0x20 CRGearProxy.o
+ .debug_aranges
+                0x00000000000002f0       0x20 EngModeServProxy.o
+ .debug_aranges
+                0x0000000000000310       0x50 GstOverlayItem.o
+ .debug_aranges
+                0x0000000000000360       0x38 TransparencyPainter.o
+ .debug_aranges
+                0x0000000000000398       0x20 PowerManagementProxy.o
+ .debug_aranges
+                0x00000000000003b8       0x28 GuideLineImgFinder.o
+ .debug_aranges
+                0x00000000000003e0       0x40 CameraVideoSetting.o
+ .debug_aranges
+                0x0000000000000420       0x20 tw9912_register.o
+ .debug_aranges
+                0x0000000000000440       0x20 CameraLogger.o
+ .debug_aranges
+                0x0000000000000460       0x20 GstLibThread.o
+ .debug_aranges
+                0x0000000000000480       0x20 CameraUtils.o
+ .debug_aranges
+                0x00000000000004a0       0x58 moc_CameraAppEngine.o
+ .debug_aranges
+                0x00000000000004f8       0x40 moc_CCanProvider.o
+ .debug_aranges
+                0x0000000000000538       0x40 moc_CANInitProxy.o
+ .debug_aranges
+                0x0000000000000578       0x30 moc_CInitalData.o
+ .debug_aranges
+                0x00000000000005a8       0x50 moc_TTSPlayer.o
+ .debug_aranges
+                0x00000000000005f8       0x38 moc_CRGearProxy.o
+ .debug_aranges
+                0x0000000000000630       0x40 moc_EngModeServProxy.o
+ .debug_aranges
+                0x0000000000000670       0x40 moc_GstOverlayItem.o
+ .debug_aranges
+                0x00000000000006b0       0x50 moc_TransparencyPainter.o
+ .debug_aranges
+                0x0000000000000700       0x30 moc_PowerManagementProxy.o
+ .debug_aranges
+                0x0000000000000730       0x30 moc_GuideLineImgFinder.o
+ .debug_aranges
+                0x0000000000000760       0x40 moc_CameraVideoSetting.o
+ .debug_aranges
+                0x00000000000007a0       0x20 moc_CameraLogger.o
+ .debug_aranges
+                0x00000000000007c0       0x30 moc_GstLibThread.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000   0x37e314
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000    0x47b9f main.o
+ .debug_info    0x0000000000047b9f    0x3ac9b CameraAppEngine.o
+ .debug_info    0x000000000008283a    0x33985 CCanProvider.o
+ .debug_info    0x00000000000b61bf    0x1ec99 CANInitProxy.o
+ .debug_info    0x00000000000d4e58    0x1ed42 CInitalData.o
+ .debug_info    0x00000000000f3b9a    0x12c4b TTSPlayer.o
+ .debug_info    0x00000000001067e5    0x1ec99 CRGearProxy.o
+ .debug_info    0x000000000012547e    0x1ed75 EngModeServProxy.o
+ .debug_info    0x00000000001441f3    0x25211 GstOverlayItem.o
+ .debug_info    0x0000000000169404    0x3a722 TransparencyPainter.o
+ .debug_info    0x00000000001a3b26    0x1ed75 PowerManagementProxy.o
+ .debug_info    0x00000000001c289b     0xedf2 GuideLineImgFinder.o
+ .debug_info    0x00000000001d168d    0x124d9 CameraVideoSetting.o
+ .debug_info    0x00000000001e3b66      0x777 tw9912_register.o
+ .debug_info    0x00000000001e42dd     0xd133 CameraLogger.o
+ .debug_info    0x00000000001f1410     0xd450 GstLibThread.o
+ .debug_info    0x00000000001fe860     0xe390 CameraUtils.o
+ .debug_info    0x000000000020cbf0    0x24df9 moc_CameraAppEngine.o
+ .debug_info    0x00000000002319e9    0x253e3 moc_CCanProvider.o
+ .debug_info    0x0000000000256dcc    0x2009f moc_CANInitProxy.o
+ .debug_info    0x0000000000276e6b    0x1deb1 moc_CInitalData.o
+ .debug_info    0x0000000000294d1c    0x10578 moc_TTSPlayer.o
+ .debug_info    0x00000000002a5294    0x20152 moc_CRGearProxy.o
+ .debug_info    0x00000000002c53e6    0x20db4 moc_EngModeServProxy.o
+ .debug_info    0x00000000002e619a    0x2153c moc_GstOverlayItem.o
+ .debug_info    0x00000000003076d6    0x1b171 moc_TransparencyPainter.o
+ .debug_info    0x0000000000322847    0x20396 moc_PowerManagementProxy.o
+ .debug_info    0x0000000000342bdd    0x1059a moc_GuideLineImgFinder.o
+ .debug_info    0x0000000000353177    0x10550 moc_CameraVideoSetting.o
+ .debug_info    0x00000000003636c7     0xd3f4 moc_CameraLogger.o
+ .debug_info    0x0000000000370abb     0xd859 moc_GstLibThread.o
+
+.debug_abbrev   0x0000000000000000    0x18f1c
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000     0x133e main.o
+ .debug_abbrev  0x000000000000133e     0x1268 CameraAppEngine.o
+ .debug_abbrev  0x00000000000025a6     0x10f1 CCanProvider.o
+ .debug_abbrev  0x0000000000003697      0xc24 CANInitProxy.o
+ .debug_abbrev  0x00000000000042bb      0xd98 CInitalData.o
+ .debug_abbrev  0x0000000000005053      0xc4c TTSPlayer.o
+ .debug_abbrev  0x0000000000005c9f      0xc24 CRGearProxy.o
+ .debug_abbrev  0x00000000000068c3      0xc5f EngModeServProxy.o
+ .debug_abbrev  0x0000000000007522     0x109d GstOverlayItem.o
+ .debug_abbrev  0x00000000000085bf      0xef2 TransparencyPainter.o
+ .debug_abbrev  0x00000000000094b1      0xc5f PowerManagementProxy.o
+ .debug_abbrev  0x000000000000a110      0x96e GuideLineImgFinder.o
+ .debug_abbrev  0x000000000000aa7e      0xc66 CameraVideoSetting.o
+ .debug_abbrev  0x000000000000b6e4      0x1d9 tw9912_register.o
+ .debug_abbrev  0x000000000000b8bd      0x8ee CameraLogger.o
+ .debug_abbrev  0x000000000000c1ab      0x858 GstLibThread.o
+ .debug_abbrev  0x000000000000ca03      0x93c CameraUtils.o
+ .debug_abbrev  0x000000000000d33f     0x10d4 moc_CameraAppEngine.o
+ .debug_abbrev  0x000000000000e413     0x1037 moc_CCanProvider.o
+ .debug_abbrev  0x000000000000f44a      0xe83 moc_CANInitProxy.o
+ .debug_abbrev  0x00000000000102cd      0xd91 moc_CInitalData.o
+ .debug_abbrev  0x000000000001105e      0xc99 moc_TTSPlayer.o
+ .debug_abbrev  0x0000000000011cf7      0xea8 moc_CRGearProxy.o
+ .debug_abbrev  0x0000000000012b9f      0xed2 moc_EngModeServProxy.o
+ .debug_abbrev  0x0000000000013a71      0xfd6 moc_GstOverlayItem.o
+ .debug_abbrev  0x0000000000014a47      0xc61 moc_TransparencyPainter.o
+ .debug_abbrev  0x00000000000156a8      0xec0 moc_PowerManagementProxy.o
+ .debug_abbrev  0x0000000000016568      0xad8 moc_GuideLineImgFinder.o
+ .debug_abbrev  0x0000000000017040      0xc51 moc_CameraVideoSetting.o
+ .debug_abbrev  0x0000000000017c91      0x900 moc_CameraLogger.o
+ .debug_abbrev  0x0000000000018591      0x98b moc_GstLibThread.o
+
+.debug_line     0x0000000000000000    0x1c701
+ *(.debug_line)
+ .debug_line    0x0000000000000000     0x24dd main.o
+ .debug_line    0x00000000000024dd     0x5c2b CameraAppEngine.o
+ .debug_line    0x0000000000008108     0x3920 CCanProvider.o
+ .debug_line    0x000000000000ba28      0x742 CANInitProxy.o
+ .debug_line    0x000000000000c16a      0x932 CInitalData.o
+ .debug_line    0x000000000000ca9c     0x1062 TTSPlayer.o
+ .debug_line    0x000000000000dafe      0x740 CRGearProxy.o
+ .debug_line    0x000000000000e23e      0x752 EngModeServProxy.o
+ .debug_line    0x000000000000e990     0x1d5c GstOverlayItem.o
+ .debug_line    0x00000000000106ec     0x10e6 TransparencyPainter.o
+ .debug_line    0x00000000000117d2      0x75a PowerManagementProxy.o
+ .debug_line    0x0000000000011f2c      0x613 GuideLineImgFinder.o
+ .debug_line    0x000000000001253f      0xe33 CameraVideoSetting.o
+ .debug_line    0x0000000000013372      0x19c tw9912_register.o
+ .debug_line    0x000000000001350e      0x48b CameraLogger.o
+ .debug_line    0x0000000000013999      0x4e9 GstLibThread.o
+ .debug_line    0x0000000000013e82      0x4e9 CameraUtils.o
+ .debug_line    0x000000000001436b     0x1153 moc_CameraAppEngine.o
+ .debug_line    0x00000000000154be     0x107f moc_CCanProvider.o
+ .debug_line    0x000000000001653d      0x92f moc_CANInitProxy.o
+ .debug_line    0x0000000000016e6c      0x77f moc_CInitalData.o
+ .debug_line    0x00000000000175eb      0x7e5 moc_TTSPlayer.o
+ .debug_line    0x0000000000017dd0      0x8ea moc_CRGearProxy.o
+ .debug_line    0x00000000000186ba      0xb2c moc_EngModeServProxy.o
+ .debug_line    0x00000000000191e6      0xd6a moc_GstOverlayItem.o
+ .debug_line    0x0000000000019f50      0x6ac moc_TransparencyPainter.o
+ .debug_line    0x000000000001a5fc      0x998 moc_PowerManagementProxy.o
+ .debug_line    0x000000000001af94      0x5f6 moc_GuideLineImgFinder.o
+ .debug_line    0x000000000001b58a      0x7e7 moc_CameraVideoSetting.o
+ .debug_line    0x000000000001bd71      0x4a1 moc_CameraLogger.o
+ .debug_line    0x000000000001c212      0x4ef moc_GstLibThread.o
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x0000000000000000    0x552e9
+ *(.debug_str)
+ .debug_str     0x0000000000000000    0x3e020 main.o
+                                      0x3f5f7 (size before relaxing)
+ .debug_str     0x000000000003e020     0xcd36 CameraAppEngine.o
+                                      0x2d6ae (size before relaxing)
+ .debug_str     0x000000000004ad56     0x284d CCanProvider.o
+                                      0x22157 (size before relaxing)
+ .debug_str     0x000000000004d5a3       0x90 CANInitProxy.o
+                                      0x1c243 (size before relaxing)
+ .debug_str     0x000000000004d633       0xb3 CInitalData.o
+                                      0x1b822 (size before relaxing)
+ .debug_str     0x000000000004d6e6      0xa08 TTSPlayer.o
+                                       0xdfcd (size before relaxing)
+ .debug_str     0x000000000004e0ee       0x79 CRGearProxy.o
+                                      0x1c23f (size before relaxing)
+ .debug_str     0x000000000004e167       0xe7 EngModeServProxy.o
+                                      0x1c2be (size before relaxing)
+ .debug_str     0x000000000004e24e      0x7c2 GstOverlayItem.o
+                                      0x1e002 (size before relaxing)
+ .debug_str     0x000000000004ea10     0x1176 TransparencyPainter.o
+                                      0x3692f (size before relaxing)
+ .debug_str     0x000000000004fb86       0xe6 PowerManagementProxy.o
+                                      0x1c2bc (size before relaxing)
+ .debug_str     0x000000000004fc6c      0x44d GuideLineImgFinder.o
+                                       0xccc1 (size before relaxing)
+ .debug_str     0x00000000000500b9      0x891 CameraVideoSetting.o
+                                       0xdd4d (size before relaxing)
+ .debug_str     0x000000000005094a       0xa3 tw9912_register.o
+                                        0x3b0 (size before relaxing)
+ .debug_str     0x00000000000509ed       0x9f CameraLogger.o
+                                       0xb594 (size before relaxing)
+ .debug_str     0x0000000000050a8c       0x8c GstLibThread.o
+                                       0xb5fb (size before relaxing)
+ .debug_str     0x0000000000050b18       0x32 CameraUtils.o
+                                       0xc7c4 (size before relaxing)
+ .debug_str     0x0000000000050b4a      0xf64 moc_CameraAppEngine.o
+                                      0x20c01 (size before relaxing)
+ .debug_str     0x0000000000051aae      0x3db moc_CCanProvider.o
+                                      0x20bf0 (size before relaxing)
+ .debug_str     0x0000000000051e89      0x366 moc_CANInitProxy.o
+                                      0x1cecf (size before relaxing)
+ .debug_str     0x00000000000521ef      0x209 moc_CInitalData.o
+                                      0x1abd6 (size before relaxing)
+ .debug_str     0x00000000000523f8      0x2b6 moc_TTSPlayer.o
+                                       0xdb39 (size before relaxing)
+ .debug_str     0x00000000000526ae      0x251 moc_CRGearProxy.o
+                                      0x1d082 (size before relaxing)
+ .debug_str     0x00000000000528ff      0x3de moc_EngModeServProxy.o
+                                      0x1d1c9 (size before relaxing)
+ .debug_str     0x0000000000052cdd      0x39c moc_GstOverlayItem.o
+                                      0x1d942 (size before relaxing)
+ .debug_str     0x0000000000053079      0x2a6 moc_TransparencyPainter.o
+                                      0x1793d (size before relaxing)
+ .debug_str     0x000000000005331f      0x248 moc_PowerManagementProxy.o
+                                      0x1cfb8 (size before relaxing)
+ .debug_str     0x0000000000053567     0x161e moc_GuideLineImgFinder.o
+                                       0xe49e (size before relaxing)
+ .debug_str     0x0000000000054b85      0x38e moc_CameraVideoSetting.o
+                                       0xdf3b (size before relaxing)
+ .debug_str     0x0000000000054f13      0x1e0 moc_CameraLogger.o
+                                       0xb976 (size before relaxing)
+ .debug_str     0x00000000000550f3      0x1f6 moc_GstLibThread.o
+                                       0xbbf9 (size before relaxing)
+
+.debug_loc      0x0000000000000000    0x19f15
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000     0x4c2b main.o
+ .debug_loc     0x0000000000004c2b     0x3fbd CameraAppEngine.o
+ .debug_loc     0x0000000000008be8     0x786b CCanProvider.o
+ .debug_loc     0x0000000000010453       0xc2 CInitalData.o
+ .debug_loc     0x0000000000010515     0x4b38 TTSPlayer.o
+ .debug_loc     0x000000000001504d      0xe28 GstOverlayItem.o
+ .debug_loc     0x0000000000015e75      0x258 TransparencyPainter.o
+ .debug_loc     0x00000000000160cd       0x33 GuideLineImgFinder.o
+ .debug_loc     0x0000000000016100      0xfff CameraVideoSetting.o
+ .debug_loc     0x00000000000170ff       0xb9 tw9912_register.o
+ .debug_loc     0x00000000000171b8      0x48c moc_CameraAppEngine.o
+ .debug_loc     0x0000000000017644      0x404 moc_CCanProvider.o
+ .debug_loc     0x0000000000017a48      0x12b moc_CANInitProxy.o
+ .debug_loc     0x0000000000017b73      0x150 moc_CInitalData.o
+ .debug_loc     0x0000000000017cc3      0x522 moc_TTSPlayer.o
+ .debug_loc     0x00000000000181e5       0xf8 moc_CRGearProxy.o
+ .debug_loc     0x00000000000182dd      0x384 moc_EngModeServProxy.o
+ .debug_loc     0x0000000000018661      0x52b moc_GstOverlayItem.o
+ .debug_loc     0x0000000000018b8c      0x237 moc_TransparencyPainter.o
+ .debug_loc     0x0000000000018dc3      0x2ab moc_PowerManagementProxy.o
+ .debug_loc     0x000000000001906e      0x2ad moc_GuideLineImgFinder.o
+ .debug_loc     0x000000000001931b      0xb90 moc_CameraVideoSetting.o
+ .debug_loc     0x0000000000019eab       0x20 moc_CameraLogger.o
+ .debug_loc     0x0000000000019ecb       0x4a moc_GstLibThread.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000     0x7f88
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000      0xb98 main.o
+ .debug_ranges  0x0000000000000b98     0x2d20 CameraAppEngine.o
+ .debug_ranges  0x00000000000038b8     0x1730 CCanProvider.o
+ .debug_ranges  0x0000000000004fe8      0x208 CInitalData.o
+ .debug_ranges  0x00000000000051f0      0x438 TTSPlayer.o
+ .debug_ranges  0x0000000000005628      0x940 GstOverlayItem.o
+ .debug_ranges  0x0000000000005f68      0x7e8 TransparencyPainter.o
+ .debug_ranges  0x0000000000006750       0xb0 GuideLineImgFinder.o
+ .debug_ranges  0x0000000000006800      0x4b0 CameraVideoSetting.o
+ .debug_ranges  0x0000000000006cb0       0x18 tw9912_register.o
+ .debug_ranges  0x0000000000006cc8       0x38 CameraUtils.o
+ .debug_ranges  0x0000000000006d00      0x168 moc_CameraAppEngine.o
+ .debug_ranges  0x0000000000006e68      0x150 moc_CCanProvider.o
+ .debug_ranges  0x0000000000006fb8      0x218 moc_CANInitProxy.o
+ .debug_ranges  0x00000000000071d0       0x38 moc_CInitalData.o
+ .debug_ranges  0x0000000000007208      0x150 moc_TTSPlayer.o
+ .debug_ranges  0x0000000000007358      0x188 moc_CRGearProxy.o
+ .debug_ranges  0x00000000000074e0      0x450 moc_EngModeServProxy.o
+ .debug_ranges  0x0000000000007930       0xd8 moc_GstOverlayItem.o
+ .debug_ranges  0x0000000000007a08       0x78 moc_TransparencyPainter.o
+ .debug_ranges  0x0000000000007a80      0x328 moc_PowerManagementProxy.o
+ .debug_ranges  0x0000000000007da8       0xb0 moc_GuideLineImgFinder.o
+ .debug_ranges  0x0000000000007e58       0xf8 moc_CameraVideoSetting.o
+ .debug_ranges  0x0000000000007f50       0x38 moc_GstLibThread.o
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(AppCamera elf32-i386)

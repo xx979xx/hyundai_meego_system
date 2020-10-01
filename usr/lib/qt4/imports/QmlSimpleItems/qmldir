@@ -1,0 +1,14 @@
+RadioList 1.0 qml/DHAVN_SimpleItems_RadioList.qml
+ActivitySlider 1.0 qml/DhAvnSimpleItemsActivitySlider.qml
+SpinControl 1.0 qml/DhAvnSimpleItemsSpinControl.qml
+VertSpinControl 1.0 qml/DhAvnSimpleItemsVertSpinControl.qml
+ProgressBar 1.0 qml/DhAvnSimpleItemsProgressBar.qml
+ScrollBar 1.0 qml/DhAvnSimpleItemsScrollBar.qml
+ModScrollBar 1.0 qml/DhAvnSimpleItemsModScrollBar.qml
+CheckBoxList 1.0 qml/CheckBoxList_Components/DHAVN_SimpleItems_CheckBoxList.qml
+MediaProgressBar 1.0 qml/DHAVN_SimpleItemsMediaProgressBar.qml
+VisualCue 1.0 qml/DHAVN_SimpleItems_VisualCue.qml
+VerticalScrollBar 1.0 qml/DHAVN_SimpleItems_VerticalScrollBar.qml
+AudioProgressBar 1.0 qml/DHAVN_SimpleItems_AudioProgressBar.qml
+VideoProgressBar 1.0 qml/DHAVN_SimpleItems_VideoProgressBar.qml
+QmlSimpleItems 1.0 qml/*

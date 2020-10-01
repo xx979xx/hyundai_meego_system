@@ -1,0 +1,70 @@
+# This rule set will cause automounting of the 1st partition of USB devices
+# connected directly to front or rear sockets.
+#
+# It will ignore devices connected through USB hubs, due to the last component
+# in the DEVPATH match. This will also cause USB 1 devices to be ignored because
+# their device paths will be very different - this can be fixed by adding extra
+# match rules specifically for USB 1 devices.
+#
+# It will explicitly prevent additional partitions on the same device being
+# automounted.
+
+KERNEL=="sd[b-z]*", ENV{UDISKS_PRESENTATION_HIDE}="1"
+
+KERNEL=="sd[b-z]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:08.3/usb2/2-2/2-2:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/front_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+
+KERNEL=="sd[b-z]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:02.1/usb1/1-1/1-1:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/front_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+
+KERNEL=="sd[b-z]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_DH_REAR}=="non_hub_ic", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:08.3/usb2/2-1/2-1:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/rear_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+
+KERNEL=="sd[b-z]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_DH_REAR}=="hub_ic", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:08.3/usb2/2-1/2-1.2/2-1.2.2/2-1.2.2:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/rear_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+
+
+KERNEL=="sd[b-z][1-9]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_DH_MOUNT_FRONT}=="empty", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:08.3/usb2/2-2/2-2:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/front_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+
+KERNEL=="sd[b-z][1-9]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_DH_MOUNT_FRONT}=="empty", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:02.1/usb1/1-1/1-1:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/front_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+
+KERNEL=="sd[b-z][1-9]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_DH_REAR}=="non_hub_ic", \
+  ENV{ID_DH_MOUNT_REAR}=="empty", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:08.3/usb2/2-1/2-1:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/rear_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+
+KERNEL=="sd[b-z][1-9]", ENV{ID_TYPE}=="disk", \
+  ENV{ID_VERSION}!="1.*", \
+  ENV{ID_DH_REAR}=="hub_ic", \
+  ENV{ID_DH_MOUNT_REAR}=="empty", \
+  ENV{ID_WP_STATE}=="free", \
+  ENV{DEVPATH}=="/devices/pci0000:00/0000:00:17.0/0000:01:00.0/0000:02:08.3/usb2/2-1/2-1.2/2-1.2.2/2-1.2.2:1.0/*", \
+  ENV{UDISKS_AUTOMOUNT_PREFIX}="/media/rear_usb/", ENV{UDISKS_PRESENTATION_HIDE}="0"
+

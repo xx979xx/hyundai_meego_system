@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case "$1" in
+	on)
+		sudo cp /etc/console_on /etc/inittab
+		sync
+	;;
+	off)
+		sudo cp /etc/console_off /etc/inittab
+		sync
+	;;
+	*)
+		#echo "usage : inittab_console_ctl {on|off}"
+		grep ttyPCH2 /etc/inittab > /dev/null && echo enable || echo disable
+		exit 1
+	esac

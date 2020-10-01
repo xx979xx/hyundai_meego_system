@@ -1,0 +1,11 @@
+/log_data/log/log.log /log_data/log/messages /log_data/log/dhavn_wm /log_data/log/tracker-extract.log /log_data/log/tracker-miner-fs.log /log_data/log/tracker-store.log {
+    compress
+    rotate 50
+    size = 10M
+    period 600
+    postrotate
+        /bin/kill -HUP `cat /var/run/syslogd.pid 2> /dev/null` 2> /dev/null || true
+    endscript
+
+}
+

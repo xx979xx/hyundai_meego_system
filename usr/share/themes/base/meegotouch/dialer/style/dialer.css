@@ -1,0 +1,740 @@
+/*
+ * dialer - MeeGo Voice Call Manager
+ * Copyright (c) 2009, 2010, Intel Corporation.
+ *
+ * This program is licensed under the terms and conditions of the
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+/*
+ * Import Base Style Overrides
+ */
+@import "overrides.css";
+
+
+/*
+ * Import Custom Widget Style
+ */
+@import "peopleitemstyle.css";
+@import "seasidelistitemstyle.css";
+@import "callitemstyle.css";
+
+/* *************************************************************************
+ * Dialer specific properties for named objects
+ * *************************************************************************/
+MApplicationPageStyle.Landscape {
+    background-image: none;
+    background-color: $COLOR_ACCENT1;
+    padding-left:   0;
+    padding-right:  0;
+    margin-left:   0;
+    margin-right:  0;
+}
+
+MApplicationPageStyle.Portrait {
+    background-image: none;
+    background-color: $COLOR_ACCENT1;
+    padding-left:   0;
+    padding-right:  0;
+    margin-left:   0;
+    margin-right:  0;
+}
+
+/* ***********************************************
+ * Incoming Call Alert properties
+ * ***********************************************/
+#alertPanel.Landscape {
+    preferred-size: 90% 60%;
+    minimum-size: 90% 50%;
+    maximum-size: 90% 60%;
+}
+
+#alertPanel.Portrait {
+    preferred-size: 90% 50%;
+    minimum-size: 90% 50%;
+    maximum-size: 90% 50%;
+}
+
+#acceptButton.Landscape  {
+    preferred-size: 45% 24mm;
+    minimum-size: 45% 24mm;
+    background-image: call-accept-up 2 2 2 2;
+}
+
+#acceptButton.Landscape:pressed  {
+    background-image: call-accept-dn 2 2 2 2;
+}
+
+#declineButton.Landscape  {
+    preferred-size: 45% 24mm;
+    minimum-size: 45% 24mm;
+    background-image: call-decline-up 2 2 2 2;
+}
+
+#declineButton.Landscape:pressed  {
+    background-image: call-decline-dn 2 2 2 2;
+}
+
+#acceptButton.Portrait  {
+    preferred-size: 40% 6mm;
+    minimum-size: 40% 6mm;
+    background-image: call-accept-up 2 2 2 2;
+}
+
+#acceptButton.Portrait:pressed  {
+    background-image: call-accept-dn 2 2 2 2;
+}
+
+#declineButton.Portrait  {
+    preferred-size: 40% 6mm;
+    minimum-size: 40% 6mm;
+    background-image: call-decline-up 2 2 2 2;
+}
+
+#declineButton.Portrait:pressed  {
+    background-image: call-decline-dn 2 2 2 2;
+}
+
+/*
+#alertPhoto {
+    preferred-size: 50% 40%;
+    minimum-size: 50% 30%;
+    maximum-size: 50% 40%;
+}
+*/
+
+#alertName {
+    font: "Droid Sans Bold" 3.2mm;
+    color: black;
+}
+
+#alertNumber {
+    font: "Droid Sans" 3.2mm;
+    color: gray;
+}
+
+/* ***********************************************
+ * DialerPage properties
+ * ***********************************************/
+#phoneNumber {
+    margin-right: 0;
+    text-color: black;
+    prompt-color: #323232;
+    preferred-size: -1 $HEIGHT_NAVIGATIONBAR;
+}
+
+#phoneNumber.Landscape {
+    minimum-size:   90%  $HEIGHT_NAVIGATIONBAR;
+    maximum-size:   90%  $HEIGHT_NAVIGATIONBAR;
+}
+#phoneNumber.Portrait {
+    minimum-size:   80%  $HEIGHT_NAVIGATIONBAR;
+    maximum-size:   80%  $HEIGHT_NAVIGATIONBAR;
+}
+
+#bkspButton {
+    background-image: "meegotouch-textedit-background" 3px 3px 3px 3px;
+    margin-top: $MARGIN_MEDIUM;
+    margin-right: $MARGIN_MEDIUM;
+    margin-left: -1;
+    padding-top: -$MARGIN_MEDIUM;
+    padding-bottom: -$MARGIN_MEDIUM;
+    icon-size: 36 18;
+    icon-align: center;
+    preferred-size: $SIZE_BUTTON  $HEIGHT_NAVIGATIONBAR;
+    minimum-size:   10% $HEIGHT_NAVIGATIONBAR;
+    maximum-size:   $SIZE_BUTTON $HEIGHT_NAVIGATIONBAR;
+}
+#bkspButton:pressed {
+    background-image: ;
+}
+
+#dialButton {
+    background-image: "input-field-delete-button-background" 10px 10px 10px 10px;
+    margin-top: $MARGIN_MEDIUM;
+    margin-bottom: $MARGIN_MEDIUM;
+    margin-left: -1;
+    margin-right: $MARGIN_MEDIUM;
+    padding-top: -$MARGIN_MEDIUM;
+    padding-bottom: -$MARGIN_MEDIUM;
+    icon-size: 36 36;
+    icon-align: center;
+    preferred-size: 10% $HEIGHT_NAVIGATIONBAR;
+    minimum-size:   10% $HEIGHT_NAVIGATIONBAR;
+    maximum-size:   10% $HEIGHT_NAVIGATIONBAR;
+}
+#dialButton:pressed {
+    background-image: "input-field-delete-button-background-pressed" 10px 10px 10px 10px;
+}
+
+MContainerStyle#listBox {
+    background-image: ;
+    margin-top:  $MARGIN_LARGE;
+    margin-left: -$MARGIN_LARGE;
+}
+#listBox.Landscape {
+    preferred-size: 100% 85%;
+    minimum-size:   100% 85%;
+    maximum-size:   100% 85%;
+}
+#listBox.Portrait {
+    preferred-size: 100% 85%;
+    minimum-size:   100% 85%;
+    maximum-size:   100% 85%;
+}
+
+#listView.Landscape {
+    preferred-size: 99% 70%;
+    minimum-size:   99% 70%;
+    maximum-size:   99% 70%;
+}
+#listView.Portrait {
+    preferred-size: 100% 85%;
+    minimum-size:   100% 85%;
+    maximum-size:   100% 85%;
+}
+
+#matchList {
+    margin-right: -1mm;
+    group-header-object-name: "matchListHeader";
+}
+
+#matchList.Landscape {
+    margin-right: 1mm;
+}
+
+/* ***********************************************
+ * SearchBar properties
+ * ***********************************************/
+#SearchBarOverlay {
+//    background-image: "Footer" 2 2 2 2;
+    background-opacity: 1.0;
+}
+
+#SearchBarOverlay.Landscape {
+    padding-top:    0;
+    padding-left:   0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-top:     -0.8mm;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    horizontal-align: right;
+    vertical-align: top;
+    preferred-size: 50% 90%;
+    minimum-size:   50% 90%;
+    maximum-size:   60% 90%;
+    offset: 0 $HEIGHT_NAVIGATIONBAR;
+}
+
+#SearchBarOverlay.Portrait {
+    padding-top:    0;
+    padding-left:   0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    horizontal-align: center;
+    vertical-align: bottom;
+    preferred-size: 100% $HEIGHT_NAVIGATIONBAR;
+    minimum-size:   100% $HEIGHT_NAVIGATIONBAR;
+    maximum-size:   100% $HEIGHT_NAVIGATIONBAR;
+    offset: 0 0;
+}
+
+#SearchBarLayout {
+    horizontal-spacing: 0;
+    vertical-spacing: 0;
+    margin-top:     $MARGIN_LARGE;
+    margin-left:    $MARGIN_LARGE;
+    margin-right:   $MARGIN_LARGE;
+    margin-bottom:  $MARGIN_LARGE;
+}
+
+/* ***********************************************
+ * KeyPad properties
+ * ***********************************************/
+#keypadOverlay {
+    background-image: ;
+}
+
+#keypadOverlay.Landscape {
+    padding-top:    0;
+    padding-left:   0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    horizontal-align: right;
+    vertical-align: bottom;
+    preferred-size: 50% 90%;
+    minimum-size:   50% 90%;
+    maximum-size:   60% 90%;
+    offset: 0 $SIZE_BUTTON;
+}
+
+#keypadOverlay.Portrait {
+    padding-top:    0;
+    padding-left:   0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    horizontal-align: center;
+    vertical-align: bottom;
+    preferred-size: 100% 530;
+    minimum-size:   100% 530;
+    maximum-size:   100% 530;
+    offset: 0 0;
+}
+
+#keypadOverlayLayout {
+    horizontal-spacing: 0;
+    vertical-spacing: 0;
+    margin-top:     1.2mm;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+}
+
+#keypadOverlayBox.Landscape {
+    padding-top:    0;
+    padding-left:   0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+}
+
+#keypadOverlayBox.Portrait {
+    padding-top:    0;
+    padding-left:   0;
+    padding-right:  0;
+    padding-bottom: 0;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+}
+
+#keypadOptionLayout {
+    horizontal-spacing: 0;
+    vertical-spacing: 0;
+    margin-top:    0;
+    margin-left:   0;
+    margin-right:  0;
+    margin-bottom: 0;//1.2mm;
+}
+
+#keypadOptionBox {
+    background-image: ; //"keypad-section-background" 0 0 0 2;
+    padding-left:   0;
+    padding-right:  0;
+    margin-left:    0;
+    margin-right:   0;
+}
+
+#keypadButtonLayout {
+    horizontal-spacing: 0;
+    vertical-spacing: 0;
+    margin-top:    0;
+    margin-left:   0;
+    margin-right:  0;
+    margin-bottom: 0;//1.2mm;
+}
+
+#keypadButtonBox {
+    background-image: ; //"keypad-section-background" 0 0 0 2;
+    padding-left:   0;
+    padding-right:  0;
+    margin-left:    0;
+    margin-right:   0;
+}
+
+#keypadControlLayout {
+    horizontal-spacing: 0;
+    vertical-spacing: 0;
+    margin-top:    0;
+    margin-left:   0;
+    margin-right:  0;
+    margin-bottom: 0;
+}
+
+#keypadControlBox {
+    background-image: "keypad-section-background" 0 0 0 2;
+    padding-left:   0;
+    padding-right:  0;
+    margin-left:    0;
+    margin-right:   0;
+}
+
+#muteButton {
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    preferred-size: 25% $SIZE_BUTTON;
+    minimum-size:   25% $SIZE_BUTTON;
+    maximum-size:   25% $SIZE_BUTTON;
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+    text-color: $COLOR_INVERTED_FOREGROUND;
+}
+
+#muteButton.Landscape {
+    preferred-size: 12.5% 14%;
+    minimum-size:   12.5% 14%;
+    maximum-size:   12.5% 14%;
+}
+
+#holdButton {
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    preferred-size: 25% $SIZE_BUTTON;
+    minimum-size:   25% $SIZE_BUTTON;
+    maximum-size:   25% $SIZE_BUTTON;
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+    text-color: $COLOR_INVERTED_FOREGROUND;
+}
+
+#holdButton.Landscape {
+    preferred-size: 12.5% 14%;
+    minimum-size:   12.5% 14%;
+    maximum-size:   12.5% 14%;
+}
+
+#speakerButton {
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    preferred-size: 25% $SIZE_BUTTON;
+    minimum-size:   25% $SIZE_BUTTON;
+    maximum-size:   25% $SIZE_BUTTON;
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+    text-color: $COLOR_INVERTED_FOREGROUND;
+}
+
+#speakerButton.Landscape {
+    preferred-size: 12.5% 14%;
+    minimum-size:   12.5% 14%;
+    maximum-size:   12.5% 14%;
+}
+
+#multiButton {
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    preferred-size: 25% $SIZE_BUTTON;
+    minimum-size:   25% $SIZE_BUTTON;
+    maximum-size:   25% $SIZE_BUTTON;
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+    text-color: $COLOR_INVERTED_FOREGROUND;
+}
+
+#multiButton.Landscape {
+    preferred-size: 12.5% 14%;
+    minimum-size:   12.5% 14%;
+    maximum-size:   12.5% 14%;
+}
+
+#addButton {
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    preferred-size: 25% $SIZE_BUTTON;
+    minimum-size:   25% $SIZE_BUTTON;
+    maximum-size:   25% $SIZE_BUTTON;
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+}
+
+#addButton.Landscape {
+    preferred-size: 12.5% 14%;
+    minimum-size:   12.5% 14%;
+    maximum-size:   12.5% 14%;
+}
+
+#callButton {
+    background-image: "dialer-call-button-background" 4 4 4 4;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    preferred-size: 50% $SIZE_BUTTON;
+    minimum-size:   50% $SIZE_BUTTON;
+    maximum-size:   50% $SIZE_BUTTON;
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+}
+
+#callButton.Landscape {
+    preferred-size: 25% 14%;
+    minimum-size:   25% 14%;
+    maximum-size:   25% 14%;
+}
+
+#callButton:pressed {
+    background-image: "dialer-call-button-background-pressed" 4 4 4 4;
+}
+
+#callButton:selected {
+    background-image: "dialer-end-button-background" 4 4 4 4;
+}
+
+#callButton:selected-pressed {
+    background-image: "dialer-end-button-background-pressed" 4 4 4 4;
+}
+
+#hideButton {
+    background-image: keypad-section-background 2px 2px 2px 2px;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    preferred-size: 25% $SIZE_BUTTON;
+    minimum-size:   25% $SIZE_BUTTON;
+    maximum-size:   25% $SIZE_BUTTON;
+    icon-size: $SIZE_ICON_DEFAULT $SIZE_ICON_DEFAULT;
+    icon-align: center;
+}
+
+#hideButton.Landscape {
+    preferred-size: 12.5% 14%;
+    minimum-size:   12.5% 14%;
+    maximum-size:   12.5% 14%;
+}
+
+#hashButton {
+    font:           "Droid Sans Bold" 3mm;
+    text-color:     $COLOR_INVERTED_FOREGROUND;
+    padding-bottom: 0.5mm;
+    icon-align:     bottom;
+    icon-size:      41 14;
+    preferred-size: 33.5% $SIZE_BUTTON;
+    minimum-size:   33%   $SIZE_BUTTON;
+    maximum-size:   34%   $SIZE_BUTTON;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+}
+
+#hashButton.Landscape {
+    preferred-size: 16.6% 15%;
+    minimum-size:   16.6% 15%;
+    maximum-size:   16.6% 15%;
+}
+
+#starButton {
+    font:           "Droid Sans Bold" 3mm;
+    text-color:     $COLOR_INVERTED_FOREGROUND;
+    padding-bottom: 0.5mm;
+    icon-align:     bottom;
+    icon-size:      41 14;
+    preferred-size: 33.5% $SIZE_BUTTON;
+    minimum-size:   33%   $SIZE_BUTTON;
+    maximum-size:   34%   $SIZE_BUTTON;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+}
+
+#starButton.Landscape {
+    preferred-size: 16.6% 15%;
+    minimum-size:   16.6% 15%;
+    maximum-size:   16.6% 15%;
+}
+
+#numericButton {
+    font:           "Droid Sans Bold" 3mm;
+    text-color:     $COLOR_BLUE;
+    padding-bottom: 0.5mm;
+    icon-align:     bottom;
+    icon-size:      41 14;
+    preferred-size: 33.5% $SIZE_BUTTON;
+    minimum-size:   33%   $SIZE_BUTTON;
+    maximum-size:   34%   $SIZE_BUTTON;
+    background-image: keypad-section-background 2px 2px 2px 2px;
+}
+
+#numericButton.Landscape {
+    preferred-size: 16.6% 15%;
+    minimum-size:   16.6% 15%;
+    maximum-size:   16.6% 15%;
+}
+
+/* ***********************************************
+ * PeoplePage properties
+ * ***********************************************/
+#PeoplePage {
+    background-image: ;
+    background-color: #323232;
+}
+
+MContainerStyle#peopleBox {
+    background-image: "keypad-button-background" 8px 8px 8px 8px;
+    padding-left:     $MARGIN_DEFAULT;
+    padding-right:    $MARGIN_DEFAULT;
+    padding-top:      $MARGIN_LARGE;
+    padding-bottom:   $MARGIN_LARGE;
+    margin-right:     0;
+}
+#peopleBox.Landscape {
+    preferred-size: 90% -1;
+    minimum-size:   80% 50%;
+    maximum-size:   100% 85%;
+}
+#peopleBox.Portrait {
+    preferred-size: 90% -1;
+    minimum-size: 90% 80%;
+    maximum-size: 100% 90%;
+}
+
+#peopleView.Landscape {
+    preferred-size: 90% -1;
+    minimum-size:   80% 50%;
+    maximum-size:   100% 85%;
+}
+#peopleView.Portrait {
+    preferred-size: 90% -1;
+    minimum-size: 90% 80%;
+    maximum-size: 100% 90%;
+}
+
+#peopleList {
+    margin-right: -1mm;
+    group-header-object-name: "peopleListHeader";
+}
+
+#errorDialog {
+    /* defaults from MMessageBoxStyle */
+    dialog-vertical-alignment: center;
+    dialog-top-margin:    8mm;
+    dialog-bottom-margin: 8mm;
+    padding-top:          0px;
+    padding-left:         0px;
+    padding-right:        0px;
+    padding-bottom:       0px;
+}
+
+#errorDialog.Landscape {
+    dialog-minimum-size: 75% 1mm;
+    dialog-preferred-size: 75% -1;
+}
+
+#errorDialog.Portrait {
+    dialog-minimum-size: 75% 1mm;
+    dialog-preferred-size: 75% -1;
+}
+
+#dialerEntryLabel {
+    background-opacity: 0.0;
+    font: "Droid Sans Bold" 5mm;
+    text-color:     white;
+    prompt-color:   white;
+    preferred-size: 100% 10mm;
+    minimum-size:   80% 10mm;
+    maximum-size:   100% 10mm;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+}
+
+#dialerEntryLabel.Landscape {
+    background-opacity: 0.1;
+    preferred-size: 40% 10mm;
+    minimum-size:   40% 10mm;
+    maximum-size:   40% 10mm;
+}
+
+#dialerBkspButton {
+    background-opacity: 0.0;
+    margin-top:     0;
+    margin-left:    -1;
+    margin-right:   0;
+    margin-bottom:  0;
+    padding-left:   0;
+    padding-right:  0;
+    icon-size:      $SIZE_ICON_XLARGE $SIZE_ICON_XLARGE;
+    icon-align:     right;
+    preferred-size: 10mm 10mm;
+    minimum-size:   $SIZE_BUTTON 10mm;
+    maximum-size:   10mm 10mm;
+}
+
+#dialerBkspButton:pressed {
+    background-opacity: 0.0;
+}
+
+#dialerActiveCall {
+    preferred-size: 90% 15mm;
+    minimum-size:   80% 15mm;
+    maximum-size:   -1  15mm;
+    padding-top:    5mm;
+    padding-left:   5mm;
+    padding-right:  5mm;
+    padding-bottom: 5mm;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+}
+
+#dialerActiveCall.Landscape {
+    preferred-size: 45% 15mm;
+    minimum-size:   40% 15mm;
+}
+
+#dialerInactiveCall {
+    preferred-size: 90% 15mm;
+    minimum-size:   80% 15mm;
+    maximum-size:   -1  15mm;
+    padding-top:    5mm;
+    padding-left:   5mm;
+    padding-right:  5mm;
+    padding-bottom: 5mm;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+}
+
+#dialerInactiveCall.Landscape {
+    preferred-size: 45% 15mm;
+    minimum-size:   40% 15mm;
+}
+
+/* ***********************************************
+ * ModemItem properties
+ * ***********************************************/
+#ModemItemStyle {
+    preferred-size: 100% 20%;
+    minimum-size:   100% 20%;
+    maximum-size:   100% 20%;
+    margin-top:     0;
+    margin-left:    0;
+    margin-right:   0;
+    margin-bottom:  0;
+    background-color: #A7D2DB;
+    background-opacity: 1.0;
+}

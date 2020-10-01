@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.pacrunner
+Exec=/usr/sbin/pacrunner
+User=root

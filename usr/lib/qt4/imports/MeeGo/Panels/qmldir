@@ -1,0 +1,22 @@
+plugin Panels
+BackPanelClearButton 0.1 BackPanelClearButton.qml
+BackPanelTextToggleItem 0.1 BackPanelTextToggleItem.qml
+BackPanelMessageTextItem 0.1 BackPanelMessageTextItem.qml
+BackPanelGeneric 0.1 BackPanelGeneric.qml
+BackPanelStandard 0.1 BackPanelStandard.qml
+FlipPanel 0.1 FlipPanel.qml
+Panel 0.1 Panel.qml
+PanelExpandableContent 0.1 PanelExpandableContent.qml
+PanelColumnView 0.1 PanelColumnView.qml
+PrimaryTile 0.1 PrimaryTile.qml
+PrimaryTileGrid 0.1 PrimaryTileGrid.qml
+SecondaryTile 0.1 SecondaryTile.qml
+SecondaryTileBase 0.1 SecondaryTileBase.qml
+SecondaryTileGrid 0.1 SecondaryTileGrid.qml
+SecondaryTileGridItem 0.1 SecondaryTileGridItem.qml
+SimplePanel 0.1 SimplePanel.qml
+TileItem 0.1 TileItem.qml
+TileIcon 0.1 TileIcon.qml
+TileListItem 0.1 TileListItem.qml
+WifiDialog 0.1 WifiDialog.qml
+VolumeDialog 0.1 VolumeDialog.qml

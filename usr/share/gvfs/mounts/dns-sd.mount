@@ -1,0 +1,4 @@
+[Mount]
+Type=dns-sd
+Exec=/usr/libexec/gvfsd-dnssd
+AutoMount=true

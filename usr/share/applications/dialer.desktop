@@ -1,0 +1,9 @@
+
+[Desktop Entry]
+Type=Application
+Name=Dialer
+Categories=Telephony;
+Icon=icons-Applications-dialer
+Exec=dialer
+Comment=MeeGo voice call application
+X-Desktop-File-Install-Version=0.16

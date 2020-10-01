@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0">
+
+	<!--general type definition for vevent, vtodo, vnote -->
+
+  <xsd:complexType name="Categories">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="Category" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="ClassValue">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="PUBLIC"/>
+      <xsd:enumeration value="PRIVATE"/>
+      <xsd:enumeration value="CONFIDENTIAL"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="Class">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Content" type="ClassValue" default="PUBLIC"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="DateValueType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DATE"/>
+      <xsd:enumeration value="DATE-TIME"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="DateTimeContent">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="Value" type="DateValueType"/>
+    <xsd:attribute name="TimezoneID" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="MultiText">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="AlternativeTextRep" type="xsd:string"/>
+    <xsd:attribute name="Language" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="StringContent">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="Content" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

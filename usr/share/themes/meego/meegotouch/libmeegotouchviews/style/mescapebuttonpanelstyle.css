@@ -1,0 +1,30 @@
+/* MEscapeButtonPanelStyle : MSceneWindowStyle */
+MEscapeButtonPanelStyle {
+    close-button-icon-id: "icon-m-framework-close-alt";
+    background-image: "meegotouch-button-navigationbar-home-background" 2px 2px 2px 2px;
+}
+MButtonIconStyle#BackButton {
+
+    icon-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+
+    minimum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    maximum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    preferred-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+
+    reactive-margin-left: $MARGIN_XLARGE;
+    reactive-margin-right: $MARGIN_XLARGE;
+    reactive-margin-bottom: $MARGIN_XLARGE;
+}                              
+
+MButtonIconStyle#CloseButton {
+
+    icon-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+
+    minimum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    maximum-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+    preferred-size: $WIDTH_HOMECLOSEBUTTON $HEIGHT_NAVIGATIONBAR;
+
+    reactive-margin-left: $MARGIN_XLARGE;
+    reactive-margin-right: $MARGIN_XLARGE;
+    reactive-margin-bottom: $MARGIN_XLARGE;
+}

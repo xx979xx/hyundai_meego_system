@@ -1,0 +1,82 @@
+MDeviceStyle {
+    resolution: 864 480;
+    pixels-per-inch: 261 261;
+}
+
+MDeviceStyle#N900 {
+    resolution: 800 480;
+    pixels-per-inch: 261 261;
+}
+
+MDeviceStyle#N95 {
+    resolution: 240 320;
+    pixels-per-inch: 153 153;
+}
+
+MDeviceStyle#Pineapple {
+    resolution: 480 320;
+    pixels-per-inch: 163 163;
+}
+
+MDeviceStyle#N95i {
+    resolution: 240 800;
+    pixels-per-inch: 152 152;
+}
+
+MDeviceStyle#QVGAL {
+    resolution: 320 240;
+    pixels-per-inch: 152 152;
+}
+
+MDeviceStyle#N97 {
+    resolution: 640 360;
+    pixels-per-inch: 209 209;
+}
+
+MDeviceStyle#mbook {
+    resolution: 1024 570;
+    pixels-per-inch: 248 248;
+}
+
+MDeviceStyle#jax10 {
+    resolution: 800 460;
+    pixels-per-inch: 192 192;
+}
+
+MDeviceStyle#dellmini {
+    resolution: 1280 780;
+    pixels-per-inch: 125 125;
+}
+
+MDeviceStyle#eero {
+    resolution: 1280 720;
+    pixels-per-inch: 120 120;
+}
+
+MDeviceStyle#aava {
+    resolution: 864 480;
+    pixels-per-inch: 256 256;
+}
+
+MDeviceStyle#russelville {
+    resolution: 800 480;
+    pixels-per-inch: 120 120;
+}
+
+MDeviceStyle#netbook {
+    resolution: 1024 576;
+    pixels-per-inch: 252 252;
+}
+
+MDeviceStyle#hpmini110 {
+    resolution: 1024 576;
+    pixels-per-inch: 248 249;
+}
+
+/* To test these: */
+/* outside scratchbox: */
+/* Xephyr :2 -host-cursor -screen 240x320x24 -ac -extension Composite */
+/* inside sbox: */
+/* DISPLAY=:2 widgetsgallery -fullscreen -software -target N95 */
+
+/* http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density */

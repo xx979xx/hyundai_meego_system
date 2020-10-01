@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema path="/org/freedesktop/tracker/miner/files/" id="org.freedesktop.Tracker.Miner.Files" gettext-domain="tracker">
+    <key name="verbosity" enum="org.freedesktop.Tracker.TrackerVerbosity">
+      <default>'errors'</default>
+      <summary>Log verbosity</summary>
+      <description>Log verbosity.</description>
+    </key>
+
+    <key type="i" name="initial-sleep">
+      <summary>Initial sleep</summary>
+      <description>Initial sleep time, in seconds.</description>
+      <range min="0" max="1000"/>
+      <default>15</default>
+    </key>
+
+    <key name="sched-idle" enum="org.freedesktop.Tracker.TrackerSchedIdle">
+      <default>'first-index'</default>
+      <summary>Scheduler priority when idle</summary>
+      <description>The scheduler is the kernel component that decides which runnable application will be executed by the CPU next. Each application has an associated scheduling policy and priority.</description>
+    </key>
+
+    <key type="i" name="throttle">
+      <summary>Throttle</summary>
+      <description>Indexing speed, the higher the slower.</description>
+      <range min="0" max="20"/>
+      <default>0</default>
+    </key>
+
+    <key type="i" name="low-disk-space-limit">
+      <summary>Low disk space limit</summary>
+      <description>Disk space threshold in MB at which to pause indexing, or -1 to disable.</description>
+      <range min="-1" max="100"/>
+      <default>-1</default>
+    </key>
+
+    <key type="i" name="crawling-interval">
+      <summary>Crawling interval</summary>
+      <description>Interval in days to check whether the filesystem is up to date in the database. 0 forces crawling anytime, -1 forces it only after unclean shutdowns, and -2 disables it entirely.</description>
+      <range min="-2" max="365"/>
+      <default>-1</default>
+    </key>
+
+    <key type="i" name="removable-days-threshold">
+      <summary>Removable devices' data permanence threshold</summary>
+      <description>Threshold in days after which files from removables devices will be removed from database if not mounted. 0 means never, maximum is 365.</description>
+      <range min="0" max="365"/>
+      <default>3</default>
+    </key>
+
+    <key type="b" name="enable-monitors">
+      <summary>Enable monitors</summary>
+      <description>Set to false to completely disable any file monitoring</description>
+      <default>true</default>
+    </key>
+
+    <key type="b" name="enable-writeback">
+      <summary>Enable writeback</summary>
+      <description>Set to false to completely disable any file writeback</description>
+      <default>true</default>
+    </key>
+
+    <key type="b" name="index-removable-devices">
+      <summary>Index removable devices</summary>
+      <description>Set to true to enable indexing mounted directories for removable devices.</description>
+      <default>false</default>
+    </key>
+
+    <key type="b" name="index-optical-discs">
+      <summary>Index optical discs</summary>
+      <description>Set to true to enable indexing CDs, DVDs, and generally optical media (if removable devices are not indexed, optical discs won't be either)</description>
+      <default>false</default>
+    </key>
+
+    <key type="b" name="index-on-battery">
+      <summary>Index when running on battery</summary>
+      <description>Set to true to index while running on battery</description>
+      <default>true</default>
+    </key>
+
+    <key type="b" name="index-on-battery-first-time">
+      <summary>Perform initial indexing when running on battery</summary>
+      <description>Set to true to index while running on battery for the first time only</description>
+      <default>true</default>
+    </key>
+
+    <key type="as" name="index-recursive-directories">
+      <summary>Directories to index recursively</summary>
+      <description>List of directories to index recursively, Special values include: &amp;DESKTOP, &amp;DOCUMENTS, &amp;DOWNLOAD, &amp;MUSIC, &amp;PICTURES, &amp;PUBLIC_SHARE, &amp;TEMPLATES, &amp;VIDEOS. See /etc/xdg/user-dirs.defaults and $HOME/.config/user-dirs.default</description>
+      <default>[ '&amp;DESKTOP', '&amp;DOCUMENTS', '&amp;DOWNLOAD', '&amp;MUSIC', '&amp;PICTURES', '&amp;VIDEOS' ]</default>
+    </key>
+
+    <key type="as" name="index-single-directories">
+      <summary>Directories to index non-recursively</summary>
+      <description>List of directories to index without inspecting subfolders, Special values include: &amp;DESKTOP, &amp;DOCUMENTS, &amp;DOWNLOAD, &amp;MUSIC, &amp;PICTURES, &amp;PUBLIC_SHARE, &amp;TEMPLATES, &amp;VIDEOS. See /etc/xdg/user-dirs.defaults and $HOME/.config/user-dirs.default</description>
+      <default>[ '$HOME' ]</default>
+    </key>
+
+    <key type="as" name="ignored-files">
+      <summary>Ignored files</summary>
+      <description>List of file patterns to avoid</description>
+      <default>[ '*~', '*.o', '*.la', '*.lo' , '*.loT', '*.in', '*.csproj', '*.m4', '*.rej', '*.gmo', '*.orig', '*.pc', '*.omf', '*.aux', '*.tmp', '*.po', '*.vmdk', '*.vm*', '*.nvram', '*.part', '*.rcore', '*.lzo', 'autom4te', 'conftest', 'confstat', 'Makefile', 'SCCS', 'ltmain.sh', 'libtool', 'config.status', 'confdefs.h', 'configure' ]</default>
+    </key>
+
+    <key type="as" name="ignored-directories">
+      <summary>Ignored directories</summary>
+      <description>List of directories to avoid</description>
+      <default>[ 'po', 'CVS', 'core-dumps', 'lost+found' ]</default>
+    </key>
+
+    <key type="as" name="ignored-directories-with-content">
+      <summary>Ignored directories with content</summary>
+      <description>Avoid any directory containing a file blacklisted here</description>
+      <default>[ 'backup.metadata' ]</default>
+    </key>
+  </schema>
+</schemalist>

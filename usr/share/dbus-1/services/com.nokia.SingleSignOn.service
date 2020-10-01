@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.nokia.SingleSignOn
+Exec=/usr/bin/signond

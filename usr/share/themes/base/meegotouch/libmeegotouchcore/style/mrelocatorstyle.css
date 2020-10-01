@@ -1,0 +1,15 @@
+MRelocatorStyle.Portrait {
+    vertical-anchor-position: 20mm;
+    top-no-go-margin: 4.8mm;
+    bottom-no-go-margin: 4.8mm;
+}
+
+MRelocatorStyle.Landscape {
+    vertical-anchor-position: 4mm;
+    top-no-go-margin: 4mm;
+    bottom-no-go-margin: 4mm;
+}
+
+MRelocatorStyle.Landscape:physical-keyboard {
+    vertical-anchor-position: 15mm;
+}

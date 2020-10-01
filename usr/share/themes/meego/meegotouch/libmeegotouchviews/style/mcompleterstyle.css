@@ -1,0 +1,59 @@
+@const COMPLETERLABELMARGIN: $MARGIN_XLARGE;
+@const COMPLETERBUTTONMARGIN: $MARGIN_DOUBLE;
+
+/* MCompleterStyle : MWidgetStyle */
+MCompleterStyle {
+    background-image: meegotouch-textedit-completer-background $CORNER_MARGINS;
+    /*background-opacity: 0.8;*/
+    highlight-color: #FF0000;
+    height: 88;
+    display-border: $MARGIN_DOUBLE;
+    label-margin: $COMPLETERLABELMARGIN;
+    button-margin: $COMPLETERBUTTONMARGIN;
+    button-width: 100;
+    y-position-offset: 8;
+
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    press-feedback: press;
+    release-feedback: release;
+}
+
+#MCompleterTotalButton {
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: $COMPLETERBUTTONMARGIN;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    minimum-size: $SIZE_BUTTON $SIZE_BUTTON;
+    maximum-size: 100% 6.4mm;
+}
+#MCompleterCandidatesLabel {
+    font: $FONT_LARGE;
+    margin-left: $COMPLETERLABELMARGIN;
+    margin-top: 2.6mm;
+    margin-right: $COMPLETERLABELMARGIN;
+    margin-bottom: 3.6mm;
+
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    color: #000000;
+}
+
+MCompleterStyle:pressed {
+    background-image: meegotouch-textedit-completer-background-pressed $CORNER_MARGINS;
+
+}

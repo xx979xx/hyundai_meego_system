@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-toolbar-camera-roll-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<g id="icon-m-toolbar-camera-roll">
+	<rect style="fill:none;" width="32" height="32"/>
+	<g>
+		<path style="fill:#FFFFFF;" d="M18.041,4.909H12.87V2.842c0-0.545-0.49-1.034-1.033-1.034H7.184c-0.545,0-1.034,0.489-1.034,1.034
+			v2.067h-5.17c-1.552,0-1.034,2.068,0,2.068v21.197c-1.034,0-1.552,2.017,0,2.017h17.062c1.551,0,1.034-2.017,0-2.017V6.978
+			C19.075,6.978,19.592,4.909,18.041,4.909z M6.666,28.175H3.564V6.926h3.102V28.175z"/>
+		<path style="fill:#FFFFFF;" d="M20.108,8.012v18.612h3.103v-5.17c0-1.551,0.517-2.637,2.068-2.637L32,18.869V8.012H20.108z
+			 M23.211,13.698h-2.068V9.511l2.068,0.052V13.698z M26.83,13.698h-2.068V9.511l2.068,0.052V13.698z M30.449,13.698h-2.068V9.511
+			l2.068,0.052V13.698z"/>
+	</g>
+</g>
+</svg>

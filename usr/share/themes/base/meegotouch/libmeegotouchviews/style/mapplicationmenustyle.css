@@ -1,0 +1,58 @@
+
+/* MApplicationMenuStyle : MSceneWindowStyle */
+MApplicationMenuStyle {
+    /* Some of this may be obsolete. */
+    canvas-image: ;
+    canvas-color: #000000;
+    canvas-opacity: 0.0;
+    canvas-margin: 0;
+    divider-image: ;
+    divider-color: #F9A427;
+    divider-opacity: 1.0;
+    divider-width: 0;
+    item-height: $HEIGHT_ONE;
+    gap-height: 0;
+    gap-color: $COLOR_ACCENT1;
+    gap-opacity: 1.0;
+
+    /* inherited from MSceneWindowStyle */
+    vertical-align: top;
+    horizontal-align: center;
+    padding-top: $HEIGHT_NAVIGATIONBAR;
+    minimum-size: -1 -1;
+    preferred-size: -1 -1;
+    maximum-size: -1 -1;
+
+    /* inherited from MWidgetStyle */
+    background-color: #000000;
+    background-opacity: 0.8;
+}
+
+#MApplicationMenuActionViewport.Landscape {
+    minimum-size: 54.4mm -1;
+    preferred-size: 54.4mm -1;
+    maximum-size: 54.4mm 35.8mm;
+}
+
+#MApplicationMenuActionViewport.Portrait {
+    minimum-size: 44.8mm -1;
+    preferred-size: 44.8mm -1;
+    maximum-size: 44.8mm 67.8mm;
+}
+
+#MApplicationMenuTopArea {
+    background-image: "meegotouch-viewmenu-border";
+    preferred-size: -1 1px;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+#MApplicationMenuTopArea.Landscape {
+    margin-bottom: 4px;
+    maximum-size: 544px 1px;
+}
+
+#MApplicationMenuTopArea.Portrait {
+    maximum-size: 448px 1px;
+}
+

@@ -1,0 +1,59 @@
+@prefix fts: <http://www.tracker-project.org/ontologies/fts#> .
+@prefix nao: <http://www.semanticdesktop.org/ontologies/2007/08/15/nao#> .
+@prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#> .
+@prefix nrl: <http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tracker: <http://www.tracker-project.org/ontologies/tracker#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ipod: <http://www.tracker-project.org/ontologies/ipod#> .
+@prefix nmm: <http://www.tracker-project.org/temp/nmm#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+
+
+ipod: a tracker:Namespace, tracker:Ontology ;
+	tracker:prefix "ipod";
+        nao:lastModified "2011-11-09T16:00:00Z" .
+
+ipod:TrackUid a rdf:Property ;
+         rdfs:label "Ipod track unique ID" ;
+        rdfs:comment "Ipod track unique ID" ;
+        rdfs:range xsd:double;
+        rdfs:domain nmm:MusicPiece .
+
+ipod:TrackIndex a rdf:Property ;
+        rdfs:label "Ipod Track number" ;
+        rdfs:comment "Ipod Track number for all ipod content " ;
+        nrl:maxCardinality 1 ;
+        rdfs:domain nmm:MusicPiece ;
+        rdfs:range xsd:integer .
+
+ipod:SerialNumber a rdf:Property ;
+        rdfs:label "Ipod Track number" ;
+        rdfs:comment "Ipod Track number for all ipod content " ;
+        nrl:maxCardinality 1 ;
+        rdfs:domain tracker:Volume ;
+        rdfs:range xsd:string .
+
+ipod:TypeIndex a rdf:Property ;
+        rdfs:label "Top Level number" ;
+        rdfs:comment "Top level number for all ipod podcast,AudioBook,playlist content " ;
+        nrl:maxCardinality 1 ;
+        rdfs:domain nie:InformationElement;
+        rdfs:range xsd:integer .
+
+ipod:TypeName a rdf:Property;
+	rdfs:label "Ipod podcast/AudioBook" ;
+        rdfs:comment "Ipod Podcast/AudioBook type identifier " ;
+        nrl:maxCardinality 1 ;
+        rdfs:domain nie:InformationElement;
+        rdfs:range xsd:string .
+
+ipod:entryTitle a rdf:Property ;
+        rdfs:label "Entry track title" ;
+        rdfs:comment "track title to the element in certain position of the list" ;
+        nrl:maxCardinality 1 ;
+        rdfs:domain nfo:MediaFileListEntry ;
+        rdfs:range xsd:string ;
+        tracker:writeback true .
+

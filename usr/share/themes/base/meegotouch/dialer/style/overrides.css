@@ -1,0 +1,51 @@
+/*
+ * dialer - MeeGo Voice Call Manager
+ * Copyright (c) 2009, 2010, Intel Corporation.
+ *
+ * This program is licensed under the terms and conditions of the
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+/*
+ * Portrait Settings
+ */
+MDockWidgetStyle.Portrait {
+    offset: 0 2.8mm;
+    vertical-align: top;
+    horizontal-align: center;
+    preferred-size: 75% $HEIGHT_NAVIGATIONBAR;
+    minimum-size: 50% $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 100% $HEIGHT_NAVIGATIONBAR;
+}
+
+/*
+ * Landscape Settings
+ */
+
+MDockWidgetStyle.Landscape {
+    vertical-align: top;
+    horizontal-align: center;
+    preferred-size: 75% $HEIGHT_NAVIGATIONBAR;
+    minimum-size: 50% $HEIGHT_NAVIGATIONBAR;
+    maximum-size: 100% $HEIGHT_NAVIGATIONBAR;
+}
+
+/*
+ * Other Settings
+ */
+#NavigationBarMenuButton { background-image:; }
+#NavigationBarMenuButton:pressed { background-image:; }
+
+MSceneWindowStyle#MHomeButtonPanel {
+    background-image: none;
+}
+
+MButtonIconStyle#MHomeButton {
+    background-image: none;
+}
+
+MEscapeButtonPanelStyle {
+    background-image: none;
+}

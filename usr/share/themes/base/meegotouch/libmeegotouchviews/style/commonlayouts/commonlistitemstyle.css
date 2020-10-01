@@ -1,0 +1,170 @@
+@const CL_BG:                   ;
+@const CL_BG_PRESSED:           meegotouch-panel-background-pressed $CORNER_MARGINS;
+@const CL_BG_SELECTED:          meegotouch-panel-background-selected $CORNER_MARGINS;
+@const CL_INVERTED_BG:          ;
+@const CL_INVERTED_BG_PRESSED:  meegotouch-panel-inverted-background-pressed $CORNER_MARGINS;
+@const CL_INVERTED_BG_SELECTED: meegotouch-panel-inverted-background-selected $CORNER_MARGINS;
+
+
+/*  Preset List Item styles */
+
+#CommonBasicListItem {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CL_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonBasicListItem:pressed {
+background-tiles:  ;
+background-image:  $CL_BG_PRESSED;
+}
+#CommonBasicListItem:selected {
+background-tiles:  ;
+background-image:  $CL_BG_SELECTED;
+}
+
+#CommonBasicListItemInverted {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonBasicListItemInverted:pressed {
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG_PRESSED;
+}
+#CommonBasicListItemInverted:selected {
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG_SELECTED;
+}
+
+#CommonDetailedListItem {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CL_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonDetailedListItem:pressed {
+background-tiles:  ;
+background-image:  $CL_BG_PRESSED;
+}
+#CommonDetailedListItem:selected {
+background-tiles:  ;
+background-image:  $CL_BG_SELECTED;
+}
+
+#CommonDetailedListItemInverted {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonDetailedListItemInverted:pressed {
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG_PRESSED;
+}
+#CommonDetailedListItemInverted:selected {
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG_SELECTED;
+}
+
+#CommonAdvancedListItem {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CL_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonAdvancedListItem:pressed {
+background-tiles:  ;
+background-image:  $CL_BG_PRESSED;
+}
+#CommonAdvancedListItem:selected {
+background-tiles:  ;
+background-image:  $CL_BG_SELECTED;
+}
+
+#CommonAdvancedListItemInverted {
+minimum-size:      $SIZE_LIST $SIZE_LIST;
+preferred-size:    -1 $SIZE_LIST;
+maximum-size:      -1 $SIZE_LIST;
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG;
+background-color:  ;
+margin-top:        0;
+margin-bottom:     0;
+margin-left:       0;
+margin-right:      0;
+}
+#CommonAdvancedListItemInverted:pressed {
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG_PRESSED;
+}
+#CommonAdvancedListItemInverted:selected {
+background-tiles:  ;
+background-image:  $CL_INVERTED_BG_SELECTED;
+}
+
+/* Label inverts */
+
+MBasicListItem#CommonBasicListItemInverted MLabelStyle#CommonTitle {
+   color: $CTITLE_COLOR_INVERTED;
+}
+MBasicListItem#CommonBasicListItemInverted MLabelStyle#CommonSingleTitle {
+   color: $CTITLE_COLOR_INVERTED;
+}
+MBasicListItem#CommonBasicListItemInverted MLabelStyle#CommonSubTitle {
+   color: $CSUBTITLE_COLOR_INVERTED;
+}
+
+MDetailedListItem#CommonDetailedListItemInverted MLabelStyle#CommonTitle {
+   color: $CTITLE_COLOR_INVERTED;
+}
+MDetailedListItem#CommonDetailedListItemInverted MLabelStyle#CommonSingleTitle {
+   color: $CTITLE_COLOR_INVERTED;
+}
+MDetailedListItem#CommonDetailedListItemInverted MLabelStyle#CommonSubTitle {
+   color: $CSUBTITLE_COLOR_INVERTED;
+}
+MDetailedListItem#CommonDetailedListItemInverted MLabelStyle#CommonItemInfo {
+   color: $CSUBTITLE_COLOR_INVERTED;
+}
+
+MAdvancedListItem#CommonAdvancedListItemInverted MLabelStyle#CommonTitle {
+   color: $CTITLE_COLOR_INVERTED;
+}
+MAdvancedListItem#CommonAdvancedListItemInverted MLabelStyle#CommonSingleTitle {
+   color: $CTITLE_COLOR_INVERTED;
+}
+MAdvancedListItem#CommonAdvancedListItemInverted MLabelStyle#CommonSubTitle {
+   color: $CSUBTITLE_COLOR_INVERTED;
+}

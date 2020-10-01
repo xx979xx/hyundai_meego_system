@@ -1,0 +1,25 @@
+
+/* MGridItemStyle : MGridItemStyle */
+MContentItemStyle {    
+
+    background-color: $COLOR_FOREGROUND;
+    background-opacity: 1.0;
+
+
+}
+
+MContentItemStyle:selected {
+
+    background-color: $COLOR_FOREGROUND;
+    background-opacity: 1.0;
+}
+
+MContentItemStyle:pressed {
+    
+    background-color: $COLOR_FOREGROUND;
+    background-opacity: 1.0;
+}
+
+#ContentItemSubtitle {
+       text-color: $COLOR_SECONDARY_FOREGROUND;
+}

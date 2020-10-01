@@ -1,0 +1,4089 @@
+mce (1.10.92) unstable; urgency=low
+
+  * Additional fixes for visual submode handling (Fixes: NB#217321)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 19 Jan 2011 13:31:25 +0200
+
+mce (1.10.91) unstable; urgency=low
+
+  * Fixed case where visual submode wasn't properly enabled when unblanking
+    | Thanks to Victor Portnov
+  * Removed deprecated MCE_PSM_MODE handling (Fixes: NB#219219)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 14 Jan 2011 15:27:58 +0200
+
+mce (1.10.90) unstable; urgency=low
+
+  * Added option to always leave touchscreen interrupts on even when the
+    tklock is active -- this is to allow for double-tap unlocking
+  * Show visual tklock when touchscreen is double-tapped
+    | Only if touchscreen interrupts are enabled when the display is blank
+  * Added get_sysinfo_value() that retrieves information from sysinfo via
+    the D-Bus interface rather than the library interface
+    | While slightly slower this enables us to remove the direct dependency,
+    | which benefits platforms that do not have sysinfo
+  * Modified get_product_id() to use get_sysinfo_value()
+  * Modified the ALS and proximity sensor modules to get calibration data via
+    get_sysinfo_value() rather than directly from CAL
+  * Moved strmemcmp() from mce-hal to mce-lib
+  * debian/control: Dropped build-dependencies on libsysinfo-dev
+    and libcal-dev
+  * debian/control: Added recommends on sysinfod (>= 1.0.20)
+  * debian/mce.aegis: No longer request cal credential, since we don't
+    access cal directly anymore
+  * Removed connectivity tracking; it was only used by the soft poweroff
+    option, which has never been an officially supported option
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 13 Jan 2011 20:45:47 +0200
+
+mce (1.10.89) unstable; urgency=low
+
+  * Corrected the visual blank timeout (Fixes: NB#211445)
+  * Properly enable support for hardware display brightness fading
+    (Fixes: NB#196567, NB#213716)
+  * Don't request the devicelock credentials; they are now being granted
+    by devicelock to mce instead, to work around a flawed design in the
+    token resolver (Fixes: NB#208392)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 17 Dec 2010 08:21:37 +0200
+
+mce (1.10.88) unstable; urgency=low
+
+  * Added backup/restore support for the radio state files
+    (Fixes: NB#190561)
+  * Disabled triggering of unlock screen with volume keys by default
+    (Fixes: NB#209963)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 16 Dec 2010 08:30:17 +0200
+
+mce (1.10.87) unstable; urgency=low
+
+  * Modified audiorouting.c to support "headsetforcall"
+    (Fixes: NB#207998)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 30 Nov 2010 11:31:20 +0200
+
+mce (1.10.86) unstable; urgency=low
+
+  * Improved the proximity sensor related tklock logic
+    (Fixes: NB#207731, NB#207771)
+  * Updated debian/copyright.  We're finally going LGPL.  Yay!
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 29 Nov 2010 15:39:11 +0200
+
+mce (1.10.85) unstable; urgency=low
+
+  * Request needed credentials to be able to inhibit the DeviceLock
+    and be more picky about the D-Bus interface (Fixes: NB#207449)
+  * Disabled [power] button completely when the alarm UI is visible
+    (Fixes: NB#206536)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 26 Nov 2010 11:34:05 +0200
+
+mce (1.10.84) unstable; urgency=low
+
+  * Free the LED control paths after disabling the LED,
+    since these paths are needed when disabling (Fixes: NB#205024)
+  * Remove dependency on system-services due to broken system-wide
+    policy to treat system-services as a base package even though it isn't
+    (Fixes: NB#207286)
+  * Added --no-logging option to mcetorture
+  * Modified mcetorture to fallback to /root as logdir
+    if /media/mmc1 doesn't exist
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 25 Nov 2010 11:15:37 +0200
+
+mce (1.10.83) unstable; urgency=low
+
+  * Properly define SensorControl token
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 19 Nov 2010 16:39:32 +0200
+
+mce (1.10.82) unstable; urgency=low
+
+  * Corrected incorrect logic for the [power] button / alarm UI logic
+    (Fixes: NB#204426, NB#204770)
+  * Added new input layer name for the jack sense (Fixes: NB#205555)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 18 Nov 2010 15:10:08 +0200
+
+mce (1.10.81) unstable; urgency=low
+
+  * Added internal API (for SystemSW use only) for enabling/disabling
+    proximity sensor (Fixes: NB#200345)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 17 Nov 2010 15:43:58 +0200
+
+mce (1.10.80) unstable; urgency=low
+
+  * Do not register match rules for method calls (Fixes: NB#204093)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 12 Nov 2010 18:17:19 +0200
+
+mce (1.10.79) unstable; urgency=low
+
+  * Don't use tklock UI for proximity locking (Fixes: NB#200814)
+  * Fixed missing Doxygen documentation
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 02 Nov 2010 12:16:50 +0200
+
+mce (1.10.78) unstable; urgency=low
+
+  * Request cal credentials for mce
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 01 Nov 2010 12:09:06 +0200
+
+mce (1.10.77) unstable; urgency=low
+
+  * Disabled [power] button shutdown when the alarm UI is visible
+  * Added support for adaptive dimming to mcetool and mcetorture
+  * Removed support for the deprecated device mode interface
+    from mce, mcetool and mcetorture
+  * ALS profile adjustments
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 25 Oct 2010 11:50:08 +0300
+
+mce (1.10.76) unstable; urgency=low
+
+  * Do not generate activity if tklock or event eater fails to open
+    (Fixes: NB#192925, NB#195008, NB#196871)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 21 Oct 2010 06:37:05 +0300
+
+mce (1.10.75) unstable; urgency=low
+
+  * Don't disable the charging and battery full patterns on bootup
+    from acting dead (Fixes: NB#196840)
+  * Fixed disable_led() to work for the monochrome NJoy LED case too
+  * Fixed led_update_active_pattern() to handle patterns with policy 5
+    in a correct manner
+  * Request I2C credentials for mce, to ensure that we can interface with Reno
+  * Fixed stupid typo in disable_reno()
+  * Don't install all of /etc recursively to the mce package,
+    only install /etc/mce and /etc/gconf
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 20 Oct 2010 03:34:29 +0300
+
+mce (1.10.74) unstable; urgency=low
+
+  * Do not blank unconditionally when switching to acting dead,
+    since the shutdown splashscreen needs to be shown first;
+    the splashscreen is then responsible for dimming the screen
+    (Fixes: NB#190207, NB#192008)
+  * If the screen is blank when there's a display dim request,
+    set the dim brightness immediately instead of fading
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 19 Oct 2010 00:59:00 +0300
+
+mce (1.10.73) unstable; urgency=low
+
+  * Fixed ALS thresholds to work properly even on devices that lack
+    keyboard backlight or LEDs
+  * Fixed inverted values in proximity sensor code for RM-696
+  * Adjusted the ALS steps a bit for RM-696
+  * Ignore tuning for the highest brightness setting and simply
+    use full brightness instead
+  * Handle saturated ALS reads in a better manner
+  * Enabled the volume key trigger option
+  * Modified mce-hal to use libsysinfo instead of /proc/component_version
+    to get the product ID, since the latter is deprecated
+  * Removed useless call to get_ps_type()
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 15 Oct 2010 16:06:36 +0300
+
+mce (1.10.72) unstable; urgency=low
+
+  * Corrected the default PSM threshold (Fixes: NB#194693)
+  * Added Aegis manifest for mcetools (Fixes: NB#195058)
+    | Thanks to Sergey Yakubenko
+  * Fixed an issue with the mce Aegis manifest (Fixes: NB#195912)
+  * Added an option to have the volume keys trigger the visual tklock
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 05 Oct 2010 13:38:11 +0300
+
+mce (1.10.71) unstable; urgency=low
+
+  * Acknowledge NMU
+  * Fixed another radio states related issue (Fixes: NB#192569)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 29 Sep 2010 13:04:28 +0300
+
+mce (1.10.70+nmu1) unstable; urgency=low
+
+  * Implemented preliminary Avago ALS and Proximity support for MCE
+
+ -- Tuomo Tanskanen <ext-tuomo.1.tanskanen@nokia.com>  Wed, 22 Sep 2010 18:03:15 +0300
+
+mce (1.10.70) unstable; urgency=low
+
+  * Make sure we always synthesise activity when disabling the tklock
+    and synthesise inactivity when enabling the tklock (Fixes: NB#190599)
+  * Added reply handlers for device lock inhibit and tklock
+  * Always disable the tklock if communication with tklock fails
+  * Always request the tklock UI to be opened on unblank if the tklock
+    is active; if it's already open and working this will be a no-op
+  * Properly consume all arguments for battery_state_changed in fakecharger
+  * Modified the makefile to use "." instead of "$(shell /bin/pwd)"
+    as $(TOPDIR); this prevents the build-directory from cluttering the
+    log messages from modules
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 10 Sep 2010 10:04:30 +0300
+
+mce (1.10.69) unstable; urgency=low
+
+  * Hopefully finally fixed the radio states bugs for real
+    (Fixes: NB#181863, NB#183833)
+  * Added support for ACPI-controlled displays, to ease testing on regular PCs
+  * Removed unused GConf key from display.schemas
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 31 Aug 2010 19:25:57 +0300
+
+mce (1.10.68) unstable; urgency=low
+
+  * Modified the first dim on bootup to rely on the desktop_visible
+    signal from system-services instead of the readyNotifier from
+    duihome (Fixes: NB#186466)
+  * Depends: system-services (>= 0.123)
+  * debian/control: Bumped Standards-Version to 3.8.4
+    | Don't install /var/run/mce; it's dynamically created by the mce
+    | upstart script in system-services
+  * Added support for new display driver sysfs path
+  * Fixed dim timeouts to add the additional bootup dim timeout
+    also when adaptive dim timeouts are in use
+  * Ignore requests to enable tklock during bootup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 26 Aug 2010 17:06:24 +0300
+
+mce (1.10.67) unstable; urgency=low
+
+  * Corrected the default for proximity lock when ringing
+    and added workaround for incorrect call-ui behaviour
+    (Fixes: NB#179569, NB#187027, NB#183740)
+  * Don't filter out keyboard backlight ALS changes
+    if the keyboard backlight is disabled; we still need to change
+    the ALS thresholds and backlight values, since it might be that
+    the backlight is disabled due to the light conditions rather than
+    the keyboard state
+  * If the ALS threshold values have never been set before,
+    don't filter out identical reads
+  * Fixed various issues found by coverity
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 24 Aug 2010 17:08:44 +0300
+
+mce (1.10.66) unstable; urgency=low
+
+  * Fixed copy'n'paste error in the ALS code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 20 Aug 2010 13:06:43 +0300
+
+mce (1.10.65) unstable; urgency=low
+
+  * Adjusted some of the ALS behaviour:
+    - Only update the threshold values once every interrupt,
+      not once per user of the ALS reading (display, LED, keyboard backlight)
+    - Only adjust the threshold values if we have something registered to
+      monitor/poll the reads
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 19 Aug 2010 15:32:09 +0300
+
+mce (1.10.64) unstable; urgency=low
+
+  * Added default permissive rule to the Aegis manifest (Fixes: NB#185303)
+  * Store both the set of active radio states and the online radio states
+    (Fixes: NB#183833)
+  * Fixed the enabling/disabling of individual radios when the master
+    radio isn't altered
+  * Regard the device as inactive signal as soon as the tklock is enabled
+    | This might need some tuning
+  * Disabled [power] double click to unlock
+  * Added support to send a D-Bus signal as [power] action
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 18 Aug 2010 13:03:17 +0300
+
+mce (1.10.63) unstable; urgency=low
+
+  * Call the device lock inhibit function whenever display blanking
+    is inhibited from another process
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 22 Jul 2010 14:37:29 +0300
+
+mce (1.10.62) unstable; urgency=low
+
+  * Default WLAN radio to enabled (Fixes: NB#181254)
+  * Only trigger visual tklock when pressing [power] in user state
+    or when an alarm dialog is visible
+  * Setup visual tklock timeout also when calling unblank when the tklock
+    is active
+  * Added dbus_get_pid_from_bus_name(); this function can be used when
+    debugging to find out what process has made a particular D-Bus request
+  * Fixed some doxygen comments
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 22 Jul 2010 13:55:38 +0300
+
+mce (1.10.61) unstable; urgency=low
+
+  * Default cellular radio to enabled (Fixes: NB#180894)
+  * Fixed radio states mask handling to work properly
+  * Fixed copy'n'paste bug in mcetool
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 20 Jul 2010 15:38:32 +0300
+
+mce (1.10.60) unstable; urgency=low
+
+  * Added Aegis manifest file
+  * Modified the radio states behaviour to allow changing
+    individual radio states even when the master radio is off
+  * Updated the radio states module and mcetool
+    for the revised radio states interface
+    | Build-Depends: mce-dev (>= 1.10.21)
+  * Changed the default radio_states file to only have the master radio
+    enabled
+  * Fixed incorrect error check in mcetool
+  * Removed the no_reply flag from mcetool_dbus_call_bool()
+    and mcetool_dbus_call_uint(), since the reply is always used
+  * Added configuration option to allow proximity based locking
+    to take place even when the keyboard slide is open
+  * Fixed fakealarm to immitate reminder service instead of the old
+    system ui alarm
+  * Fixed fakecharger to use the proper types for battery_state_changed
+  * debian/control: Bumped Standards-Version to 3.8.0
+    | No changes required
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 16 Jul 2010 14:53:33 +0300
+
+mce (1.10.59) unstable; urgency=low
+
+  * Changed default CABC-mode to "ui" (Fixes: NB#169432)
+  * Only generate activity when opening the keyboard slide
+    and lens cover, not when closing them (Fixes: NB#176362)
+  * Keep the display off when we're in acting dead and no alarm
+    is visible (Fixes: NB#177690)
+  * Fixed memory leaks in dir_changed_cb()
+  * Fixed memory leaks in two error paths of io_chunk_cb()
+  * Added check for proper termination of ALS profiles in filter_data()
+    | Found by coverity
+  * Added proper error handling in disable_reno()
+    | Found by coverity
+  * Added proper error handling in backlight_ioctl()
+  * Trigger visual tklock screen on jack sense and on
+    connecting/disconnecting a usb-cable
+  * Fixed the keyboard backlight fade-out to work properly
+  * Added keyboard backlight fade-in
+  * Don't try to read from the old proximity sensor state path
+    if it doesn't exist
+  * Made update_proximity_monitor() exit if the proximity sensor type
+    is PS_TYPE_NONE
+  * Major rewrite of the LED module
+    - Remove support for old LP5521 and LP5523 drivers
+      (for RX-44 and RX-51, respectively); initial support has been added
+      to support them with the new driver instead, but that obviously
+      necessitates a backport of the new kernel driver
+    - Support the monochrome LED in RM-696
+    - Removed some of the define-madness from modules/led.h
+      by generating the paths runtime instead
+    - Removed model name LED support
+  * Remove unused code for acting dead screen and splashscreens
+  * Added configuration option to always enable tklock when keyboard slide
+    is closed
+  * Lots of improvements to mcetorture:
+    - Added support for cancel blank prevent
+    - Improved the dbus-errors testcase
+    - Fixed the battery testcase
+    - Fixed some incorrect event codes
+      (counting in octal has never been my cup of tea)
+    - Properly handle the case where mce is stopped/crashes
+      without being restarted
+    - Removed event-errors testcase since it was useless
+    - Adjusted sleeps in various testcases to avoid false positives
+  * Updated mcetorture manual page
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 12 Jul 2010 16:13:06 +0300
+
+mce (1.10.58) unstable; urgency=low
+
+  * Updated alarm module to get alarm status from reminder service
+    | Partial fix for NB#176632; the rest is done elsewhere
+  * Modified alarm testcase in mcetorture to imitate reminder service
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 07 Jul 2010 14:11:45 +0300
+
+mce (1.10.57) unstable; urgency=low
+
+  * Disable Reno-based LED-control on startup, to avoid conflicts with Lysti
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 16 Jun 2010 21:05:03 +0300
+
+mce (1.10.56) unstable; urgency=low
+
+  * Fixed botched use of mce_close_file() in
+    mce_write_number_string_to_file_atomic()
+  * Worked around issue where tklock doesn't always close
+    when the keyboard is opened (Fixes: NB#175119)
+  * Removed the "-dialog" options from the help-text in mcetool
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 16 Jun 2010 19:14:52 +0300
+
+mce (1.10.55) unstable; urgency=low
+
+  * Added mce_close_file() which abstracts file closing with proper
+    error messages, NULL-check, etc.
+  * Use mce_close_file() for closing files where appropriate;
+    fixes some issues when shutting down mce
+  * Added option to mcetool to cancel blank prevent request
+  * Added option to mce to show module information
+  * Updated mcetool manual page
+  * Updated mce manual page
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 16 Jun 2010 07:36:53 +0300
+
+mce (1.10.54) unstable; urgency=low
+
+  * Tuned the keyboard backlight ALS profile for RM-680 (Fixes: NB#174192)
+  * Made tklock show up immediately when pressing [power] (Fixes: NB#173595)
+  * Close file on error in mce_read_number_string_from_file()
+    | Found by coverity
+  * Close file on error in mce_write_number_string_to_file()
+    | Found by coverity
+  * Fixed a memory leak in mce-io.c
+  * Fixed a memory leak in event-input.c
+  * Fixed a memory leak in powerkey.c
+  * Added support for ALS threshold ranges to minimise wakeups
+  * Added mce_write_number_string_to_file_atomic() to mce-io
+  * Modified the radio state module to use
+    mce_write_number_string_to_file_atomic() for writing the radio states
+  * Shutdown I/O channel for dsmesock when exiting
+  * Allow explicit D-Bus unblank/dim requests even when the tklock is active
+  * Only unblank on device activity when the tklock is disabled
+  * Always use explicit unblanking when the tklock is active
+  * Made req_trigger_powerkey_event optionally accept dbus_uint32_t
+    instead of dbus_bool_t, to allow triggering doublepress events
+  * Added mcetool support for doublepress events
+  * Lots of improvements to mcetorture:
+    - Properly restore the blanking inhibit value
+    - Fixed bug in injection functions
+    - Added radio states test
+    - Added battery level test
+    - Added charger state test
+    - Added injection based short [power] key test
+    - Added injection based double [power] key test
+    - Added injection based long [power] key test
+    - Added injection based gpio-keys keyboard-slide test
+    - Added injection based touchscreen test
+    - Added D-Bus based double [power] key test
+    - Added `--verbose' option
+    - Renamed the D-Bus based short [power] key test to powershort-dbus
+    - Renamed the D-Bus based long [power] key test to powerlong-dbus
+    - Removed [home] key related tests from the default testcases
+    - Removed tests for long-gone alarm state D-Bus interface
+    - Various cleanup
+  * Updated mcetool manual page
+  * Updated mcetorture manual page
+  * Improved mce manual page
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 15 Jun 2010 20:39:01 +0300
+
+mce (1.10.53) unstable; urgency=low
+
+  * Provide backwards compatibility with the old power saving mode API
+    until its users have transitioned to the new API
+  * Removed the build-tests, since they're totally outdated
+  * Reverted mce-hal change
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 04 Jun 2010 15:52:58 +0300
+
+mce (1.10.52) unstable; urgency=low
+
+  * Send the new radio state as a signal rather than a reply
+  * Fixed regression in modetransition backwards compatibility
+  * Install a default radio_states file
+  * Converted mce-hal to use mce_translate_string_to_int_with_default()
+  * Added keyboard backlight status info to mcetool
+  * Removed powerkey menu testing from mcetorture
+  * Updated mcetorture manual page accordingly
+  * Removed unused files
+  * Cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 03 Jun 2010 14:49:54 +0300
+
+mce (1.10.51) unstable; urgency=low
+
+  * Fixed several brown paper bag bugs introduced by the
+    radiostates/modetransition rewrite
+  * Fixed typo in mce.ini
+  * Fixed indentation in mcetool
+  * Removed unused code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 02 Jun 2010 15:52:45 +0300
+
+mce (1.10.50) unstable; urgency=low
+
+  * Temporarily add all D-Bus methods to the default context in mce.conf
+    (Fixes: NB#162564)
+  * Added new radio state interface; the device mode interface
+    is now deprecated.  The old behaviour can be emulated by using
+    the radio master switch
+  * Added support for radio states to mcetool
+  * Updated mcetool manual page to cover radio states
+  * Removed device menu support; the concept might be reintroduced
+    at some point, but the current implementation was too ugly
+  * Removed mode change confirmation support; the concept might be
+    reintroduced at some point, but the current implementation was too ugly
+  * Updated tests/fakealarm to support all three alarm UI states
+  * Fixed missing Doxygen documentation
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 02 Jun 2010 05:38:27 +0300
+
+mce (1.10.49) unstable; urgency=low
+
+  * Additional fix for mce.conf (Fixes: NB#170827)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 27 May 2010 11:06:27 +0300
+
+mce (1.10.48) unstable; urgency=low
+
+  * Modified the logic for double [power] press (Fixes: NB#169842)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 21 May 2010 11:11:55 +0300
+
+mce (1.10.47) unstable; urgency=low
+
+  * Always call tklock with TKLOCK_ENABLE_VISUAL when enabling the tklock
+  * New display brightness adjustment policies
+  * Made a few rarely used timeouts use g_timeout_add_seconds()
+  * Implemented: MaSSW-884, MaSSW-1762, MaSSW-1763, MaSSW-1764
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 17 May 2010 17:25:47 +0300
+
+mce (1.10.46) unstable; urgency=low
+
+  * Disable the gpio-key for camera focus when tklock is active
+    (Fixes: NB#166942)
+  * Added set_bit(), clear_bit(), string_to_bitfield()
+    and bitfield_to_string() to mce-lib.c
+  * Removed everything device lock related from mce; device lock is now
+    a completely separate component
+  * Updated mce, mcetool and mcetorture manual pages
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 13 May 2010 02:00:08 +0300
+
+mce (1.10.45) unstable; urgency=low
+
+  * Do not attempt to call fclose() unless the file is actually open
+    (Fixes: NB#168416)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 11 May 2010 22:14:12 +0300
+
+mce (1.10.44) unstable; urgency=low
+
+  * Modified filter-brightness-als to handle ALS profiles with more
+    lux ranges
+  * Created ALS profiles for RM-680
+  * Lowered the LED current for the model name LED and modified the
+    handling to cover the fact there are two model name LEDs
+  * Fixed mcetool_dbus_call_bool() to handle the return value correctly
+  * Fixed regression for ``--mode'' option in mcetool
+  * Added complete support for the power saving mode to mcetool
+  * Added support for enabling/disabling automatic power saving mode,
+    forcing the power saving mode, and setting the PSM threshold
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 10 May 2010 13:32:12 +0300
+
+mce (1.10.43) unstable; urgency=low
+
+  * Added support to mcetool for setting the display backlight level
+  * Updated the mcetool manual page accordingly
+  * Modified mcetorture to test all display blanking inhibit settings
+  * Added support for CABC-mode to mcetorture
+  * Refer to /dev/input/keypad and /dev/input/pwrbutton in mcetorture
+    instead of hardcoding paths to /dev/input/eventX
+  * Fixed missing Doxygen documentation
+  * Improved the description of the display blanking inhibit GConf
+    key in display.schemas
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 05 May 2010 08:14:39 +0300
+
+mce (1.10.42) unstable; urgency=low
+
+  * Corrected proximity sensor logic and modified threshold a bit
+    (Fixes: NB#164007)
+  * Added hysteresis to proximity sensor logic
+  * Fixed incorrect error-check in mce_read_number_string_from_file()
+  * Improved mce_write_number_string_to_file()
+  * Fixed update_proximity_monitor in event-switches to disable
+    proximity interrupts if there actually is a way to disable them
+  * Fixed the submode trigger in event-switches to disable
+    camera focus and camera launch interrupts if we're monitoring them,
+    and only if there actually is a way to disable them
+  * Added partial support for the power saving mode to mcetool
+  * Made mcetool default to not show the status information when executing
+    a command, and changed the `--no-status' option into `--status'
+    to provide a means to achieve the old behaviour
+  * Added blanking inhibit support to mcetool
+  * Fixed the CABC-mode support in mcetool to actually change the CABC-mode
+  * Updated the mcetool manual page and mcetorture accordingly
+  * Fixed a bug in mcetorture in the dim test
+  * Updated mcetorture for the new mcetool behaviour
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 04 May 2010 08:45:39 +0300
+
+mce (1.10.41) unstable; urgency=low
+
+  * Made [power] blank the display if pressed when the
+    visual tklock screen is already active (Fixes: NB#166247)
+  * Made double [power] press unlock the tklock
+  * Changed the default double click timeout to 500 ms
+  * Reset the display blanking timeout on bootup after updating the inhibit
+    instead of before, to give us a bit more time after the desktop ready
+    signal arrives (Fixes: NB#165966)
+  * Fixed ALS code to initialise the median filter *after* we know the
+    ALS type
+  * Made the visual tklock timeout 3 seconds instead of 5 seconds
+  * Changed default CABC-mode to "moving-image" again
+  * Fixed possible resource leak in mce_read_number_string_from_file()
+  * Added support for CABC-mode to mcetool
+  * Added support for blocking to mcetool
+  * Nicer handling of unset GConf keys in mcetool
+  * Added help to the verifybacklight script
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 30 Apr 2010 13:00:39 +0300
+
+mce (1.10.40) unstable; urgency=low
+
+  * Preliminary adjustments of the ALS profile for the LED
+  * Do not use a median filter for the ALS when the kernel driver
+    supports thresholds and polling
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 27 Apr 2010 22:59:22 +0300
+
+mce (1.10.39) unstable; urgency=low
+
+  * Trigger visual tklock when the camera button is pressed
+    (Fixes: NB#165453)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 26 Apr 2010 01:28:44 +0300
+
+mce (1.10.38) unstable; urgency=low
+
+  * Fixed the keyboard backlight LED current
+  * Avoid doing unnecessary updates if the proximity state hasn't changed
+  * Fixed the --disable-pm-debug option in the verifybacklight test-script
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 23 Apr 2010 17:20:47 +0300
+
+mce (1.10.37) unstable; urgency=low
+
+  * Filter hotplugged /dev/input files using the same criteria
+    as when we first register them (Fixes: NB#164076)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 20 Apr 2010 15:36:46 +0300
+
+mce (1.10.36) unstable; urgency=low
+
+  * Read the states of the input switches we care about on startup
+    (Fixes: NB#164471)
+  * Use debhelper compat level 5
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 20 Apr 2010 02:56:33 +0300
+
+mce (1.10.35) unstable; urgency=low
+
+  * Added support for cancelling blank prevention requests
+    | Build-Depends: mce-dev (>= 1.10.15)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 19 Apr 2010 13:21:43 +0300
+
+mce (1.10.34) unstable; urgency=low
+
+  * Only generate activity from the charger_connected/charger_disconnected
+    signals if the state changes (Fixes: NB#161579)
+  * Fixed path to proximity sensor calibration point
+  * Avoid doing unnecessary updates if the display state hasn't changed
+  * Avoid doing unnecessary submode updates
+  * Added support for battery_state_changed to the fakecharger test script
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 16 Apr 2010 22:22:52 +0300
+
+mce (1.10.33) unstable; urgency=low
+
+  * Fixed led_enable() and led_disable() to work properly (Fixes: NB#164169)
+  * Update the active LED pattern when a pattern timeout expires;
+    don't disable the LED unconditionally
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 16 Apr 2010 08:39:18 +0300
+
+mce (1.10.32) unstable; urgency=low
+
+  * Updated the list of touchscreen drivers (Fixes: NB#164004)
+  * Use a mapping from a percentage level to battery bars left
+    as the threshold for the power saving mode instead of the
+    battery low signal
+  * Modified the verifybacklight test script to allow disabling of the
+    sleep indication on RM-680 and to use the new LED interface
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 15 Apr 2010 13:05:55 +0300
+
+mce (1.10.31) unstable; urgency=low
+
+  * Added support for disabling touchscreen interrupts on RM-680
+    (Fixes: NB#161334)
+  * Transitioned the LEDs to use the new sysfs entries
+  * Fixed LED patterns for communication events
+  * Fixed the connectivity component to not disconnect g_signal_handlers
+    that have not been connected
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 08 Apr 2010 03:45:34 +0300
+
+mce (1.10.30) unstable; urgency=low
+
+  * Improved mce_read_number_string_from_file()
+  * Made modules/filter-brightness-als.c keep an open file handle
+    for the ALS instead of re-opening it over and over
+    | Only for sensors that we monitor with recurring timers
+  * Added a D-Bus method for getting the key backlight state
+  * Fixed a typo in mcetool.sv.8
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 29 Mar 2010 16:04:36 +0300
+
+mce (1.10.29) unstable; urgency=low
+
+  * More fixes to the adaptive display dimming
+  * Make the D-Bus policy a bit more lenient; do not require root for:
+    - get_device_mode
+    - get_call_state
+    - get_devicelock_mode
+    - get_tklock_mode
+    - get_display_status
+    - get_cabc_mode
+    - get_psm_mode
+    - get_inactivity_status
+    - get_version
+    - req_display_state_on
+    - req_display_state_dim
+    - req_display_state_off
+    - req_display_blanking_pause
+  * Improved mce_read_chunk_from_file() slightly
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 24 Mar 2010 13:06:13 +0200
+
+mce (1.10.28) unstable; urgency=low
+
+  * Modified the behaviour of the adaptive display dimming;
+    instead of using multipliers, we simply pick the next step up in
+    the list of possible dimming timeouts (if there are any higher ones)
+  * Updated the list of possible dim timeouts
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 23 Mar 2010 18:28:03 +0200
+
+mce (1.10.27) unstable; urgency=low
+
+  * Fixed incorrect handling of integer lists in mce-gconf
+  * Fixed the logic for the adaptive display dimming a bit
+  * Fixed incorrect error handling in mce_read_chunk_from_file()
+    | Found by coverity
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 23 Mar 2010 11:59:51 +0200
+
+mce (1.10.26) unstable; urgency=low
+
+  * Enabled adaptive display dimming by default
+  * Added mcetool.conf to allow mcetool to send on the system bus
+  * Removed the keypress event sending interface again;
+    the same information can now be gotten from QmKeys
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 22 Mar 2010 14:49:33 +0200
+
+mce (1.10.25) unstable; urgency=low
+
+  * Added support for combination rules for LED patterns
+  * Don't re-initialise the ALS median filter on transition from
+    undefined display state to on/dim; we already initialise
+    the median filter when we initialise the ALS module
+  * Don't reprogram the ALS I/O-monitor if we already have one active
+  * Use FB_BLANK_* instead of the deprecated VESA_* defines
+    for controlling the display power saving
+  * Fix encoding of man/mcetool.sv.8
+  * Only setup the doublepress timeout when the tklock isn't active
+    and only if there is a doublepress action defined
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 18 Mar 2010 16:58:00 +0200
+
+mce (1.10.24) unstable; urgency=low
+
+  * Made the initial reads from the ambient light sensor
+    and proximity sensor blocking (Fixes: NB#160313)
+  * Fixed the special key/switch signal
+  * Fixed the path to calibration point for the DIPRO ambient light sensor
+  * Added calibration support for proximity sensors
+  * Made mce_read_chunk_from_file() retry a few times on
+    EAGAIN/EWOULDBLOCK before giving up
+  * Added an extra parameter to mce_read_chunk_from_file(), to allow for
+    passing of extra flags to open()
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 11 Mar 2010 13:43:42 +0200
+
+mce (1.10.23) unstable; urgency=low
+
+  * Fixed crash in modules/proximity.c
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 08 Mar 2010 15:04:42 +0200
+
+mce (1.10.22) unstable; urgency=low
+
+  * Added a replacement for the old keypress event sending interface;
+    the new, more reasonable, interface only sends special keys and switches
+    | Build-Depends: mce-dev (>= 1.10.12)
+  * Removed homekey module; this is handled by event-input.c for now
+  * Removed broken mce-cabc tool
+  * Fixed mce.conf to work with new, more strict, D-Bus policy
+    (Fixes: NB#159430)
+    | Thanks to Marius Vollmer
+  * Added test_bit() function to mce-lib.c
+  * Properly set display type for Himalaya
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 05 Mar 2010 15:51:57 +0200
+
+mce (1.10.21) unstable; urgency=low
+
+  * Properly send the active power saving mode instead of the user setting
+  * Added support for forcing power saving mode to always be on, even
+    when battery is not empty
+  * Moved the power saving mode related GConf keys to their own schemas-file
+  * Added support for reading lists of integers to mce-gconf
+  * Fixed minor memory leaks in mce-gconf
+  * Modified the logic for the power saving mode
+  * Modified mce-log to make syslog and stderr logging more consistent
+    with each other
+  * Don't forget gobject-2.0 in the list of packages to get pkg-config
+    information from; both GConf and Conic uses GObject
+  * Added module info for the powersavemode module
+  * Disconnect signal handlers when we no longer use them
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 01 Mar 2010 15:07:30 +0200
+
+mce (1.10.20) unstable; urgency=low
+
+  * Tuned LED patterns for RM-680
+  * Removed the vibrator test from mcetorture
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 25 Feb 2010 12:21:30 +0200
+
+mce (1.10.19) unstable; urgency=low
+
+  * Allocate the proper amount of memory for the adaptive dimming values
+  * Fixed double allocation of DBusMessage in send_power_save_mode()
+  * Added -Wl,--as-needed to the LDFLAGS
+  * Added linux-libc-dev (>= 2.6.32) as an alternative build dependency
+    instead of linux-kernel-headers, and restored the workaround for
+    older kernel versions
+    | These two changes together allows building mce on other platforms
+  * Change the default for the power saving mode from true to false,
+    at least until hald-addon-bme proxies the battery_ok signal
+  * Added battery_ok to tests/fakecharger
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 24 Feb 2010 15:02:26 +0200
+
+mce (1.10.18) unstable; urgency=low
+
+  * Crapectomy: removed the code in keypad.c that
+    sent all keypresses as D-Bus signals (!)
+  * Added a power saving mode module
+    | Build-Depends: mce-dev (>= 1.10.11)
+    | Right now it kicks in when the battery low signal is received,
+    | but this might change in the future
+  * Added partial support for adaptive display dim timeouts
+  * Added BATTERY_OK to the battery signals from bme
+  * Tightened build-dependency on linux-kernel-headers
+  * Removed workaround for older kernel versions
+  * Always check return value from mcetool_dbus_call() in mcetool
+    | Found by coverity
+  * Updated the Doxyfile to the Doxygen 1.5.9 format
+  * Changed default CABC-mode to "ui"
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 23 Feb 2010 17:11:46 +0200
+
+mce (1.10.17) unstable; urgency=low
+
+  * Added support for the TWL4030 powerbutton (Fixes: NB#156762)
+  * Added support for the Atmel QT602240 touchscreen
+  * Added support for the TWL4030 jack sense
+  * Added support for the model name LED in the RM-680
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 17 Feb 2010 17:25:32 +0200
+
+mce (1.10.16) unstable; urgency=low
+
+  * Added support for the DIPRO proximity sensor
+  * Added support for the DIPRO ambient light sensor
+  * Added support for the BH1780GLI ambient light sensor
+  * Added support for the monochrome LED in the RM-680
+    | Patterns still need to be tuned
+  * Added keyboard backlight support for RM-680
+  * Corrected inverted input-based cover switches
+  * Added mce_read_chunk_from_file() to mce-io
+  * Removed the mce-tests package; it interferes with the test reports
+    and is basically useless anyway
+  * Modified mce_log(); All log messages now have "file:function(): "
+    as a prefix
+  * Added mce_log_raw() for cases where the "file:function(): "
+    prefix isn't wanted
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 10 Feb 2010 00:23:58 +0200
+
+mce (1.10.15) unstable; urgency=low
+
+  * Added support for new input events to accommodate for newer kernels
+    that no longer support gpio-switch (Fixes: NB#153001)
+  * Added missing Build-Depends on linux-kernel-headers
+  * Added support for the Himalaya display controller
+  * Added support for the Synaptic TM12xx touchscreen input event device
+  * Added support for the new name of the keypad input event device
+  * Added support for the gpio-keys input event device
+  * Blacklisted the input drivers for (known) accelerometer,
+    magnetometer and vibrator input event devices
+  * Temporarily work around too old linux-kernel-headers by defining the
+    needed values if needed
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 26 Jan 2010 11:11:49 +0200
+
+mce (1.10.14) unstable; urgency=low
+
+  * Fixed the input tracking that was broken by the fix for the new
+    kernel poll semantics; only the semantics for sysfs changed,
+    not for everything else
+  * Removed some dead code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 15 Jan 2010 10:00:16 +0200
+
+mce (1.10.13) unstable; urgency=low
+
+  * Corrected the paths for the Taal display controller
+  * Fixed FTBFS with new toolchain
+  * Use new desktop startup signal (Fixes: NB#126872)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 08 Jan 2010 21:37:42 +0200
+
+mce (1.10.12) unstable; urgency=low
+
+  * Adapted mce-io to new kernel poll semantics for sysfs
+    (Fixes: NB#150979)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 16 Dec 2009 15:28:59 +0200
+
+mce (1.10.11) unstable; urgency=low
+
+  * Modified [power] button behaviour
+    - Activate tklock on short-press
+    - No longer activate tklock on double-press
+  * Forward ported additional fixes for the error flood problem
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 14 Dec 2009 16:48:11 +0200
+
+mce (1.10.10) unstable; urgency=low
+
+  [ Tuomo Tanskanen ]
+  * Use devicelock packages headers
+    - Old SystemUI attic devlock removed
+    - All devlock D-Bus calls etc. converted to use new interface
+  * Implemented required D-Bus interface for setting device lock state
+    (Fixes: NB#148699)
+
+  [ David Weinehall ]
+  * Forward ported changes from Fremantle
+  * Added Tuomo to Uploaders
+  * Removed out of date Conflicts
+  * Removed mce.zzinitdone.init
+  * Removed mce.upstart and mce.devlock-blocker.xsession
+    | This is now in the system-services package
+  * Removed build-dependency on upstart-dev
+  * Removed the accelerometer module
+  * Updated mcetool and its manual page to reflect the removed
+    vibrator and accelerometer support
+  * Added GConf schemas for the display settings (Fixes: NB#148537)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 02 Dec 2009 16:41:33 +0200
+
+mce (1.10.9+nmu3) unstable; urgency=low
+
+  * Fixed D-Bus interface to return the new CABC mode
+    (Fixes: NB#147731)
+  * Removed mce.mce.init, as that init stuff is not used anymore
+    | Init files have not been parsed by upstart for a long time
+    | and the new upstart was giving problems with this obsolete file
+
+ -- Tuomo Tanskanen <ext-tuomo.1.tanskanen@nokia.com>  Fri, 27 Nov 2009 10:08:20 +0200
+
+mce (1.10.9+nmu2) unstable; urgency=low
+
+  * Added shebang and svn:executable to runtests.sh
+
+ -- Tuomo Tanskanen <ext-tuomo.1.tanskanen@nokia.com>  Thu, 05 Nov 2009 09:13:35 +0200
+
+mce (1.10.9+nmu1) unstable; urgency=low
+
+  * Fremantle MCE port to Harmattan
+    - Added SystemUI attic
+    - Added Cita tests
+    - Added mce-cabc tool
+    - Dropped Build dependencies on SystemUI and BME
+    - Added BME header
+    - Fixed modules related to SystemUI and BME
+    - Dropped useless linking to libcrypt for mce and libdbus-glib for mcetool
+    - Added support for Taal display
+    - Added Hardware keys support
+    - Removed vibrator module and related entries in mce.ini
+      (Fixes: NB#144584)
+    - Fixed Makefile
+
+ -- Tuomo Tanskanen <ext-tuomo.1.tanskanen@nokia.com>  Tue, 03 Nov 2009 15:09:46 +0200
+
+mce (1.8.98) unstable; urgency=low
+
+  * Really fix the audio routing for ihfandheadset (Fixes: NB#139253)
+  * Disable charger based blank prevention if charging stops or fails
+    (Fixes: NB#139410)
+  * Disable the tklock before unblanking when interacting with
+    the proximity sensor (Fixes: NB#139823)
+  * Always log the reason for shutdown requests originating from mce
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 26 Oct 2009 14:56:44 +0200
+
+mce (1.8.97) unstable; urgency=low
+
+  * Connecting USB cable opens tklock and lits display
+    (Fixes: NB#143099)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Wed, 21 Oct 2009 13:15:55 +0300
+
+mce (1.8.96) unstable; urgency=low
+
+  * Fixed tklock case when alarm comes on during the call
+    (Fixes: NB#138435)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Tue, 20 Oct 2009 14:20:45 +0300
+
+mce (1.8.95) unstable; urgency=low
+
+  * Applied patch to audio routing signal handling (Partial fix for NB#143242)
+    | Patch provided by Janos Kovacs
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Fri, 16 Oct 2009 15:15:20 +0300
+
+mce (1.8.94) unstable; urgency=low
+
+  [ Pekka Lundström ]
+  * When tklock is enabled, keypad interrupts are disabled but not
+    during active call; volume keys must work during the call even
+    when the proximity sensor has blanked the display
+    (Fixes: NB#138475)
+
+  [ Tuomo Tanskanen ]
+  * Re-enable visual unlock during calls, since it now works properly
+    (Fixes: NB#141758)
+
+ -- Tuomo Tanskanen <ext-tuomo.1.tanskanen@nokia.com>  Mon, 05 Oct 2009 17:09:06 +0300
+
+mce (1.8.93) unstable; urgency=low
+
+  * Added new vibra pattern "PatternChatAndEmail"
+    (Fixes: NB#141599)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Mon, 5 Oct 2009 9:46:46 +0300
+
+mce (1.8.92+dw1) unstable; urgency=low
+
+  * Fixed audio routing for ihfandheadset (Fixes: NB#139253)
+  * Removed unused code for deprecated call states
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 01 Oct 2009 13:14:51 +0300
+
+mce (1.8.92) unstable; urgency=low
+
+  * Added a workaround for a very nasty case where the display state trigger
+    is called recursively by the accelerometer module; the bug is not properly
+    fixed, but there are no infinite loops any more (Fixes: NB#141040)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 30 Sep 2009 02:33:44 +0300
+
+mce (1.8.91) unstable; urgency=low
+
+  * Fine-tuning for touchscreen vibra (start 23ms, stop 15ms)
+    (Fixes: NB#141080)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Tue, 29 Sep 2009 16:08:03 +0300
+
+mce (1.8.90) unstable; urgency=low
+
+  * Removed the CABC hack once more (hopefully for good this time)
+    and added support for a GConf setting that enables/disables CABC
+    completely instead (Fixes: NB#139411)
+  * Another fix to the error policy in mce-io.c
+    | Found by coverity
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 25 Sep 2009 15:22:52 +0300
+
+mce (1.8.89) unstable; urgency=low
+
+  * Added accelerometer enable/disable request handling
+    (Fixes: NB#137886, NB#138981)
+    | Build-Depends: mce-dev (>= 1.8.14)
+  * Fine-tuned orientation decision points
+    (Fixes: NB#128678, NB#135660)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Fri, 18 Sep 2009 10:48:01 +0300
+
+mce (1.8.88) unstable; urgency=low
+
+  * Changed CABC default to "moving-image" (Fixes: NB#137988)
+  * Made tklock the default for [power] double press
+  * Properly disable the automagic relocking when there's an external
+    tklock unlock request (Fixes: NB#138615)
+  * Cancel all tklock related timeouts when disabling the tklock
+    (Fixes: NB#137380)
+  * Don't update the saved submode if there's already an active call
+  * Disabling of temporary tklock when a call ends should be silent
+  * Minor fixes to error messages from mce-io
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 09 Sep 2009 14:34:00 +0300
+
+mce (1.8.87) unstable; urgency=low
+
+  * Don't filter inactivity, only activity when touchscreen/keypad
+    is locked (Fixes: NB#137568)
+  * Added a few more NULL-checks and improved some error messages
+    in datapipe.c (Fixes: NB#136452)
+  * Inhibit automatic tklock during bootup (Fixes: NB#137257)
+  * Modified autorelock not to take the camera button into consideration
+  * Added option to enable tklock by double pressing [power]
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 07 Sep 2009 23:10:36 +0300
+
+mce (1.8.86) unstable; urgency=low
+
+  * Vibra uses new interface to driver; all timings are handled in kernel
+    (Fixes: NB#132957)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Mon, 7 Sep 2009 10:15:11 +0300
+
+mce (1.8.85) unstable; urgency=low
+
+  * Disable interrupts from camera focus/launch when enabling the
+    touchscreen/keypad lock (Fixes: NB#135706)
+  * Tuned the DeviceOn LED pattern a bit further (Fixes: NB#135822)
+    | Thanks to Pekka Lundström
+  * Fixed corner case where the proximity sensor is ignored on incoming
+    calls if there's an alarm active but the display has blanked
+  * Don't suspend the proximity sensor I/O monitor when the interrupts
+    are disabled; there won't be any activity anyway, so it shouldn't
+    make a difference that it's active, and keeping it active
+    simplifies things a bit
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 28 Aug 2009 12:11:14 +0300
+
+mce (1.8.84) unstable; urgency=low
+
+  * Change default for autolock back to not activate when the keyboard
+    slide is open (Fixes: NB#135171)
+    | Sigh...  I don't mind this behaviour, but I wish people could
+    | make up their bloody minds...
+  * Properly handle the boot-time display dimming/blanking/inactivity timeout
+    (Fixes: NB#134904)
+  * Revert the policy for the touchscreen vibrator pattern, since disabling
+    vibra using the D-Bus interface should affect *everything* except the
+    poweroff pattern (otherwise it won't disable the vibra during calls
+    and when using camera where the vibrations might disrupt the main
+    use-case) (Fixes: NB#133592)
+  * Made the lens cover triggered unlocking of the tklock configurable
+    through mce.ini
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Aug 2009 16:56:10 +0300
+
+mce (1.8.83) unstable; urgency=low
+
+  * Adjusted the various LED patterns related to notifications
+    (Fixes: NB#134101)
+  * Change policy for the touchscreen vibrator pattern to make it play
+    even if vibrator alarms/ringtones are disabled
+  * Fix call state bug
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 24 Aug 2009 18:27:54 +0300
+
+mce (1.8.82) unstable; urgency=low
+
+  * Against my better judgement, reintroduce the fugly CABC hack once
+    more, after much pressure from product management...  Mark my words,
+    nothing good will come of this (Fixes: NB#133710)
+  * Disable proximity sensor interrupts and suspend the I/O monitor
+    when the sensor is not in use
+  * Send the call state over D-Bus before we send it internally,
+    instead of after, to help the camera avoid grabbing the audio resources
+    when there are incoming calls (partial fix for NB#130535)
+  * Don't dereference iomon if it's NULL
+    | Found by coverity
+  * All functions, typedefs and global variables should now have full
+    Doxygen coverage
+  * Acknowledge NMU
+    | Thanks to Pekka Lundström
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 24 Aug 2009 14:42:10 +0300
+
+mce (1.8.81+nmu1) unstable; urgency=low
+
+  * Added start and stop pulses to vibrator patterns to make
+    it better suitable for touchscreen (Fixes: NB#132957)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Fri, 21 Aug 2009 13:52:55 +0300
+
+mce (1.8.81) unstable; urgency=low
+
+  * Unblank at the end of a call unless the tklock is active
+    (Fixes: NB#131003)
+  * Only reprogram ALS timeout if it's different from the current timeout
+    (Fixes: NB#125933)
+  * Same fix for the accelerometer
+  * Minor ALS profile fixes
+  * Define _GNU_SOURCE directly in COMMON_CFLAGS to enable compiling with
+    newer libc where ucred is hidden behind __USE_GNU
+  * Fixed some Doxygen comments
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 17 Aug 2009 17:44:36 +0300
+
+mce (1.8.80) unstable; urgency=low
+
+  * Properly reset the proximity tklock flag when leaving call / alarm state
+    (Partial fix for NB#131003)
+  * Removed various unnecessary D-Bus calls when mce is shutting down
+    and powering up from acting dead
+    | This also fixes a warning when running "mce --version" / "mce --help"
+  * Fixed LED pattern when powering up from acting dead
+  * Fixed proximity sensor inhibiting to last the entire call
+  * Allow the owner of the call state to make a transition from
+    "active" to "ringing", to allow for an incoming call when there's
+    already an active call
+  * Don't prevent disabling of the touchscreen if the alarm UI is visible
+    when the user activates the tklock
+  * Acknowledge NMUs
+    | Thanks to Pekka Lundström
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 14 Aug 2009 16:48:22 +0300
+
+mce (1.8.79+nmu3) unstable; urgency=low
+
+  * Added vibrator pattern for touchscreen (Fixes: NB#132680)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Fri, 14 Aug 2009 09:36:35 +0300
+
+mce (1.8.79+nmu2) unstable; urgency=low
+
+  * Modified display and keyboard brightness (Partial fix for NB#125933)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Thu, 13 Aug 2009 11:01:20 +0300
+
+mce (1.8.79+nmu1) unstable; urgency=low
+
+  * Modified PatternDeviceOn to pulsate slower (Fixes: NB#130960)
+
+ -- Pekka Lundström <pekka.lundstrom@nokia.com>  Mon, 10 Aug 2009 12:55:59 +0300
+
+mce (1.8.79) unstable; urgency=low
+
+  * Disable event eater before we open the tklock UI when alarm dialog
+    status changes to not visible (Fixes: NB#130714, NB#129598)
+  * Modified the behaviour for proximity sensor inhibiting; always
+    inhibit the proximity sensor if using the flicker key during a call
+    (Fixes: NB#130657)
+  * More fixes for the error handling policies
+  * Made unset GConf keys generate log messages at loglevel LL_INFO
+    rather than LL_WARN, since it's not harmful as there's default values
+    to fall back on
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 31 Jul 2009 10:26:35 +0300
+
+mce (1.8.78) unstable; urgency=low
+
+  * Use new osso-systemui-devlock interface to only show the
+    "Device locked" when locking the device (Fixes: NB#119441)
+  * Improved error handling policies for the mce_register_io_monitor*()
+    class of functions
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 30 Jul 2009 12:36:56 +0300
+
+mce (1.8.77) unstable; urgency=low
+
+  * Don't disable accelerometer reads when the display goes blank if
+    the alarm UI is visible, otherwise flip-snoozing won't work
+  * Improved fix for the tklock <-> alarm interaction
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 28 Jul 2009 22:08:52 +0300
+
+mce (1.8.76) unstable; urgency=low
+
+  * Don't disable the device lock and confirmation dialog on incoming call
+    (Fixes: NB#124743)
+  * Don't activate the touchscreen/keypad autolock if there's
+    an alarm dialog visible (Fixes: NB#129609)
+  * Adjusted LED pattern for application triggered patterns
+    (Fixes: NB#128358)
+  * Stop-gap ALS adjustment; will be properly tuned later on
+  * Don't disable autorelock on keypress/touchscreen tap
+    if the tklock UI isn't visible (Fixes: NB#129614)
+  * Adjusted PowerOn LED behaviour when powering up from acting dead
+    when charging
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 23 Jul 2009 17:32:19 +0300
+
+mce (1.8.75) unstable; urgency=low
+
+  * Fix issue where event eater could remain active even when it should
+    be disabled
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 20 Jul 2009 20:38:16 +0300
+
+mce (1.8.74) unstable; urgency=low
+
+  * Updated mcetorture to test new alarm dialog status interface
+  * Fixed a regression caused by the fix for NB#126598
+  * Fixed a potential issue in call state monitoring, to avoid vetoing
+    call state changes if the requesting application exits before we've
+    registered the dbus monitoring
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sun, 19 Jul 2009 03:30:43 +0300
+
+mce (1.8.73) unstable; urgency=low
+
+  * Don't setup a dim timeout when locking if the display is already
+    blank (Fixes: NB#126340)
+  * Made the Build-Depends on osso-systemui-dbus-dev (>> 0.1.2) instead,
+    to make sure we actually get the right package
+  * Tuned the accelerometer a bit further, to be less eager to report
+    portrait mode (Fixes: NB#122546)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 16 Jul 2009 13:41:15 +0300
+
+mce (1.8.72) unstable; urgency=low
+
+  * Handle the new alarm dialog status signal from osso-systemui-alarm
+    (Fixes: NB#118907, NB#121457, NB#116721, NB#126243, NB#126598)
+    | Build-Depends: osso-systemui-dbus-dev (>= 0.1.2)
+    | Conflicts: osso-systemui-alarm (<< 0.2.1.10)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 10 Jul 2009 03:36:41 +0300
+
+mce (1.8.71) unstable; urgency=low
+
+  * Use GFileMonitor to track addition/removal of files in /dev/input
+    rather than relying on kevents; this makes hotplugged input devices
+    properly generate activity (Fixes: NB#126131)
+  * Bumped dependency on glib to 2.18 or greater, since we're using GIO
+  * Filter out repeat keypresses and only send activity from them
+    once a second (Fixes: NB#125479)
+  * Don't forget to send event on keypress release if the event eater is
+    active, otherwise the first event after pressing [power] will get lost
+    | Partial fix for NB#126486
+  * Don't enable device lock when transitioning from acting dead to
+    user state; this only happens on power up from acting dead,
+    and in this case we go through a reboot anyway (Fixes: NB#124756)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 07 Jul 2009 05:24:55 +0300
+
+mce (1.8.70) unstable; urgency=low
+
+  * Changed default for autolock; make autolock activate even when the
+    keyboard slide is open (Fixes: NB#124836)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 25 Jun 2009 15:23:21 +0300
+
+mce (1.8.69) unstable; urgency=low
+
+  * Further updates to locking logic (Fixes: NB#121943)
+  * Use the proximity sensor for the headset too
+  * Make use of the flicker key while using the headset inhibits
+    the proximity sensor
+  * Don't use slide unlock UI during calls
+  * Made autolock with open keyboard slide configurable,
+    since the UI spec team warned that the default is likely to change
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 23 Jun 2009 16:26:09 +0300
+
+mce (1.8.68) unstable; urgency=low
+
+  * Use the normal blanking delay for handset too
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 18 Jun 2009 12:48:22 +0300
+
+mce (1.8.67) unstable; urgency=low
+
+  * Made the accelerometer return MCE_ORIENTATION_UNKNOWN
+    as rotation if we cannot discern it (Fixes: NB#122527)
+  * Handle handset vs headset vs speaker in a better manner
+    (Fixes: NB#121943, NB#121984)
+  * Removed caching of old datapipe values, since using the cached values
+    was only safe under certain conditions; replaced with static variables
+    in the functions that need it instead
+  * Suspend the touchscreen I/O monitor from visual tklock too
+    (Fixes: NB#121897)
+  * Keep the display blank when closing the keyboard,
+    and trigger the touchscreen/keypad autolock (Fixes: NB#107218)
+  * Re-enable the proximity lock if the keyboard is closed,
+    and there's a call on-going (Fixes: NB#122001)
+  * Don't inhibit blanking in during an on-going call when using
+    headset or speaker (Fixes: NB#121943)
+  * Don't trigger visual tklock during bootup
+  * Only trigger visual tklock with [power] button
+  * Fixed a potential memory leak in the datapipe code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 18 Jun 2009 01:27:57 +0300
+
+mce (1.8.66) unstable; urgency=low
+
+  * Ignore INHIBIT_STAY_ON and INHIBIT_STAY_ON_WITH_CHARGER
+    in acting dead mode
+  * Always reset dimming inhibiting properly
+  * If we're in acting dead and no alarm is visible,
+    don't unblank the display on activity
+  * If the charger state changes, unblank the display
+  * Don't enable the event eater when the charging UI
+    is visible in acting dead
+  * Use a 5 second dim timeout in acting dead
+    | The above fixes taken together solves the problem with the display
+    | remaining on indefinitely in acting dead and the bugs hidden
+    | behind this behaviour (Fixes: NB#121664)
+  * Always enable the keyboard backlight on activity if the slide is open,
+    not just when a key is pressed (this makes it possible to tap the display
+    to light the keypad, for instance)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 11 Jun 2009 20:01:42 +0300
+
+mce (1.8.65) unstable; urgency=low
+
+  * Ignore earlier tuning for the highest brightness setting and simply
+    use full brightness instead.  *sigh*  (Fixes: NB#120102)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 09 Jun 2009 12:35:24 +0300
+
+mce (1.8.64) unstable; urgency=low
+
+  * Made landscape/portrait orientation changes generate activity,
+    but only if the display is on (Fixes: NB#117305)
+  * Added functions to mce-dbus for tracking NameOwnerChange
+  * Keep track of NameOwnerChange for call state, and restore call state
+    to none:normal when the application quits/crashes, to avoid getting
+    stuck in call state
+  * Keep track of NameOwnerChange for display blanking pauses,
+    and resume normal behaviour immediately when the application
+    quits/crashes, to avoid preventing blanking for up to 60 seconds extra
+  * Added driver blacklist to the event-input monitoring,
+    and exclude the high-resolution accelerometer
+  * Fixed event eating for the [power] button
+  * Rewrite some logic regarding to acting dead and splashscreens
+  * Do not use delayed unlocking of the touchscreen/keypad lock
+    for the proximity sensor (Fixes: NB#120601)
+  * Be sure to follow the keyboard interrupt policy when the
+    touchscreen/keypad autolock kicks in too, not just when enabling
+    it manually (Fixes: NB#116977)
+  * On startup, fade to the target brightness from the current brightness
+  * Fixed incorrect example pattern
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 04 Jun 2009 03:24:56 +0300
+
+mce (1.8.63) unstable; urgency=low
+
+  * Another locking fix (Fixes: NB#118517)
+  * Don't call mce_log() from signal handler (Fixes: NB#119383)
+  * Reset errno if sscanf fails and log a proper error message
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 28 May 2009 16:48:20 +0300
+
+mce (1.8.62) unstable; urgency=low
+
+  * Don't show device lock again if SystemUI restarts (Fixes: NB#115467)
+  * Accept "ihf" as sink when determining if the call is handheld
+    when call state is ringing (Fixes: NB#116980, NB#109779)
+  * Further accelerometer tuning
+    | Thanks to Pekka Lundström
+  * Fixed regressions in device lock introduced in mce 1.8.61
+  * Fixed regression with lens cover based unlocking of tklock
+    introduced in mce 1.8.61
+    | Thanks to Chetan Gopal for finding these regressions
+  * Fixed possible NULL-pointer dereference in tklock closing code
+  * Corrected the default timeout for automatic device lock
+  * Turn the display state trigger in the accelerometer code into
+    an input trigger instead, to allow for sending the new orientation
+    before the display turns on
+    | This is unlikely to matter in practise, since the D-Bus latency
+    | is presumably higher than the internal latencies in MCE, but it's
+    | the best we can do
+  * Don't restart the dim/blank timeouts when updating blanking inhibit
+    if the display is already dimmed/blanked (Fixes: NB#115671)
+  * Always unblank the display on incoming call based on the proximity
+    sensor, even if the tklock isn't active
+  * Don't disable visual tklock when alarm UI is visible
+    (Fixes: NB#118105)
+  * Various tklock fixes (Fixes: NB#116176)
+  * Simplified logic for visual tklock
+  * Improved D-Bus error messages
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 28 May 2009 03:10:07 +0300
+
+mce (1.8.61) unstable; urgency=low
+
+  * Improved logic for proximity autorelock
+    (Fixes: NB#117156)
+  * Unblank immediately, don't fade (Fixes: NB#116656)
+  * When the device is ringing, don't dim/blank the display
+    (Fixes: NB#116953)
+  * When a call is ongoing, only dim, don't blank
+  * If the device is in autorelock submode, don't open the visual
+    tklock when a key is pressed
+  * Tune the accelerometer values for face down
+    | Thanks to Pekka Lundström
+  * Added a new D-Bus helper to mce-dbus, for sending D-Bus messages
+    and blocking for the reply (use with care!)
+  * Use the new D-Bus helper for all interaction with SystemUI
+  * Reorganise the display handling a bit to decrease the number
+    of writes to the display controller
+  * The CABC mode doesn't need to be reprogrammed after a display off/on
+    cycle; this was just a kernel bug
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 26 May 2009 19:07:42 +0300
+
+mce (1.8.60) unstable; urgency=low
+
+  * Use a 5 second timeout for visual touchscreen/keypad lock,
+    then blank immediately (Fixes: NB#118092)
+  * Fixed some issues when interacting with the visual
+    touchscreen/keypad lock (Fixes: NB#118088)
+  * Fixed the inactivity filtering that was broken by the change in mce 1.8.59
+    and fix the interaction with the visual tklock
+  * Modify brightness according to what LEDs we are driving and add
+    a new pattern for charging (Fixes: NB#111247, NB#115892)
+    | Thanks to Pekka Lundström
+  * If the display is blank but the tklock isn't active,
+    don't unblank if the user activates the lock with the flicker key
+  * Don't generate activity from the flicker key by default
+  * Synthesise activity if the tklock is unlocked with the flicker key
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 20 May 2009 18:54:47 +0300
+
+mce (1.8.59) unstable; urgency=low
+
+  * The new desktop readiness signal is finally available,
+    so use it (Fixes: NB#107958, NB#113753)
+  * Minor fix for the audio routing interaction with tklock
+  * Don't generate activity or turn on the keyboard backlight
+    if the tklock is active
+  * Timeout for keyboard backlight should be 30s, not 10s (Fixes: NB#116747)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 19 May 2009 16:42:56 +0300
+
+mce (1.8.58) unstable; urgency=low
+
+  * Disable the device autolock when the display is kept awake through
+    blank prevent requests (Fixes: NB#115637)
+  * Don't ignore [power] during bootup, the user might want to
+    shutdown from the configuration wizard or during the pin code
+    entry dialog (Fixes: NB#111613)
+  * Properly handle G_IO_STATUS_AGAIN if returned by g_io_channel_read_chars()
+    | Found by coverity
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 12 May 2009 16:59:14 +0300
+
+mce (1.8.57) unstable; urgency=low
+
+  * Improved orientation code
+    | Thanks to Pekka Lundström
+  * Added support for tracking of audio routing
+  * Use the audio routing information as additional policy to decide whether
+    or not to take the proximity sensor into account during calls
+    (Fixes: NB#109779)
+  * Do not rescan the entire input device list when there's a hotplug event,
+    only update the relevant entry; this solves various race conditions
+    when devices are hotplugged (Fixes: NB#112530)
+    | It seems as though the netlink event for a hotplugged device can
+    | arrive *before* the device entry has actually appeared in /dev/input;
+    | this means that mce might fail to open these devices.  This needs to
+    | be investigated further -- having to busy wait is not a particularly
+    | good idea -- after all, the netlink events are meant to avoid having
+    | to do things like that...
+  * Use LL_WARN instead of LL_ERR for error messages
+    when the error policy in mce-io is to ignore errors
+  * Apparently the kernel emits POLLERR when new data is available (!),
+    so use POLLERR as an indication that data needs to be read instead
+    of as indication that something went wrong
+    | Removes a lot of useless warnings, but also leaves me with a
+    | sense of discomfort
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 11 May 2009 15:19:12 +0300
+
+mce (1.8.56) unstable; urgency=low
+
+  * Do not adhere to display on/display dim requests if the tklock is active
+    (Fixes: NB#111649)
+  * If there's an incoming call or alarm, automagically unlock the tklock,
+    but *only* if the proximity sensor doesn't indicate proximity
+    (IOW, if the device is in a pocket, bag or similar, don't unlock);
+    if so the device will instead unlock when the proximity changes state
+    (Fixes: NB#113451)
+  * Hysteresis adjustment in ALS profiles for the RX-51
+  * Updated help text in mcetool
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 30 Apr 2009 11:04:02 +0300
+
+mce (1.8.55) unstable; urgency=low
+
+  * Check if tklock is enabled on unblank before attempting to disable
+    the event eater, since both share the same code; otherwise the
+    unblanking done when we unlock the tklock will trigger relock again
+    on toggle in corner conditions where both tklock and event eater
+    are active at the same time (Fixes: NB#110951, NB#112447)
+  * The tklock should also autorelock if the lens cover is opened and then
+    closed without any input in between (Fixes: NB111999, NB#112526)
+  * If tklock is activated manually during a call,
+    don't use the proximity sensor to lock/unlock (Fixes: NB#112777)
+  * Fixed bug in blanking inhibit code (Fixes: NB#93557, NB#111158, NB#112401)
+  * If the restored device mode is invalid, properly default to INVALID
+    (Fixes: NB#111716)
+  * Tune accelerometer to fix unexpected switching between portrait
+    and landscape (Fixes: NB#112741)
+    | Patch by Matti Halme
+  * Tune the ALS profiles for the RX-51
+  * Remove the CABC hack again; always use the CABC even for the
+    highest brightness setting
+  * Remove Workaround for the TKLOCK_ENABLE_VISUAL issue; this should
+    work properly now
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 27 Apr 2009 17:01:49 +0300
+
+mce (1.8.54) unstable; urgency=low
+
+  * Read the ALS calibration data from the correct CAL section
+    and fix the size check (solves the remainder of NB#99119)
+  * Don't display the confirmation dialog on when online mode is chosen
+    from the device menu (Fixes: NB#112239)
+  * Made the verifybacklight and verifyled scripts use printf instead
+    of echo, to ensure that we're getting the same result as mce would
+    get (since mce does not include any newline)
+  * Don't warn about non-seekable file if the rewind policy is FALSE
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 21 Apr 2009 17:32:27 +0300
+
+mce (1.8.53) unstable; urgency=low
+
+  * Introduce mce_get_io_monitor_fd() and use it to get the file descriptor
+    monitored by event-input.c, and close them, to avoid leaks
+    (Fixes: NB#98013)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 09 Apr 2009 17:29:33 +0300
+
+mce (1.8.52) unstable; urgency=low
+
+  * Work around issue in tklock by closing and reopening tklock UI
+    when changing to TKLOCK_ENABLE_VISUAL
+  * Track camera button launch, +/- and power key presses to trigger
+    TKLOCK_ENABLE_VISUAL
+  * Added new option for keyboard interrupt disabling to mce.ini,
+    and use it by default
+  * Setup a dim timeout for the tklock immediately after the alarm UI
+    closes
+  * Inhibit screen blanking (but not dimming) when charging in acting dead
+    (Fixes: NB#99790)
+  * Don't generate activity from touchscreen and/or keypad when
+    the event eater is active; generate it when it's closed instead
+    | Conflicts: osso-systemui-tklock (<< 0.1.8.10)
+  * Fixed memory leak found by coverity (Fixes: NB#109692)
+  * Don't suspend the touchscreen I/O monitor when autorelock is active
+    (Fixes: NB#107435)
+  * Enable event eater already at dim
+  * Corrected an issue with CABC state on bootup
+  * Don't make activity trigger display unblank if the touchscreen/keypad
+    lock is enabled (Fixes: NB#110068)
+    | In the cases where the display does need to be enabled,
+    | we do this explicitly in the tklock module
+  * Better error handling; in case osso-systemui-tklock fails,
+    don't enable tklock internally, since we'll end up in a horrible mess
+  * Gah!  Use /var/run, not /var/lib for the call state file, otherwise
+    the transition handling on bootup won't have a chance to work properly
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 07 Apr 2009 16:50:49 +0300
+
+mce (1.8.51) unstable; urgency=low
+
+  * Set verify submode when device lock UI is requested,
+    to avoid a race condition that would allow device menu to be opened
+    on top of the device lock (Fixes: NB#102646)
+  * Re-program CABC every time we unblank the display,
+    since the CABC driver seems to forget its setting when the display blanks
+  * Disable CABC when using maximum brightness level
+  * Added support for using keyboard interrupt disabling on the RX-51
+  * Unified activity callbacks in event-switches
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 30 Mar 2009 19:01:33 +0300
+
+mce (1.8.50) unstable; urgency=low
+
+  * Be sure to set the cached call state in the tklock even when the call
+    is initiated on our end (Fixes: NB#107278)
+  * Handle the case where the proximity sensor reports proximity
+    at the point when the device starts ringing (Fixes: NB#92896)
+  * Properly restore the tklock after a call (Fixes: NB#102681)
+  * Implemented support for the tristate camera button (Fixes: NB#101348)
+  * Execute the touchscreen pipe both on press and release
+    (Fixes: NB#103170)
+  * Removed camera button input layer support; this is no longer available
+    since the button is now tristate
+  * Proper fix for NB#104372
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 25 Mar 2009 09:43:44 +0200
+
+mce (1.8.49) unstable; urgency=low
+
+  * Close the device lock code verification dialog when the call state
+    changes to "ringing" or "active" (Fixes: NB#104372)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 23 Mar 2009 21:16:57 +0200
+
+mce (1.8.48) unstable; urgency=low
+
+  * Setup the device lock delay before updating the counters
+    (Fixes: NB#104582)
+  * Added I/O monitor for mmc0/battery cover for the RX-51
+  * Removed activity I/O monitor and changed remaining activity monitor
+    users over to use string monitors instead; the activity monitors
+    were never working correctly
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 23 Mar 2009 15:29:22 +0200
+
+mce (1.8.47) unstable; urgency=low
+
+  * Don't setup the device autolock unless we're in USER state
+    (Fixes: NB#101091)
+  * Updated mcetool manual page
+  * Don't display mode confirmation dialog when requesting
+    offline from the device menu
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 17 Mar 2009 18:05:21 +0200
+
+mce (1.8.46) unstable; urgency=low
+
+  * Fixed copy'n'paste error in tests/verifyled
+  * Disable the timeout at the "shutdown device?" dialog when pressing
+    cancel in the device lock (this behaviour can be re-enabled
+    using mce.ini) (Fixes: NB#103552)
+  * Fixed bug where the shutdown timeout wouldn't get re-enabled
+    after a call
+  * In case charging signals arrive in the wrong order or if some
+    signal gets lost, disable the charging and battery full pattern
+    when charger is disconnected (Fixes: NB#103622)
+  * Minor improvements of the fakecharger script
+  * Modified build-time version check to allow for binary NMU's
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 13 Mar 2009 06:02:37 +0200
+
+mce (1.8.45) unstable; urgency=low
+
+  * Read misc input events before suspending again;
+    otherwise they will trigger activity over and over
+    (Fixes: NB#99351, NB#102601)
+  * Disable the headphone switch handler
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 09 Mar 2009 17:06:50 +0200
+
+mce (1.8.44) unstable; urgency=low
+
+  * Allow call state transition from "ringing" to "active"
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 03 Mar 2009 16:38:50 +0200
+
+mce (1.8.43) unstable; urgency=low
+
+  * Set CABC mode to UI instead of still image (Fixes: NB#101292)
+  * Changed the polling interval for the accelerometer to 500 ms
+  * Added an error message if mce cannot read the max_brightness file
+    from sysfs
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 03 Mar 2009 13:25:29 +0200
+
+mce (1.8.42) unstable; urgency=low
+
+  * Another doh!  Fixed the name of the Xsession file
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 26 Feb 2009 19:56:28 +0200
+
+mce (1.8.41) unstable; urgency=low
+
+  * Start the device lock blocker from Xsession (Fixes: NB#103361)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 25 Feb 2009 18:20:46 +0200
+
+mce (1.8.40) unstable; urgency=low
+
+  * Doh!  Handle the new "ringing" call state properly
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 25 Feb 2009 17:03:18 +0200
+
+mce (1.8.39) unstable; urgency=low
+
+  * Doh!  Fixed libcal build-dependency
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 24 Feb 2009 17:53:25 +0200
+
+mce (1.8.38) unstable; urgency=low
+
+  * Added "ringing" call state
+    | Build-Depends (mce-dev >= 1.8.9)
+  * Disable the vibrator during an active call, but not when ringing
+    (Fixes: NB#101572)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 24 Feb 2009 17:35:04 +0200
+
+mce (1.8.37) unstable; urgency=low
+
+  * Improved message handler in mce-dbus.c
+    | Thanks to Simo Piiroinen
+  * Improved the mce.conf D-Bus configuration
+  * Fixed coverity warnings in modules/led.c
+  * Fixed coverity warning in modules/display.c
+  * Don't disable the battery low pattern when charging,
+    since we never ever enable it (and it's no longer defined in mce.ini)
+  * Read the ALS tuning values from CAL and use them
+    to initialise the ALS driver (Fixes: NB#99119)
+  * MCE once more Build-Depends on libcal1,
+    since we need it to read the ALS tuning values
+  * Improved verifyled script
+  * Minor code cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 23 Feb 2009 13:59:46 +0200
+
+mce (1.8.36) unstable; urgency=low
+
+  * Remove handler from dbus_handlers *before* freeing it
+  * Don't try to do close the filedescriptor in rescan_inputdevices()
+    if we don't have a valid filedescriptor
+  * Fixed coverity warnings in test_mce-log.c
+  * Made keypad component a module
+  * Send the correct result from mce_set_device_mode_int32()
+  * Fixed bug in connectivity code that caused connected status to
+    remain as TRUE even after disconnect
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 05 Feb 2009 13:10:42 +0200
+
+mce (1.8.35) unstable; urgency=low
+
+  * Added the confirmation dialog support for mode changes
+    (Fixes: NB#99661)
+  * Updated mcetool to support the new mode change API
+  * Swapped portrait and portrait (inverted)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 04 Feb 2009 09:14:00 +0200
+
+mce (1.8.34) unstable; urgency=low
+
+  * Added support for CABC to the display code
+  * Added strstr_delim() to mce-lib to allow finding substrings
+    that are token separated (without the lurking issues that strtok and
+    its ilk comes with)
+  * Removed direct reference to dsm.state
+  * Fixed bug that caused mce to misbehave if restarted
+    (MCE would remain indefinitely in transition submode)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 03 Feb 2009 13:47:15 +0200
+
+mce (1.8.33) unstable; urgency=low
+
+  * Improved the error handling in mce-io.c when NULL-parameters are passed,
+    to ease debugging, and avoid crashes caused by, issues such as
+    NB#99351 and NB#98013
+  * Added stubs to accept mode change with confirmation dialog requests;
+    for now no dialog is displayed, but the requests are at least handled
+  * Implemented memory for the orientation; if the orientation cannot be
+    discerned (device lies flat on a table), the last used orientation
+    will be reported
+  * Added reporting of inverted orientations
+  * Use mce_translate_int_to_string() in modetransition.c too,
+    to allow aliases to work properly
+  * Modify display blank behaviour to really do immediate blanking
+    (Fixes: NB#99066)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 02 Feb 2009 18:03:45 +0200
+
+mce (1.8.32) unstable; urgency=medium
+
+  * Fixed incorrect reply handling in call state code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 29 Jan 2009 20:14:19 +0200
+
+mce (1.8.31) unstable; urgency=low
+
+  * Cancel I/O monitor timeouts after an input-device rescan
+    (Fixes: NB#99351)
+  * Fixed policy 5 for LED and vibrator patterns
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 28 Jan 2009 19:46:26 +0200
+
+mce (1.8.30) unstable; urgency=low
+
+  * Added limited backwards compatibility for the call states; will be removed
+    as soon as all relevant services have been migrated to the new ABI/API
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 27 Jan 2009 17:32:44 +0200
+
+mce (1.8.29) unstable; urgency=low
+
+  * Call states changes are made atomic by means of only allowing
+    changes to/from the "none" state (an exception is made for emergency
+    calls)
+    | This means both an API and an ABI break,
+    | since the return type of the req_call_state_change D-Bus method
+    | is changed to a dbus_bool_t that indicates if the change
+    | was permitted or vetoed
+  * Call states are now "active"/"none"/"service"
+    | Use "service" for system services that need to block calls
+    | Note: unlike "active", the "service" call state does not alter
+    | the device lock and touchscreen/keypad lock behaviour
+    | Also note that emergency calls are still permitted even when
+    | the call state is "service"
+  * Build-Depends (mce-dev >= 1.8.6) for new call state API
+  * Added recommends on alarmd
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 27 Jan 2009 13:42:33 +0200
+
+mce (1.8.28) unstable; urgency=medium
+
+  * Fixed typo in verifybacklight
+  * Fixed possible NULL-pointer dereference in event-input.c
+    device rescanning code (Fixes: NB#98013)
+    | Thanks to Dafydd Harries
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sun, 25 Jan 2009 18:13:30 +0200
+
+mce (1.8.27) unstable; urgency=low
+
+  * Adjusted the ALS-profile for the RGB LED
+  * Bumped the LED current for the backlight LEDs
+  * Simplified ALS-code a bit
+  * Fixed verifyled to set LED current
+  * Added verifybacklight script
+  * Removed call to "make test" from debian/rules,
+    since it does not behave as intended (Fixes: NB#99149)
+  * Increased low brightness for keyboard backlight a bit
+  * Fixed inverted check for alarm UI state in tklock keypress trigger
+    (Fixes: NB#99103)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 23 Jan 2009 16:50:48 +0200
+
+mce (1.8.26) unstable; urgency=low
+
+  * Always generate activity *before* sending specific actions
+    for events; this should prevent activity policy from interfering
+    with the event policy
+  * Only generate activity from flicker key on slide, not on release
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 22 Jan 2009 16:15:39 +0200
+
+mce (1.8.25) unstable; urgency=low
+
+  * Improved tklock behaviour in interaction with call state
+  * Removed visual tklock mode again, since it's not used
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 21 Jan 2009 16:44:24 +0200
+
+mce (1.8.24) unstable; urgency=low
+
+  * Blank screen immediately when the touchscreen/keypad lock is enabled
+  * Send the updated orientation when display turns on if the orientation
+    has changed (Fixes: NB#97918)
+  * Fixed call state tests in mcetorture
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 14 Jan 2009 16:30:44 +0200
+
+mce (1.8.23) unstable; urgency=low
+
+  * Disable device autolock during calls even when the device is
+    otherwise idle (Fixes: NB#97627)
+  * Do not open device menu if the alarm UI is visible
+    (Fixes: NB#93776)
+  * Properly set LED current for keyboard backlight on the RX-51
+  * Disable tklock temporarily when the alarm UI is shown
+  * Fixed initial accelerometer poll delay
+  * Fixed splashscreen timeout
+  * Changed modules/alarm.c to listen to alarmd signals to obtain
+    the alarm ui status instead of using a callback into MCE
+  * Removed device lock code tests from mcetorture
+  * Restored accidentally removed --set-mode help-text in mcetool
+  * Updated the manual page for mcetool according to the crapectomy
+  * Code cleanup
+  * Since the vibrator pattern for incoming calls/messages are overloaded
+    for other use, configure them to play even in acting dead
+    | We don't receive calls/messages in acting dead, so for their main
+    | use case there's no change in behaviour
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 13 Jan 2009 12:10:21 +0200
+
+mce (1.8.22) unstable; urgency=low
+
+  * Remove device autolock timeout on call and restore it again
+    when the call ends
+  * New path for vibra again
+  * Crapectomy: No more VoIP-mode remnants.  Yay!
+  * Crapectomy: purge all SystemUI related options from
+    mcetool, and all corresponding torture tests from mcetorture
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 16 Dec 2008 18:29:33 +0200
+
+mce (1.8.21) unstable; urgency=low
+
+  * Build-Depend on a version of upstart-dev that contains
+    the fixed postinst script
+  * Added missing dh_installdirs call to debian/rules
+  * Added GConf schema for devicelock count
+  * Added script to be used for landscape/portrait testing
+  * Simplified mcetorture
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 05 Dec 2008 13:10:06 +0200
+
+mce (1.8.20) unstable; urgency=low
+
+  * Adapted Lysti support to new interface (Fixes: NB#92847)
+  * Implemented device autolock functionality (Fixes: NB#92659)
+  * Added Conflicts: libcodelockui1 (<< 1:1.5.5) to mce,
+    to properly take care of the transition to libdevlock
+  * Commented out MUSB cable detection for now, since it causes issues
+  * Added event-file for upstart
+    | Thanks to Philippe De Swert and Riku Voipio
+  * Code cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Nov 2008 13:55:35 +0200
+
+mce (1.8.19) unstable; urgency=low
+
+  * New path for vibra
+  * Added script to be used for proximity sensor testing
+  * Removed device lock code related code and dependencies
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 17 Nov 2008 12:53:45 +0200
+
+mce (1.8.18) unstable; urgency=low
+
+  * Removed alarm features from mcetool, since the same functionality,
+    only better working, can be had from alarmtool
+  * Forward ported fix from Diablo for bug in filter-brightness-als
+    that caused the ALS to always be disabled by default
+  * Modified the tklock to use TKLOCK_ENABLE_VISUAL if there's a call
+    when tklock is active
+    | Conflicts: osso-systemui-tklock (<< 0.1.9.0)
+    | Build-Depends: osso-systemui-tklock-dev (>= 0.1.9.0)
+  * Added support for visual tklock mode to mcetool
+  * Bumped Build-Depends on osso-systemui-tklock-dev to 0.1.7.0
+  * Added versioned Build-Depends on libglib2.0-dev (>= 2.14.0) for
+    g_timeout_add_seconds()
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 06 Nov 2008 16:37:21 +0200
+
+mce (1.8.17) unstable; urgency=low
+
+  * Update mce.ini for the new vibrator patterns
+  * Don't attempt to seek on non-seekable I/O channels
+  * Fixed vibrator pattern NULL-check
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 05 Nov 2008 14:18:03 +0200
+
+mce (1.8.16) unstable; urgency=low
+
+  * Actually register inactivity (Doh!)
+  * Initialise the inactivity timeout from modules/display.c
+  * Turned inactivity timeout into a READ/WRITE datapipe
+  * Added an inactivity_timeout_trigger to the inactivity module
+    | (The above four fixes together Fixes: NB#88928)
+  * Added test for visual tklock mode to mcetorture
+    | Not yet integrated in mce + tklock
+  * Removed PatternClockAlarm and PatternCalendarAlarm
+  * Added PatternPowerKeyPress
+  * Use PatternPowerKeyPress on power up from acting dead
+  * Fixed a bug in vibrator code that could lead to lower priority patterns
+    not being played when higher priority patterns timeout
+  * Added option to Vibrator patterns to play patterns even when
+    the vibrator is disabled by policy
+  * Added pattern count to Vibrator patterns
+  * Tuned the vibrator patterns
+  * Blank timeout should be 3, not 60 seconds
+  * Properly initialise inactivity timeout datapipe
+  * Remove unused blanking inhibit datapipe
+  * Made append_filter_to_datapipe() log an error message
+    if an attempt to append a filter to a READ ONLY pipe is made
+  * Made remove_filter_from_datapipe() log an error message
+    if an attempt to remove a filter from a READ ONLY pipe is made
+  * Removed the alarm submode and use the alarm ui state pipe instead
+  * Minor cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 05 Nov 2008 09:41:44 +0200
+
+mce (1.8.15) unstable; urgency=low
+
+  * Merged event-keyboard and event-touchscreen into event-input
+  * Added support for rescanning of /dev/input when devices are hotplugged
+  * Added inactivity tracking for non-keyboard/touchscreen /dev/input devices
+  * Added inactivity tracking for USB-cable
+  * Treat the camera button as a key as well
+  * Added mce_suspend_io_monitor and mce_resume_io_monitor to mce-io
+  * Modified the vibrator logic to ensure that the vibrator isn't
+    enabled during a call
+  * Enabled the vibrator by default
+  * Removed unnecessary includes (and added a missing one)
+    in connectivity.c, and added some comments
+  * Updated TODO-list (removed outdated and unneeded items)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 30 Oct 2008 14:05:06 +0200
+
+mce (1.8.14) unstable; urgency=low
+
+  * Do not enable automatic touchscreen/keypad lock
+    if the keyboard slide is open
+  * Fixed inhibit code to behave properly in certain corner cases
+  * Added code to handle the new display dimming/blanking inhibit modes
+  * Added conflict against osso-applet-display (<< 1.4.2), since the
+    type and of the blanking inhibit GConf key has changed
+  * Added tests/inhibit to simplify testing of blank/dim inhibit
+  * Added Doxygen documentation
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 21 Oct 2008 03:45:22 +0300
+
+mce (1.8.13) unstable; urgency=low
+
+  * Fixed massive memory leak in modules/accelerometer.c
+    (Fixes: NB#89955)
+  * Added a GConf entry for disabling the ALS
+  * Only change tklock status based on proximity sensor
+    if there's a call on-going
+  * Added call state/type test to mcetorture
+  * Don't perform new VESA ioctl()'s every time we change brightness,
+    only do it when we turn display on/off
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 16 Oct 2008 22:12:32 +0300
+
+mce (1.8.12) unstable; urgency=low
+
+  * Added missing call state signalling
+  * Fixed accelerometer timeout function to always return true
+  * Fixed vibrator patterns to loop properly (Fixes: NB#89170)
+  * Made it possible to restart vibrator patterns after a timeout
+  * Made it possible to restart LED patterns after a timeout
+  * Fixed incorrect use of g_free() instead of g_strfreev() in module/led.c
+  * Always update device orientation when the orientation is requested
+  * Tune the accelerometer values for portrait/landscape a bit
+  * Reinstate missing transition code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 07 Oct 2008 16:24:20 +0300
+
+mce (1.8.11) unstable; urgency=low
+
+  * Implemented: NR#190168
+  * Modified mcetool to show device orientation
+  * Added full call state/type support to mcetool
+  * Fixed initial ALS timeout
+  * Fixed minor memory leak
+  * Made all users of g_timeout_add() with second resolution
+    use g_timeout_add_seconds() instead
+  * Enabled more compile time warnings
+  * Made mce_log use __attribute__((format(printf, 2, 3)))
+  * Declared a few functions as pure
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 02 Oct 2008 15:59:41 +0300
+
+mce (1.8.10) unstable; urgency=low
+
+  * Implemented: NR#192160
+  * Handle notifications about unset GConf keys properly
+  * Restored battery/charger functionality
+  * Removed (possible) infinite loop in display blanking inhibit code
+  * Made charger connect/disconnect generate activity
+  * Changed path for vibrator for RX-51
+  * Added vibrator support to mcetool
+  * Added Vibrator test to mcetorture
+  * Added code to test that mce copes with unsetting a GConf key
+  * Added code to test that mce copes with setting an unset GConf key
+  * Added test to mcetorture to test that mce is running and hasn't crashed
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 12 Sep 2008 16:43:44 +0300
+
+mce (1.8.9) unstable; urgency=low
+
+  * Reactivate the Lysti engines in reverse order
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 04 Sep 2008 16:17:52 +0300
+
+mce (1.8.8) unstable; urgency=low
+
+  * Touchscreen I/O monitoring
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 02 Sep 2008 16:58:31 +0300
+
+mce (1.8.7) unstable; urgency=low
+
+  * Implemented: NR#192335
+  * Improved error handling/reporting in mce-io
+  * Fixed a bug in mce_translate_int_to_string_with_default()
+  * Added code to enable/disable LED pattern for soft poweroff
+  * Added build-tests for the *_with_default translation functions
+  * Disable old Lysti patterns before programming new ones
+  * Added full support for the lens cover
+  * Added input event support for TSC2005
+  * Added missing LED patterns for RX-51
+  * Fixed path to RX-51 ALS
+  * Made the mce-conf build-test verify that mce.ini is a valid conf-file
+  * Comment improvements
+  * Minor cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 02 Sep 2008 05:29:24 +0300
+
+mce (1.8.6) unstable; urgency=low
+
+  * Implemented: NR#185610
+  * Disable vibrator during on-going call
+  * Added mce_translate_int_to_string_with_default(), and
+    mce_translate_string_to_int_with_default() to mce-lib
+  * Modified soft poweroff policy parsing to use the translation functions
+  * Added LED pattern for soft poweroff
+  * Added option to wake up from soft poweroff when charger is connected
+  * Added partial support for call state/type to mcetool
+  * Added RX-51 keyboard backlight support
+  * Added Lysti LED support for the RX-51
+    | Patterns still need to be converted to Lysti format though
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 19 Aug 2008 14:14:14 +0300
+
+mce (1.8.5) unstable; urgency=low
+
+  * Implemented: NR#190169
+  * Added accelerometer D-Bus API
+    | Still just stub functions behind it though, so the returned values
+    | will only be dummy ones (valid, but not reflecting reality)
+  * Fixed various incorrect comments
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 02 Jul 2008 13:38:02 +0300
+
+mce (1.8.4) unstable; urgency=low
+
+  * Implemented: NR#191055
+  * Implemented: NR#185609
+  * Added a call state module
+  * Added RX-51 support to filter-brightness-als
+  * Added missing "Depends: dbus" to mce and mcetools
+    | Thanks to Guillem Jover for pointing this out
+  * Created int<->string translation functions and modified
+    modetransition.c and callstate.c to use those
+  * Added a build-test for the translator functions
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 01 Jul 2008 15:43:55 +0300
+
+mce (1.8.3) unstable; urgency=low
+
+  * Build-Depends: mce-dev (>= 1.8.1)
+  * Removed reference to MCE_VOIP_MODE
+    | This is just to make mce build with mce-dev (>= 1.8.1);
+    | the real call API will be implemented later on
+  * Remove duplicate charger state trigger from modules/display.c
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 27 May 2008 14:37:01 +0300
+
+mce (1.8.2) unstable; urgency=low
+
+  * Partial: NR#192160
+  * Added a vibrator module
+  * Added a stub accelerometer module
+  * Move the median-filter code into a file of its own,
+    since it will probably be used from several places
+  * Added a display module
+    | For brightness, dimming, and blanking logic (Fixes: NB#74806)
+  * Updated inactivity module to handle inactivity
+  * Made LED component a proper module
+  * Ripped out a lot of code from mce-dsme that is handled by DSME now
+    (bye, bye D-Bus proxying!) or isn't needed because the display
+    and inactivity handling was moved to MCE
+  * Depend on mce-dev >= 1.8.0 for new D-Bus interfaces
+  * Minor work on mce-module
+  * Added support for new keyboard
+  * Added stub support for the shutter button
+  * Added stub support for lens cover
+  * Shutdown on long [power] press even when dsme reports UNDEF state
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 19 May 2008 20:21:19 +0300
+
+mce (1.8.1) unstable; urgency=low
+
+  * cal has a .pc file again; libcal.pc
+  * Forward-port alarm fix from mce 1.7.19
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 03 Apr 2008 09:33:09 +0300
+
+mce (1.8.0) unstable; urgency=low
+
+  * Partial: NR#190177
+  * libcal has been split out to its own package;
+    change the build-dependency accordingly
+  * Temporarily work around missing cal.pc; hopefully it will be restored
+    in the next version of libcal-dev
+  * Build-Depend on libdsme0.2.0-dev instead of libdsme0-dev
+  * Adapt mce-dsme to new API
+    | Thanks to Semi Malinen
+  * Added RX-51 support to led.c
+  * Added proximity sensor support to event-switches.c
+  * Bumped the version# in the Doxyfile to 1.8.x
+  * Added support for Triton 2 powerbutton
+  * Disabled/removed code related to bme-dbus-proxy;
+    this needs to be adapted to use HAL
+  * Moved product ID check to a separate file, as the first step
+    to abstract hardware a bit more
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 01 Apr 2008 18:27:13 +0300
+
+mce (1.7.18) unstable; urgency=low
+
+  * Do not send alarm state change to DSME if the alarm UI state changes;
+    hopefully this fixes: NB#80520
+  * More code cleanup
+  * Corrected various dependency and section information
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Mar 2008 15:47:22 +0200
+
+mce (1.7.17) unstable; urgency=low
+
+  * Fixed various warnings, comments, and added a missing include
+  * syslog is now located where it should be (/var/log),
+    fix mcetorture accordingly
+  * Fixed mcetorture to be able to set unset GConf keys
+  * Turn the warnings about attempts to remove non-existing triggers
+    into informational messages instead, since such attempts are ignored
+    anyway, and since the only remaining such warning is a false positive
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 14 Mar 2008 23:01:34 +0200
+
+mce (1.7.16) unstable; urgency=low
+
+  * Fixed a bug in datapipe.c with reference counting
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 14 Mar 2008 17:05:12 +0200
+
+mce (1.7.15) unstable; urgency=low
+
+  * Rewrote the connection status tracking further; use libconic instead
+    of the BlueZ and WLANCond D-Bus interfaces; this way we also get
+    information about open WiMAX connections (Fixes: NB#80813)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 12 Mar 2008 15:41:50 +0200
+
+mce (1.7.14) unstable; urgency=low
+
+  * Since mce.init uses files from /usr, we need $remote_fs, not $local_fs
+  * Removed unused function from modules/battery.c
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 26 Feb 2008 13:44:47 +0200
+
+mce (1.7.13) unstable; urgency=low
+
+  * Split out the battery handling to a module, as yet another step
+    in the code cleanup
+  * Made adjustments to the DeviceOn pattern for RX-48
+  * Made the PowerOn and PowerOff patterns for RX-48 orange as well
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 22 Feb 2008 12:32:16 +0200
+
+mce (1.7.12) unstable; urgency=low
+
+  * Made configuration file handling more error resilient;
+    now the default values will be used if the configuration file
+    is invalid or non-existing
+  * Bumped the version# in the Doxyfile to 1.7.x
+  * Minor cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 18 Feb 2008 16:25:27 +0200
+
+mce (1.7.11) unstable; urgency=low
+
+  * Removed build-dependency on osso-gwconnect-dev
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 08 Feb 2008 10:29:56 +0200
+
+mce (1.7.10) unstable; urgency=low
+
+  * Use BlueZ to get connection status for BT instead of BTCond
+    (Fixes: NB#78985)
+  * Unblank screen when lock key is pressed
+    (Fixes: NB#78446)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 07 Feb 2008 17:31:17 +0200
+
+mce (1.7.9) unstable; urgency=low
+
+  * Modified tklock to make sure that the touchscreen/keypad lock isn't
+    deactivated by the initial touchscreen tap when enabling the lock
+    (Fixes: NB#80164)
+  * Made /etc/mce/mce.init report status in a working way
+    (Fixes: NB#79379)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 06 Feb 2008 18:18:13 +0200
+
+mce (1.7.8) unstable; urgency=low
+
+  * Fixed a copy'n'paste error introduced in mce 1.7.6,
+    that caused mono-patterns not to work.
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 01 Feb 2008 16:06:35 +0200
+
+mce (1.7.7) unstable; urgency=low
+
+  * debian/control: Bumped Standards-Version to 3.7.3
+    | No changes required
+  * Fixed a few Lintian warnings
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 01 Feb 2008 12:04:19 +0200
+
+mce (1.7.6) unstable; urgency=low
+
+  * Made it possible to have different LED patterns for different products
+  * Made the DeviceOn pattern for the RX-48 orange
+  * Disable touchscreen and keypad events on soft poweroff
+    (Fixes: MB#2400)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 30 Jan 2008 09:33:50 +0200
+
+mce (1.7.5) unstable; urgency=low
+
+  * Bumped channel size for NJoy patterns to properly fit
+    16 commands / channel
+  * Send a PERIPHERAL_ACTIVITY message to DSME on lockkey trigger
+    (Fixes: NB#76607)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 26 Nov 2007 08:34:26 +0000
+
+mce (1.7.4) unstable; urgency=low
+
+  * Properly unreference resources in mce_unregister_io_monitor
+  * Fixed broken test in mcetorture
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 13 Nov 2007 12:01:38 +0200
+
+mce (1.7.3) unstable; urgency=low
+
+  * Only allow display dim/blank when in normal user mode
+    (Fixes: NB#72832)
+  * Added reference count callback functionality to datapipes
+  * Made event-touchscreen use the new functionality to disable
+    the touchscreen monitoring when no triggers/filters are registered
+  * Don't forget to send shutdown indication when going to
+    ACTDEAD state from USER state
+  * Enabled more warnings at build-time
+  * Fixed a (harmless) warning in mce-io
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 01 Nov 2007 15:22:30 +0200
+
+mce (1.7.2) unstable; urgency=low
+
+  * Made keyboard backlight timeout and fade time configurable
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sat, 20 Oct 2007 06:57:14 +0300
+
+mce (1.7.1) unstable; urgency=low
+
+  * The LED framework keeps track of the display state itself;
+    do not enable/disable patterns based on display state from other places
+  * Improved logging for cases when we get un-expected states from DSME
+  * Improved the error handling in daemonize()
+  * Code cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sat, 20 Oct 2007 06:10:22 +0300
+
+mce (1.7.0) unstable; urgency=low
+
+  * Updated manual pages to cover new features of mcetool and mcetorture
+  * Fixed lintian complaints about (correctly used) hyphens in the manual
+    pages by explicity using the escape codes instead
+  * Changed deprecated substvar Source-Version in debian/control to
+    binary:Version instead
+  * Do not send BLANK_ALLOW immediately on charger disconnect or change of
+    the "keep display on with charger" option if there is a timeout
+    in place (NB#72905)
+  * Disable [power] until power on transition has finished (NB#52440)
+  * Do not send BLANK_ALLOW to DSME if the charger is connected and the
+    "keep display on with charger" option is set (NB#72492)
+  * Fixed vararg leaks in error paths of mcetool and mce-dbus
+  * Fixed possible return of uninitialised value from
+    mce_read_number_string_from_file()
+  * Made mce_read_number_string_from_file() only assign a value
+    if the read and conversion was successful; otherwise only
+    return FALSE; this way the caller can pass a default value
+    into the function without having it modified if the conversion fails
+  * Fixed possible leak in change_devlock_code()
+  * Fixed possible overrun of static array in validate_devlock_code()
+  * dbus_connection_send_with_reply() can return pending_return == NULL
+    if the D-Bus connection has been disconnected; handle this case properly
+  * Use a longer timeout and fadeout time for the keyboard backlight
+  * Fixed incorrect default timeout used for device lock shutdown
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sat, 20 Oct 2007 06:07:11 +0300
+
+mce (1.6.41) unstable; urgency=low
+
+  * Added support for solid light for the mono-LED patterns,
+    to properly fix PatternBatteryFull
+  * Adjusted PatternDeviceOn to consume less power
+  * Fixed GConf defaults in mcetool to display sane data if keys are unset
+  * Added the missing PatternCommonNotification to mce.ini
+  * Fixed name of connectivity soft poweron policy in mce.ini
+  * Added GConf brightness testcase to mcetorture
+  * Added GConf timeouts testcase to mcetorture
+  * Added GConf LED testcase to mcetorture
+  * Added alarm state testcase to mcetorture
+  * Added error injections (invalid number of arguments, invalid data,
+    invalid type) for D-Bus to mcetorture
+  * Made notes in mcetorture of what tests only torture SystemUI
+    rather than mce and added an option to disable those
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 01 Oct 2007 00:20:44 +0300
+
+mce (1.6.40) unstable; urgency=low
+
+  * Made [home] trigger on input instead of output
+    (Fixes: NB#70919)
+  * Made [power] trigger on input instead of output
+  * One more error path memory leak fix for device lock and device menu UI
+    reply handler
+    | Phew, this is getting repetitive...
+  * Fixed mono-LED patterns for DeviceOn, PowerOn, PowerOff, and BatteryFull
+  * Fixed name of powerkeymenu-ui testcase in mcetorture
+  * Made the powershort and powerlong mcetorture testcases use the
+    D-Bus interface instead
+  * Improved mcetorture abort-logging a bit
+  * Added a bit of input torture to mcetorture (error-events) which
+    injects incorrect data into /dev/input/eventX
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 25 Sep 2007 16:44:41 +0300
+
+mce (1.6.39) unstable; urgency=low
+
+  * Adjusted webcam pattern (Fixes: NB#65756)
+  * Fixed visibility settings for mono-LED Communication-patterns
+    (Fixes: NB#70645)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 24 Sep 2007 15:33:15 +0300
+
+mce (1.6.38) unstable; urgency=low
+
+  * Fixed leaks in error paths for device lock and device menu UI reply
+    handling
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sun, 23 Sep 2007 03:21:42 +0300
+
+mce (1.6.37) unstable; urgency=low
+
+  * Fixed memory leaks in device lock and device menu UI reply handling
+  * Modified datapipes to handle the cache better
+    | This fixes a problem where restarts of systemui could trigger
+    | the splashscreen
+  * Fixed typo in debian/mce.zzinitdone.init
+  * Removed network_state_pipe since it was unused
+  * Reprogram timer for long [home] key press timeout if we receive another
+    down event without an up-event between
+    | The same change was made earlier for [power], but somehow I forgot to
+    | fix [home] too, while at it
+  * Made mce-io a bit more resilient to errors, and made it report
+    in a better way what's gone wrong if something goes haywire
+  * Added options to continue on error,
+    and to disable leak checking completely, to mcetorture
+  * Added a simple, injection based, test of the powerkey menu to mcetorture
+  * Added injection of short and long [home] and [power] keypresses
+    into the event files to the testcases in mcetorture
+  * Fixed the error message printed by the abort function in mcetorture
+  * Better handling of the case where both the powerbutton and home key
+    are provided from the same event-file
+  * Code simplification in event-touchscreen and event-keypress
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 20 Sep 2007 20:55:27 +0300
+
+mce (1.6.36) unstable; urgency=low
+
+  * Fixed mistakenly trunkated PowerOff pattern
+  * Allow the NJoy LED brightness to be in the range from 0-3 instead of 1-3
+  * Modify the brightness profiles, to make the LED to be dimmer in darkness
+    (Fixes: NB#69504)
+  * Doh!  Missed the stop script for the most important runlevel in the kludge
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 17 Sep 2007 15:58:42 +0300
+
+mce (1.6.35) unstable; urgency=low
+
+  * Fixed segfault when unregistering an I/O monitor
+  * Modified error-handling for enabling/disabling touchscreen/keypad;
+    this should avoid further bugs like NB#69425
+  * Minor cleanup
+  * Shortened PatternPsychedelia; one of the channels contained too many
+    instructions
+  * Added an ugly kludge to work around the lack of an init system with
+    startup notifications (Fixes: NB#62729)
+  * Fixed bugs in fakecharger test script
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 13 Sep 2007 17:35:24 +0300
+
+mce (1.6.34) unstable; urgency=low
+
+  * Added code to flush the median filter and re-read the ALS
+    after a screen-blank
+    | compile-time option
+  * Added module tests for mce-io
+    | Only partial coverage for now
+  * Fixed a few issues found in mce_read_number_string_from_file()
+  * Remove transition timeout properly on exit
+  * Tuned PowerOn and PowerOff patterns (partial fix for NB#65756)
+  * Fixed file descriptor leaks in mce_keypress_exit and mce_touchscreen_exit
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 11 Sep 2007 19:16:02 +0300
+
+mce (1.6.33) unstable; urgency=low
+
+  * Fixed return value of tklock_mode_change_req_dbus_cb when no_reply is set
+  * Fixed memory leaks in mce-io.c (Fixes: NB#65714)
+  * Fixed memory leak in led.c and made the strncpy handling a bit safer
+    | Thanks to Semi Malinen for finding
+  * Fixed memory leak in mce-dbus.c
+    | Thanks to Semi Malinen for finding
+  * LED patterns tuned (partial fix for NB#65756)
+  * Modified the D-Bus msg handler to process all handlers for a signal,
+    not just the first one, mainly to allow modules to listen to the same
+    signals as the main process does
+  * Added support for new keyboard interrupt disabling sysfs path
+  * Fixed two memory leaks on failed D-Bus startup attempts; these have no
+    practical significance, since MCE will abort if D-Bus startup fails,
+    but correctness is nice anyway
+  * Fixed crash in mcetool when using `--set-tklock-mode'
+  * Fixed crash in mcetool when using `--alarm=switchon'
+  * Added ctags support to the Makefile
+  * Removed unnecessary error-message from the same function
+  * Added support for silent unlocking of tklock
+  * Added a tklock test to mcetorture
+  * Added a LED test to mcetorture
+  * Added a voip mode test to mcetorture
+  * Improved various mcetorture tests
+  * Updated mcetorture manual page
+  * Added a `--dont-block' option to mcetool, that causes options
+    that normally blocks to return directly, to allow for more torture tests
+    | Note: this means that MCE will fail to send the reply to mcetool,
+    | since mcetool will no longer be running by the time MCE sends the reply
+  * Added LED testing support to mcetool
+  * Cleaned up the D-Bus error-handling in mcetool a little
+  * Updated the mcetool manual page
+  * Removed the ifdef's for MCE_VERSION_GET from mcetool;
+    MCE_VERSION_GET has been in MCE since v1.1.6...
+  * Fixed warnings in test_mce-log.c found with gcc 4.2.1
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 07 Sep 2007 14:09:00 +0300
+
+mce (1.6.32) unstable; urgency=low
+
+  * Fixed debug/regular packages to be built with -O2 and -g (Fixes: NB#65718)
+
+ -- Philippe De Swert <philippe.de-swert@nokia.com>  Thu, 30 Aug 2007 14:04:09 +0300
+
+mce (1.6.31) unstable; urgency=low
+
+  * Fixed state of lockkey (Fixes: NB#66674)
+
+ -- Ismo Laitinen <ismo.laitinen@nokia.com>  Mon, 27 Aug 2007 09:30:27 +0300
+
+mce (1.6.30) unstable; urgency=low
+
+  * Added debug packages (Fixes: NB#65718)
+
+ -- Philippe De Swert <philippe.de-swert@nokia.com>  Fri, 17 Aug 2007 13:29:46 +0300
+
+mce (1.6.29) unstable; urgency=low
+
+  * Use charger_connected/charger_disconnected rather than
+    charger_charging_on charger_charging_off for display inhibit
+    (Fixes: NB#65061)
+  * Ignore shutdown requests and soft poweroff requests when
+    the touchscreen/keypad lock is active (Fixes: NB#63565)
+  * Made the delay before dimming on tklock configurable
+    and increased the timeout
+  * Fixed the tklock code to disable the dim timeout when unlocking
+  * Initialise the cover state on mce startup (Fixes: NB#64934)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 07 Aug 2007 13:27:32 +0300
+
+mce (1.6.28) unstable; urgency=low
+
+  * Added an option to mce_register_io_monitor* to choose seek behaviour
+  * Made monitors from streams not seek to the beginning before reading;
+    this fixes issues with empty reads
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 01 Aug 2007 17:10:30 +0300
+
+mce (1.6.27) unstable; urgency=low
+
+  * Do not perform ALS readings when the display is blanked
+  * ALS profile adjustments
+  * Minor cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 31 Jul 2007 12:15:43 +0300
+
+mce (1.6.26) unstable; urgency=low
+
+  * Do not enable keyboard backlight if we're in other states than USER,
+    unless the alarm dialog is visible
+  * Disable the keyboard backlight when system state changes to other
+    states than USER
+  * Made the version# check a tiny bit smarter
+  * Reprogram timer for long [power] key press timeout if we receive another
+    down event without an up-event between
+  * Fixed two cases of incorrect usage of datapipe_get.*() macros
+    in tklock.c
+  * Added () in the right places to the datapipe_get.*() macros
+    to avoid future problems of the same kind
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 25 Jul 2007 14:34:40 +0300
+
+mce (1.6.25) unstable; urgency=low
+
+  * Send alarm invisible signal to DSME before shutdown on long [power]
+    keypress when alarm UI visible (Fixes: NB#51321)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 17 Jul 2007 16:52:40 +0300
+
+mce (1.6.24) unstable; urgency=low
+
+  * Added module test for input_event; unfortunately this test
+    needs to be run as root, so it cannot be enabled by default;
+    also, it's platform specific for now; it will only work on
+    a standard PC
+  * Moved the modules to a sub-directory of its own in the source
+  * Doh!  Fixed names of two keys in mce.ini
+  * Added LL_NONE, to make it possible to completely disable logging
+  * Fixed double free in mce-dsme.c
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 17 Jul 2007 16:05:43 +0300
+
+mce (1.6.23) unstable; urgency=low
+
+  * Added module test for mce-log
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 16 Jul 2007 23:08:39 +0300
+
+mce (1.6.22) unstable; urgency=low
+
+  * Modified the device lock code to listen for the reply and only
+    activate the lock when locking actually takes place;
+    this is to handle the lock code verification sequence properly
+  * Added (disabled by default) support for double presses of [power]
+  * Soft poweroff fixes
+  * Fixed typo in mce.ini
+  * Initialise system_state_pipe to MCE_STATE_UNDEF
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 12 Jul 2007 18:21:48 +0300
+
+mce (1.6.21) unstable; urgency=low
+
+  * Fixed error handling in mce-conf
+  * Begun work adding module tests; if any of the module tests fail,
+    building the Debian package will abort but the rest will still build,
+    which allows crap to be tested, but not shipped...
+  * Disabled the I/O monitoring for event-switches that we only track the
+    state of for inactivity
+  * Further adjustments of the PowerOn and PowerOff RGB patterns
+  * Added METHOD_RETURN handler to mce-dbus; nothing uses it yet though
+  * Execute the system state pipe on UI startup, to make the device lock
+    work on bootup again
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 10 Jul 2007 16:00:25 +0300
+
+mce (1.6.20) unstable; urgency=low
+
+  * The "shiniest Mode Controller Ever" release
+  * Converted event-touchscreen and event-keypress to use the new
+    I/O monitor interface for binary chunks
+  * Added headphone jack sense, MMC cover, device cover, battery cover,
+    and USB cable activity tracking
+  * Various minor cleanup
+  * Added D-Bus interfaces for requesting display dimming and display blanking
+  * Bumped build-dependency on mce-dev
+  * Added mcetool options to dim and blank display
+  * Added mcetorture tests for dim and blank display
+  * Introduced a datapipe for alarm state
+  * Moved (part of) the alarm handling into a separate file
+  * Made the tklock handling properly trigger on display
+  * Modified the tklock logic to re-disable touchscreen and keypresses
+    when the alarm is snoozed or acknowledged and the tklock is active
+  * Moved all logic for the touchscreen and keypress lock to tklock.[ch]
+  * Moved all logic for the device lock to devlock.[ch]
+  * Introduced a simplified I/O monitor for file changes
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 03 Jul 2007 18:54:59 +0300
+
+mce (1.6.19) unstable; urgency=low
+
+  * Added missing brackets to free_datapipe (Fixes: NB#61744)
+  * Adjusted more patterns
+  * Adjusted logic to enable keyboard backlight if the display state changes
+    from off to on and the slide is open
+    | This is not perfect, since unblanking can be triggered
+    | by a D-Bus request from an application too, but for now it's good enough
+  * Moved keypress event handling from powerkey.[ch] and keypad.[ch] to
+    event-keypress.[ch]
+  * Introduced event-touchscreen.[ch] for touchscreen events
+    | Right now only taps are monitored
+  * Introduced event-switches.[ch] for switch events
+    | Right now only the keyboard slide is supported
+  * Modified logic to disable auto-relock if the touchscreen
+    is tapped when the slide is open
+  * Moved [home] handling into a separate module
+  * Began adding inactivity tracking
+  * Fixed memory leak in mce-io.c
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 27 Jun 2007 23:36:24 +0300
+
+mce (1.6.18) unstable; urgency=low
+
+  * Added a trigger that unblanks the screen when the slide status changes
+    (Fixes: NB#61596)
+  * Added proper DBusError initialisation to connectivity status request
+  * Fixed bug in autorelock logic
+  * Adjusted PowerOff pattern (Fixes: NB#61396)
+  * Fixed really stupid init-script bug that could be triggered if
+    /var/run/mce existed but was a file rather than a directory
+  * Modified debian/rules not to ignore make clean errors
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 25 Jun 2007 19:39:34 +0300
+
+mce (1.6.17) unstable; urgency=low
+
+  * Fixed D-Bus handler to make sure we don't eat signals; only errors
+    and method calls that are addressed to us should be marked as handled
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 21 Jun 2007 16:08:46 +0300
+
+mce (1.6.16) unstable; urgency=low
+
+  * Corrected the name of the filter-brightness-als module in mce.ini
+  * Fixed cooking of uncooked brightness values in mce-dsme
+  * Simplified filter-brightness-simple a bit further
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 21 Jun 2007 15:53:48 +0300
+
+mce (1.6.15) unstable; urgency=low
+
+  * Fixed incorrect calls to dbus_message_get_args in powerkey.c,
+    tklock.c, devlock.c, and tools/mcetool.c
+  * Fixed an incorrect error-message
+  * Improved the error reporting when failing to get D-Bus arguments
+  * Updated front key backlight path
+  * Fixed LED code to properly initialise LED brightness pipe
+  * Minor cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 18 Jun 2007 18:53:07 +0300
+
+mce (1.6.14) unstable; urgency=low
+
+  * Made the submode-operations use the submode pipe
+  * Removed data-retrieval safeguards again; they caused more problems
+    than they solved
+  * Added fugly hack for mode tracking (Fixes: NB#59872)
+  * Made the camera popout unlock behaviour a configuration option
+  * Modified the tklock code to use silent mode if the same submode
+    is activated twice
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 07 Jun 2007 16:44:56 +0300
+
+mce (1.6.13) unstable; urgency=low
+
+  * Added support for ALS-controlled LED brightness
+  * Turned LED pattern enabling/disabling into datapipes,
+    to allow for easy use from modules; this also means that the LED code
+    should be possibly to turn into a module
+  * Added PowerOn/PowerOff patterns for NJoy
+  * Added support for new input device names for keyboard/keypad
+  * Added a camera module to control camera pattern
+  * Added code to disable the tklock when camera is popped out on the N800
+  * Removed a workaround from mce-dsme
+  * Refactored more code to make use of the state_pipe;
+    as a result set_dsmestate/get_dsmestate has been eliminated
+  * Added code to query DSME-state on startup
+    to make sure that MCE has the correct state information
+  * Added safeguards to data-retrieval macros
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 05 Jun 2007 19:02:52 +0300
+
+mce (1.6.12) unstable; urgency=low
+
+  * Modified mce_register_io_monitor_string to always return NULL
+    if setting up a monitor fails
+  * Re-enabled mono-patterns
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 31 May 2007 16:30:29 +0300
+
+mce (1.6.11) unstable; urgency=low
+
+  * Added median-filter to ALS filter
+  * Added error-handling for incorrect number of fields in a LED pattern
+    | Thanks to Amit Kucheria
+  * Fixed typo in example pattern
+  * More abstraction using datapipes
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 30 May 2007 14:09:37 +0300
+
+mce (1.6.10) unstable; urgency=low
+
+  * Modified the ALS module to only poll every 60 seconds when screen
+    is blank (for adjustment of LED brightness; this is not done yet though)
+  * Only update display brightness if the display is on
+  * Only update the keyboard backlight brightness if it changed
+    and the display is on (Fixes: NB#58326)
+  * Modified backlight code to disable keyboard backlight
+    when the screen dims or blanks
+  * Various minor optimisations
+  * Added another simple test script, this one to test charger related
+    events
+  * Made minor correctness fixes to mcetorture
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 25 May 2007 15:48:45 +0300
+
+mce (1.6.9) unstable; urgency=low
+
+  * Fixed logic for automagic relocking (Fixes: NB#57217)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 22 May 2007 15:45:37 +0300
+
+mce (1.6.8) unstable; urgency=low
+
+  * Modified devlock to close the devlock UI when VoIP-mode is enabled
+  * Modified the pattern behaviour to allow for some patterns to be
+    visible even in acting dead mode, and made the charging + battery full
+    patterns use this new functionality (Fixes: NB#57376)
+  * Added further adjustments to dsme_set_disp_brightness
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 21 May 2007 14:54:56 +0300
+
+mce (1.6.7) unstable; urgency=low
+
+  * Added LSB-section to the init script
+  * Added code to adjust brightness if it arrives raw
+    to dsme_set_disp_brightness (Fixes: NB#57668)
+  * Disabled mono-patterns for now, to work around a kernel oops
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 21 May 2007 12:33:17 +0300
+
+mce (1.6.6) unstable; urgency=low
+
+  * Modified filter-als to use a 5-step brightness scale for the display,
+    and map the ALS brightness profiles to these steps
+  * Modified mce-gconf to handle unset values in a proper way
+    (Fixes: NB#57030)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 15 May 2007 16:41:24 +0300
+
+mce (1.6.5) unstable; urgency=low
+
+  * Build-Depend on libdsme0-dev (>= 0.57) for new brightness interface
+  * Abstracted out some more I/O functions to mce-io.[ch]
+  * Fixed a tiny memory leak
+  * Modified the device menu to reopen if the system mode changes
+    (Fixes: NB#53241)
+  * Fixed typo in usage information
+  * Implemented ALS filtering and added ALS-policies
+    for the display and keyboard backlight
+  * Fixed backlight bug on N800 hardware (Fixes: NB#56253)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 14 May 2007 22:39:49 +0300
+
+mce (1.6.4) unstable; urgency=low
+
+  * Modified the LED section of mce.ini to better match new LED code
+  * Added support for RGB-patterns
+  * Modified the tklock to use a different tklock message
+    if the device has a flicker key
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 08 May 2007 17:01:14 +0300
+
+mce (1.6.3) unstable; urgency=low
+
+  * Added English and Swedish manual pages for mcetorture
+  * Various minor manpage fixes
+  * Rewrote the filter system to be more generic; it can now take
+    triggers as well as filters, and other types than gint
+  * MCE now has proper support for module loading and unloading;
+    the list of, and path to, the modules to load is in /etc/mce/mce.ini
+  * Inactivity handling is now a real module
+  * Fixed a display brightness issue on startup
+  * Modified the pattern list to Use memory slices
+  * Abstracted out some I/O functions to mce-io.[ch]
+  * Added support for keyboard/keypad backlight
+  * Added support for keyboard slide
+  * Added support for lock flicker key
+  * Various code refactoring
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 26 Apr 2007 14:25:50 +0300
+
+mce (1.6.2) unstable; urgency=low
+
+  * Initial support for lock key
+  * Added more options for touchscreen/keypad lock behaviour
+  * Renamed the group for tklock related configuration options
+    from "Device Menu" to "TKLock" in mce.ini
+    | We might want to add back a "Device Menu" group some time in
+    | the future, but for now it's unused, and thus removed
+  * Added options to force logging to stderr or syslog
+  * Added a filter system; filter chains can now be registered,
+    to allow for fun stuff such as ambient light sensors
+  * Added module loading
+  * Added an ALS filter plugin (for now just a stub)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 12 Apr 2007 10:56:16 +0300
+
+mce (1.6.1) unstable; urgency=low
+
+  * Corrected blanking inhibit
+  * Added missing #include <string.h>
+  * Cleanup
+  * Removed "-DDBUS_API_SUBJECT_TO_CHANGE"; we're now using D-Bus 1.0!
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 13 Mar 2007 14:40:54 +0200
+
+mce (1.6.0) unstable; urgency=low
+
+  * Do not return FALSE from mce_set_mode if mode is same as old mode
+    (Fixes: NB#51098)
+  * Removed inactivity state workaround
+    | API-break!
+  * Install mcetorture as part of mcetools
+  * Added `--no-status' option to mcetool
+  * Fixed a memory leak in get_version
+  * Added support for keeping the display on when the charger is connected
+  * Improved mce-log to support logging to stderr
+  * Modified MCE to log to stderr if `--daemonflag' isn't specified
+  * Do not close shared D-Bus connections
+  * Readded testmode (renamed to `--debug-mode') option,
+    to allow running MCE when DSME isn't present
+  * Split {kp,ts}_{en,dis}able into separate functions
+  * debian/control: Bumped Standards-Version to 3.7.2
+    | No changes required
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  7 Mar 2007 09:21:12 +0200
+
+mce (1.5.25) unstable; urgency=low
+
+  * Blank immediately when user activates the tklock manually
+    | The old behaviour is still available as a configation option
+    | in mce.ini (Fixes: NB#50627)
+  * Cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 19 Jan 2007 14:32:17 +0200
+
+mce (1.5.24) unstable; urgency=low
+
+  * Export is_eveater_enabled
+  * Always enable touchscreen/keypad on unblank in user state
+  * Disable event eater when screen is unblanked
+    (Fixes: NB#49404)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 14 Dec 2006 12:38:55 +0200
+
+mce (1.5.23) unstable; urgency=low
+
+  * Added support for DSM_MSGTYPE_STATE_ACTIVE_IND (Fixes: NB#48722)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 30 Nov 2006 14:08:10 +0200
+
+mce (1.5.22) unstable; urgency=low
+
+  * Never allow device autolock when in VOIP-mode; should simplify the
+    device autolock logic (Fixes: NB#48329)
+  * Delay for 10 seconds after a modetransition has begun before allowing
+    long powerkey press (Fixes: NB#47594, NB#47797)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 29 Nov 2006 14:07:21 +0200
+
+mce (1.5.21) unstable; urgency=low
+
+  * Modify LED framework to recompute the LED stack on display state changes
+    (Fixes: NB#47116)
+  * Re-enable touchscreen/keypad when unlock is requested (Fixes: NB#47745)
+  * Added D-Bus signal and method call for display state
+  * Cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 23 Nov 2006 12:53:02 +0200
+
+mce (1.5.20) unstable; urgency=low
+
+  * Added screen_on argument to LED patterns (Fixes: NB#44276)
+  * Use new LED framework interface, to allow idle retention
+  * Minor manpage fixes
+  * Do not activate the PowerOn and PowerOff patterns by default
+  * Disable charging pattern when battery is full (Fixes: NB#45415)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 30 Oct 2006 13:42:07 +0200
+
+mce (1.5.19) unstable; urgency=low
+
+  * Added PatternCommunicationEvent to the list of configured patterns
+    (Fixes: NB#43780)
+  * Do not disable the LED if we're exiting MCE because of shutdown
+    (Fixes: NB#43783)
+  * Disable PowerOn-pattern when desktop startup signal arrives
+    (Fixes: NB#43784)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 19 Oct 2006 16:26:41 +0300
+
+mce (1.5.18) unstable; urgency=low
+
+  * Fixed typo in mce.8
+  * Base BOOTUP-flag on /var/run/mce/call, not on /var/run/mce.pid,
+    since the latter does not exist when we're started using dsmetool
+    (Fixes: NB#42667)
+  * Fixed init-script bug
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 10 Oct 2006 11:58:40 +0300
+
+mce (1.5.17) unstable; urgency=low
+
+  * Display LED patterns for poweron and poweroff (Fixes: NB#41214)
+  * Moved /var/lib/mce/call to /var/run/mce/call since this state file
+    does not need to be preserved across boots (Fixes: NB#41357)
+  * Updated LED patterns
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 27 Sep 2006 15:49:20 +0300
+
+mce (1.5.16) unstable; urgency=low
+
+  * Modified to build against the new osso-systemui-dbus-dev package
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 22 Sep 2006 14:20:04 +0300
+
+mce (1.5.15) unstable; urgency=low
+
+  * Activate Battery LED patterns when needed
+    | Thanks to Ismo Laitinen
+  * Listen to BME signals not method calls
+    | Thanks to Ismo Laitinen
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 19 Sep 2006 14:43:46 +0300
+
+mce (1.5.14) unstable; urgency=low
+
+  * Check if the powerkey_timeout_cb_id is set before removing it
+    (Fixes: NB#39424)
+  * Adapt MCE to the new touchscreen disable sysfs-interface. The value
+    written is also reversed. (Fixes: NB#40600)
+
+ -- Ismo Laitinen <ismo.laitinen@nokia.com>  Mon, 18 Sep 2006 11:47:08 +0300
+
+mce (1.5.13) unstable; urgency=low
+
+  * Added more charging patterns
+  * Show the DeviceOn pattern whenever the screen is blanked;
+    this will definitely make our usetime targets impossible to meet
+  * Use G_STRINGIFY instead of own implementation
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 30 Aug 2006 17:17:30 +0300
+
+mce (1.5.12) unstable; urgency=low
+
+  * Send thermal_shutdown_ind signal if the device needs to shut down
+    due to thermal constraints
+  * Only write the mode to /var/lib/mce/mode if the mode is actually
+    different from the old mode (Fixes: NB#38052)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 22 Aug 2006 14:19:05 +0300
+
+mce (1.5.11) unstable; urgency=low
+
+  * Return type from query_event is DBUS_TYPE_INT32 not DBUS_TYPE_INT64
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 16 Aug 2006 12:15:39 +0300
+
+mce (1.5.10) unstable; urgency=low
+
+  * Added support for querying pending alarms from alarmd
+  * Shutdown instead of powerup on long power press in acting dead mode
+    alarm submode (Fixes: NB#37807)
+  * Bump build-dependency on libalarm-dev to 0.2.8, to make sure we get
+    the D-Bus related header-file
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 15 Aug 2006 14:33:55 +0300
+
+mce (1.5.9) unstable; urgency=low
+
+  * Fixed LED pattern deactivation
+  * Don't forget to program the LED brightness when the pattern is activated
+  * Modified ledtest.sh to test things more sensibly
+  * Fixed more memory leaks
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 14 Aug 2006 19:12:07 +0300
+
+mce (1.5.8) unstable; urgency=low
+
+  * Lots of g_clear_error sprinkling (Fixes: NB#37218)
+  * Fixed possible memory leaks in error cases when using g_io_channel
+  * Added an example pattern to mce.ini
+  * Don't wake up to reprogram the LED timer unless it's needed
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 10 Aug 2006 11:18:53 +0300
+
+mce (1.5.7) unstable; urgency=low
+
+  * Fixed the example pattern for Poweron
+  * Improved LED tests
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue,  1 Aug 2006 17:28:13 +0300
+
+mce (1.5.6) unstable; urgency=low
+
+  * Remove unused pkg-config entry
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Jul 2006 15:01:21 +0300
+
+mce (1.5.5) unstable; urgency=low
+
+  * The "Doh!  Bump the build dependencies!" release
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Jul 2006 14:39:23 +0300
+
+mce (1.5.4) unstable; urgency=low
+
+  * Added the kernel interface part for the LED code
+  * Added support for this new interface to mcetool
+  * Various minor fixes to mcetool
+  * use_led is a boolean, not an integer
+  * Use new touchscreen disabling interface
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Jul 2006 11:33:31 +0300
+
+mce (1.5.3) unstable; urgency=low
+
+  * Close the D-Bus connection properly in mcetool too
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 15 Jun 2006 12:02:19 +0300
+
+mce (1.5.2) unstable; urgency=low
+
+  * Fixed shadowing of length variable in led.c
+  * It seems dbus_connection_close() is needed before
+    dbus_connection_unref() after all, let's hope this doesn't
+    trigger any new bugs (Fixes: NB#32585)
+  * Made the snooze delay 2 minutes instead of 5 minutes
+  * Added new method call: get_inactivity_status
+  * Minor cleanups
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 14 Jun 2006 15:50:25 +0300
+
+mce (1.5.1) unstable; urgency=low
+
+  * Fixed stupid error in device lock code changing D-Bus reply handling
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 31 May 2006 17:13:12 +0300
+
+mce (1.5.0) unstable; urgency=low
+
+  * Added interface for changing the device lock code
+  * Generate thumb code
+  * Added support for LED patterns
+  * Minor cleanup
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 31 May 2006 09:46:43 +0300
+
+mce (1.4.15) unstable; urgency=low
+
+  * Set dim/blank timeouts both when booting to acting dead
+    and when the automatic device lock is enabled (Fixes: N#25386, N#26648)
+  * Do not react to short [power] press when the alarm systemui is shown
+    (Fixes: N#26859)
+  * Set alarm state to off if the device is shutdown when the alarm
+    systemUI is visible
+  * Added "silent-locked", "locked-dim", and "silent-locked-dim"
+    to the tklock modes that can be requested over D-Bus
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 21 Apr 2006 17:53:42 +0300
+
+mce (1.4.14) unstable; urgency=low
+
+  * Code abstraction (slow steps towards true modularity)
+  * Renamed some functions for consistency
+  * Doxygen tags for the final few things in mcetool
+  * Made lock delays and shutdown query timeout configurable
+  * Doh!  KEY_F8 is *not* a good fallback for the [POWER] key,
+    since it's already use for the [DECREASE] key; use KEY_F9 instead
+  * More changes for the dain-bramaged alternate touchscreen event
+    disabling interface
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 27 Mar 2006 14:39:15 +0300
+
+mce (1.4.13) unstable; urgency=low
+
+  * Seems it should be omap_uwire, not omap-uwire;
+    ahhh, lovely inconsistency =/
+  * Fixed initscript to make stop action work properly with dsmetool
+  * More Doxygen updates for mcetool; still not finished
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 22 Mar 2006 13:13:48 +0200
+
+mce (1.4.12) unstable; urgency=medium
+
+  * Fixed bug in powerkey logic, with a combination of the modechange
+    dialog and the automatic tklock, you could end up in a situation
+    where you couldn't unlock the devicelock with the normal combination
+    (Fixes: N#24500)
+  * Added mce-conf; MCE can now take configuration options
+    from a configuration file (/etc/mce/mce.ini)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 20 Mar 2006 20:07:45 +0200
+
+mce (1.4.11) unstable; urgency=low
+
+  * The "Documentation is good, more documentation is better!"
+  * Added doc target to Makefile
+  * Fixed various Doxygen tag bugs
+  * Added comments to various places
+  * Use DBUS_SERVICE_DBUS instead of "org.freedesktop.DBus" directly
+  * Added a wrapper function for the logging, mce_log, and convert all
+    parts of mce to use it
+  * Remove build-dependency on libosso (since we do logging ourselves now)
+  * Added `--verbose' and `--quiet' options, to increase and decrease
+    verbosity, respectively
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 14 Mar 2006 15:04:03 +0200
+
+mce (1.4.10) unstable; urgency=low
+
+  * Support alternate touchscreen event disabling interface
+  * Added support to mcetool for changing and displaying
+    the touchscreen/keypad lock mode
+  * Fixed display of touchscreen/keypad autolock status in mcetool
+  * Reorder entries in mcetool status display a bit
+  * Fixed incorrect pre-processor directive in mce-dsme.c
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue,  7 Mar 2006 09:17:12 +0200
+
+mce (1.4.9) unstable; urgency=low
+
+  * Support running mce on x86 (add fallbacks for [HOME] and [POWER])
+  * Support alternate name for keypad event device
+  * Still start even if the [HOME] and/or [POWER] devices does not exist
+  * Don't dereference h->name after it's been freed
+  * Fixed incorrect debug message
+  * Re-enabled alarm support
+  * Added support for alarm icon + message to mcetool
+    (only works with osso-systemui-alarm >= 0.1.5.1)
+  * Bumped Recommends, readd Build-Depends for alarm
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 28 Feb 2006 15:45:49 +0200
+
+mce (1.4.8.1) unstable; urgency=low
+
+  * Workaround for stupid bug in libdbus-glib-1-2 *grumble*
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 14 Feb 2006 16:11:36 +0200
+
+mce (1.4.8) unstable; urgency=low
+
+  * Added debugging information to keypress_event.c
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 13 Feb 2006 14:24:47 +0200
+
+mce (1.4.7) unstable; urgency=low
+
+  * Send tklock mode change signals
+  * Build-Depends: osso-systemui-powerkeymenu-dev (>= 0.1.4.7)
+    to get the latest return value defines
+  * Implemented soft poweroff support
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 10 Feb 2006 14:51:11 +0200
+
+mce (1.4.6) unstable; urgency=low
+
+  * Make sure that the device autolock causes devicelock to be enabled
+    on bootup from acting dead (Fixes: N#22619)
+  * Dim the device lock menu entry in "voip"-mode
+  * Send "normal" instead of "voip"
+  * Fixed memory leak and invalid pointer dereference in mcetool
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue,  7 Feb 2006 12:20:41 +0200
+
+mce (1.4.5) unstable; urgency=low
+
+  * Initial "voip"-mode support
+  * Added new D-Bus API's: "get_tklock_mode" and "req_tklock_mode_change"
+  * Bump build-dependency on mce-dev, to get a version that supports the
+    new API
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  1 Feb 2006 13:57:58 +0200
+
+mce (1.4.4) unstable; urgency=low
+
+  * Improved D-Bus matching
+  * Changelog cleanup
+  * Added bme-dbus-proxy to mce's Recommends,
+    and bumped the recommended version of mce for mcetools
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  1 Feb 2006 11:23:38 +0200
+
+mce (1.4.3) unstable; urgency=high
+
+  * Modified mce_dbus_handler_add and mce_dbus_handler_remove to handle
+    a rules argument, for adding extra matching rules
+  * Made MCE wait for desktop startup before setting initial display settings
+  * Fixed stupid cut'n'paste bug in mce-dsme.c (Fixes: N#22517)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 30 Jan 2006 16:14:43 +0200
+
+mce (1.4.2) unstable; urgency=high
+
+  * Fixed broken device lock logic
+  * Reverted 1.4.1 change; use a normal connection,
+    but only unreference it instead; never close it
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 27 Jan 2006 17:30:59 +0200
+
+mce (1.4.1) unstable; urgency=low
+
+  * Open a private bus connection, to get a sensible interface when
+    closing the bus (the close/unref mess is just sooo messed up)
+  * Improved D-Bus error reporting
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 25 Jan 2006 19:01:11 +0200
+
+mce (1.4.0) unstable; urgency=low
+
+  * Refactored dbus handling
+  * Use g_slist_prepend instead of g_slist_append since it's more efficient
+    | Granted, the cases were we use it are not really performance
+    | critical, but let's promote good programming
+  * Added more comments
+  * Various minor fixes
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 23 Jan 2006 18:20:32 +0200
+
+mce (1.3.5) unstable; urgency=medium
+
+  * Doh!  waitdbus is in /usr/sbin, not in /usr/bin (Fixes: N#22254)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon,  9 Jan 2006 16:39:22 +0200
+
+mce (1.3.4) unstable; urgency=low
+
+  * Enable debugging
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu,  5 Jan 2006 16:44:39 +0200
+
+mce (1.3.3) unstable; urgency=low
+
+  * Remove local re-defines of values provided by linux/input.h
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  4 Jan 2006 12:39:31 +0200
+
+mce (1.3.2) unstable; urgency=low
+
+  * Disable alarm-support for now
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue,  3 Jan 2006 17:14:12 +0200
+
+mce (1.3.1) unstable; urgency=low
+
+  * Make sure the devicelock status is saved as soon as we enable it
+  * More D-Bus 0.50 API migration; dbus_message_append_args_valist
+    requires its arguments to be pass-by-reference in the new API
+    | Unless there are some undocumented changes between 0.50 and 0.60,
+    | this version of MCE *should* also work with D-Bus 0.60
+  * Do not unreference dbus-message in dbus_send,
+    it's unreferenced by dbus_send_message
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 21 Dec 2005 13:44:08 +0200
+
+mce (1.3.0) unstable; urgency=low
+
+  * The "And now for some real fun" release
+  * Migrate to D-Bus 0.50 API
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu,  1 Dec 2005 16:22:25 +0200
+
+mce (1.2.3) unstable; urgency=low
+
+  * Fixed error handling in mcetool (several incorrect uses of dbus_error)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 24 Nov 2005 14:55:01 +0200
+
+mce (1.2.2) unstable; urgency=low
+
+  * Made the [HOME] delay 0.8s instead of 1.5s (Fixes: N#21540)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 24 Nov 2005 14:32:33 +0200
+
+mce (1.2.1) unstable; urgency=low
+
+  * Added mcetorture2.sh
+  * Clean up source code a little (i.e. more comments)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon,  7 Nov 2005 16:16:10 +0200
+
+mce (1.2.0) unstable; urgency=low
+
+  * Split mce-dev into separate package, to remove circular build-depends
+  * Start MCE earlier and wait until D-Bus system bus is up
+    (Fixes: N#21069)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon,  7 Nov 2005 00:07:01 +0200
+
+mce (1.1.6) unstable; urgency=low
+
+  * Added D-Bus method_call to get the MCE-version
+  * Made mce_gconf_set_int() always suggest sync,
+    to minimise risk for dataloss (Hopefully fixes: N#20980)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 31 Oct 2005 16:31:00 +0200
+
+mce (1.1.5) unstable; urgency=low
+
+  * Show tklock instructions on long [POWER] keypress too
+    (Fixes: N#20932)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Oct 2005 14:48:49 +0300
+
+mce (1.1.4) unstable; urgency=low
+
+  * Added torture test script
+  * Added missing build-dependency on osso-systemui-alarm-dev
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 26 Oct 2005 12:32:31 +0300
+
+mce (1.1.3) unstable; urgency=low
+
+  * Added missing include to mce.c
+  * Abstracted out dsmesock_send()
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 17 Oct 2005 19:17:52 +0300
+
+mce (1.1.2) unstable; urgency=low
+
+  * Fixed a nasty bug in the exit-function for mce-dsme
+    | Thanks to Devesh Kothari
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 17 Oct 2005 17:42:44 +0300
+
+mce (1.1.1) unstable; urgency=low
+
+  * Forward ported mcetool functionality from mce 1.0.5 (Fixes N#19185):
+    o Added functionality to mcetool to open/close the alarm dialog
+      and to set and disable the alarm clock
+    o Added functionality to mcetool to open/close the tklock
+    o Updated mcetool manual accordingly
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 11 Oct 2005 20:43:19 +0300
+
+mce (1.1.0) unstable; urgency=low
+
+  * Eat the first press of [HOME] and [POWER] when the screen is blank
+    (Fixes: N#19968, N#19973)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri,  7 Oct 2005 19:04:16 +0300
+
+mce (1.0.4) unstable; urgency=low
+
+  * Added functionality to mcetool to open/close the devicelock dialog
+  * Updated mcetool manual accordingly
+  * Source code cleanup
+    | Only comments modified
+  * Made enable_eventeater() static
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri,  7 Oct 2005 18:08:32 +0300
+
+mce (1.0.3) unstable; urgency=low
+
+  * Added English and Swedish manual pages for mce
+  * Fixed several manpage typos
+  * Move SYSTEMUI_GCONF_DEVICE_AUTOLOCK_ENABLED_PATH
+    to mcetool.h instead, since it's not used by MCE itself
+    | Preferably this should be taken from some -dev package instead,
+    | but...
+  * Added functionality to mcetool to open/close startup and shutdown
+    splashscreens
+  * Added functionality to mcetool to open/close the modechange
+    confirmation dialog
+  * Added functionality to mcetool to open/close the powerkey menu
+  * Added functionality to mcetool to open/close the actingdead UI
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  5 Oct 2005 17:59:08 +0300
+
+mce (1.0.2) unstable; urgency=low
+
+  * Init processwd in mce_init() and exit processwd in mce_exit()
+  * Added English and Swedish manual pages for mcetool
+  * Fixed minor typos in the devlock-blocker manual pages
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 19 Sep 2005 14:18:07 +0300
+
+mce (1.0.1) unstable; urgency=low
+
+  * Improved mcetool; added support for:
+    * blank prevent request
+    * unblank screen request
+    * powerup request
+    * reboot request
+    * shutdown request
+  * Added English and Swedish manual pages for devlock-blocker
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sat, 17 Sep 2005 15:57:45 +0300
+
+mce (1.0.0) unstable; urgency=low
+
+  * The "I expect the first brown paper bag within a minute" release
+  * Boldly declare this as 1.0.0
+  * Enable tklock silently when autolocking and for event eater
+    (Fixes: N#17757)
+  * Do not cancel shutdown if the charger is reconnected if battery is empty
+  * Shutdown 5 seconds after battery empty
+  * Simplify pkg-config flags
+    | Thanks to Eero Tamminen
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 13 Sep 2005 19:51:13 +0300
+
+mce (0.9.18) unstable; urgency=low
+
+  * Special handling for blank vs dim timeout overlaps
+  * Added support for DSME watchdog
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sat, 10 Sep 2005 17:30:56 +0300
+
+mce (0.9.17) unstable; urgency=low
+
+  * Delay for 10 seconds on battery empty message before requesting
+    shutdown, to make sure that the user has an opportunity
+    to connect the charger
+  * If charger is connected during the 10 second delay, cancel shutdown
+  * Disable all timers on shutdown
+  * Use the new rtc_alarm_time GConf entry to get the alarm
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 31 Aug 2005 23:22:45 +0300
+
+mce (0.9.16) unstable; urgency=medium
+
+  * Doh!  Restore value for total failures to device_lock_total_failed,
+    NOT to device_lock_failed, since the alternative causes lock code
+    to be asked even when the last code entry was indeed correct
+    (Fixes: N#18250)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 29 Aug 2005 15:32:32 +0300
+
+mce (0.9.15) unstable; urgency=low
+
+  * Print debug message about DSME message type in hex instead of decimal
+  * Modify splash behaviour a bit when shutting down to acting dead,
+    to avoid a visual glitch
+  * Modify tklock behaviour to handle corner cases
+  * Disable devicelock autolock timeout in the correct way
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 24 Aug 2005 14:09:01 +0300
+
+mce (0.9.14) unstable; urgency=low
+
+  * Send replies to all method_calls that expect them
+  * Set no_reply for the calls to SystemUI
+  * More codingstyle fixes
+  * Revert flight mode change from 0.9.12
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 19 Aug 2005 15:52:50 +0300
+
+mce (0.9.13) unstable; urgency=low
+
+  * Implemented support for proper keypad and touchscreen lock
+    (disabling of those events on a kernel level, through sysfs)
+    (Fixes: N#15142)
+  * Also disable keypad and touchscreen in acting dead state
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 18 Aug 2005 14:40:38 +0300
+
+mce (0.9.12) unstable; urgency=high
+
+  * Always report flight-mode when state != DSME_STATE_USER
+  * Assume failed D-Bus calls to wlancond/btcond to mean open connections;
+    while this is highly improbable (it's more likely that this means that
+    networking isn't functional), it's better to ask and be safe, than
+    not ask and be sorry...  This makes MCE survive unavailability of
+    wlancond/btcond, thus high urgency, since that situation is
+    triggerable in the wild (Fixes: N#17332)
+  * Fixed alarm state setting code (Fixes: N#16057)
+  * First close powerkey menu, *then* perform action
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 16 Aug 2005 13:26:08 +0300
+
+mce (0.9.11) unstable; urgency=low
+
+  * Made sure that we don't send both long and short keypress event for [HOME]
+  * Minor cleanup
+  * Removed testmode
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon,  8 Aug 2005 15:05:08 +0300
+
+mce (0.9.10) unstable; urgency=low
+
+  * Added D-Bus interface for alarm mode changes (Fixes: N#15736)
+    | Thanks to Ismo Laitinen for patch
+  * Fixed debugging statement in mcetool
+    | Thanks to Ismo Laitinen for reporting the bug
+  * Modify Makefile to use pkg-config also for libdsme and libcal
+  * Build-Depends: libdsme0-dev (>= 0.29)
+  * Implement devicelock code validation properly
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 22 Jul 2005 08:09:26 +0300
+
+mce (0.9.9) unstable; urgency=low
+
+  * Doh!  Restore code to enable autokeylock... (Fixes: N#15576)
+  * As per request, modify cover open tklock event to show infoprint
+    (Fixes: N#15353)
+  * Added stub code for devicelock code validation
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 15 Jul 2005 11:19:18 +0300
+
+mce (0.9.8) unstable; urgency=low
+
+  * Only send inactivity D-Bus signal if the state has changed
+    (Fixes: N#15114)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 29 Jun 2005 16:15:19 +0300
+
+mce (0.9.7) unstable; urgency=low
+
+  * Always close powerkeymenu after callback is called
+  * Better handling of osso-systemui restarts
+  * Fixed stupid typo wrt inactivity handling
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 28 Jun 2005 13:29:25 +0300
+
+mce (0.9.6) unstable; urgency=low
+
+  * Do not react on [POWER] if the modechange confirmation
+    dialogue is shown (Fixes: N#14008)
+  * Send D-Bus message when system changes from inactive to active
+  * Fixed incorrect handling of device autolock timeout
+    (Fixes: N#14112, N#14439)
+  * Handle [HOME] in a more correct manner (Fixes: N#14285)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 13 Jun 2005 16:39:04 +0300
+
+mce (0.9.5) unstable; urgency=low
+
+  * Fixed argument types used with D-Bus
+    (dbus_bool_t instead of gboolean, dbus_uint32_t instead of guint32, etc.)
+  * Made snooze on shutdown work properly
+  * Code cleanup for D-Bus code
+  * Fixed stupid display blank vs dim timeout bug (Fixes: N#13687)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  1 Jun 2005 17:22:31 +0300
+
+mce (0.9.4) unstable; urgency=low
+
+  * Added `--reset-passwd' to mcetool
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 30 May 2005 13:39:26 +0300
+
+mce (0.9.3) unstable; urgency=low
+
+  * Added a boolean argument to inactivity signal;
+    TRUE means inactivity, FALSE means activity
+  * Begun restructuring of the code
+  * Readded devlock-blocker (Fixes: N#10510)
+  * Home key has moved to KEY_F5 now, it seems (Fixes: N#13151)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 27 May 2005 11:19:51 +0300
+
+mce (0.9.2) unstable; urgency=low
+
+  * Fixed dependencies for tools
+  * Added reading of gconf values to mcetool
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 20 May 2005 13:22:57 +0300
+
+mce (0.9.1) unstable; urgency=low
+
+  * Added support for TKLOCK_TIMEOUT
+  * Use pkg-config also for osso-clock
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 17 May 2005 14:33:52 +0300
+
+mce (0.9.0) unstable; urgency=low
+
+  * New package: mcetools
+    | For now it only provides one program; mcetool
+  * Fixed memory leak; free string array from BTCOND_GET_BDA_LIST_REQ
+  * Removed the devlock-blocker
+  * Always send mode names based on lookup table,
+    to avoid confusion because of aliases
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon, 16 May 2005 18:32:19 +0300
+
+mce (0.8.8) unstable; urgency=low
+
+  * Bluetooth support for connection checking
+  * Don't show splashscreen on bootup,
+    only when changing from acting dead to normal state
+  * Use a nice value of -1 when starting MCE using dsmetool
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 13 May 2005 14:52:03 +0300
+
+mce (0.8.7) unstable; urgency=low
+
+  * Only ask about for confirmation about flight-mode
+    if there are open connections
+    | bluetooth is not checked at the moment
+  * Made the device lock delays 0, 1, 1, 5 instead of 0, 1, 30, 300
+  * Removed osso-log.h; use the one from libosso
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 13 May 2005 00:03:54 +0300
+
+mce (0.8.6) unstable; urgency=low
+
+  * Added event eating on inactivity
+  * Send data save event on battery low
+  * Play sound on shutdown from user state
+  * open/close tklock without infoprints if we're not in USER state
+    and when auto-locking/auto-unlocking
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 10 May 2005 19:42:56 +0300
+
+mce (0.8.5) unstable; urgency=low
+
+  * Remove shutdown query timeout when doing a shutdown
+    from device lock shutdown query
+  * Added a Recommends: dsme, for the DSME lifeguard
+  * Set default brightness to 5 instead of 9
+  * Added dialogue that asks for confirmation
+    before changing to/from flight mode
+  * Build-Depends: osso-systemui-modechange
+  * Cleanup
+  * Fixed (extremely) theoretical loop-around bug with device lock
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon,  2 May 2005 08:44:00 +0300
+
+mce (0.8.4) unstable; urgency=low
+
+  * On popular request, add pkg-config file
+  * Added version number check
+  * Added 30 second timeout in shutdown dialogue from device lock
+  * Always offer shutdown when cancel is pressed from device lock
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 27 Apr 2005 14:45:52 +0300
+
+mce (0.8.3) unstable; urgency=low
+
+  * Doh! close() pidfile...
+  * Detect if this is the first time we start MCE or if it's been restarted
+  * Only show shutdown question from devicelock on bootup
+  * Clear input on press of cancel in devicelock mode, *except*
+    when input has been disabled during timeout
+  * Added (disabled for now) feature to bootup directly to flight mode
+  * Made the delay slightly shorter when powering up from acting dead
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 22 Apr 2005 17:58:10 +0300
+
+mce (0.8.2) unstable; urgency=low
+
+  * Show shutdown question from devicelock
+  * Make sure powerkeymenu is closed on shutdown
+  * Close down powerkeymenu and tklock if MCE is restarted,
+    to ensure that MCE doesn't end up confused about the mode it's in
+  * Don't install devlock-blocker by default; it's not needed
+    Keep it for now in the source tree, though
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu, 21 Apr 2005 23:31:42 +0300
+
+mce (0.8.1) unstable; urgency=low
+
+  * Moved call to g_type_init to mce-gconf, since that file is the
+    only user of GType
+  * Added devlock-blocker
+    | This program will block if loaded when the device is locked
+    | and exits as soon as the device is unlocked again
+  * Removed unused defines from dbus-names.h
+  * Start MCE using dsmetool (if available) unless USE_DSMETOOL=no
+  * devicelock on boot if shutdown from devicelock
+    or if device autolock is enabled
+  * Don't show devicelock in acting dead state
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 12 Apr 2005 13:17:04 +0300
+
+mce (0.8.0) unstable; urgency=low
+
+  * Before requesting a shutdown from DSME, update the alarm state,
+    to make sure that no alarms fire during shutdown phase
+    (If there's pending alarms, DSME will go to acting dead state instead)
+  * Change offline back to flight...
+  * Fixed wakeup from acting dead and reboot request to work properly
+  * Added D-Bus method and signal for information about device lock mode
+  * Refactored some code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 29 Mar 2005 19:46:09 +0300
+
+mce (0.7.7) unstable; urgency=low
+
+  * const sprinkling
+  * Fixed bugs in error callbacks
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri,  4 Mar 2005 11:22:54 +0200
+
+mce (0.7.6) unstable; urgency=low
+
+  * Change the Depends: osso-systemui-tklock (>= 0.0.4.6)
+    to a Conflicts: osso-systemui-tklock (<< 0.0.4.6), since we really
+    don't want MCE to depend directly on systemui-components
+  * Bump the Build-Depends on osso-systemui-tklock-dev to match
+    version of the Conflicts on osso-systemui-tklock
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue,  1 Mar 2005 10:27:39 +0200
+
+mce (0.7.5) unstable; urgency=low
+
+  * Auto enabling/disabling of locks should only happen in user state
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 22 Feb 2005 16:38:09 +0200
+
+mce (0.7.4) unstable; urgency=low
+
+  * Added timeout between tklock enable and dim request
+  * Added timeout between cover open and tklock disable
+  * Re-enable device autolock
+    (depends on device autolock module in DSME)
+  * Added missing break to tklock unlock code
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 22 Feb 2005 16:13:48 +0200
+
+mce (0.7.3) unstable; urgency=low
+
+  * Flight mode --> Offline mode, as per ideas from above
+  * Re-enabled tklock
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 18 Feb 2005 14:05:53 +0200
+
+mce (0.7.2) unstable; urgency=low
+
+  * Create /var/lib/mce too, and install a mode-file in it...
+    | Thanks to Johan Hedberg for finding it
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 16 Feb 2005 12:39:30 +0200
+
+mce (0.7.1) unstable; urgency=low
+
+  * Disabled tklock (except for with cover) and automatic devicelock,
+    since the functionality in systemui-tklock and DSME they depend on
+    doesn't work properly
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 15 Feb 2005 16:58:35 +0200
+
+mce (0.7.0) unstable; urgency=low
+
+  * Added build-depends on osso-systemui-dev, osso-systemui-powerkeymenu-dev,
+    osso-systemui-tklock-dev, osso-systemui-devlock-dev,
+    osso-systemui-splashscreen-dev, and osso-systemui-actingdead-dev
+  * Implemented logic for touchscreen/keypad and device locks
+  * Enable touchscreen/keypad lock and device lock when closing the cover,
+    disable touchscreen/keypad lock when opening the cover
+  * Fixed bug in logic for [POWER] wrt short keypress
+    | Thanks to Ismo Laitinen for reporting the bug
+  * Doh!  Fixed really stupid bug in mce_get_mode_string and mce_set_mode
+    | Thanks to Ismo Laitinen for reporting the bug
+  * MCE now stores the mode in /var/lib/mce/mode
+
+ -- David Weinehall <david.weinehall@nokia.com>  Sun, 13 Feb 2005 17:43:13 +0200
+
+mce (0.6.1) unstable; urgency=low
+
+  * Install at init level 25 instead of 30 to make sure we're already
+    running when btcond is started
+    | Requested by Johan Hedberg
+  * Added build-depends on libgconf2-dev
+
+ -- David Weinehall <david.weinehall@nokia.com>  Thu,  3 Feb 2005 14:40:14 +0200
+
+mce (0.6) unstable; urgency=low
+
+  * Call the SystemUI powerkey menu when [POWER] is pressed (short press)
+    | Handle shutdown, flight mode, and normal mode for now;
+    | touchscreen/keypad and device locks has not been implemented yet
+  * Call SystemUI shutdown splashscreen when shutting down or rebooting
+  * Call SystemUI actdead when changing to acting dead state
+  * Fixed missing build-depends on dbus-1-dev and dbus-glib-1-dev
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  2 Feb 2005 09:32:06 +0200
+
+mce (0.5.5) unstable; urgency=low
+
+  * Added new D-Bus method; req_reboot
+
+ -- David Weinehall <david.weinehall@nokia.com>  Fri, 21 Jan 2005 10:26:17 +0200
+
+mce (0.5.4) unstable; urgency=low
+
+  * Moved mode-names.h to mce-dev
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 19 Jan 2005 15:11:54 +0200
+
+mce (0.5.3) unstable; urgency=low
+
+  * Implemented get_device_mode
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed, 19 Jan 2005 15:00:53 +0200
+
+mce (0.5.2) unstable; urgency=low
+
+  * Set defaults for values from gconf if those cannot be read
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 18 Jan 2005 16:26:16 +0200
+
+mce (0.5.1) unstable; urgency=low
+
+  * bme-dbus-proxy changed back to bme_empty from bme_recharge
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 18 Jan 2005 15:16:11 +0200
+
+mce (0.5) unstable; urgency=low
+
+  * Implemented sig_device_mode_ind and req_device_mode_change
+    | This means that MCE now handles changes to/from flight mode
+  * Various cleanup
+  * Added gconf support
+  * Implemented emergy shutdown on battery empty
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 18 Jan 2005 08:25:56 +0200
+
+mce (0.4.1) unstable; urgency=low
+
+  * Doh...  2 seconds, not 2 milliseconds
+  * Oh, and the pidfile should be mce.pid, nothing else...
+
+ -- David Weinehall <david.weinehall@nokia.com>  Wed,  1 Dec 2004 09:20:50 +0200
+
+mce (0.4) unstable; urgency=low
+
+  * Removed -n from dh_installinit
+  * Only send a shutdown request to DSME if we're in user state;
+    if we're acting dead, send a power-up request instead
+  * Scan for the correct /dev/input/event-files, don't just assume
+    that the keypad is event0 and [POWER] is event2
+  * Added logging
+  * Added improved debugging functionality
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 30 Nov 2004 14:12:05 +0200
+
+mce (0.3) unstable; urgency=low
+
+  * Use the GMainLoop; hook up dsmesock and powerkey to it
+  * Added D-Bus interface; most of the code is a cleaned up version
+    of dsme-dbus-proxy
+  * Added init-file
+  * Added framework for checking [HOME] as well
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue, 16 Nov 2004 18:00:09 +0200
+
+mce (0.2) unstable; urgency=low
+
+  * Depend on at least libdsme0-dev (>= 0.12)
+
+ -- David Weinehall <david.weinehall@nokia.com>  Tue,  2 Nov 2004 18:16:52 +0200
+
+mce (0.1) unstable; urgency=low
+
+  * Initial Release
+
+ -- David Weinehall <david.weinehall@nokia.com>  Mon,  1 Nov 2004 14:11:16 +0200

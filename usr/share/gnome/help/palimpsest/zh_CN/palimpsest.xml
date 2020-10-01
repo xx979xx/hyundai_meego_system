@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "0.1">
+<!ENTITY manrevision "0.1">
+<!ENTITY date "June 2008">
+<!ENTITY app "<application>Palimpsest Disk Utility</application>">
+<!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file. 
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->]>
+<article id="index" lang="zh_CN">
+  <articleinfo>
+    <title><application>Palimpsest 磁盘工具</application> 手册</title>
+    <abstract role="description">
+      <para>此文档描述的是 Palimpsest 磁盘工具程序。</para>
+    </abstract>
+    <copyright> 
+      <year>2008</year> 
+      <holder>David Zeuthen</holder> 
+    </copyright><copyright><year>2009.</year><holder>Zhang Miao (mymzhang@gmail.com)</holder></copyright> 
+    <publisher> 
+      <publishername>GNOME 文档项目</publishername> 
+    </publisher> 
+      <legalnotice id="legalnotice">
+	<para>对于本文档的复制、分发和／或修改必须遵循自由软件基金会 (Free Software Foundation) 发布的 GNU 自由文档许可证 (GFDL) 版本 1.1 或更高版本，该许可证没有固定的部分、没有封面和背页文本。您可以在此<ulink type="help" url="ghelp:fdl">链接</ulink>上或在随本手册一起分发的 COPYING-DOCS 文件中找到 GFDL 的副本。</para>
+         <para>本手册是在 GFDL 许可之下分发的 GNOME 手册集合的一部分。如果想要单独分发此手册，可以在手册中添加该许可证的一份副本然后分发，如该许可证的第 6 部分所述。</para>
+
+	<para>各个公司使用的许多用于区别它们产品和服务的名称都声明为商标。在所有的 GNOME 文档以及 GNOME 文档项目的成员中，这些名称都是以全大写字母或首字母大写显示，从而表明它们是商标。</para>
+
+	<para>本文档以及文档的修改版本都是在遵循 GNU 自由文档许可证的条款下提供，这表示具有以下含义：<orderedlist>
+		<listitem>
+		  <para>文档按“原样”提供，不提供任何明示或暗示的保证，包括但不限于：文档或文档的修改版本没有适销性方面的缺陷、适合特定目的的适用性，以及没有侵权行为。您将自行承担本文档以及文档修改版本的质量、准确性以及性能方面的风险。如果任何文档或文档修改版本存在缺陷，您(而不是最初的编写者、作者或撰写人)将承担所有必需的服务、维修或更正的费用。此免责声明是本许可证的重要组成部分。如果不接受此免责声明，那么您就没有权利使用任何文档或文档的修改版本；并且</para>
+		</listitem>
+		<listitem>
+		  <para>无论在任何情况以及在任何法律理论下，本文档或文档修改版本的作者、最初的编写者、任何撰写人或任何分发者，或者任意这些方的任何提供者都不对任何人由于使用本"文档或文档修改版本引起或带来的任何直接的、间接的、特殊的、偶然的或继发的损失承担任何民事(包括疏忽)、合同或其它方面的责任，这些损失包括但不限于信誉损失、工作停止、计算机失败或故障，或任何以及所有其它损失或由此引发的或与之相关的损失，即使这些方已被告知存在出现此类损失的可能性时也是如此。</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+    <authorgroup>
+      <author role="maintainer">
+	<firstname>David</firstname> <surname>Zeuthen</surname>
+	<affiliation>
+	  <address>
+	    <email>davidz@redhat.com</email>
+	  </address>
+	</affiliation>
+      </author>
+    </authorgroup>
+    <revhistory>
+      <revision>
+	<revnumber>Palimpsest 磁盘工具手册 0.1 版</revnumber>
+	<date>2008</date>
+	<revdescription>
+	  <para role="author">David Zeuthen <email>davidz@redhat.com</email></para>
+	</revdescription>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>本手册描述的是 0.1 版的 Palimpsest 磁盘工具。</releaseinfo> 
+      <legalnotice> 
+      <title>反馈</title> 
+      <para>对<application>Palimpsest 磁盘工具</application>程序或本手册报告错误或提供建议，遵从以下指导<ulink url="ghelp:gnome-feedback" type="help">GNOME 反馈页面</ulink>。</para>
+      </legalnotice>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>简介。</title>
+      <para>这是<application>Palimpsest 磁盘工具</application>用户指导。</para>
+    <figure id="mainwindow-fig"> 
+	<title><application>Palimpsest 磁盘工具</application> 窗口</title> 
+	<screenshot> 
+	  <mediaobject> 
+	    <imageobject><imagedata fileref="figures/main-app.png" format="PNG"/> 
+	    </imageobject>
+	    
+	    <textobject> 
+	      <phrase>显示 <application>Palimpsest 磁盘工具</application> 主窗口。</phrase> 
+	    </textobject> 
+	  </mediaobject> 
+	</screenshot> 
+    </figure>
+  </sect1>
+ 
+   <sect1 id="advanced">
+      <title>高级 Palimpsest 磁盘工具。</title> 
+      <para>Palimpsest 磁盘工具是一个复杂的程序，带有许多先进的特性。</para>
+
+   </sect1>
+
+</article>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<provider xmlns="http://contextkit.freedesktop.org/Provider" bus="system" service="com.nokia.time">
+  <key name="Alarm.Present" />
+  <key name="Alarm.Trigger" />
+
+  <key name="/com/nokia/time/system_time/operational" type="bool">
+    <doc>
+      Usually this property has to be set to 'true'.
+      Time daemon is setting it to 'false',
+        if the system time doesn't represent the real time.
+      Usually this will happen, if the device battery is
+        removed or is totally uncharged and there is no
+        other reliable time sources.
+      After the human user set the system time manually
+        or the current time will be received from other
+        reliable source this property will be set
+        to 'true' again.
+    </doc>
+  </key>
+
+  <key name="/com/nokia/time/timezone/oracle">
+    <type>
+      <map>
+        <uncertain type="bool">
+          <doc>
+            Usually this value has to be 'false' or unset.
+            Time daemon is stetting is to 'true' if the following
+            conditions occur (both of them):
+              1) Automatic timezone setting is enabled
+              2) Time daemon doesn't have enough information
+                 to detect current timezone and human user
+                 is to be asked for help.
+          </doc>
+        </uncertain>
+
+        <primary_candidates>
+          <type>
+            <list type="string" />
+          </type>
+            <doc>
+              The list of top priority time zone candidates.
+              Provided by time daemon only if the automated
+                time zone detection is uncertain about the right time zone.
+              This list could be empty if no good candidates are detected.
+              The current time zone may be listed here as well,
+                but it is not guarantied.
+            </doc>
+        </primary_candidates>
+
+        <possible_candidates>
+          <type>
+            <list type="string" />
+          </type>
+            <doc>
+              The list of time zone candidates.
+              Provided by time daemon only if the automated
+                time zone detection is uncertain about the right time zone.
+              These are less probable candidates, the time zones
+                listed in the "primary_candidates" property are much more probable.
+              The current time zone may be listed here as well,
+                but it is not very probable.
+            </doc>
+        </possible_candidates>
+      </map>
+    </type>
+  </key>
+
+  <!-- Okey, it doesn't work because of race condition.
+       Let's try a mapping...
+
+  <key name="com.nokia.time.timezone.uncertain" type="bool">
+    <doc>
+      Usually this property has to be 'false' or unset.
+      Time daemon is stetting is to 'true' if the following
+      conditions occur (both of them):
+        1) Automatic timezone setting is enabled
+        2) Time daemon doesn't have enough information
+           to detect current timezone and human user
+           is to be asked for help.
+    </doc>
+  </key>
+
+  <key name="com.nokia.time.timezone.primary_candidates">
+    <type>
+      <list type="string" />
+    </type>
+    <doc>
+      The list of top priority time zone candidates.
+      Provided by time daemon only if the automated
+        time zone detection is uncertain about the right time zone.
+      This list could be empty if no good candidates are detected.
+      The current time zone may be listed here as well,
+        but it is not guarantied.
+    </doc>
+  </key>
+
+  <key name="com.nokia.time.timezone.possible_candidates">
+    <type>
+      <list type="string" />
+    </type>
+    <doc>
+      The list of time zone candidates.
+      Provided by time daemon only if the automated
+        time zone detection is uncertain about the right time zone.
+      These are less probable candidates, the time zones
+        listed in the "primary_candidates" property are much more probable.
+      The current time zone may be listed here as well,
+        but it is not very probable.
+    </doc>
+  </key>
+
+  -->
+
+</provider>
+<!--
+  <key name="Time.AlarmPresent"    type="bool"    />
+  <key name="Time.AlarmsEnabled"   type="bool"    />
+  <key name="Time.NextAlarmCookie" type="integer" />
+  <key name="Time.NextAlarmTime"   type="time"    />
+  <key name="Time.NextAlarmTitle"  type="string"  />
+ see the types in /usr/share/contextkit/types/core.types
+ vim:syntax=xml
+-->

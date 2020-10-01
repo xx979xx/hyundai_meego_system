@@ -1,0 +1,183 @@
+lockdev (1.0.0) unstable; urgency=low
+
+  * added management of pseudo device /dev/tty , thanx to Alan Cox.
+  * added unconditional malloc of supplied device argoment.
+  * changed name of the shared lib to end in .so
+  * changed Makefile.PL because the perl manpage disappeared.
+  * Changed symbols in the API as suggested by Daniel Quinlan and 
+    Erik Troan. Changed soname accordingly.
+  * Corrected manpages and added LSB proposal (draft 2).
+  * corrected cua device management: use linux/major.h to determine the
+    cua major number; conditioned to __linux__
+  * Changed LICENSE file to hold the LGPL 2.1
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Wed,  1 Dec 1999 12:59:10 +0200
+
+lockdev (0.11.1) unstable; urgency=low
+
+  * NMU for the perl upgrade. Closes: #41522
+  * Corrected the rules files to conform to perl policy 1.0.1.
+  * Compiled with perl-5.005.
+  * Corrected the location of the license.
+  * Upgraded standards-version to 2.5.1
+
+ -- Raphael Hertzog <rhertzog@hrnet.fr>  Mon, 19 Jul 1999 20:51:00 +0200
+
+lockdev (0.11) unstable; urgency=low
+
+  * Avoided repetute locking of the semaphore.
+  * Corrected special case of semaphore misbehaviour (found while
+    crosschecking between two instancies running under gdb).
+  * Added modification on-the-fly of major number of device from 4 to 5
+    in case it was referring to one of the 64 cua devices; it now locks
+    the major+minor numbers of the corresponding ttyS device. The name
+    remains unaffected, as it could be an arbitrary name.
+    (Thanx to Daniel Quinlan <quinlan@transmeta.com>)
+  * Tryed to use fcntl instead of flock, after suggestion of Daniel
+    Quinlan, to permit use on NFS mounted partitions.
+    I wasn't able to make it correctly work, so I conditioned the
+    changes and left the code there, for further (future)
+    investigations. Any help highly appreciated.
+  * changed third file (LCK..<pid>) to have three dots, and made it stay
+    there, as a quick reference. It doesn't hurt, and shouw the pid with
+    a simple ls -l
+  * Added full text of LGPL licence instead of GPL one added in the
+    previous version (oops).
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Wed,  2 Jun 1999 15:58:03 +0300
+
+lockdev (0.10) unstable; urgency=low
+
+  * Added ttylock.h as Compatibility API to AIX. Programs written for
+    that environment can be linked directly to lockdev library.
+    (On AIX the symbols are in libc, so special care should be used)
+  * changed location of manpages to /usr/share/man.
+  * changed the name of the source to lockdev_0.10.tar.gz
+  * changed address of FSF in Copyright file, added the full GPL text as
+    LICENSE (only in the source), corrected name of the mailing list.
+  * changed name of changelog, just to make lintian happier.
+  * corrected name of docs dir for perl package.
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Thu,  8 Apr 1999 21:04:53 +0300
+
+liblockdev (0.9a) frozen unstable; urgency=low
+
+  * Added more tests in postinst of liblockdev0g-dbg, to avoid strange
+    problems encountered by Adam P. Harris (closes: #22565)
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Mon, 18 May 1998 15:21:12 +0300
+
+liblockdev (0.9) frozen unstable; urgency=low
+
+  * cleaned symlinks in docs dirs.
+  * changed libs symlinks from /usr/lib to /lib
+  * stripped main shared library.
+  * Corrected wrong shlibs dependency (thanx to Hamish Moffatt, 
+    closes: #22282).
+  * Changed dependency of -dev from libc6 to libc6-dev, 
+    thanx to James Troup (closes: #16476).
+  * Added -I.. in Makefile.PL to allow compilation of the perl part even
+    when the -dev package isn't installed (thanx to Martin Schulze for
+    the patch) closes: #15834
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Tue, 12 May 1998 13:39:27 +0300
+
+liblockdev (0.8) unstable; urgency=low
+
+  * updated manpage (degugging section).
+  * added environment variable to set debug value, and signals 
+    to change those values at runtime (if compiled with -DDEBUG).
+  * avoided symlink to /usr/src changing .stab in asm source 
+    file (overwritten implicit rule to produce asm source).
+    Thanx to Martin Schulze <joey> for the help.
+  * changed dbg package to install shared debug lib in 
+    /usr/lib/debug and profile lib in /usr/lib/profile.
+  * splitted debian/rules in included debian/policy
+  * cleaned Makefile and changed to build debug shared lib.
+    Thanx to Yann Dirson.
+  * added change in umask value to allow full permissions to lock 
+    files.  (this is questionable: would it be better to add a 
+    suid program to check and remove dangling locks?)
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Tue, 23 Dec 1997 11:26:10 +0200
+
+liblockdev (0.7) unstable; urgency=low
+
+  * cleaned Makefile and debian/rules
+  * change in Makefile.PL to allow pristine compilation on new systems
+    (closes: #15834, thanx to Martin Schulze).
+  * added -dbg package with debug and profile libs.
+  * problem with lenght of dev_t in glibc for printf: cast needed :-)
+  * corrected ftp address in copyright file.
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Sun, 30 Nov 1997 01:00:50 +0200
+
+liblockdev (0.6) unstable; urgency=low
+
+  * added symlink to dirs in /usr/doc (one dir for all packages),
+     now /usr/doc/liblockdev is a symlink installed by -dev package,
+     as the liblockdev.a and liblockdev.so symlinks.
+     Instead, lblockdev-perl installs a copy of the docs because
+     it doesn't depend on the run-time binary package (as -dev does).
+  * cleaned spreading in the distribution: 
+     source and run-time to section 'libs', development into 'devel',
+     perl module into 'interpreters' (waiting for a perl section).
+  * created extension perl library LockDev:: with manpage LockDev(3pm)
+     and packaged as liblockdev0-perl.
+  * moved symlink so.0 -> so.0.6 to runtime package.
+  * added unlink of semaphore file (not really needed, just to clean up)
+  * corrected error in Synopsis of manpage (oops).
+  * cleaned source code: changed ANSI-C definition of functions to K&R,
+     as recommended in GNU coding style (but not for indentation).
+     Added ANSI-C prototypes for internal functions (exported one 
+     already have them in .h interface file.
+  * cleaned rules file, got rid of unneeded libc5 compatibility.
+  * Moved back include of stdio.h from lockdev.h to .c (closes:Bug#14154)
+     Thanx to Juan Cespedes <cespedes@debian.org>
+  * Corrected debian/rules to have binary-arch rule (closes:Bug#14062)
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Wed, 22 Oct 1997 13:45:34 +0300
+
+liblockdev (0.5) unstable; urgency=low
+
+  * moved to libc6 (glibc2); added a "g" after soname in package name.
+  * added rules to build also compatibility libc5 libs.
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Thu, 25 Sep 1997 11:51:22 +0300
+
+liblockdev0 (0.4) unstable; urgency=low
+
+  * Changed priority from extra to optional.
+  * cleaned Makefile and added separate static/debug library.
+  * Cleaned include file.
+  * Added global var liblockdev_debug for debugging level
+  * Added 2 functions to set and reset debugging level (only in static lib)
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Sat,  6 Sep 1997 02:20:01 +0300
+
+liblockdev0 (0.3) unstable; urgency=low
+
+  * avoided stripping of static lib (compiled with -DDEBUG)
+  * added semaphore lock to avoid race condition in
+    removing stale locks (thanx to Barak Pearlmutter)
+  * changed unlink of stale lock to a complex and
+    convoluted way to avoid conflicts between us and another
+    process that doesn't use this library. Still exists the
+    possibility of a conflict between two other processes that
+    don't use this library, but we are safe.
+  * cleaned code in lock_dev()
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Fri,  5 Sep 1997 11:05:21 +0300
+
+liblockdev0 (0.2) unstable; urgency=low
+
+  * fixed shared lib links.
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Thu,  4 Sep 1997 19:08:38 +0300
+
+liblockdev0 (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Fabrizio Polacco <fpolacco@debian.org>  Thu,  4 Sep 1997 14:13:23 +0300
+

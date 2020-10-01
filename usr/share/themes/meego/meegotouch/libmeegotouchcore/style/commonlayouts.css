@@ -1,0 +1,106 @@
+﻿/*  LABELS  */
+
+#CommonSingleTitle {
+
+    font : $FONT_DEFAULT;
+}
+
+#CommonTitle {
+
+    font : $FONT_DEFAULT;
+    color: $COLOR_FOREGROUND;
+}
+
+#CommonTitleAccented {
+
+    font : $FONT_LARGE;
+    color: $COLOR_ACCENT1;
+
+}
+
+#CommonTitleInverted {
+
+    font : $FONT_LARGE;
+    color: $COLOR_FOREGROUND;
+
+}
+
+
+#CommonSingleTitleInverted {
+
+    font : $FONT_DEFAULT;
+    color : $COLOR_INVERTED_FOREGROUND;
+}
+
+#CommonSubTitle {
+
+    font : $FONT_SMALL;
+    color : $COLOR_SECONDARY_FOREGROUND;
+
+}
+
+#CommonSubTitleAccented {
+    
+    font : $FONT_SMALL;
+    color : $COLOR_ACCENT5;
+
+}
+
+#CommonSubTitleInverted {
+    
+    font : $FONT_SMALL;
+    color : $COLOR_INVERTED_FOREGROUND;
+
+}
+
+#CommonSubText {
+
+    font : $FONT_SMALL;
+    color : $COLOR_SECONDARY_FOREGROUND;
+
+}
+
+#CommonSubTextInverted {
+
+    font : $FONT_SMALL;
+    color : $COLOR_INVERTED_FOREGROUND;
+
+}
+
+#CommonItemInfo {
+
+    font : $FONT_SMALL;
+    color : $COLOR_FOREGROUND;
+
+}
+
+#CommonHeader {
+
+    font : $FONT_SMALL;
+    color : $COLOR_INVERTED_FOREGROUND;                    /* TBD */
+}
+
+#CommonBannerTitle {
+    font : $FONT_DEFAULT;
+    color : $COLOR_FOREGROUND;  
+}
+
+#CommonBannerSubTitle {
+    font : $FONT_DEFAULT;
+    color : $COLOR_FOREGROUND;
+}
+
+#CommonBannerSingleTitle {
+    font : $FONT_DEFAULT;
+    color : $COLOR_FOREGROUND;
+}
+
+#CommonBannerSingleSubTitle {
+    font : $FONT_DEFAULT;
+    color : $COLOR_FOREGROUND;
+}
+
+#CommonBannerItemInfo {
+    font : $FONT_SMALL;
+    color : #95969B;                    /* TBD */
+}

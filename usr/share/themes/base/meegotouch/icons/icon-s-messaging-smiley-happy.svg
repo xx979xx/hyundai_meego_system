@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-s-messaging-smiley-happy-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px"
+	 viewBox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
+<g id="icon-s-messaging-smiley-happy">
+	<rect style="fill:none;" width="18" height="18"/>
+	<circle style="fill:#333333;" cx="6.02" cy="5.807" r="1.406"/>
+	<circle style="fill:#333333;" cx="11.98" cy="5.807" r="1.406"/>
+	<path style="fill:#333333;" d="M9,12.398c-2.904,0-5.317-1.854-5.812-4.615C3.127,8.123,3.094,8.473,3.094,8.83
+		c0,3.263,2.644,5.415,5.906,5.415c3.262,0,5.906-2.152,5.906-5.415c0-0.357-0.033-0.707-0.095-1.047
+		C14.317,10.545,11.904,12.398,9,12.398z"/>
+	<path style="fill:#333333;" d="M9,1.125c4.342,0,7.875,3.533,7.875,7.875c0,4.343-3.533,7.875-7.875,7.875
+		c-4.342,0-7.875-3.532-7.875-7.875C1.125,4.658,4.658,1.125,9,1.125 M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9
+		S13.971,0,9,0L9,0z"/>
+</g>
+</svg>

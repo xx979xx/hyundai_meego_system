@@ -1,0 +1,159 @@
+/* MApplicationMenuStyle : MSceneWindowStyle */
+MApplicationMenuStyle {
+
+    canvas-image: "meegotouch-navigationbar-viewmenu-background" 10px 10px 10px 10px;
+    canvas-color: #000000;
+    canvas-opacity: 1.0;
+    canvas-margin: $MARGIN_DOUBLE;
+    divider-image:;
+    divider-color: $COLOR_SECONDARY_FOREGROUND;
+    divider-opacity: 1.0;
+    divider-width: 0;
+    item-height: $HEIGHT_ONE;
+    gap-height: 0;
+    gap-color: $COLOR_ACCENT1;
+    gap-opacity: 1.0;
+
+    /* inherited from MSceneWindowStyle */
+    vertical-align: top;
+    horizontal-align: left;
+
+    minimum-size: 100% -1;
+    preferred-size: 100% -1;
+    maximum-size: 100% -1;
+
+    /* inherited from MWidgetStyle */
+    background-color: #000000;
+    background-opacity: 0.8;
+
+
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    padding-left:   $PADDING_LARGE;
+    padding-top:    $HEIGHT_NAVIGATIONBAR;
+    padding-right:  $PADDING_LARGE;
+    padding-bottom: 0;
+
+}
+
+MAbstractLayoutPolicyStyle#menulandscape
+{
+    margin-left: $PADDING_XSMALL;
+    margin-right: $PADDING_XSMALL;
+    margin-top: 0;
+    margin-bottom: $PADDING_XSMALL;
+    vertical-spacing: 0;
+    horizontal-spacing: 0;
+}
+
+MAbstractLayoutPolicyStyle#menuportrait
+{
+    margin-left: $PADDING_XSMALL;
+    margin-right: $PADDING_XSMALL;
+    margin-top: 0;
+    margin-bottom: $PADDING_XSMALL;
+    vertical-spacing: 0;
+    horizontal-spacing: 0;
+}
+
+MListItemStyle#menuactioncommand
+{
+    minimum-size: -1 8.8mm;
+    preferred-size: -1 8.8mm;
+    maximum-size: -1 8.8mm;
+    margin-left:   0;
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+MApplicationMenu MListItemStyle
+{
+    minimum-size: -1 8.8mm;
+    preferred-size: -1 8.8mm;
+    maximum-size: -1 8.8mm;
+    margin-left:   0;
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+MButtonStyle#menustylecommand
+{
+    /* inherited from MButtonStyle */
+    color: $COLOR_FOREGROUND;
+
+    /* inherited from MWidgetStyle */
+
+    margin-top: $MARGIN_MEDIUM;
+    margin-bottom: $MARGIN_MEDIUM;
+
+    minimum-size: 9.6mm 7.2mm;
+    preferred-size: 9.6mm 7.2mm;
+    maximum-size: 9.6mm 7.2mm;
+
+    reactive-margin-right: 0;
+    reactive-margin-bottom: 0;
+
+    padding-left:   $PADDING_MEDIUM;
+    padding-top:    $PADDING_MEDIUM;
+    padding-right:  $PADDING_MEDIUM;
+    padding-bottom: $PADDING_MEDIUM;
+}
+
+MApplicationMenu MComboBoxStyle
+{
+    minimum-size: -1 8.8mm;
+    preferred-size: -1 8.8mm;
+    maximum-size: -1 8.8mm;
+    margin-left:   0;
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+}
+
+MApplicationMenu MListItemStyle {
+    background-tiles: meegotouch-viewmenu-background $CORNER_MARGINS;
+}
+
+MApplicationMenu MListItemStyle:selected {
+    background-tiles: meegotouch-viewmenu-background-selected $CORNER_MARGINS;
+}
+
+MApplicationMenu MListItemStyle:pressed {
+    background-tiles: meegotouch-viewmenu-background-pressed $CORNER_MARGINS;
+}
+
+/* text labels in application menu items */
+MApplicationMenu MLabelStyle#CommonSingleTitle {
+    /* regular menu entries */
+   color: $COLOR_FOREGROUND;
+}                                                                                          
+
+MApplicationMenu MLabelStyle#CommonTitle {
+    /* menu entries that are a combobox */
+    color: $COLOR_FOREGROUND;
+}
+
+MApplicationMenu MLabelStyle#CommonSubTitle {
+    /* combobox secondary line of text */
+    color: $COLOR_SECONDARY_FOREGROUND;
+}
+
+MApplicationMenu MComboBoxStyle {
+    indicator-image: "meegotouch-combobox-indicator";
+}

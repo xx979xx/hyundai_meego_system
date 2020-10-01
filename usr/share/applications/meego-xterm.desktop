@@ -1,0 +1,13 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=xterm Terminal
+GenericName=Terminal
+Comment=Terminal emulator for the X Window System
+Exec=xterm
+Icon=icons-Applications-xterminal
+Type=Application
+Categories=System;Utility;
+NoDisplay=false
+NotShowIn=X-MEEGO-NB;
+X-Desktop-File-Install-Version=0.16

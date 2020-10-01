@@ -1,0 +1,161 @@
+
+/* MGridItemStyle : MGridItemStyle */
+MContentItemStyle {    
+    background-tiles: meegotouch-list-background $CORNER_MARGINS;
+
+    background-image: ;
+    background-color: ;
+
+    background-image-top-left : meegotouch-list-background-top-left $CORNER_MARGINS;
+    background-image-top : meegotouch-list-background-top-center $CORNER_MARGINS;
+    background-image-top-right : meegotouch-list-background-top-right $CORNER_MARGINS;
+    background-image-left : meegotouch-list-background-center-left $CORNER_MARGINS;
+    background-image-center : meegotouch-list-background-center $CORNER_MARGINS;
+    background-image-right : meegotouch-list-background-center-right $CORNER_MARGINS;
+    background-image-bottom-left : meegotouch-list-background-bottom-left $CORNER_MARGINS;
+    background-image-bottom : meegotouch-list-background-bottom-center $CORNER_MARGINS;
+    background-image-bottom-right : meegotouch-list-background-bottom-right $CORNER_MARGINS;
+
+    background-image-single : meegotouch-list-background $CORNER_MARGINS;
+
+    background-image-singlerow-left : meegotouch-list-background-horizontal-left $CORNER_MARGINS;
+    background-image-singlerow-center : meegotouch-list-background-horizontal-center $CORNER_MARGINS;
+    background-image-singlerow-right : meegotouch-list-background-horizontal-right $CORNER_MARGINS;
+
+    background-image-singlecolumn-top : meegotouch-list-background-vertical-top $CORNER_MARGINS;
+    background-image-singlecolumn-center : meegotouch-list-background-vertical-center $CORNER_MARGINS;
+    background-image-singlecolumn-bottom : meegotouch-list-background-vertical-bottom $CORNER_MARGINS;
+
+    background-opacity: 1.0;
+
+    /* inherited from MWidgetStyle */
+    preferred-size: -1 $SIZE_ONE;
+    minimum-size: $SIZE_ONE $SIZE_ONE;
+    maximum-size: 100% $SIZE_ONE;
+
+    title-object-name: "CommonTitle";
+    subtitle-object-name: "CommonSubTitle";
+    image-object-name: "ContentItemImage";
+    optional-image-object-name: "ContentItemOptionalImage";
+    small-item-object-name: "ContentItemSmallItem";
+
+    press-feedback: press;
+    release-feedback: release;
+}
+
+MContentItemStyle:selected {
+
+    background-tiles: meegotouch-list-fullwidth-background-selected $CORNER_MARGINS;
+
+    background-image : meegotouch-list-fullwidth-background-selected $CORNER_MARGINS;
+
+    background-image-top-left : meegotouch-list-background-selected-top-left $CORNER_MARGINS;
+    background-image-top : meegotouch-list-background-selected-top-center $CORNER_MARGINS;
+    background-image-top-right : meegotouch-list-background-selected-top-right $CORNER_MARGINS;
+    background-image-left : meegotouch-list-background-selected-center-left $CORNER_MARGINS;
+    background-image-center : meegotouch-list-background-selected-center $CORNER_MARGINS;
+    background-image-right : meegotouch-list-background-selected-center-right $CORNER_MARGINS;
+    background-image-bottom-left : meegotouch-list-background-selected-bottom-left $CORNER_MARGINS;
+    background-image-bottom : meegotouch-list-background-selected-bottom-center $CORNER_MARGINS;
+    background-image-bottom-right : meegotouch-list-background-selected-bottom-right $CORNER_MARGINS;
+    
+    background-image-single : meegotouch-list-background-selected $CORNER_MARGINS;
+
+    background-image-singlerow-left : meegotouch-list-background-selected-horizontal-left $CORNER_MARGINS;
+    background-image-singlerow-center : meegotouch-list-background-selected-horizontal-center $CORNER_MARGINS;
+    background-image-singlerow-right : meegotouch-list-background-selected-horizontal-right $CORNER_MARGINS;
+
+    background-image-singlecolumn-top : meegotouch-list-background-selected-vertical-top $CORNER_MARGINS;
+    background-image-singlecolumn-center : meegotouch-list-background-selected-vertical-center $CORNER_MARGINS;
+    background-image-singlecolumn-bottom : meegotouch-list-background-selected-vertical-bottom $CORNER_MARGINS;
+    
+    background-color: $COLOR_INVERTED_FOREGROUND;
+    background-opacity: 1.0;
+}
+
+MContentItemStyle:pressed {
+
+    background-tiles: meegotouch-list-background-pressed $CORNER_MARGINS;
+
+    background-image : meegotouch-list-fullwidth-background-pressed $CORNER_MARGINS;
+
+    background-image-top-left : meegotouch-list-background-pressed-top-left $CORNER_MARGINS;
+    background-image-top : meegotouch-list-background-pressed-top-center $CORNER_MARGINS;
+    background-image-top-right : meegotouch-list-background-pressed-top-right $CORNER_MARGINS;
+    background-image-left : meegotouch-list-background-pressed-center-left $CORNER_MARGINS;
+    background-image-center : meegotouch-list-background-pressed-center $CORNER_MARGINS;
+    background-image-right : meegotouch-list-background-pressed-center-right $CORNER_MARGINS;
+    background-image-bottom-left : meegotouch-list-background-pressed-bottom-left $CORNER_MARGINS;
+    background-image-bottom : meegotouch-list-background-pressed-bottom-center $CORNER_MARGINS;
+    background-image-bottom-right : meegotouch-list-background-pressed-bottom-right $CORNER_MARGINS;
+    
+    background-image-single : meegotouch-list-background-selected $CORNER_MARGINS;
+
+    background-image-singlerow-left : meegotouch-list-background-pressed-horizontal-left $CORNER_MARGINS;
+    background-image-singlerow-center : meegotouch-list-background-pressed-horizontal-center $CORNER_MARGINS;
+    background-image-singlerow-right : meegotouch-list-background-pressed-horizontal-right $CORNER_MARGINS;
+
+    background-image-singlecolumn-top : meegotouch-list-background-pressed-vertical-top $CORNER_MARGINS;
+    background-image-singlecolumn-center : meegotouch-list-background-pressed-vertical-center $CORNER_MARGINS;
+    background-image-singlecolumn-bottom : meegotouch-list-background-pressed-vertical-bottom $CORNER_MARGINS;
+    
+    background-color: $COLOR_INVERTED_FOREGROUND;
+    background-opacity: 1.0;
+}
+
+#ContentItemImage {
+    /* inherited from MWidgetStyle */
+    preferred-size: 6.2283mm 6.2283mm;
+    minimum-size: 6.2283mm 6.2283mm;
+    maximum-size: 6.2283mm 6.2283mm;
+
+    margin-left:   $MARGIN_DOUBLE;
+    margin-right:  0;
+    margin-top:    $MARGIN_DOUBLE;
+    margin-bottom: $MARGIN_DOUBLE;
+}
+
+#ContentItemTitle {
+    font: $FONT_DEFAULT;
+
+    /* inherited from MWidgetStyle */
+    margin-left:   $MARGIN_XLARGE;
+    margin-right:  $MARGIN_XLARGE;
+    margin-top:    $MARGIN_MEDIUM;
+    margin-bottom: 0;
+}
+
+#ContentItemSubtitle {
+    font: $FONT_SMALL;
+    color: $COLOR_SECONDARY_FOREGROUND;
+
+    /* inherited from MWidgetStyle */
+    margin-left:   $MARGIN_XLARGE;
+    margin-right:  $MARGIN_XLARGE;
+    margin-top:    $MARGIN_SMALL;
+    margin-bottom: 0;
+}
+
+#ContentItemOptionalImage {
+    /* inherited from MWidgetStyle */
+    preferred-size: 3.2mm 3.2mm;
+    minimum-size: 3.2mm 3.2mm;
+    maximum-size: 3.2mm 3.2mm;
+
+    margin-left:   0;
+    margin-right:  $MARGIN_DOUBLE;
+    margin-top:    $MARGIN_MEDIUM;
+    margin-bottom: $MARGIN_DOUBLE;
+}
+
+#ContentItemSmallItem {
+    /* inherited from MWidgetStyle */
+    preferred-size: 2.8mm 2.8mm;
+    minimum-size: 2.8mm 2.8mm;
+    maximum-size: 2.8mm 2.8mm;
+
+    margin-left:   0;
+    margin-right:  $MARGIN_DOUBLE;
+    margin-top:    $MARGIN_SMALL;
+    margin-bottom: 0;
+}

@@ -1,0 +1,34 @@
+[Desktop Entry]
+Type=Application
+Name=Panels
+Name[zh_TW]=面板
+Name[zh_CN]=面板
+Name[tr]=Paneller
+Name[sv]=Paneler
+Name[ru]=Панели
+Name[pt_PT]=Painéis
+Name[pt_BR]=Painéis
+Name[pl]=Panele
+Name[no]=Paneler
+Name[nl]=Panelen
+Name[ko]=패널
+Name[ja]=パネル
+Name[it]=Pannelli
+Name[hu]=Panelek
+Name[fr]=Panneaux
+Name[fi]=Paneelit
+Name[es]=Paneles
+Name[en_US]=Panels
+Name[en_GB]=Panels
+Name[el]=Πίνακες
+Name[de]=Panel
+Name[da]=Paneler
+Name[cs]=Panely
+Icon=meego-app-panels
+Exec=meego-qml-launcher --opengl --fullscreen --app meego-app-panels
+X-MEEGO-CORE-UX=true
+X-MEEGO-APP-HOME-ROW=0
+X-MEEGO-APP-HOME-COLUMN=0
+X-MEEGO-APP-HOME-PAGE=0
+X-MEEGO-APP-HOME-PRIORITY=1
+

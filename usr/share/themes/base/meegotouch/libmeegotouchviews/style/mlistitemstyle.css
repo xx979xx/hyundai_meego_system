@@ -1,0 +1,36 @@
+/* MGridItemStyle : MGridItemStyle */
+MListItemStyle {    
+
+    background-tiles: meegotouch-list-background $CORNER_MARGINS;
+    background-image: ;
+    background-color: ;
+
+    background-color: $COLOR_BACKGROUND;
+    background-opacity: 1.0;
+
+    /* inherited from MWidgetStyle */
+    preferred-size: -1 $SIZE_LIST;
+    minimum-size: $SIZE_ONE $SIZE_LIST;
+    maximum-size: 100% $SIZE_FOUR;
+
+    press-feedback: press;
+    release-feedback: release;
+
+    down-state-effect: "MGraphicsHighlightEffect";
+}
+
+MListItemStyle:selected {        
+    background-tiles : meegotouch-list-background-selected 10px 10px 10px 10px;
+
+    background-color: $COLOR_INVERTED_FOREGROUND;
+    background-opacity: 1.0;
+}
+
+MListItemStyle:pressed {
+    background-tiles : meegotouch-list-background-pressed 10px 10px 10px 10px;
+    
+    background-color: $COLOR_INVERTED_FOREGROUND;
+    background-opacity: 1.0;
+}
+
+

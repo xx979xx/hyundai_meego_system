@@ -1,0 +1,80 @@
+Connection Manager
+******************
+
+Copyright (C) 2007-2010  Intel Corporation. All rights reserved.
+
+
+Functionality and features
+==========================
+
+The following features are built-in into Connection Manager:
+	- Generic plugin infrastructure
+	- Device and network abstraction (with basic storage support)
+	- IPv4, routing and DNS configuration
+	- DNS Proxy
+
+Various plugins can be enabled for networking support:
+	- Ethernet plugin
+	- WiFi plugin with WEP40/WEP128 and WPA/WPA2 (personal only) support
+	- Bluetooth plugin
+
+Also plugins with additional features are available:
+	- Loopback setup
+	- PolicyKit support
+
+
+Compilation and installation
+============================
+
+In order to compile Connection Manager you need following software packages:
+	- GCC compiler
+	- GLib library
+	- D-Bus library
+	- PolicyKit (optional)
+
+To configure run:
+	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+
+Configure automatically searches for all required components and packages.
+
+To compile and install run:
+	make && make install
+
+
+Configuration and options
+=========================
+
+For a working system, certain configuration options need to be enabled:
+
+	--enable-ethernet
+
+		Enable support for Ethernet network cards
+
+	--enable-wifi
+
+		Enable support for WiFi devices (requires wpa_supplicant)
+
+
+	--enable-bluetooth
+
+		Enable support for Bluetooth devices (requires BlueZ)
+
+	--enable-loopback
+
+		Enable setup of loopback device
+
+		For distributions with a really minimal init system and no
+		networking scripts this can take care of setting up the
+		loopback device and enabling it.
+
+		It is safe to select this option even if networking scripts
+		are in place. It detects an already configured loopback
+		device and leaves it as it is.
+
+	--enable-polkit
+
+		Enable support for PolicyKit authorization
+
+		This allows to check every D-Bus access against a security
+		policy and so restrict access to certain functionality.
+

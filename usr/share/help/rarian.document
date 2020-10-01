@@ -1,0 +1,8 @@
+# Rarian meta-data
+[Document]
+Name=Rarian Reference Manual
+Comment=Rarian is a documentation meta-data library.  This describes how to write documentation accessible to it and how to use the library.
+DocIdentifier=org.other.rarian
+Categories=Development|Libraries
+DocPath=/usr/share/librarian/manual/index.xhtml
+DocType=application/xhtml+xml

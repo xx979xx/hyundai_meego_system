@@ -1,0 +1,7 @@
+[Geoclue Provider]
+Name=Manual
+Service=org.freedesktop.Geoclue.Providers.Manual
+Path=/org/freedesktop/Geoclue/Providers/Manual
+Interfaces=org.freedesktop.Geoclue.Address
+Provides=ProvidesUpdates
+Accuracy=Street

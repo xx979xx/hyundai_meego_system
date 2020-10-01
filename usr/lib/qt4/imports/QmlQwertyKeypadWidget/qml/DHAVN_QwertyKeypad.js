@@ -1,0 +1,66 @@
+.pragma library
+
+/**
+ * DHAVN_QwertyKeypad.js
+ */
+
+// Chinese Keyboard Popup Index
+var const_QWERTY_CHINESE_KEYPAD_TYPE_NONE = -1
+var const_QWERTY_CHINESE_KEYPAD_TYPE_PINYIN = 0
+var const_QWERTY_CHINESE_KEYPAD_TYPE_CONSONANT = 1
+var const_QWERTY_CHINESE_KEYPAD_TYPE_HWR = 2
+
+// Chinese Keyboard List's Index in DHAVN_QwertyKeypad_CountryModel(qml)
+var const_QWERTY_CHINESE_KEYPAD_PINYIN_COUNTRY_MODEL = 2
+var const_QWERTY_CHINESE_KEYPAD_CONSONANT_COUNTRY_MODEL = 9
+var const_QWERTY_CHINESE_KEYPAD_HWR_COUNTRY_MODEL = 8
+
+var const_QWERTY_CHINESE_KEYPAD_CONSONANT_PHONEBOOK_COUNTRY_MODEL = 10
+
+
+// Current Keyboard Type
+var const_QWERTY_KEYPAD_TYPE_NONE = -1
+var const_QWERTY_KEYPAD_TYPE_NUMBER = 0
+var const_QWERTY_KEYPAD_TYPE_KOREAN = 1
+var const_QWERTY_KEYPAD_TYPE_ENGLISH = 2
+var const_QWERTY_KEYPAD_TYPE_CHINA = 3
+var const_QWERTY_KEYPAD_TYPE_MIDDLE_EAST = 4
+var const_QWERTY_KEYPAD_TYPE_CYRILLIC = 5
+var const_QWERTY_KEYPAD_TYPE_EU = 6
+var const_QWERTY_KEYPAD_TYPE_LATIN = 7
+
+// Country Variant
+var const_QWERTY_COUNTRY_KOREA   =  0
+var const_QWERTY_COUNTRY_NA      =  1
+var const_QWERTY_COUNTRY_CHINA   =  2
+var const_QWERTY_COUNTRY_GENERAL =  3
+var const_QWERTY_COUNTRY_ME      =  4
+var const_QWERTY_COUNTRY_EU      =  5
+var const_QWERTY_COUNTRY_CANADA  =  6
+var const_QWERTY_COUNTRY_RUSSIA  =  7
+
+// Key-value in DB ( Hyundai Keyboard == Default Keyboard )
+var const_DEFAULT_KEYPAD_KOREAN         = 0
+var const_DEFAULT_KEYPAD_ENGLISH_LATIN  = 1
+var const_DEFAULT_KEYPAD_ARABIC         = 2
+var const_DEFAULT_KEYPAD_CHINA          = 3
+var const_DEFAULT_KEYPAD_EUROPE         = 4
+var const_DEFAULT_KEYPAD_AUS            = 160 //added for AUS Variant BT Keypad Black Screen Issue
+
+// Chinese Candidate List View Focus Index
+var const_QWERTY_KEYPAD_CHINESE_CANDIDATE_LEFT_ARROW_FOCUS_INDEX = 0
+var const_QWERTY_KEYPAD_CHINESE_CANDIDATE_LIST_VIEW_FOCUS_INDEX = 1
+var const_QWERTY_KEYPAD_CHINESE_CANDIDATE_RIGHT_ARROW_FOCUS_INDEX = 2
+
+
+//TransitDirection
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_UP_LEFT       = 0
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_UP            = 1
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_UP_RIGHT      = 2
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_DOWN_LEFT     = 3
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_DOWN          = 4
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_DOWN_RIGHT    = 5
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_LEFT          = 6
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_RIGHT         = 7
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_WHEEL_LEFT    = 8
+var const_QWERTY_KEYPAD_TRANSIT_DIRECTION_WHEEL_RIGHT   = 9

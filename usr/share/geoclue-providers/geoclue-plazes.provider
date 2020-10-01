@@ -1,0 +1,8 @@
+[Geoclue Provider]
+Name=Plazes
+Service=org.freedesktop.Geoclue.Providers.Plazes
+Path=/org/freedesktop/Geoclue/Providers/Plazes
+Accuracy=Street
+Requires=RequiresNetwork
+Provides=ProvidesCacheableOnConnection
+Interfaces=org.freedesktop.Geoclue.Position;org.freedesktop.Geoclue.Address

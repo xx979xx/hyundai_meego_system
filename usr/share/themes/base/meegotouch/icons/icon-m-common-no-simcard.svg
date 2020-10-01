@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="icon-m-common-no-simcard-layer"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
+<g id="icon-m-common-no-simcard_2_">
+	<rect style="fill:none;" width="48" height="48"/>
+	<rect x="8" y="8" style="fill:none;" width="32" height="32"/>
+	<g>
+		<g>
+			<path d="M12.284,8.075c-0.439,0.33-0.529,0.96-0.199,1.4L35.172,40.2c0.33,0.44,0.96,0.529,1.4,0.199l0.628-0.473
+				c0.44-0.33,0.529-0.96,0.199-1.4L14.314,7.8c-0.33-0.44-0.96-0.529-1.4-0.199L12.284,8.075z"/>
+		</g>
+		<g>
+			<path d="M26.447,24.895C26.201,24.402,26,23.55,26,23v-4c0-0.55,0.45-1,1-1h8c0.55,0,1,0.45,1,1v10c0,0.55-0.45,1-1,1h-5
+				c-0.55,0-1.201-0.402-1.447-0.895L26.447,24.895z"/>
+		</g>
+		<path d="M35,36l-2-3h5V14.905l-18,0.089c-0.55,0.004-1.318-0.312-1.707-0.701l-1.586-1.586C16.318,12.318,16.45,12,17,12h23
+			c0.55,0,1,0.45,1,1v22c0,0.55-0.45,1-1,1H35z"/>
+		<path d="M14,17l-4,3l0,13h15l2,3H8c-0.55,0-1-0.45-1-1V20.043C7,19,8,18,8,18l4-3L14,17z"/>
+	</g>
+</g>
+</svg>

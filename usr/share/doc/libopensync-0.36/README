@@ -1,0 +1,42 @@
+OpenSync Framework
+==================
+
+OpenSync is a plugin-based application that basically provides a framework
+for syncing groups which can have two or more members. These members could
+be just about any kind of database we have a plugin like:
+
+ - A folder filled with vcard files containing contacts (file-sync) 
+ - An LDAP server having a huge list of contacts (ldap-sync) 
+ - An application like Mozilla Sunbird or Google Calendar managing calendars 
+ - A PIM (Personal Information Management) like Ximian Evolution or KDE PIM 
+ - A mobile phone which hosts contacts/ calendars/ notes
+
+OpenSync is not only limited to sync PIM data.
+
+The technical aspects of how the synchronisation is implemented can befound
+in this document [2] or in the OpenSync whitepaper stored in docs/ Each
+device has its own way of storing information and the purpose of OpenSync
+is to extract this information and provide inconvertibility using an
+XML intermediate. OpenSync without any plugins is incapable of doing any
+synchronisation.
+
+Installation
+============
+
+To build OpenSync you need CMake, (check for unit tests - optional) and
+the devel packages of sqlite3, glib2, and libxml2. swig for python bindings
+(optional). We only support out of source builds, which means you have to
+create a sperated build directory.
+
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=$prefix /path/to/opensync/source/
+make
+make install
+
+Links
+=====
+
+[1] http://www.opensync.org/wiki/download 
+[2] http://cryptomilch.de/~dgollub/talks/OpenSync_FOSDEM_2007.pdf
+

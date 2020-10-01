@@ -1,0 +1,59 @@
+/* MComboBoxStyle : MWidgetStyle */
+MComboBoxStyle {
+    margin-left: $MARGIN_MEDIUM;
+    margin-right: $MARGIN_MEDIUM;
+    margin-top: $MARGIN_MEDIUM;
+    margin-bottom: $MARGIN_MEDIUM;
+
+    padding-left:   $PADDING_DEFAULT;
+    padding-top:    $PADDING_DEFAULT;
+    padding-right:  $PADDING_DEFAULT;
+    padding-bottom: $PADDING_DEFAULT;
+
+    preferred-size: -1 $SIZE_BUTTON;
+    minimum-size: $SIZE_ONE $SIZE_LIST;
+    maximum-size: 100% $SIZE_LIST;
+
+    indicator-image:;
+
+
+}
+
+#ComboBoxIndicator {
+    maximum-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+    minimum-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+    preferred-size: $SIZE_ICON_LARGE $SIZE_ICON_LARGE;
+    margin-left : $MARGIN_SMALL;
+    margin-right : $MARGIN_SMALL;
+    margin-top : $MARGIN_SMALL;
+    margin-bottom : $MARGIN_SMALL;
+}
+
+MComboBoxStyle[button] {
+    indicator-image:;
+    title-object-name: "CommonTitleInverted";
+    sub-title-object-name: "CommonSubTitleInverted";
+
+    separate-title: false;
+}
+MComboBox MListItemStyle[button] {
+    background-tiles: ;
+    background-image: meegotouch-button-combobox-background $CORNER_MARGINS;
+}
+
+MComboBox MListItemStyle[button]:pressed  {
+    background-tiles: ;
+    background-image: meegotouch-button-combobox-background-pressed $CORNER_MARGINS;
+}
+
+MComboBox MListItemStyle[labelButton] {
+    /* this is the button-looking combobox */
+    background-tiles: ;
+    background-image: meegotouch-button-background $CORNER_MARGINS;
+    minimum-size: 4.8mm 4.8mm; 
+}
+
+MComboBox MListItemStyle[labelButton]:pressed {
+    background-tiles: ;
+    background-image: meegotouch-button-background-pressed $CORNER_MARGINS;
+}

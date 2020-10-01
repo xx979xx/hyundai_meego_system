@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=com.meego.ux.sharing
+Exec=/usr/libexec/msd
+

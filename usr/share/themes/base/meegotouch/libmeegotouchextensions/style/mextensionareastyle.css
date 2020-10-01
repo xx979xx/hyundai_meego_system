@@ -1,0 +1,21 @@
+
+MExtensionAreaStyle {
+    /* Whether the application extensions on the extension area should be inside containers or not */
+    container-mode: true;
+}
+
+MContainerStyle#MExtensionAreaInvisibleContainer {
+    margin-left:   0;
+    margin-top:    0;
+    margin-right:  0;
+    margin-bottom: 0;
+    
+    padding-left:   0;
+    padding-top:    0;
+    padding-right:  0;
+    padding-bottom: 0;
+
+    background-opacity: 0.0;
+    background-image:;
+}
+

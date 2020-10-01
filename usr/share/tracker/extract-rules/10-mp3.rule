@@ -1,0 +1,4 @@
+[ExtractorRule]
+ModulePath=/usr/lib/tracker-0.14/extract-modules/libextract-mp3.so
+MimeTypes=audio/mpeg;audio/x-mp3;audio/x-alb
+

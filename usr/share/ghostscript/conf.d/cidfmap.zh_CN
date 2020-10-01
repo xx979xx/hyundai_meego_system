@@ -1,0 +1,5 @@
+/BousungEG-Light-GB	<< /FileType /TrueType /Path (/usr/share/fonts/cjkuni/uming.ttc) /CSI [(GB1) 4] >> ;
+/GBZenKai-Medium	<< /FileType /TrueType /Path (/usr/share/fonts/cjkuni/ukai.ttc) /CSI [(GB1) 4] >> ;
+/MSungGBK-Light		/BousungEG-Light-GB ;
+/Adobe-GB1		/BousungEG-Light-GB ;
+

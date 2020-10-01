@@ -1,0 +1,17 @@
+MPreeditStyle {
+    underline: singleunderline;
+    underline-color: #000000;
+    font-color: ;
+    background-color: ;
+}
+
+MPreeditStyle:no-candidates {
+    underline: singleunderline;
+    underline-color: #ff0000;
+}
+
+MPreeditStyle:no-candidates-zh {
+    underline: singleunderline;
+    underline-color: #ff0000;
+    font-color: #ff0000;
+}

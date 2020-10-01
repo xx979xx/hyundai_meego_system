@@ -1,0 +1,24 @@
+
+Current providers recognise these options:
+
+	* org.freedesktop.Geoclue.GPSDevice
+		Gypsy provider will use this device name 
+		(e.g. "00:02:76:C5:81:BF" or "/dev/pgps")
+
+	* org.freedesktop.Geoclue.GPSHost
+		Gpsd provider will contact gpsd on this host.
+        Default is NULL (localhost)
+
+    * org.freedesktop.Geoclue.GPSPort
+		Gpsd provider will contact gpsd on this port.
+        Default is "2947".
+
+
+
+Provider options can be set with SetOptions-method. Geoclue-master
+reads options from gconf (/apps/geoclue/master): as an example, the 
+Gypsy device for geoclue master can be set with
+ gconftool-2  \
+	-t string \
+	-s /apps/geoclue/master/org.freedesktop.Geoclue.GPSDevice 00:02:76:C5:81:BF
+

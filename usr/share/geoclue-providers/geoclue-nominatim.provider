@@ -1,0 +1,7 @@
+[Geoclue Provider]
+Name=Nominatim (OpenStreetMap geocoder) Provider
+Service=org.freedesktop.Geoclue.Providers.Nominatim
+Path=/org/freedesktop/Geoclue/Providers/Nominatim
+Requires=RequiresNetwork
+Accuracy=Street
+Interfaces=org.freedesktop.Geoclue.Geocode;org.freedesktop.Geoclue.ReverseGeocode

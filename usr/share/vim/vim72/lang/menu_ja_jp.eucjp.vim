@@ -1,0 +1,1 @@
+menu_ja_jp.ujis.vim

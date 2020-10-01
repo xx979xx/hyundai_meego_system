@@ -1,0 +1,44 @@
+# DHAVN Tracker settings
+#
+# If you edit the file, afterwards you MUST run:
+#
+#    glib-compile-schemas /usr/share/glib-2.0/schemas"
+#
+# to update the compiled schema database, or your changes will be ignored.
+
+
+# added by honggi.shin
+[org.freedesktop.Tracker.Store]
+# Possible values: errors, minimal, detailed, debug
+# verbosity='minimal'
+verbosity='debug'
+
+[org.freedesktop.Tracker.Extract]
+# Possible values: errors, minimal, detailed, debug
+#verbosity='minimal'
+verbosity='debug'
+
+[org.freedesktop.Tracker.Miner.Files]
+# Possible values: errors, minimal, detailed, debug
+# verbosity='detailed'
+verbosity='debug'
+
+
+# Sleep 5 seconds on startup to allow HMI processes to load
+initial-sleep=5
+
+# Use low scheduling priority
+sched-idle='always'
+
+# Mine from USB sticks and cache the data for 60 days after the last time
+# the USB stick is connected
+index-removable-devices=true
+removable-days-threshold=60
+
+# Limit where and what we mine for data. Note that the meaning of
+# 'ignored-files' is reversed for DHAVN Tracker.
+index-recursive-directories=[ '/usr_data/media' ]
+index-single-directories=[]
+ignored-directories=[ 'po', 'CVS', 'core-dumps', 'lost+found', '/media/sdcard', '*RECYCLE.BIN' ]
+ignored-files=[ '*.mp3', '*.ogg', '*.wma', '*.jpeg', '*.jpg', '*.png', '*.bmp', '*.gif', '*.mp4', '*.divx', '*.m4v', '*.avi', '*.mkv', '*.ogv', '*.asf', '*.mpeg', '*.mpg', '*.wmv', '*.m4a', '*.tif', '*.tiff', '*.wav', '*.oga', '*.m2ts', '*.ps', '*.tp', '*.ts', '*.vod', '*.MP3', '*.OGG', '*.WMA', '*.JPEG', '*.JPG', '*.PNG', '*.BMP', '*.GIF', '*.MP4', '*.DIVX', '*.M4V', '*.AVI', '*.MKV', '*.OGV', '*.ASF', '*.MPEG', '*.MPG', '*.WMV', '*.M4A', '*.TIF', '*.TIFF', '*.WAV', '*.OGA', '*.M2TS', '*.PS', '*.TP', '*.TS', '*.VOD', '*.Mp3']
+

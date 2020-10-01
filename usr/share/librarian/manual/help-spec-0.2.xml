@@ -1,0 +1,839 @@
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+                  "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY version "0.2">
+  <!ENTITY dtd-version "1.0">
+				  ]>
+
+<article id="index">
+  <articleinfo>
+    <title>Help System Specification</title>
+    <releaseinfo>Version &version;</releaseinfo>
+    <date>23 November 2006</date>
+    <authorgroup>
+	  <author>
+	  <firstname>Don</firstname>
+	  <surname>Scorgie</surname>
+	  <affiliation>
+	    <address>
+	  	<email>DonScorgie@Blueyonder.co.uk</email>
+	  	</address>
+	  </affiliation>
+	  </author>
+      <author>
+	<firstname>Roman</firstname>
+	<surname>Joost</surname>
+	<affiliation>
+	  <address>
+	    <email>romanofski@gimp.org</email>
+	  </address>
+	</affiliation>
+      </author>
+      <author>
+	<firstname>Christopher</firstname>
+	<surname>Lahey</surname>
+	<othername role="mi">James</othername>
+        <affiliation>
+	  <address>
+	    <email>clahey@ximian.com</email>
+	  </address>
+	</affiliation>
+      </author>
+      <author>
+	<firstname>Shaun</firstname>
+	<surname>McCance</surname>
+	<affiliation>
+	  <address>
+	    <email>shaunm@gnome.org</email>
+	  </address>
+	</affiliation>
+      </author>
+      <author>
+	<firstname>Cornelius</firstname>
+	<surname>Schumacher</surname>
+	<affiliation>
+	  <address>
+	    <email>schumacher@kde.org</email>
+	  </address>
+	</affiliation>
+      </author>
+    </authorgroup>
+  </articleinfo>
+
+  <sect1 id="introduction">
+    <title>Introduction</title>
+    <para>
+      Providing help to the user is one of the most important functions of a
+      user-friendly desktop system. This document specifies how desktop help
+      systems can find, navigate, show and search documentation. This includes
+      application manuals, context-sensitive help and documentation not
+      associated with a specific application. Documentation can be provided in
+      in numerous formats, for example Docbook, HTML, PDF and can also be
+      provided over the net.
+    </para>
+    <para>
+      The goal of this standard is to provide the base for a unified
+      cross-desktop documentation system.
+    </para>
+
+  </sect1>
+
+  <sect1 id="goals">
+    <title>Goals of the help system</title>
+    <para>
+      This help system standard aims at providing help browser developers and
+      application authors as well as documentation creators the means to
+      integrate and consistently handle all documentation present on a system.
+      It doesn't mean to specify any implementation details or to impose any
+      policies about what type of help browser to use or how exactly the
+      documentation is organized or formatted.
+    </para>
+    <para>
+      These are the specific goals of the help system specification:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Users should be able to choose the help browser of their choice.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The help system should impose as little policy as possible on the
+          help browser, and should expose as little policy as possible to
+          documenters.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          It should be simple to place a document in the help system. The help
+          system shouldn't require anything to be run to register or
+          unregister a document. That just begs for problems.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The help system should not assume anything about the viewing
+          program. The viewer may not be a graphical program like Yelp or the
+          KDE Help Center. It may be a print system, a console program, or
+          some sort of documentation server.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Documents should be able to supply meaningful meta data, which help
+          viewers may be able to use. The meta data format for documents should
+          be easily extended in a well-defined way.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Applications should have a simple and consistent way of accessing
+          their documentation, independent of the desktop environment.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Documents should have a simple and consistent way of referencing other
+          pieces of documentation, independent of the desktop environment.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The help system should be capable of pulling information from other
+          existing help systems. This way we can have legacy compatibility
+          with KDE's and GNOME's current systems. Also, this can provide a
+          consistent means for help viewers to integrate man and info, if they
+          choose to.
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect1>
+
+  <sect1 id="definitions">
+    <title>Definitions</title>
+    <variablelist>
+      <varlistentry>
+        <term>Help System</term>
+        <listitem>
+          <para>
+            The framework for finding, navigating, showing and searching help.
+            This usually includes a help browser, support for applications
+            showing manuals and context help.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Help Browser</term>
+        <listitem>
+          <para>
+            An application for browsing all help content which is available on
+            the system. This usually includes showing a, possibly hierarchical
+            list, of available documentation, facilitates to search all
+            documentation and a view of the selected documentation.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Document</term>
+        <listitem>
+          <para>
+            A self-contained piece of documentation. This can for example be an
+            application manual, a single help page, a complete book or a
+            website.
+          </para>
+        </listitem>
+      </varlistentry>
+     <varlistentry>
+        <term>Section</term>
+        <listitem>
+          <para>
+            A document may be made up of separate sections.  These may be defined
+            within the document or externally.  For more details on this, please
+            see the <link linkend="Mallard">Additional Sections section</link>
+            of this document.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect1>
+
+  <sect1 id="overview">
+    <title>Overview</title>
+    <para>
+      The help system accesses the documentation by making use of meta data
+      which accompanies the documentation. This meta data is provided at a
+      standard location as files whose content is based on the desktop entry
+      specification.
+    </para>
+    <para>
+      The meta data contains information about the title of the document, where
+      to find it, what type of format it is and to which categories it belongs.
+      Based on this information help browsers can provide navigation, search and
+      display of all documents known to the help system.
+    </para>
+    <para>
+      For making the help system aware of a certain piece of documentation it's
+      enough to create the meta data file and put it at the appropriate
+      location. This makes it easy for documentation creators to integrate their
+      documentation into the help system and also provides a simple way to
+      integrate third party documentation.
+    </para>
+    <para>
+      More advanced features of help browsers like hierarchical displays of
+      documents and their content or searching documentation can implemented in
+      a generic way using the meta data information provided by the help system.
+      The help system specification doesn't impose any policies or restrictions
+      how (or if) help browsers should implement these kinds of functionality.
+    </para>
+  </sect1>
+
+  <sect1 id="paths">
+    <title>Documentation Meta Data</title>
+    <para>
+      In order to provide the help system with the information of where to find
+      individual pieces of documentation and some more meta information, each
+      document or section is accompanied with a file containing the meta data
+      using the desktop entry specification (aka a "desktop file"). The desktop
+      files contain some extended attributes specific to the help system.
+    </para>
+
+    <para>
+      Individual documents or sections come with individual desktop files in
+      order to make packaging easier and not requiring any post-installation
+      processing.
+    </para>
+
+    <para>
+      This section describes, how the meta data files are found by the help
+      system, what specific entries they contain and how language-specifics are
+      handled.
+    </para>
+
+    <sect2 id="meta-data-location">
+      <title>Location of meta data</title>
+      <para>
+        The help system should read desktop files containing meta data from
+        <literal>$XDG_DATA_HOME/help/</literal>, followed by
+        <literal>$XDG_DATA_DIRS/help/</literal> (here, referred to
+        together as <literal>$LOCATIONS</literal>) using the <ulink
+        url="http://freedesktop.org/wiki/Standards_2fbasedir_2dspec">XDG
+        Base Directory Specification</ulink>. If a file with the same name is
+        found at multiple locations, the first one is used and the
+        others are ignored.
+      </para>
+
+      <para>
+        Sub-directories of <literal>$LOCATIONS</literal> are
+        scanned recursively (excluding
+        <literal>$LOCATIONS/LOCALE</literal>) to get all desktop files.
+      </para>
+
+      <para>
+        As per the Base Directory Specification, if $XDG_DATA_HOME is empty or
+        undefined, a path of <literal>$HOME/.local/share</literal> is used.  If
+         <literal>$XDG_DATA_DIRS</literal> is empty or undefined, a default
+         path of <literal>/usr/local/share/:/usr/share/</literal> should be
+         used.
+      </para>
+
+      <para>
+        The filename for document meta data files consists of a basename and the
+        ".document" suffix.
+      </para>
+
+    </sect2>
+
+    <sect2 id="desktop-file-extensions">
+      <title>Desktop Entry Fields</title>
+      <para>
+        The help system specification uses several standard fields. They are
+        described in the
+        <ulink url="http://standards.freedesktop.org/desktop-entry-spec/latest/">desktop
+        entry specification</ulink>.
+      </para>
+      <para>
+      	All entries below belong to the group header "Document".  The "Required?" field states
+      	whether the key is required or option.  If it is optional, sane defaults must be provided
+      	by the help system (identified in footnotes).
+
+        <table>
+          <title>Standard Desktop Entry Fields used by Help System</title>
+          <tgroup cols="4">
+	    <thead>
+	      <row>
+	        <entry>Key</entry>
+	        <entry>Description</entry>
+	        <entry>Value Type</entry>
+	        <entry>Required?</entry>
+	      </row>
+	    </thead>
+	    <tbody>
+	      <row>
+	        <entry><varname>Name</varname></entry>
+	        <entry>
+                  Title of document.
+                </entry>
+	        <entry>localestring</entry>
+	        <entry>Yes</entry>
+	      </row>
+	      <row>
+	        <entry><varname>Comment</varname></entry>
+	        <entry>
+                  Short description of document.
+                </entry>
+	        <entry>localestring</entry>
+			<entry>No<footnote><para>Defaults to empty</para></footnote></entry>
+	      </row>
+	      <row>
+	        <entry><varname>Icon</varname></entry>
+	        <entry>
+                  Name of icon for document.  As per the desktop entry spec,
+                  this may be either an icon name or a filename.  If the icon is
+                  named (i.e. no path), the icon is found using the algorithm
+                  defined in
+                  <ulink url="http://freedesktop.org/wiki/Standards/icon-theme-spec">
+                  the icon naming spec</ulink>
+                </entry>
+	        <entry>string</entry>
+	        <entry>No<footnote><para>Defaults to empty</para></footnote></entry>
+	      </row>
+	      <row>
+	      <entry><varname>Categories</varname></entry>
+	      <entry>
+                Categories the document belongs to. For possible values see the
+                <ulink url="http://standards.freedesktop.org/menu-spec/latest/">
+                menu entry specification</ulink>. Help browsers
+                can base a hierarchical view on the categories.
+              </entry>
+	      <entry>semi-colon separated strings</entry>
+		  <entry>Yes</entry>
+	    </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </para>
+
+      <para>
+        In addition to the standard fields the meta data files uses several
+        extensions to the desktop entry standard within this group, which
+        contain meta data specific to the help system. The keys of all
+        help system specific entries in this group are prefixed with "Doc".
+      </para>
+
+      <table>
+        <title>Extended Desktop Entry Fields used by Help System</title>
+        <tgroup cols="4">
+	  <thead>
+	    <row>
+	      <entry>Key</entry>
+	      <entry>Description</entry>
+	      <entry>Value Type</entry>
+		  <entry>Required?</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry><varname>DocPath</varname></entry>
+	      <entry>
+	        Location of document. In addition to the standard URI schemes
+                like http: and file: the help system can support non-standard
+                URI schemes to access specific kinds of documentation which
+                aren't accessible by a standard URI. In particular the following
+                non-standard URI schemes can be supported:
+                <simplelist>
+                <member>help:  KDE manual identified by app name,</member>
+                <member>ghelp: GNOME manual identified by app name,</member>
+                <member>man:   man page,</member>
+                <member>info:  info page</member>
+                </simplelist>
+	      </entry>
+	      <entry>URI (locale-dependent)</entry>
+	      <entry>Yes</entry>
+	    </row>
+	    <row>
+	      <entry><varname>DocType</varname></entry>
+	      <entry>
+                Mime type of document.
+              </entry>
+	      <entry>string</entry>
+	      <entry>Yes</entry>
+	    </row>
+
+	    <row>
+	      <entry><varname>DocWeight</varname></entry>
+	      <entry>
+                A number indicating the position of the document within the list
+                of siblings. A greater weight indicates that the document is
+                'heavier', thus shown below 'lighter' documents. The default
+                weight is 0. Negative values are legal. When assigning weights
+                to documents it should be made sure that enough room is left to
+                make it possible to put other documents before or after the
+                documents.
+              </entry>
+	      <entry>int</entry>
+	      <entry>No<footnote><para>Defaults to 0</para></footnote></entry>
+	    </row>
+	    <row>
+	      <entry><varname>DocIdentifier</varname></entry>
+	      <entry>
+	        Unique identifier for document.  Entries should be an R-DNS style,
+                for example "org.gnome.user-guide" or "org.kde.konqueror".
+                If this isn't present, it defaults to "org.other.&lt;basename&gt;"
+              </entry>
+	      <entry>string</entry>
+	      <entry>No<footnote><para>Defaults to org.other.&lt;basename&gt;</para></footnote></entry>
+	    </row>
+	    <row>
+	      <entry><varname>DocLang</varname></entry>
+	      <entry>
+                Language of document. This entry is only considered if multiple
+                locale strings are not defined within the file.
+              </entry>
+	      <entry>language code</entry>
+	      <entry>No<footnote><para>Defaults to "en"</para></footnote></entry>
+	    </row>
+	    <row>
+	      <entry><varname>DocHeritage</varname></entry>
+	      <entry>
+	        The scrollkeeper seriesid, used for backwards compatibility.
+	        If the document is new or does not have a current scrollkeeper seriesid,
+	        this field is not required.  Should be of the R-DNS form
+	        "org.scrollkeeper.&lt;seriesid&gt;".
+	      </entry>
+	      <entry>string</entry>
+	      <entry>No<footnote><para>Defaults to empty</para></footnote></entry>
+	    </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    <para>
+      Fields defined in a document meta data file, other than those defined here,
+      are invalid and should be ignored.
+    </para>
+    </sect2>
+
+    <sect2 id="language-specific-docs">
+      <title>Language-specific documentation</title>
+      <para>
+        All desktop file fields can be language-specific (e.g. "Name[fr]").
+        This is especially useful for the <varname>title</varname> and
+        <varname>comment</varname> fields to
+        provide translations of the meta data. It can also be used for the
+        <varname>DocPath</varname> field, to reference translated versions of
+        documents. An alternative to language-specific fields is to provide a
+        separate desktop file for each translated version of the document.
+        Which alternative is the best one is often determined by packaging
+        requirements.
+      </para>
+
+      <para>
+        Language-specific desktop files are read from
+        <literal>$XDG_DATA_DIRS/help/LOCALE/LC</literal>, where LC is a two-letter
+        ISO language code (TODO: reference language code specification). The
+        files in language-specific directories are read according to the same
+        rules as non-language-specific files.  Locale specific files take
+        priority over regular entries within the same base directory.
+      </para>
+      <para>
+        If there are multiple versions of the same document in different
+        languages, there can be multiple desktop files with the same name,
+        located within <literal>$XDG_DATA_DIRS/help/locale/LC</literal>. It is
+        up to the help system to decide which file is to be used based on the
+        preferences of the user.  This preference is defined by the
+        <literal>$LANGUAGE</literal> environment variable.
+      </para>
+    </sect2>
+
+    <sect2 id="Mallard">
+	  <title>Additional Sections</title>
+	  <para>
+	  	In addition to "full" documents described previously, documents can be
+	  	made up from one or more "sections".
+	  </para>
+	  <para>
+	  	These sections may either be specified within the document desktop file,
+	  	or in their own desktop file.  These section files are stored in the
+	  	$XDG_DATA_DIRS/help (sub-)directories and have filenames consisting of
+	  	a basename and the ".section" suffix.
+	  </para>
+	  <para>
+	  	As before, the first entry found is used and subsequent entries are ignored.
+	  	In the special case where a ".section" file defines a section already found in
+	  	a document file and both files are in the same directory, the new
+	  	section overloads the previously defined section.
+	  </para>
+      <para>
+        similarly, language-specific versions of section files may be supplied
+        in <literal>$XDG_DATA_DIRS/help/LOCALE/LC</literal>.  These files follow
+        the same rules as previously outlined.
+      </para>
+	  <para>
+	  	The entries within sections belong to the "Section" group header and are described below.
+	  	All entries are prefixed by "Section".
+	  </para>
+
+	  <table>
+        <title>Section Desktop Entry Fields used by Help System</title>
+        <tgroup cols="4">
+	  <thead>
+	    <row>
+	      <entry>Key</entry>
+	      <entry>Description</entry>
+	      <entry>Value Type</entry>
+		  <entry>Required?</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry><varname>SectionName</varname></entry>
+	      <entry>
+	        The title of the section
+	      </entry>
+	      <entry>localestring</entry>
+	      <entry>Yes</entry>
+	    </row>
+	    <row>
+	      <entry><varname>SectionIdentifier</varname></entry>
+	      <entry>
+                The ID of the section for referencing within the document
+              </entry>
+	      <entry>string</entry>
+	      <entry>Yes</entry>
+	    </row>
+	    <row>
+	      <entry><varname>SectionDocument</varname></entry>
+	      <entry>
+                The parent document to which the section belong.  This is
+                in the form of the parent documents "DocIdentifier" in the
+                R-DNS style described above.  For subsections (or lower), the
+                R-DNS must include the parent section path.  E.g. "org.gnome.user-guide.CDBurning"
+                would describe a section from the GNOME user guide that is a child of
+                the "CDBurning" section.  If the section is defined within the
+                master document meta data file, the document "DocIdentifier" may
+                be neglected.
+              </entry>
+	      <entry>string</entry>
+		  <entry>Yes<footnote>This entry is only required for sections defined
+		  in a separate file from the main document.  For sections defined
+		  within the document meta data file, the SectionDocument is implied to
+		  be the current document.</footnote></entry>
+	    </row>
+	    <row>
+	      <entry><varname>SectionPath</varname></entry>
+	      <entry>
+	        The path to the file containing the section.  This can be either relative
+	        to the parent document's path (if no full path is given) or an absolute file path
+	      </entry>
+	      <entry>URI (locale-dependent)</entry>
+	      <entry>Yes</entry>
+	    </row>
+          </tbody>
+        </tgroup>
+      </table>
+	</sect2>
+  </sect1>
+
+  <sect1 id="doc-location">
+    <title>Location of Documentation</title>
+    <para>
+      The help standard doesn't imply any policy where the files containing
+      the actual documentation are located. The only requirement is that the
+      DocPath from the meta data files points to the right location.
+    </para>
+
+    <para>
+      If the DocPath is a full URI, it is taken as it is. Absolute paths are
+      promoted to "file:" URIs.
+    </para>
+
+  </sect1>
+
+  <sect1 id="identifying-referencing">
+    <title>Identifying and Referencing help</title>
+    <para>
+      The help system has to be able to identify and reference help documents.
+      This is needed for applications to provide manuals or context-sensitive
+      help or to cross-link documents. It is also needed for locating
+      documentation from within the desktop meta data files.
+    </para>
+
+    <sect2 id="identifiers">
+      <title>Identifiers</title>
+      <para>
+        Each document is uniquely identified by an identifier. The
+        identifier is defined within the meta data file as the
+        DocIdentifier entry. The identifier has to be unique on the system.
+        If there are multiple language versions of a
+        document all of them are identified by the same identifier.
+      </para>
+
+      <para>
+      	The unique identifier is used within the help system to determine if
+      	duplication has occurred.  If two meta data files have the same identifier,
+      	first one discovered by the help system is used.  In the special
+      	case of two meta data files in
+      	the same directory sharing an identifier, the first discovered by the
+      	help system is used (which may vary depending on system).
+      </para>
+    </sect2>
+    <sect2 id="calling-help">
+    <title>Invoking the Help Browser</title>
+    <para>
+      If a desktop environment provides a help browser it has to provide a
+      program "xdg_help" in the binary search path which starts the help
+      browser. The program should handle URIs and document identifiers as
+      command line options.  When invoked with a URI or command line option,
+      the program should open the relevant document and section specified.
+    </para>
+
+    <para>
+      The "xdg_help" program may also be invoked through a dbus call to
+      "org.freedesktop.help_system" on the session bus.  The program must
+      respond to two signals.
+      <variablelist>
+      <varlistentry><term><para>open_document (DocIdentifier: string)</para>
+      </term>
+      <listitem>Open the given identifier</listitem>
+      </varlistentry>
+      <varlistentry>
+      <term><para>close_document (DocIdentifier: string)</para></term>
+      <listitem>Close the given identifer, if an open window exists
+                currently displaying the document with the given identifier
+      </listitem>
+      </varlistentry>
+      </variablelist>
+      (Brackets denote required input parameters and types).  Both methods are
+      asynchronous and are not expected to return anything.
+    </para>
+
+    <para>
+      Sections of documents may be requested by extending the document
+      identifier to include the section id.  If the document has registered
+      sections, the section identifier may point to one of these.  If no
+      registered sections are available, the section identifier is assumed to
+      point to an internal (implicit) section within the found document /
+      section and treated as such when the document is displayed.
+    </para>
+
+    <para>
+        In order to call the help system from within an application, several
+        options are available:
+        <itemizedlist>
+        <listitem>Issue the command "xdg_help &lt;uri&gt;" through system() or
+                  similar</listitem>
+        <listitem>Issue the command "xdg_help &lt;DocIdentifier&gt;" through
+                  system() or similar</listitem>
+        <listitem>Issue a dbus command of "open_document" with the associated
+                  docidentifier as an argument to "org.freedesktop.help_system"
+                  on the session bus.
+        </listitem>
+        </itemizedlist>
+    </para>
+    <para>
+        In the first case, the given URI should be opened without reference to
+        any meta data files available.  In the second and third cases, the
+        help system should find the appropriate meta data file and use the
+        specified docpath from that meta data.
+    </para>
+  </sect2>
+  </sect1>
+
+  <appendix id="examples">
+  <title>Example Help System Meta Data Files</title>
+  <para>
+	This appendix gives examples of meta data desktop files for use within
+	the help system.
+  </para>
+  <para>
+  	A basic docbook desktop file with German translation (with apologies for the translation).
+  </para>
+  <programlisting>
+# Beanstalk manual description
+[Document]
+Name=The Beanstalk Manual
+Name[de]=Das Bohnenstange-Handbuch
+Comment=Jack likes beanstalks.  With this manual, you too can grow you're own
+beanstalk.  Who knows, you may even find a golden egg or two!
+Comment[de]=Jack mag Bohnenstangen.  Mit diesem Handbuch kannst du dich wachsen
+auch sollst Bohnenstange besitzen.  Wer weiß, kannst du ein goldenes Ei oder zwei
+sogar finden!
+DocPath=file://usr/share/help/C/beanstalk/beanstalk.xml
+DocPath[de]=file://usr/share/help/de/beanstalk/beanstalk.xml
+DocType=application/docbook+xml
+Categories=GNOME;Building;Construction
+DocIdentifier=org.gnome.beanstalk
+# Displaces a document previously registered with scrollkeeper
+DocHeritage=org.scrollkeeper.2a958241-f90e-4aca-a201-cc5d21b7b6ce
+  </programlisting>
+
+  <para>
+  	Another manual (with different keys), installed as a pdf.  No translations.
+  </para>
+  <programlisting>
+[Document]
+# Glermo's proprietary app.  Installed as a pdf to stop thieving.
+# Comments are lines that begin with a '#' symbol.
+Name=Glermo's Magic Beanstalk Recipes
+Comment=Tired of the semi-finished Beanstalk from Jack?  With Gelrmo,
+you don't need to worry, we're already finished!
+# Named icons don't need a path.  This assumes the system knows the icon
+# exists.
+Icon=glermo-beanstalk
+DocPath=file:///opt/glermo/help/glermo.pdf
+DocType=application/pdf
+# We want to be first on the list, dag nabbit
+DocWeight=-50
+Categories=Construction
+DocIdentifier=org.other.glermo
+  </programlisting>
+
+  <sect2 id="mallard-eg">
+  <title>Documentation with Defined Sections</title>
+  <para>
+  	In this section, one "document" is described - "GNOME User Guide",
+  	comprising of 2 sections - "Desktop Tools" and "CD Burning".  I'll forgo
+  	you the agony of my translations.
+  </para>
+  <programlisting>
+# First the document.  This would be user-guide.desktop
+[Document]
+Name=GNOME User Guide
+Comment=Learn how to use you're GNOME desktop
+DocPath=file://usr/share/gnome/help/user-guide/C/user-guide.xml
+# Made up mime type.  Do we need to define a mime type for Mallard docs?
+DocType=application/mallard+xml
+Categories=GNOME
+# We really want to be listed first.  For real reasons this time,
+# not just vanity
+DocWeight=-5
+DocIdentifier=org.gnome.user-guide
+
+# Define one section
+[Section]
+SectionName=Desktop Tools
+# Don't give a full path.  The full path is found using the DocPath given
+# above.  The complete path is /usr/share/gnome/help/user-guide/C/desktop-tools.xml
+SectionPath=desktop-tools.xml
+SectionIdentifier=desktoptools
+# Don't need to define section document as we're defined in the parent
+# docs meta data file
+
+# Now we define the second section
+[Section]
+SectionName=CD Burning
+SectionPath=cdburning.xml
+SectionIdentifier=cdburning
+  </programlisting>
+
+  <para>
+   In the same directory, someone else has defined a new section file, defining a new "CD Burning" section.
+   This new section contains a new subsection - "DVD Burning".  This new version will overwrite the
+   section defined above.
+  </para>
+  <programlisting>
+# The new CD Burning section.  This would be the file cdburning.section
+[Section]
+SectionName=Burning Media
+SectionIdentifier=cdburning
+SectionDocument=org.gnome.user-guide
+# Sections defined outside the main document meta data file
+# almost certianly want to define the location with an absolute path
+SectionPath=file://tmp/testing/cdburning.xml
+SectionChildren=dvdburning
+
+# Define the dvd burning section here as well
+SectionName=Burning a DVD
+SectionIdentifier=dvdburning
+# Not strictly necessary as we already know the parent (above), but it won't
+# hurt to define it anyway
+SectionPath=file://tmp/testing/dvdburning.xml
+# Parent is the CD Burning section.  Add that to the Document ID as below
+SectionDocument=org.gnome.user-guide.cdburning
+  </programlisting>
+  </sect2>
+  </appendix>
+  <appendix id="example-calls">
+  <title>Example Help System Calls</title>
+    <para>
+      This section demonstrates various methods of requesting the help system
+      open a particular document or section.  This is intended to show how
+      application authors would implement requests.  All code here is
+      psuedo-code.
+    </para>
+    <para>
+      An example of a simplistic call to help from a program requesting that the
+      user manual for "The Beanstalk Program" be opened.
+    </para>
+    <programlisting>
+# User requested help.  Open using dbus.
+bus = get_dbus_session_bus ()
+bus.send_signal (bus, "org.freedesktop.help_system",
+                 "open_document", "org.gnome.beanstalk");
+    </programlisting>
+    <para>
+      The following example shows how to request subsections and a possible
+      example of requesting a filename be opened.
+    </para>
+    <programlisting>
+if (installed)
+  # We're running in installed mode, request help using the proper route
+  bus.send_signal (bus, "org.freedesktop.help_system",
+                   "open_document", "org.gnome.beanstalk.Growing"
+else
+  # We're uninstalled.  The help probably isn't registered.  If it is
+  # it's probably old.  Request using the filename instead.
+  system ("xdg_help ../help/C/beanstalk.xml#Growing")
+    </programlisting>
+    <para>
+      Finally, for the app that doesn't want to depend on dbus, we present yet
+      another method of accessing help (same section as above)
+    </para>
+    <programlisting>
+# Help requested.  Opening.
+system ("xdg_help org.gnome.beanstalk.Growing")
+    </programlisting>
+  </appendix>
+</article>

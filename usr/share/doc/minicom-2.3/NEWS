@@ -1,0 +1,32 @@
+
+This file lists the most important changes to
+the previous released version. For a full list of changes
+please refer to the ChangeLog file.
+
+New for version 2.3:
+ - Fix build on Mac OS X
+ - New version of the dial format to be little and big endian as well as
+   32/64 bit safe
+ - Support more baud rates
+ - Handle device disappearances (e.g. serial-USB device unplug)
+ - Various build and other fixes
+
+New for version 2.2:
+ - Vietnamese translation added
+ - Norwegian translation added
+ - Traditional chinese translation added
+ - Swedish translation added
+ - Romanian translation added
+ - default to 8bit mode if LANG or LC_ALL are set
+ - default baud rate set to 115200
+ - Various code cleanups and fixes
+
+New for version 2.1:
+ - applied some pending patches (see ChangeLog for a complete list)
+ - added support for socket connections
+ - fixed compiling issues on Solaris
+ - new maintainer: Adam Lackorzynski
+ - new homepage: http://minicom.alioth.debian.org/
+ - new mailinglists (-devel and -announce):
+      http://alioth.debian.org/mail/?group_id=31
+

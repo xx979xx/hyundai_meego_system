@@ -1,0 +1,11 @@
+MBasicListItemDeletionAnimation {
+	delete-delay: 0;
+	delete-duration: 200;
+	delete-opacity: 0.0;
+	delete-scale: 1.0;
+	delete-curve: linear;
+
+	move-delay: 100;
+	move-duration: 200;
+	move-curve: linear;
+}

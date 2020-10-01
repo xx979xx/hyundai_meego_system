@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="GConf Reference Manual" link="index.html" author="" name="gconf">
+  <chapters>
+    <sub name="Using the GConf library" link="ch01.html">
+      <sub name="GConfClient" link="gconf-GConfClient.html"/>
+      <sub name="gconf-backend" link="gconf-gconf-backend.html"/>
+      <sub name="GConfEngine" link="gconf-gconf-engine.html"/>
+      <sub name="GError" link="gconf-gconf-error.html"/>
+      <sub name="gconf-internals" link="gconf-gconf-internals.html"/>
+      <sub name="gconf-listeners" link="gconf-gconf-listeners.html"/>
+      <sub name="GConfSchema" link="gconf-gconf-schema.html"/>
+      <sub name="gconf-sources" link="gconf-gconf-sources.html"/>
+      <sub name="GConfValue, GConfEntry, GConfMetaInfo" link="gconf-gconf-value.html"/>
+      <sub name="GConf Core Interfaces" link="gconf-gconf.html"/>
+      <sub name="gconf-locale" link="gconf-gconf-locale.html"/>
+      <sub name="GConfChangeSet" link="gconf-gconf-changeset.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <function name="enum GConfClientPreloadType" link="gconf-GConfClient.html#GConfClientPreloadType"/>
+    <function name="enum GConfClientErrorHandlingMode" link="gconf-GConfClient.html#GConfClientErrorHandlingMode"/>
+    <function name="GConfClientNotifyFunc ()" link="gconf-GConfClient.html#GConfClientNotifyFunc"/>
+    <function name="GConfClientErrorHandlerFunc ()" link="gconf-GConfClient.html#GConfClientErrorHandlerFunc"/>
+    <function name="GCONF_CLIENT()" link="gconf-GConfClient.html#GCONF-CLIENT--CAPS"/>
+    <function name="gconf_client_get_default ()" link="gconf-GConfClient.html#gconf-client-get-default"/>
+    <function name="gconf_client_get_for_engine ()" link="gconf-GConfClient.html#gconf-client-get-for-engine"/>
+    <function name="gconf_client_add_dir ()" link="gconf-GConfClient.html#gconf-client-add-dir"/>
+    <function name="gconf_client_remove_dir ()" link="gconf-GConfClient.html#gconf-client-remove-dir"/>
+    <function name="gconf_client_notify_add ()" link="gconf-GConfClient.html#gconf-client-notify-add"/>
+    <function name="gconf_client_notify_remove ()" link="gconf-GConfClient.html#gconf-client-notify-remove"/>
+    <function name="gconf_client_notify ()" link="gconf-GConfClient.html#gconf-client-notify"/>
+    <function name="gconf_client_set_error_handling ()" link="gconf-GConfClient.html#gconf-client-set-error-handling"/>
+    <function name="gconf_client_set_global_default_error_handler ()" link="gconf-GConfClient.html#gconf-client-set-global-default-error-handler"/>
+    <function name="gconf_client_clear_cache ()" link="gconf-GConfClient.html#gconf-client-clear-cache"/>
+    <function name="gconf_client_preload ()" link="gconf-GConfClient.html#gconf-client-preload"/>
+    <function name="gconf_client_set ()" link="gconf-GConfClient.html#gconf-client-set"/>
+    <function name="gconf_client_get ()" link="gconf-GConfClient.html#gconf-client-get"/>
+    <function name="gconf_client_get_without_default ()" link="gconf-GConfClient.html#gconf-client-get-without-default"/>
+    <function name="gconf_client_get_entry ()" link="gconf-GConfClient.html#gconf-client-get-entry"/>
+    <function name="gconf_client_get_default_from_schema ()" link="gconf-GConfClient.html#gconf-client-get-default-from-schema"/>
+    <function name="gconf_client_unset ()" link="gconf-GConfClient.html#gconf-client-unset"/>
+    <function name="gconf_client_recursive_unset ()" link="gconf-GConfClient.html#gconf-client-recursive-unset"/>
+    <function name="gconf_client_all_entries ()" link="gconf-GConfClient.html#gconf-client-all-entries"/>
+    <function name="gconf_client_all_dirs ()" link="gconf-GConfClient.html#gconf-client-all-dirs"/>
+    <function name="gconf_client_suggest_sync ()" link="gconf-GConfClient.html#gconf-client-suggest-sync"/>
+    <function name="gconf_client_dir_exists ()" link="gconf-GConfClient.html#gconf-client-dir-exists"/>
+    <function name="gconf_client_key_is_writable ()" link="gconf-GConfClient.html#gconf-client-key-is-writable"/>
+    <function name="gconf_client_get_float ()" link="gconf-GConfClient.html#gconf-client-get-float"/>
+    <function name="gconf_client_get_int ()" link="gconf-GConfClient.html#gconf-client-get-int"/>
+    <function name="gconf_client_get_string ()" link="gconf-GConfClient.html#gconf-client-get-string"/>
+    <function name="gconf_client_get_bool ()" link="gconf-GConfClient.html#gconf-client-get-bool"/>
+    <function name="gconf_client_get_schema ()" link="gconf-GConfClient.html#gconf-client-get-schema"/>
+    <function name="gconf_client_get_list ()" link="gconf-GConfClient.html#gconf-client-get-list"/>
+    <function name="gconf_client_get_pair ()" link="gconf-GConfClient.html#gconf-client-get-pair"/>
+    <function name="gconf_client_set_float ()" link="gconf-GConfClient.html#gconf-client-set-float"/>
+    <function name="gconf_client_set_int ()" link="gconf-GConfClient.html#gconf-client-set-int"/>
+    <function name="gconf_client_set_string ()" link="gconf-GConfClient.html#gconf-client-set-string"/>
+    <function name="gconf_client_set_bool ()" link="gconf-GConfClient.html#gconf-client-set-bool"/>
+    <function name="gconf_client_set_schema ()" link="gconf-GConfClient.html#gconf-client-set-schema"/>
+    <function name="gconf_client_set_list ()" link="gconf-GConfClient.html#gconf-client-set-list"/>
+    <function name="gconf_client_set_pair ()" link="gconf-GConfClient.html#gconf-client-set-pair"/>
+    <function name="gconf_client_error ()" link="gconf-GConfClient.html#gconf-client-error"/>
+    <function name="gconf_client_unreturned_error ()" link="gconf-GConfClient.html#gconf-client-unreturned-error"/>
+    <function name="gconf_client_value_changed ()" link="gconf-GConfClient.html#gconf-client-value-changed"/>
+    <function name="gconf_client_commit_change_set ()" link="gconf-GConfClient.html#gconf-client-commit-change-set"/>
+    <function name="gconf_client_reverse_change_set ()" link="gconf-GConfClient.html#gconf-client-reverse-change-set"/>
+    <function name="gconf_client_change_set_from_currentv ()" link="gconf-GConfClient.html#gconf-client-change-set-from-currentv"/>
+    <function name="gconf_client_change_set_from_current ()" link="gconf-GConfClient.html#gconf-client-change-set-from-current"/>
+    <function name="GConfBackendVTable" link="gconf-gconf-backend.html#GConfBackendVTable"/>
+    <function name="GConfBackend" link="gconf-gconf-backend.html#GConfBackend"/>
+    <function name="gconf_address_backend ()" link="gconf-gconf-backend.html#gconf-address-backend"/>
+    <function name="gconf_address_resource ()" link="gconf-gconf-backend.html#gconf-address-resource"/>
+    <function name="gconf_backend_file ()" link="gconf-gconf-backend.html#gconf-backend-file"/>
+    <function name="gconf_get_backend ()" link="gconf-gconf-backend.html#gconf-get-backend"/>
+    <function name="gconf_backend_ref ()" link="gconf-gconf-backend.html#gconf-backend-ref"/>
+    <function name="gconf_backend_unref ()" link="gconf-gconf-backend.html#gconf-backend-unref"/>
+    <function name="gconf_backend_resolve_address ()" link="gconf-gconf-backend.html#gconf-backend-resolve-address"/>
+    <function name="GConfEngine" link="gconf-gconf-engine.html#GConfEngine"/>
+    <function name="gconf_engine_get_default ()" link="gconf-gconf-engine.html#gconf-engine-get-default"/>
+    <function name="gconf_engine_get_for_address ()" link="gconf-gconf-engine.html#gconf-engine-get-for-address"/>
+    <function name="gconf_engine_get_for_addresses ()" link="gconf-gconf-engine.html#gconf-engine-get-for-addresses"/>
+    <function name="gconf_engine_unref ()" link="gconf-gconf-engine.html#gconf-engine-unref"/>
+    <function name="gconf_engine_ref ()" link="gconf-gconf-engine.html#gconf-engine-ref"/>
+    <function name="gconf_engine_get_local ()" link="gconf-gconf-engine.html#gconf-engine-get-local"/>
+    <function name="gconf_engine_get_local_for_addresses ()" link="gconf-gconf-engine.html#gconf-engine-get-local-for-addresses"/>
+    <function name="gconf_engine_set_user_data ()" link="gconf-gconf-engine.html#gconf-engine-set-user-data"/>
+    <function name="gconf_engine_get_user_data ()" link="gconf-gconf-engine.html#gconf-engine-get-user-data"/>
+    <function name="enum GConfError" link="gconf-gconf-error.html#GConfError"/>
+    <function name="gconf_error_new ()" link="gconf-gconf-error.html#gconf-error-new"/>
+    <function name="gconf_error_quark ()" link="gconf-gconf-error.html#gconf-error-quark"/>
+    <function name="gconf_set_error ()" link="gconf-gconf-error.html#gconf-set-error"/>
+    <function name="gconf_compose_errors ()" link="gconf-gconf-error.html#gconf-compose-errors"/>
+    <function name="gconf_key_directory ()" link="gconf-gconf-internals.html#gconf-key-directory"/>
+    <function name="gconf_key_key ()" link="gconf-gconf-internals.html#gconf-key-key"/>
+    <function name="gconf_value_from_corba_value ()" link="gconf-gconf-internals.html#gconf-value-from-corba-value"/>
+    <function name="gconf_schema_from_corba_schema ()" link="gconf-gconf-internals.html#gconf-schema-from-corba-schema"/>
+    <function name="gconf_value_type_to_string ()" link="gconf-gconf-internals.html#gconf-value-type-to-string"/>
+    <function name="gconf_value_type_from_string ()" link="gconf-gconf-internals.html#gconf-value-type-from-string"/>
+    <function name="gconf_load_source_path ()" link="gconf-gconf-internals.html#gconf-load-source-path"/>
+    <function name="gconf_shutdown_daemon ()" link="gconf-gconf-internals.html#gconf-shutdown-daemon"/>
+    <function name="gconf_ping_daemon ()" link="gconf-gconf-internals.html#gconf-ping-daemon"/>
+    <function name="gconf_spawn_daemon ()" link="gconf-gconf-internals.html#gconf-spawn-daemon"/>
+    <function name="gconf_string_to_gulong ()" link="gconf-gconf-internals.html#gconf-string-to-gulong"/>
+    <function name="gconf_current_locale ()" link="gconf-gconf-internals.html#gconf-current-locale"/>
+    <function name="enum GConfLogPriority" link="gconf-gconf-internals.html#GConfLogPriority"/>
+    <function name="gconf_log ()" link="gconf-gconf-internals.html#gconf-log"/>
+    <function name="gconf_key_check ()" link="gconf-gconf-internals.html#gconf-key-check"/>
+    <function name="gconf_value_new_list_from_string ()" link="gconf-gconf-internals.html#gconf-value-new-list-from-string"/>
+    <function name="gconf_value_new_pair_from_string ()" link="gconf-gconf-internals.html#gconf-value-new-pair-from-string"/>
+    <function name="gconf_quote_string ()" link="gconf-gconf-internals.html#gconf-quote-string"/>
+    <function name="gconf_unquote_string ()" link="gconf-gconf-internals.html#gconf-unquote-string"/>
+    <function name="gconf_unquote_string_inplace ()" link="gconf-gconf-internals.html#gconf-unquote-string-inplace"/>
+    <function name="gconf_value_decode ()" link="gconf-gconf-internals.html#gconf-value-decode"/>
+    <function name="gconf_value_encode ()" link="gconf-gconf-internals.html#gconf-value-encode"/>
+    <function name="gconf_value_list_from_primitive_list ()" link="gconf-gconf-internals.html#gconf-value-list-from-primitive-list"/>
+    <function name="gconf_value_pair_from_primitive_pair ()" link="gconf-gconf-internals.html#gconf-value-pair-from-primitive-pair"/>
+    <function name="gconf_value_list_to_primitive_list_destructive ()" link="gconf-gconf-internals.html#gconf-value-list-to-primitive-list-destructive"/>
+    <function name="gconf_value_pair_to_primitive_pair_destructive ()" link="gconf-gconf-internals.html#gconf-value-pair-to-primitive-pair-destructive"/>
+    <function name="gconf_set_daemon_mode ()" link="gconf-gconf-internals.html#gconf-set-daemon-mode"/>
+    <function name="gconf_handle_oaf_exception ()" link="gconf-gconf-internals.html#gconf-handle-oaf-exception"/>
+    <function name="GConfListeners" link="gconf-gconf-listeners.html#GConfListeners"/>
+    <function name="GConfListenersCallback ()" link="gconf-gconf-listeners.html#GConfListenersCallback"/>
+    <function name="gconf_listeners_new ()" link="gconf-gconf-listeners.html#gconf-listeners-new"/>
+    <function name="gconf_listeners_free ()" link="gconf-gconf-listeners.html#gconf-listeners-free"/>
+    <function name="gconf_listeners_add ()" link="gconf-gconf-listeners.html#gconf-listeners-add"/>
+    <function name="gconf_listeners_remove ()" link="gconf-gconf-listeners.html#gconf-listeners-remove"/>
+    <function name="gconf_listeners_notify ()" link="gconf-gconf-listeners.html#gconf-listeners-notify"/>
+    <function name="gconf_listeners_count ()" link="gconf-gconf-listeners.html#gconf-listeners-count"/>
+    <function name="gconf_listeners_foreach ()" link="gconf-gconf-listeners.html#gconf-listeners-foreach"/>
+    <function name="gconf_listeners_get_data ()" link="gconf-gconf-listeners.html#gconf-listeners-get-data"/>
+    <function name="gconf_listeners_remove_if ()" link="gconf-gconf-listeners.html#gconf-listeners-remove-if"/>
+    <function name="GConfSchema" link="gconf-gconf-schema.html#GConfSchema"/>
+    <function name="gconf_schema_new ()" link="gconf-gconf-schema.html#gconf-schema-new"/>
+    <function name="gconf_schema_free ()" link="gconf-gconf-schema.html#gconf-schema-free"/>
+    <function name="gconf_schema_copy ()" link="gconf-gconf-schema.html#gconf-schema-copy"/>
+    <function name="gconf_schema_get_type ()" link="gconf-gconf-schema.html#gconf-schema-get-type"/>
+    <function name="gconf_schema_get_locale ()" link="gconf-gconf-schema.html#gconf-schema-get-locale"/>
+    <function name="gconf_schema_get_short_desc ()" link="gconf-gconf-schema.html#gconf-schema-get-short-desc"/>
+    <function name="gconf_schema_get_long_desc ()" link="gconf-gconf-schema.html#gconf-schema-get-long-desc"/>
+    <function name="gconf_schema_get_owner ()" link="gconf-gconf-schema.html#gconf-schema-get-owner"/>
+    <function name="gconf_schema_get_default_value ()" link="gconf-gconf-schema.html#gconf-schema-get-default-value"/>
+    <function name="gconf_schema_get_car_type ()" link="gconf-gconf-schema.html#gconf-schema-get-car-type"/>
+    <function name="gconf_schema_get_cdr_type ()" link="gconf-gconf-schema.html#gconf-schema-get-cdr-type"/>
+    <function name="gconf_schema_get_list_type ()" link="gconf-gconf-schema.html#gconf-schema-get-list-type"/>
+    <function name="gconf_schema_set_type ()" link="gconf-gconf-schema.html#gconf-schema-set-type"/>
+    <function name="gconf_schema_set_locale ()" link="gconf-gconf-schema.html#gconf-schema-set-locale"/>
+    <function name="gconf_schema_set_short_desc ()" link="gconf-gconf-schema.html#gconf-schema-set-short-desc"/>
+    <function name="gconf_schema_set_long_desc ()" link="gconf-gconf-schema.html#gconf-schema-set-long-desc"/>
+    <function name="gconf_schema_set_owner ()" link="gconf-gconf-schema.html#gconf-schema-set-owner"/>
+    <function name="gconf_schema_set_default_value ()" link="gconf-gconf-schema.html#gconf-schema-set-default-value"/>
+    <function name="gconf_schema_set_default_value_nocopy ()" link="gconf-gconf-schema.html#gconf-schema-set-default-value-nocopy"/>
+    <function name="gconf_schema_set_car_type ()" link="gconf-gconf-schema.html#gconf-schema-set-car-type"/>
+    <function name="gconf_schema_set_cdr_type ()" link="gconf-gconf-schema.html#gconf-schema-set-cdr-type"/>
+    <function name="gconf_schema_set_list_type ()" link="gconf-gconf-schema.html#gconf-schema-set-list-type"/>
+    <function name="GConfSource" link="gconf-gconf-sources.html#GConfSource"/>
+    <function name="enum GConfSourceFlags" link="gconf-gconf-sources.html#GConfSourceFlags"/>
+    <function name="gconf_resolve_address ()" link="gconf-gconf-sources.html#gconf-resolve-address"/>
+    <function name="gconf_source_free ()" link="gconf-gconf-sources.html#gconf-source-free"/>
+    <function name="GConfSources" link="gconf-gconf-sources.html#GConfSources"/>
+    <function name="gconf_sources_new_from_addresses ()" link="gconf-gconf-sources.html#gconf-sources-new-from-addresses"/>
+    <function name="gconf_sources_new_from_source ()" link="gconf-gconf-sources.html#gconf-sources-new-from-source"/>
+    <function name="gconf_sources_free ()" link="gconf-gconf-sources.html#gconf-sources-free"/>
+    <function name="gconf_sources_query_value ()" link="gconf-gconf-sources.html#gconf-sources-query-value"/>
+    <function name="gconf_sources_set_value ()" link="gconf-gconf-sources.html#gconf-sources-set-value"/>
+    <function name="gconf_sources_unset_value ()" link="gconf-gconf-sources.html#gconf-sources-unset-value"/>
+    <function name="gconf_sources_all_entries ()" link="gconf-gconf-sources.html#gconf-sources-all-entries"/>
+    <function name="gconf_sources_all_dirs ()" link="gconf-gconf-sources.html#gconf-sources-all-dirs"/>
+    <function name="gconf_sources_dir_exists ()" link="gconf-gconf-sources.html#gconf-sources-dir-exists"/>
+    <function name="gconf_sources_remove_dir ()" link="gconf-gconf-sources.html#gconf-sources-remove-dir"/>
+    <function name="gconf_sources_set_schema ()" link="gconf-gconf-sources.html#gconf-sources-set-schema"/>
+    <function name="gconf_sources_sync_all ()" link="gconf-gconf-sources.html#gconf-sources-sync-all"/>
+    <function name="gconf_sources_query_metainfo ()" link="gconf-gconf-sources.html#gconf-sources-query-metainfo"/>
+    <function name="gconf_sources_query_default_value ()" link="gconf-gconf-sources.html#gconf-sources-query-default-value"/>
+    <function name="enum GConfValueType" link="gconf-gconf-value.html#GConfValueType"/>
+    <function name="GConfValue" link="gconf-gconf-value.html#GConfValue"/>
+    <function name="GCONF_VALUE_TYPE_VALID()" link="gconf-gconf-value.html#GCONF-VALUE-TYPE-VALID--CAPS"/>
+    <function name="gconf_value_get_string ()" link="gconf-gconf-value.html#gconf-value-get-string"/>
+    <function name="gconf_value_get_int ()" link="gconf-gconf-value.html#gconf-value-get-int"/>
+    <function name="gconf_value_get_float ()" link="gconf-gconf-value.html#gconf-value-get-float"/>
+    <function name="gconf_value_get_list_type ()" link="gconf-gconf-value.html#gconf-value-get-list-type"/>
+    <function name="gconf_value_get_list ()" link="gconf-gconf-value.html#gconf-value-get-list"/>
+    <function name="gconf_value_get_car ()" link="gconf-gconf-value.html#gconf-value-get-car"/>
+    <function name="gconf_value_get_cdr ()" link="gconf-gconf-value.html#gconf-value-get-cdr"/>
+    <function name="gconf_value_get_bool ()" link="gconf-gconf-value.html#gconf-value-get-bool"/>
+    <function name="gconf_value_get_schema ()" link="gconf-gconf-value.html#gconf-value-get-schema"/>
+    <function name="gconf_value_new ()" link="gconf-gconf-value.html#gconf-value-new"/>
+    <function name="gconf_value_new_from_string ()" link="gconf-gconf-value.html#gconf-value-new-from-string"/>
+    <function name="gconf_value_copy ()" link="gconf-gconf-value.html#gconf-value-copy"/>
+    <function name="gconf_value_free ()" link="gconf-gconf-value.html#gconf-value-free"/>
+    <function name="gconf_value_set_int ()" link="gconf-gconf-value.html#gconf-value-set-int"/>
+    <function name="gconf_value_set_string ()" link="gconf-gconf-value.html#gconf-value-set-string"/>
+    <function name="gconf_value_set_float ()" link="gconf-gconf-value.html#gconf-value-set-float"/>
+    <function name="gconf_value_set_bool ()" link="gconf-gconf-value.html#gconf-value-set-bool"/>
+    <function name="gconf_value_set_schema ()" link="gconf-gconf-value.html#gconf-value-set-schema"/>
+    <function name="gconf_value_set_schema_nocopy ()" link="gconf-gconf-value.html#gconf-value-set-schema-nocopy"/>
+    <function name="gconf_value_set_car ()" link="gconf-gconf-value.html#gconf-value-set-car"/>
+    <function name="gconf_value_set_car_nocopy ()" link="gconf-gconf-value.html#gconf-value-set-car-nocopy"/>
+    <function name="gconf_value_set_cdr ()" link="gconf-gconf-value.html#gconf-value-set-cdr"/>
+    <function name="gconf_value_set_cdr_nocopy ()" link="gconf-gconf-value.html#gconf-value-set-cdr-nocopy"/>
+    <function name="gconf_value_set_list_type ()" link="gconf-gconf-value.html#gconf-value-set-list-type"/>
+    <function name="gconf_value_set_list_nocopy ()" link="gconf-gconf-value.html#gconf-value-set-list-nocopy"/>
+    <function name="gconf_value_set_list ()" link="gconf-gconf-value.html#gconf-value-set-list"/>
+    <function name="gconf_value_to_string ()" link="gconf-gconf-value.html#gconf-value-to-string"/>
+    <function name="GConfMetaInfo" link="gconf-gconf-value.html#GConfMetaInfo"/>
+    <function name="gconf_meta_info_new ()" link="gconf-gconf-value.html#gconf-meta-info-new"/>
+    <function name="gconf_meta_info_free ()" link="gconf-gconf-value.html#gconf-meta-info-free"/>
+    <function name="gconf_meta_info_get_schema ()" link="gconf-gconf-value.html#gconf-meta-info-get-schema"/>
+    <function name="gconf_meta_info_get_mod_user ()" link="gconf-gconf-value.html#gconf-meta-info-get-mod-user"/>
+    <function name="gconf_meta_info_mod_time ()" link="gconf-gconf-value.html#gconf-meta-info-mod-time"/>
+    <function name="gconf_meta_info_set_schema ()" link="gconf-gconf-value.html#gconf-meta-info-set-schema"/>
+    <function name="gconf_meta_info_set_mod_user ()" link="gconf-gconf-value.html#gconf-meta-info-set-mod-user"/>
+    <function name="gconf_meta_info_set_mod_time ()" link="gconf-gconf-value.html#gconf-meta-info-set-mod-time"/>
+    <function name="GConfEntry" link="gconf-gconf-value.html#GConfEntry"/>
+    <function name="gconf_entry_get_key ()" link="gconf-gconf-value.html#gconf-entry-get-key"/>
+    <function name="gconf_entry_get_value ()" link="gconf-gconf-value.html#gconf-entry-get-value"/>
+    <function name="gconf_entry_get_schema_name ()" link="gconf-gconf-value.html#gconf-entry-get-schema-name"/>
+    <function name="gconf_entry_get_is_default ()" link="gconf-gconf-value.html#gconf-entry-get-is-default"/>
+    <function name="gconf_entry_get_is_writable ()" link="gconf-gconf-value.html#gconf-entry-get-is-writable"/>
+    <function name="gconf_entry_new ()" link="gconf-gconf-value.html#gconf-entry-new"/>
+    <function name="gconf_entry_new_nocopy ()" link="gconf-gconf-value.html#gconf-entry-new-nocopy"/>
+    <function name="gconf_entry_copy ()" link="gconf-gconf-value.html#gconf-entry-copy"/>
+    <function name="gconf_entry_free ()" link="gconf-gconf-value.html#gconf-entry-free"/>
+    <function name="gconf_entry_ref ()" link="gconf-gconf-value.html#gconf-entry-ref"/>
+    <function name="gconf_entry_unref ()" link="gconf-gconf-value.html#gconf-entry-unref"/>
+    <function name="gconf_entry_steal_value ()" link="gconf-gconf-value.html#gconf-entry-steal-value"/>
+    <function name="gconf_entry_set_value ()" link="gconf-gconf-value.html#gconf-entry-set-value"/>
+    <function name="gconf_entry_set_value_nocopy ()" link="gconf-gconf-value.html#gconf-entry-set-value-nocopy"/>
+    <function name="gconf_entry_set_schema_name ()" link="gconf-gconf-value.html#gconf-entry-set-schema-name"/>
+    <function name="gconf_entry_set_is_default ()" link="gconf-gconf-value.html#gconf-entry-set-is-default"/>
+    <function name="gconf_entry_set_is_writable ()" link="gconf-gconf-value.html#gconf-entry-set-is-writable"/>
+    <function name="gconf_init ()" link="gconf-gconf.html#gconf-init"/>
+    <function name="gconf_preinit ()" link="gconf-gconf.html#gconf-preinit"/>
+    <function name="gconf_postinit ()" link="gconf-gconf.html#gconf-postinit"/>
+    <function name="gconf_is_initialized ()" link="gconf-gconf.html#gconf-is-initialized"/>
+    <function name="GConfNotifyFunc ()" link="gconf-gconf.html#GConfNotifyFunc"/>
+    <function name="gconf_engine_notify_add ()" link="gconf-gconf.html#gconf-engine-notify-add"/>
+    <function name="gconf_engine_notify_remove ()" link="gconf-gconf.html#gconf-engine-notify-remove"/>
+    <function name="gconf_engine_get ()" link="gconf-gconf.html#gconf-engine-get"/>
+    <function name="gconf_engine_get_without_default ()" link="gconf-gconf.html#gconf-engine-get-without-default"/>
+    <function name="gconf_engine_get_entry ()" link="gconf-gconf.html#gconf-engine-get-entry"/>
+    <function name="gconf_engine_get_with_locale ()" link="gconf-gconf.html#gconf-engine-get-with-locale"/>
+    <function name="gconf_engine_get_default_from_schema ()" link="gconf-gconf.html#gconf-engine-get-default-from-schema"/>
+    <function name="gconf_engine_set ()" link="gconf-gconf.html#gconf-engine-set"/>
+    <function name="gconf_engine_unset ()" link="gconf-gconf.html#gconf-engine-unset"/>
+    <function name="gconf_engine_associate_schema ()" link="gconf-gconf.html#gconf-engine-associate-schema"/>
+    <function name="gconf_engine_all_entries ()" link="gconf-gconf.html#gconf-engine-all-entries"/>
+    <function name="gconf_engine_all_dirs ()" link="gconf-gconf.html#gconf-engine-all-dirs"/>
+    <function name="gconf_engine_suggest_sync ()" link="gconf-gconf.html#gconf-engine-suggest-sync"/>
+    <function name="gconf_engine_dir_exists ()" link="gconf-gconf.html#gconf-engine-dir-exists"/>
+    <function name="gconf_engine_remove_dir ()" link="gconf-gconf.html#gconf-engine-remove-dir"/>
+    <function name="gconf_engine_key_is_writable ()" link="gconf-gconf.html#gconf-engine-key-is-writable"/>
+    <function name="gconf_valid_key ()" link="gconf-gconf.html#gconf-valid-key"/>
+    <function name="gconf_key_is_below ()" link="gconf-gconf.html#gconf-key-is-below"/>
+    <function name="gconf_concat_dir_and_key ()" link="gconf-gconf.html#gconf-concat-dir-and-key"/>
+    <function name="gconf_unique_key ()" link="gconf-gconf.html#gconf-unique-key"/>
+    <function name="gconf_escape_key ()" link="gconf-gconf.html#gconf-escape-key"/>
+    <function name="gconf_unescape_key ()" link="gconf-gconf.html#gconf-unescape-key"/>
+    <function name="gconf_engine_get_float ()" link="gconf-gconf.html#gconf-engine-get-float"/>
+    <function name="gconf_engine_get_int ()" link="gconf-gconf.html#gconf-engine-get-int"/>
+    <function name="gconf_engine_get_string ()" link="gconf-gconf.html#gconf-engine-get-string"/>
+    <function name="gconf_engine_get_bool ()" link="gconf-gconf.html#gconf-engine-get-bool"/>
+    <function name="gconf_engine_get_schema ()" link="gconf-gconf.html#gconf-engine-get-schema"/>
+    <function name="gconf_engine_get_list ()" link="gconf-gconf.html#gconf-engine-get-list"/>
+    <function name="gconf_engine_get_pair ()" link="gconf-gconf.html#gconf-engine-get-pair"/>
+    <function name="gconf_engine_set_float ()" link="gconf-gconf.html#gconf-engine-set-float"/>
+    <function name="gconf_engine_set_int ()" link="gconf-gconf.html#gconf-engine-set-int"/>
+    <function name="gconf_engine_set_string ()" link="gconf-gconf.html#gconf-engine-set-string"/>
+    <function name="gconf_engine_set_bool ()" link="gconf-gconf.html#gconf-engine-set-bool"/>
+    <function name="gconf_engine_set_schema ()" link="gconf-gconf.html#gconf-engine-set-schema"/>
+    <function name="gconf_engine_set_list ()" link="gconf-gconf.html#gconf-engine-set-list"/>
+    <function name="gconf_engine_set_pair ()" link="gconf-gconf.html#gconf-engine-set-pair"/>
+    <function name="GConfEnumStringPair" link="gconf-gconf.html#GConfEnumStringPair"/>
+    <function name="gconf_string_to_enum ()" link="gconf-gconf.html#gconf-string-to-enum"/>
+    <function name="gconf_enum_to_string ()" link="gconf-gconf.html#gconf-enum-to-string"/>
+    <function name="gconf_clear_cache ()" link="gconf-gconf.html#gconf-clear-cache"/>
+    <function name="gconf_synchronous_sync ()" link="gconf-gconf.html#gconf-synchronous-sync"/>
+    <function name="gconf_engine_get_full ()" link="gconf-gconf.html#gconf-engine-get-full"/>
+    <function name="GConfLocaleCache" link="gconf-gconf-locale.html#GConfLocaleCache"/>
+    <function name="gconf_locale_cache_new ()" link="gconf-gconf-locale.html#gconf-locale-cache-new"/>
+    <function name="gconf_locale_cache_free ()" link="gconf-gconf-locale.html#gconf-locale-cache-free"/>
+    <function name="gconf_locale_cache_expire ()" link="gconf-gconf-locale.html#gconf-locale-cache-expire"/>
+    <function name="GConfLocaleList" link="gconf-gconf-locale.html#GConfLocaleList"/>
+    <function name="gconf_locale_list_ref ()" link="gconf-gconf-locale.html#gconf-locale-list-ref"/>
+    <function name="gconf_locale_list_unref ()" link="gconf-gconf-locale.html#gconf-locale-list-unref"/>
+    <function name="gconf_locale_cache_get_list ()" link="gconf-gconf-locale.html#gconf-locale-cache-get-list"/>
+    <function name="gconf_split_locale ()" link="gconf-gconf-locale.html#gconf-split-locale"/>
+    <function name="GConfChangeSet" link="gconf-gconf-changeset.html#GConfChangeSet"/>
+    <function name="GConfChangeSetForeachFunc ()" link="gconf-gconf-changeset.html#GConfChangeSetForeachFunc"/>
+    <function name="gconf_engine_commit_change_set ()" link="gconf-gconf-changeset.html#gconf-engine-commit-change-set"/>
+    <function name="gconf_engine_reverse_change_set ()" link="gconf-gconf-changeset.html#gconf-engine-reverse-change-set"/>
+    <function name="gconf_engine_change_set_from_currentv ()" link="gconf-gconf-changeset.html#gconf-engine-change-set-from-currentv"/>
+    <function name="gconf_engine_change_set_from_current ()" link="gconf-gconf-changeset.html#gconf-engine-change-set-from-current"/>
+    <function name="gconf_change_set_new ()" link="gconf-gconf-changeset.html#gconf-change-set-new"/>
+    <function name="gconf_change_set_ref ()" link="gconf-gconf-changeset.html#gconf-change-set-ref"/>
+    <function name="gconf_change_set_unref ()" link="gconf-gconf-changeset.html#gconf-change-set-unref"/>
+    <function name="gconf_change_set_clear ()" link="gconf-gconf-changeset.html#gconf-change-set-clear"/>
+    <function name="gconf_change_set_size ()" link="gconf-gconf-changeset.html#gconf-change-set-size"/>
+    <function name="gconf_change_set_remove ()" link="gconf-gconf-changeset.html#gconf-change-set-remove"/>
+    <function name="gconf_change_set_foreach ()" link="gconf-gconf-changeset.html#gconf-change-set-foreach"/>
+    <function name="gconf_change_set_check_value ()" link="gconf-gconf-changeset.html#gconf-change-set-check-value"/>
+    <function name="gconf_change_set_set ()" link="gconf-gconf-changeset.html#gconf-change-set-set"/>
+    <function name="gconf_change_set_set_nocopy ()" link="gconf-gconf-changeset.html#gconf-change-set-set-nocopy"/>
+    <function name="gconf_change_set_unset ()" link="gconf-gconf-changeset.html#gconf-change-set-unset"/>
+    <function name="gconf_change_set_set_float ()" link="gconf-gconf-changeset.html#gconf-change-set-set-float"/>
+    <function name="gconf_change_set_set_int ()" link="gconf-gconf-changeset.html#gconf-change-set-set-int"/>
+    <function name="gconf_change_set_set_string ()" link="gconf-gconf-changeset.html#gconf-change-set-set-string"/>
+    <function name="gconf_change_set_set_bool ()" link="gconf-gconf-changeset.html#gconf-change-set-set-bool"/>
+    <function name="gconf_change_set_set_schema ()" link="gconf-gconf-changeset.html#gconf-change-set-set-schema"/>
+    <function name="gconf_change_set_set_list ()" link="gconf-gconf-changeset.html#gconf-change-set-set-list"/>
+    <function name="gconf_change_set_set_pair ()" link="gconf-gconf-changeset.html#gconf-change-set-set-pair"/>
+    <function name="gconf_change_set_set_user_data ()" link="gconf-gconf-changeset.html#gconf-change-set-set-user-data"/>
+    <function name="gconf_change_set_get_user_data ()" link="gconf-gconf-changeset.html#gconf-change-set-get-user-data"/>
+  </functions>
+</book>

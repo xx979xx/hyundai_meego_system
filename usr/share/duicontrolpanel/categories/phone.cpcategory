@@ -1,0 +1,15 @@
+Parent=MainPage
+
+Name=Phone
+Name-logical-id=qtn_sett_main_phone
+
+Value="Call, SIM card"
+Value-logical-id=qtn_sett_main_phone_label2
+
+Icon=icon-m-settings-call
+
+Aliases=
+Translation-catalogs=
+
+Order=20
+

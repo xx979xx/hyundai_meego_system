@@ -1,0 +1,534 @@
+<?xml version="1.0"?>
+<properties xmlns="http://contextkit.freedesktop.org/Provider">
+  <doc>
+Core Context Properties
+=======================
+
+This is the list of the core contextual properties of the Maemo
+platform.
+
+This document is maintained as part of the +contextkit+ package.
+Please report change requests as bugs against the +contextkit+
+package.
+
+*NOTE:* Most of these properties are unstable and their definition will
+change for some time still.  Only the ones explicitly marked as stable
+should be used for now.
+
+Display screens
+---------------
+
+These properties talk about the display screens of the device.
+  </doc>
+  <key name="Screen.TopEdge">
+    <type>
+      <string-enum>
+        <top/>
+        <bottom/>
+        <left/>
+        <right/>
+      </string-enum>
+    </type>
+    <doc>
+The edge of the main display screen where the user expects
+the top-most UI elements to be.  Possible values are the
+strings "top", "bottom", "left", and "right", which refer to
+the edges of the screen in its normal orientation as defined
+by the graphics hardware.  _(stable)_
+    </doc>
+  </key>
+  <key name="Screen.IsCovered"
+       type="bool">
+    <doc>
+Whether or not the main display screen is covered and can thus not be
+seen by the user.  This might mean that the device is laying face down
+on a table, or that its lid is closed if it has one.  _(stable)_
+    </doc>
+  </key>
+  <doc>
+Location
+--------
+
+Best effort location information. If any of the keys are not
+appliciable to the current location, they will be unavailable.
+  </doc>
+  <key name="Location.SatPositioningState">
+    <type>
+      <string-enum>
+        <on/>
+        <off/>
+        <search/>
+      </string-enum>
+    </type>
+    <doc>
+      Status of the connection to a satellite positioning
+      system e.g. GPS.
+    </doc>
+  </key>
+  <key name="Location.Coordinates">
+    <type>
+      <list type="number"/>
+    </type>
+    <doc>
+The coordinates of the current position as a list of two or three
+doubles.  The first two elemets are latitude and longitude,
+respectivly, in degrees.  The third element, when present, is the
+altitude in meter.
+    </doc>
+  </key>
+  <key name="Location.Heading"
+       type="number">
+    <doc>
+      The deviation, in degrees (0-360), from the geographical north.
+    </doc>
+  </key>
+  <doc>
+Position
+---------
+
+Information about the physical position of the device.
+  </doc>
+  <key name="Position.Stable"
+       type="bool">
+    <doc>
+A boolean indicating whether or not the position of the device is
+stable, i.e., the device does not move.
+    </doc>
+  </key>
+  <key name="Position.Shaky"
+       type="bool">
+    <doc>
+A boolean indicating whether or not the device is moving rapidly. Not
+necessarily the opposite of Position.Stable; both may be false
+simultaneously.
+    </doc>
+  </key>
+  <key name="Position.IsFlat" type="bool">
+    <doc>
+A boolean indicating whether or not the device is in a flat position.
+    </doc>
+  </key>
+  <doc>
+Battery
+-------
+
+Information about the batteries of the device.
+  </doc>
+  <key name="Battery.ChargePercentage"
+       type="percentage">
+    <doc>
+The average charge level of the currently connected batteries.
+Expressed as percentage of the maximum charge level.
+    </doc>
+  </key>
+  <key name="Battery.ChargeBars">
+    <type>
+      <list type="number"/>
+    </type>
+    <doc>
+The charge bars property is a list of two integers.  The first is the remaining
+capacity as number of bars, the second is the maximum number of battery bars.
+    </doc>
+  </key>
+  <key name="Battery.OnBattery"
+       type="bool">
+    <doc>
+Whether or not the device is currently running on battery power,
+i.e., whether at least one of its batteries is currently discharging.
+    </doc>
+  </key>
+  <key name="Battery.LowBattery"
+       type="bool">
+    <doc>
+Whether or not the device is currently running on low battery power.
+True if OnBattery is true and the charge levels of all
+batteries are below 10%.
+    </doc>
+  </key>
+  <key name="Battery.IsCharging"
+       type="bool">
+    <doc>
+Whether or not the device is currently charging at least one of its batteries.
+    </doc>
+  </key>
+  <key name="Battery.TimeUntilLow"
+       type="duration">
+    <doc>
+Estimates the time that the device can run on battery before the property
+OnLowBattery becomes true. In seconds.
+    </doc>
+  </key>
+  <key name="Battery.TimeUntilFull"
+       type="duration">
+    <doc>
+Estimates the needed charging time of the device. In seconds.
+    </doc>
+  </key>
+ <doc>
+System
+------
+
+Information about the current state of the device.
+  </doc>
+  <key name="System.PowerSaveMode"
+       type="bool">
+    <doc>
+      A boolean indicating whether or not power save mode is enabled.
+    </doc>
+  </key>
+  <key name="System.OfflineMode"
+       type="bool">
+    <doc>
+      A boolean indicating whether or not cellular radio is enabled.
+    </doc>
+  </key>
+  <doc>
+
+Internet connectivity
+---------------------
+
+Information about the connection of the devide to the Internet.
+  </doc>
+  <key name="Internet.NetworkType">
+    <type>
+      <string-enum>
+        <WLAN/>
+        <wimax/>
+        <GPRS/>
+        <bluetooth/>
+        <ethernet/>
+      </string-enum>
+    </type>
+    <doc>
+The type of the current connection to the Internet.  This is one of
+the strings "WLAN", "wimax", "GPRS", "bluetooth", "ethernet", or
+"usb".  (From ConnMan.  New types might be defined in the future, of
+course.)
+    </doc>
+  </key>
+
+  <key name="Internet.NetworkName"
+       type="string">
+    <doc>
+      The name of the current network.
+    </doc>
+  </key>
+
+  <key name="Internet.NetworkState">
+    <type>
+      <string-enum>
+        <disconnected/>
+        <connecting/>
+        <connected/>
+      </string-enum>
+    </type>
+    <doc>
+      The state of the Internet connection, as one of "connected",
+      "disconnected", and "connecting".
+    </doc>
+  </key>
+
+  <key name="Internet.SignalStrength"
+       type="percentage">
+    <doc>
+The signal strength of the current connection to the Internet. For
+example, when Internet.NetworkType is "cellular", this is the signal
+strength at the cellular radio, when it is "wifi", it is the signal
+strength at the WLAN radio.
+    </doc>
+  </key>
+
+  <key name="Internet.TrafficOut"
+       type="percentage">
+    <doc>
+A rough indication of the current traffic rate to the Internet, in
+percent of the maximum possible rate.
+    </doc>
+  </key>
+  <key name="Internet.TrafficIn"
+       type="percentage">
+    <doc>
+A rough indication of the current traffic rate from the Internet, in
+percent of the maximum possible rate.
+    </doc>
+  </key>
+  <doc>
+Bluetooth
+---------
+
+Information about Bluetooth related things.
+  </doc>
+  <key name="Bluetooth.Enabled"
+       type="bool">
+    <doc>
+A boolean indicating whether or not the Bluetooth radio is enabled.
+    </doc>
+  </key>
+  <key name="Bluetooth.Visible"
+       type="bool">
+    <doc>
+A boolean indicating whether or not the device is visible to other
+Bluetooth devices when they search for others.
+    </doc>
+  </key>
+  <key name="Bluetooth.Connected"
+       type="bool">
+    <doc>
+A boolean indicating whether or not the device is connected to a
+Bluetooth device. At least one remote device is connected.
+    </doc>
+  </key>
+  <doc>
+
+Cellular
+--------
+
+Information about the cellular radio.
+  </doc>
+  <key name="Cellular.NetworkName"
+       type="string">
+    <doc>
+The name of the cellular network.
+
+Depending on SIM cards configuration,  the NetworkName can consist of both
+the service provider name from the SIM and the current serving network name.
+
+The format is in that case:
+
+"service_provider  (current_serving_network_name)"
+
+    </doc>
+  </key>
+  <key name="Cellular.SignalStrength"
+       type="percentage">
+    <doc>
+The signal strength at the cellular radio, in percent of the maximum.
+    </doc>
+  </key>
+  <key name="Cellular.SignalBars">
+    <type>
+      <integer min="0" max="5"/>
+    </type>
+    <doc>
+      The signal strength at the cellular radio, in bars.
+    </doc>
+  </key>
+  <key name="Cellular.Technology">
+    <type>
+      <string-enum>
+        <gsm/>
+        <umts/>
+      </string-enum>
+    </type>
+    <doc>
+The currently used Radio Access Technology.
+    </doc>
+  </key>
+  <key name="Cellular.DataTechnology">
+    <type>
+      <string-enum>
+        <gprs/>
+        <egprs/>
+        <umts/>
+        <hspa/>
+      </string-enum>
+    </type>
+    <doc>
+The currently used Radio Access Technology for data transfer.
+    </doc>
+  </key>
+  <key name="Cellular.RegistrationStatus">
+    <type>
+      <string-enum>
+        <home      doc="Registered with the home network"/>
+        <roam      doc="Roaming"/>
+        <no-sim    doc="No SIM card is present"/>
+        <offline   doc="Cellular radio is powered off"/>
+        <forbidden doc="Cellular access is denied, e.g., because of invalid SIM"/>
+      </string-enum>
+    </type>
+    <doc>
+The current cellular network registration status.
+    </doc>
+  </key>
+  <key name="Cellular.CellName"
+       type="string">
+    <doc>
+The broadcast name of the current cell.
+    </doc>
+  </key>
+  <key name="Cellular.PacketData"
+       type="bool">
+    <doc>
+A boolean indicating whether or not packet data are being transfered..
+    </doc>
+  </key>
+  <doc>
+User alarms
+-----------
+
+Information about the alams set by the user. We assume, that the user
+can disable or enable all the alarms. In addition, the user can enable
+or disable each alarm individually.
+  </doc>
+  <key name="Alarm.Present"
+       type="bool">
+    <doc>
+      Indicates whether there is an upcoming alarm set by the user. Can be
+      true even if alarms are disabled.
+    </doc>
+  </key>
+  <key name="Alarm.Trigger"
+       type="map">
+    <doc>
+      Trigger time of all alarm events. The keys of the map are decimal
+      representations of the alarm cookies. A value is the next trigger time of
+      the event in nano-seconds from the UNIX epoch.
+    </doc>
+  </key>
+  <doc>
+Environment
+-----------
+
+Information about the environment the device is in.
+  </doc>
+  <key name="Environment.IsDark"
+       type="bool">
+    <doc>Whether or not it is especially dark.</doc>
+  </key>
+  <key name="Environment.IsBright"
+       type="bool">
+    <doc>Whether or not it is especially bright.</doc>
+  </key>
+  <doc>
+Profiles
+--------
+
+Information about the expected behavior of the device.
+  </doc>
+  <key name="Profile.Name"
+       type="string">
+    <doc>
+The name of the currently active profile as a localized string.  You
+should not try to interpret this string, it is only meant to be
+displayed as a reminder to the user.
+    </doc>
+  </key>
+  <doc>
+Presence
+--------
+
+Information about the end-user presence.
+  </doc>
+  <key name="Presence.State">
+    <type>
+      <string-enum>
+        <offline/>
+        <away/>
+        <available/>
+      </string-enum>
+    </type>
+    <doc>
+      The most meaningful presence status for the user throughout the services.
+    </doc>
+  </key>
+  <doc>
+Phone
+-----
+
+Information about the phone states.
+  </doc>
+  <key name="Phone.Call">
+    <type>
+      <string-enum>
+        <inactive/>
+        <alerting/>
+        <active/>
+        <knocking/>
+      </string-enum>
+    </type>
+    <doc>
+      A string indicaiting the telephony state on the device.
+      It covers various telephony technologies e.g. VoIP.
+    </doc>
+  </key>
+  <key name="Phone.Muted"
+       type="bool">
+    <doc>
+      A boolean indicating whether or not inputs are muted.
+    </doc>
+  </key>
+  <doc>
+
+Session
+-------
+
+Information about the current user session.  If there is no current
+session, all values are null.
+  </doc>
+  <key name="Session.State">
+    <type>
+      <string-enum>
+        <normal/>
+        <fullscreen/>
+        <blanked/>
+      </string-enum>
+    </type>
+    <doc>
+The state of the current session, as string valued enumeration.
+
+The session is in the "normal" state when the normal desktop UI
+components such as the panel, desktop icons, taskbars, notification
+areas and status menus are available to the user.
+
+The session goes to the "blanked" state when the user stops
+interacting with it and the the screen is blanked.  In general, there
+is no point in trying to interact with the user when the session is
+blanked.
+
+The session is in the "fullscreen" state when the complete screen has
+been given to an application, such as full-screen video playback.  In
+that state, the notification areas and status menus, etc of the
+desktop aren't visible to the user, of course, and notifications
+should be unintrusive and important.
+
+Applications should be prepared to see all states in any kind of order
+without getting confused.
+    </doc>
+  </key>
+  <doc>
+Media
+-----
+
+Information about media related activity.
+  </doc>
+  <key name="Media.NowPlaying">
+    <type>
+      <map>
+        <resource   type="tracker-uri"/>
+        <title      type="string"/>
+        <artist     type="string"/>
+        <genre      type="string"/>
+        <album      type="string"/>
+        <duration   type="duration"/>
+        <start-time type="time"/>
+        <state      type="string-enum"/>
+      </map>
+    </type>
+    <doc>
+The currently playing media, such as a video or audio track.  The
+value is a dictionary with the listed entries.  If "resource" is
+included, then "title", "artist", "genre", and "album" are consistent
+with what Tracker has stored.
+
+The current position in the media is always "current-time -
+start-time".  If the user seeks then that is expressed by changing
+"start-time".  In other words, "start-time" is not the point in time
+when the user has clicked the play button, it is the point in time
+when the media would have had to start to play uninterrupted to reach
+its current position now.  This slight complication is done in favor
+of transmitting the position directly to avoid telling you once every
+second that it is now one second later.
+    </doc>
+  </key>
+</properties>

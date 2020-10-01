@@ -1,0 +1,34 @@
+OBEX Server and Client
+**********************
+
+Copyright (C) 2007-2010  Marcel Holtmann <marcel@holtmann.org>
+
+
+Compilation and installation
+============================
+
+In order to compile OBEX daemons you need following software packages:
+	- GCC compiler
+	- D-Bus library
+	- GLib library
+	- OpenOBEX library
+	- Bluetooth library
+
+To configure run:
+	./configure --prefix=/usr --libexecdir=/usr/lib/obex \
+				--mandir=/usr/share/man --sysconfdir=/etc
+
+Configure automatically searches for all required components and packages.
+
+To compile and install run:
+	make && make install
+
+
+Information
+===========
+
+Mailing lists:
+	linux-bluetooth@vger.kernel.org
+
+For additional information about the project visit BlueZ web site:
+	http://www.bluez.org

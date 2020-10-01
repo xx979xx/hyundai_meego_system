@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Version=1.0
+Name=MeeGo Video Player
+Comment=Play Videos
+GenericName=Video Player
+Exec=meego-qml-launcher --opengl --cmd playVideo --cdata %f --fullscreen --app meego-app-video
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=meego-app-video
+Categories=Player;Video;
+MimeType=video/3gpp;video/dv;video/fli;video/flv;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/x-anim;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-asx;video/x-msvideo;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-nsv;video/x-ogm+ogg;video/x-theora+ogg;video/x-totem-stream;x-content/video-dvd;x-content/video-vcd;x-content/video-svcd;
+X-Desktop-File-Install-Version=0.16

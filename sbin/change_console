@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$1" = "-r" ]; then
+        /sbin/initctl pop-tty >/dev/null 2>&1
+        exit 0
+fi
+
+SHOULD_BLOCK=0
+if [ "$1" = "-f" ]; then
+        SHOULD_BLOCK=1
+        shift
+fi
+
+if [ $# -ge 1 ]; then
+        TTY="$1"
+else
+        TTY="$(/usr/bin/tty)"
+fi
+
+/sbin/initctl push-tty $TTY >/dev/null 2>&1
+
+if [ $SHOULD_BLOCK -ne 0 ]; then
+        while read; do sleep 1; done 
+fi

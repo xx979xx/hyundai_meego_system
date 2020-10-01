@@ -1,0 +1,4 @@
+[ExtractorRule]
+ModulePath=/usr/lib/tracker-0.14/extract-modules/libextract-gstreamer.so
+MimeTypes=video/3gpp;video/mp4;video/x-ms-asf;application/vnd.rn-realmedia
+

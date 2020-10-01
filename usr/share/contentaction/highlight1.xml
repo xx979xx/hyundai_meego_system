@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<actions>
+  <highlight regexp="(mailto:)?[\w!#$%&amp;'*+/=?^`{|}~-]+(\.[\w!#$%&amp;'*+/=?^`{|}~-]+)*@([\w-]+\.)+[\w-]+" name="email-address"/>
+  <highlight regexp="((\+ ?)|\b|\(\d+\))(\(\d+\) ?|\d[-.pwxPWX# ]?){2,19}\d(?!\d)" name="phone-number"/>
+  <highlight regexp="(https?://)?music\.ovi\.com(/[\w/?%:;@&amp;=+$,\-.!~*'()]*)?" name="ovi-music-url" specialCaseOf="http-url"/>
+  <highlight regexp="(https?://)?store\.ovi\.(com|mobi)(.cn)?(/[\w/?%:;@&amp;=+$,\-.!~*'()]*)?" name="ovi-store-url" specialCaseOf="http-url"/>
+  <highlight regexp="(https?://|www\.)(\w+((:\w+)?)@)?([\w\-]+\.)+[\w\-]+(:\d+)?(/[\w/?%:;@&amp;=+$,\-.!~*'()]*)?" name="http-url"/>
+  <highlight regexp="ftp://(\w+((:\w+)?)@)?([\w\-]+\.)+[\w\-]+(:\d+)?(/[\w/?%:;@&amp;=+$,\-.!~*'()]*)?" name="ftp-url"/>
+  <highlight regexp="feed:(//)?(\w+((:\w+)?)@)?([\w\-]+\.)+[\w\-]+(:\d+)?(/[\w/?%:;@&amp;=+$,\-.!~*'()]*)?" name="feed-url"/>
+</actions>

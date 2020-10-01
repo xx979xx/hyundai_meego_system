@@ -1,0 +1,9 @@
+/* MTimeStyle : MWidgetStyle */
+MTimeStyle {
+    font: $FONT_FAMILY 48;
+    text-color: #FFA000;
+    time-format: "HH:mmA";
+
+    /* inherited from MWidgetStyle */
+}
+

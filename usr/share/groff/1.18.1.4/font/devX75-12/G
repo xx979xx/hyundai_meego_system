@@ -1,0 +1,5 @@
+name G
+spacewidth 2
+charset
+u2E00..u9FFF 12 0
+uFF00..uFFEF 12 0

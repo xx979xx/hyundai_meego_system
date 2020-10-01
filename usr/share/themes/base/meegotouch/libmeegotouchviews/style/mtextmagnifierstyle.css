@@ -1,0 +1,7 @@
+MTextMagnifierStyle {
+    magnifier-frame: "meegotouch-seattle-magnifier-frame";
+    magnifier-mask: "meegotouch-seattle-magnifier-frame-mask";
+    magnification: 0.25;
+    visual-offset: 0.0 -90.0;
+}
+

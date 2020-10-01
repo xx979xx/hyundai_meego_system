@@ -1,0 +1,481 @@
+Overview of Changes from gnome-python 2.27.1 to gnome-python 2.28.0
+====================================================================
+(nothing)
+
+Overview of Changes from gnome-python 2.26.1 to gnome-python 2.27.1
+====================================================================
+* gnome: GOption support in gnome_program_init (#507174, Tristan Hill)
+
+Overview of Changes from gnome-python 2.26.0 to gnome-python 2.26.1
+====================================================================
+* GConfEntry.get_value now accepts None as parameter for the locale
+
+Overview of Changes from gnome-python 2.25.90 to gnome-python 2.26.0
+====================================================================
+(nothing changed)
+
+Overview of Changes from gnome-python 2.25.1 to gnome-python 2.25.90
+====================================================================
+* Upgrade to newer WAF
+* Misc build fixes (#569832, #564550)
+* Bug #541088: gconf set_value should take unicode string as value
+
+
+Overview of Changes from gnome-python 2.22.3 to gnome-python 2.25.1
+====================================================================
+* Upgrade to newer WAF
+
+Overview of Changes from gnome-python 2.22.2 to gnome-python 2.22.3
+====================================================================
+* Bug #548535 postfix (#553228, Mart Raudsepp)
+
+Overview of Changes from gnome-python 2.22.1 to gnome-python 2.22.2
+====================================================================
+* Compatibility with newer pygobject (#548535, Björn Lindqvist)
+
+Overview of Changes from gnome-python 2.22.0 to gnome-python 2.22.1
+====================================================================
+* Ability to compile only selected modules (#534307)
+  - Arun Raghavan: autotools version
+  - Gustavo Carneiro: WAF version
+
+Overview of Changes from gnome-python 2.21.0 to gnome-python 2.21.1
+====================================================================
+* Cleanup link flags (Paul, #519014)
+* Fix typo in generation of the .pc file in WAF build (Gustavo)
+
+Overview of Changes from gnome-python 2.21.0 to gnome-python 2.21.1
+====================================================================
+* Remove some deprecation warnings from examples (Nishio Futoshi, Gian)
+* WAF build fixes (Gustavo)
+
+Overview of Changes from gnome-python 2.20.1 to gnome-python 2.21.0
+====================================================================
+* Bug 462884 – Add support for get_file_mime_type.
+* Bug 467688 – Binding for gnome_vfs_create_symbolic_link.
+* Bug 494500 – gnomecanvas.path_def_new() doesn't provide a way to
+  build a closed path.
+* Ship with html docs
+* New WAF build system (to use it, do ./waf configure && ./waf)
+
+Overview of Changes from gnome-python 2.20.0 to gnome-python 2.20.1
+====================================================================
+* Fix bugs gnomevfs volume callbacks (#477740)
+* gnome module popt bug fix (#497178, Guillaume Seguin)
+
+Overview of Changes from gnome-python 2.19.2 to gnome-python 2.20.0
+====================================================================
+* Fix typo in a gnomevfs error message (Jonathan Matthew, #465404)
+* Change gnome-vfs-python-method.c header to LGPL (Johan Dahlin)
+
+
+Overview of Changes from gnome-python 2.19.1 to gnome-python 2.19.2
+====================================================================
+* general
+ - Add a __version__ attribute on some modules with new pygtk
+* gconf
+ - Fix memory errors in gconf.Value.get_car/cdr() (#461278)
+
+
+Overview of Changes from gnome-python 2.18.2 to gnome-python 2.19.1
+====================================================================
+- wrap gnome_vfs_drive_needs_eject (Gian Mario Tagliaretti, #419225)
+- Fix warning when reloading the gnome.ui module (Sébastien Granjoux, #438129)
+- use python-config to get python includes (Sebastien Bacher, #448179)
+- Wrap gnome_vfs_mime_type_get_equivalence (Gustavo Carneiro, #453517).
+
+
+Overview of Changes from gnome-python 2.18.1 to gnome-python 2.18.2
+====================================================================
+* gnome.ui
+ - Allow the thumbnail_factory parameter to be None in
+gnome.ui.icon_lookup (Gian, #418926)
+
+
+Overview of Changes from gnome-python 2.18.0 to gnome-python 2.18.1
+====================================================================
+* Fix linking problems in Darwin
+
+
+Overview of Changes from gnome-python 2.17.92 to gnome-python 2.18.0
+====================================================================
+* gconf
+ - better parameter checking in gconf.value_new_from_string (#309016)
+* gnomevfs
+ - Correct the minimum require gnome-vfs version in configure (#416792)
+
+
+Overview of Changes from gnome-python 2.17.2 to gnome-python 2.17.92
+====================================================================
+* gconf
+ - gconf.Schema.get_type fix (Johan Dahlin)
+* gnomevfs
+ - Check for NULL in gnomevfs.async.find_directory callback (Gustavo)
+ - Fix bug in wrapping MimeApplication.expects_uri (Ed Catmur)
+* bonobo
+ - Untabify bonobo/__init__.py to make Python happier (Andreas Hanke)
+ - Fix typo in makefile
+
+
+Overview of Changes from gnome-python 2.17.1 to gnome-python 2.17.2
+====================================================================
+* general
+ - Fix bad .pc file (#394172, Christopher Taylor)
+
+
+Overview of Changes from gnome-python 2.16.2 to gnome-python 2.17.1
+====================================================================
+* gconf
+ - New more python-friendly gconf.CLient.[gs]et_value methods (#392841).
+* gnomecanvas
+ - Rich text support (#386844, Gustavo, Thomas Petazzoni)
+* general
+ - Use Python's $CC to get -pthread flags right (#387177, Roy Marples)
+
+
+Overview of Changes from gnome-python 2.16.1 to gnome-python 2.16.2
+====================================================================
+* general
+ - Require PyGTK 2.10.3, not 2.10.4
+
+
+Overview of Changes from gnome-python 2.16.0 to gnome-python 2.16.1
+====================================================================
+* gnomevfs
+ - Correctly detect the python library on Mac OS X (#363374)
+* gconf
+ - Fix crash when using gconf.Client() (#365565)
+* general
+ - Make unit tests use the modules from builddir
+ - Make all code Python 2.5 + 64-bit ready (#338490)
+
+
+Overview of Changes from gnome-python 2.15.90 to gnome-python 2.16.0
+====================================================================
+* (nothing has changed)
+
+Overview of Changes from gnome-python 2.15.4 to gnome-python 2.15.90
+===================================================================
+* general
+ - Improved detection of the python library for embedding (Gustavo)
+* bonobo
+ - Allow KeyboardInterrupt in bonobo.main()  (Gustavo)
+
+Overview of Changes from gnome-python 2.15.4 to gnome-python 2.15.90
+===================================================================
+* gnomevfs
+ - Lazy load the bonobo-based APIs and libraries (Gustavo)
+* general
+ - Add an example demonstrating integration with bug-buddy (Fernando Herrera)
+
+Overview of Changes from gnome-python 2.15.3 to gnome-python 2.15.4
+===================================================================
+* gnomevfs
+ - Update to recent gnome-vfs pkg-config changes
+
+Overview of Changes from gnome-python 2.15.2 to gnome-python 2.15.3
+===================================================================
+* general
+ - Improved python library detection and module linking (Gustavo)
+* gnome
+ - gnome.program_init changes process title also on BSD (Joe Marcus Clarke)
+
+Overview of Changes from gnome-python 2.15.1 to gnome-python 2.15.2
+===================================================================
+* gnomevfs
+ - Fix FileInfo.valid_fields computation (Sidnei da Silva)
+ - Add some missing permission constants (Sidnei)
+ - Add new FileInfo.access field (Gustavo)
+ - Add sync variant of "file control" method (Gustavo)
+* gnome
+ - gnome.program_init changes process name on Linux with prctl (Gustavo)
+
+Overview of Changes from gnome-python 2.12.4 to gnome-python 2.15.1
+===================================================================
+* gnomevfs
+ - Add missing permission and priority constants (Gustavo, Mystilleef)
+* gnome.ui
+ - Fix gnome.ui.AppBar constructor (Gustavo)
+* gnome vfs python methods
+ - Allow vfs python methods to be loaded from user home dir (Sidnei da Silva)
+
+Overview of Changes from gnome-python 2.12.3 to gnome-python 2.12.4
+===================================================================
+* python gnomevfs methods
+ - Build problem when installation prefix != /usr fixed.
+
+Overview of Changes from gnome-python 2.12.2 to gnome-python 2.12.3
+===================================================================
+* python gnomevfs methods
+ - Again, fix handling of VFS errors from python vfs methods (Eitan Isaacson)
+ - Don't map VFS method check_same_fs to move_func python method (Eitan)
+
+Overview of Changes from gnome-python 2.12.1 to gnome-python 2.12.2
+===================================================================
+* gnomecanvas
+ - Fix crash in gnomecanvas.Item.grab (Xavier Ordoquy, Gustavo)
+* gnome.ui
+ - Make 'custom_icon' arg of icon_lookup optional (Gustavo)
+* python gnomevfs methods
+ - Fix handling of VFS errors from python vfs methods (Eitan Isaacson)
+
+Overview of Changes from gnome-python 2.12.0 to gnome-python 2.12.1
+===================================================================
+* Fix compilation on Mac OS X (dmacks@netspace.org)
+
+Overview of Changes from gnome-python 2.11.3 to gnome-python 2.12.0
+===================================================================
+* gnomevfs
+ - Fix invalid memory access in gnomevfs.async.xfer;
+ - Add a new example of a GnomeVFS module written in python;
+ - Install pygnomevfs.h for use by other python extensions;
+* gnomecanvas
+ - Demonstrate how to activate AA in the canvas example.
+
+Overview of Changes from gnome-python 2.11.2 to gnome-python 2.11.3
+===================================================================
+* gnomecanvas
+ - Compilation fixes with libgnomecanvas 2.11.x (Murray Cumming, Gustavo)
+ - Add canvas-curve.py example demonstrating the use bezier objects
+* gconf
+ - Fix crash when passing the wrong number of arguments to
+   client.get_pair (Gustavo)
+* gnomevfs
+ - New DNS-SD functions wrapped: dns_sd_browse_sync,
+   dns_sd_resolve_sync, dns_sd_list_browse_domains_sync, and
+   get_default_browse_domains (Gustavo)
+
+Overview of Changes from gnome-python 2.10.0 to gnome-python 2.11.2
+===================================================================
+* gconf
+ - Fix conversion problems in handle returned by
+gconf.Client.notify_add (Gustavo Carneiro, Benoît Dejean)
+ - Add gconf.Engine type to the module dict (Gustavo)
+ - Add gconf.Engine.associate_schema (Gustavo)
+ - Add gconf.Client.recursive_unset (Gustavo)
+* gnomecanvas
+ - Add set_scroll_region, get_scroll_region canvas methods (Duarte Henriques)
+ - Fix deprecation warnings in canvas example (Gian Mario Tagliaretti)
+* gnomevfs
+ - Add wrapper for gnome_vfs_resolve (Benoît Dejean)
+ - Support for Python VFS modules code revived and fixed (Johan
+Dahlin, Sidnei da Silva, Gustavo)
+ - Add OPEN_TRUNCATE gnomevfs constant (Johan)
+ - Add gnomevfs.Context (Johan, Sidnei)
+ - Allow passing of arbitrary Python objects from Pyhon programs to
+Python VFS modules through gnomevfs.async.Handle.contrl() (Gustavo, Johan, Sidnei)
+ - Wrap check_cancellation() and cancel() methods of gnomevfs.Context (Sidnei)
+
+Overview of Changes from gnome-python 2.9.5 to gnome-python 2.10.0
+==================================================================
+* Just a minor configure bug fix
+
+Overview of Changes from gnome-python 2.9.4 to gnome-python 2.9.5
+=================================================================
+* gnomecanvas
+ - BPath canvas item fixes (Gustavo)
+* gnome.ui
+ - rename Client.connect back to Client.connect_to_session_manager as
+it was in gnome-python 2.6.x (Gustavo)
+* bonobo
+ - bonobo.AppClient.msg_send fixes (Gustavo)
+* gnomevfs
+ - Fix vfs exceptions value (formerly missing) (Benoît Dejean)
+
+
+Overview of Changes from gnome-python 2.9.3 to gnome-python 2.9.4
+=================================================================
+* misc
+ - Don't require versions of some libraries that only exist in CVS
+(Sebastien Bacher)
+
+Overview of Changes from gnome-python 2.9.2 to gnome-python 2.9.3
+=================================================================
+* gnomevfs
+ - Fix a missing & in wrapper of gnomevfs.uris_match (Gustavo)
+* gconf
+ - Fix a bug in gconf.Value.set_list (Gustavo)
+ - Add wrappers for GConfEngine (Mark McLoughlin)
+* gnome.ui
+ - Fix an error in ui.defs introduced in version 2.9.0 that prevented
+a constructor for gnome.ui.HRef from being generated (Gustavo)
+
+
+Overview of Changes from gnome-python 2.9.1 to gnome-python 2.9.2
+=================================================================
+* gnomevfs
+ - Fix blocking of threads when calling read_entire_file() and bunch
+   of others;
+ - gnome.vfs.xfer_* fixes;
+ - Implement wrappers for all remaining async operations:
+   gnome_vfs_async_xfer, gnome_vfs_async_find_directory, and
+   gnome_vfs_async_file_control;
+ - Wrappers for all gnome-vfs-utils.h functions:
+   escape_string, escape_path_string,
+   escape_host_and_path_string, escape_slashes,
+   escape_set, unescape_string, make_uri_canonical,
+   make_path_name_canonical, unescape_string_for_display,
+   get_local_path_from_uri, get_uri_from_local_path,
+   is_executable_command_string, get_volume_free_space,
+   icon_path_from_filename, open_fd, is_primary_thread,
+   format_uri_for_display, make_uri_from_input,
+   make_uri_from_input_with_dirs, uris_match, get_uri_scheme,
+   make_uri_from_shell_arg, and gnome_vfs_url_show_with_env;
+ - Add examples for gnomevfs.xfer_uri, gnomevfs.async.xfer, and
+   gnomevfs.async.find_directory;
+ - Do not automatically close async handles on dealloc;
+* bonobo
+ - Add bonobo.get_object_async;
+ - Allow returning AID in bonobo.activation.activate_from_id;
+ - Add bonobo.activation.activate_async;
+* gconf
+ - Wrap some GConf ChangeSets functions; needs testing;
+ - Add gconf.Value.set_list and gconf.MetaInfo.mod_time;
+* gnome
+ - Wrap gnome.Program.locate_file
+
+
+Overview of Changes from gnome-python 2.9.0 to gnome-python 2.9.1
+=================================================================
+* gnome.ui
+ - Fix argument parsing of gnome.ui.icon_lookup (Gustavo)
+* gnomevfs
+ - Rename gnome.vfs -> gnomevfs in error messages (Gustavo)
+ - Complete bindings for VolumeMonitor, Drive, and Volume; needs
+testing (Gustavo)
+* general
+ - Update required/checked version of libgnome
+
+
+Overview of Changes from gnome-python 2.6.1 to gnome-python 2.9.0
+=================================================================
+* Now targetting gnome 2.10 platform (though currently compiles with 2.8)
+* New module layout:
+ - gnome.applet moved to gnome-python-extras and renamed as gnomeapplet
+ - gnome.vfs was renamed as gnomevfs
+ - gnome.canvas was renamed as gnomecanvas
+ - gnomeprint* moved to gnome-python-extras
+ - gtkhtml2 moved to gnome-python-extras
+ - gnome.nautilus was removed
+* A bunch of new gconf functions wrapped (Gustavo, Johan)
+* A bunch of new gnome.ui functions wrapped (Gustavo)
+* Proper property support in gnome.program_init (Gustavo)
+* gnomevfs
+ - wrap gnome_vfs_format_file_size_for_display (Benoît Dejean)
+* canvas
+ - implement CanvasItem.grab (Johan)
+
+
+Overview of Changes from gnome-python 2.6.0 to gnome-python 2.6.1
+=================================================================
+* gnome.vfs
+ - 64 bit fixes in async operations (Benoît Dejean)
+ - Better parameter handling in vfs_read (Benoît Dejean)
+* gnome.canvas
+ - Allow subclassing without __gobject_init__ (Gustavo)
+* gtkhtml2
+ - Workaround gtkhtml2 initialization bug (Jonathan Blandford)
+* general
+ - Include a couple of missing bonobo examples in the tarball (N. V. Shmyrev)
+ - Add runtime check for required pygtk version (Gustavo)
+
+
+Overview of Changes from gnome-python 2.5.90 to gnome-python 2.6.0
+===================================================================
+* bonobo
+ - bonobo.AppClient is only a GObject, not a BonoboObject (Gustavo)
+ - bonobo.event_source_client_add_listener now returns the new listener, to
+allow future disconnection (Gustavo)
+ - Remove CORBA exceptions from all bonobo callbacks (Gustavo)
+ - Fix a bug in bonobo.generic_factory_main (Gustavo)
+* gnomeprint
+ - Add new pango/gnomeprint integration API if libgnomeprint 2.8 is
+installed (Gustavo)
+* vfs
+ - Add missing bytes_requested parameter to read/write callbacks of
+async operations (Gustavo)
+ - Raise exception when trying to subclass vfs types (Gustavo, James)
+* applet
+ - Workaround problem in PanelApplet constructor (Gustavo)
+ - Fix initialization of bonobo (Gustavo)
+* general
+ - Mixed 32/64 bit architecture installation fixes (Jonathan Blandford)
+ - Add gnome_python_version variable to the gnome module (Gustavo)
+ - Resolve all known compiler warnings (Gustavo)
+
+
+Overview of Changes from gnome-python 2.0.3 to gnome-python 2.5.90
+==================================================================
+* bonobo
+ - New class UnknownBaseImpl, to allow python CORBA implementations to
+be used where a bonobo.Object is expected
+(eg. bonobo.Object.add_interface) (Gustavo)
+ - Remove bonobo_ prefixes from all bonobo functions that still have one (Gustavo)
+ - New function bonobo.stream_client_read (Gustavo)
+ - New bonobo.Application API in libbonobo 2.6.
+* gnome.vfs
+ - New module gnome.vfs.async, for asynchronous GnomeVFS operations (IÃ±aki)
+ - Add setters for gnome.vfs.FileInfo (Gustavo)
+ - Add function gnome.vfs.set_file_info (Gustavo)
+* gnome.ui
+ - New gnome_thumbnail_* wrappers (Gustavo)
+* gnome
+ - Support popt options in gnome.program_init (Rubens, Gustavo)
+ - Support some string construct-only properties in gnome.program_init (Gustavo)
+ - Reset LC_NUMERIC to C after gnome.program_init (Gustavo)
+ - New type wrapper for GnomeModuleInfo, add functions to retrieve all
+the GnomeModuleInfo's (Rubens)
+ - Support the 'module_info' parameter in gnome.program_init (Rubens)
+* gtkhtml2
+ - Add function html_selection_get_text (Juri Pakaste)
+* gnome.nautilus
+ - Follow changes in open_location_* API in nautilus 2.6 (Gustavo)
+* misc
+ - zvt module removed, in favour of external vte python bindings (James)
+
+
+Overview of Changes from gnome-python 2.0.2 to gnome-python 2.0.3
+=================================================================
+* Bugfixes
+ - Segfault when importing bonobo modules in emdedded python (Johan, Xavier)
+ - Warning when import gnome module in emdedded python (Xavier)
+ - Fix bonobo.event_source_client_add_listener name and argument
+parsing (Gustavo)
+ - Accept None for link_id parameter of gnome.help_display (Gustavo)
+ - Segfault in gnome.IconList.get_selection (Scott Tsai)
+ - Fixes for some gnome.vfs_mime_* functions (Scott Tsai)
+
+
+Overview of Changes from gnome-python 2.0.1 to gnome-python 2.0.2
+=================================================================
+* Build fixes to make vfs compile
+
+
+Overview of Changes from gnome-python 2.0.0 to gnome-python 2.0.1
+=================================================================
+* gnome.canvas
+ - add functions and methods to allow using Bpath canvas item
+ - add item_list attribute to gnome.canvas.Group to contain list of child items
+* gnome.vfs
+ - add lots of wrappers for gnome.vfs.mime_* functions
+ - add wrappers for gnome.vfs.xfer_* functions
+ - bug fixes
+* bonobo
+ - fix reference counting of bonobo object constructors
+* gnomeprint
+ - Add examples ported from C, found in libgnomeprintui
+ - Add wrappers for gnome_print_convert_distance(_full)?
+ - GnomeFontDialog derives from GtkDialog, not GtkWidget
+ - Add missing gnomeprint.Context.grestore()
+* gconf
+ - check gconf value type on get_xxx()
+ - fix example simple-view.py
+ - misc fixes
+* applet
+ - add PanelApplet.get_flags and PanelApplet.set_flags and respective constants
+* gnome.ui
+ - Enable wrapper for IconTextItem.get_text()
+ - Add wrapper for gnome.ui.IconList.get_selection()
+ - Fix AboutDialog crash when translator_credits is None
+ - Add wrappers for gnome.ui.Client.set_xxx_command()
+
